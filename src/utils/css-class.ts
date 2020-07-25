@@ -6,7 +6,7 @@ export const cssClass = (className: string | Array<string>, regularClass?: strin
   } else {
     names = [className as string]
   }
-  const parsed = names.map(name => `admin-bro_${name}`)
+  const parsed = names.map((name) => `admin-bro_${name}`)
   if (regularClass) {
     parsed.push(regularClass)
   }

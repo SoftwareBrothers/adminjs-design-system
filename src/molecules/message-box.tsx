@@ -3,7 +3,6 @@ import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 import { variant as styledVariant, SpaceProps } from 'styled-system'
 
-
 import { Box } from '../atoms/box'
 import { Icon } from '../atoms/icon'
 import { Button } from '../atoms/button'
@@ -68,7 +67,6 @@ StyledCaption.defaultProps = {
   py: 'lg',
 }
 
-
 const StyledChildren = styled(Box)`
   padding: ${({ theme }): string => theme.space.lg} ${({ theme }): string => theme.space.xl};
   background: ${({ theme }): string => theme.colors.white};
@@ -102,7 +100,6 @@ type StyledMessageBoxProps = {
 }
 
 export type MessageBoxProps = SpaceProps & StyledMessageBoxProps
-
 
 /**
  * Component responsible for rendering standard danger/info/success

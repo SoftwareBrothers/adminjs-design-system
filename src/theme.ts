@@ -136,7 +136,6 @@ const colors = {
   grey20: '#F6F7FB',
   white: '#fff',
 
-
   // Alerts
   errorDark: '#DE405D',
   error: '#FF4567',
@@ -267,7 +266,6 @@ const lineHeights = {
   xl: '32px',
   xxl: '40px',
 }
-
 
 /**
  * This dimension can be used with `testShadow` and `boxShadow` props provided
@@ -444,7 +442,6 @@ export {
  * @property {string} [overflowY]     overflow-y
  */
 
-
 /**
  * The flexbox utility includes style props for alignItems, alignContent, justifyItems,
  * justifyContent, flexWrap, flexDirection, flex, flexGrow, flexShrink, flexBasis,
@@ -506,7 +503,6 @@ export {
  * @property {string} [alignSelf]          align-self
  * @property {number|string} [order]              order
  */
-
 
 /**
  * The border utility includes all style props related to border

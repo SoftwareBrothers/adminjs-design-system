@@ -111,7 +111,7 @@ export const Radio: React.FC<RadioProps> = (props) => {
       <HiddenRadio
         checked={actuallyChecked}
         onChange={handleChange}
-        {...restProps as {}}
+        {...restProps}
         disabled={disabled}
       />
       <StyledRadio

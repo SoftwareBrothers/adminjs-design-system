@@ -37,14 +37,14 @@ Base.defaultProps = {
   className: cssClass(['Header', 'H3']),
 }
 
-const H1 = styled(props => <Base as="h1" {...props} />)``
+const H1 = styled((props) => <Base as="h1" {...props} />)``
 H1.defaultProps = {
   fontSize: 'h1',
   lineHeight: 'xxl',
   className: cssClass(['Header', 'H1']),
 }
 
-const H2 = styled(props => <Base as="h2" {...props} />)`
+const H2 = styled((props) => <Base as="h2" {...props} />)`
   & ${Button}, a {
     margin-bottom: 4px;
   }
@@ -57,21 +57,21 @@ H2.defaultProps = {
 
 const H3 = Base
 
-const H4 = styled(props => <Base as="h4" {...props} />)``
+const H4 = styled((props) => <Base as="h4" {...props} />)``
 H4.defaultProps = {
   fontSize: 'h4',
   lineHeight: 'xl',
   className: cssClass(['Header', 'H4']),
 }
 
-const H5 = styled(props => <Base as="h5" {...props} />)``
+const H5 = styled((props) => <Base as="h5" {...props} />)``
 H5.defaultProps = {
   fontSize: 'xl',
   lineHeight: 'lg',
   className: cssClass(['Header', 'H5']),
 }
 
-const H6 = styled(props => <Base as="h6" {...props} />)``
+const H6 = styled((props) => <Base as="h6" {...props} />)``
 H6.defaultProps = {
   fontSize: 'lg',
   lineHeight: 'lg',

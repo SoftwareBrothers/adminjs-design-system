@@ -8,8 +8,7 @@ import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
 import { InputGroup } from './form-group/index'
 import { cssClass } from '../utils/css-class'
-import { PropertyType } from '../utils/date-utils'
-import { formatDateProperty } from '../utils/date-utils'
+import { PropertyType, formatDateProperty } from '../utils/date-utils'
 
 const StyledDatePicker = styled(InputGroup)`
   ${styles};
@@ -178,7 +177,7 @@ export const DatePicker: React.FC<DatePickerProps> = (props) => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <Overlay
         onClick={(): void => setHidden(true)}
         className={hidden ? 'hidden' : 'visible'}
@@ -211,7 +210,7 @@ export const DatePicker: React.FC<DatePickerProps> = (props) => {
           </DatePickerWrapper>
         ) : ''}
       </StyledDatePicker>
-    </React.Fragment>
+    </>
   )
 }
 

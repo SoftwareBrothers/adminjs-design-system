@@ -132,7 +132,7 @@ export const CheckBox: React.FC<CheckBoxProps> = (props) => {
       <HiddenCheckbox
         checked={isChecked}
         onChange={handleChange}
-        {...restProps as {}}
+        {...restProps}
         disabled={disabled}
       />
       <StyledCheckbox

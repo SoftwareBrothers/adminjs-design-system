@@ -114,7 +114,7 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
       >
         <Icon icon="ChevronLeft" />
       </PaginationLink>
-      {paginate.pages.map(p => (
+      {paginate.pages.map((p) => (
         <PaginationLink
           key={p}
           onClick={(): void => onChange(p)}

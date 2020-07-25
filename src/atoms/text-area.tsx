@@ -3,7 +3,6 @@ import { space, typography, layout, SpaceProps, TypographyProps, LayoutProps } f
 import { InputCSS } from './input'
 import { cssClass } from '../utils/css-class'
 
-
 /**
  * Prop Types of a TextArea component.
  * It extends all {@link SpaceProps}, {@link TypographyProps} and {@link LayoutProps}

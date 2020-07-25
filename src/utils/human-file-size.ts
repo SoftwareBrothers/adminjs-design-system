@@ -6,7 +6,7 @@ export type DisplaySizeUnit = typeof UNITS[number];
 export const humanFileSize = (size: number | string, unit?: DisplaySizeUnit): string => {
   let foundUnitIndex: number | null = null
   if (unit) {
-    foundUnitIndex = UNITS.findIndex(u => u === unit)
+    foundUnitIndex = UNITS.findIndex((u) => u === unit)
   }
   const unitIndex = foundUnitIndex || Math.min(
     Math.floor(Math.log(+size) / Math.log(1024)),

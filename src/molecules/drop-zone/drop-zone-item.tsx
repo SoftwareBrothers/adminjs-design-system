@@ -4,7 +4,6 @@ import { Box } from '../../atoms/box'
 import { Icon } from '../../atoms/icon'
 import { Button } from '../../atoms/button'
 
-
 const DropZoneImg = styled.div<{src: string}>`
   width: 80px;
   height: 80px;
