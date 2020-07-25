@@ -12,6 +12,7 @@
       "strictBindCallApply": true,
       "noImplicitThis": true,
       "moduleResolution": "node",
+      "module": "commonjs",
       "typeRoots": ["./vendor-types"],
   },
   "include": [
