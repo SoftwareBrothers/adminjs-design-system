@@ -1,0 +1,9 @@
+{
+  "name": "admin-bro-design-system",
+  "version": "1.0.0",
+  "description": "DesignSystem on which admin-bro is build",
+  "main": "index.js",
+  "repository": "git@github.com:SoftwareBrothers/admin-bro-design-system.git",
+  "author": "Wojciech Krysiak",
+  "license": "MIT"
+}
