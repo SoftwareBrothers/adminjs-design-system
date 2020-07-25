@@ -1,5 +1,5 @@
 {
-  "name": "admin-bro-design-system",
+  "name": "@admin-bro/design-system",
   "version": "1.0.0",
   "description": "DesignSystem on which admin-bro is build",
   "main": "index.js",
