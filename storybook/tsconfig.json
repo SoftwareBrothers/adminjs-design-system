@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "ES2017", "DOM"],
+    "sourceMap": true,
+    "allowJs": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "rootDirs": ["stories"],
+    "baseUrl": "stories",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["../vendor-types"]
+  },
+  "include": ["stories/**/*"],
+  "exclude": ["node_modules", "build", "scripts"]
+}

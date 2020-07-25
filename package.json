@@ -1,9 +1,58 @@
 {
-  "name": "admin-bro-design-system",
-  "version": "1.0.0",
+  "name": "@admin-bro/design-system",
+  "version": "1.0.0-beta.5",
   "description": "DesignSystem on which admin-bro is build",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "types/index.d.ts",
   "repository": "git@github.com:SoftwareBrothers/admin-bro-design-system.git",
   "author": "Wojciech Krysiak",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "release": "semantic-release",
+    "build": "tsc",
+    "lint": "eslint './storybook/**/*' './src/**/*'  --ignore-pattern '*.json' --ignore-pattern 'yarn.lock'"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "browserslist": [
+    "last 10 Chrome versions"
+  ],
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "styled-components": "^5.1.0",
+    "styled-system": "^5.1.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/git": "^9.0.0",
+    "@types/carbon__icons-react": "^10.11.0",
+    "@types/react": "^16.9.43",
+    "@types/react-datepicker": "^3.1.0",
+    "@types/styled-components": "^5.1.0",
+    "@types/styled-system": "^5.1.4",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
+    "react": "^16.13.1",
+    "semantic-release": "^17.0.7",
+    "styled-components": "^5.1.0",
+    "styled-system": "^5.1.5",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^10.14.0",
+    "jw-paginate": "^1.0.4",
+    "polished": "^3.6.5",
+    "react-datepicker": "^3.1.3"
+  }
 }
