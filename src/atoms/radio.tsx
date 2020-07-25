@@ -111,7 +111,8 @@ export const Radio: React.FC<RadioProps> = (props) => {
       <HiddenRadio
         checked={actuallyChecked}
         onChange={handleChange}
-        {...restProps}
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        {...restProps as {}}
         disabled={disabled}
       />
       <StyledRadio

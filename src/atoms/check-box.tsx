@@ -132,7 +132,8 @@ export const CheckBox: React.FC<CheckBoxProps> = (props) => {
       <HiddenCheckbox
         checked={isChecked}
         onChange={handleChange}
-        {...restProps}
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        {...restProps as {}}
         disabled={disabled}
       />
       <StyledCheckbox
