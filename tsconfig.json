@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
       "outDir": "./build",
-      "target": "esnext",
+      "target": "es2017",
       "esModuleInterop": true,
       "jsx": "react",
       "declaration": true,
