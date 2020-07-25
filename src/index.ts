@@ -1,3 +1,6 @@
+import * as theme from './theme'
+import DefaultTheme from './default-theme.interface'
+
 export * from './atoms/badge'
 export * from './atoms/button'
 export * from './atoms/check-box'
@@ -27,6 +30,9 @@ export * from './molecules/drawer/index'
 export * from './molecules/logged-user'
 export * from './molecules/nav-group'
 export * from './molecules/stepper/index'
-export * from './utils/date-utils'
-
 export * from './templates/navigation'
+export * from './constants'
+
+export * from './utils/index'
+
+export { theme, DefaultTheme }
