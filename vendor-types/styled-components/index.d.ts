@@ -1,4 +1,4 @@
-import Theme from '../../src/default-theme.interface'
+import { DefaultTheme as Theme } from '../../src/default-theme.interface'
 
 declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

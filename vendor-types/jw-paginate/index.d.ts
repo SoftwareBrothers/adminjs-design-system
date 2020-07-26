@@ -8,4 +8,3 @@ declare module 'jw-paginate' {
 
   export default function(total: number, current: number, perPage: number): PaginationResult
 }
-
