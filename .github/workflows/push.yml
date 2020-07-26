@@ -29,6 +29,10 @@ jobs:
         run: yarn lint
       - name: Build
         run: yarn build
+      - name: Bundle
+        run: yarn bundle
+      - name: Bundle minified
+        run: MINIFY=true yarn bundle
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

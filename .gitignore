@@ -172,3 +172,6 @@ sketch
 # tsc build output
 build
 types
+
+# rollup bundle
+bundle.js
