@@ -2,12 +2,17 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
+import replace from 'rollup-plugin-replace'
 
 const minify = process.env.MINIFY === 'true'
 const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx']
 
 const plugins = [
   resolve({ extensions }),
+  replace({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    'process.env.IS_BROWSER': 'true',
+  }),
   commonjs(),
   babel({
     extensions,
@@ -37,7 +42,7 @@ export default {
     'react-router-dom',
   ],
   output: {
-    file: minify ? 'bundle-min.js' : 'bundle.js',
+    file: minify ? 'bundle.production.js' : 'bundle.development.js',
     name: 'DesignSystem',
     format: 'iife',
     globals: {
