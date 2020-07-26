@@ -32,7 +32,7 @@ jobs:
       - name: Bundle
         run: yarn bundle
       - name: Bundle minified
-        run: MINIFY=true yarn bundle
+        run: NODE_ENV=production yarn bundle
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

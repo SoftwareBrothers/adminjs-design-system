@@ -174,4 +174,5 @@ build
 types
 
 # rollup bundle
-bundle.js
+/bundle.development.js
+/bundle.production.js
