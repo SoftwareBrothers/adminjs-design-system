@@ -43,7 +43,8 @@ export default {
   ],
   output: {
     file: minify ? 'bundle.production.js' : 'bundle.development.js',
-    name: 'DesignSystem',
+    sourcemap: minify ? false : 'inline',
+    name: 'AdminBroDesignSystem',
     format: 'iife',
     globals: {
       react: 'React',
