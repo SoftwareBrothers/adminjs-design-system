@@ -1,5 +1,5 @@
 import ReactDatepicker from 'react-datepicker'
-import CarbonIcons from '@carbon/icons-react'
+import * as CarbonIcons from '@carbon/icons-react'
 
 import * as DesignSystem from './src/index'
 
