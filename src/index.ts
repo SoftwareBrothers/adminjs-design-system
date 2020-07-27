@@ -1,6 +1,6 @@
 import * as theme from './theme'
 
-export * from './default-theme.interface'
+export * from './utils/default-theme.interface'
 export * from './atoms/badge'
 export * from './atoms/button'
 export * from './atoms/check-box'
@@ -34,6 +34,6 @@ export * from './templates/navigation'
 export * from './constants'
 
 export * from './utils/index'
-export * from './combine-styles'
+export * from './utils/combine-styles'
 
 export { theme }

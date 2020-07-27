@@ -1,5 +1,5 @@
-import * as theme from './theme'
-import { Theme } from './default-theme.interface'
+import * as theme from '../theme'
+import { Theme, ThemeOverride } from './default-theme.interface'
 
 const isObject = (item: any) => (item && typeof item === 'object' && !Array.isArray(item))
 
@@ -29,7 +29,7 @@ const mergeDeep = (target: any, ...sources: Array<any>) => {
  *
  * @return  {Theme}
  */
-const combineStyles = (newTheme: Partial<Theme>): Theme => {
+const combineStyles = (newTheme: ThemeOverride): Theme => {
   const merged = mergeDeep(theme, newTheme)
   if (newTheme.font) {
     return {
