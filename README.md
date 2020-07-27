@@ -47,4 +47,55 @@ Design System provides you with the default `theme`. It contains all the paramet
 
 But nothing stands in a way for you to change the default theme. In order to do that you can use bundled `combineStyles` method:
 
+```
+const myTheme = combineStyles({
+  colors: {
+    primary100: '#000'
+  }
+})
 
+//....
+<ThemeProvider theme={myTheme}>
+//....
+```
+
+## Changing particular components
+
+Sometimes you might want to change the look and feel of one particular component - not entire theme. You can achieve that with `styled` method:
+
+```
+import { Button } from '@admin-bro/design-system'
+
+const MyRoundedButton = styled(Button)`
+  border-radius: 10px;
+`
+```
+
+and then you can use it like a normal button component:
+
+```
+<MyRoundedButton variant="primary">Rounded I am</MyRoundedButton>
+```
+
+## Components
+
+For the list off all the components go to [adminbro.com](adminbro.com)
+
+## Contribute
+
+If you would like work on an admin-bro and develop new features - take a look at our dev repository: https://github.com/SoftwareBrothers/admin-bro-dev
+
+You can find there instructions on how to run admin-bro for development.
+
+## License
+
+AdminBro is Copyright © 2020 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.md) file.
+
+## About SoftwareBrothers.co
+
+<img src="https://softwarebrothers.co/assets/images/software-brothers-logo-full.svg" width=240>
+
+We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
+
+* We are available for [hire](https://softwarebrothers.co/contact).
+* If you want to work for us - checkout the [career page](https://softwarebrothers.co/career).
