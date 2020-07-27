@@ -35,7 +35,6 @@ export default {
   external: [
     'react',
     'styled-components',
-    'styled-system',
     'prop-types',
     'react-dom',
     'react-router',
@@ -49,7 +48,6 @@ export default {
     globals: {
       react: 'React',
       'styled-components': 'styled',
-      'styled-system': 'StyledSystem',
       'react-dom': 'ReactDOM',
       'prop-types': 'PropTypes',
       'react-router': 'ReactRouter',

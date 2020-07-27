@@ -34,5 +34,6 @@ export * from './templates/navigation'
 export * from './constants'
 
 export * from './utils/index'
+export * from './combine-styles'
 
 export { theme }

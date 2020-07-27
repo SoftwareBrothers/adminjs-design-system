@@ -9,7 +9,7 @@ import {
   shadows,
 } from './theme'
 
-export interface DefaultTheme {
+export interface Theme {
   colors: typeof colors;
   sizes: typeof sizes;
   space: typeof space;
