@@ -111,6 +111,15 @@ In order to use them you will have to host them (put to your 'public' folder) an
 
 If you find any UI errors - feel free to create a PR.
 
+## Storybook
+
+Inside the repo there is a storybook folder containing all the stories. In order to run it go inside and:
+
+```
+yarn install
+yarn storybook
+```
+
 ## License
 
 AdminBro is Copyright © 2020 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [MIT LICENSE](LICENSE.md) file.
