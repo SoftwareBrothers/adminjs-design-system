@@ -24,7 +24,8 @@
   ],
   "peerDependencies": {
     "react": "^16.13.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -34,6 +35,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/git": "^9.0.0",
+    "semantic-release-slack-bot": "^1.6.2",
     "@types/carbon__icons-react": "^10.11.0",
     "@types/react": "^16.9.43",
     "@types/react-datepicker": "^3.1.0",
@@ -48,6 +50,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
