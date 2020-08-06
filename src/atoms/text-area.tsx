@@ -6,7 +6,7 @@ import { cssClass } from '../utils/css-class'
 /**
  * Prop Types of a TextArea component.
  * It extends all {@link SpaceProps}, {@link TypographyProps} and {@link LayoutProps}
- * @memberof TextArea
+ * @memberof module:@admin-bro/design-system.TextArea
  * @alias TextAreaProps
  * @property {string} [...] All props default to _textarea_ html component like `onChange`,
  *                          `value` etc.
@@ -20,7 +20,7 @@ export type TextAreaProps = SpaceProps & TypographyProps & LayoutProps
  *
  * Usage:
  * ```javascript
- * import { TextArea, TextAreaProps } from 'admin-bro'
+ * import { TextArea, TextAreaProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -32,8 +32,9 @@ export type TextAreaProps = SpaceProps & TypographyProps & LayoutProps
  *      <TextArea id="textarea1" width={1/2} />
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const TextArea = styled.textarea<TextAreaProps>`
+const TextArea = styled.textarea<TextAreaProps>`
   ${InputCSS}
   ${space};
   ${layout};
@@ -47,4 +48,5 @@ TextArea.defaultProps = {
   className: cssClass('TextArea'),
 }
 
+export { TextArea }
 export default TextArea

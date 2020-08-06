@@ -9,7 +9,7 @@ import { cssClass } from '../utils/css-class'
  * Apart from all props for a standard hx elements it extends
  * {@link TypographyProps} and {@link SpaceProps}
  *
- * @memberof Header
+ * @memberof module:@admin-bro/design-system.Header
  * @alias HeaderProps
  * @property {string} [...] Other props from {@link TypographyProps}, {@link SpaceProps}
  */
@@ -84,11 +84,11 @@ H6.defaultProps = {
  *
  * Usage
  * ```javascript
- * import { H1, H2, H3, H4, H5, H6, HeaderProps } from 'admin-bro'
+ * import { H1, H2, H3, H4, H5, H6, HeaderProps } from '@admin-bro/design-system'
  *
  * // or
  *
- * import { Header } from 'admin-bro'
+ * import { Header } from '@admin-bro/design-system'
  * // Header.H1
  * ```
  * By default, the Heading component renders an __h3__ element.
@@ -113,7 +113,7 @@ H6.defaultProps = {
  * </Box>
  * )
  *
- *
+ * @memberof module:@admin-bro/design-system
  */
 const Header = H3 as any
 

@@ -14,7 +14,7 @@ const StyledInfoBox = styled(Box)<BoxProps>`
 `
 
 /**
- * @memberof InfoBox
+ * @memberof module:@admin-bro/design-system.InfoBox
  * @alias InfoBoxProps
  */
 export type InfoBoxProps = {
@@ -36,7 +36,7 @@ export type InfoBoxProps = {
  *
  * Usage:
  * ```javascript
- * import { InfoBox, InfoBoxProps } from 'admin-bro'
+ * import { InfoBox, InfoBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -49,8 +49,9 @@ export type InfoBoxProps = {
  *   <Button mt="lg"><Icon icon="Add" />Create</Button>
  * </InfoBox>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const InfoBox: React.FC<InfoBoxProps> = (props) => {
+const InfoBox: React.FC<InfoBoxProps> = (props) => {
   const { children, title, testId } = props
   return (
     <StyledInfoBox data-testid={testId} variant="white" className={cssClass('InfoBox')}>
@@ -62,4 +63,5 @@ export const InfoBox: React.FC<InfoBoxProps> = (props) => {
   )
 }
 
+export { InfoBox }
 export default InfoBox

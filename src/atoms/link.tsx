@@ -73,7 +73,7 @@ const variants = variant({
  * Apart from those explicitly specified below it extends all {@link ColorProps},
  * and {@link SpaceProps}
  *
- * @memberof Link
+ * @memberof module:@admin-bro/design-system.Link
  * @alias LinkProps
  * @property {string} [...] All props default to _a_ html component like `href`,
  *                          `onClick` etc.
@@ -93,7 +93,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  *
  * Usage:
  * ```javascript
- * import { Link, LinkProps } from 'admin-bro'
+ * import { Link, LinkProps } from '@admin-bro/design-system'
  * ```
  * @component
  * @subcategory Atoms
@@ -115,8 +115,9 @@ export type LinkProps = ColorProps & SpaceProps & {
  *   </Link>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Link = styled.a<LinkProps>`
+const Link = styled.a<LinkProps>`
   font-family: ${({ theme }): string => theme.font};
   vertical-align: middle;
   cursor: pointer;
@@ -140,4 +141,5 @@ Link.defaultProps = {
   className: cssClass('Link'),
 }
 
+export { Link }
 export default Link

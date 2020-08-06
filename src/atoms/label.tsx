@@ -12,7 +12,7 @@ import { cssClass } from '../utils/css-class'
  * Apart from those explicitly specified below it extends all {@link ColorProps},
  * {@link SpaceProps} and {@link TypographyProps}
  *
- * @memberof Label
+ * @memberof module:@admin-bro/design-system.Label
  * @alias LabelProps
  * @property {string} [...] All props default to _label_ html component like `htmlFor`,
  *                          `id` etc.
@@ -35,7 +35,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
  *
  * Usage:
  * ```javascript
- * import { Label, LabelProps } from 'admin-bro'
+ * import { Label, LabelProps } from '@admin-bro/design-system'
  * ```
  * @component
  * @subcategory Atoms
@@ -50,8 +50,9 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
  *   </Text>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Label = styled.label<LabelProps>`
+const Label = styled.label<LabelProps>`
   display: ${({ inline }): string => (inline ? 'inline-block' : 'block')};
   font-family: ${({ theme }): string => theme.font};
   font-size: ${({ theme }): string => theme.fontSizes.sm};
@@ -77,4 +78,5 @@ Label.defaultProps = {
   className: cssClass('Label'),
 }
 
+export { Label }
 export default Label

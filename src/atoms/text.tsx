@@ -32,7 +32,7 @@ const variants = variant({
  * Apart from variant it extends all {@link ColorProps}, {@link SpaceProps} and
  * {@link TypographyProps}
  *
- * @memberof Text
+ * @memberof module:@admin-bro/design-system.Text
  * @alias TextProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -51,7 +51,7 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  *
  * Usage:
  * ```javascript
- * import { Text, TextProps } from 'admin-bro'
+ * import { Text, TextProps } from '@admin-bro/design-system'
  * ```
  * @component
  * @subcategory Atoms
@@ -67,8 +67,9 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  *   <Text mt="default" variant="sm">This text was from Wikipedia</Text>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Text = styled.div<TextProps>`
+const Text = styled.div<TextProps>`
   font-family: ${({ theme }): string => theme.font};
   margin: 0;
   padding: 0;
@@ -91,4 +92,5 @@ Text.defaultProps = {
   className: cssClass('Text'),
 }
 
+export { Text }
 export default Text

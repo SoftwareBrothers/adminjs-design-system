@@ -1,6 +1,6 @@
 # @admin-bro/design-system
 
-This package consist of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the @admin-bro/core.
+This package consist of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the `admin-bro` core.
 
 It was created with the help of 2 amazing packages:
 

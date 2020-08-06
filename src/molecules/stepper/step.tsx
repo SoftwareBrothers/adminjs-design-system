@@ -10,7 +10,7 @@ import { cssClass } from '../../utils/css-class'
  * Handler which is invoked when user clicks given step
  *
  * @alias OnStepClickHandler
- * @memberof Step
+ * @memberof module:@admin-bro/design-system.Step
  */
 export type OnStepClickHandler = (
   /**
@@ -21,7 +21,7 @@ export type OnStepClickHandler = (
 
 /**
  * @alias StepProps
- * @memberof Step
+ * @memberof module:@admin-bro/design-system.Step
  */
 export type StepProps = {
   /** number presented in a circle */
@@ -102,9 +102,9 @@ const StyledStep = styled.div<StyledStepProps>`
  *     <Step number="1" onClick={onClick}>Click me if you dare</Step>
  *  </Box>
  * )
- *
+ * @memberof module:@admin-bro/design-system
  */
-export const Step: React.FC<StepProps> = (props) => {
+const Step: React.FC<StepProps> = (props) => {
   const { number, completed, children, active, disabled, onClick, className } = props
 
   return (
@@ -139,4 +139,5 @@ export const Step: React.FC<StepProps> = (props) => {
   )
 }
 
+export { Step }
 export default Step

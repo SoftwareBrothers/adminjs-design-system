@@ -16,7 +16,14 @@ import { cssClass } from '../../utils/css-class'
  *
  * Example
  * ```javascript
- * import { Table, TableRow, TableCell, TableCaption, TableHead, TableBody } from 'admin-bro'
+ * import {
+ *   Table,
+ *   TableRow,
+ *   TableCell,
+ *   TableCaption,
+ *   TableHead,
+ *   TableBody,
+ * } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -73,6 +80,7 @@ import { cssClass } from '../../utils/css-class'
  * </Table>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
 const Table = styled.table<LayoutProps>`
   position: relative;

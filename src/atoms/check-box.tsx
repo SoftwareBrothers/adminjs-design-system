@@ -88,7 +88,7 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
 /**
  * @typedef {object} CheckBoxProps
  * @alias CheckBoxProps
- * @memberof CheckBox
+ * @memberof module:@admin-bro/design-system.CheckBox
  * @property {string} [...] All props default to _checkbox_ html input like `onChange`,
  *                          `checked` etc.
  */
@@ -98,7 +98,7 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  *
  * Usage:
  * ```javascript
- * import { CheckBox, CheckBoxProps } from 'admin-bro'
+ * import { CheckBox, CheckBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -110,8 +110,9 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  *      <Label inline htmlFor="checkbox1" ml="default">Some example label</Label>
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const CheckBox: React.FC<CheckBoxProps> = (props) => {
+const CheckBox: React.FC<CheckBoxProps> = (props) => {
   const { className, checked, onChange, disabled, ...restProps } = props
 
   const [isChecked, setChecked] = useState(checked ?? false)
@@ -149,4 +150,5 @@ export const CheckBox: React.FC<CheckBoxProps> = (props) => {
   )
 }
 
+export { CheckBox }
 export default CheckBox

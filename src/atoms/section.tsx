@@ -8,7 +8,7 @@ import { cssClass } from '../utils/css-class'
  *
  * Usage:
  * ```javascript
- * import { Section } from 'admin-bro'
+ * import { Section } from '@admin-bro/design-system'
  * ```
  * @component
  * @subcategory Atoms
@@ -21,6 +21,7 @@ import { cssClass } from '../utils/css-class'
  *     </Section>
  *   </Section>
  * )
+ * @memberof module:@admin-bro/design-system
  */
 const Section = styled(Box)`
   border-left: ${({ theme }): string => theme.space.sm} solid ${({ theme }): string => theme.colors.primary20};

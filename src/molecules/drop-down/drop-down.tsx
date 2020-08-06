@@ -10,7 +10,7 @@ const StyledDropDown = styled.div`
  * Simple set of components allowing you to create a dropdowns.
  * Usage
  * ```javascript
- * import { DropDown, DropDownTrigger, DropDownMenu, DropDownItem } from 'admin-bro'
+ * import { DropDown, DropDownTrigger, DropDownMenu, DropDownItem } from '@admin-bro/design-system'
  * ```
  *
  * It contains couple of sub components:
@@ -52,8 +52,9 @@ const StyledDropDown = styled.div`
  * )
  * @component
  * @subcategory Molecules
+ * @memberof module:@admin-bro/design-system
  */
-export const DropDown: React.FC = (props) => {
+const DropDown: React.FC = (props) => {
   const { children } = props
   const [isVisible, setIsVisible] = useState(false)
   const elements = React.Children.map(children, (child: any) => {
@@ -78,4 +79,5 @@ export const DropDown: React.FC = (props) => {
   )
 }
 
+export { DropDown }
 export default DropDown

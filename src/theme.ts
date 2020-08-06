@@ -15,7 +15,7 @@
  *
  * ```javascript
  * import styled from 'styled-components'
- * import { Box } from 'admin-bro'
+ * import { Box } from '@admin-bro/design-system'
  *
  * const MyBlueBox = styled(Box)`
  *   background: ${({ theme }) => theme.colors.primary100};
@@ -28,7 +28,7 @@
  * everything because Box supports all the {@link ColorProps}.
  *
  * ```javascript
- * import { Box } from 'admin-bro'
+ * import { Box } from '@admin-bro/design-system'
  *
  * const ComponentWhereIWantToUseBlueBox = () => (
  *   <Box bg="primary100">
@@ -57,7 +57,7 @@
  * below to see all possible options, but let me give you one last example:
  *
  * ```
- * import { Box } from 'admin-bro'
+ * import { Box } from '@admin-bro/design-system'
  *
  * const ComponentWhereIWantToUseResponsiveStyle = () => (
  *   <Box flex flexDirection="column">

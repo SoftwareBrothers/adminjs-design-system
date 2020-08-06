@@ -8,13 +8,13 @@ import { cssClass } from '../utils/css-class'
  *
  * Usage:
  * ```
- * import { InputCSS } from 'admin-bro'
+ * import { InputCSS } from '@admin-bro/design-system'
  *
  * const MyStyledInput = styled.input`
  *   ${InputCSS}
  * `
  * ```
- * @memberof Input
+ * @memberof module:@admin-bro/design-system.Input
  * @alias InputCSS
  */
 export const InputCSS = css`
@@ -42,7 +42,7 @@ export const InputCSS = css`
  * Prop Types of an Input component.
  * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
  *
- * @memberof Input
+ * @memberof module:@admin-bro/design-system.Input
  * @alias InputProps
  * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
  */
@@ -53,7 +53,7 @@ export type InputProps = SpaceProps & LayoutProps
  *
  * Usage:
  * ```javascript
- * import { Input, InputProps, InputCSS } from 'admin-bro'
+ * import { Input, InputProps, InputCSS } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -65,8 +65,9 @@ export type InputProps = SpaceProps & LayoutProps
  *      <Input id="input1" width={1/2} />
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Input = styled.input<InputProps>`
+const Input = styled.input<InputProps>`
   ${InputCSS};
   ${space};
   ${layout};
@@ -78,4 +79,5 @@ Input.defaultProps = {
   className: cssClass('Input'),
 }
 
+export { Input }
 export default Input

@@ -39,7 +39,7 @@ const StyledPlaceholder = styled.div<LayoutProps>`
  *
  * Usage:
  * ```javascript
- * import { Placeholder, PlaceholderProps } from 'admin-bro'
+ * import { Placeholder, PlaceholderProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -58,8 +58,9 @@ const StyledPlaceholder = styled.div<LayoutProps>`
  *     <Placeholder width={400} height={14} />
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Placeholder: React.FC<PlaceholderProps> = ({ as: htmlAs, ref, ...other }) => (
+const Placeholder: React.FC<PlaceholderProps> = ({ as: htmlAs, ref, ...other }) => (
   <StyledPlaceholder as={htmlAs} {...other} className={cssClass('Placeholder')} />
 )
 
@@ -71,11 +72,12 @@ export type PlaceholderProps = LayoutProps & React.HTMLProps<HTMLDivElement> & {
  * Prop Types of a Placeholder component.
  * Apart from standard html props it extends {@link LayoutProps}
  * @typedef {object} PlaceholderProps
- * @memberof Placeholder
+ * @memberof module:@admin-bro/design-system.Placeholder
  * @alias PlaceholderProps
  * @property {string} [...] All props default to _div_ html component like `style`,
  *                          `id` etc.
  * @property {string} [...] Props from {@link LayoutProps}
  */
 
+export { Placeholder }
 export default Placeholder

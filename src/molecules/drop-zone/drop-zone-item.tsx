@@ -16,7 +16,7 @@ const DropZoneImg = styled.div<{src: string}>`
 `
 
 /**
- * @memberof DropZoneItem
+ * @memberof module:@admin-bro/design-system.DropZoneItem
  * @alias DropZoneItemProps
  */
 export type DropZoneItemProps = {
@@ -52,8 +52,9 @@ export type DropZoneItemProps = {
  * )
  * @component
  * @subcategory Molecules
+ * @memberof module:@admin-bro/design-system
  */
-export const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
+const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
   const { file, onRemove, filename } = props
   let { src } = props
   if (file && ['image/png', 'image/jpeg', 'image/gif'].includes(file.type)) {
@@ -80,4 +81,5 @@ export const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
   )
 }
 
+export { DropZoneItem }
 export default DropZoneItem

@@ -7,7 +7,7 @@ import { cssClass } from '../utils/css-class'
  * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
  * and {@link TypographyProps}
  *
- * @memberof Badge
+ * @memberof module:@admin-bro/design-system.Badge
  * @alias BadgeProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -61,7 +61,7 @@ const sizeVariants = variant({
  *
  * Usage
  * ```javascript
- * import { Badge, BadgeProps } from 'admin-bro'
+ * import { Badge, BadgeProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -94,8 +94,9 @@ const sizeVariants = variant({
  *   <Badge ml="default" variant="primary" size="lg">large</Badge>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Badge = styled.span<BadgeProps>`
+const Badge = styled.span<BadgeProps>`
   border-radius: 12px;
   border: 1px solid ${({ theme }): string => theme.colors.grey40};
   color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.white)};
@@ -118,4 +119,5 @@ Badge.defaultProps = {
   className: cssClass('Badge'),
 }
 
+export { Badge }
 export default Badge

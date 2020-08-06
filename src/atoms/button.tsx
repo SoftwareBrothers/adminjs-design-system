@@ -114,7 +114,7 @@ const sizeVariants = variant({
  * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
  * and {@link TypographyProps}
  *
- * @memberof Button
+ * @memberof module:@admin-bro/design-system.Button
  * @alias ButtonProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -139,7 +139,7 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
  *
  * Usage:
  * ```
- * import { ButtonCSS } from 'admin-bro'
+ * import { ButtonCSS } from '@admin-bro/design-system'
  * import { Link } from 'react-router-dom'
  *
  * const MyStyledLink = styled(Link)`
@@ -210,7 +210,7 @@ export const ButtonCSS = css<ButtonProps>`
  *
  * * Usage
  * ```javascript
- * import { Button, ButtonCSS, ButtonProps } from 'admin-bro'
+ * import { Button, ButtonCSS, ButtonProps } from '@admin-bro/design-system'
  * ```
  * @component
  * @subcategory Atoms
@@ -259,8 +259,9 @@ export const ButtonCSS = css<ButtonProps>`
  * </Box>
  * )
  *
+ * @memberof module:@admin-bro/design-system
  */
-export const Button = styled.button<ButtonProps>`
+const Button = styled.button<ButtonProps>`
   ${ButtonCSS}
 `
 
@@ -270,4 +271,5 @@ Button.defaultProps = {
   className: cssClass('Button'),
 }
 
+export { Button }
 export default Button

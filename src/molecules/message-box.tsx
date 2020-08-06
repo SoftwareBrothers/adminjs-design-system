@@ -110,7 +110,7 @@ export type MessageBoxProps = SpaceProps & StyledMessageBoxProps
  *
  * Usage
  * ```javascript
- * import { MessageBox, MessageBoxProps } from 'admin-bro'
+ * import { MessageBox, MessageBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -152,8 +152,9 @@ export type MessageBoxProps = SpaceProps & StyledMessageBoxProps
  *   </MessageBox>
  *  </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const MessageBox: React.FC<MessageBoxProps> = (props) => {
+const MessageBox: React.FC<MessageBoxProps> = (props) => {
   const { onCloseClick, message, icon, children, variant, size, ...other } = props
 
   return (
@@ -180,4 +181,5 @@ export const MessageBox: React.FC<MessageBoxProps> = (props) => {
   )
 }
 
+export { MessageBox }
 export default MessageBox

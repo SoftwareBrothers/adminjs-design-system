@@ -32,20 +32,20 @@ const inUnit = (size: string | number, unit?: FileSizeUnit): string => {
 }
 
 /**
- * @memberof DropZone
+ * @memberof module:@admin-bro/design-system.DropZone
  * @alias FileSizeUnit
  */
 type FileSizeUnit = DisplaySizeUnit
 
 /**
  * @returns {void}
- * @memberof DropZone
+ * @memberof module:@admin-bro/design-system.DropZone
  * @alias OnDropDownChange
  */
 export type OnDropZoneChange = (files: Array<File>) => void
 
 /**
- * @memberof DropZone
+ * @memberof module:@admin-bro/design-system.DropZone
  * @alias DropZoneProps
  */
 export type DropZoneProps = {
@@ -114,13 +114,13 @@ type ErrorMessage = {
  *
  * General usage:
  * ```javascript
- * import { DropZone, DropZoneProps } from 'admin-bro'
+ * import { DropZone, DropZoneProps } from '@admin-bro/design-system'
  * ```
  *
  * how to use it in your custom component.tsx (TypesScript):
  * ```
  * import React, { useState } from 'react'
- * import { DropZone, Label, BasePropertyProps } from 'admin-bro'
+ * import { DropZone, Label, BasePropertyProps } from '@admin-bro/design-system'
  * import { unflatten } from 'flat'
  *
  * const UploadPhoto: React.FC<BasePropertyProps> = (props) => {
@@ -177,8 +177,9 @@ type ErrorMessage = {
  *   />
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const DropZone: React.FC<DropZoneProps> = (props) => {
+const DropZone: React.FC<DropZoneProps> = (props) => {
   const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props
 
   const [, setIsDragging] = useState(false)
@@ -297,4 +298,5 @@ export const DropZone: React.FC<DropZoneProps> = (props) => {
   )
 }
 
+export { DropZone }
 export default DropZone

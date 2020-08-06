@@ -2,7 +2,9 @@ type PropertyType = 'date' | 'datetime' | string
 
 /**
  * adds leading 0 to the number when it is lower than 10
- * @private
+ * @param {number} pad        number - i.e 8
+ * @returns {sting}           formatted number: i.e. "08"
+ * @memberof module:@admin-bro/design-system
  */
 const pad = (n: number): string => (n < 10 ? `0${n.toString()}` : n.toString())
 
@@ -11,7 +13,7 @@ const pad = (n: number): string => (n < 10 ? `0${n.toString()}` : n.toString())
  *
  * @param   {Date}    date
  * @return  {string}
- * @private
+ * @memberof module:@admin-bro/design-system
  */
 const formatDate = (date: Date): string => `${date.getFullYear()}-${pad(date.getMonth() + 1)
 }-${pad(date.getDate())}`
@@ -21,7 +23,7 @@ const formatDate = (date: Date): string => `${date.getFullYear()}-${pad(date.get
  *
  * @param   {Date}    date
  * @return  {string}
- * @private
+ * @memberof module:@admin-bro/design-system
  */
 const formatTime = (date: Date): string => `${pad(date.getHours())}:${pad(date.getMinutes())}`
 
@@ -30,7 +32,7 @@ const formatTime = (date: Date): string => `${pad(date.getHours())}:${pad(date.g
  *
  * @param   {Date}    date
  * @return  {string}
- * @private
+ * @memberof module:@admin-bro/design-system
  */
 const formatDateTime = (date: Date): string => `${formatDate(date)} ${formatTime(date)}`
 
@@ -38,8 +40,9 @@ const formatDateTime = (date: Date): string => `${formatDate(date)} ${formatTime
  * Based on the property type formats date to either YYYY-MM-DD HH:mm or YYYY-MM-DD
  *
  * @param   {Date}    date
+ * @param   {PropertyType}    propertyType
  * @return  {string}
- * @private
+ * @memberof module:@admin-bro/design-system
  */
 const formatDateProperty = (date: Date, propertyType?: PropertyType): string => {
   if (propertyType === 'date') {

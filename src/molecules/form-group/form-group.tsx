@@ -31,7 +31,7 @@ const formGroupWithErrorCSS = css`
 /**
  * Props for FormGroup. Apart from props defined here FormGroup supports also all {@link SpaceProps}
  * @alias FormGroupProps
- * @memberof FormGroup
+ * @memberof module:@admin-bro/design-system.FormGroup
  */
 export type FormGroupProps = SpaceProps & {
   /**
@@ -54,7 +54,7 @@ export type FormGroupProps = SpaceProps & {
  *
  * Usage:
  * ```javascript
- * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from 'admin-bro'
+ * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -122,8 +122,9 @@ export type FormGroupProps = SpaceProps & {
  *   </FormGroup>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const FormGroup = styled.div<FormGroupProps>`
+const FormGroup = styled.div<FormGroupProps>`
   width: 100%;
   ${({ error }): any => (error ? formGroupWithErrorCSS : '')};
   ${({ disabled }): any => (disabled ? formGroupDisabledCSS : '')};
@@ -152,4 +153,5 @@ FormGroup.defaultProps = {
   mb: 'lg',
 }
 
+export { FormGroup }
 export default FormGroup

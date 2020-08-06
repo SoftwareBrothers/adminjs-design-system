@@ -9,7 +9,7 @@ import { cssClass } from '../utils/css-class'
 
 /**
  * @alias PaginationProps
- * @memberof Pagination
+ * @memberof module:@admin-bro/design-system.Pagination
  */
 export type PaginationProps = {
   /**
@@ -89,8 +89,9 @@ const PaginationWrapper = styled(Box)`
  *   />
  *   </Text>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Pagination: React.FC<PaginationProps> = (props) => {
+const Pagination: React.FC<PaginationProps> = (props) => {
   const { total, page, perPage, onChange, ...rest } = props
   const currentPage = page || 1
   const paginate = JWPaginate(total, currentPage, perPage)
@@ -136,4 +137,5 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
   )
 }
 
+export { Pagination }
 export default Pagination

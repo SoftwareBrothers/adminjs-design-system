@@ -33,7 +33,7 @@ type FlexboxFlexProp = boolean | FlexboxProps['flex']
  * {@link LayoutProps}, {@link FlexboxProps}, {@link PositionProps}
  * {@link BorderProps} and {@link ShadowProps}.
  *
- * @memberof Box
+ * @memberof module:@admin-bro/design-system.Box
  * @alias BoxProps
  * @property {string} [...] Other props from {@link SpaceProps}, {@link ColorProps},
  *                          {@link LayoutProps}, {@link FlexboxProps},
@@ -74,8 +74,9 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
  *   </Box>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Box = styled.section<BoxProps>`
+const Box = styled.section<BoxProps>`
   box-sizing: border-box;
   min-width: 0;
   ${({ flex }): string => (flex && typeof flex === 'boolean' ? 'display: flex;' : '')}
@@ -99,4 +100,5 @@ Box.defaultProps = {
   className: cssClass('Box'),
 }
 
+export { Box }
 export default Box

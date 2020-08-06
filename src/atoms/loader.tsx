@@ -55,8 +55,9 @@ const Spinner = styled.div.attrs({
  * return (
  *   <Loader/>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Loader: React.FC = () => (
+const Loader: React.FC = () => (
   <Box
     p="x3"
     style={{ textAlign: 'center' }}
@@ -71,4 +72,5 @@ export const Loader: React.FC = () => (
   </Box>
 )
 
+export { Loader }
 export default Loader

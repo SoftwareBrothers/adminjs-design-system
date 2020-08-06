@@ -37,7 +37,7 @@ NavGroupTitle.defaultProps = {
 }
 
 /**
- * @memberof NavGroup
+ * @memberof module:@admin-bro/design-system.NavGroup
  * @alias NavGroupProps
  */
 export type NavGroupProps = {
@@ -52,7 +52,7 @@ export type NavGroupProps = {
  *
  * Usage
  * ```javascript
- * import { NavGroup, NavGroupProps } from 'admin-bro'
+ * import { NavGroup, NavGroupProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -65,8 +65,9 @@ export type NavGroupProps = {
  *     </NavGroup>
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const NavGroup: React.FC<NavGroupProps> = (props) => {
+const NavGroup: React.FC<NavGroupProps> = (props) => {
   const { title, icon, children } = props
   const [isItOpen, toggleOpen] = useState(true)
   const chevron = isItOpen ? 'ChevronUp' : 'ChevronDown'
@@ -89,4 +90,5 @@ export const NavGroup: React.FC<NavGroupProps> = (props) => {
   )
 }
 
+export { NavGroup }
 export default NavGroup

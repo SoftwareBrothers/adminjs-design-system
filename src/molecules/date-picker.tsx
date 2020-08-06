@@ -113,10 +113,10 @@ type CustomProps = Partial<Omit<ReactDatePickerProps, 'value' | 'disabled' | 'on
 
 /**
  * Props for DatePicker
- * @memberof DatePicker
+ * @memberof module:@admin-bro/design-system.DatePicker
  * @alias DatePickerProps
  * @property {any} {...}    Any custom props to pass down to the ReactDatePicker
- * @see {https://reactdatepicker.com/}
+ * @see https://reactdatepicker.com/
  */
 export type DatePickerProps = CustomProps & {
   /**
@@ -151,8 +151,9 @@ export type DatePickerProps = CustomProps & {
  *   <DatePicker onChange={(date) => console.log(date)}/>
  * </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const DatePicker: React.FC<DatePickerProps> = (props) => {
+const DatePicker: React.FC<DatePickerProps> = (props) => {
   const { value, onChange, disabled, propertyType, ...other } = props
 
   const [hidden, setHidden] = useState(true)
@@ -214,4 +215,5 @@ export const DatePicker: React.FC<DatePickerProps> = (props) => {
   )
 }
 
+export { DatePicker }
 export default DatePicker

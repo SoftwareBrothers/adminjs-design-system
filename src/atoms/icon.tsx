@@ -8,7 +8,7 @@ import { cssClass } from '../utils/css-class'
  * Prop Types of an Icon component.
  * Apart from props defined below it extends all {@link ColorProps} and {@link SpaceProps}
  *
- * @memberof Icon
+ * @memberof module:@admin-bro/design-system.Icon
  * @alias IconProps
  * @property {string} [...] Other props from {@link ColorProps} and {@link SpaceProps}
  */
@@ -84,8 +84,6 @@ const Wrapper = styled.span<IconProps>`
  *
  * to see list of all possible icon keys.
  *
- *
- *
  * @component
  * @subcategory Atoms
  * @example <caption>Icons inside other elements</caption>
@@ -111,8 +109,9 @@ const Wrapper = styled.span<IconProps>`
  *     <Icon icon="Add" color="white" bg="primary100" rounded size={32} p="default"/>
  *   </Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Icon: React.FC<IconProps> = (props) => {
+const Icon: React.FC<IconProps> = (props) => {
   const { icon, size, color: givenColor, ...other } = props
   const iconSize = size || 16
   const CarbonIcon = CarbonIcons[`${icon}${iconSize}`] || CarbonIcons.ErrorOutline16
@@ -125,4 +124,5 @@ export const Icon: React.FC<IconProps> = (props) => {
   return null
 }
 
+export { Icon }
 export default Icon

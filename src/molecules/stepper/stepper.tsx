@@ -86,9 +86,10 @@ import { cssClass } from '../../utils/css-class'
  * }
  *
  * return (<ComponentWithStepper />)
-
+ * 
+ * @memberof module:@admin-bro/design-system
  */
-export const Stepper = styled(Box)`
+const Stepper = styled(Box)`
 `
 
 Stepper.defaultProps = {
@@ -99,4 +100,5 @@ Stepper.defaultProps = {
   className: cssClass('Stepper'),
 }
 
+export { Stepper }
 export default Stepper

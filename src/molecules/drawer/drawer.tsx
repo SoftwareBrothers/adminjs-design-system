@@ -10,7 +10,7 @@ import { DEFAULT_DRAWER_WIDTH } from '../../constants'
  * {@link SpaceProps}.
  *
  * @alias DrawerProps
- * @memberof Drawer
+ * @memberof module:@admin-bro/design-system.Drawer
  */
 export type DrawerProps = SpaceProps & LayoutProps & {
   /** Indicates if drawer should be hidden */
@@ -44,7 +44,7 @@ const variants = variant({
  *
  * Usage
  * ```javascript
- * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from 'admin-bro
+ * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@admin-bro/design-system'
  * ```
  *
  * @component
@@ -80,8 +80,10 @@ const variants = variant({
  *   </Drawer>
  * </Box>
  * )
+ *
+ * @memberof module:@admin-bro/design-system
  */
-export const Drawer = styled.section<DrawerProps>`
+const Drawer = styled.section<DrawerProps>`
   z-index: 100;
   position: fixed;
   display: flex;
@@ -114,4 +116,5 @@ Drawer.defaultProps = {
   className: cssClass('Drawer'),
 }
 
+export { Drawer }
 export default Drawer

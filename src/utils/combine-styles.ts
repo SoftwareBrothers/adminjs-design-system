@@ -26,6 +26,7 @@ const mergeDeep = (target: any, ...sources: Array<any>) => {
  * Applies new styles to the default theme
  *
  * @param   {Partial<Theme>}         newTheme
+ * @memberof module:@admin-bro/design-system
  *
  * @return  {Theme}
  */
