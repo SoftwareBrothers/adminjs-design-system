@@ -3,7 +3,7 @@ import { ThemeProps, DefaultTheme, withTheme } from 'styled-components'
 import * as Illustrations from './illustrations/index'
 
 /**
- * @memberof Illustration
+ * @memberof module:@admin-bro/design-system.Illustration
  * @alias IllustrationProps
  */
 export type IllustrationProps = {
@@ -21,7 +21,12 @@ export type IllustrationProps = {
   height?: number;
 }
 
-const RawIllustration: React.FC<IllustrationProps & ThemeProps<DefaultTheme>> = (props) => {
+type RawIllustrationType = IllustrationProps & ThemeProps<DefaultTheme> & {
+  // this fixes unknown error with some TSC version (monkey patch)
+  children?: React.ReactNode
+}
+
+const RawIllustration: React.FC<RawIllustrationType> = (props) => {
   const { variant, ...other } = props
   const IllustrationComponent = Illustrations[variant]
   return (
@@ -49,7 +54,9 @@ const RawIllustration: React.FC<IllustrationProps & ThemeProps<DefaultTheme>> = 
  * return (
  *   <Box bg="grey100" p="xxl"><Illustration variant="Rocket" /></Box>
  * )
+ * @memberof module:@admin-bro/design-system
  */
-export const Illustration = withTheme(RawIllustration)
+const Illustration = withTheme(RawIllustration)
 
+export { Illustration }
 export default Illustration
