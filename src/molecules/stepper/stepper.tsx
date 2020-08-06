@@ -86,7 +86,7 @@ import { cssClass } from '../../utils/css-class'
  * }
  *
  * return (<ComponentWithStepper />)
- * 
+ *
  * @memberof module:@admin-bro/design-system
  */
 const Stepper = styled(Box)`
