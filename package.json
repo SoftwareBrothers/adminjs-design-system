@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "@carbon/icons-react": "^10.14.0",
+    "@storybook/addon-knobs": "^5.3.19",
     "jw-paginate": "^1.0.4",
     "polished": "^3.6.5",
     "react-datepicker": "^3.1.3",
