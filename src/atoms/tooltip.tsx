@@ -115,11 +115,14 @@ const Tooltip: React.FC<TooltipProps> = ({
 )
 
 export interface StyledTooltipProps {
+  /** Direction of tooltip */
   direction: 'left' | 'right' | 'top' | 'bottom',
+  /** Size of tooltip */
   size: 'lg',
 }
 
 export type TooltipProps = StyledTooltipProps & {
+  /** Text shown on the tooltip */
   tooltipText: string,
 }
 
