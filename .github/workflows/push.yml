@@ -54,15 +54,15 @@ jobs:
       - uses: actions/cache@v1
         id: yarn2-cache
         with:
-          path: example-app/node_modules
-          key: ${{ runner.os }}-node_modules2-${{ hashFiles('**/example-app/yarn.lock') }}
+          path: storybook/node_modules
+          key: ${{ runner.os }}-node_modules2-${{ hashFiles('**/storybook/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules2-
       - name: Install example
         if: steps.yarn2-cache.outputs.cache-hit != 'true'
-        run: cd example-app && yarn install
+        run: cd storybook && yarn install
       - name: Build storybook
-        run: cd example-app && yarn storybook:build
+        run: cd storybook && yarn storybook:build
       
       
   notify:
