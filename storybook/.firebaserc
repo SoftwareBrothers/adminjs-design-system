@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "admin-bro-docs"
+  },
+  "targets": {
+    "admin-bro-docs": {
+      "hosting": {
+        "admin-storybook": [
+          "admin-storybook"
+        ]
+      }
+    }
+  }
+}
