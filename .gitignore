@@ -173,6 +173,9 @@ sketch
 build
 types
 
+# storybook
+out
+
 # rollup bundle
 /bundle.development.js
 /bundle.production.js

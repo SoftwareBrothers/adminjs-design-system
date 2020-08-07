@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook -c .storybook -o out"
   },
   "devDependencies": {
     "@storybook/addon-info": "^5.3.19",

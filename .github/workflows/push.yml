@@ -5,10 +5,6 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup
@@ -40,6 +36,34 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn release
 
+  publish:
+    name: Publish
+    needs: test
+    if: contains(github.ref, 'refs/heads/master')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+      - uses: actions/cache@v1
+        id: yarn2-cache
+        with:
+          path: example-app/node_modules
+          key: ${{ runner.os }}-node_modules2-${{ hashFiles('**/example-app/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules2-
+      - name: Install example
+        if: steps.yarn2-cache.outputs.cache-hit != 'true'
+        run: cd example-app && yarn install
+      - name: Build storybook
+        run: cd example-app && yarn storybook:build
+      
       
   notify:
     name: Notify
