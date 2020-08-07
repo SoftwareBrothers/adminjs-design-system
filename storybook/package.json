@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook",
-    "storybook:build": "build-storybook -c .storybook -o out"
+    "storybook:build": "build-storybook -c .storybook -o out",
+    "deploy": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "@storybook/addon-info": "^5.3.19",
@@ -21,6 +22,7 @@
   "dependencies": {
     "@babel/core": "^7.10.5",
     "babel-loader": "^8.1.0",
+    "firebase-tools": "^8.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

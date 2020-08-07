@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "out",
+    "target": "admin-storybook",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
