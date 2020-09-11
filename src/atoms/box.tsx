@@ -33,7 +33,7 @@ type FlexboxFlexProp = boolean | FlexboxProps['flex']
  * {@link LayoutProps}, {@link FlexboxProps}, {@link PositionProps}
  * {@link BorderProps} and {@link ShadowProps}.
  *
- * @memberof module:@admin-bro/design-system.Box
+ * @memberof Box
  * @alias BoxProps
  * @property {string} [...] Other props from {@link SpaceProps}, {@link ColorProps},
  *                          {@link LayoutProps}, {@link FlexboxProps},
@@ -49,10 +49,24 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
   }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/box.png" />
+ *
  * Main component which allows you to define entire layout of the application
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Box, BoxProps } from '@admin-bro/design-system'
+ * ```
+ *
+ * @hideconstructor
  * @component
  * @subcategory Atoms
+ * @section design-system
+ * @see BoxProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-box--simple-white-gray-wrapper StoryBook}
  * @example <caption>Simple White/Gray wrapper</caption>
  * return (
  * <Box variant="grey">
@@ -74,7 +88,6 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
  *   </Box>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
  */
 const Box = styled.section<BoxProps>`
   box-sizing: border-box;

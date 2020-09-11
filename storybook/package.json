@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "@storybook/addon-info": "^5.3.19",
-    "@storybook/addon-knobs": "^5.3.19",
-    "@storybook/react": "^5.3.19",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/react": "^6.0.21",
     "@types/jest": "^26.0.7",
     "jest": "^26.1.0",
     "react-docgen-typescript-loader": "^3.7.2",

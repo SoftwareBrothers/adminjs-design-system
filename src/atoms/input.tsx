@@ -6,7 +6,8 @@ import { cssClass } from '../utils/css-class'
 /**
  * Input CSS Styles which can be reused in another input component with styled-components
  *
- * Usage:
+ * ### Usage:
+ *
  * ```
  * import { InputCSS } from '@admin-bro/design-system'
  *
@@ -14,7 +15,7 @@ import { cssClass } from '../utils/css-class'
  *   ${InputCSS}
  * `
  * ```
- * @memberof module:@admin-bro/design-system.Input
+ * @memberof Input
  * @alias InputCSS
  */
 export const InputCSS = css`
@@ -42,22 +43,30 @@ export const InputCSS = css`
  * Prop Types of an Input component.
  * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
  *
- * @memberof module:@admin-bro/design-system.Input
+ * @memberof Input
  * @alias InputProps
  * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
  */
 export type InputProps = SpaceProps & LayoutProps
 
 /**
+ * @classdesc
+ *
+ * <img src="components/input.png" />
+ *
  * Wrapped `input` html element.
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { Input, InputProps, InputCSS } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
+ * @see InputProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-input--default Storybook}
+ * @hideconstructor
  * @example
  * return (
  *   <Box p="xl">
@@ -65,7 +74,7 @@ export type InputProps = SpaceProps & LayoutProps
  *      <Input id="input1" width={1/2} />
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Input = styled.input<InputProps>`
   ${InputCSS};

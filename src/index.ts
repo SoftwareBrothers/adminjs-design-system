@@ -1,57 +1,36 @@
 /**
  * @module @admin-bro/design-system
+ * @section design-system
  *
  * @description
- * This package consist of all DesignSystem components from [AdminBro](adminbro.com)
- * so you can use all of them inside and outside the AdminBro environment.
+ * This package consist of all DesignSystem components from [AdminBro](adminbro.com) so you can
+ * use all of them outside the `admin-bro` core.
  *
- * It was created with the help of 2 amazing packages:
- *
- * - [styled-components](styled-components.com) which is a peerDependency
- * - [styled-system](styled-system.com)
- *
- * make sure to check them out in order to use full potential of this design system
- *
- * ## Usage within the AdminBro
- *
- * If you are using this module inside AdminBro there is no need to install anything,
- * just use its components like this:
+ * ## Installation outside the AdminBro
  *
  * ```
- * import { Box, Button } from '@admin-bro/design-system'
- *
- * // and here you can use them
- * ```
- *
- * ## Usage outside the AdminBro
- *
- * Nothing stays in a way of using @admin-bro/design-system in your project which doesn't
- * require AdminBro. This is how you can do this:
- *
- * ### Installation
- *
- * ```bash
  * yarn add styled-components @admin-bro/design-system
  * ```
  *
  * Optionally, if you use typescript, you might want to install types for `styled-components`
  *
- * ```bash
+ * ```
  * yarn add --dev @types/styled-components
  * ```
  *
- * Design System needs a `theme` so in order to use it you have to use `ThemeProvider`
- * from `styled-components` like this:
+ * Design System needs a `theme` so in order to use it you have to use `ThemeProvider` from
+ * `styled-components` like this:
  *
  * ```
  * import { ThemeProvider } from 'styled-components'
  *
  * // theme is the default theme, which you can alter
- * import { theme, Button, Box, Icon } from '@admin-bro/design-system'
+ * import { theme, Button, Box, Icon, GlobalStyle } from '@admin-bro/design-system'
  *
  * function App() {
  *   return (
  *     <ThemeProvider theme={theme}>
+ *       <GlobalStyle />
  *       <Box variant="grey">
  *         <Button><Icon icon="Add" />Click Me</Button>
  *         <Button variant='primary' ml="xl">I am important</Button>
@@ -63,26 +42,19 @@
  * export default App;
  * ```
  *
+ * GlobalStyle resets all the default browser styles.
+ *
  * ## Changing theme
  *
  * Design System provides you with the default [theme](https://adminbro.com/Theme.html).
- * It contains all the parameters like paddings, colors, font sizes etc.
- * For the list of all available parameters take a look at the
- * [Theme spec](https://adminbro.com/Theme.html).
+ * It contains all the parameters like paddings, colors, font sizes etc. For the list of all
+ * available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
  *
- * But nothing stands in a way for you to change the default theme.
+ * But nothing stands in a way for you to change the default theme. In order to do that
+ * you can use `combineStyles` method:
  *
- * ### Changing theme inside the AdminBro
- *
- * In order to override the Theme or its selected parameters use {@link AdminBroOptions.branding}
- * theme property.
- *
- * ### Changing theme outside AdminBro
- *
- * In order to do that you can use `combineStyles` method:
- *
- * ```javascript
- * import { combineStyles } from '@admin-bro/design-system'
+ * ```
+ * import { combineStyles } from '@admin-bro/design-system`
  *
  * const myTheme = combineStyles({
  *   colors: {
@@ -95,10 +67,19 @@
  * //....
  * ```
  *
+ * ## Global style and font
+ *
+ * Main font for the design system is "Roboto". Default version in OS might not have all the
+ * font-weights. That is why you should import it in your head:
+ *
+ * ```
+ * <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></link>
+ * ```
+ *
  * ## Changing particular components
  *
- * Sometimes you might want to change the look and feel of a
- * particular component - not the entire theme. You can achieve that with `styled` method:
+ * Sometimes you might want to change the look and feel of a particular component -
+ * not the entire theme. You can achieve that with `styled` method:
  *
  * ```
  * import { Button } from '@admin-bro/design-system'
@@ -111,7 +92,7 @@
  *
  * and then you can use it like a normal button component:
  *
- * ```javascript
+ * ```
  * <MyRoundedButton variant="primary">Rounded I am</MyRoundedButton>
  * ```
  *
@@ -126,13 +107,13 @@
  * - `node_modules/@admin-bro/design-system/bundle.development.js`
  * - `node_modules/@admin-bro/design-system/bundle.production.js` (minified)
  *
- * (they can also be bundled by using `bundle` script: `yarn bundle` or
- * `NODE_ENV=production yarn bundle`)
+ * (they can also be bundled by using `bundle`
+ * script: `yarn bundle` or `NODE_ENV=production yarn bundle`)
  *
- * In order to use them you will have to host them (put to your 'public' folder)
- * and then put them into the HEAD of your page:
+ * In order to use them you will have to host them (put to your 'public' folder) and then put them
+ * into the HEAD of your page:
  *
- * ```javascript
+ * ```
  * <head>
  * <!-- ... -->
  * <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -142,6 +123,19 @@
  * </head>
  * ```
  *
+ * ## Contribute
+ *
+ * If you find any UI errors - feel free to create a PR.
+ *
+ * ## Storybook
+ *
+ * Inside the repo there is a storybook folder containing all the stories.
+ * In order to run it go inside and:
+ *
+ * ```
+ * yarn install
+ * yarn storybook
+ * ```
  */
 
 import * as theme from './theme'
@@ -180,6 +174,7 @@ export * from './molecules/nav-group'
 export * from './molecules/stepper/index'
 export * from './templates/navigation'
 export * from './constants'
+export * from './global'
 
 export * from './utils/index'
 export * from './utils/combine-styles'

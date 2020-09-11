@@ -9,7 +9,7 @@ import { cssClass } from '../utils/css-class'
 
 /**
  * @alias PaginationProps
- * @memberof module:@admin-bro/design-system.Pagination
+ * @memberof Pagination
  */
 export type PaginationProps = {
   /**
@@ -72,10 +72,23 @@ const PaginationWrapper = styled(Box)`
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/pagination.png" />
+ *
  * Pagination component
+ *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Pagination, PaginationProps } from '@admin-bro/design-system'
+ * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see PaginationProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-pagination--default Storybook}
  * @example
  * const location = { search: ''}
  * return (
@@ -89,7 +102,7 @@ const PaginationWrapper = styled(Box)`
  *   />
  *   </Text>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Pagination: React.FC<PaginationProps> = (props) => {
   const { total, page, perPage, onChange, ...rest } = props

@@ -14,7 +14,7 @@ const StyledInfoBox = styled(Box)<BoxProps>`
 `
 
 /**
- * @memberof module:@admin-bro/design-system.InfoBox
+ * @memberof InfoBox
  * @alias InfoBoxProps
  */
 export type InfoBoxProps = {
@@ -27,20 +27,27 @@ export type InfoBoxProps = {
 }
 
 /**
- * @class
+ * @classdesc
+ *
+ * <img src="components/info-box.png" />
+ *
  * Used for all type of information like:
  *
  * > you don't have x - please add first one"
  *
  * in the system.
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { InfoBox, InfoBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-infobox--default Storybook}
+ * @see InfoBoxProps
  * @example
  * return (
  * <InfoBox title="There are no cars in the system">
@@ -49,7 +56,7 @@ export type InfoBoxProps = {
  *   <Button mt="lg"><Icon icon="Add" />Create</Button>
  * </InfoBox>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const InfoBox: React.FC<InfoBoxProps> = (props) => {
   const { children, title, testId } = props

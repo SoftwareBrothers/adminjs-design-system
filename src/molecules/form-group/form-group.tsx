@@ -31,7 +31,7 @@ const formGroupWithErrorCSS = css`
 /**
  * Props for FormGroup. Apart from props defined here FormGroup supports also all {@link SpaceProps}
  * @alias FormGroupProps
- * @memberof module:@admin-bro/design-system.FormGroup
+ * @memberof FormGroup
  */
 export type FormGroupProps = SpaceProps & {
   /**
@@ -49,15 +49,23 @@ export type FormGroupProps = SpaceProps & {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/form-group.png" />
+ *
  * FormGroup comes with other, from-related components like: FormMessage and InputGroup.
  * Together they allow you to build form elements.
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@admin-bro/design-system'
  * ```
  *
+ * @hideconstructor
  * @component
+ * @see FormGroupProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-formgroup--default Storybook}
  * @subcategory Molecules
  * @example <caption>Example 1: input with all sorts of buttons</caption>
  * return (
@@ -122,7 +130,7 @@ export type FormGroupProps = SpaceProps & {
  *   </FormGroup>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const FormGroup = styled.div<FormGroupProps>`
   width: 100%;

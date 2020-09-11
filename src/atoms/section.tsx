@@ -4,14 +4,22 @@ import { Box } from './box'
 import { cssClass } from '../utils/css-class'
 
 /**
+ * @classdesc
+ *
+ * <img src="components/section.png" />
+ *
  * Marks group of fields as a section. Has the same props as [Box]{@link BoxProps}
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { Section } from '@admin-bro/design-system'
  * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-section--default Storybook}
+ * @hideconstructor
  * @example
  * return (
  *   <Section>
@@ -21,7 +29,7 @@ import { cssClass } from '../utils/css-class'
  *     </Section>
  *   </Section>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Section = styled(Box)`
   border-left: ${({ theme }): string => theme.space.sm} solid ${({ theme }): string => theme.colors.primary20};

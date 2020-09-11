@@ -116,6 +116,7 @@ If you find any UI errors - feel free to create a PR.
 Inside the repo there is a storybook folder containing all the stories. In order to run it go inside and:
 
 ```
+cd storybook
 yarn install
 yarn storybook
 ```

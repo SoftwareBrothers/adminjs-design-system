@@ -16,7 +16,7 @@ const DropZoneImg = styled.div<{src: string}>`
 `
 
 /**
- * @memberof module:@admin-bro/design-system.DropZoneItem
+ * @memberof DropZoneItem
  * @alias DropZoneItemProps
  */
 export type DropZoneItemProps = {
@@ -40,9 +40,22 @@ export type DropZoneItemProps = {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/drop-zone-item.png" />
+ *
  * Single uploaded file. Usually it is used within {@link DropZone}, but it can also be
  * reused anywhere
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { DropZoneItem, DropZoneItemProps } from '@admin-bro/design-system'
+ * ```
+ *
+ * @see DropZoneItem
+ * @hideconstructor
+ * @see DropZoneItemProps
  * @example
  * return (
  *  <DropZoneItem
@@ -52,7 +65,7 @@ export type DropZoneItemProps = {
  * )
  * @component
  * @subcategory Molecules
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
   const { file, onRemove, filename } = props

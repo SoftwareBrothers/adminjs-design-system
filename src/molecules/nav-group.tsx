@@ -37,7 +37,7 @@ NavGroupTitle.defaultProps = {
 }
 
 /**
- * @memberof module:@admin-bro/design-system.NavGroup
+ * @memberof NavGroup
  * @alias NavGroupProps
  */
 export type NavGroupProps = {
@@ -48,15 +48,23 @@ export type NavGroupProps = {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/navgroup.png" />
+ *
  * NavGroup is used in a navigation sidebar to group similar elements
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { NavGroup, NavGroupProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see NavGroupProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navgroup--default Storybook}
  * @example
  * return (
  *   <Box py="xl">
@@ -65,7 +73,7 @@ export type NavGroupProps = {
  *     </NavGroup>
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const NavGroup: React.FC<NavGroupProps> = (props) => {
   const { title, icon, children } = props

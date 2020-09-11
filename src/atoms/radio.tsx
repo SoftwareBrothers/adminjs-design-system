@@ -71,20 +71,29 @@ export type RadioProps = React.HTMLProps<HTMLInputElement>
 /**
  * @typedef {object} RadioProps
  * @alias RadioProps
- * @memberof module:@admin-bro/design-system.Radio
+ * @memberof Radio
  * @property {string} [...] All props default to _radio_ html input like `onChange`,
  *                          `checked` etc.
  */
 
 /**
- * Wrapped radio input.
+ /**
+ * @classdesc
  *
- * Usage:
+ * <img src="components/radio.png" />
+ *
+ * HTML Radio
+ *
+ * ### Usage
+ *
  * ```javascript
  * import { Radio, RadioProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
+ * @see RadioProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-radio--default StoryBook}
+ * @hideconstructor
  * @subcategory Atoms
  * @example
  * return (
@@ -93,7 +102,7 @@ export type RadioProps = React.HTMLProps<HTMLInputElement>
  *      <Label inline htmlFor="radio1" ml="default">Some example label</Label>
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Radio: React.FC<RadioProps> = (props) => {
   const { className, checked, onChange, disabled, ...restProps } = props

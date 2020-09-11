@@ -47,15 +47,27 @@ const Spinner = styled.div.attrs({
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/loader.png" />
+ *
  * Simple loader
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Loader } from '@admin-bro/design-system'
+ * ```
+ *
  * @component
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-loader--default Storybook}
+ * @hideconstructor
  * @subcategory Atoms
  * @example
  * return (
  *   <Loader/>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Loader: React.FC = () => (
   <Box

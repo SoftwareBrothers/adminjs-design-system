@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /**
  * @interface Theme
- * @subcategory Frontend
  * @description
  * Entire AdminBro interface is build with
  * [styled-components]{@link https://styled-components.com/} backed by
@@ -78,6 +77,7 @@
  * .shadow-div { display: block; width: 80px; height: 80px;}
  * .space-box { display: inline-block; height: 20px; background: #4268F6; vertical-align: middle;}
  * </style>
+ * @section design-system
  */
 
 /**
@@ -240,14 +240,18 @@ const fontSizes = {
 /**
  * @memberof Theme
  * @alias fontWeights
+ * @property {string} lighter=200
  * @property {string} lighter=300
  * @property {string} normal=400
- * @property {string} bold=700
+ * @property {string} normal=500
+ * @property {string} bolder=900
  */
 const fontWeights = {
-  lighter: 300,
+  lighter: 200,
+  light: 300,
   normal: 400,
-  bold: 700,
+  bold: 500,
+  bolder: 900,
 }
 
 /**

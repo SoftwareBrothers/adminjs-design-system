@@ -32,7 +32,7 @@ const variants = variant({
  * Apart from variant it extends all {@link ColorProps}, {@link SpaceProps} and
  * {@link TypographyProps}
  *
- * @memberof module:@admin-bro/design-system.Text
+ * @memberof Text
  * @alias TextProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -45,16 +45,25 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/text.png" />
+ *
  * Use the Text component to control font size, weight, alignment, and color.
  * By default it is rendered as a `div` but you can change this to other (like `span`)
  * by using `as` prop,
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { Text, TextProps } from '@admin-bro/design-system'
  * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see TextProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-text--default Storybook}
+ * @hideconstructor
  * @example <caption>Lorem ipsum</caption>
  * return (
  * <Box>
@@ -67,7 +76,7 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  *   <Text mt="default" variant="sm">This text was from Wikipedia</Text>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Text = styled.div<TextProps>`
   font-family: ${({ theme }): string => theme.font};
@@ -88,7 +97,8 @@ const Text = styled.div<TextProps>`
 Text.defaultProps = {
   lineHeight: 'lg',
   fontSize: 'default',
-  fontWeight: 'normal',
+  fontWeight: 'light',
+  marginBottom: 'xl',
   className: cssClass('Text'),
 }
 

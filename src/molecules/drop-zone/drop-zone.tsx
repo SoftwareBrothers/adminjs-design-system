@@ -32,20 +32,20 @@ const inUnit = (size: string | number, unit?: FileSizeUnit): string => {
 }
 
 /**
- * @memberof module:@admin-bro/design-system.DropZone
+ * @memberof DropZone
  * @alias FileSizeUnit
  */
 type FileSizeUnit = DisplaySizeUnit
 
 /**
  * @returns {void}
- * @memberof module:@admin-bro/design-system.DropZone
+ * @memberof DropZone
  * @alias OnDropDownChange
  */
 export type OnDropZoneChange = (files: Array<File>) => void
 
 /**
- * @memberof module:@admin-bro/design-system.DropZone
+ * @memberof DropZone
  * @alias DropZoneProps
  */
 export type DropZoneProps = {
@@ -110,9 +110,14 @@ type ErrorMessage = {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/drop-zone.png" />
+ *
  * DropZone which can be used for uploading files.
  *
- * General usage:
+ * ### usage
+ *
  * ```javascript
  * import { DropZone, DropZoneProps } from '@admin-bro/design-system'
  * ```
@@ -148,10 +153,13 @@ type ErrorMessage = {
  *   )
  * }
  * ```
- *
+ * @hideconstructor
  * @component
  * @subcategory Molecules
- *
+ * @see FileSizeUnit
+ * @see OnDropDownChange
+ * @see DropZoneProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropzone--default Storybook}
  * @example <caption>Single file with validation</caption>
  * const maxSize = 1024 * 100
  * const mimeTypes = ['application/pdf']
@@ -177,7 +185,7 @@ type ErrorMessage = {
  *   />
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const DropZone: React.FC<DropZoneProps> = (props) => {
   const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props

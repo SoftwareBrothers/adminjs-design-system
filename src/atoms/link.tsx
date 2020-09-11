@@ -73,7 +73,7 @@ const variants = variant({
  * Apart from those explicitly specified below it extends all {@link ColorProps},
  * and {@link SpaceProps}
  *
- * @memberof module:@admin-bro/design-system.Link
+ * @memberof Link
  * @alias LinkProps
  * @property {string} [...] All props default to _a_ html component like `href`,
  *                          `onClick` etc.
@@ -89,14 +89,23 @@ export type LinkProps = ColorProps & SpaceProps & {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/link.png" />
+ *
  * Styled form of Link element.
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { Link, LinkProps } from '@admin-bro/design-system'
  * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see LinkProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-link--default Storybook}
+ * @hideconstructor
  * @example <caption>All color variants</caption>
  * const variants = ['primary', 'danger', 'success', 'info', 'secondary']
  * return (
@@ -115,7 +124,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  *   </Link>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Link = styled.a<LinkProps>`
   font-family: ${({ theme }): string => theme.font};

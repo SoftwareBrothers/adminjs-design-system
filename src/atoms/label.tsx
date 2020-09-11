@@ -12,7 +12,7 @@ import { cssClass } from '../utils/css-class'
  * Apart from those explicitly specified below it extends all {@link ColorProps},
  * {@link SpaceProps} and {@link TypographyProps}
  *
- * @memberof module:@admin-bro/design-system.Label
+ * @memberof Label
  * @alias LabelProps
  * @property {string} [...] All props default to _label_ html component like `htmlFor`,
  *                          `id` etc.
@@ -31,14 +31,23 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
 }
 
 /**
- * Styled form of <label> element.
+ * @classdesc
  *
- * Usage:
+ * <img src="components/label.png" />
+ *
+ * Styled form of **label** element.
+ *
+ * ### Usage
+ *
  * ```javascript
  * import { Label, LabelProps } from '@admin-bro/design-system'
  * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see LabelProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-label--default Storybook}
+ * @hideconstructor
  * @example <caption>2 Different versions</caption>
  * return (
  * <Box p="xl">
@@ -50,7 +59,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
  *   </Text>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Label = styled.label<LabelProps>`
   display: ${({ inline }): string => (inline ? 'inline-block' : 'block')};

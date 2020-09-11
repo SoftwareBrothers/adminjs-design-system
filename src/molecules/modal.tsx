@@ -38,6 +38,7 @@ const ModalSection = styled.div`
  * ```javascript
  * import { Section } from '@admin-bro/design-system'
  * ```
+ * @private
  * @component Modal
  * @subcategory Atoms
  * @example

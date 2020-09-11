@@ -10,7 +10,7 @@ import { DEFAULT_DRAWER_WIDTH } from '../../constants'
  * {@link SpaceProps}.
  *
  * @alias DrawerProps
- * @memberof module:@admin-bro/design-system.Drawer
+ * @memberof Drawer
  */
 export type DrawerProps = SpaceProps & LayoutProps & {
   /** Indicates if drawer should be hidden */
@@ -33,6 +33,10 @@ const variants = variant({
 })
 
 /**
+ * @classdesc
+ *
+ * <img src="components/drawer.png" />
+ *
  * Drawer component renders a huge side area where {@link BaseActionComponent} renders
  * all actions where {@link Action.showInDrawer} is set to true.
  *
@@ -42,13 +46,17 @@ const variants = variant({
  *
  * All these components: Drawer, DrawerContent and Drawer Footer extends {@link SpaceProps}.
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see DrawerProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-drawer--default Storybook}
  * @example
  * return (
  * <Box height="500px">
@@ -81,7 +89,7 @@ const variants = variant({
  * </Box>
  * )
  *
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Drawer = styled.section<DrawerProps>`
   z-index: 100;

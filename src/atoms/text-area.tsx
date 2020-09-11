@@ -6,7 +6,7 @@ import { cssClass } from '../utils/css-class'
 /**
  * Prop Types of a TextArea component.
  * It extends all {@link SpaceProps}, {@link TypographyProps} and {@link LayoutProps}
- * @memberof module:@admin-bro/design-system.TextArea
+ * @memberof TextArea
  * @alias TextAreaProps
  * @property {string} [...] All props default to _textarea_ html component like `onChange`,
  *                          `value` etc.
@@ -16,15 +16,23 @@ import { cssClass } from '../utils/css-class'
 export type TextAreaProps = SpaceProps & TypographyProps & LayoutProps
 
 /**
+ * @classdesc
+ *
+ * <img src="components/textarea.png" />
+ *
  * Wrapped `textarea` html element.
  *
- * Usage:
+ * ### Usage
+ *
  * ```javascript
  * import { TextArea, TextAreaProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-textarea--default Storybook}
+ * @see TextAreaProps
+ * @hideconstructor
  * @example
  * return (
  *   <Box p="xl">
@@ -32,7 +40,7 @@ export type TextAreaProps = SpaceProps & TypographyProps & LayoutProps
  *      <TextArea id="textarea1" width={1/2} />
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const TextArea = styled.textarea<TextAreaProps>`
   ${InputCSS}

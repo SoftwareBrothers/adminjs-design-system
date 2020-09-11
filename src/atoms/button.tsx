@@ -114,7 +114,7 @@ const sizeVariants = variant({
  * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
  * and {@link TypographyProps}
  *
- * @memberof module:@admin-bro/design-system.Button
+ * @memberof Button
  * @alias ButtonProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -205,14 +205,23 @@ export const ButtonCSS = css<ButtonProps>`
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/button.png" />
+ *
  * Buttons make common actions immediately visible and easy to perform with one click or tap.
  * They can be used for any type of action.
  *
- * * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { Button, ButtonCSS, ButtonProps } from '@admin-bro/design-system'
  * ```
+ *
  * @component
+ * @see ButtonProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-button--default StoryBook}
+ * @hideconstructor
  * @subcategory Atoms
  * @example <caption>Color variants</caption>
  * const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text']
@@ -259,7 +268,7 @@ export const ButtonCSS = css<ButtonProps>`
  * </Box>
  * )
  *
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Button = styled.button<ButtonProps>`
   ${ButtonCSS}

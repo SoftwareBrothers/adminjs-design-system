@@ -7,8 +7,14 @@ const StyledDropDown = styled.div`
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/drop-down.png" />
+ *
  * Simple set of components allowing you to create a dropdowns.
- * Usage
+ *
+ * ### Usage
+ *
  * ```javascript
  * import { DropDown, DropDownTrigger, DropDownMenu, DropDownItem } from '@admin-bro/design-system'
  * ```
@@ -28,6 +34,8 @@ const StyledDropDown = styled.div`
  * - DropDownItem extends {@link SpaceProps}
  * - DropDownTrigger also extends {@link SpaceProps}
  *
+ * @hideconstructor
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropdown--default Storybook}
  * @example
  * return (
  *   <Box px="300px" pt="lg" pb="200px">
@@ -52,7 +60,7 @@ const StyledDropDown = styled.div`
  * )
  * @component
  * @subcategory Molecules
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const DropDown: React.FC = (props) => {
   const { children } = props

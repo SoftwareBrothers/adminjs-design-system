@@ -92,6 +92,7 @@ const Arrow = styled.div<StyledTooltipProps>`
  * ```
  *
  * @component
+ * @private
  * @subcategory Atoms
  * @example <caption>Tooltip</caption>
  * return (

@@ -3,11 +3,11 @@ import { color, space, typography, SpaceProps, TypographyProps, ColorProps, vari
 import { cssClass } from '../utils/css-class'
 
 /**
- * Prop Types of an Button component.
+ * Prop Types of an {@link Badge} component.
  * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
  * and {@link TypographyProps}
  *
- * @memberof module:@admin-bro/design-system.Badge
+ * @memberof Badge
  * @alias BadgeProps
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
@@ -57,14 +57,22 @@ const sizeVariants = variant({
 })
 
 /**
+ * @classdesc
+ *
+ * <img src="components/badge.png" />
+ *
  * Component representing a badge.
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { Badge, BadgeProps } from '@admin-bro/design-system'
  * ```
- *
+ * @see BadgeProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-badge--default StoryBook}
  * @component
+ * @hideconstructor
+ * @section design-system
  * @subcategory Atoms
  * @example <caption>Color variants</caption>
  * const variants = ['primary', 'danger', 'success', 'info', 'secondary']
@@ -94,7 +102,6 @@ const sizeVariants = variant({
  *   <Badge ml="default" variant="primary" size="lg">large</Badge>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
  */
 const Badge = styled.span<BadgeProps>`
   border-radius: 12px;
