@@ -24,7 +24,7 @@ export type BadgeProps = SpaceProps & TypographyProps & ColorProps & {
   /**
    * Size variant
    */
-  size?: 'sm' | 'lg';
+  size?: 'sm' | 'lg' | 'default';
 }
 
 const variantStyle = (variantColor: string, props: BadgeProps): Record<string, any> => ({
@@ -50,9 +50,10 @@ const sizeVariants = variant({
       py: 'xs',
     },
     lg: {
-      py: 'default',
-      px: '10px',
+      py: '11px',
+      px: '14px',
     },
+    default: {},
   },
 })
 
@@ -104,7 +105,7 @@ const sizeVariants = variant({
  * )
  */
 const Badge = styled.span<BadgeProps>`
-  border-radius: 12px;
+  border-radius: 20px;
   border: 1px solid ${({ theme }): string => theme.colors.grey40};
   color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.white)};
   vertical-align: middle;
@@ -120,8 +121,9 @@ const Badge = styled.span<BadgeProps>`
 
 Badge.defaultProps = {
   px: 'default',
-  py: '6px',
-  fontSize: 'xs',
+  py: 'sm',
+  fontSize: 'sm',
+  lineHeight: 'xxl',
   bg: 'grey40',
   className: cssClass('Badge'),
 }

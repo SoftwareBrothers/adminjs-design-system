@@ -11,7 +11,7 @@ import Box from '../../atoms/box'
 export type RichTextProps = {
   value?: string;
   borderless?: boolean;
-  onChange: (content) => void;
+  onChange?: (content) => void;
 
   quill: {
     /** Theme - default to snow */
@@ -38,7 +38,7 @@ export const RichText: React.FC<RichTextProps> = (props) => {
   const [quill, setQuill] = useState<Quill | null>(null)
   const editorRef = useRef<HTMLDivElement>(null)
 
-  const debouncedOnChange = useMemo(() => debounce(onChange, 500), [onChange])
+  const debouncedOnChange = useMemo(() => debounce(onChange || (() => true), 500), [onChange])
 
   useEffect(() => {
     if (editorRef.current) {

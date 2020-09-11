@@ -1,6 +1,7 @@
 import { withKnobs, select, boolean } from '@storybook/addon-knobs'
 import React from 'react'
-import Badge from './badge'
+import StoryWrapper from '../utils/story-wrapper'
+import { Badge, Box, Label, Header, Text as TextComponent } from '..'
 
 export default { title: 'DesignSystem/Atoms/Badge', decorators: [withKnobs] }
 
@@ -14,21 +15,68 @@ enum BadgeVariant {
 }
 
 enum BadgeSize {
-  Sm = 'sm',
-  Lg = 'lg'
+  Small = 'sm',
+  Default = 'default',
+  Large = 'lg',
 }
 
 export const Default: React.FC = () => {
   const variant = select('Variant', Object.values(BadgeVariant), BadgeVariant.Primary)
-  const size = select('Size', Object.values(BadgeSize), BadgeSize.Sm)
+  const size = select('Size', Object.values(BadgeSize), BadgeSize.Default)
   const outline = boolean('Outline', false)
   return (
-    <Badge
-      variant={variant}
-      size={size}
-      outline={outline}
-    >
-      {`${variant} ${size} ${outline ? 'outline' : ''}`}
-    </Badge>
+    <StoryWrapper label="Badge props">
+      <Badge
+        variant={variant}
+        size={size}
+        outline={outline}
+      >
+        Badge example
+      </Badge>
+    </StoryWrapper>
   )
 }
+
+export const Examples: React.FC = () => (
+  <Box width={1}>
+    <StoryWrapper label="Badge Variants">
+      <Box><Label>Regular: </Label></Box>
+      <Box>
+        {Object.values(BadgeVariant).map((variant) => (
+          <Badge variant={variant} key={variant} mr="default">
+            {variant}
+          </Badge>
+        ))}
+      </Box>
+      <Box><Label>Outlined: </Label></Box>
+      <Box>
+        {Object.values(BadgeVariant).map((variant) => (
+          <Badge variant={variant} key={variant} mr="default" outline>
+            {variant}
+          </Badge>
+        ))}
+      </Box>
+    </StoryWrapper>
+    <StoryWrapper label="Badge sizes">
+      {Object.values(BadgeSize).map((size) => (
+        <Badge variant="primary" size={size} key={size} mr="default">
+          {size}
+        </Badge>
+      ))}
+    </StoryWrapper>
+    <StoryWrapper label="With other elements">
+      <Header.H1>
+        H1. Header
+        <Badge ml="default">Badge</Badge>
+      </Header.H1>
+      <Header.H2>
+        H1. Header
+        <Badge ml="default" size="sm" variant="primary">Small badge</Badge>
+      </Header.H2>
+      <TextComponent mt="xxl">
+        Inside text
+        <Badge mx="defaultt">Is something</Badge>
+      </TextComponent>
+    </StoryWrapper>
+  </Box>
+)

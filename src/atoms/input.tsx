@@ -38,6 +38,11 @@ const sizeVariants = variant({
       fontSize: 'xl',
       lineHeight: 'xxl',
     },
+    xxl: {
+      fontSize: 'h1',
+      fontWeight: 'light',
+      lineHeight: 'x4',
+    },
   },
 })
 
@@ -91,7 +96,7 @@ export const InputCSS = css<InputProps>`
  */
 export type InputProps = SpaceProps & LayoutProps & {
   borderless?: boolean;
-  variant?: 'sm' | 'lg' | 'xl' | 'default';
+  variant?: 'sm' | 'lg' | 'xl' | 'default' | 'xxl';
 }
 
 /**
