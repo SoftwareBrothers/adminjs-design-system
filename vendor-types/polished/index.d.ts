@@ -6,4 +6,5 @@ declare module 'polished' {
   }
 
   export function parseToRgb(color: string): RGB
+  export function rgba(color: string, opacity: number): string
 }

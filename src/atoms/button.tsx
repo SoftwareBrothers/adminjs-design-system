@@ -85,15 +85,17 @@ const sizeVariants = variant({
   prop: 'size',
   variants: {
     sm: {
-      fontSize: 'default',
-      py: 'sm',
-      px: 'xxl',
+      fontSize: 'sm',
+      py: 'xs',
+      lineHeight: 'default',
+      px: 'lg',
       [`& .${cssClass('Icon')}`]: {
         paddingRight: 'sm',
       },
     },
     lg: {
       py: 'default',
+      px: 'x3',
       lineHeight: 'lg',
     },
     icon: {
@@ -106,6 +108,7 @@ const sizeVariants = variant({
         padding: 0,
       },
     },
+    default: {},
   },
 })
 
@@ -127,7 +130,7 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
   /**
    * Button size variant
    */
-  size?: 'sm' | 'lg' | 'icon';
+  size?: 'sm' | 'lg' | 'icon' | 'default';
   /**
    * If button should be rounded
    */
@@ -154,17 +157,18 @@ export const ButtonCSS = css<ButtonProps>`
   display: inline-block;
   font-family: ${({ theme }): string => theme.font};
   line-height: ${({ theme }): string => theme.lineHeights.lg};
+
   border: 1px solid ${({ theme }): string => theme.colors.primary100};
   color: ${({ theme }): string => theme.colors.primary100};
   cursor: pointer;
   text-decoration: none;
-  padding: ${({ theme }): string => theme.space.default} ${({ theme }): string => theme.space.x3};
+  padding: ${({ theme }): string => theme.space.sm} ${({ theme }): string => theme.space.xxl};
   box-sizing: border-box;
 
   & > .${cssClass('Icon')} {
     padding-bottom: 2px;
     vertical-align: middle;
-    padding-right: ${({ theme }): string => theme.space.default};
+    padding-right: ${({ theme }): string => theme.space.sm};
   }
 
   & .${cssClass('Icon')} svg {

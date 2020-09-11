@@ -1,10 +1,43 @@
 import styled from 'styled-components'
-import { position, PositionProps } from 'styled-system'
+import { position, PositionProps, variant } from 'styled-system'
 
 import Box, { BoxProps } from '../../atoms/box'
+import { cssClass } from '../../utils'
 
+const variants = variant({
+  prop: 'variant',
+  variants: {
+    top: {
+      fontSize: 'default',
+      py: 'sm',
+      px: 'xxl',
+      [`& .${cssClass('Icon')}`]: {
+        paddingRight: 'sm',
+      },
+    },
+    left: {},
+    right: {
+      top: '24px',
+      bottom: 'auto',
+      left: '0',
+      right: 'auto',
+    },
+    bottom: {},
+  },
+})
+
+/**
+ * Props passed to DropDownMenu element
+ *
+ * @memberof DropDown
+ */
 export type DropDownMenuProps = PositionProps & BoxProps & {
   isVisible?: boolean;
+  /**
+   * On which side DropDownMenu should be seen
+   * Default to left
+   */
+  variant?: 'top' | 'left' | 'right' | 'bottom'
 }
 
 /**
@@ -19,9 +52,9 @@ export const DropDownMenu = styled(Box)<DropDownMenuProps>`
   right: 0;
   top: 24px;
   box-shadow: ${({ theme }): string => theme.shadows.card};
-  min-width: 200px;
   ${({ isVisible }): string => (isVisible ? '' : 'display: none;')};
   ${position};
+  ${variants};
 `
 
 DropDownMenu.displayName = 'DropDownMenu'

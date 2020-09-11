@@ -18,7 +18,7 @@ const InputGroup = styled.div`
   ${Input}:not(:last-child) {
     border-right: none;
   }
-  ${Label}, ${Button}:last-child, ${Link}:last-child {
+  ${Label}, & > ${Button}:last-child, & > ${Link}:last-child {
     padding: ${({ theme }): string => theme.space.sm};
     border: solid ${({ theme }): string => theme.colors.inputBorder};
     border-width: 1px 1px 1px 0;

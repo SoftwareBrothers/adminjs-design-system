@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { withKnobs, select } from '@storybook/addon-knobs'
 
-import { Box, Text, Label } from '..'
+import { Box, Text } from '..'
 import { H1, H2, H3, H4, H5, Header } from './header'
+import StoryWrapper from '../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Typography', decorators: [withKnobs] }
 
@@ -19,26 +20,23 @@ const BoxWithPaddings = styled(Box)`
 `
 
 export const Headers: React.FC = () => (
-  <Box variant="grey">
-    <Label>Headers with paddings</Label>
-    <Box bg="white" p="xxl">
-      <BoxWithPaddings bg="white">
-        <div style={{ height: 0, opacity: 0 }}>div</div>
-        <Header.H1>H1 Header - 40</Header.H1>
-        <Text variant="sm" mb={5}>Roboto 40 - line height - 40</Text>
-        <Header.H2>H2 Header - 32</Header.H2>
-        <Text variant="sm" mb={5}>Roboto 32 - line height - 40</Text>
-        <Header.H3>H3 Header - 28</Header.H3>
-        <Text variant="sm" mb={5}>Roboto 28 - line height - 32</Text>
-        <Header.H4>H4 Header - 24</Header.H4>
-        <Text variant="sm" mb={5}>Roboto 24 - line height - 32</Text>
-        <Header.H5>H5 Header - 18</Header.H5>
-        <Text variant="sm" mb={5}>Roboto 18 - line height - 24</Text>
-        <Header.H6>H6 Header - 16</Header.H6>
-        <Text variant="sm" mb={5}>Roboto 16 - line height - 24</Text>
-      </BoxWithPaddings>
-    </Box>
-  </Box>
+  <StoryWrapper label="Headers with paddings">
+    <BoxWithPaddings bg="white">
+      <div style={{ height: 0, opacity: 0 }}>div</div>
+      <Header.H1>H1 Header - 40</Header.H1>
+      <Text variant="sm" mb={5}>Roboto 40 - line height - 40</Text>
+      <Header.H2>H2 Header - 32</Header.H2>
+      <Text variant="sm" mb={5}>Roboto 32 - line height - 40</Text>
+      <Header.H3>H3 Header - 28</Header.H3>
+      <Text variant="sm" mb={5}>Roboto 28 - line height - 32</Text>
+      <Header.H4>H4 Header - 24</Header.H4>
+      <Text variant="sm" mb={5}>Roboto 24 - line height - 32</Text>
+      <Header.H5>H5 Header - 18</Header.H5>
+      <Text variant="sm" mb={5}>Roboto 18 - line height - 24</Text>
+      <Header.H6>H6 Header - 16</Header.H6>
+      <Text variant="sm" mb={5}>Roboto 16 - line height - 24</Text>
+    </BoxWithPaddings>
+  </StoryWrapper>
 )
 
 const TextStory: React.FC = () => {
@@ -48,26 +46,22 @@ const TextStory: React.FC = () => {
     'Large [lg]': 'lg',
   }, 'lg')
   return (
-    <Box variant="grey">
-      <Label>Example Text container</Label>
-      <Box p="x4" bg="white">
-        <Text variant={variant}>
-          Text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Est enim effectrix
-          multarum et magnarum voluptatum. Omnia contraria, quos etiam insanos esse vultis. Quid,
-          de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Duo Reges:
-          constructio interrete. Sed in rebus apertissimis nimium longi sumus.
-        </Text>
-      </Box>
-    </Box>
+    <StoryWrapper label="Example Text container">
+      <Text variant={variant}>
+        Text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Est enim effectrix
+        multarum et magnarum voluptatum. Omnia contraria, quos etiam insanos esse vultis. Quid,
+        de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Duo Reges:
+        constructio interrete. Sed in rebus apertissimis nimium longi sumus.
+      </Text>
+    </StoryWrapper>
   )
 }
 
 export { TextStory as Text }
 
 export const Example: React.FC = () => (
-  <Box variant="grey">
-    <Label>Example content page</Label>
+  <StoryWrapper label="Example content page">
     <Box p="x4" bg="white">
       <H1>H1. Nam de isto magna dissensio est.</H1>
       <H2>H2. Sed in rebus apertissimis nimium</H2>
@@ -185,5 +179,5 @@ export const Example: React.FC = () => (
         interpretem postulet, sic, isti nobis cum interprete audiendi sunt.
       </Text>
     </Box>
-  </Box>
+  </StoryWrapper>
 )
