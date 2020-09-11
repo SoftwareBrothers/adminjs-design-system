@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { space, typography, layout, SpaceProps, TypographyProps, LayoutProps } from 'styled-system'
-import { InputCSS } from './input'
+import { InputCSS, InputProps } from './input'
 import { cssClass } from '../utils/css-class'
 
 /**
@@ -11,9 +11,9 @@ import { cssClass } from '../utils/css-class'
  * @property {string} [...] All props default to _textarea_ html component like `onChange`,
  *                          `value` etc.
  * @property {string} [...] Props from {@link SpaceProps}, {@link TypographyProps}
- *                          and {@link LayoutProps}
+ *                          and {@link LayoutProps} + they extend {@link InputProps}
  */
-export type TextAreaProps = SpaceProps & TypographyProps & LayoutProps
+export type TextAreaProps = TypographyProps & InputProps
 
 /**
  * @classdesc
