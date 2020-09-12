@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import { withKnobs, radios, text } from '@storybook/addon-knobs'
+import { withKnobs, radios, text } from '../../storybook/node_modules/@storybook/addon-knobs'
 import { Tooltip } from '..'
 
 export default { title: 'DesignSystem/Atoms/Tooltip', decorators: [withKnobs] }

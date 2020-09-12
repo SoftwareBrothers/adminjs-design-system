@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs, boolean, number, array, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, array, select } from '../../../storybook/node_modules/@storybook/addon-knobs'
 import { DropZone } from '../..'
 
 export default { title: 'DesignSystem/Molecules/DropZone', decorators: [withKnobs] }

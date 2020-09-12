@@ -11,6 +11,7 @@ import {
   layout,
   LayoutProps,
 } from 'styled-system'
+import contentCSS from '../utils/content-styles'
 import { cssClass } from '../utils/css-class'
 
 const variants = variant({
@@ -83,15 +84,12 @@ const Text = styled.div<TextProps>`
   margin: 0;
   padding: 0;
 
-  & b, & strong {
-    font-weight: bold;
-  }
-
   ${typography};
   ${space};
   ${layout};
   ${color};
   ${variants};
+  ${contentCSS};
 `
 
 Text.defaultProps = {

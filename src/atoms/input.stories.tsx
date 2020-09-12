@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, number, select } from '../../storybook/node_modules/@storybook/addon-knobs'
 import Box from './box'
 import { Text, Input, Label, Button } from '..'
 import StoryWrapper from '../utils/story-wrapper'

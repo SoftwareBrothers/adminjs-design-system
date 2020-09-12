@@ -1,102 +1,17 @@
 import { css } from 'styled-components'
+import contentCSS from '../../utils/content-styles'
+import themeGet from '../../utils/theme-get'
 
 const styles = css`
-  .ql-editor {
-    font-family: 'Roboto', sans-serif;
-  }
-
   .ql-editor > * {
     cursor: text;
   }
-  .ql-editor {
-    & > h1, & > h2, & > h3, & > h4, & > h5 {
-      &:first-child{
-        margin-top: 0;
-      }
-    }
-  }
 
-  .ql-editor h1 {
-    vertical-align: middle;
-    padding: 0;
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 300;
-    margin-top: 64px;
-    margin-bottom: 48px;
+  .ql-editor {
+    ${contentCSS};
+    padding: ${themeGet('space', 'xl')};
   }
-  .ql-editor h2 {
-    vertical-align: middle;
-    padding: 0;
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 300;
-    margin-top: 48px;
-    margin-bottom: 32px;
-  }
-  .ql-editor h3 {
-    vertical-align: middle;
-    padding: 0;
-    font-weight: 300;
-    font-size: 28px;
-    line-height: 32px;
-    margin-top: 32px;
-    margin-bottom: 24px;
-  }
-  .ql-editor h4 {
-    vertical-align: middle;
-    padding: 0;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 300;
-    margin-top: 32px;
-    margin-bottom: 24px;
-  }
-  .ql-editor h5 {
-    vertical-align: middle;
-    padding: 0;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
-    margin-top: 24px;
-    margin-bottom: 16px;
-  }
-  .ql-editor h6 {
-    vertical-align: middle;
-    padding: 0;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    margin-top: 16px;
-    margin-bottom: 8px;
-  }
-  .ql-editor p,
-  .ql-editor ol,
-  .ql-editor ul,
-  .ql-editor pre,
-  .ql-editor blockquote {
-    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
-    margin: 0;
-    padding: 0;
-    line-height: 24px;
-    font-weight: 300;
-    margin-bottom: 24px;
-    font-size: 16px;
-  }
-  .ql-editor em {
-    font-style: italic;
-  }
-  .ql-editor ol,
-  .ql-editor ul {
-    padding-left: 1.5em;
-  }
-  .ql-editor ol > li,
-  .ql-editor ul > li {
-    list-style-type: none;
-  }
-  .ql-editor ul > li::before {
-    content: '\\2022';
-  }
+  
   .ql-editor ul[data-checked=true],
   .ql-editor ul[data-checked=false] {
     pointer-events: none;
@@ -116,32 +31,6 @@ const styles = css`
   }
   .ql-editor ul[data-checked=false] > li::before {
     content: '\\2610';
-  }
-  .ql-editor li::before {
-    display: inline-block;
-    white-space: nowrap;
-    width: 1.2em;
-  }
-  .ql-editor li:not(.ql-direction-rtl)::before {
-    margin-left: -1.5em;
-    margin-right: 0.3em;
-    text-align: right;
-  }
-  .ql-editor li.ql-direction-rtl::before {
-    margin-left: 0.3em;
-    margin-right: -1.5em;
-  }
-  .ql-editor ol li:not(.ql-direction-rtl),
-  .ql-editor ul li:not(.ql-direction-rtl) {
-    padding-left: 1.5em;
-  }
-  .ql-editor ol li.ql-direction-rtl,
-  .ql-editor ul li.ql-direction-rtl {
-    padding-right: 1.5em;
-  }
-
-  .ql-editor strong {
-    font-weight: 600;
   }
 
   .ql-editor ol li {

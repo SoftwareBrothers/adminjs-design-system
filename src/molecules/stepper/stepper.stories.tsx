@@ -1,5 +1,5 @@
 import React, { useState, SetStateAction } from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs'
 import { Box, Stepper, Step, Button } from '../..'
 
 export default { title: 'DesignSystem/Molecules/Stepper', decorators: [withKnobs] }

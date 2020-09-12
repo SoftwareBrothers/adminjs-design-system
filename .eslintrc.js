@@ -25,6 +25,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     'react/jsx-filename-extension': 'off',
     indent: [
       'error',

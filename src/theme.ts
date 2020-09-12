@@ -179,7 +179,7 @@ const colors = {
 
  * @property {string} xs=2px        2px - <span class="space-box" style="width: 2px;" />
  * @property {string} sm=4px        4px - <span class="space-box" style="width: 4px;" />
- * @property {string} default=8px   8px - <span class="space-box" style="width: 8px;" />
+ * @property {string} default=8px (alias md)   8px - <span class="space-box" style="width: 8px;" />
  * @property {string} lg=16px       16px - <span class="space-box" style="width: 16px;" />
  * @property {string} xl=24px       24px - <span class="space-box" style="width: 24px;" />
  * @property {string} xxl=32px      32px - <span class="space-box" style="width: 32px;" />
@@ -192,6 +192,7 @@ const space = {
   xs: '2px',
   sm: '4px',
   default: '8px',
+  md: '8px',
   lg: '16px',
   xl: '24px',
   xxl: '32px',
@@ -217,7 +218,7 @@ const sizes = {
  * @alias fontSizes
  * @property {string} xs=10px      <div style="font-size: 10px;">'xs' font size</div>
  * @property {string} sm=12px      <div style="font-size: 12px;">'sm' font size</div>
- * @property {string} default=14px <div style="font-size: 14px;">'default' font size</div>
+ * @property {string} default=14px (alias md) <div style="font-size: 14px;">'default' font size</div>
  * @property {string} lg=16px      <div style="font-size: 16px;">'lg' font size</div>
  * @property {string} xl=18px      <div style="font-size: 18px;">'xl' font size</div>
  * @property {string} h4=24px      <div style="font-size: 24px;">'h4' font size</div>
@@ -229,6 +230,7 @@ const fontSizes = {
   xs: '10px',
   sm: '12px',
   default: '14px',
+  md: '14px',
   lg: '16px',
   xl: '18px',
   h4: '24px',
@@ -257,15 +259,18 @@ const fontWeights = {
 /**
  * @memberof Theme
  * @alias lineHeights
+ * @property {string} xs=10px
  * @property {string} sm=12px
- * @property {string} default=16px
+ * @property {string} default=16px (alias md)
  * @property {string} lg=24px
  * @property {string} xl=32px
  * @property {string} xxl=40px
  */
 const lineHeights = {
+  xs: '10px',
   sm: '12px',
   default: '16px',
+  md: '16px',
   lg: '24px',
   xl: '32px',
   xxl: '40px',

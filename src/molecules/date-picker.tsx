@@ -10,6 +10,12 @@ import { InputGroup } from './form-group/index'
 import { cssClass } from '../utils/css-class'
 import { PropertyType, formatDateProperty } from '../utils/date-utils'
 
+const DatePickerWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: ${({ theme }): string => theme.space.xxl};
+`
+
 const StyledDatePicker = styled(InputGroup)`
   ${styles};
   position: relative;
@@ -17,7 +23,7 @@ const StyledDatePicker = styled(InputGroup)`
   &.active ${Input}, &.active ${Button} {
     z-index: 101;
   }
-
+  
   & .react-datepicker {
     border-radius: 0;
     border: 1px solid ${({ theme }): string => theme.colors.primary100};
@@ -73,8 +79,17 @@ const StyledDatePicker = styled(InputGroup)`
     color: ${({ theme }): string => theme.colors.grey40};
   }
   
-  & .react-datepicker__day--today {
-    color: ${({ theme }): string => theme.colors.primary100};
+  & .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
+    color: ${({ theme }): string => theme.colors.white};
+  }
+
+  & .react-datepicker__day--selected {
+    color: ${({ theme }): string => theme.colors.white};
+  }
+
+  & .react-datepicker__day--keyboard-selected:not(.react-datepicker__day--today) {
+    background: none;
+    color: ${({ theme }): string => theme.colors.grey100};
   }
 
   & .react-datepicker__day:hover,
@@ -101,12 +116,6 @@ const Overlay = styled.div`
   &.hidden {
     display: none;
   }
-`
-
-const DatePickerWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  top: ${({ theme }): string => theme.space.xxl};
 `
 
 type CustomProps = Partial<Omit<ReactDatePickerProps, 'value' | 'disabled' | 'onChange'>>

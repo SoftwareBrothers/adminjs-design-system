@@ -73,7 +73,7 @@ const buttonVariants = variant({
       '& svg': {
         fill: 'primary100',
       },
-      '&:hover svg': {
+      [`&:hover .${cssClass('Icon')} svg`]: {
         fill: 'hoverBg',
       },
       className: cssClass(['Button', 'Button_Text']),
@@ -89,14 +89,22 @@ const sizeVariants = variant({
       py: 'xs',
       lineHeight: 'default',
       px: 'lg',
-      [`& .${cssClass('Icon')}`]: {
-        paddingRight: 'sm',
+      [`& .${cssClass('Icon')} svg`]: {
+        height: '14px',
+        width: '14px',
       },
     },
+    // md alias default
+    md: {},
+    default: {},
     lg: {
       py: 'default',
       px: 'x3',
       lineHeight: 'lg',
+      [`& .${cssClass('Icon')} svg`]: {
+        width: '20px',
+        height: '20px',
+      },
     },
     icon: {
       py: 'default',
@@ -104,11 +112,13 @@ const sizeVariants = variant({
       lineHeight: 'sm',
       minWidth: '34px',
       height: '34px',
-      [`& .${cssClass('Icon')}`]: {
+      [`& .${cssClass('Icon')} svg`]: {
         padding: 0,
+        margin: 0,
+        width: '16px',
+        height: '16px',
       },
     },
-    default: {},
   },
 })
 
@@ -130,7 +140,7 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
   /**
    * Button size variant
    */
-  size?: 'sm' | 'lg' | 'icon' | 'default';
+  size?: 'sm' | 'lg' | 'icon' | 'default' | 'md';
   /**
    * If button should be rounded
    */
@@ -153,6 +163,8 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
  * @alias ButtonCSS
  */
 export const ButtonCSS = css<ButtonProps>`
+  -webkit-appearance: none;
+  -moz-appearance: none;
   outline: 0;
   display: inline-block;
   font-family: ${({ theme }): string => theme.font};
@@ -166,14 +178,16 @@ export const ButtonCSS = css<ButtonProps>`
   box-sizing: border-box;
 
   & > .${cssClass('Icon')} {
-    padding-bottom: 2px;
     vertical-align: middle;
-    padding-right: ${({ theme }): string => theme.space.sm};
+  }
+
+  & > .${cssClass('Icon')} svg {
+    margin: 0 ${({ theme }): string => theme.space.md};
   }
 
   & .${cssClass('Icon')} svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     fill: ${({ theme }): string => theme.colors.primary100};
   }
   &:hover {

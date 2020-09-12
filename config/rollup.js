@@ -17,6 +17,9 @@ const plugins = [
   babel({
     extensions,
     babelrc: false,
+    plugins: [
+      require.resolve('babel-plugin-styled-components'),
+    ],
     presets: [
       require.resolve('@babel/preset-react'),
       require.resolve('@babel/preset-env'),

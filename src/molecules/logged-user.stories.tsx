@@ -1,4 +1,4 @@
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs } from '../../storybook/node_modules/@storybook/addon-knobs'
 import React from 'react'
 import { LoggedUser, Link } from '..'
 

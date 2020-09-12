@@ -30,7 +30,7 @@ export const RichText: React.FC<RichTextProps> = (props) => {
 
   options.theme = options.theme || 'snow'
 
-  const classNames = []
+  const classNames: Array<string> = []
   if (borderless) {
     classNames.push('quill-borderless')
   }

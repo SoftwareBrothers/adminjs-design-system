@@ -1,5 +1,5 @@
-import { withKnobs, boolean } from '@storybook/addon-knobs'
 import React from 'react'
+import { withKnobs, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
 import Label from './label'
 
 export default { title: 'DesignSystem/Atoms/Label', decorators: [withKnobs] }

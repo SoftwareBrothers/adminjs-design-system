@@ -1,4 +1,4 @@
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs'
+import { withKnobs, boolean, radios } from '../../storybook/node_modules/@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { DatePicker } from '..'
 

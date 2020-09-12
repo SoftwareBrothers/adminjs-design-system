@@ -1,5 +1,5 @@
-import { withKnobs, boolean } from '@storybook/addon-knobs'
 import React from 'react'
+import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
 import { Drawer, DrawerContent, DrawerFooter, Header, Button, Icon, Box, Text } from '../..'
 import { FullFeaturedFormGroup } from '../form-group/form-group.stories'
 

@@ -15,7 +15,10 @@ import {
 } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
-export default { title: 'DesignSystem/Molecules/FormGroup' }
+export default {
+  title: 'DesignSystem/Molecules/FormGroup',
+  component: FormGroup,
+}
 
 export const FullFeaturedFormGroup: React.FC = () => (
   <FormGroup>
@@ -41,6 +44,7 @@ export const FullFeaturedFormGroup: React.FC = () => (
       </DropDown>
       <Input />
       <Label>100 KM</Label>
+      <Button size="icon"><Icon icon="ArrowRight" /></Button>
     </InputGroup>
     <FormMessage>
       With an message below
@@ -50,7 +54,8 @@ export const FullFeaturedFormGroup: React.FC = () => (
 
 export const Full: React.FC = () => (
   <Box width={1}>
-    <StoryWrapper label="Full featured FormGroup" />
-    <FullFeaturedFormGroup />
+    <StoryWrapper label="Full featured FormGroup">
+      <FullFeaturedFormGroup />
+    </StoryWrapper>
   </Box>
 )

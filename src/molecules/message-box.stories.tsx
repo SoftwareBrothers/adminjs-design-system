@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs, radios, text } from '@storybook/addon-knobs'
+import { withKnobs, radios, text } from '../../storybook/node_modules/@storybook/addon-knobs'
 import { Box, MessageBox } from '..'
 
 export default { title: 'DesignSystem/Molecules/MessageBox', decorators: [withKnobs] }

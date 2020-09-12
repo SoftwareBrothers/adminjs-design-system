@@ -1,4 +1,4 @@
-import { withKnobs, select, boolean } from '@storybook/addon-knobs'
+import { withKnobs, select, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
 import React from 'react'
 import Link from './link'
 

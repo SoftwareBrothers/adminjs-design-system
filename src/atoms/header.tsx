@@ -4,6 +4,7 @@ import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
 import { Button } from './button'
 import { Badge } from './badge'
 import { cssClass } from '../utils/css-class'
+import themeGet from '../utils/theme-get'
 
 /**
  * Prop Types of an Header components.
@@ -27,7 +28,7 @@ const Base = styled.h3<HeaderProps>`
     vertical-align: bottom;
   }
   * > &:first-child {
-    margin-top: 0;
+    margin-top: ${themeGet('space', 'sm')};
   }
   ${Badge} {
     vertical-align: middle;

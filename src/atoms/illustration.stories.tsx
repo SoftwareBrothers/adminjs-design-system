@@ -1,5 +1,5 @@
-import { withKnobs, select, number } from '@storybook/addon-knobs'
 import React from 'react'
+import { withKnobs, select, number } from '../../storybook/node_modules/@storybook/addon-knobs'
 import Illustration from './illustration'
 
 export default { title: 'DesignSystem/Atoms/Illustration', decorators: [withKnobs] }
