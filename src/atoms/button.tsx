@@ -136,7 +136,7 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
   /**
    * Button color variant
    */
-  variant?: 'primary' | 'danger' | 'text' | 'success' | 'info' | 'secondary';
+  variant?: 'primary' | 'danger' | 'text' | 'success' | 'info' | 'secondary' | 'default';
   /**
    * Button size variant
    */

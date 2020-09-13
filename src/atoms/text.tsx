@@ -80,10 +80,6 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  * @section design-system
  */
 const Text = styled.div<TextProps>`
-  font-family: ${({ theme }): string => theme.font};
-  margin: 0;
-  padding: 0;
-
   ${typography};
   ${space};
   ${layout};
@@ -93,9 +89,6 @@ const Text = styled.div<TextProps>`
 `
 
 Text.defaultProps = {
-  lineHeight: 'lg',
-  fontSize: 'default',
-  fontWeight: 'light',
   marginBottom: 'xl',
   className: cssClass('Text'),
 }

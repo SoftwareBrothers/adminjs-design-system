@@ -17,11 +17,11 @@ export const Default: React.FC = () => {
           Edit
         </Header.H3>
         <Box my="x3" p={0}>
-          <Button size="sm">
+          <Button>
             <Icon icon="Information" />
             Info
           </Button>
-          <Button size="sm" ml="lg">
+          <Button ml="lg">
             <Icon icon="Delete" />
             Delete
           </Button>

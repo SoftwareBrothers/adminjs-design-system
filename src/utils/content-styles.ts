@@ -2,14 +2,15 @@ import { css } from 'styled-components'
 import themeGet from './theme-get'
 
 const contentCSS = css`
-
-  font-family: ${themeGet('font')};
-  margin: 0;
-  padding: 0;
   font-family: ${({ theme }): string => theme.font};
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};
   font-weight: ${themeGet('fontWeights', 'light')};
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
   p, div {
     margin-bottom: ${themeGet('space', 'xl')};

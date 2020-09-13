@@ -1,11 +1,59 @@
-import styled from 'styled-components'
+import styled, { css, DefaultTheme, ThemedCssFunction } from 'styled-components'
 import {
   color, space,
   ColorProps, SpaceProps,
   TypographyProps,
   typography,
+  variant,
 } from 'styled-system'
 import { cssClass } from '../utils/css-class'
+import themeGet from '../utils/theme-get'
+
+// const variantShared = {
+//   color: 'white',
+//   'border-color': 'transparent',
+//   [`& .${cssClass('Icon')} svg`]: {
+//     fill: 'white',
+//   },
+//   '&:disabled': {
+//     bg: 'grey40',
+//   },
+// }
+
+const labelVariants = variant({
+  variants: {
+    primary: {
+      color: 'primary100',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'primary100',
+      },
+    },
+    danger: {
+      color: 'error',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'error',
+      },
+    },
+    success: {
+      color: 'success',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'success',
+      },
+    },
+    info: {
+      color: 'info',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'info',
+      },
+    },
+    secondary: {
+      color: 'accent',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'accent',
+      },
+    },
+  },
+})
 
 /**
  * Prop Types of a Label component.
@@ -28,7 +76,23 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   inline?: boolean;
   /** If label represents disabled field (dimmed version) */
   disabled?: boolean;
+  /** Color variant */
+  variant?: 'primary' | 'danger' | 'success' | 'info' | 'secondary' | 'default';
+
+  /** Label size */
+  size?: 'default' | 'lg'
 }
+
+const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultTheme>> => (
+  disabled
+    ? css`
+    color: ${theme.colors.grey40};
+    & .${cssClass('Icon')} svg {
+      fill: ${theme.colors.grey40};
+    }
+  `
+    : css``
+)
 
 /**
  * @classdesc
@@ -64,7 +128,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
 const Label = styled.label<LabelProps>`
   display: ${({ inline }): string => (inline ? 'inline-block' : 'block')};
   font-family: ${({ theme }): string => theme.font};
-  font-size: ${({ theme }): string => theme.fontSizes.sm};
+  font-size: ${(props): string => themeGet('fontSizes', props.size === 'lg' ? 'md' : 'sm')(props)};
   line-height: ${({ theme }): string => theme.lineHeights.default};
   margin-bottom: ${({ theme, inline }): string => (inline ? '0' : theme.space.default)};
 
@@ -76,11 +140,11 @@ const Label = styled.label<LabelProps>`
   }
 
   ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}
-
   ${color};
   ${typography};
   ${space};
-  ${({ disabled, theme }): string => (disabled ? `color: ${theme.colors.grey40};` : '')}
+  ${labelVariants};
+  ${(props) => setDisabled(props as any)};
 `
 
 Label.defaultProps = {
