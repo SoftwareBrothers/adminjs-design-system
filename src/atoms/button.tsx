@@ -1,8 +1,18 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
-import { color, space, ColorProps, SpaceProps,
-  TypographyProps, typography, variant } from 'styled-system'
+import {
+  color as styledColor,
+  space,
+  ColorProps,
+  SpaceProps,
+  TypographyProps,
+  typography,
+  variant,
+} from 'styled-system'
+
 import focusShadowStyle from '../utils/focus-shadow.style'
 import { cssClass } from '../utils/css-class'
+import { VariantType } from '../utils'
 
 const variantShared = {
   color: 'white',
@@ -122,6 +132,9 @@ const sizeVariants = variant({
   },
 })
 
+// for some reason color causes issues that it can be null
+type ButtonHTML = Omit<React.ComponentProps<'button'>, 'color'>
+
 /**
  * Prop Types of an Button component.
  * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
@@ -132,11 +145,11 @@ const sizeVariants = variant({
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
  */
-export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
+export type ButtonProps = Omit<ColorProps, 'color'> & SpaceProps & TypographyProps & {
   /**
    * Button color variant
    */
-  variant?: 'primary' | 'danger' | 'text' | 'success' | 'info' | 'secondary' | 'default';
+  variant?: VariantType | 'text';
   /**
    * Button size variant
    */
@@ -145,6 +158,11 @@ export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
    * If button should be rounded
    */
   rounded?: boolean;
+
+  /**
+   * You can either pass an label prop - or use react Children.
+   */
+  label?: string
 }
 
 /**
@@ -215,11 +233,17 @@ export const ButtonCSS = css<ButtonProps>`
 
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px' : '')};
 
-  ${color};
+  ${styledColor};
   ${space};
   ${typography};
   ${buttonVariants};
   ${sizeVariants};
+`
+
+const addContent = css<ButtonProps>`
+  &:before {
+    content: "${({ label }) => label}";
+  }
 `
 
 /**
@@ -289,13 +313,13 @@ export const ButtonCSS = css<ButtonProps>`
  * @section design-system
  */
 const Button = styled.button<ButtonProps>`
-  ${ButtonCSS}
+  ${ButtonCSS};
+  ${({ label }) => (label ? addContent : '')};
 `
 
 Button.defaultProps = {
   fontSize: 'default',
-  bg: 'transparent',
-  className: cssClass('Button'),
+  backgroundColor: 'transparent',
 }
 
 export { Button }

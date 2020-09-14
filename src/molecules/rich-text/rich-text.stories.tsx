@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React, { useState } from 'react'
 import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
 

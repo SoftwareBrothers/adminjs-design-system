@@ -1,9 +1,12 @@
 /* eslint-disable max-len */
-import React, { PropsWithChildren, useEffect, useState, useRef, forwardRef, ReactElement, ReactNode } from 'react'
-import TooltipPortal from './tooltip/tooltip-portal'
+import React, { PropsWithChildren, useState, useRef, forwardRef, ReactElement, ReactNode } from 'react'
+import createPortalForKey from '../utils/create-portal-for-key'
+import TooltipComponent from './tooltip/tooltip'
 import Props from './tooltip/tooltip-props'
 
 const TriggerDisplayName = 'TooltipTrigger'
+
+const TooltipPortal = createPortalForKey('TOOLTIP', TooltipComponent)
 
 /**
  * Renders tooltip
@@ -28,7 +31,7 @@ const TriggerDisplayName = 'TooltipTrigger'
  * @memberof module:@admin-bro/design-system
  */
 const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
-  const { direction, title, children } = props
+  const { direction, title, children, size } = props
   const childRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -53,7 +56,7 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     ...triggerProps,
     displayName: TriggerDisplayName,
     ref,
-  }))
+  })) as any
 
   return (
     <>
@@ -66,6 +69,7 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
         <TooltipPortal
           title={title}
           childRef={childRef}
+          size={size}
           direction={direction}
           ContentElement={ContentElement}
         />

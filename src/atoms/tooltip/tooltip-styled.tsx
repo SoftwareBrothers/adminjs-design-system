@@ -85,11 +85,19 @@ const rightCSS = css<StyledTooltipProps>`
   }
 `
 
+const getPadding = (props: StyledTooltipProps): string => {
+  const px = (props.size === 'lg' ? 'xl' : 'md')
+  const py = (props.size === 'lg' ? 'lg' : 'sm')
+  return `${themeGet('space', py)(props)} ${themeGet('space', px)(props)}`
+}
+
+// transition: opacity 0.2s, margin 0.2s;
 const StyledTooltip = styled(Box)<StyledTooltipProps>`
-  transition: opacity 0.2s, margin 0.2s;
   position: absolute;
 
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  
+  padding: ${(props) => getPadding(props)};
   
   &::after {
     content: " ";
@@ -115,8 +123,6 @@ const StyledTooltip = styled(Box)<StyledTooltipProps>`
 `
 
 StyledTooltip.defaultProps = {
-  px: 'xl',
-  py: 'lg',
   borderColor: 'primary100',
   borderStyle: 'solid',
   borderWidth: '1px',

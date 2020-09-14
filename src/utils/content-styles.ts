@@ -110,7 +110,7 @@ const contentCSS = css`
 
   blockquote {
     background-color: ${themeGet('colors', 'grey20')};
-    border-left: ${themeGet('space', 'xm')} solid ${themeGet('colors', 'primary20')};
+    border-left: ${themeGet('space', 'sm')} solid ${themeGet('colors', 'primary20')};
     padding: ${themeGet('space', 'xl')};
     margin: ${themeGet('space', 'xxl')} 0;
   }

@@ -6,21 +6,11 @@ import {
   typography,
   variant,
 } from 'styled-system'
+import { VariantType } from '../utils'
 import { cssClass } from '../utils/css-class'
 import themeGet from '../utils/theme-get'
 
-// const variantShared = {
-//   color: 'white',
-//   'border-color': 'transparent',
-//   [`& .${cssClass('Icon')} svg`]: {
-//     fill: 'white',
-//   },
-//   '&:disabled': {
-//     bg: 'grey40',
-//   },
-// }
-
-const labelVariants = variant({
+const labelVariants = variant<any, VariantType>({
   variants: {
     primary: {
       color: 'primary100',
@@ -52,6 +42,7 @@ const labelVariants = variant({
         fill: 'accent',
       },
     },
+    default: {},
   },
 })
 
@@ -77,7 +68,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   /** If label represents disabled field (dimmed version) */
   disabled?: boolean;
   /** Color variant */
-  variant?: 'primary' | 'danger' | 'success' | 'info' | 'secondary' | 'default';
+  variant?: VariantType;
 
   /** Label size */
   size?: 'default' | 'lg'
@@ -137,6 +128,10 @@ const Label = styled.label<LabelProps>`
     color: ${({ theme }): string => theme.colors.primary100};
     margin-right: ${({ theme }): string => theme.space.sm};
     display: ${({ required }): string => (required ? 'block-inline' : 'none')};
+  }
+
+  & > .${cssClass('Icon')}:first-child {
+    margin-right: ${themeGet('space', 'md')};
   }
 
   ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}

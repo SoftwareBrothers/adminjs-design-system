@@ -1,5 +1,5 @@
-import { withKnobs, select, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
 import React from 'react'
+import { withKnobs, select, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
 import Link from './link'
 
 export default { title: 'DesignSystem/Atoms/Link', decorators: [withKnobs] }

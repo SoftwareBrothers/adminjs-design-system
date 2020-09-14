@@ -19,7 +19,7 @@ export type RichTextProps = {
   }
 }
 
-const Theme = styled(Box)`
+const Theme = styled(Box)<RichTextProps>`
   ${bubble};
   ${snow};
   ${styles};

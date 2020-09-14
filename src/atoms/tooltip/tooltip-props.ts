@@ -13,6 +13,8 @@ export type TooltipProps = {
   title?: string,
   /** Direction of tooltip */
   direction: 'left' | 'right' | 'top' | 'bottom',
+  /** Tooltip size */
+  size?: 'default' | 'lg'
 }
 
 export type PortalProps = TooltipProps & {

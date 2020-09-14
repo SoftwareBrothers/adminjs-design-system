@@ -5,7 +5,7 @@ import { PortalProps, Position } from './tooltip-props'
 import { StyledTooltip } from './tooltip-styled'
 
 const Tooltip: React.FC<PortalProps> = (props) => {
-  const { title, childRef, direction, ContentElement } = props
+  const { title, childRef, direction, ContentElement, size } = props
   const tooltipRef = useRef<HTMLElement>(null)
   const [dimension, setDimension] = useState<Pick<Position, 'width' | 'height'> | null>(null)
   const [position, setPosition] = useState<Pick<Position, 'left' | 'top'> | null>(null)
@@ -87,6 +87,7 @@ const Tooltip: React.FC<PortalProps> = (props) => {
       ref={tooltipRef}
       left={position?.left || '-1110px'}
       top={position?.top || '-1110px'}
+      size={size}
       direction={direction}
       isVisible={isVisible}
     >

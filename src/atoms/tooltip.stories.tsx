@@ -12,18 +12,21 @@ const Direction = {
   bottom: 'bottom',
 }
 
+const Size = ['default', 'lg'] as const
+
 export const Default: React.FC = () => {
   const direction = radios('direction', Direction, Direction.top) as keyof typeof Direction
+  const size = radios('size', Size as any, 'default')
   const tooltipText = text('title', 'example info')
   return (
     <Box width={1 / 3}>
       <StoryWrapper label="Regular example">
-        <Tooltip direction={direction} title={tooltipText}>
+        <Tooltip direction={direction} title={tooltipText} size={size}>
           <Button>Standard text</Button>
         </Tooltip>
       </StoryWrapper>
       <StoryWrapper label="Custom component as tooltip">
-        <Tooltip direction={direction}>
+        <Tooltip direction={direction} size={size}>
           <TooltipContent>
             <H4>Header</H4>
             <Text>Some text inside the tooltip?</Text>

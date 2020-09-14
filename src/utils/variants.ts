@@ -1,4 +1,9 @@
-export type Variant = 'primary' | 'danger' | 'success' | 'info' | 'secondary'
+/**
+ * Type of the variant property
+ *
+ * @section design-system
+ */
+export type VariantType = 'primary' | 'danger' | 'success' | 'info' | 'secondary' | 'default'
 
-export const variants: Array<Variant> = [
-  'primary', 'danger', 'success', 'info', 'secondary']
+export const VariantValues: Array<VariantType> = [
+  'primary', 'danger', 'success', 'info', 'secondary', 'default']

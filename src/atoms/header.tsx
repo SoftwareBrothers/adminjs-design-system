@@ -87,7 +87,7 @@ H5.defaultProps = {
   lineHeight: 'lg',
   className: cssClass(['Header', 'H5']),
   marginTop: 'xl',
-  marginBottom: 'lg',
+  marginBottom: 'default',
   fontWeight: 'normal',
 }
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, typography, layout, SpaceProps, TypographyProps, LayoutProps } from 'styled-system'
+import { space, typography, layout, TypographyProps } from 'styled-system'
 import { InputCSS, InputProps } from './input'
 import { cssClass } from '../utils/css-class'
 

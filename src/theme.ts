@@ -331,6 +331,21 @@ const breakpoints = [
 
 const font = '\'Roboto\', sans-serif' as string
 
+/**
+ * Border styles
+ *
+ * @memberof Theme
+ * @alias breakpoints
+ * @property {string} input
+ * @property {string} filterInput
+ * @property {string} bg
+ */
+const borders = {
+  input: '1px solid #C0C0CA',
+  filterInput: ' 1px rgba(255,255,255,0. solid15)',
+  bg: '1px solid #F6F7FB',
+}
+
 export {
   colors,
   lineHeights,
@@ -340,6 +355,7 @@ export {
   space,
   font,
   shadows,
+  borders,
   breakpoints,
 }
 
