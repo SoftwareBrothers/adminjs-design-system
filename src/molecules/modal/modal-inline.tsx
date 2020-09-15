@@ -51,6 +51,5 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
 
 export {
   ModalInline,
-  ModalStyled,
   ModalInline as default,
 }

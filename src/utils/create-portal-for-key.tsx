@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import { createPortal } from 'react-dom'
+import ReactDOM from 'react-dom'
 import React, { useEffect, useState, FC } from 'react'
 
 import generateId from './generate-id'
@@ -19,7 +19,7 @@ function createPortalForKey<Props>(idKey: string, Component: FC<Props>): FC<Prop
       }
     })
 
-    return createPortal((
+    return ReactDOM.createPortal((
       <Component {...props} />
     ), portalElement)
   }

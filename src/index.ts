@@ -178,6 +178,5 @@ export * from './constants'
 export * from './global'
 
 export * from './utils/index'
-export * from './utils/combine-styles'
 
 export { theme }
