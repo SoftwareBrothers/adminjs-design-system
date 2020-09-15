@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+/* eslint-disable default-case */
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 const StyledDropDown = styled.div`
   position: relative;
   display: inline-block;
 `
+
+const DEFAULT_STICK = 'left'
+
+export type DropDownProps = {
+  stick?: 'left' | 'right',
+}
+
+type PositionProps = {
+  left?: number,
+  right?: number,
+  top: number,
+}
 
 /**
  * @classdesc
@@ -62,18 +75,41 @@ const StyledDropDown = styled.div`
  * @subcategory Molecules
  * @section design-system
  */
-const DropDown: React.FC = (props) => {
-  const { children } = props
+const DropDown: React.FC<DropDownProps> = (props) => {
+  const { children, stick } = props
   const [isVisible, setIsVisible] = useState(false)
+
+  const triggerRef = useRef<HTMLElement>(null)
+  const menuRef = useRef<HTMLElement>(null)
+  const [menuPosition, setMenuPosition] = useState<PositionProps | null>()
+
+  useEffect(() => {
+    if (menuRef.current && triggerRef.current) {
+      const { clientHeight } = triggerRef.current
+      switch (stick || DEFAULT_STICK) {
+      case 'left':
+        setMenuPosition({ left: 0, top: clientHeight })
+        break
+      case 'right':
+        setMenuPosition({ right: 0, top: clientHeight })
+      }
+    }
+  }, [triggerRef.current, menuRef.current, stick])
+
   const elements = React.Children.map(children, (child: any) => {
     const type = child && child.type && child.type.displayName
     if (type === 'DropDownTrigger') {
       return React.cloneElement(child, {
         onMouseEnter: () => setIsVisible(true),
+        ref: triggerRef,
       })
     }
     if (type === 'DropDownMenu') {
-      return React.cloneElement(child, { isVisible })
+      return React.cloneElement(child, {
+        isVisible,
+        ref: menuRef,
+        ...menuPosition,
+      })
     }
     return child
   })

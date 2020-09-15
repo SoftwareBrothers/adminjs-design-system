@@ -13,6 +13,7 @@ import focusShadowStyle from '../utils/focus-shadow.style'
 import { cssClass } from '../utils/css-class'
 import { VariantType } from '../utils'
 import { ColorProps } from '../utils/color-props'
+import themeGet from '../utils/theme-get'
 
 const variantShared = {
   color: 'white',
@@ -186,13 +187,13 @@ export const ButtonCSS = css<ButtonProps>`
   outline: 0;
   display: inline-block;
   font-family: ${({ theme }): string => theme.font};
-  line-height: ${({ theme }): string => theme.lineHeights.lg};
+  line-height: ${themeGet('lineHeights', 'lg')};
 
-  border: 1px solid ${({ theme }): string => theme.colors.primary100};
-  color: ${({ theme }): string => theme.colors.primary100};
+  border: 1px solid ${themeGet('colors', 'primary100')};
+  color: ${themeGet('colors', 'primary100')};
   cursor: pointer;
   text-decoration: none;
-  padding: ${({ theme }): string => theme.space.sm} ${({ theme }): string => theme.space.xxl};
+  padding: ${themeGet('space', 'sm')} ${themeGet('space', 'xxl')};
   box-sizing: border-box;
 
   & > .${cssClass('Icon')} {
@@ -200,34 +201,34 @@ export const ButtonCSS = css<ButtonProps>`
   }
 
   & > .${cssClass('Icon')} svg {
-    margin: 0 ${({ theme }): string => theme.space.md};
+    margin: 0 ${themeGet('space', 'md')} 0 0;
   }
 
   & .${cssClass('Icon')} svg {
     width: 18px;
     height: 18px;
-    fill: ${({ theme }): string => theme.colors.primary100};
+    fill: ${themeGet('colors', 'primary100')};
   }
   &:hover {
-    color: ${({ theme }): string => theme.colors.white};
-    background: ${({ theme }): string => theme.colors.hoverBg};
-    border-color: ${({ theme }): string => theme.colors.hoverBg};
+    color: ${themeGet('colors', 'white')};
+    background: ${themeGet('colors', 'hoverBg')};
+    border-color: ${themeGet('colors', 'hoverBg')};
     & .${cssClass('Icon')} svg {
-      fill: ${({ theme }): string => theme.colors.white};
+      fill: ${themeGet('colors', 'white')};
     }
   }
   &:focus {
-    border-color: ${({ theme }): string => theme.colors.accent};
+    border-color: ${themeGet('colors', 'accent')};
     ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
   }
 
   &:disabled {
-    color: ${({ theme }): string => theme.colors.grey60};
-    border-color: ${({ theme }): string => theme.colors.grey80};
-    background: ${({ theme }): string => theme.colors.white};
+    color: ${themeGet('colors', 'grey60')};
+    border-color: ${themeGet('colors', 'grey80')};
+    background: ${themeGet('colors', 'white')};
     cursor: default;
     & .${cssClass('Icon')} svg {
-      fill: ${({ theme }): string => theme.colors.grey60};
+      fill: ${themeGet('colors', 'grey60')};
     }
   }
 

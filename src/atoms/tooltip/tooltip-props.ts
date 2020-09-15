@@ -1,18 +1,12 @@
 import { ReactNode, RefObject } from 'react'
+import { DirectionProps } from '../../utils/direction-props'
 import { BoxProps } from '../box'
-
-export type Position = {
-  top: number,
-  left: number,
-  width: number,
-  height: number,
-}
 
 export type TooltipProps = {
   /** Text shown on the tooltip */
   title?: string,
   /** Direction of tooltip */
-  direction: 'left' | 'right' | 'top' | 'bottom',
+  direction: DirectionProps,
   /** Tooltip size */
   size?: 'default' | 'lg'
 }

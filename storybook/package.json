@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.10.5",
+    "@storybook/addon-actions": "^6.0.21",
     "babel-loader": "^8.1.0",
     "firebase-tools": "^8.7.0",
     "react": "^16.13.1",

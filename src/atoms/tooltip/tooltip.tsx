@@ -1,15 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useWindowSize from '../../hooks/use-window-size'
 
-import { PortalProps, Position } from './tooltip-props'
+import { PortalProps } from './tooltip-props'
 import { StyledTooltip } from './tooltip-styled'
+
+type PositionProps = {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}
 
 const Tooltip: React.FC<PortalProps> = (props) => {
   const { title, childRef, direction, ContentElement, size } = props
   const tooltipRef = useRef<HTMLElement>(null)
-  const [dimension, setDimension] = useState<Pick<Position, 'width' | 'height'> | null>(null)
-  const [position, setPosition] = useState<Pick<Position, 'left' | 'top'> | null>(null)
-  const [elementPosition, setElementPosition] = useState<Position | null>(null)
+  const [dimension, setDimension] = useState<Pick<PositionProps, 'width' | 'height'> | null>(null)
+  const [position, setPosition] = useState<Pick<PositionProps, 'left' | 'top'> | null>(null)
+  const [elementPosition, setElementPosition] = useState<PositionProps | null>(null)
   const windowSize = useWindowSize()
 
   useEffect(() => {
