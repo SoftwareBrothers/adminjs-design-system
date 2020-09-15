@@ -1,5 +1,8 @@
+/* eslint-disable import/order */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 import React, { useState, useEffect, useRef, useMemo } from 'react'
-import Quill from 'quill'
 import debounce from 'lodash/debounce'
 
 import styled from 'styled-components'
@@ -7,6 +10,7 @@ import snow from './snow.styles'
 import bubble from './bubble.styles'
 import styles from './styles'
 import Box from '../../atoms/box'
+import { Quill as QuillClass } from 'quill/index'
 
 export type RichTextProps = {
   value?: string;
@@ -30,12 +34,16 @@ export const RichText: React.FC<RichTextProps> = (props) => {
 
   options.theme = options.theme || 'snow'
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const Quill: typeof QuillClass = require('quill')
+
   const classNames: Array<string> = []
   if (borderless) {
     classNames.push('quill-borderless')
   }
 
-  const [quill, setQuill] = useState<Quill | null>(null)
+  const [quill, setQuill] = useState<QuillClass | null>(null)
   const editorRef = useRef<HTMLDivElement>(null)
 
   const debouncedOnChange = useMemo(() => debounce(onChange || (() => true), 500), [onChange])
