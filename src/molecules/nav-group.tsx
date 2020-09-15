@@ -4,10 +4,12 @@ import { Icon } from '../atoms/icon'
 import { Box } from '../atoms/box'
 import { Text } from '../atoms/text'
 import { cssClass } from '../utils/css-class'
+import themeGet from '../utils/theme-get'
 
 const NavGroupTitle = styled(Text)`
   padding: 11px 20px;
-  color: ${({ theme }): string => theme.colors.grey100};
+  margin: 0;
+  color: ${themeGet('colors', 'grey100')};
   border-radius: 9999px;
   display: flex;
   cursor: pointer;
@@ -15,20 +17,26 @@ const NavGroupTitle = styled(Text)`
   & > ${Text} {
     display: block;
     flex-grow: 1;
-    line-height: ${({ theme }): string => theme.lineHeights.default};
+    line-height: ${themeGet('lineHeights', 'default')};
+    margin-bottom: 0;
   }
 
-  & svg {
+  & + ${Box} {
+    padding-left: ${themeGet('space', 'xxl', '12px')};
+  }
+
+  & > .${cssClass('Icon')} svg {
     vertical-align: middle;
     padding-bottom: 2px;
     flex-shrink: 0;
   }
-  & svg:first-child {
-    padding-right: ${({ theme }): string => theme.space.lg};
+
+  & > .${cssClass('Icon')}:first-child {
+    padding-right: ${themeGet('space', 'md')};
   }
 
-  & svg:last-child {
-    
+  & > .${cssClass('Icon')}:last-child {
+    padding-left: ${themeGet('space', 'sm')};
   }
 `
 
@@ -90,7 +98,7 @@ const NavGroup: React.FC<NavGroupProps> = (props) => {
         <Icon icon={chevron} />
       </NavGroupTitle>
       {isItOpen ? (
-        <Box pl="x3" pb="xl" pt="sm">
+        <Box pb="xl" pt="sm">
           {children}
         </Box>
       ) : ''}
