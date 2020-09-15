@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import {
   color as styledColor,
   space,
-  ColorProps,
   SpaceProps,
   TypographyProps,
   typography,
@@ -13,6 +12,7 @@ import {
 import focusShadowStyle from '../utils/focus-shadow.style'
 import { cssClass } from '../utils/css-class'
 import { VariantType } from '../utils'
+import { ColorProps } from '../utils/color-props'
 
 const variantShared = {
   color: 'white',
@@ -145,7 +145,7 @@ type ButtonHTML = Omit<React.ComponentProps<'button'>, 'color'>
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
  */
-export type ButtonProps = Omit<ColorProps, 'color'> & SpaceProps & TypographyProps & {
+export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
   /**
    * Button color variant
    */

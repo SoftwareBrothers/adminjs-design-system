@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, space, typography, SpaceProps, TypographyProps, ColorProps, variant } from 'styled-system'
+import { color, space, typography, SpaceProps, TypographyProps, variant } from 'styled-system'
+import { ColorProps } from '../utils/color-props'
 import { cssClass } from '../utils/css-class'
 
 /**

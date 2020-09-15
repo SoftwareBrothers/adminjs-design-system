@@ -1,8 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { space, SpaceProps, color, ColorProps } from 'styled-system'
+import { space, SpaceProps, color } from 'styled-system'
 import * as CarbonIcons from '@carbon/icons-react'
 import { cssClass } from '../utils/css-class'
+import { ColorProps } from '../utils/color-props'
 
 /**
  * Prop Types of an Icon component.

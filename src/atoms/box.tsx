@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import {
-  space, SpaceProps, color, ColorProps, layout,
+  space, SpaceProps, color, layout,
   LayoutProps, flexbox, FlexboxProps, border, BorderProps,
   position, PositionProps, variant,
   shadow, ShadowProps,
 } from 'styled-system'
+import { ColorProps } from '../utils/color-props'
 import { cssClass } from '../utils/css-class'
 
 const variants = variant({

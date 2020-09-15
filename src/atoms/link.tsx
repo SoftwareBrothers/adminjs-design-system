@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { color, space, ColorProps, variant, SpaceProps } from 'styled-system'
+import { color, space, variant, SpaceProps } from 'styled-system'
 import { cssClass } from '../utils/css-class'
+import { ColorProps } from '../utils/color-props'
 
 const sizeVariants = variant({
   prop: 'size',

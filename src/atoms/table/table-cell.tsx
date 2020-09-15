@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, space, layout, SpaceProps, ColorProps, LayoutProps } from 'styled-system'
+import { color, space, layout, SpaceProps, LayoutProps } from 'styled-system'
+import { ColorProps } from '../../utils/color-props'
 
 import TableHead from './table-head'
 import { cssClass } from '../../utils/css-class'

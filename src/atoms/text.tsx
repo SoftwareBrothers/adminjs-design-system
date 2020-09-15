@@ -7,12 +7,12 @@ import {
   SpaceProps,
   variant,
   color,
-  ColorProps,
   layout,
   LayoutProps,
 } from 'styled-system'
 import contentCSS from '../utils/content-styles'
 import { cssClass } from '../utils/css-class'
+import { ColorProps } from '../utils/color-props'
 
 const variants = variant({
   variants: {

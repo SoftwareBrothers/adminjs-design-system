@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme, ThemedCssFunction } from 'styled-components'
 import {
   color, space,
-  ColorProps, SpaceProps,
+  SpaceProps,
   TypographyProps,
   typography,
   variant,
@@ -9,6 +9,7 @@ import {
 import { VariantType } from '../utils'
 import { cssClass } from '../utils/css-class'
 import themeGet from '../utils/theme-get'
+import { ColorProps } from '../utils/color-props'
 
 const labelVariants = variant<any, VariantType>({
   variants: {
