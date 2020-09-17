@@ -175,6 +175,8 @@ export * from './molecules/logged-user'
 export * from './molecules/nav-group'
 export * from './molecules/stepper/index'
 export * from './organisms/navigation'
+export * from './organisms/software-brothers'
+export * from './organisms/current-user-nav'
 export * from './constants'
 export * from './global'
 

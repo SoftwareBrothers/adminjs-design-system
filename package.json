@@ -12,7 +12,8 @@
     "build": "tsc",
     "lint": "eslint './src/**/*' './vendor-types/**/*'  --ignore-pattern '*.json' --ignore-pattern 'yarn.lock'",
     "check:all": "yarn build && yarn lint",
-    "bundle": "rollup --config ./config/rollup.js"
+    "bundle": "rollup --config ./config/rollup.js",
+    "dev": "yarn build && yarn bundle"
   },
   "husky": {
     "hooks": {

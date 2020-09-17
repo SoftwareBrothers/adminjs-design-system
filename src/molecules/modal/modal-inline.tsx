@@ -9,7 +9,6 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
     variant,
     onClose,
     children,
-    color,
     buttons,
     label,
     icon,

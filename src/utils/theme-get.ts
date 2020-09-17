@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components'
 
 type Kind = keyof DefaultTheme
 
-export default function themeGet<T extends Kind>(
+function themeGet<T extends Kind>(
   kind: T,
   value?: keyof DefaultTheme[T],
   offset?: number | string,
@@ -24,4 +24,9 @@ export default function themeGet<T extends Kind>(
 
     return themeVal
   }
+}
+
+export {
+  themeGet as default,
+  themeGet,
 }

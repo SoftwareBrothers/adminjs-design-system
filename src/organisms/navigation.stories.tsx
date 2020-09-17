@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Navigation, Box, Label } from '..'
-import { withKnobs, boolean, text } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, text } from '../../storybook/node_modules/@storybook/addon-knobs'
 
 import { NavigationProps } from './navigation'
 
@@ -31,8 +31,9 @@ export const Default: React.FC = ({ onClick }) => {
       isSelected: true,
       href: '/',
       onClick: handleClick,
+      id: 'dashboard',
     }, {
-      label: 'Postgres',
+      label: 'Postgres with long name and spaces',
       icon: 'Sql',
       onClick: (event) => {
         event.preventDefault()
@@ -43,21 +44,25 @@ export const Default: React.FC = ({ onClick }) => {
         label: 'Users',
         href: '/resources/Users/list',
         onClick: handleClick,
+        id: 'users',
       }, {
         label: 'Posts',
         href: '/resources/Posts/list',
         onClick: handleClick,
+        id: 'posts',
       }, {
         label: 'Messages',
         href: '/resources/Messages/list',
         onClick: handleClick,
+        id: 'messages',
       }, {
         label: 'Calendar',
         href: '/resources/Calendar/list',
         onClick: handleClick,
+        id: 'calendar',
       }],
     }, {
-      label: 'Mongoose',
+      label: 'MongooseWithLongNameAndWithoutSpaces',
       icon: 'Datastore',
       isOpen: mongooseOpen,
       onClick: (event) => {
@@ -68,18 +73,22 @@ export const Default: React.FC = ({ onClick }) => {
         label: 'Car',
         href: '/resources/Cars/list',
         onClick: handleClick,
+        id: 'car',
       }, {
         label: 'Dealers',
         href: '/resources/Dealers/list',
         onClick: handleClick,
+        id: 'dealers',
       }, {
         label: 'Owners',
         href: '/resources/Owners/list',
         onClick: handleClick,
+        id: 'owners',
       }, {
         label: 'Orders',
         href: '/resources/Orders/list',
         onClick: handleClick,
+        id: 'orders',
       }],
     }],
   }

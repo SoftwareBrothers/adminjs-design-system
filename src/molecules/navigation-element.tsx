@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Box from '../atoms/box'
-import Icon from '../atoms/icon'
+import { Icon, CardTitle, Box } from '..'
 import themeGet from '../utils/theme-get'
+
+// The longest part of the label which makes it no-wrap: ellipsis
+// example: `MongooseWithLongNameAnd with space` should be truncated because 15 lines doesn't fit
+// the width of the navbar. But "Postgres with long name and spaces" shouldn't be truncated because
+// its "parts" doesn't exceed 15 chars each.
+const PART_LENGTH_TO_ELLIPSIS = 15
 
 export type NavigationElementProps = {
   href?: string;
@@ -11,7 +16,11 @@ export type NavigationElementProps = {
   isOpen?: boolean;
   isSelected?: boolean
   label: string,
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  id?: string,
+  onClick?: (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    props: NavigationElementProps
+  ) => void;
 }
 
 const getBg = (props): string => (
@@ -25,12 +34,6 @@ const getSelectedColor = (props) => themeGet('colors',
 
 const getHoverColor = (props) => themeGet('colors',
   props.isOpen ? 'grey80' : 'primary100')(props)
-
-const CardTitle = styled('div')`
-  font-family: ${themeGet('font')};
-  font-size: ${themeGet('fontSizes', 'md')};
-  line-height: ${themeGet('lineHeights', 'lg')};
-`
 
 const StyledNavigationElement = styled(Box)<Pick<NavigationElementProps, 'isSelected' | 'isOpen'>>`
   background-color: ${getBg};
@@ -53,6 +56,9 @@ const StyledNavigationElement = styled(Box)<Pick<NavigationElementProps, 'isSele
   }
   & > ${CardTitle} {
     flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   & > .arrow-box {
     flex-shrink: 0;
@@ -68,6 +74,10 @@ const NavigationElement:React.FC<NavigationElementProps> = (props) => {
   const expandable = typeof isOpen !== 'undefined'
   const chevron = isOpen ? 'ChevronUp' : 'ChevronDown'
 
+  const hasLongName = label.split(' ').reduce((memo, part) => (
+    memo.length > part.length ? memo : part
+  ), '').length > PART_LENGTH_TO_ELLIPSIS
+
   return (
     <StyledNavigationElement
       flex
@@ -76,12 +86,12 @@ const NavigationElement:React.FC<NavigationElementProps> = (props) => {
       isSelected={isSelected}
       isOpen={isOpen}
       href={href}
-      onClick={onClick || undefined}
+      onClick={(event) => (onClick ? onClick(event, props) : undefined)}
     >
       {icon && (
         <Box className="icon-box" as="span"><Icon icon={icon} /></Box>
       )}
-      <CardTitle>
+      <CardTitle style={{ whiteSpace: hasLongName ? 'nowrap' : 'normal' }}>
         {label}
       </CardTitle>
       {expandable && (

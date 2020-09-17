@@ -5,7 +5,7 @@ import NavigationElement, { NavigationElementProps } from '../molecules/navigati
 import { Box, Label } from '..'
 import themeGet from '../utils/theme-get'
 
-type NavigationElementWithChildrenProps = NavigationElementProps & {
+export type NavigationElementWithChildrenProps = NavigationElementProps & {
   elements?: Array<NavigationElementWithChildrenProps>,
 }
 

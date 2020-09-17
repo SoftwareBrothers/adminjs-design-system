@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
 import { Button } from './button'
 import { Badge } from './badge'
@@ -101,6 +101,30 @@ H6.defaultProps = {
   fontWeight: 'normal',
 }
 
+const CaptionShared = css<TypographyProps & SpaceProps>`
+  font-family: ${themeGet('font')};
+  ${typography};
+  ${space};
+`
+
+const CardTitle = styled('div')<TypographyProps & SpaceProps>`
+  ${CaptionShared};
+  font-size: ${themeGet('fontSizes', 'md')};
+  line-height: ${themeGet('lineHeights', 'lg')};
+`
+
+const Caption = styled('div')<TypographyProps & SpaceProps>`
+  ${CaptionShared};
+  font-size: ${themeGet('fontSizes', 'sm')};
+  line-height: ${themeGet('lineHeights', 'md')};
+`
+
+const SmallText = styled('div')<TypographyProps & SpaceProps>`
+  ${CaptionShared};
+  font-size: ${themeGet('fontSizes', 'xs')};
+  line-height: ${themeGet('lineHeights', 'sm')};
+`
+
 /**
  * @classdesc
  *
@@ -162,4 +186,7 @@ export {
   H4,
   H5,
   H6,
+  CardTitle,
+  Caption,
+  SmallText,
 }

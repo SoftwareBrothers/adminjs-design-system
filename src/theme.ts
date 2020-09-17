@@ -110,6 +110,7 @@
  * @property {string} filterBg=#343F87      <div style="background: #343F87; height: 20px;" />
  * @property {string} hoverBg=#535B8E     <div style="background: #535B8E; height: 20px;" />
  * @property {string} inputBorder=#898A9A     <div style="background: #898A9A; height: 20px;" />
+ * @property {string} border=#DDE1E5,     <div style="background: #DDE1E5; height: 20px;" />
  * @property {string} separator=#C0C0CA     <div style="background: #C0C0CA; height: 20px;" />
  * @property {string} highlight=#F6F7FB     <div style="background: #F6F7FB; height: 20px;" />
  * @property {string} filterInputBorder=rgba(255,255,255,0.15)      <div style="background: rgba(255,255,255,0.15); height: 20px;" />
@@ -152,6 +153,9 @@ const colors = {
   // Backgrounds
   filterBg: '#343F87',
   hoverBg: '#535B8E',
+
+  // global
+  border: '#DDE1E5',
 
   // Elements
   inputBorder: '#C0C0CA',
@@ -344,6 +348,7 @@ const borders = {
   input: '1px solid #C0C0CA',
   filterInput: ' 1px rgba(255,255,255,0. solid15)',
   bg: '1px solid #F6F7FB',
+  default: '1px solid #DDE1E5',
 }
 
 export {

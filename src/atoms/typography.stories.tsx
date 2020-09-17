@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { withKnobs, select } from '../../storybook/node_modules/@storybook/addon-knobs'
 
 import { Box, Text } from '..'
-import { H1, H2, H3, H4, H5, Header } from './header'
+import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './header'
 import StoryWrapper from '../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Typography', decorators: [withKnobs] }
@@ -231,5 +231,16 @@ export const Example: React.FC = () => (
         interpretem postulet, sic, isti nobis cum interprete audiendi sunt.
       </Text>
     </Box>
+  </StoryWrapper>
+)
+
+export const Captions: React.FC = () => (
+  <StoryWrapper label="Captions">
+    <CardTitle>Card Title - 15</CardTitle>
+    <Text variant="sm" mb={5}>Roboto 14 - line height - 40</Text>
+    <Caption>Caption - 12</Caption>
+    <Text variant="sm" mb={5}>Roboto 12 - line height - 16</Text>
+    <SmallText>Small Text - 10</SmallText>
+    <Text variant="sm" mb={5}>Roboto 10 - line height - 12</Text>
   </StoryWrapper>
 )

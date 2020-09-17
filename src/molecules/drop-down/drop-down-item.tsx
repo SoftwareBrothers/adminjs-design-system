@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 
-import Link from '../../atoms/link'
 import Box from '../../atoms/box'
+import { cssClass } from '../../utils'
 
 /**
  * @component
@@ -17,29 +17,30 @@ export const DropDownItem = styled(Box)<SpaceProps>`
   font-family: ${({ theme }): string => theme.font};
   border: solid transparent;
   border-width: 0 ${({ theme }): string => theme.space.sm};
+  ${({ onClick }) => (onClick ? 'cursor: pointer;' : '')};
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   &:hover {
     border-color: ${({ theme }): string => theme.colors.primary100};
     background: ${({ theme }): string => theme.colors.grey20};
   }
-  & svg {
-    vertical-align: middle;
-    padding-bottom: 2px;
+
+  & .${cssClass('Icon')} {
     padding-right: ${({ theme }): string => theme.space.default};
     fill: ${({ theme }): string => theme.colors.grey40};
+    flex-grow: 0;
+    flex-shrink: 0;
   }
+
   & a {
     color: ${({ theme }): string => theme.colors.grey80};
   }
+  padding: ${({ theme }): string => theme.space.lg};
 
   ${space};
-
-  & > ${Link}, & > a {
-    padding: ${({ theme }): string => theme.space.lg};
-    display: block;
-    &:hover{
-      text-decoration: none;
-    }
-  }
 `
 
 export default DropDownItem
