@@ -44,7 +44,7 @@ const StyledWrapper = styled(Box)`
     width: 36px;
     height: 36px;
     border-radius: 40px;
-    margin: -1px ${themeGet('space', 'md')};
+    margin: -1px ${themeGet('space', 'md')} 0;
   }
 `
 
@@ -77,9 +77,9 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
           ))}
         </Box>
       )}
-      <DropDown stick="right">
+      <DropDown stick="right" display="flex">
         <DropDownTrigger>
-          <Box flex flexDirection="row" px="xl" alignItems="center">
+          <Box flex flexDirection="row" px="xl" alignItems="center" height="navbarHeight">
             <Box>
               <CardTitle>{name}</CardTitle>
               {title && (
@@ -93,6 +93,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
               <Icon
                 icon="OverflowMenuVertical"
                 size={16}
+                ml="md"
               />
             )}
           </Box>

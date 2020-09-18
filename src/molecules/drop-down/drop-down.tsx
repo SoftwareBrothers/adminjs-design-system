@@ -1,3 +1,4 @@
+import { BoxProps } from '@admin-bro/design-system'
 /* eslint-disable default-case */
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
@@ -11,7 +12,7 @@ const DEFAULT_STICK = 'left'
 
 export type DropDownProps = {
   stick?: 'left' | 'right',
-}
+} & BoxProps
 
 type PositionProps = {
   left?: number,
@@ -76,7 +77,7 @@ type PositionProps = {
  * @section design-system
  */
 const DropDown: React.FC<DropDownProps> = (props) => {
-  const { children, stick } = props
+  const { children, stick, ...boxProps } = props
   const [isVisible, setIsVisible] = useState(false)
 
   const triggerRef = useRef<HTMLElement>(null)
@@ -116,6 +117,7 @@ const DropDown: React.FC<DropDownProps> = (props) => {
   })
   return (
     <StyledDropDown
+      {...boxProps}
       onMouseEnter={(): void => setIsVisible(true)}
       onMouseLeave={(): void => setIsVisible(false)}
     >

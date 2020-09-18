@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs, text } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, text, object } from '../../storybook/node_modules/@storybook/addon-knobs'
 
 import { CurrentUserNav, Box } from '..'
 import StoryWrapper from '../utils/story-wrapper'
@@ -15,13 +15,14 @@ export default {
 export const Default: React.FC = ({ onClick }) => {
   const name = text('name', 'Wojtek Krysiak')
   const title = text('title', 'Master admin')
+  const avatar = text('avatar', 'https://api.adorable.io/avatars/285/abott@adorable.png')
 
   const handleClick = (event) => {
     event.preventDefault()
     onClick(event)
   }
 
-  const dropActions = [{
+  const dropActions = object('dropActions', [{
     label: 'My Profile',
     onClick: handleClick,
     icon: 'User',
@@ -29,8 +30,9 @@ export const Default: React.FC = ({ onClick }) => {
     label: 'log out',
     onClick: handleClick,
     icon: 'Logout',
-  }]
-  const lineActions = [{
+  }])
+
+  const lineActions = object('lineActions', [{
     label: 'Notification',
     onClick: handleClick,
     icon: 'NotificationNew',
@@ -38,15 +40,15 @@ export const Default: React.FC = ({ onClick }) => {
     label: 'Settings',
     onClick: handleClick,
     icon: 'Settings',
-  }]
+  }])
 
   return (
     <StoryWrapper label="SoftwareBrothers footer info">
-      <Box border="default" flex flexDirection="row-reverse" height="72px">
+      <Box border="default" flex flexDirection="row-reverse" height="navbarHeight">
         <CurrentUserNav
           name={name}
           title={title}
-          avatarUrl="https://api.adorable.io/avatars/285/abott@adorable.png"
+          avatarUrl={avatar}
           dropActions={dropActions}
           lineActions={lineActions}
         />
