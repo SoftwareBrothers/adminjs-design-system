@@ -85,13 +85,13 @@ const DropDown: React.FC<DropDownProps> = (props) => {
 
   useEffect(() => {
     if (menuRef.current && triggerRef.current) {
-      const { clientHeight } = triggerRef.current
+      const { offsetHeight } = triggerRef.current
       switch (stick || DEFAULT_STICK) {
       case 'left':
-        setMenuPosition({ left: 0, top: clientHeight })
+        setMenuPosition({ left: 0, top: offsetHeight })
         break
       case 'right':
-        setMenuPosition({ right: 0, top: clientHeight })
+        setMenuPosition({ right: 0, top: offsetHeight })
       }
     }
   }, [triggerRef.current, menuRef.current, stick])
@@ -99,7 +99,8 @@ const DropDown: React.FC<DropDownProps> = (props) => {
   const elements = React.Children.map(children, (child: any) => {
     const type = child && child.type && child.type.displayName
     if (type === 'DropDownTrigger') {
-      return React.cloneElement(child, {
+      // const triggerChildren = React.Children.toArray(child.props.children)[0]
+      return React.cloneElement(child.props.children, {
         onMouseEnter: () => setIsVisible(true),
         ref: triggerRef,
       })

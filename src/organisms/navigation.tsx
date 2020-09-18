@@ -19,7 +19,7 @@ const NavigationElementWrapper: React.FC<NavigationElementWithChildrenProps> = (
   return (
     <li>
       <NavigationElement {...props} />
-      {elements?.length && isOpen && (
+      {elements?.length && isOpen ? (
         <ul>
           {elements.map((element, id) => (
             <NavigationElementWrapper
@@ -28,7 +28,7 @@ const NavigationElementWrapper: React.FC<NavigationElementWithChildrenProps> = (
             />
           ))}
         </ul>
-      )}
+      ) : ''}
     </li>
   )
 }

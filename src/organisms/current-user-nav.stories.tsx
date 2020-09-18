@@ -42,7 +42,7 @@ export const Default: React.FC = ({ onClick }) => {
 
   return (
     <StoryWrapper label="SoftwareBrothers footer info">
-      <Box border="default" flex flexDirection="row-reverse">
+      <Box border="default" flex flexDirection="row-reverse" height="72px">
         <CurrentUserNav
           name={name}
           title={title}

@@ -111,6 +111,7 @@ const Badge = styled.span<BadgeProps>`
   color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.white)};
   vertical-align: middle;
   font-family: ${({ theme }): string => theme.font};
+  display: inline;
 
   ${space};
   ${color};
@@ -124,7 +125,6 @@ Badge.defaultProps = {
   px: 'default',
   py: 'sm',
   fontSize: 'sm',
-  lineHeight: 'xxl',
   bg: 'grey40',
   className: cssClass('Badge'),
 }

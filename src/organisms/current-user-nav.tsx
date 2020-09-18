@@ -59,7 +59,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
   return (
     <StyledWrapper>
       {lineActions && lineActions.length && (
-        <Box flex flexDirection="row" py="xl" alignItems="center">
+        <Box flex flexDirection="row" alignItems="center">
           {lineActions.map((action) => (
             <Button
               size="icon"
@@ -79,7 +79,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
       )}
       <DropDown stick="right">
         <DropDownTrigger>
-          <Box flex flexDirection="row" p="xl" alignItems="center">
+          <Box flex flexDirection="row" px="xl" alignItems="center">
             <Box>
               <CardTitle>{name}</CardTitle>
               {title && (

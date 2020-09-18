@@ -351,6 +351,8 @@ const borders = {
   default: '1px solid #DDE1E5',
 }
 
+// TODO: add transitions
+
 export {
   colors,
   lineHeights,
