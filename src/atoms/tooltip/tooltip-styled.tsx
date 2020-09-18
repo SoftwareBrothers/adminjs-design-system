@@ -91,13 +91,16 @@ const getPadding = (props: StyledTooltipProps): string => {
   return `${themeGet('space', py)(props)} ${themeGet('space', px)(props)}`
 }
 
-// transition: opacity 0.2s, margin 0.2s;
 const StyledTooltip = styled(Box)<StyledTooltipProps>`
+  transition: opacity 0.2s, margin 0.2s;
+
   position: absolute;
 
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   
   padding: ${(props) => getPadding(props)};
+
+  pointer-events: none;
   
   &::after {
     content: " ";

@@ -52,6 +52,14 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     })
   }
 
+  const onEnter = (event) => {
+    setIsVisible(true)
+  }
+
+  const onLeave = (event) => {
+    setIsVisible(false)
+  }
+
   const ChildWithRef = forwardRef((triggerProps, ref) => React.cloneElement(TriggerElement, {
     ...triggerProps,
     displayName: TriggerDisplayName,
@@ -62,8 +70,8 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     <>
       <ChildWithRef
         ref={childRef}
-        onMouseEnter={() => setIsVisible(true)}
-        onMouseLeave={() => setIsVisible(false)}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
       />
       {isVisible && (
         <TooltipPortal
