@@ -100,10 +100,6 @@ const sizeVariants = variant({
       py: 'xs',
       lineHeight: 'default',
       px: 'lg',
-      [`& .${cssClass('Icon')} svg`]: {
-        height: '14px',
-        width: '14px',
-      },
     },
     // md alias default
     md: {},
@@ -112,10 +108,6 @@ const sizeVariants = variant({
       py: 'default',
       px: 'x3',
       lineHeight: 'lg',
-      [`& .${cssClass('Icon')} svg`]: {
-        width: '20px',
-        height: '20px',
-      },
     },
     icon: {
       py: 'default',
@@ -126,8 +118,6 @@ const sizeVariants = variant({
       [`& .${cssClass('Icon')} svg`]: {
         padding: 0,
         margin: 0,
-        width: '16px',
-        height: '16px',
       },
     },
   },
@@ -205,8 +195,6 @@ export const ButtonCSS = css<ButtonProps>`
   }
 
   & .${cssClass('Icon')} svg {
-    width: 18px;
-    height: 18px;
     fill: ${themeGet('colors', 'primary100')};
   }
   &:hover {
