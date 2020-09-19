@@ -1,6 +1,5 @@
 import { css } from 'styled-components'
 import { rgba } from 'polished'
-import { themeGet } from '../../utils'
 
 const snow = css`
   .ql-container {
@@ -344,66 +343,49 @@ const snow = css`
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item::before {
-    content: 'Text';
+    content: 'Normal';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
-    content: 'Header 1';
+    content: 'Heading 1';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
-    content: 'Header 2';
+    content: 'Heading 2';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
-    content: 'Header 3';
+    content: 'Heading 3';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before {
-    content: 'Header 4';
+    content: 'Heading 4';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
-    content: 'Header 5';
+    content: 'Heading 5';
   }
   .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"]::before,
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
-    content: 'Header 6';
+    content: 'Heading 6';
   }
-
-  .ql-snow .ql-picker.ql-header .ql-picker-item::before {
-    margin-top: ${themeGet('space', 'xs')};
-    margin-bottom: ${themeGet('space', 'xs')};
-    font-size: ${themeGet('fontSizes', 'lg')};
-    font-weight: ${themeGet('fontWeights', 'light')};
-  }
-
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
-    font-size: ${themeGet('fontSizes', 'h1')};
-    line-height: ${themeGet('lineHeights', 'xxl')};
+    font-size: 2em;
   }
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
-    font-size: ${themeGet('fontSizes', 'h2')};
-    line-height: ${themeGet('lineHeights', 'xxl')};
+    font-size: 1.5em;
   }
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
-    line-height: ${themeGet('lineHeights', 'xl')};
-    font-size: ${themeGet('fontSizes', 'h3')};
+    font-size: 1.17em;
   }
-
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before {
-    font-size: ${themeGet('fontSizes', 'h4')};
-    line-height: ${themeGet('lineHeights', 'xl')};
+    font-size: 1em;
   }
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
-    font-size: ${themeGet('fontSizes', 'xl')};
-    line-height: ${themeGet('lineHeights', 'lg')};
-    font-weight: ${themeGet('fontWeights', 'normal')};
+    font-size: 0.83em;
   }
   .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
-    font-size: ${themeGet('fontSizes', 'lg')};
-    line-height: ${themeGet('lineHeights', 'lg')};
-    font-weight: ${themeGet('fontWeights', 'normal')};
+    font-size: 0.67em;
   }
   .ql-snow .ql-picker.ql-font {
     width: 108px;

@@ -35,8 +35,10 @@ export const DefaultQuillToolbarOptions: Array<QuillToolbarOptions> = [
   ['bold', 'italic', 'underline', 'strike'], // toggled buttons
   ['blockquote', 'code-block'],
   [{ list: 'ordered' }, { list: 'bullet' }],
+  [{ indent: '-1' }, { indent: '+1' }],
 
   [{ align: [] }],
+  ['link', 'image', 'video'],
 
   ['clean'], // remove formatting button
 ]

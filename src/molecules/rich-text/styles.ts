@@ -315,6 +315,41 @@ const styles = css`
     position: absolute;
     right: 15px;
   }
+
+  .ql-picker.ql-header .ql-picker-item::before {
+    margin-top: ${themeGet('space', 'xs')};
+    margin-bottom: ${themeGet('space', 'xs')};
+    font-size: ${themeGet('fontSizes', 'lg')};
+    font-weight: ${themeGet('fontWeights', 'light')};
+  }
+
+  .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
+    font-size: ${themeGet('fontSizes', 'h1')};
+    line-height: ${themeGet('lineHeights', 'xxl')};
+  }
+  .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
+    font-size: ${themeGet('fontSizes', 'h2')};
+    line-height: ${themeGet('lineHeights', 'xxl')};
+  }
+  .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
+    line-height: ${themeGet('lineHeights', 'xl')};
+    font-size: ${themeGet('fontSizes', 'h3')};
+  }
+
+  .ql-picker.ql-header .ql-picker-item[data-value="4"]::before {
+    font-size: ${themeGet('fontSizes', 'h4')};
+    line-height: ${themeGet('lineHeights', 'xl')};
+  }
+  .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
+    font-size: ${themeGet('fontSizes', 'xl')};
+    line-height: ${themeGet('lineHeights', 'lg')};
+    font-weight: ${themeGet('fontWeights', 'normal')};
+  }
+  .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
+    font-size: ${themeGet('fontSizes', 'lg')};
+    line-height: ${themeGet('lineHeights', 'lg')};
+    font-weight: ${themeGet('fontWeights', 'normal')};
+  }
 `
 
 export default styles
