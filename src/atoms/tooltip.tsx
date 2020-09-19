@@ -52,11 +52,11 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     })
   }
 
-  const onEnter = (event) => {
+  const onEnter = () => {
     setIsVisible(true)
   }
 
-  const onLeave = (event) => {
+  const onLeave = () => {
     setIsVisible(false)
   }
 

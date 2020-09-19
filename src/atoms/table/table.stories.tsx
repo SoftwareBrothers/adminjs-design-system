@@ -1,8 +1,7 @@
 import React from 'react'
-import { withKnobs, text, object } from '../../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
 import {
-  Box,
   Table,
   TableCaption,
   TableRow,
@@ -12,7 +11,6 @@ import {
   Button,
   Icon,
   CheckBox,
-  Text,
   Link,
   CardTitle,
 } from '../..'
