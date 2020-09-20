@@ -103,6 +103,7 @@ H6.defaultProps = {
 
 const CaptionShared = css<TypographyProps & SpaceProps>`
   font-family: ${themeGet('font')};
+  font-weight: ${themeGet('fontWeights', 'normal')};
   ${typography};
   ${space};
 `

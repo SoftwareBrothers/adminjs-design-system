@@ -11,7 +11,9 @@ import { cssClass } from '../utils/css-class'
 import themeGet from '../utils/theme-get'
 import { ColorProps } from '../utils/color-props'
 
-const labelVariants = variant<any, VariantType>({
+export type LabelVariantType = VariantType | 'light'
+
+const labelVariants = variant<any, LabelVariantType>({
   variants: {
     primary: {
       color: 'primary100',
@@ -43,6 +45,14 @@ const labelVariants = variant<any, VariantType>({
         fill: 'accent',
       },
     },
+    light: {
+      color: 'grey60',
+      mb: 'sm',
+      fontWeight: 'light',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'grey60',
+      },
+    },
     default: {},
   },
 })
@@ -69,7 +79,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   /** If label represents disabled field (dimmed version) */
   disabled?: boolean;
   /** Color variant */
-  variant?: VariantType;
+  variant?: LabelVariantType;
 
   /** Label size */
   size?: 'default' | 'lg'
@@ -119,15 +129,15 @@ const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultT
  */
 const Label = styled.label<LabelProps>`
   display: ${({ inline }): string => (inline ? 'inline-block' : 'block')};
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${themeGet('font')};
   font-size: ${(props): string => themeGet('fontSizes', props.size === 'lg' ? 'md' : 'sm')(props)};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
+  line-height: ${themeGet('lineHeights', 'default')};
   margin-bottom: ${({ theme, inline }): string => (inline ? '0' : theme.space.default)};
 
   &:before {
     content: "${({ required }): string => (required ? '*' : '')}";
-    color: ${({ theme }): string => theme.colors.primary100};
-    margin-right: ${({ theme }): string => theme.space.sm};
+    color: ${themeGet('colors', 'primary100')};
+    margin-right: ${themeGet('space', 'sm')};
     display: ${({ required }): string => (required ? 'block-inline' : 'none')};
   }
 

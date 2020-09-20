@@ -80,12 +80,12 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  * @section design-system
  */
 const Text = styled.div<TextProps>`
+  ${contentCSS};
   ${typography};
   ${space};
   ${layout};
   ${color};
   ${variants};
-  ${contentCSS};
 `
 
 Text.defaultProps = {
