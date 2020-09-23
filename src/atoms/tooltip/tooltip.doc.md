@@ -1,3 +1,5 @@
+<img src="components/tooltip.png" />
+
 Renders Tooltip
 
 ### Usage

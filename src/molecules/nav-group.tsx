@@ -47,7 +47,6 @@ NavGroupTitle.defaultProps = {
 /**
  * @memberof NavGroup
  * @alias NavGroupProps
- * @deprecated
  */
 export type NavGroupProps = {
   /** Title of the navigation group */
@@ -58,7 +57,7 @@ export type NavGroupProps = {
 
 /**
  * @classdesc
- * 
+ *
  * > This component is deprecated in favour of {@link NavigationElement} and
  * {@link Navigation} components
  *
@@ -86,7 +85,7 @@ export type NavGroupProps = {
  *   </Box>
  * )
  * @section design-system
- * @deprecated
+ * @deprecated in favour of {@link Navigation} and {@link NavigationElement} components
  */
 const NavGroup: React.FC<NavGroupProps> = (props) => {
   const { title, icon, children } = props

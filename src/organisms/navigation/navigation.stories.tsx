@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Navigation, Box, Label } from '..'
-import { withKnobs, text } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { Navigation, Box, Label } from '../..'
+import { withKnobs, text } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
 import { NavigationProps } from './navigation'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+
 import {
   Box,
   CardTitle,
@@ -10,54 +10,26 @@ import {
   DropDownItem,
   Icon,
   Button,
-} from '..'
-import { cssClass, themeGet } from '../utils'
+} from '../..'
 
-export type CurrentUserAction = {
-  label: string,
-  onClick?: (event: any) => void,
-  icon?: string,
-  isActive?: string,
-}
+import { CurrentUserNavProps } from './current-user-nav-props'
+import StyledCurrentUserNav from './current-user-nav-styled'
 
-export type CurrentUserNavProps = {
-  name: string,
-  title?: string
-  avatarUrl?: string,
-  dropActions?: Array<CurrentUserAction>
-  lineActions?: Array<CurrentUserAction>
-}
-
-const StyledWrapper = styled(Box)`
-  text-align: right;
-
-  & .line-action {
-    .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'grey80')};
-    }
-    &:hover .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'primary100')};
-    }
-  }
-
-  & img {
-    width: 36px;
-    height: 36px;
-    border-radius: 40px;
-    margin: -1px ${themeGet('space', 'md')} 0;
-  }
-`
-
-StyledWrapper.defaultProps = {
-  flex: true,
-  flexDirection: 'row',
-}
-
+/**
+ * @load ./current-user-nav.doc.md
+ * @component
+ * @subcategory Organisms
+ * @hideconstructor
+ * @see CurrentUserNavProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-organisms-current-user-nav--default Storybook}
+ * @new In version 3.3
+ * @section design-system
+ */
 const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
   const { name, title, avatarUrl, dropActions, lineActions } = props
 
   return (
-    <StyledWrapper>
+    <StyledCurrentUserNav>
       {lineActions && lineActions.length && (
         <Box flex flexDirection="row" alignItems="center">
           {lineActions.map((action) => (
@@ -115,7 +87,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
           </DropDownMenu>
         )}
       </DropDown>
-    </StyledWrapper>
+    </StyledCurrentUserNav>
   )
 }
 

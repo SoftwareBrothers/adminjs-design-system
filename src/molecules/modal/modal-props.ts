@@ -2,7 +2,7 @@ import { ButtonProps, VariantType } from '../..'
 
 /**
  * Props passed to Modal Component
- * 
+ *
  * @memberof Modal
  * @alias ModalProps
  */
@@ -25,7 +25,7 @@ export type ModalProps = {
 
   /** Label which is seen above the text */
   label?: string,
-  
+
   /** Icon near the label */
   icon?: string,
 

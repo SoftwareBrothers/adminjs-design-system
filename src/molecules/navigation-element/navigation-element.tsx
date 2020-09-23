@@ -18,6 +18,7 @@ const PART_LENGTH_TO_ELLIPSIS = 15
  * @see NavigationElementProps
  * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navigation-element--default Storybook}
  * @section design-system
+ * @new In version 3.3
  */
 const NavigationElement:React.FC<NavigationElementProps> = (props) => {
   const { isOpen, icon, onClick, label, isSelected, href } = props

@@ -12,5 +12,5 @@ const Caption = styled('div')<TypographyProps & SpaceProps>`
 
 export {
   Caption as default,
-  Caption
+  Caption,
 }

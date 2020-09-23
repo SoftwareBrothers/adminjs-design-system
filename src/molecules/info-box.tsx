@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Box, BoxProps, H4 } from '../'
+import { Box, BoxProps, H4 } from '..'
 import { cssClass } from '../utils/css-class'
 
 const StyledInfoBox = styled(Box)<BoxProps>`

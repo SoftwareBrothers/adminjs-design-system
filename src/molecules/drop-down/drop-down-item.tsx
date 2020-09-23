@@ -7,7 +7,7 @@ import { cssClass } from '../../utils'
 /**
  * Props passed to DropDownItem
  * Extends {@link BoxProps}
- * 
+ *
  * @memberof DropDown
  * @extends BoxProps
  */

@@ -13,7 +13,7 @@ import { css, createGlobalStyle } from 'styled-components'
  *   ${reset};
  * `
  * ```
- *
+ * @new in version 3.3
  * @memberof module:@admin-bro/design-system
  */
 const reset = css`
@@ -87,7 +87,7 @@ table {
  *   </Box>
  * </ThemeProvider>
  * ```
- *
+ * @new in version 3.3
  * @memberof module:@admin-bro/design-system
  */
 const Reset = createGlobalStyle`${reset}`

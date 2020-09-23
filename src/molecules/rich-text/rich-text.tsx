@@ -11,7 +11,7 @@ import snow from './snow.styles'
 import bubble from './bubble.styles'
 import styles from './styles'
 import Box from '../../atoms/box/box'
-import { Quill as QuillClass} from 'quill/index'
+import { Quill as QuillClass } from 'quill/index'
 import { DefaultQuillToolbarOptions, RichTextProps } from './rich-text-props'
 
 // Following hack is done for SSR case, where Quill wants to invoke `document.createElement...`
@@ -35,6 +35,7 @@ const Theme = styled(Box)<RichTextProps>`
  * @hideconstructor
  * @see RichTextProps
  * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-rich-text--default Storybook}
+ * @new In version 3.3
  * @section design-system
  */
 export const RichText: React.FC<RichTextProps> = (props) => {

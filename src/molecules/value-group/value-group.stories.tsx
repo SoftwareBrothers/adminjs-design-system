@@ -1,8 +1,8 @@
 import React from 'react'
-import { withKnobs, object } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, object } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
-import { ValueGroup, Box, CardTitle, Text } from '..'
-import StoryWrapper from '../utils/story-wrapper'
+import { ValueGroup, Box, CardTitle, Text } from '../..'
+import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
   title: 'DesignSystem/Molecules/ValueGroup',

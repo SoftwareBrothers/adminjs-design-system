@@ -12,5 +12,5 @@ const CardTitle = styled('div')<TypographyProps & SpaceProps>`
 
 export {
   CardTitle as default,
-  CardTitle
+  CardTitle,
 }

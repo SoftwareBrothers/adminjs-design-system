@@ -1,6 +1,6 @@
 import { SpaceProps, TypographyProps } from 'styled-system'
+import { VariantType } from '../../theme'
 
-import { VariantType } from '../../utils'
 import { ColorProps } from '../../utils/color-props'
 
 /**

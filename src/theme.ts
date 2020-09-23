@@ -264,7 +264,7 @@ const font = '\'Roboto\', sans-serif' as string
  * Border styles
  *
  * @memberof Theme
- * @alias breakpoints
+ * @alias borders
  * @property {string} input
  * @property {string} filterInput
  * @property {string} bg
@@ -469,7 +469,7 @@ export {
 
 /**
  * Reused Variant Enum: `primary` | `danger` | `success` | `info` | `secondary` | `default`
- * 
+ *
  * @typedef {Enum} VariantType
  * @alias VariantType
  * @memberof Theme

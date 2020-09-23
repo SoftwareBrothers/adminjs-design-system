@@ -12,6 +12,7 @@ const ModalPortal = PortalUtils.createPortalForKey('MODAL', ModalWrapper)
  * @subcategory Molecules
  * @section design-system
  * @hideconstructor
+ * @new In version 3.3
  */
 const Modal: React.FC<ModalProps> = (props) => (
   <ModalPortal {...props} />

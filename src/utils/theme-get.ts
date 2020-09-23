@@ -30,6 +30,7 @@ type Kind = keyof DefaultTheme
  * @return {ThemeFunction}  function taking props as an argument
  *
  * @memberof module:@admin-bro/design-system
+ * @new in version 3.3
  * @function themeGet
  */
 function themeGet<T extends Kind>(

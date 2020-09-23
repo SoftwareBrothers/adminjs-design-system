@@ -11,6 +11,7 @@ const TooltipPortal = PortalUtils.createPortalForKey('TOOLTIP', TooltipControl)
  * @component
  * @subcategory Atoms
  * @hideconstructor
+ * @new In version 3.3
  * @section design-system
  */
 const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {

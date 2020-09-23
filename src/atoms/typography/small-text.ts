@@ -12,5 +12,5 @@ const SmallText = styled('div')<TypographyProps & SpaceProps>`
 
 export {
   SmallText as default,
-  SmallText
+  SmallText,
 }

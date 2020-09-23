@@ -1,22 +1,24 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { NavigationElementProps } from './navigation-element-props'
 
-import { CardTitle, Box } from '../..';
-import { themeGet } from "../../utils"
+import { CardTitle, Box } from '../..'
+import { themeGet } from '../../utils'
 
-export const getBg = (props): string => (
+export type StyledNavigationElementProps = Pick<NavigationElementProps, 'isSelected' | 'isOpen'>
+
+export const getBg = (props: StyledNavigationElementProps): string => (
   props.isOpen
     ? themeGet('colors', 'grey20')(props)
     : 'transparent'
 )
 
-export const getSelectedColor = (props) => themeGet('colors',
+export const getSelectedColor = (props: StyledNavigationElementProps): string => themeGet('colors',
   props.isSelected ? 'primary100' : 'grey80')(props)
 
-export const getHoverColor = (props) => themeGet('colors',
+export const getHoverColor = (props: StyledNavigationElementProps): string => themeGet('colors',
   props.isOpen ? 'grey80' : 'primary100')(props)
 
-export const StyledNavigationElement = styled(Box)<Pick<NavigationElementProps, 'isSelected' | 'isOpen'>>`
+export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>`
   background-color: ${getBg};
   padding: ${themeGet('space', 'md', '-1px')} ${themeGet('space', 'lg')};
   text-decoration: none;

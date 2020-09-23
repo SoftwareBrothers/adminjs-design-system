@@ -55,7 +55,7 @@ export type LoggedUserProps = {
  * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-loggeduser--default Storybook}
  * @see LoggedUserProps
  * @section design-system
- * @deprecated In favour of something {@link CurrentUserNav}
+ * @deprecated In favour of {@link CurrentUserNav} component
  */
 export const LoggedUser: React.FC<LoggedUserProps> = (props) => {
   const { email, title, avatarUrl, children } = props

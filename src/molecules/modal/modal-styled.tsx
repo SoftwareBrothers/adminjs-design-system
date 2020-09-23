@@ -3,8 +3,8 @@ import { getValueAndUnit } from 'polished'
 import { variant as styledVariant } from 'styled-system'
 
 import { Box } from '../..'
-import { VariantType } from '../../utils'
 import themeGet from '../../utils/theme-get'
+import { VariantType } from '../../theme'
 
 const DEFAULT_WIDTH = 540
 const VARIANT_BORDER_WIDTH = 8

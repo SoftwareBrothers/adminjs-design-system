@@ -1,3 +1,5 @@
+<img src="components/modal.png" />
+
 Renders Modal
 
 ### Usage:

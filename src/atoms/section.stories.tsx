@@ -11,7 +11,7 @@ export default {
     onClick: { action: 'clicked' },
   },
 }
-export const Default: React.FC = ({ onClick }) => (
+export const Default: React.FC = () => (
   <StoryWrapper label="Section default settings">
     <Section>
       <Box mb="xl">
