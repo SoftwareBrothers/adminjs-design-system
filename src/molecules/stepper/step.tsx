@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SpaceProps, space } from 'styled-system'
 import Icon from '../../atoms/icon'
 import Text from '../../atoms/text'
-import Box from '../../atoms/box'
+import Box from '../../atoms/box/box'
 import { cssClass } from '../../utils/css-class'
 
 /**

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { NavigationElement, Box } from '..'
-import { withKnobs, boolean, text } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { NavigationElement, Box } from '../..'
+import { withKnobs, boolean, text } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
-import StoryWrapper from '../utils/story-wrapper'
+import StoryWrapper from '../../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Molecules/Navigation', decorators: [withKnobs] }
 

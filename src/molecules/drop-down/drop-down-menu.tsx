@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-import Box, { BoxProps } from '../../atoms/box'
+import Box, { BoxProps } from '../../atoms/box/box'
 
 /**
- * Props passed to DropDownMenu element
+ * Props passed to DropDownMenu element.
+ * Extends {@link BoxProps}
  *
  * @memberof DropDown
  */
 export type DropDownMenuProps = BoxProps & {
   isVisible?: boolean;
-  /**
-   * On which side DropDownMenu should be seen
-   * Default to left
-   */
-  variant?: 'top' | 'left' | 'right' | 'bottom'
 }
 
 /**

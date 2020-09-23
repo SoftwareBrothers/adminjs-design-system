@@ -10,8 +10,9 @@ import styled from 'styled-components'
 import snow from './snow.styles'
 import bubble from './bubble.styles'
 import styles from './styles'
-import Box from '../../atoms/box'
-import { Quill as QuillClass, QuillOptionsStatic } from 'quill/index'
+import Box from '../../atoms/box/box'
+import { Quill as QuillClass} from 'quill/index'
+import { DefaultQuillToolbarOptions, RichTextProps } from './rich-text-props'
 
 // Following hack is done for SSR case, where Quill wants to invoke `document.createElement...`
 // So when system sees that file is run by the server (window is not defined) then it sets
@@ -21,64 +22,21 @@ import { Quill as QuillClass, QuillOptionsStatic } from 'quill/index'
 // @ts-ignore
 const Quill: typeof QuillClass = typeof window === 'object' ? require('quill') : null
 
-export type QuillToolbarOption = string | number | boolean
-
-export type QuillToolbarOptions = Array<
-  QuillToolbarOption |
-  Record<string, QuillToolbarOption |
-  QuillToolbarOptions> |
-  Array<QuillToolbarOptions | QuillToolbarOption>
->
-
-export const DefaultQuillToolbarOptions: Array<QuillToolbarOptions> = [
-  [{ header: [1, 2, 3, 4, 5, 6, false] }],
-  ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-  ['blockquote', 'code-block'],
-  [{ list: 'ordered' }, { list: 'bullet' }],
-  [{ indent: '-1' }, { indent: '+1' }],
-
-  [{ align: [] }],
-  ['link', 'image', 'video'],
-
-  ['clean'], // remove formatting button
-]
-
-/**
- * @see https://quilljs.com/docs/configuration
- */
-export type QuillOptions = {
-  /** Theme - default to snow */
-  theme?: 'snow' | 'bubble';
-  modules?: {
-    toolbar?: Array<QuillToolbarOptions> | {
-      handlers?: Record<string, any>;
-      container?: Array<QuillToolbarOptions>
-    },
-    [key: string]: any
-  },
-  debug?: string | boolean;
-  placeholder?: string;
-  readOnly?: boolean;
-  formats?: string[];
-  bounds?: HTMLElement | string;
-  scrollingContainer?: HTMLElement | string;
-  strict?: boolean;
-}
-
-export type RichTextProps = {
-  value?: string;
-  borderless?: boolean;
-  onChange?: (content) => void;
-
-  quill: QuillOptions,
-}
-
 const Theme = styled(Box)<RichTextProps>`
   ${bubble};
   ${snow};
   ${styles};
 `
 
+/**
+ * @load ./rich-text.doc.md
+ * @component
+ * @subcategory Molecules
+ * @hideconstructor
+ * @see RichTextProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-rich-text--default Storybook}
+ * @section design-system
+ */
 export const RichText: React.FC<RichTextProps> = (props) => {
   const { value, borderless, quill: options, onChange } = props
 

@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from './box'
+import { Box } from './box/box'
 import { cssClass } from '../utils/css-class'
 
 const Spinner = styled.div.attrs({

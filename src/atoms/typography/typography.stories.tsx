@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { withKnobs, select } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, select } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
-import { Box, Text } from '..'
+import { Box, Text } from '../..'
 import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './header'
-import StoryWrapper from '../utils/story-wrapper'
+import StoryWrapper from '../../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Typography', decorators: [withKnobs] }
 

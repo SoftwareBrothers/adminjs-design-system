@@ -1,6 +1,5 @@
 import React from 'react'
-import Box from './box'
-import { Label, Radio } from '..'
+import { Label, Radio, Box } from '..'
 
 export default { title: 'DesignSystem/Atoms/Radio' }
 

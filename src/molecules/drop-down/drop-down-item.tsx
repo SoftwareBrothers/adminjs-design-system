@@ -1,8 +1,17 @@
 import styled from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 
-import Box from '../../atoms/box'
+import Box, { BoxProps } from '../../atoms/box/box'
 import { cssClass } from '../../utils'
+
+/**
+ * Props passed to DropDownItem
+ * Extends {@link BoxProps}
+ * 
+ * @memberof DropDown
+ * @extends BoxProps
+ */
+export type DropDownItemProps = BoxProps
 
 /**
  * @component

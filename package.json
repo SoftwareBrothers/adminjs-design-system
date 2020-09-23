@@ -10,7 +10,7 @@
   "scripts": {
     "release": "semantic-release",
     "build": "tsc",
-    "lint": "eslint './src/**/*' './vendor-types/**/*'  --ignore-pattern '*.json' --ignore-pattern 'yarn.lock'",
+    "lint": "eslint './src/**/*' './vendor-types/**/*'",
     "check:all": "yarn build && yarn lint",
     "bundle": "rollup --config ./config/rollup.js",
     "dev": "yarn build && yarn bundle"

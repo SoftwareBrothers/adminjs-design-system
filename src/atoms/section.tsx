@@ -1,7 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
-import { Box } from './box'
+import { Box } from './box/box'
 import { cssClass } from '../utils/css-class'
+import { themeGet } from '../utils'
 
 /**
  * @classdesc
@@ -32,8 +33,10 @@ import { cssClass } from '../utils/css-class'
  * @section design-system
  */
 const Section = styled(Box)`
-  border-left: ${({ theme }): string => theme.space.sm} solid ${({ theme }): string => theme.colors.primary20};
-  padding-left: ${({ theme }): string => theme.space.default};
+  border: 1px dotted ${themeGet('colors', 'primary20')};
+  padding: ${themeGet('space', 'xl')};
+  border-left: ${themeGet('space', 'md')} solid ${themeGet('colors', 'primary20')};
+  padding-left: ${themeGet('space', 'xl')};
 `
 
 Section.defaultProps = {

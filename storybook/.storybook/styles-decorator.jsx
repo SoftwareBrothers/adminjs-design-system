@@ -3,7 +3,7 @@ import React from "react";
 import { ThemeProvider } from 'styled-components'
 
 import * as theme from '../../src/theme'
-import Box from '../../src/atoms/box'
+import { Box } from '../../src'
 import { GlobalStyle } from '../../src/global'
 
 const StylesDecorator = storyFn => (

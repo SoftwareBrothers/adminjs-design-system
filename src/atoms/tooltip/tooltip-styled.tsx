@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import themeGet from '../../utils/theme-get'
-import Box from '../box'
+import Box from '../box/box'
 import { StyledTooltipProps } from './tooltip-props'
 
 const ARROW_WIDTH = 7

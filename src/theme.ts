@@ -1,82 +1,7 @@
 /* eslint-disable max-len */
 /**
  * @interface Theme
- * @description
- * Entire AdminBro interface is build with
- * [styled-components]{@link https://styled-components.com/} backed by
- * [styled-system]{@link https://styled-system.com/}. The core of
- * the style information is the Theme. It is base on the
- * [Theme Specification]{@link https://styled-system.com/theme-specification/} and
- * it is used by almost all the components provided by AdminBro.
- *
- * So let's say you would like to create a box with the same background as our
- * primary100 color. This is one way of achieving that:
- *
- * ```javascript
- * import styled from 'styled-components'
- * import { Box } from '@admin-bro/design-system'
- *
- * const MyBlueBox = styled(Box)`
- *   background: ${({ theme }) => theme.colors.primary100};
- *   // other css styles you want to override.
- * `
- * ```
- *
- * But, since AdminBro uses [styled-system]{@link https://styled-system.com/}, you also can achieve
- * a similar result by passing a `bg` Prop to the [Box Component]{@link Box},
- * everything because Box supports all the {@link ColorProps}.
- *
- * ```javascript
- * import { Box } from '@admin-bro/design-system'
- *
- * const ComponentWhereIWantToUseBlueBox = () => (
- *   <Box bg="primary100">
- *   ...
- *   </Box>
- * )
- * ```
- *
- * The last way of accessing theme is to use withTheme HOC provided by
- * [styled-components]{@link https://styled-components.com/}
- *
- * ```
- * import { withTheme } from 'styled-components'
- *
- *
- * const MyComponent = (props) => {
- *   const { theme } = props
- *   // theme.colors.primary100
- * }
- *
- * export default withTheme(MyComponent)
- *
- * ```
- *
- * {@link ColorProps} is only one of the extensions we provided. Take a look at the documentation
- * below to see all possible options, but let me give you one last example:
- *
- * ```
- * import { Box } from '@admin-bro/design-system'
- *
- * const ComponentWhereIWantToUseResponsiveStyle = () => (
- *   <Box flex flexDirection="column">
- *     <Box width={[1, 1/2, 1/3]}>Sidebar</Box>
- *     <Box width={[1, 1/2, 2/3]}>Content</Box>
- *   </Box>
- * )
- * ```
- *
- * Above we defined that the Sidebar box should have 100% width until viewport reach the first
- * breakpoint, then 50% (until the next breakpoint) and then 1/3rd of the page for the remaining 2
- * breakpoints.
- *
- * You can read more about responsive features on styled-system page
- * https://styled-system.com/responsive-styles
- *
- * <style>
- * .shadow-div { display: block; width: 80px; height: 80px;}
- * .space-box { display: inline-block; height: 20px; background: #4268F6; vertical-align: middle;}
- * </style>
+ * @load ./theme.doc.md
  * @section design-system
  */
 
@@ -183,7 +108,7 @@ const colors = {
 
  * @property {string} xs=2px        2px - <span class="space-box" style="width: 2px;" />
  * @property {string} sm=4px        4px - <span class="space-box" style="width: 4px;" />
- * @property {string} default=8px (alias md)   8px - <span class="space-box" style="width: 8px;" />
+ * @property {string} default=8px   8px - <span class="space-box" style="width: 8px;" /> (alias md)
  * @property {string} lg=16px       16px - <span class="space-box" style="width: 16px;" />
  * @property {string} xl=24px       24px - <span class="space-box" style="width: 24px;" />
  * @property {string} xxl=32px      32px - <span class="space-box" style="width: 32px;" />
@@ -288,8 +213,8 @@ const lineHeights = {
  * <Box variant="grey" boxShadow="card">Some content...</Box>
  * ```
  *
+ * @alias shadows
  * @memberof Theme
- * @alias ShadowProps
  * @property {string} login              <div class="shadow-div" style="box-shadow: 0 15px 24px 0 rgba(137,138,154,0.15);"/>
  * @property {string} cardHover          <div class="shadow-div" style="box-shadow: 0 4px 12px 0 rgba(137,138,154,0.4);"/>
  * @property {string} drawer             <div class="shadow-div" style="box-shadow: -2px 0 8px 0 rgba(137,138,154,0.2);"/>
@@ -343,6 +268,7 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} input
  * @property {string} filterInput
  * @property {string} bg
+ * @property {string} default
  */
 const borders = {
   input: '1px solid #C0C0CA',
@@ -350,6 +276,11 @@ const borders = {
   bg: '1px solid #F6F7FB',
   default: '1px solid #DDE1E5',
 }
+
+export type VariantType = 'primary' | 'danger' | 'success' | 'info' | 'secondary' | 'default'
+
+export const VariantValues: Array<VariantType> = [
+  'primary', 'danger', 'success', 'info', 'secondary', 'default']
 
 // TODO: add transitions
 
@@ -534,6 +465,14 @@ export {
  * @property {string} [justifySelf]        justify-self
  * @property {string} [alignSelf]          align-self
  * @property {number|string} [order]              order
+ */
+
+/**
+ * Reused Variant Enum: `primary` | `danger` | `success` | `info` | `secondary` | `default`
+ * 
+ * @typedef {Enum} VariantType
+ * @alias VariantType
+ * @memberof Theme
  */
 
 /**

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { radios, text, withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
-import { ModalInline, Box, Label, Button, Modal } from '../..'
-import { VariantValues } from '../../utils'
+import { ModalInline, Box, Label, Button, Modal, VariantValues } from '../..'
 
 export default { title: 'DesignSystem/Molecules/Modal', decorators: [withKnobs] }
 

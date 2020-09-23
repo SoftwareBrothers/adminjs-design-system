@@ -3,6 +3,16 @@ import { BoxProps, Box, H5, Text, Button, Icon, Label } from '../..'
 import { ModalProps } from './modal-props'
 import { ModalStyled } from './modal-styled'
 
+
+/**
+ * Modal which can be rendered inline instead of a "modal"
+ * 
+ * @memberof Modal
+ * @component
+ * @hideconstructor
+ * @private
+ * @section design-system
+ */
 const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) => {
   const { title,
     subTitle,

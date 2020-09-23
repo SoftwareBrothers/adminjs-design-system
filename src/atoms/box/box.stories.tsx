@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Header, Button } from '..'
+import { Box, Text, Header, Button } from '../..'
 
 export default { title: 'DesignSystem/Atoms/Box' }
 

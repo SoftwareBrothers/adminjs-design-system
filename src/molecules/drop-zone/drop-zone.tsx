@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Label } from '../../atoms/label'
-import { Box } from '../../atoms/box'
+import { Box } from '../../atoms/box/box'
 import { Text } from '../../atoms/text'
 import { MessageBox } from '../message-box'
 import { DropZoneItem } from './drop-zone-item'

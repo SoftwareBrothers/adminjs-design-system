@@ -5,8 +5,8 @@ import {
   position, PositionProps, variant,
   shadow, ShadowProps,
 } from 'styled-system'
-import { ColorProps } from '../utils/color-props'
-import { cssClass } from '../utils/css-class'
+import { ColorProps } from '../../utils/color-props'
+import { cssClass } from '../../utils/css-class'
 
 const variants = variant({
   variants: {
@@ -29,11 +29,7 @@ const variants = variant({
 type FlexboxFlexProp = boolean | FlexboxProps['flex']
 
 /**
- * Prop Types of an Button component.
- * Apart from those defined below it extends all {@link SpaceProps}, {@link ColorProps}
- * {@link LayoutProps}, {@link FlexboxProps}, {@link PositionProps}
- * {@link BorderProps} and {@link ShadowProps}.
- *
+ * @load ./box-props.doc.md
  * @memberof Box
  * @alias BoxProps
  * @property {string} [...] Other props from {@link SpaceProps}, {@link ColorProps},
@@ -46,49 +42,18 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
     flex?: FlexboxFlexProp;
     /** Box variants */
     variant?: 'grey' | 'white';
+    /** If set to true it makes css changes as 500ms transitions */
     animate?: boolean;
   }
 
 /**
- * @classdesc
- *
- * <img src="components/box.png" />
- *
- * Main component which allows you to define entire layout of the application
- *
- * ### Usage
- *
- * ```javascript
- * import { Box, BoxProps } from '@admin-bro/design-system'
- * ```
- *
+ * @load ./box.doc.md
  * @hideconstructor
  * @component
  * @subcategory Atoms
  * @section design-system
  * @see BoxProps
  * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-box--simple-white-gray-wrapper StoryBook}
- * @example <caption>Simple White/Gray wrapper</caption>
- * return (
- * <Box variant="grey">
- *   <Box variant="white">
- *     <Text>This is the default wrapper in the application</Text>
- *   </Box>
- * </Box>
- * )
- * @example <caption>Positioning buttons</caption>
- * return (
- * <Box variant="grey">
- *   <Box variant="white" flex flexDirection="row">
- *     <Box flexGrow={1}>
- *       <Header.H3>Some header</Header.H3>
- *     </Box>
- *     <Box flexShrink={0}>
- *       <Button>Example Button On The Right</Button>
- *     </Box>
- *   </Box>
- * </Box>
- * )
  */
 const Box = styled.section<BoxProps>`
   box-sizing: border-box;

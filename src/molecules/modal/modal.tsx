@@ -1,24 +1,17 @@
 /* eslint-disable max-len */
 import React from 'react'
-import createPortalForKey from '../../utils/create-portal-for-key'
+import PortalUtils from '../../utils/portal-utils'
 import ModalWrapper from './modal-wrapper'
 import { ModalProps } from './modal-props'
 
-const ModalPortal = createPortalForKey('MODAL', ModalWrapper)
+const ModalPortal = PortalUtils.createPortalForKey('MODAL', ModalWrapper)
 
 /**
- * Renders modal
- *
- * Usage:
- * ```javascript
- * import { Modal, ModalProps, ModalInline } from '@admin-bro/design-system'
- * ```
- *
+ * @load ./modal.doc.md
  * @component
- * @private
  * @subcategory Molecules
- *
- * @memberof module:@admin-bro/design-system
+ * @section design-system
+ * @hideconstructor
  */
 const Modal: React.FC<ModalProps> = (props) => (
   <ModalPortal {...props} />

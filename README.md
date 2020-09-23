@@ -1,17 +1,17 @@
 # @admin-bro/design-system
 
-This package consist of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the `admin-bro` core.
+This package consists of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the `admin-bro` core.
 
 It was created with the help of 2 amazing packages:
 
 - [styled-components](styled-components.com) which is a peerDependency
 - [styled-system](styled-stystem.com)
 
-make sure to check them out in order to use full potential of this design system
+make sure to check them out to use the full potential of this design system.
 
 ## Installation
 
-```
+```sh
 yarn add styled-components @admin-bro/design-system
 ```
 

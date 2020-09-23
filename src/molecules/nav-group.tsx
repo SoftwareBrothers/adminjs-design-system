@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from '../atoms/icon'
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { Text } from '../atoms/text'
 import { cssClass } from '../utils/css-class'
 import themeGet from '../utils/theme-get'
@@ -47,6 +47,7 @@ NavGroupTitle.defaultProps = {
 /**
  * @memberof NavGroup
  * @alias NavGroupProps
+ * @deprecated
  */
 export type NavGroupProps = {
   /** Title of the navigation group */
@@ -57,6 +58,9 @@ export type NavGroupProps = {
 
 /**
  * @classdesc
+ * 
+ * > This component is deprecated in favour of {@link NavigationElement} and
+ * {@link Navigation} components
  *
  * <img src="components/navgroup.png" />
  *
@@ -82,6 +86,7 @@ export type NavGroupProps = {
  *   </Box>
  * )
  * @section design-system
+ * @deprecated
  */
 const NavGroup: React.FC<NavGroupProps> = (props) => {
   const { title, icon, children } = props

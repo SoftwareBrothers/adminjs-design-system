@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import JWPaginate from 'jw-paginate'
 
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { Button, ButtonProps } from '../atoms/button'
 import { Icon } from '../atoms/icon'
 import { cssClass } from '../utils/css-class'

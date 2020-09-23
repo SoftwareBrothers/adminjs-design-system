@@ -1,7 +1,7 @@
 import React from 'react'
-import { withKnobs, radios, text } from '../../storybook/node_modules/@storybook/addon-knobs'
-import { Tooltip, TooltipContent, Button, H4, Text, Box } from '..'
-import StoryWrapper from '../utils/story-wrapper'
+import { withKnobs, radios, text } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
+import { Tooltip, TooltipContent, Button, H4, Text, Box } from '../..'
+import StoryWrapper from '../../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Tooltip', decorators: [withKnobs] }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '../../storybook/node_modules/@storybook/addon-knobs'
-import Box from './box'
-import { Text, Input, Label, Button } from '..'
+import { Text, Input, Label, Button, Box } from '..'
 import StoryWrapper from '../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Input', decorators: [withKnobs] }

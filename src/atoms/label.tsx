@@ -80,7 +80,6 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   disabled?: boolean;
   /** Color variant */
   variant?: LabelVariantType;
-
   /** Label size */
   size?: 'default' | 'lg'
 }

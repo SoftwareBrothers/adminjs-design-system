@@ -1,7 +1,7 @@
 import React from 'react'
-import { withKnobs, select, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
-import StoryWrapper from '../utils/story-wrapper'
-import { Badge, Box, Label, Header, Text as TextComponent } from '..'
+import { withKnobs, select, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
+import StoryWrapper from '../../utils/story-wrapper'
+import { Badge, Box, Label, Header, Text as TextComponent } from '../..'
 
 export default { title: 'DesignSystem/Atoms/Badge', decorators: [withKnobs] }
 

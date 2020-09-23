@@ -10,7 +10,14 @@ const StyledDropDown = styled.div`
 
 const DEFAULT_STICK = 'left'
 
+/**
+ * Props passed to DropDown element
+ *
+ * @memberof DropDown
+ * @extends BoxProps
+ */
 export type DropDownProps = {
+  /** Indicates if menu should stick to left or right */
   stick?: 'left' | 'right',
 } & BoxProps
 
@@ -21,57 +28,9 @@ type PositionProps = {
 }
 
 /**
- * @classdesc
- *
- * <img src="components/drop-down.png" />
- *
- * Simple set of components allowing you to create a dropdowns.
- *
- * ### Usage
- *
- * ```javascript
- * import { DropDown, DropDownTrigger, DropDownMenu, DropDownItem } from '@admin-bro/design-system'
- * ```
- *
- * It contains couple of sub components:
- *
- * - DropDown - an actual wrapper for entire DropDown
- * - DropDownTrigger - it has to be right inside the DropDown.
- *   It is what user sees when the DropDown is not hovered
- * - DropDownMenu - wraps elements which are hidden by default.
- *   Shown after hovering Trigger
- * - DropDownMenuItem - it is a wrapper for a menu item list.
- *   It can next contain either Link or Button.
- *
- * Props:
- * - DropDownMenu extends {@link PositionProps}, so you can add prop like `top="xl"`
- * - DropDownItem extends {@link SpaceProps}
- * - DropDownTrigger also extends {@link SpaceProps}
- *
+ * @load ./drop-down.doc.md
  * @hideconstructor
  * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropdown--default Storybook}
- * @example
- * return (
- *   <Box px="300px" pt="lg" pb="200px">
- *     <DropDown>
- *       <DropDownTrigger p="default">
- *         <Text as="span">This is trigger -> </Text>
- *         <Icon icon="OverflowMenuHorizontal" />
- *       </DropDownTrigger>
- *       <DropDownMenu top="xxl">
- *         <DropDownItem>
- *           <Link href="/some">
- *             <Icon icon="Video" />
- *             Some menu item
- *           </Link>
- *         </DropDownItem>
- *         <DropDownItem>
- *           <Link href="/some">Other item</Link>
- *         </DropDownItem>
- *       </DropDownMenu>
- *     </DropDown>
- *   </Box>
- * )
  * @component
  * @subcategory Molecules
  * @section design-system

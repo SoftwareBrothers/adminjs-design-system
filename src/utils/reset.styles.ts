@@ -1,7 +1,22 @@
 /* cSpell:disable */
 import { css, createGlobalStyle } from 'styled-components'
 
-export const reset = css`
+/**
+ * Resets css styles which can be applied to element created by styled-component
+ *
+ * ### Example
+ *
+ * ```javascript
+ * import { reset } from '@admin-bro/design-system'
+ *
+ * const myContentComponent = styled`
+ *   ${reset};
+ * `
+ * ```
+ *
+ * @memberof module:@admin-bro/design-system
+ */
+const reset = css`
 /* http://meyerweb.com/eric/tools/css/reset/
    v4.0 | 20180602
    License: none (public domain)
@@ -57,4 +72,27 @@ table {
 
 /* cSpell:enable */
 
-export const Reset = createGlobalStyle`${reset}`
+/**
+ * Resets css component which should be applied to the top of the html
+ *
+ * ### Example
+ *
+ * ```jsx
+ * import { Reset } from '@admin-bro/design-system'
+ *
+ * <ThemeProvider theme={theme}>
+ *   <Reset />
+ *   <Box>
+ *     { ... }
+ *   </Box>
+ * </ThemeProvider>
+ * ```
+ *
+ * @memberof module:@admin-bro/design-system
+ */
+const Reset = createGlobalStyle`${reset}`
+
+export {
+  Reset,
+  reset,
+}

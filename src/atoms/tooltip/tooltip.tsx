@@ -1,107 +1,75 @@
-import React, { useEffect, useRef, useState } from 'react'
-import useWindowSize from '../../hooks/use-window-size'
+/* eslint-disable max-len */
+import React, { PropsWithChildren, useState, useRef, forwardRef, ReactElement, ReactNode } from 'react'
+import PortalUtils from '../../utils/portal-utils'
+import { TooltipControl } from './tooltip-control'
+import Props from './tooltip-props'
 
-import { PortalProps } from './tooltip-props'
-import { StyledTooltip } from './tooltip-styled'
+const TooltipPortal = PortalUtils.createPortalForKey('TOOLTIP', TooltipControl)
 
-type PositionProps = {
-  top: number;
-  left: number;
-  width: number;
-  height: number;
-}
+/**
+ * @load ./tooltip.doc.md
+ * @component
+ * @subcategory Atoms
+ * @hideconstructor
+ * @section design-system
+ */
+const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
+  const { direction, title, children, size } = props
+  const childRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
-const Tooltip: React.FC<PortalProps> = (props) => {
-  const { title, childRef, direction, ContentElement, size } = props
-  const tooltipRef = useRef<HTMLElement>(null)
-  const [dimension, setDimension] = useState<Pick<PositionProps, 'width' | 'height'> | null>(null)
-  const [position, setPosition] = useState<Pick<PositionProps, 'left' | 'top'> | null>(null)
-  const [elementPosition, setElementPosition] = useState<PositionProps | null>(null)
-  const windowSize = useWindowSize()
+  let TriggerElement: ReactElement
+  let ContentElement: ReactNode
+  const childrenCount = React.Children.count(children)
 
-  useEffect(() => {
-    if (childRef.current) {
-      const { clientWidth, offsetTop, offsetLeft, clientHeight } = childRef.current
-      setElementPosition({
-        width: clientWidth,
-        top: offsetTop,
-        left: offsetLeft,
-        height: clientHeight,
-      })
-    }
-  }, [
-    childRef,
-    windowSize?.width,
-    windowSize?.height,
-  ])
+  if (childrenCount === 1) {
+    TriggerElement = children as ReactElement
+  } else if (childrenCount === 2) {
+    React.Children.forEach(children, (child) => {
+      const type = (child as any).type?.displayName
+      if (type === 'TooltipContent') {
+        ContentElement = child as ReactNode
+      } else {
+        TriggerElement = child as ReactElement
+      }
+    })
+  }
 
-  useEffect(() => {
-    if (tooltipRef.current) {
-      const { clientWidth, clientHeight } = tooltipRef.current
-      setDimension({
-        width: clientWidth,
-        height: clientHeight,
-      })
-    }
-  }, [
-    tooltipRef?.current?.clientWidth,
-    tooltipRef?.current?.clientHeight,
-    title,
-  ])
+  const onEnter = () => {
+    setIsVisible(true)
+  }
 
-  useEffect(() => {
-    if (!elementPosition || !dimension) {
-      return
-    }
+  const onLeave = () => {
+    setIsVisible(false)
+  }
 
-    // eslint-disable-next-line default-case
-    switch (direction) {
-    case 'bottom': {
-      setPosition({
-        top: elementPosition.top + elementPosition.height,
-        left: elementPosition.left + elementPosition.width / 2 - dimension.width / 2,
-      })
-      break
-    }
-    case 'top': {
-      setPosition({
-        top: elementPosition.top - dimension.height,
-        left: elementPosition.left + elementPosition.width / 2 - dimension.width / 2,
-      })
-      break
-    }
-    case 'left': {
-      setPosition({
-        top: elementPosition.top + elementPosition.height / 2 - dimension.height / 2,
-        left: elementPosition.left - dimension.width,
-      })
-      break
-    }
-    case 'right': {
-      setPosition({
-        top: elementPosition.top + elementPosition.height / 2 - dimension.height / 2,
-        left: elementPosition.left + elementPosition.width,
-      })
-      break
-    }
-    }
-  }, [elementPosition, dimension, direction])
-
-  const isVisible = !!(dimension && position)
+  const ChildWithRef = forwardRef((triggerProps, ref) => React.cloneElement(TriggerElement, {
+    ...triggerProps,
+    displayName: 'TooltipTrigger',
+    ref,
+  })) as any
 
   return (
-    <StyledTooltip
-      ref={tooltipRef}
-      left={position?.left || '-1110px'}
-      top={position?.top || '-1110px'}
-      size={size}
-      direction={direction}
-      isVisible={isVisible}
-    >
-      { ContentElement || title }
-    </StyledTooltip>
+    <>
+      <ChildWithRef
+        ref={childRef}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+      />
+      {isVisible && (
+        <TooltipPortal
+          title={title}
+          childRef={childRef}
+          size={size}
+          direction={direction}
+          ContentElement={ContentElement}
+        />
+      )}
+    </>
   )
 }
 
-export default Tooltip
-export { Tooltip }
+export {
+  Tooltip,
+  Tooltip as default,
+}

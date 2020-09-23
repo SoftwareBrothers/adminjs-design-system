@@ -4,8 +4,7 @@ import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/a
 
 import RichText from './rich-text'
 import StoryWrapper from '../../utils/story-wrapper'
-import Box from '../../atoms/box'
-import Text from '../../atoms/text'
+import { Text, Box } from '../..'
 
 const html = `
 <h1>Hello World</h1>

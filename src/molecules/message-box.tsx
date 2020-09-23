@@ -3,7 +3,7 @@ import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 import { variant as styledVariant, SpaceProps } from 'styled-system'
 
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { Icon } from '../atoms/icon'
 import { Button } from '../atoms/button'
 import { cssClass } from '../utils/css-class'

@@ -1,6 +1,5 @@
 import React from 'react'
-import Box from './box'
-import { Label, CheckBox } from '..'
+import { Box, Label, CheckBox } from '..'
 
 export default { title: 'DesignSystem/Atoms/CheckBox' }
 

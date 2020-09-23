@@ -1,6 +1,24 @@
 import { css } from 'styled-components'
 import themeGet from './theme-get'
 
+/**
+ *
+ * Gives you the default styles for all "content" elements like:
+ * ul, li, h1-h5 etc.
+ *
+ * ### Example
+ *
+ * ```typescript
+ * import styled from 'styled-components'
+ * import { contentCSS } from '@admin-bro/design-system'
+ *
+ * const myComponent = styled`
+ *   ${contentCSS};
+ * `
+ * ```
+ *
+ * @memberof module:@admin-bro/design-system
+ */
 const contentCSS = css`
   font-family: ${({ theme }): string => theme.font};
   font-size: ${themeGet('fontSizes', 'md')};

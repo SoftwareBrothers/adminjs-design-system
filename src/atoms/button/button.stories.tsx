@@ -1,8 +1,8 @@
 import React from 'react'
-import { withKnobs, select, boolean } from '../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, select, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
-import { Button, Box, Icon as IconComponent, Label, Icon } from '..'
-import StoryWrapper from '../utils/story-wrapper'
+import { Button, Box, Icon as IconComponent, Label, Icon } from '../../..'
+import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
   title: 'DesignSystem/Atoms/Button',
