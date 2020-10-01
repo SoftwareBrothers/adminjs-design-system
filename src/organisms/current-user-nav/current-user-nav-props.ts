@@ -13,6 +13,8 @@ export type CurrentUserNavAction = {
   icon?: string,
   /** indicates if action is active */
   isActive?: string,
+  /** href for an action */
+  href?: string,
 }
 
 /**

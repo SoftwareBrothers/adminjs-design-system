@@ -38,6 +38,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
               variant="text"
               title={action.label}
               key={action.label}
+              href={action.href}
               as="a"
               className="line-action"
               onClick={action.onClick}
@@ -77,6 +78,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
                 key={action.label}
                 as="a"
                 onClick={action.onClick}
+                href={action.href}
               >
                 {action.icon && (
                   <Icon icon={action.icon} />

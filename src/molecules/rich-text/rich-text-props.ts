@@ -15,7 +15,7 @@ export type QuillToolbarOptions = Array<
 
 /**
  * variable holding a default quill toolbar. It looks like this:
- * 
+ *
  * ```javascript
  * export const DefaultQuillToolbarOptions = [
  *   [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -23,20 +23,20 @@ export type QuillToolbarOptions = Array<
  *   ['blockquote', 'code-block'],
  *   [{ list: 'ordered' }, { list: 'bullet' }],
  *   [{ indent: '-1' }, { indent: '+1' }],
- * 
+ *
  *   [{ align: [] }],
  *   ['link', 'image', 'video'],
- * 
+ *
  *   ['clean'], // remove formatting button
  * ]
  * ```
- * 
+ *
  * ### Usage
- * 
+ *
  * ```javascript
  * import { DefaultQuillToolbarOptions } from '@admin-bro/design-system`
  * ```
- * 
+ *
  *
  * @memberof RichText
  * @alias DefaultQuillToolbarOptions
