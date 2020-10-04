@@ -15,9 +15,9 @@ export default {
 export const Default: React.FC = ({ onClick }) => {
   const size = select('Size variant', ['sm', 'default', 'lg'], 'default')
 
-  const handleClick = (event) => {
+  const handleClick = (event, source) => {
     event.preventDefault()
-    onClick(event)
+    onClick(event, source)
   }
 
   const buttons = object('objects', [{
@@ -27,6 +27,7 @@ export const Default: React.FC = ({ onClick }) => {
   }, {
     label: 'Duplicate',
     onClick: handleClick,
+    source: 'thisWillGoBack',
     icon: 'Copy',
     buttons: [{
       label: 'Option 1',

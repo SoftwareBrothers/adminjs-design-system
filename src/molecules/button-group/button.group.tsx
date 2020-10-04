@@ -20,7 +20,8 @@ export type ButtonInGroupProps = ButtonProps & {
   label?: string;
   variant?: VariantType;
   href?: string;
-  onClick?: (event) => void;
+  source?: any;
+  onClick?: (event, source: any) => void;
   buttons?: Array<ButtonInGroupProps>
 } & {
   className?: string
@@ -43,13 +44,14 @@ const StyledSingleButton = styled(Button)<{hasLabel: boolean}>`
 `
 
 const SingleButton: React.FC<ButtonInGroupProps> = (props) => {
-  const { icon, label, buttons, ...buttonProps } = props
+  const { icon, label, buttons, source, onClick, ...buttonProps } = props
 
   return (
     <StyledSingleButton
       as="a"
-      {...buttonProps}
       hasLabel={!!label}
+      onClick={(event) => (onClick ? onClick(event, source) : undefined)}
+      {...buttonProps}
     >
       {icon ? (
         <Icon icon={icon} />
@@ -65,16 +67,17 @@ const SingleButton: React.FC<ButtonInGroupProps> = (props) => {
 }
 
 export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => {
-  const { variant, onClick, href, icon, label, buttons } = props
+  const { variant, onClick, href, icon, label, buttons, source, ...rest } = props
   return (
     <DropDownItem
       colorVariant={variant}
       p={0}
     >
       <DropDownItemAction
-        onClick={onClick}
+        onClick={(event) => (onClick ? onClick(event, source) : undefined)}
         href={href}
         as="a"
+        {...rest}
       >
         {buttons && buttons.length ? (
           <Icon icon="CaretLeft" ml="-24px" mr="0" />
