@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { NavigationElementProps } from './navigation-element-props'
 
-import { CardTitle, Box } from '../..'
+import { Title, Box } from '../..'
 import { themeGet } from '../../utils'
 
 export type StyledNavigationElementProps = Pick<NavigationElementProps, 'isSelected' | 'isOpen'>
@@ -37,7 +37,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
       fill: ${getSelectedColor};
     }
   }
-  & > ${CardTitle} {
+  & > ${Title} {
     flex-grow: 1;
     min-width: 0;
     overflow: hidden;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Icon, CardTitle, Box } from '../..'
+import { Icon, Title, Box } from '../..'
 import { NavigationElementProps } from './navigation-element-props'
 import { StyledNavigationElement } from './navigation-element-styled'
 
@@ -43,9 +43,9 @@ const NavigationElement:React.FC<NavigationElementProps> = (props) => {
       {icon && (
         <Box className="icon-box" as="span"><Icon icon={icon} /></Box>
       )}
-      <CardTitle style={{ whiteSpace: hasLongName ? 'nowrap' : 'normal' }}>
+      <Title style={{ whiteSpace: hasLongName ? 'nowrap' : 'normal' }}>
         {label}
-      </CardTitle>
+      </Title>
       {expandable && (
         <Box className="arrow-box" as="span"><Icon icon={chevron} /></Box>
       )}

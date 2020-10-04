@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   Box,
-  CardTitle,
+  Title,
   SmallText,
   DropDownTrigger,
   DropDown,
@@ -54,7 +54,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
         <DropDownTrigger>
           <Box flex flexDirection="row" px="xl" alignItems="center" height="navbarHeight">
             <Box>
-              <CardTitle>{name}</CardTitle>
+              <Title>{name}</Title>
               {title && (
                 <SmallText>{title}</SmallText>
               )}
