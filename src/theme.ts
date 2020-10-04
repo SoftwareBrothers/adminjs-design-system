@@ -277,10 +277,28 @@ const borders = {
   default: '1px solid #DDE1E5',
 }
 
-export type VariantType = 'primary' | 'danger' | 'success' | 'info' | 'secondary' | 'default'
+/**
+ * Border widths set for an entire layout. If you like to have border radius in Button's and Box'es
+ * Then set default property.
+ *
+ * @memberof Theme
+ * @alias borderWidths
+ * @property {string} default - default border with
+ */
+const borderWidths = {
+  default: '0px',
+}
+
+export type VariantType = 'primary'
+  | 'danger'
+  | 'success'
+  | 'info'
+  | 'secondary'
+  | 'default'
+  | 'light'
 
 export const VariantValues: Array<VariantType> = [
-  'primary', 'danger', 'success', 'info', 'secondary', 'default']
+  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light']
 
 // TODO: add transitions
 
@@ -295,6 +313,7 @@ export {
   shadows,
   borders,
   breakpoints,
+  borderWidths,
 }
 
 /**

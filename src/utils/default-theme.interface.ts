@@ -7,6 +7,7 @@ import {
   lineHeights,
   fontWeights,
   borders,
+  borderWidths,
   shadows,
 } from '../theme'
 import { NonNullishPartialRecord } from './non-nullish-partial-record.type'
@@ -21,6 +22,7 @@ export interface Theme {
   fontWeights: typeof fontWeights;
   font: typeof font;
   shadows: typeof shadows;
+  borderWidths: typeof borderWidths;
 }
 
 export type ThemeOverride<T=Theme> = {

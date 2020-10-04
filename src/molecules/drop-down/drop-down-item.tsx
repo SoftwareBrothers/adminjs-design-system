@@ -1,8 +1,36 @@
 import styled from 'styled-components'
-import { space, SpaceProps } from 'styled-system'
+import { space, variant } from 'styled-system'
 
 import Box, { BoxProps } from '../../atoms/box/box'
-import { cssClass } from '../../utils'
+import { VariantType } from '../../theme'
+import { cssClass, themeGet } from '../../utils'
+import DropDownMenu from './drop-down-menu'
+
+const variantsShared = (color) => ({
+  color,
+  [`& .${cssClass('DropDownItemAction')}`]: {
+    color,
+  },
+  '&:hover': {
+    borderColor: color,
+  },
+  [`& .${cssClass('Icon')} svg`]: {
+    fill: color,
+  },
+})
+
+const colorVariants = variant<any, VariantType>({
+  prop: 'colorVariant',
+  variants: {
+    primary: variantsShared('primary100'),
+    danger: variantsShared('error'),
+    success: variantsShared('success'),
+    info: variantsShared('info'),
+    secondary: { bg: 'accent' },
+    light: variantsShared('grey20'),
+    default: {},
+  },
+})
 
 /**
  * Props passed to DropDownItem
@@ -11,45 +39,58 @@ import { cssClass } from '../../utils'
  * @memberof DropDown
  * @extends BoxProps
  */
-export type DropDownItemProps = BoxProps
+export type DropDownItemProps = BoxProps & {
+  colorVariant?: VariantType
+}
 
 /**
  * @component
  * @private
  */
-export const DropDownItem = styled(Box)<SpaceProps>`
+export const DropDownItem = styled(Box)<DropDownItemProps>`
   position: relative;
   z-index: 10000;
   border: none;
-  color: ${({ theme }): string => theme.colors.grey80};
-  display: block;
-  font-family: ${({ theme }): string => theme.font};
+  color: ${themeGet('colors', 'grey80')};
+  font-family: ${themeGet('font')};
   border: solid transparent;
-  border-width: 0 ${({ theme }): string => theme.space.sm};
+  border-width: 0 ${themeGet('space', 'sm')};
   ${({ onClick }) => (onClick ? 'cursor: pointer;' : '')};
   text-decoration: none;
   display: flex;
   flex-direction: row;
   align-items: center;
+  white-space: nowrap;
 
   &:hover {
-    border-color: ${({ theme }): string => theme.colors.primary100};
-    background: ${({ theme }): string => theme.colors.grey20};
+    border-color: ${themeGet('colors', 'primary100')};
+    background: ${themeGet('colors', 'grey20')};
   }
 
   & .${cssClass('Icon')} {
-    padding-right: ${({ theme }): string => theme.space.default};
-    fill: ${({ theme }): string => theme.colors.grey40};
+    padding-right: ${themeGet('space', 'default')};
+    fill: ${themeGet('colors', 'grey40')};
     flex-grow: 0;
     flex-shrink: 0;
   }
 
-  & a {
-    color: ${({ theme }): string => theme.colors.grey80};
+  & > ${DropDownMenu} {
+    position: absolute;
+    top: 0;
+    display: none;
   }
-  padding: ${({ theme }): string => theme.space.lg};
+
+  &:hover > ${DropDownMenu} {
+    display: flex;
+  }
+
+  & a {
+    color: ${themeGet('colors', 'grey80')};
+  }
+  padding: ${themeGet('space', 'lg')} ${themeGet('space', 'xxl')};
 
   ${space};
+  ${colorVariants};
 `
 
 export default DropDownItem

@@ -11,7 +11,7 @@ import themeGet from '../utils/theme-get'
 import { ColorProps } from '../utils/color-props'
 import { VariantType } from '../theme'
 
-export type LabelVariantType = VariantType | 'light'
+export type LabelVariantType = VariantType
 
 const labelVariants = variant<any, LabelVariantType>({
   variants: {

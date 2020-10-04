@@ -10,7 +10,7 @@ export default {
   component: Button,
 }
 
-const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text'] as const
+const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text', 'light'] as const
 
 const ButtonVariant = ['primary', 'danger', 'text', 'success', 'info', 'secondary'] as const
 

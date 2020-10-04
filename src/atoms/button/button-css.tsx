@@ -34,6 +34,7 @@ const buttonVariants = variant({
       bg: 'error',
       '&:hover': {
         bg: 'errorDark',
+        borderColor: 'transparent',
       },
       className: cssClass(['Button', 'Button_Danger']),
       ...variantShared,
@@ -42,6 +43,7 @@ const buttonVariants = variant({
       bg: 'success',
       '&:hover': {
         bg: 'successDark',
+        borderColor: 'transparent',
       },
       className: cssClass(['Button', 'Button_Success']),
       ...variantShared,
@@ -50,6 +52,7 @@ const buttonVariants = variant({
       bg: 'info',
       '&:hover': {
         bg: 'infoDark',
+        borderColor: 'transparent',
       },
       className: cssClass(['Button', 'Button_Info']),
       ...variantShared,
@@ -58,6 +61,19 @@ const buttonVariants = variant({
       bg: 'accent',
       className: cssClass(['Button', 'Button_Secondary']),
       ...variantShared,
+    },
+    light: {
+      bg: 'grey20',
+      className: cssClass(['Button', 'Button_Grey']),
+      color: 'grey80',
+      borderColor: 'grey40',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'grey80',
+      },
+      '&:hover': {
+        borderColor: 'grey60',
+        bg: 'grey60',
+      },
     },
     text: {
       bg: 'transparent',
@@ -68,12 +84,12 @@ const buttonVariants = variant({
       '&:hover': {
         background: 'transparent',
         color: 'hoverBg',
-        'border-color': 'transparent',
-        'text-decoration': 'underline',
+        borderColor: 'transparent',
+        textDecoration: 'underline',
       },
       '&:focus': {
         background: 'transparent',
-        'border-color': 'transparent',
+        borderColor: 'transparent',
       },
       '& svg': {
         fill: 'primary100',
@@ -121,6 +137,17 @@ const sizeVariants = variant({
   },
 })
 
+const setPointer = (props: React.HTMLProps<HTMLButtonElement>): string => {
+  if (props.href || props.onClick) {
+    return 'cursor: pointer'
+  }
+
+  if (props.as === 'a' && !props.href && !props.onClick) {
+    return 'cursor: auto'
+  }
+  return ''
+}
+
 /**
  * Button CSS Styles which can be reused in another button-like component with styled-components
  *
@@ -146,7 +173,8 @@ export const ButtonCSS = css<ButtonProps>`
 
   border: 1px solid ${themeGet('colors', 'primary100')};
   color: ${themeGet('colors', 'primary100')};
-  cursor: pointer;
+  
+  ${(props) => setPointer(props as React.HTMLProps<HTMLButtonElement>)};
   text-decoration: none;
   padding: ${themeGet('space', 'sm')} ${themeGet('space', 'xxl')};
   box-sizing: border-box;

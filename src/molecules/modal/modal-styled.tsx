@@ -27,6 +27,7 @@ const variants = (props) => styledVariant<any, VariantType>({
     success: variantStyle('success', props),
     info: variantStyle('info', props),
     secondary: variantStyle('accent', props),
+    light: variantStyle('grey60', props),
     default: {},
   },
 })

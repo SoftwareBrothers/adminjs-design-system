@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { BoxProps } from '../..'
 
@@ -8,17 +8,17 @@ const StyledDropDown = styled.div`
   display: inline-block;
 `
 
-const DEFAULT_STICK = 'left'
+export const DEFAULT_STICK = 'left'
 
 /**
- * Props passed to DropDown element
- *
+ * Props passed to DropDown element.
+ * @property {string} [...] Other props from {@link BoxProps}
  * @memberof DropDown
  * @extends BoxProps
  */
 export type DropDownProps = {
   /** Indicates if menu should stick to left or right */
-  stick?: 'left' | 'right',
+  stick?: 'left' | 'right';
 } & BoxProps
 
 type PositionProps = {
@@ -36,17 +36,19 @@ type PositionProps = {
  * @section design-system
  */
 const DropDown: React.FC<DropDownProps> = (props) => {
-  const { children, stick, ...boxProps } = props
+  const { children, stick = DEFAULT_STICK, ...boxProps } = props
   const [isVisible, setIsVisible] = useState(false)
+  const [initialHeight, setInitialHeight] = useState<number | null>(null)
 
-  const triggerRef = useRef<HTMLElement>(null)
-  const menuRef = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const [menuPosition, setMenuPosition] = useState<PositionProps | null>()
 
-  useEffect(() => {
-    if (menuRef.current && triggerRef.current) {
-      const { offsetHeight } = triggerRef.current
-      switch (stick || DEFAULT_STICK) {
+  useLayoutEffect(() => {
+    if (ref.current && !initialHeight) {
+      const { offsetHeight } = ref.current
+      setInitialHeight(offsetHeight)
+
+      switch (stick) {
       case 'left':
         setMenuPosition({ left: 0, top: offsetHeight })
         break
@@ -54,21 +56,18 @@ const DropDown: React.FC<DropDownProps> = (props) => {
         setMenuPosition({ right: 0, top: offsetHeight })
       }
     }
-  }, [triggerRef.current, menuRef.current, stick])
+  }, [ref.current])
 
   const elements = React.Children.map(children, (child: any) => {
     const type = child && child.type && child.type.displayName
     if (type === 'DropDownTrigger') {
-      // const triggerChildren = React.Children.toArray(child.props.children)[0]
-      return React.cloneElement(child.props.children, {
-        onMouseEnter: () => setIsVisible(true),
-        ref: triggerRef,
-      })
+      // getting rid of DropDownTrigger and render just what was inside
+      return React.cloneElement(child.props.children)
     }
     if (type === 'DropDownMenu') {
       return React.cloneElement(child, {
         isVisible,
-        ref: menuRef,
+        stick,
         ...menuPosition,
       })
     }
@@ -76,9 +75,10 @@ const DropDown: React.FC<DropDownProps> = (props) => {
   })
   return (
     <StyledDropDown
-      {...boxProps}
+      {...boxProps as any}
       onMouseEnter={(): void => setIsVisible(true)}
       onMouseLeave={(): void => setIsVisible(false)}
+      ref={ref}
     >
       {elements}
     </StyledDropDown>

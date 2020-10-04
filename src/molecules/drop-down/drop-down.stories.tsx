@@ -29,7 +29,7 @@ export const Default: React.FC = ({ onClick }) => {
   }
 
   return (
-    <StoryWrapper label="Button trigger with DropDownItems">
+    <StoryWrapper label="Button trigger with nested DropDownItems">
       <DropDown stick={stick}>
         <DropDownTrigger>
           <Button>Get your cursor here!</Button>
@@ -42,6 +42,12 @@ export const Default: React.FC = ({ onClick }) => {
           <DropDownItem onClick={handleClick}>
             <Icon icon="Audio" />
             Other item
+            <DropDownMenu>
+              <DropDownItem onClick={handleClick} colorVariant="danger">
+                <Icon icon="Edit" />
+                Some danger item
+              </DropDownItem>
+            </DropDownMenu>
           </DropDownItem>
         </DropDownMenu>
       </DropDown>
