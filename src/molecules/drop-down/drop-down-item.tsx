@@ -27,7 +27,7 @@ const colorVariants = variant<any, VariantType>({
     success: variantsShared('success'),
     info: variantsShared('info'),
     secondary: { bg: 'accent' },
-    light: variantsShared('grey20'),
+    light: variantsShared('grey80'),
     default: {},
   },
 })
