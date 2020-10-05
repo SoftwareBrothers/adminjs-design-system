@@ -63,7 +63,7 @@ const buttonVariants = variant({
       ...variantShared,
     },
     light: {
-      bg: 'grey20',
+      bg: 'white',
       className: cssClass(['Button', 'Button_Grey']),
       color: 'grey80',
       borderColor: 'grey40',

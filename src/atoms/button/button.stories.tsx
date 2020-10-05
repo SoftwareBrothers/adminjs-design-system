@@ -10,7 +10,7 @@ export default {
   component: Button,
 }
 
-const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text', 'light'] as const
+const variants = ['primary', 'light', 'danger', 'success', 'info', 'secondary', 'text'] as const
 
 const ButtonVariant = ['primary', 'danger', 'text', 'success', 'info', 'secondary'] as const
 
@@ -115,6 +115,10 @@ export const Examples: React.FC = () => (
         <Button size="default">
           <Icon icon="Add" />
           Default
+        </Button>
+        <Button size="default" ml="md" variant="light">
+          <Icon icon="Add" />
+          Light
         </Button>
       </Box>
       <Box mb="xl">
