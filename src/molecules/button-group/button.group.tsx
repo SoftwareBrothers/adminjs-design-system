@@ -35,22 +35,48 @@ export type ButtonGroupProps = {
   buttons: Array<ButtonInGroupProps>,
 }
 
-const StyledSingleButton = styled(Button)<{hasLabel: boolean}>`
-  ${(props) => (props.hasLabel ? '' : `padding-left: ${themeGet('space', 'md')(props)}`)};
-  ${(props) => (props.hasLabel ? '' : `padding-right: ${themeGet('space', 'md')(props)}`)};
-  & > .${cssClass('Icon')} svg {
-    ${(props) => (props.hasLabel ? '' : 'margin-right: 0;')};
+const hasHandler = (props: any) => {
+  if (!props.onClick && !props.href) {
+    return css`
+    &&& {
+      cursor: default;
+    }
+    `
   }
+  return ''
+}
+
+const hasLabel = (props: any) => {
+  if (!props.hasLabel) {
+    return css`
+      padding-left: ${themeGet('space', 'md')};
+      padding-right: ${themeGet('space', 'md')};
+      & > .${cssClass('Icon')} svg {
+        margin-right: 0;
+      }
+    `
+  }
+  return ''
+}
+
+const StyledSingleButton = styled(Button)<{hasLabel: boolean}>`
+  ${hasLabel};
+  ${hasHandler};
+`
+
+const StyledDropDownItemAction = styled<any>(DropDownItemAction)`
+  ${hasLabel};
 `
 
 const SingleButton: React.FC<ButtonInGroupProps> = (props) => {
   const { icon, label, buttons, source, onClick, ...buttonProps } = props
+  const onClickHandler = onClick ? (event) => onClick(event, source) : undefined
 
   return (
     <StyledSingleButton
       as="a"
       hasLabel={!!label}
-      onClick={(event) => (onClick ? onClick(event, source) : undefined)}
+      onClick={onClickHandler}
       {...buttonProps}
     >
       {icon ? (
@@ -68,15 +94,18 @@ const SingleButton: React.FC<ButtonInGroupProps> = (props) => {
 
 export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => {
   const { variant, onClick, href, icon, label, buttons, source, ...rest } = props
+  const onClickHandler = onClick ? (event) => onClick(event, source) : undefined
+
   return (
     <DropDownItem
       colorVariant={variant}
       p={0}
     >
-      <DropDownItemAction
-        onClick={(event) => (onClick ? onClick(event, source) : undefined)}
+      <StyledDropDownItemAction
+        onClick={onClickHandler}
         href={href}
         as="a"
+        hasLabel={!!label}
         {...rest}
       >
         {buttons && buttons.length ? (
@@ -84,7 +113,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
         ) : ''}
         {icon ? <Icon icon={icon} /> : ''}
         {label}
-      </DropDownItemAction>
+      </StyledDropDownItemAction>
       {buttons && buttons.length ? (
         <DropDownMenu>
           {buttons.map((button) => (

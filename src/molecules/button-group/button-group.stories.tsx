@@ -25,8 +25,7 @@ export const Default: React.FC = ({ onClick }) => {
     onClick: handleClick,
     icon: 'Edit',
   }, {
-    label: 'Duplicate',
-    onClick: handleClick,
+    label: 'Not Clickable',
     source: 'thisWillGoBack',
     icon: 'Copy',
     variant: 'light',
@@ -50,7 +49,6 @@ export const Default: React.FC = ({ onClick }) => {
       }],
     }, {
       label: 'Option 3',
-      onClick: handleClick,
       icon: 'Copy',
     }],
   }, {
