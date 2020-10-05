@@ -11,6 +11,12 @@ const StyledDropDown = styled.div`
 export const DEFAULT_STICK = 'left'
 
 /**
+ * Available values for {@link DropDown}.stick prop
+ * @memberof DropDown
+ */
+export type DropDownStickProp = 'left' | 'right'
+
+/**
  * Props passed to DropDown element.
  * @property {string} [...] Other props from {@link BoxProps}
  * @memberof DropDown
@@ -18,7 +24,7 @@ export const DEFAULT_STICK = 'left'
  */
 export type DropDownProps = {
   /** Indicates if menu should stick to left or right */
-  stick?: 'left' | 'right';
+  stick?: DropDownStickProp;
 } & BoxProps
 
 type PositionProps = {

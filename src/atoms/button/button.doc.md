@@ -45,7 +45,7 @@ and {@link TypographyProps}. See {@link ButtonProps} below.
 1 .Color variants
 
 ```reactComponent
-const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text']
+const variants = ['primary', 'danger', 'success', 'info', 'secondary', 'text', 'light']
 return (
 <Box py="lg">
   <Button mb="default" mr="default">default</Button>

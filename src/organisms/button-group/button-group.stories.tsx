@@ -1,12 +1,12 @@
 import React from 'react'
-import { withKnobs, select, object } from '../../../storybook/node_modules/@storybook/addon-knobs'
+import { withKnobs, select, object } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { ButtonGroup, Box } from '../..'
 import { CardTitle } from '../../atoms/typography'
 import Label from '../../atoms/label'
 
 export default {
-  title: 'DesignSystem/Molecules/ButtonGroup',
+  title: 'DesignSystem/Organisms/ButtonGroup',
   decorators: [withKnobs],
   argTypes: {
     onClick: { action: 'clicked' },

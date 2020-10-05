@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Box, { BoxProps } from '../../atoms/box/box'
-import { DropDownProps, DEFAULT_STICK } from './drop-down'
+import { DEFAULT_STICK, DropDownStickProp } from './drop-down'
 import { cssClass } from '../../utils'
 
 /**
@@ -12,7 +12,7 @@ import { cssClass } from '../../utils'
  */
 export type DropDownMenuProps = BoxProps & {
   isVisible?: boolean;
-  stick?: DropDownProps['stick']
+  stick?: DropDownStickProp;
 }
 
 /**
