@@ -17,7 +17,7 @@ import {
 
 export type ButtonInGroupProps = ButtonProps & {
   icon?: string;
-  label?: string;
+  label?: string | null;
   variant?: VariantType;
   href?: string;
   source?: any;

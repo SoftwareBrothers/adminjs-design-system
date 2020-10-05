@@ -86,6 +86,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
 
   & a {
     color: ${themeGet('colors', 'grey80')};
+    text-decoration: none;
   }
   padding: ${themeGet('space', 'lg')} ${themeGet('space', 'xxl')};
 
