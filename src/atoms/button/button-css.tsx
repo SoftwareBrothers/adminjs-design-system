@@ -170,6 +170,7 @@ export const ButtonCSS = css<ButtonProps>`
   display: inline-block;
   font-family: ${({ theme }): string => theme.font};
   line-height: ${themeGet('lineHeights', 'lg')};
+  vertical-align: middle;
 
   border: 1px solid ${themeGet('colors', 'primary100')};
   color: ${themeGet('colors', 'primary100')};
