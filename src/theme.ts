@@ -136,10 +136,12 @@ const space = {
  * @alias sizes
  * @property {string} navbarHeight=64px
  * @property {string} sidebarWidth=300px
+ * @property {string} maxFormWidth=740px
  */
 const sizes = {
   navbarHeight: '64px',
   sidebarWidth: '300px',
+  maxFormWidth: '740px',
 }
 
 /**
