@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import styled from 'styled-components'
-import { space, SpaceProps, LayoutProps, variant, layout } from 'styled-system'
+import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
 import DrawerFooter from './drawer-footer'
 import { cssClass } from '../../utils/css-class'
 import { DEFAULT_DRAWER_WIDTH } from '../../constants'
@@ -10,9 +10,12 @@ import { DEFAULT_DRAWER_WIDTH } from '../../constants'
  * {@link SpaceProps}.
  *
  * @alias DrawerProps
+ * @extends SpaceProps
+ * @extends LayoutProps
+ * @extends ColorProps
  * @memberof Drawer
  */
-export type DrawerProps = SpaceProps & LayoutProps & {
+export type DrawerProps = SpaceProps & LayoutProps & ColorProps & {
   /** Indicates if drawer should be hidden */
   isHidden?: boolean;
   /**
@@ -115,6 +118,7 @@ const Drawer = styled.section<DrawerProps>`
   max-width: 100%;
   
   ${space};
+  ${color};
   ${layout};
   ${variants};
 `
