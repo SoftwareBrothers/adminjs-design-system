@@ -8,7 +8,7 @@ const DropZoneImg = styled.div<{src: string}>`
   width: 80px;
   height: 80px;
   margin-right: ${({ theme }): string => theme.space.lg};
-  background-image: url(${({ src }): string => src});
+  background-image: url('${({ src }): string => src}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
