@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { color, space, typography, SpaceProps, TypographyProps, variant } from 'styled-system'
+import { VariantType } from '../../theme'
 import { ColorProps } from '../../utils/color-props'
 import { cssClass } from '../../utils/css-class'
 
@@ -14,7 +15,7 @@ export type BadgeProps = SpaceProps & TypographyProps & ColorProps & {
   /**
    * Color variant
    */
-  variant?: 'primary' | 'danger' | 'text' | 'success' | 'info' | 'secondary';
+  variant?: VariantType;
   /**
    * Outline version
    */
@@ -38,6 +39,8 @@ const colorVariant = (props: BadgeProps): Record<string, any> => variant({
     success: variantStyle('success', props),
     info: variantStyle('info', props),
     secondary: variantStyle('accent', props),
+    light: variantStyle('light', props),
+    default: {},
   },
 })
 

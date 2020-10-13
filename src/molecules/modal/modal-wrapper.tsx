@@ -20,14 +20,14 @@ const Wrapper = styled(Box)`
 `
 
 const ModalWrapper: React.FC<ModalProps> = (props) => {
-  const { onOverlayClick } = props
+  const { onOverlayClick, ...otherProps } = props
 
   const handleOverlayClick = onOverlayClick || (() => true)
 
   return (
     <Wrapper flex justifyContent="center" alignItems="center">
       <Overlay onClick={handleOverlayClick} />
-      <ModalInline {...props} />
+      <ModalInline {...otherProps} />
     </Wrapper>
   )
 }

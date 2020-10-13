@@ -3,8 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import React, { useState, useEffect, useRef, useMemo } from 'react'
-import debounce from 'lodash/debounce'
+import React, { useState, useEffect, useRef, useMemo, useCallback, forwardRef } from 'react'
 
 import styled from 'styled-components'
 import snow from './snow.styles'
@@ -38,8 +37,8 @@ const Theme = styled(Box)<RichTextProps>`
  * @new In version 3.3
  * @section design-system
  */
-export const RichText: React.FC<RichTextProps> = (props) => {
-  const { value, borderless, quill: options, onChange } = props
+export const RichText = forwardRef<HTMLDivElement, RichTextProps>((props, ref) => {
+  const { value: initialValue, borderless, quill: options, onChange } = props
 
   options.theme = options.theme || 'snow'
   if (!options.modules?.toolbar) {
@@ -57,9 +56,20 @@ export const RichText: React.FC<RichTextProps> = (props) => {
   }
 
   const [quill, setQuill] = useState<QuillClass | null>(null)
-  const editorRef = useRef<HTMLDivElement>(null)
+  const [content, setContent] = useState<string>(initialValue || '')
+  // TODO: right now I don't watch for changes on ref - maybe I should?
+  const editorRef = ref as React.RefObject<HTMLDivElement> || useRef<HTMLDivElement>(null)
 
-  const debouncedOnChange = useMemo(() => debounce(onChange || (() => true), 500), [onChange])
+  const handleChange = useCallback(() => {
+    const editor = quill?.root
+    if (editor) {
+      const currentContent = editor.innerHTML
+      setContent(currentContent)
+      if (onChange) {
+        onChange(currentContent)
+      }
+    }
+  }, [onChange, quill])
 
   useEffect(() => {
     if (editorRef.current) {
@@ -75,25 +85,21 @@ export const RichText: React.FC<RichTextProps> = (props) => {
     if (!editorRef.current || !quill) {
       return
     }
-    if (value && quill.root.innerHTML !== value) {
-      quill.root.innerHTML = value
+    if (content && quill.root.innerHTML !== content) {
+      quill.clipboard.dangerouslyPasteHTML(content)
     }
-  }, [value, quill])
+  }, [quill]) // only when quill is initialized - later on it should update content
 
   useEffect(() => {
     const editor = quill?.root
     if (!editor) {
       return undefined
     }
-    const handler = () => {
-      const content = editor.innerHTML
-      debouncedOnChange(content)
-    }
-    editor?.addEventListener('DOMSubtreeModified', handler)
+    editor?.addEventListener('DOMSubtreeModified', handleChange)
     return () => {
-      editor?.removeEventListener('DOMSubtreeModified', handler)
+      editor?.removeEventListener('DOMSubtreeModified', handleChange)
     }
-  }, [debouncedOnChange, quill])
+  }, [onChange, handleChange])
 
   return (
     <Theme quill={options}>
@@ -105,6 +111,6 @@ export const RichText: React.FC<RichTextProps> = (props) => {
       </div>
     </Theme>
   )
-}
+})
 
 export default RichText

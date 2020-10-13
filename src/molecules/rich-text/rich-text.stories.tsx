@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import Quill from 'quill'
 import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
 import RichText from './rich-text'
@@ -56,6 +57,19 @@ export default { title: 'DesignSystem/Molecules/RichText', decorators: [withKnob
 
 export const Snow: React.FC = () => {
   const [value, setValue] = useState(html.replace(/\n/img, ''))
+  const ref = useRef()
+
+  const [quill, setQuill] = useState<Quill>(null)
+
+  useEffect(() => {
+    if (ref?.current?.__quill) {
+      setQuill(ref?.current?.__quill)
+    }
+  }, [ref?.current?.__quill])
+
+  const insertImageHandler = useCallback(() => {
+    console.log({ ref: ref?.current })
+  }, [quill, ref?.current])
 
   const borderless = boolean('borderless', false)
   return (
@@ -65,9 +79,18 @@ export const Snow: React.FC = () => {
           borderless={borderless}
           quill={{
             theme: 'snow',
+            modules: {
+              toolbar: {
+                container: [['bold', 'italic'], ['link', 'image'], ['insertImage']],
+                handlers: {
+                  insertImage: () => insertImageHandler(),
+                },
+              },
+            },
           }}
           onChange={(content) => setValue(content)}
           value={value}
+          ref={ref}
         />
       </StoryWrapper>
       <StoryWrapper label="Text preview">
