@@ -42,6 +42,10 @@ const contentCSS = css`
     padding: 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   p, div {
     margin-bottom: ${themeGet('space', 'xl')};
     font-size: ${themeGet('fontSizes', 'md')};
