@@ -18,7 +18,7 @@ import themeGet from '../../utils/theme-get'
 export type HeaderProps = TypographyProps & SpaceProps
 
 const Base = styled.h3<HeaderProps>`
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${themeGet('font')};
   vertical-align: middle;
   padding: 0;
   * {

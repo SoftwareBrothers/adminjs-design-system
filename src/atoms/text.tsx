@@ -89,7 +89,6 @@ const Text = styled.div<TextProps>`
 `
 
 Text.defaultProps = {
-  marginBottom: 'xl',
   className: cssClass('Text'),
 }
 

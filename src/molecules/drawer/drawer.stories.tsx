@@ -8,7 +8,7 @@ export default { title: 'DesignSystem/Molecules/Drawer', decorators: [withKnobs]
 export const Default: React.FC = () => {
   const isHidden = boolean('Indicates if drawer should be hidden', false)
   return (
-    <Drawer isHidden={isHidden}>
+    <Drawer isHidden={isHidden} bg="grey20">
       <DrawerContent>
         <Header.H3>
           <Button size="icon" rounded mr="lg">

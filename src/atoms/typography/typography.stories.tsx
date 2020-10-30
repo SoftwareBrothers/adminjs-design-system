@@ -4,6 +4,7 @@ import { withKnobs, select } from '../../../storybook/node_modules/@storybook/ad
 
 import { Box, Text } from '../..'
 import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './index'
+import { Button } from '../button'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Typography', decorators: [withKnobs] }
@@ -53,6 +54,7 @@ const TextStory: React.FC = () => {
         multarum et magnarum voluptatum. Omnia contraria, quos etiam insanos esse vultis. Quid,
         de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Duo Reges:
         constructio interrete. Sed in rebus apertissimis nimium longi sumus.
+        <Button as="a">Button inside the text</Button>
       </Text>
     </StoryWrapper>
   )

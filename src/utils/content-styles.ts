@@ -24,7 +24,6 @@ const contentCSS = css`
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};
   font-weight: ${themeGet('fontWeights', 'light')};
-
   div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -38,8 +37,10 @@ const contentCSS = css`
   figure, figcaption, footer, header, hgroup,
   main, menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
-    margin: 0;
-    padding: 0;
+    &:not([class*="admin-bro_"]) {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   img {
