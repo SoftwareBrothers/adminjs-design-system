@@ -1,6 +1,6 @@
 {
   "name": "@admin-bro/design-system",
-  "version": "1.7.0-beta.22",
+  "version": "1.7.0",
   "description": "DesignSystem on which admin-bro is build",
   "main": "build/index.js",
   "types": "types/index.d.ts",
