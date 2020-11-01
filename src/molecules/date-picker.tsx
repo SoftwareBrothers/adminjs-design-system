@@ -10,6 +10,12 @@ import { InputGroup } from './form-group/index'
 import { cssClass } from '../utils/css-class'
 import { PropertyType, formatDateProperty } from '../utils/date-utils'
 
+const DatePickerWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: ${({ theme }): string => theme.space.xxl};
+`
+
 const StyledDatePicker = styled(InputGroup)`
   ${styles};
   position: relative;
@@ -17,7 +23,7 @@ const StyledDatePicker = styled(InputGroup)`
   &.active ${Input}, &.active ${Button} {
     z-index: 101;
   }
-
+  
   & .react-datepicker {
     border-radius: 0;
     border: 1px solid ${({ theme }): string => theme.colors.primary100};
@@ -73,8 +79,17 @@ const StyledDatePicker = styled(InputGroup)`
     color: ${({ theme }): string => theme.colors.grey40};
   }
   
-  & .react-datepicker__day--today {
-    color: ${({ theme }): string => theme.colors.primary100};
+  & .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
+    color: ${({ theme }): string => theme.colors.white};
+  }
+
+  & .react-datepicker__day--selected {
+    color: ${({ theme }): string => theme.colors.white};
+  }
+
+  & .react-datepicker__day--keyboard-selected:not(.react-datepicker__day--today) {
+    background: none;
+    color: ${({ theme }): string => theme.colors.grey100};
   }
 
   & .react-datepicker__day:hover,
@@ -103,17 +118,12 @@ const Overlay = styled.div`
   }
 `
 
-const DatePickerWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  top: ${({ theme }): string => theme.space.xxl};
-`
-
 type CustomProps = Partial<Omit<ReactDatePickerProps, 'value' | 'disabled' | 'onChange'>>
 
 /**
  * Props for DatePicker
- * @memberof module:@admin-bro/design-system.DatePicker
+ *
+ * @memberof DatePicker
  * @alias DatePickerProps
  * @property {any} {...}    Any custom props to pass down to the ReactDatePicker
  * @see https://reactdatepicker.com/
@@ -138,12 +148,26 @@ export type DatePickerProps = CustomProps & {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/date-picker.png" />
+ *
+ *
  * Component responsible for showing dates. It is a wrapper to
  * [react datepicker]{@link https://reactdatepicker.com/}.
+ *
+ * ### Usage
+ *
+ * ```javascript
+ * import { DatePicker, DatePickerProps } from '@admin-bro/design-system'
+ * ```
  *
  * @component
  * @subcategory Molecules
  * @see https://reactdatepicker.com/
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-datepicker--default Storybook}
+ * @see DatePickerProps
+ * @hideconstructor
  *
  * @example
  * return (
@@ -151,7 +175,7 @@ export type DatePickerProps = CustomProps & {
  *   <DatePicker onChange={(date) => console.log(date)}/>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const DatePicker: React.FC<DatePickerProps> = (props) => {
   const { value, onChange, disabled, propertyType, ...other } = props

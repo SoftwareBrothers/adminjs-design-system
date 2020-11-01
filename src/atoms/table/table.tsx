@@ -3,18 +3,23 @@ import { layout, LayoutProps } from 'styled-system'
 import { cssClass } from '../../utils/css-class'
 
 /**
+ * @classdesc
+ *
+ * <img src="components/table.png" />
+ *
  * Main Table wrapper. Along with _TableRow_, _TableCell_, _TableCaption_,
  * _TableHead_ and _TableBody_ gives you the powerful tool for building tables.
  *
+ * ### Related Components
  *
- * Props:
  * - _Table_: {@link LayoutProps} & standard table html props
  * - _TableBody_: standard tbody html props
  * - _TableCell_: {@link SpaceProps} & {@link ColorProps} & standard td html props
  * - _TableHead_: standard thead html props
  * - _TableRow_:  standard tr html props
  *
- * Example
+ * ### Usage
+ *
  * ```javascript
  * import {
  *   Table,
@@ -27,7 +32,9 @@ import { cssClass } from '../../utils/css-class'
  * ```
  *
  * @component
+ * @hideconstructor
  * @subcategory Atoms
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-table--default Storybook}
  * @example
  * return (
  * <Box pt="x4">
@@ -80,7 +87,7 @@ import { cssClass } from '../../utils/css-class'
  * </Table>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Table = styled.table<LayoutProps>`
   position: relative;

@@ -16,7 +16,10 @@
       "typeRoots": ["./vendor-types"],
   },
   "include": [
-      "./src/**/*",
-      "./spec/**/*"
+    "./src/**/*",
+    "./spec/**/*"
   ],
+  "exclude": [
+    "./src/**/*.stories.*"
+  ]
 }

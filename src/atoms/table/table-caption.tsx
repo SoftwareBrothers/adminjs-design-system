@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Button } from '../button'
 import { Text } from '../text'
 import { cssClass } from '../../utils/css-class'
+import { themeGet } from '../../utils'
 
 const CAPTION_HEIGHT = '42px'
 
@@ -10,32 +11,36 @@ const CAPTION_HEIGHT = '42px'
  * @private
  */
 const TableCaption = styled.caption`
-  font-family: ${({ theme }): string => theme.font};
-  padding: ${({ theme }): string => theme.space.sm} ${({ theme }): string => theme.space.lg};
+  font-family: ${themeGet('font')};
+  padding: ${themeGet('space', 'sm')} ${themeGet('space', 'lg')};
   text-align: left;
-  color: ${({ theme }): string => theme.colors.white};
-  font-size: ${({ theme }): string => theme.fontSizes.default};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
+  color: ${themeGet('colors', 'white')};
+  font-size: ${themeGet('fontSizes', 'default')};
+  line-height: ${themeGet('lineHeights', 'default')};
   position: absolute;
   height: ${CAPTION_HEIGHT};
   left: 0;
   right: 0;
   top: -${CAPTION_HEIGHT};
-  background: ${({ theme }): string => theme.colors.primary100};
+  background: ${themeGet('colors', 'primary100')};
   box-sizing: border-box;
+  vertical-align: middle;
 
   & ${Button} {
-    color: ${({ theme }): string => theme.colors.white};
+    color: ${themeGet('colors', 'white')};
     & > span svg {
-      fill: ${({ theme }): string => theme.colors.white};
+      fill: ${themeGet('colors', 'white')};
     }
     &:hover {
-      color: ${({ theme }): string => theme.colors.white};
+      color: ${themeGet('colors', 'white')};
+      .${cssClass('Icon')} svg {
+        fill: ${themeGet('colors', 'white')};
+      }
     }
   }
 
   & ${Text} {
-    color: ${({ theme }): string => theme.colors.white};
+    color: ${themeGet('colors', 'white')};
   }
 `
 

@@ -3,7 +3,15 @@ const UNITS = ['B', 'KB', 'MB', 'GB', 'TB'] as const
 // eslint-disable-next-line import/prefer-default-export
 export type DisplaySizeUnit = typeof UNITS[number];
 
-export const humanFileSize = (size: number | string, unit?: DisplaySizeUnit): string => {
+/**
+ * Changes size in bytes to string. If unit is not provided - tries to find the best match.
+ *
+ * @param {number} size
+ * @param {'B' | 'KB' | 'MB' | 'GB' | 'TB'} [unit]
+ * @returns {string}
+ * @memberof module:@admin-bro/design-system
+ */
+const humanFileSize = (size: number | string, unit?: DisplaySizeUnit): string => {
   let foundUnitIndex: number | null = null
   if (unit) {
     foundUnitIndex = UNITS.findIndex((u) => u === unit)
@@ -18,3 +26,5 @@ export const humanFileSize = (size: number | string, unit?: DisplaySizeUnit): st
 
   return `${Math.round(calculatedSize)} ${guessedUnit}`
 }
+
+export { humanFileSize }

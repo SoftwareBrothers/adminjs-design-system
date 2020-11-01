@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import styled from 'styled-components'
-import { space, SpaceProps, LayoutProps, variant, layout } from 'styled-system'
+import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
 import DrawerFooter from './drawer-footer'
 import { cssClass } from '../../utils/css-class'
 import { DEFAULT_DRAWER_WIDTH } from '../../constants'
@@ -10,9 +10,12 @@ import { DEFAULT_DRAWER_WIDTH } from '../../constants'
  * {@link SpaceProps}.
  *
  * @alias DrawerProps
- * @memberof module:@admin-bro/design-system.Drawer
+ * @extends SpaceProps
+ * @extends LayoutProps
+ * @extends ColorProps
+ * @memberof Drawer
  */
-export type DrawerProps = SpaceProps & LayoutProps & {
+export type DrawerProps = SpaceProps & LayoutProps & ColorProps & {
   /** Indicates if drawer should be hidden */
   isHidden?: boolean;
   /**
@@ -33,6 +36,10 @@ const variants = variant({
 })
 
 /**
+ * @classdesc
+ *
+ * <img src="components/drawer.png" />
+ *
  * Drawer component renders a huge side area where {@link BaseActionComponent} renders
  * all actions where {@link Action.showInDrawer} is set to true.
  *
@@ -42,13 +49,17 @@ const variants = variant({
  *
  * All these components: Drawer, DrawerContent and Drawer Footer extends {@link SpaceProps}.
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see DrawerProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-drawer--default Storybook}
  * @example
  * return (
  * <Box height="500px">
@@ -81,7 +92,7 @@ const variants = variant({
  * </Box>
  * )
  *
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Drawer = styled.section<DrawerProps>`
   z-index: 100;
@@ -107,6 +118,7 @@ const Drawer = styled.section<DrawerProps>`
   max-width: 100%;
   
   ${space};
+  ${color};
   ${layout};
   ${variants};
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { DropDown, DropDownTrigger, DropDownMenu } from './drop-down/index'
 import { Text } from '../atoms/text'
 import { Icon } from '../atoms/icon'
@@ -24,12 +24,39 @@ const LoggedUserInfo = styled(Box)`
   }
 `
 
+/**
+ * @memberof LoggedUser
+ * @alias LoggedUserProps
+ * @private
+ */
 export type LoggedUserProps = {
   email: string;
   title?: string;
   avatarUrl?: string;
 }
 
+/**
+ * @classdesc
+ *
+ * <img src="components/logged-user.png" />
+ *
+ * Logged in user state in the header
+ *
+ *
+ * ### Usage
+ *
+ * ```javascript
+ * import { LoggedUser, LoggedUserProps } from '@admin-bro/design-system'
+ * ```
+ *
+ * @component
+ * @subcategory Molecules
+ * @hideconstructor
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-loggeduser--default Storybook}
+ * @see LoggedUserProps
+ * @section design-system
+ * @deprecated In favour of {@link CurrentUserNav} component
+ */
 export const LoggedUser: React.FC<LoggedUserProps> = (props) => {
   const { email, title, avatarUrl, children } = props
 

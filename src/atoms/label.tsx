@@ -1,18 +1,68 @@
-import styled from 'styled-components'
+import styled, { css, DefaultTheme, ThemedCssFunction } from 'styled-components'
 import {
   color, space,
-  ColorProps, SpaceProps,
+  SpaceProps,
   TypographyProps,
   typography,
+  variant,
 } from 'styled-system'
 import { cssClass } from '../utils/css-class'
+import themeGet from '../utils/theme-get'
+import { ColorProps } from '../utils/color-props'
+import { VariantType } from '../theme'
+
+export type LabelVariantType = VariantType
+
+const labelVariants = variant<any, LabelVariantType>({
+  variants: {
+    primary: {
+      color: 'primary100',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'primary100',
+      },
+    },
+    danger: {
+      color: 'error',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'error',
+      },
+    },
+    success: {
+      color: 'success',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'success',
+      },
+    },
+    info: {
+      color: 'info',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'info',
+      },
+    },
+    secondary: {
+      color: 'accent',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'accent',
+      },
+    },
+    light: {
+      color: 'grey60',
+      mb: 'sm',
+      fontWeight: 'light',
+      [`& .${cssClass('Icon')} svg`]: {
+        fill: 'grey60',
+      },
+    },
+    default: {},
+  },
+})
 
 /**
  * Prop Types of a Label component.
  * Apart from those explicitly specified below it extends all {@link ColorProps},
  * {@link SpaceProps} and {@link TypographyProps}
  *
- * @memberof module:@admin-bro/design-system.Label
+ * @memberof Label
  * @alias LabelProps
  * @property {string} [...] All props default to _label_ html component like `htmlFor`,
  *                          `id` etc.
@@ -28,17 +78,41 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   inline?: boolean;
   /** If label represents disabled field (dimmed version) */
   disabled?: boolean;
+  /** Color variant */
+  variant?: LabelVariantType;
+  /** Label size */
+  size?: 'default' | 'lg'
 }
 
+const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultTheme>> => (
+  disabled
+    ? css`
+    color: ${theme.colors.grey40};
+    & .${cssClass('Icon')} svg {
+      fill: ${theme.colors.grey40};
+    }
+  `
+    : css``
+)
+
 /**
- * Styled form of <label> element.
+ * @classdesc
  *
- * Usage:
+ * <img src="components/label.png" />
+ *
+ * Styled form of **label** element.
+ *
+ * ### Usage
+ *
  * ```javascript
  * import { Label, LabelProps } from '@admin-bro/design-system'
  * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see LabelProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-label--default Storybook}
+ * @hideconstructor
  * @example <caption>2 Different versions</caption>
  * return (
  * <Box p="xl">
@@ -50,28 +124,32 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
  *   </Text>
  * </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Label = styled.label<LabelProps>`
   display: ${({ inline }): string => (inline ? 'inline-block' : 'block')};
-  font-family: ${({ theme }): string => theme.font};
-  font-size: ${({ theme }): string => theme.fontSizes.sm};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
+  font-family: ${themeGet('font')};
+  font-size: ${(props): string => themeGet('fontSizes', props.size === 'lg' ? 'md' : 'sm')(props)};
+  line-height: ${themeGet('lineHeights', 'default')};
   margin-bottom: ${({ theme, inline }): string => (inline ? '0' : theme.space.default)};
 
   &:before {
     content: "${({ required }): string => (required ? '*' : '')}";
-    color: ${({ theme }): string => theme.colors.primary100};
-    margin-right: ${({ theme }): string => theme.space.sm};
+    color: ${themeGet('colors', 'primary100')};
+    margin-right: ${themeGet('space', 'sm')};
     display: ${({ required }): string => (required ? 'block-inline' : 'none')};
   }
 
-  ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}
+  & > .${cssClass('Icon')}:first-child {
+    margin-right: ${themeGet('space', 'md')};
+  }
 
+  ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}
   ${color};
   ${typography};
   ${space};
-  ${({ disabled, theme }): string => (disabled ? `color: ${theme.colors.grey40};` : '')}
+  ${labelVariants};
+  ${(props) => setDisabled(props as any)};
 `
 
 Label.defaultProps = {

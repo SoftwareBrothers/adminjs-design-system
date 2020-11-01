@@ -3,7 +3,7 @@ import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 import { variant as styledVariant, SpaceProps } from 'styled-system'
 
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { Icon } from '../atoms/icon'
 import { Button } from '../atoms/button'
 import { cssClass } from '../utils/css-class'
@@ -44,7 +44,7 @@ const variants = (theme: DefaultTheme): Record<string, any> => styledVariant({
   },
 })
 
-const StyledMessageBox = styled.div<StyledMessageBoxProps>`
+const StyledMessageBox = styled.div<MessageBoxProps>`
   line-height: ${({ theme }): string => theme.lineHeights.default};
   box-shadow: 0 2px 0 0 ${({ theme }): string => theme.colors.success};
   background: ${({ theme }): string => theme.colors.successLight};
@@ -82,7 +82,7 @@ const StyledChildren = styled(Box)`
  * @memberof MessageBox
  * @alias MessageBoxProps
  */
-type StyledMessageBoxProps = {
+type MessageBoxProps = {
   /** Triggered when user clicks close button. If not given close button won't be seen */
   onCloseClick?: () => void;
   /** Title content of a message */
@@ -99,22 +99,31 @@ type StyledMessageBoxProps = {
   children?: React.ReactNode;
 }
 
-export type MessageBoxProps = SpaceProps & StyledMessageBoxProps
+type Props = SpaceProps & MessageBoxProps
+export { Props as MessageBoxProps }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/message-box.png" />
+ *
  * Component responsible for rendering standard danger/info/success
  * messages.
  *
  * It has 2 size versions: default and small. Also it can either contain or
  * don't contain children, which causes different look.
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { MessageBox, MessageBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see MessageBoxProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-messagebox--default Storybook}
  * @example <caption>Different variants</caption>
  * return (
  *  <Box py="lg">
@@ -152,9 +161,9 @@ export type MessageBoxProps = SpaceProps & StyledMessageBoxProps
  *   </MessageBox>
  *  </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
-const MessageBox: React.FC<MessageBoxProps> = (props) => {
+const MessageBox: React.FC<Props> = (props) => {
   const { onCloseClick, message, icon, children, variant, size, ...other } = props
 
   return (

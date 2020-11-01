@@ -3,7 +3,7 @@ import { ThemeProps, DefaultTheme, withTheme } from 'styled-components'
 import * as Illustrations from './illustrations/index'
 
 /**
- * @memberof module:@admin-bro/design-system.Illustration
+ * @memberof Illustration
  * @alias IllustrationProps
  */
 export type IllustrationProps = {
@@ -35,12 +35,25 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
 }
 
 /**
+ * @classdesc
+ *
+ * <img src="components/illustration.png" />
+ *
  * Awesome database with all the illustrations provided with AdminBro.
  *
  * The best thing about them is that they follow your {@link Theme} color palette.
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Illustration, IllustrationProps } from '@admin-bro/design-system'
+ * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see IllustrationProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-illustration--default Storybook}
+ * @hideconstructor
  *
  * @example <caption>Folders</caption>
  * return (
@@ -54,7 +67,7 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  * return (
  *   <Box bg="grey100" p="xxl"><Illustration variant="Rocket" /></Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Illustration = withTheme(RawIllustration)
 

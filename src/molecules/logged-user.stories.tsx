@@ -1,5 +1,5 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
+import { withKnobs } from '../../storybook/node_modules/@storybook/addon-knobs'
 import { LoggedUser, Link } from '..'
 
 export default { title: 'DesignSystem/Molecules/LoggedUser', decorators: [withKnobs] }

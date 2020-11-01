@@ -1,13 +1,11 @@
 import styled from 'styled-components'
-import { space, SpaceProps } from 'styled-system'
 
 /**
  * @component
  * @private
  */
-export const DropDownTrigger = styled.span<SpaceProps>`
+export const DropDownTrigger = styled.span`
   display: inline-block;
-  ${space};
 `
 DropDownTrigger.displayName = 'DropDownTrigger'
 

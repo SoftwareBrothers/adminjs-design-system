@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { SpaceProps, space } from 'styled-system'
 import Icon from '../../atoms/icon'
 import Text from '../../atoms/text'
-import Box from '../../atoms/box'
+import Box from '../../atoms/box/box'
 import { cssClass } from '../../utils/css-class'
 
 /**
  * Handler which is invoked when user clicks given step
  *
  * @alias OnStepClickHandler
- * @memberof module:@admin-bro/design-system.Step
+ * @memberof Step
  */
 export type OnStepClickHandler = (
   /**
@@ -21,7 +21,7 @@ export type OnStepClickHandler = (
 
 /**
  * @alias StepProps
- * @memberof module:@admin-bro/design-system.Step
+ * @memberof Step
  */
 export type StepProps = {
   /** number presented in a circle */
@@ -68,9 +68,24 @@ const StyledStep = styled.div<StyledStepProps>`
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/step.png" />
+ *
  * Step represents one of the tab in placed inside {@link Stepper} component.
  * You can use it alone or with before-mentioned {@link Stepper}.
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Step, StepProps } from '@admin-bro/design-system'
+ * ```
+ *
+ *
+ * @hideconstructor
+ * @see Stepper
+ * @see StepProps
+ * @see OnStepClickHandler
  * @subcategory Molecules
  * @component
  * @example <caption>Regular step</caption>
@@ -102,7 +117,7 @@ const StyledStep = styled.div<StyledStepProps>`
  *     <Step number="1" onClick={onClick}>Click me if you dare</Step>
  *  </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Step: React.FC<StepProps> = (props) => {
   const { number, completed, children, active, disabled, onClick, className } = props

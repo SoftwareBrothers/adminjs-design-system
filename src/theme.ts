@@ -1,83 +1,8 @@
 /* eslint-disable max-len */
 /**
  * @interface Theme
- * @subcategory Frontend
- * @description
- * Entire AdminBro interface is build with
- * [styled-components]{@link https://styled-components.com/} backed by
- * [styled-system]{@link https://styled-system.com/}. The core of
- * the style information is the Theme. It is base on the
- * [Theme Specification]{@link https://styled-system.com/theme-specification/} and
- * it is used by almost all the components provided by AdminBro.
- *
- * So let's say you would like to create a box with the same background as our
- * primary100 color. This is one way of achieving that:
- *
- * ```javascript
- * import styled from 'styled-components'
- * import { Box } from '@admin-bro/design-system'
- *
- * const MyBlueBox = styled(Box)`
- *   background: ${({ theme }) => theme.colors.primary100};
- *   // other css styles you want to override.
- * `
- * ```
- *
- * But, since AdminBro uses [styled-system]{@link https://styled-system.com/}, you also can achieve
- * a similar result by passing a `bg` Prop to the [Box Component]{@link Box},
- * everything because Box supports all the {@link ColorProps}.
- *
- * ```javascript
- * import { Box } from '@admin-bro/design-system'
- *
- * const ComponentWhereIWantToUseBlueBox = () => (
- *   <Box bg="primary100">
- *   ...
- *   </Box>
- * )
- * ```
- *
- * The last way of accessing theme is to use withTheme HOC provided by
- * [styled-components]{@link https://styled-components.com/}
- *
- * ```
- * import { withTheme } from 'styled-components'
- *
- *
- * const MyComponent = (props) => {
- *   const { theme } = props
- *   // theme.colors.primary100
- * }
- *
- * export default withTheme(MyComponent)
- *
- * ```
- *
- * {@link ColorProps} is only one of the extensions we provided. Take a look at the documentation
- * below to see all possible options, but let me give you one last example:
- *
- * ```
- * import { Box } from '@admin-bro/design-system'
- *
- * const ComponentWhereIWantToUseResponsiveStyle = () => (
- *   <Box flex flexDirection="column">
- *     <Box width={[1, 1/2, 1/3]}>Sidebar</Box>
- *     <Box width={[1, 1/2, 2/3]}>Content</Box>
- *   </Box>
- * )
- * ```
- *
- * Above we defined that the Sidebar box should have 100% width until viewport reach the first
- * breakpoint, then 50% (until the next breakpoint) and then 1/3rd of the page for the remaining 2
- * breakpoints.
- *
- * You can read more about responsive features on styled-system page
- * https://styled-system.com/responsive-styles
- *
- * <style>
- * .shadow-div { display: block; width: 80px; height: 80px;}
- * .space-box { display: inline-block; height: 20px; background: #4268F6; vertical-align: middle;}
- * </style>
+ * @load ./theme.doc.md
+ * @section design-system
  */
 
 /**
@@ -110,6 +35,7 @@
  * @property {string} filterBg=#343F87      <div style="background: #343F87; height: 20px;" />
  * @property {string} hoverBg=#535B8E     <div style="background: #535B8E; height: 20px;" />
  * @property {string} inputBorder=#898A9A     <div style="background: #898A9A; height: 20px;" />
+ * @property {string} border=#DDE1E5,     <div style="background: #DDE1E5; height: 20px;" />
  * @property {string} separator=#C0C0CA     <div style="background: #C0C0CA; height: 20px;" />
  * @property {string} highlight=#F6F7FB     <div style="background: #F6F7FB; height: 20px;" />
  * @property {string} filterInputBorder=rgba(255,255,255,0.15)      <div style="background: rgba(255,255,255,0.15); height: 20px;" />
@@ -153,6 +79,9 @@ const colors = {
   filterBg: '#343F87',
   hoverBg: '#535B8E',
 
+  // global
+  border: '#DDE1E5',
+
   // Elements
   inputBorder: '#C0C0CA',
   separator: '#C0C0CA',
@@ -179,7 +108,7 @@ const colors = {
 
  * @property {string} xs=2px        2px - <span class="space-box" style="width: 2px;" />
  * @property {string} sm=4px        4px - <span class="space-box" style="width: 4px;" />
- * @property {string} default=8px   8px - <span class="space-box" style="width: 8px;" />
+ * @property {string} default=8px   8px - <span class="space-box" style="width: 8px;" /> (alias md)
  * @property {string} lg=16px       16px - <span class="space-box" style="width: 16px;" />
  * @property {string} xl=24px       24px - <span class="space-box" style="width: 24px;" />
  * @property {string} xxl=32px      32px - <span class="space-box" style="width: 32px;" />
@@ -192,6 +121,7 @@ const space = {
   xs: '2px',
   sm: '4px',
   default: '8px',
+  md: '8px',
   lg: '16px',
   xl: '24px',
   xxl: '32px',
@@ -206,10 +136,12 @@ const space = {
  * @alias sizes
  * @property {string} navbarHeight=64px
  * @property {string} sidebarWidth=300px
+ * @property {string} maxFormWidth=740px
  */
 const sizes = {
   navbarHeight: '64px',
   sidebarWidth: '300px',
+  maxFormWidth: '740px',
 }
 
 /**
@@ -217,7 +149,7 @@ const sizes = {
  * @alias fontSizes
  * @property {string} xs=10px      <div style="font-size: 10px;">'xs' font size</div>
  * @property {string} sm=12px      <div style="font-size: 12px;">'sm' font size</div>
- * @property {string} default=14px <div style="font-size: 14px;">'default' font size</div>
+ * @property {string} default=14px (alias md) <div style="font-size: 14px;">'default' font size</div>
  * @property {string} lg=16px      <div style="font-size: 16px;">'lg' font size</div>
  * @property {string} xl=18px      <div style="font-size: 18px;">'xl' font size</div>
  * @property {string} h4=24px      <div style="font-size: 24px;">'h4' font size</div>
@@ -229,6 +161,7 @@ const fontSizes = {
   xs: '10px',
   sm: '12px',
   default: '14px',
+  md: '14px',
   lg: '16px',
   xl: '18px',
   h4: '24px',
@@ -240,28 +173,35 @@ const fontSizes = {
 /**
  * @memberof Theme
  * @alias fontWeights
+ * @property {string} lighter=200
  * @property {string} lighter=300
  * @property {string} normal=400
- * @property {string} bold=700
+ * @property {string} normal=500
+ * @property {string} bolder=900
  */
 const fontWeights = {
-  lighter: 300,
+  lighter: 200,
+  light: 300,
   normal: 400,
-  bold: 700,
+  bold: 500,
+  bolder: 900,
 }
 
 /**
  * @memberof Theme
  * @alias lineHeights
+ * @property {string} xs=10px
  * @property {string} sm=12px
- * @property {string} default=16px
+ * @property {string} default=16px (alias md)
  * @property {string} lg=24px
  * @property {string} xl=32px
  * @property {string} xxl=40px
  */
 const lineHeights = {
+  xs: '10px',
   sm: '12px',
   default: '16px',
+  md: '16px',
   lg: '24px',
   xl: '32px',
   xxl: '40px',
@@ -275,8 +215,8 @@ const lineHeights = {
  * <Box variant="grey" boxShadow="card">Some content...</Box>
  * ```
  *
+ * @alias shadows
  * @memberof Theme
- * @alias ShadowProps
  * @property {string} login              <div class="shadow-div" style="box-shadow: 0 15px 24px 0 rgba(137,138,154,0.15);"/>
  * @property {string} cardHover          <div class="shadow-div" style="box-shadow: 0 4px 12px 0 rgba(137,138,154,0.4);"/>
  * @property {string} drawer             <div class="shadow-div" style="box-shadow: -2px 0 8px 0 rgba(137,138,154,0.2);"/>
@@ -322,6 +262,48 @@ const breakpoints = [
 
 const font = '\'Roboto\', sans-serif' as string
 
+/**
+ * Border styles
+ *
+ * @memberof Theme
+ * @alias borders
+ * @property {string} input
+ * @property {string} filterInput
+ * @property {string} bg
+ * @property {string} default
+ */
+const borders = {
+  input: '1px solid #C0C0CA',
+  filterInput: ' 1px rgba(255,255,255,0. solid15)',
+  bg: '1px solid #F6F7FB',
+  default: '1px solid #DDE1E5',
+}
+
+/**
+ * Border widths set for an entire layout. If you like to have border radius in Button's and Box'es
+ * Then set default property.
+ *
+ * @memberof Theme
+ * @alias borderWidths
+ * @property {string} default - default border with
+ */
+const borderWidths = {
+  default: '0px',
+}
+
+export type VariantType = 'primary'
+  | 'danger'
+  | 'success'
+  | 'info'
+  | 'secondary'
+  | 'default'
+  | 'light'
+
+export const VariantValues: Array<VariantType> = [
+  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light']
+
+// TODO: add transitions
+
 export {
   colors,
   lineHeights,
@@ -331,7 +313,9 @@ export {
   space,
   font,
   shadows,
+  borders,
   breakpoints,
+  borderWidths,
 }
 
 /**
@@ -502,6 +486,14 @@ export {
  * @property {string} [justifySelf]        justify-self
  * @property {string} [alignSelf]          align-self
  * @property {number|string} [order]              order
+ */
+
+/**
+ * Reused Variant Enum: `primary` | `danger` | `success` | `info` | `secondary` | `default`
+ *
+ * @typedef {Enum} VariantType
+ * @alias VariantType
+ * @memberof Theme
  */
 
 /**

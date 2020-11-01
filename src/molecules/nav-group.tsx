@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Icon } from '../atoms/icon'
-import { Box } from '../atoms/box'
+import { Box } from '../atoms/box/box'
 import { Text } from '../atoms/text'
 import { cssClass } from '../utils/css-class'
+import themeGet from '../utils/theme-get'
 
 const NavGroupTitle = styled(Text)`
   padding: 11px 20px;
-  color: ${({ theme }): string => theme.colors.grey100};
+  margin: 0;
+  color: ${themeGet('colors', 'grey100')};
   border-radius: 9999px;
   display: flex;
   cursor: pointer;
@@ -15,20 +17,26 @@ const NavGroupTitle = styled(Text)`
   & > ${Text} {
     display: block;
     flex-grow: 1;
-    line-height: ${({ theme }): string => theme.lineHeights.default};
+    line-height: ${themeGet('lineHeights', 'default')};
+    margin-bottom: 0;
   }
 
-  & svg {
+  & + ${Box} {
+    padding-left: ${themeGet('space', 'xxl', '12px')};
+  }
+
+  & > .${cssClass('Icon')} svg {
     vertical-align: middle;
     padding-bottom: 2px;
     flex-shrink: 0;
   }
-  & svg:first-child {
-    padding-right: ${({ theme }): string => theme.space.lg};
+
+  & > .${cssClass('Icon')}:first-child {
+    padding-right: ${themeGet('space', 'md')};
   }
 
-  & svg:last-child {
-    
+  & > .${cssClass('Icon')}:last-child {
+    padding-left: ${themeGet('space', 'sm')};
   }
 `
 
@@ -37,7 +45,7 @@ NavGroupTitle.defaultProps = {
 }
 
 /**
- * @memberof module:@admin-bro/design-system.NavGroup
+ * @memberof NavGroup
  * @alias NavGroupProps
  */
 export type NavGroupProps = {
@@ -48,15 +56,26 @@ export type NavGroupProps = {
 }
 
 /**
+ * @classdesc
+ *
+ * > This component is deprecated in favour of {@link NavigationElement} and
+ * {@link Navigation} components
+ *
+ * <img src="components/navgroup.png" />
+ *
  * NavGroup is used in a navigation sidebar to group similar elements
  *
- * Usage
+ * ### Usage
+ *
  * ```javascript
  * import { NavGroup, NavGroupProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see NavGroupProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navgroup--default Storybook}
  * @example
  * return (
  *   <Box py="xl">
@@ -65,7 +84,8 @@ export type NavGroupProps = {
  *     </NavGroup>
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
+ * @deprecated in favour of {@link Navigation} and {@link NavigationElement} components
  */
 const NavGroup: React.FC<NavGroupProps> = (props) => {
   const { title, icon, children } = props
@@ -82,7 +102,7 @@ const NavGroup: React.FC<NavGroupProps> = (props) => {
         <Icon icon={chevron} />
       </NavGroupTitle>
       {isItOpen ? (
-        <Box pl="x3" pb="xl" pt="sm">
+        <Box pb="xl" pt="sm">
           {children}
         </Box>
       ) : ''}

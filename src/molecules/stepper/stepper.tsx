@@ -1,15 +1,27 @@
 import styled from 'styled-components'
-import Box from '../../atoms/box'
+import Box from '../../atoms/box/box'
 import { cssClass } from '../../utils/css-class'
 
 /**
+ * @classdesc
+ *
+ * <img src="components/stepper.png" />
+ *
  * It provides wizard workflow where user can go through a couple of steps.
  * Stepper makes sense when you use it along with {@link Step} component.
  *
  * It receives all the same props as {@link Box} - {@link BoxProps}.
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Stepper, StepperProps } from '@admin-bro/design-system'
+ * ```
+ *
  * @component
  * @subcategory Molecules
+ * @hideconstructor
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-stepper--clickable-steps Storybook}
  * @example <caption>Clickable steps</caption>
  * const { useState } = React
  * const steps = [{
@@ -87,7 +99,7 @@ import { cssClass } from '../../utils/css-class'
  *
  * return (<ComponentWithStepper />)
  *
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Stepper = styled(Box)`
 `

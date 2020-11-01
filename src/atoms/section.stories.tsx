@@ -1,13 +1,30 @@
 import React from 'react'
-import { Section, Text } from '..'
+import { withKnobs } from '../../storybook/node_modules/@storybook/addon-knobs'
 
-export default { title: 'DesignSystem/Atoms/Section' }
+import { Section, Box, Button, Icon, Text, CardTitle } from '..'
+import StoryWrapper from '../utils/story-wrapper'
 
+export default {
+  title: 'DesignSystem/Atoms/Section',
+  decorators: [withKnobs],
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
+}
 export const Default: React.FC = () => (
-  <Section>
-    <Text>Some text within a section</Text>
+  <StoryWrapper label="Section default settings">
     <Section>
-      <Text>Section can be nested</Text>
+      <Box mb="xl">
+        <CardTitle>Some text within a section</CardTitle>
+      </Box>
+      <Section>
+        <Text>
+          Section can be nested
+        </Text>
+        <Box>
+          <Button size="sm" rounded><Icon icon="Add" />Add something</Button>
+        </Box>
+      </Section>
     </Section>
-  </Section>
+  </StoryWrapper>
 )

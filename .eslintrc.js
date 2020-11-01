@@ -9,6 +9,11 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
+  ignorePatterns: [
+    '*.json',
+    'yarn.lock',
+    '*.md',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -25,6 +30,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     'react/jsx-filename-extension': 'off',
     indent: [
       'error',

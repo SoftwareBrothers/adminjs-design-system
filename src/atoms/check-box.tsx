@@ -94,14 +94,21 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  */
 
 /**
- * Wrapped checkbox input.
+ * @classdesc
  *
- * Usage:
+ * <img src="components/checkbox.png" />
+ *
+ * HTML CheckBox
+ *
+ * ### Usage
+ *
  * ```javascript
  * import { CheckBox, CheckBoxProps } from '@admin-bro/design-system'
  * ```
  *
  * @component
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-checkbox--default StoryBook}
+ * @hideconstructor
  * @subcategory Atoms
  * @example
  * return (
@@ -110,7 +117,7 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  *      <Label inline htmlFor="checkbox1" ml="default">Some example label</Label>
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const CheckBox: React.FC<CheckBoxProps> = (props) => {
   const { className, checked, onChange, disabled, ...restProps } = props

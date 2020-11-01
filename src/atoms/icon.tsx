@@ -1,14 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { space, SpaceProps, color, ColorProps } from 'styled-system'
+import { space, SpaceProps, color } from 'styled-system'
 import * as CarbonIcons from '@carbon/icons-react'
 import { cssClass } from '../utils/css-class'
+import { ColorProps } from '../utils/color-props'
 
 /**
  * Prop Types of an Icon component.
  * Apart from props defined below it extends all {@link ColorProps} and {@link SpaceProps}
  *
- * @memberof module:@admin-bro/design-system.Icon
+ * @memberof Icon
  * @alias IconProps
  * @property {string} [...] Other props from {@link ColorProps} and {@link SpaceProps}
  */
@@ -72,6 +73,10 @@ const Wrapper = styled.span<IconProps>`
 `
 
 /**
+ * @classdesc
+ *
+ * <img src="components/icon.png" />
+ *
  * Component wrapping [@carbon/icons-react](https://www.npmjs.com/package/@carbon/icons-react).
  * List of all icons can be found here: https://www.carbondesignsystem.com/guidelines/icons/library/
  * but keys are not always 1 to 1 in a relation to the `icons-react` library.
@@ -84,8 +89,17 @@ const Wrapper = styled.span<IconProps>`
  *
  * to see list of all possible icon keys.
  *
+ * ### Usage
+ *
+ * ```javascript
+ * import { Icon, IconProps } from '@admin-bro/design-system'
+ * ```
+ *
  * @component
  * @subcategory Atoms
+ * @see IconProps
+ * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-icon--default Storybook}
+ * @hideconstructor
  * @example <caption>Icons inside other elements</caption>
  * return (
  *   <Box variant="grey">
@@ -109,7 +123,7 @@ const Wrapper = styled.span<IconProps>`
  *     <Icon icon="Add" color="white" bg="primary100" rounded size={32} p="default"/>
  *   </Box>
  * )
- * @memberof module:@admin-bro/design-system
+ * @section design-system
  */
 const Icon: React.FC<IconProps> = (props) => {
   const { icon, size, color: givenColor, ...other } = props
