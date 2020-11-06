@@ -1,13 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react'
-import styled, { DefaultTheme } from 'styled-components'
-import { variant as styledVariant, SpaceProps, TypographyProps } from 'styled-system'
+import styled from 'styled-components'
+import { SpaceProps, TypographyProps } from 'styled-system'
 
-import { Box } from '../../atoms/box/box'
-import { Icon } from '../../atoms/icon'
-import { Button } from '../../atoms/button'
-import { cssClass } from '../../utils/css-class'
-import { H4 } from '../../atoms/typography'
 import { themeGet } from '../../utils'
 import CaptionShared from '../../atoms/typography/caption-shared'
 import Link, { LinkVariant } from '../../atoms/link'
@@ -18,44 +13,81 @@ interface Linkable {
   variant?: LinkVariant;
 }
 
-const TextWrapper = styled('div')<TypographyProps & SpaceProps>`
-& > :last-child { margin-bottom: 0 };
+interface Mediable {
+  src: string;
+  type: 'image' | 'background';
+  heightWrapper?: string;
+  height?: string;
+  width?: string;
+}
+
+interface MediaWrapperProps {
+  minHeight?: string;
+}
+
+const MediaWrapper = styled('div')<MediaWrapperProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: ${(props) => props.minHeight || '240px'};
+  & > :last-child { margin-bottom: 0 };
 `
 
-const StyledCard = styled.div<CardProps>`
+const TextWrapper = styled('div')<TypographyProps & SpaceProps>`
   padding: ${({ theme }): string => theme.space.xl}; 
-  line-height: ${({ theme }): string => theme.lineHeights.xl};
+  & > :last-child { margin-bottom: 0 };
+`
+
+const StyledCard = styled.div<TypographyProps & SpaceProps>`
+  ${CaptionShared};
   background: ${({ theme }): string => theme.colors.white};
   box-shadow: ${({ theme }): string => theme.shadows.card};
   color: ${({ theme }): string => theme.colors.grey80};
 `
 
 const CardTitle = styled('div')<TypographyProps & SpaceProps>`
-  ${CaptionShared};
+${CaptionShared};
+line-height: ${themeGet('lineHeights', 'xl')};
   font-size: ${themeGet('fontSizes', 'lg')};
   font-weight: ${themeGet('fontWeights', 'bold')};
-  line-height: ${themeGet('lineHeights', 'lg')};
   margin-bottom: ${themeGet('space', 'sm')};
 `
 
 const CardDescription = styled('div')<TypographyProps & SpaceProps>`
-  ${CaptionShared};
+${CaptionShared};
+  line-height: ${themeGet('lineHeights', 'xl')};
   font-size: ${themeGet('fontSizes', 'md')};
-  line-height: ${themeGet('lineHeights', 'lg')};
   margin-bottom: ${themeGet('space', 'md')};
 `
 
 const CardContent = styled('div')<TypographyProps & SpaceProps>`
-  ${CaptionShared};
+${CaptionShared};
+  line-height: ${themeGet('lineHeights', 'xl')};
   font-size: ${themeGet('fontSizes', 'md')};
-  line-height: ${themeGet('lineHeights', 'lg')};
-  margin: ${themeGet('space', 'lg')} 0;
+  margin-bottom: ${themeGet('space', 'md')};
   color: ${themeGet('colors', 'grey40')};
+`
+interface MediaBackgroundInterface {
+  src: string;
+}
+
+const MediaImage = styled('img')`
+  max-width: 100%;
+  width: ${(props) => props.width || 'inherit'};
+  height: ${(props) => props.height || 'inherit'};
+`
+
+const MediaBackground = styled('div')<MediaBackgroundInterface>`
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 255px;
+  width: 100%;
 `
 
 /**
  * Prop Types of a Card component.
- * Apart from those defined below it extends all {@link SpaceProps}
  *
  * @memberof Card
  * @alias CardProps
@@ -65,6 +97,7 @@ type CardProps = {
   description?: string;
   content?: string;
   link?: Linkable;
+  media?: Mediable;
   /** Optional children, when given component will be expanded */
   children?: React.ReactNode;
 }
@@ -74,12 +107,6 @@ export { Props as CardProps }
 
 /**
  * @classdesc
- *
- * Component responsible for rendering standard danger/info/success
- * messages.
- *
- * It has 2 size versions: default and small. Also it can either contain or
- * don't contain children, which causes different look.
  *
  * ### Usage
  *
@@ -93,8 +120,20 @@ export { Props as CardProps }
  * @see CardProps
  * @section design-system
  */
-const Card: React.FC<Props> = ({ title, description, content, link }) => (
+const Card: React.FC<Props> = ({ title, description, content, link, media }) => (
   <StyledCard>
+    { media && (
+      <MediaWrapper minHeight={media?.heightWrapper}>
+        { media.type === 'image' && (
+          <MediaImage
+            src={media.src}
+            height={media?.height}
+            width={media?.width}
+          />
+        )}
+        { media.type === 'background' && (<MediaBackground src={media.src} />) }
+      </MediaWrapper>
+    )}
     <TextWrapper>
       { title && (<CardTitle>{title}</CardTitle>) }
       { description && (<CardDescription>{description}</CardDescription>) }
