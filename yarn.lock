@@ -6013,6 +6013,11 @@ react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-laag@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/react-laag/-/react-laag-1.8.0.tgz#c156fc098340ad7b43eaaa269016806ede392447"
+  integrity sha512-zUfIKJMJdmN6s7Q72uLY90R2BhtwAF9C2ksrGuUQbfeaIudnyz+1/8132QvXoevBA291rTMiSld1ODnUQdnz5A==
+
 react-onclickoutside@^6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.9.0.tgz#a54bc317ae8cf6131a5d78acea55a11067f37a1f"

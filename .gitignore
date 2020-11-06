@@ -181,3 +181,6 @@ out
 /bundle.development.js
 /bundle.production.js
 .vscode
+
+### IntelliJ ###
+.idea
