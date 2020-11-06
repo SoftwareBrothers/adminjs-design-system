@@ -3,6 +3,14 @@ import { color, space, variant, SpaceProps } from 'styled-system'
 import { cssClass } from '../utils/css-class'
 import { ColorProps } from '../utils/color-props'
 
+export enum LinkVariant {
+  Primary = 'primary',
+  Danger = 'danger',
+  Success = 'success',
+  Info = 'info',
+  Secondary = 'secondary'
+}
+
 const sizeVariants = variant({
   prop: 'size',
   variants: {

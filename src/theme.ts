@@ -174,9 +174,9 @@ const fontSizes = {
  * @memberof Theme
  * @alias fontWeights
  * @property {string} lighter=200
- * @property {string} lighter=300
+ * @property {string} light=300
  * @property {string} normal=400
- * @property {string} normal=500
+ * @property {string} bold=500
  * @property {string} bolder=900
  */
 const fontWeights = {
