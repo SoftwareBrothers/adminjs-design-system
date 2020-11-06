@@ -89,6 +89,10 @@ const colors = {
   filterInputBorder: 'rgba(255,255,255,0.15)',
   filterDisabled: 'rgba(83,91,142,0.05)',
   bg: '#F6F7FB',
+
+  //wizzard
+  notVisited: '#EEEEEF',
+  visited: 'rgba(49,69,216,0.1)'
 }
 
 /**
