@@ -4,9 +4,9 @@ import { formatDateProperty, PropertyType } from '../../utils'
 const useDatePicker = ({ value, propertyType, disabled, onChange }:
 {
   onChange: (date:string) => void,
-  value:string|Date,
-  propertyType:PropertyType,
-  disabled:boolean
+  value?:string|Date,
+  propertyType?:PropertyType,
+  disabled?:boolean
 }): {
   dateString?: string,
   date?: Date,

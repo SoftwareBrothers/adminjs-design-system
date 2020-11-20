@@ -8,7 +8,7 @@ import { Button } from '../../atoms/button'
 import { Icon } from '../../atoms/icon'
 import { InputGroup } from '../form-group'
 import { cssClass } from '../../utils/css-class'
-import { PropertyType } from '../../utils/date-utils'
+import { PropertyType } from '../../utils'
 import useDatePicker from './useDatePicker'
 
 const DatePickerWrapper = styled.div`
@@ -189,7 +189,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
     setCalendarVisible,
     isCalendarVisible,
     onDateChange,
-  } = useDatePicker({ value, disabled, propertyType })
+  } = useDatePicker({ value, disabled, propertyType, onChange })
 
   return (
     <>
@@ -209,7 +209,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
           type="button"
           size="icon"
           disabled={disabled}
-          onClick={() => setCalendarVisible((isVisible) => !isVisible)}
+          onClick={() => setCalendarVisible(!isCalendarVisible)}
         >
           <Icon icon="Calendar" />
         </Button>
