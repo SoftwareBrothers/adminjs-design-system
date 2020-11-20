@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { withKnobs, boolean, radios } from '../../storybook/node_modules/@storybook/addon-knobs'
-import { DatePicker } from '..'
+import { withKnobs, boolean, radios } from '../../../storybook/node_modules/@storybook/addon-knobs'
+import { DatePicker } from '../../index'
 
 export default { title: 'DesignSystem/Molecules/DatePicker', decorators: [withKnobs] }
 
