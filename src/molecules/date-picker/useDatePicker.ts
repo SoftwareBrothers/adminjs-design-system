@@ -14,7 +14,7 @@ const useDatePicker = ({ value, propertyType, disabled, onChange }:
   setCalendarVisible: (isVisible: boolean) => void,
   onDateChange: (newDate: Date) => void
 } => {
-  const [isCalendarVisible, setCalendarVisible] = useState(true)
+  const [isCalendarVisible, setCalendarVisible] = useState(false)
 
   let date: Date | undefined
   let dateString: string | undefined
