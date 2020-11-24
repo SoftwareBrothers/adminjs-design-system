@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import parseISO from 'date-fns/parseISO'
 import { formatDateProperty, PropertyType } from '../../utils'
 
 const useDatePicker = ({ value, propertyType, disabled, onChange }:
@@ -18,13 +19,10 @@ const useDatePicker = ({ value, propertyType, disabled, onChange }:
 
   let date: Date | undefined
   let dateString: string | undefined
-
   if (value && value.constructor.name !== 'Date') {
-    // Safari doesn't parse value in format YYYY-MM-DD.
-    // All browsers are handling YYYY/MM/DD properly.
-    const dateStringValue = (value as string).replace(/-/g, '/')
+    const dateStringValue = value as string
 
-    const dateNum = Date.parse(dateStringValue) || undefined
+    const dateNum = parseISO(dateStringValue) || undefined
     if (dateNum) {
       date = new Date(dateNum)
       dateString = formatDateProperty(date, propertyType)
@@ -32,7 +30,6 @@ const useDatePicker = ({ value, propertyType, disabled, onChange }:
   } else if (value && value.constructor.name === 'Date') {
     dateString = formatDateProperty(value as Date, propertyType)
   }
-
   const onDateChange = (newDate: Date): void => {
     if (!disabled) {
       onChange(formatDateProperty(newDate, propertyType))

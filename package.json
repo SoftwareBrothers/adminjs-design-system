@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "@carbon/icons-react": "^10.14.0",
+    "date-fns": "^2.16.1",
     "jw-paginate": "^1.0.4",
     "lodash": "^4.17.20",
     "polished": "^3.6.5",

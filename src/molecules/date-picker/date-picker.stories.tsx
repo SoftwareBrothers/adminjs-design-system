@@ -10,7 +10,7 @@ const propertyTypes = {
 }
 
 export const Default: React.FC = () => {
-  const [date, setDate] = useState<string>()
+  const [date, setDate] = useState<string>('2020-12-01T14:32:00.000Z')
   const disabled = boolean('If datepicker should be disabled', false)
   const propertyType = radios('Property type', propertyTypes, propertyTypes.Date)
 
