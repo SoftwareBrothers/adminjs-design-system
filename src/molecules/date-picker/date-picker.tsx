@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
+import React from 'react'
+import ReactDatePicker from 'react-datepicker'
+import type { ReactDatePickerProps } from 'react-datepicker'
 import styled from 'styled-components'
 
-import styles from '../utils/datepicker.styles'
-import { Input } from '../atoms/input'
-import { Button } from '../atoms/button'
-import { Icon } from '../atoms/icon'
-import { InputGroup } from './form-group/index'
-import { cssClass } from '../utils/css-class'
-import { PropertyType, formatDateProperty } from '../utils/date-utils'
+import styles from '../../utils/datepicker.styles'
+import { Input } from '../../atoms/input'
+import { Button } from '../../atoms/button'
+import { Icon } from '../../atoms/icon'
+import { InputGroup } from '../form-group'
+import { cssClass } from '../../utils/css-class'
+import { PropertyType } from '../../utils'
+import useDatePicker from './useDatePicker'
 
 const DatePickerWrapper = styled.div`
   position: absolute;
@@ -36,6 +38,7 @@ const StyledDatePicker = styled(InputGroup)`
     border-left-color: ${({ theme }): string => theme.colors.primary60};
     top: 16px;
   }
+
   & .react-datepicker__navigation--next:hover {
     border-left-color: ${({ theme }): string => theme.colors.primary100};
   }
@@ -44,6 +47,7 @@ const StyledDatePicker = styled(InputGroup)`
     border-right-color: ${({ theme }): string => theme.colors.primary60};
     top: 16px;
   }
+
   & .react-datepicker__navigation--previous:hover {
     border-right-color: ${({ theme }): string => theme.colors.primary100};
   }
@@ -74,11 +78,11 @@ const StyledDatePicker = styled(InputGroup)`
   & .react-datepicker__day-name {
     color: ${({ theme }): string => theme.colors.primary60};
   }
-  
+
   & .react-datepicker__day--outside-month {
     color: ${({ theme }): string => theme.colors.grey40};
   }
-  
+
   & .react-datepicker__day--today.react-datepicker__day--keyboard-selected {
     color: ${({ theme }): string => theme.colors.white};
   }
@@ -96,7 +100,7 @@ const StyledDatePicker = styled(InputGroup)`
   & .react-datepicker__day {
     border-radius: 15px;
   }
-  
+
   & .react-datepicker__day--selected {
     background: ${({ theme }): string => theme.colors.primary100};
     border-radius: 15px;
@@ -113,6 +117,7 @@ const Overlay = styled.div`
   bottom: 0;
   right: 0;
   z-index: 100;
+
   &.hidden {
     display: none;
   }
@@ -179,39 +184,25 @@ export type DatePickerProps = CustomProps & {
  */
 const DatePicker: React.FC<DatePickerProps> = (props) => {
   const { value, onChange, disabled, propertyType, ...other } = props
-
-  const [hidden, setHidden] = useState(true)
-
-  let dateValue: Date | undefined
-  let stringValue: string | undefined
-
-  if (value && value.constructor.name !== 'Date') {
-    const dateNum = Date.parse(value as string) || undefined
-    if (dateNum) {
-      dateValue = new Date(dateNum)
-      stringValue = formatDateProperty(dateValue, propertyType)
-    }
-  } else if (value && value.constructor.name === 'Date') {
-    stringValue = formatDateProperty(value as Date, propertyType)
-  }
-
-  const onDatePickerChange = (date: Date): void => {
-    if (!disabled) {
-      onChange(formatDateProperty(date, propertyType))
-    }
-  }
+  const {
+    date,
+    dateString,
+    setCalendarVisible,
+    isCalendarVisible,
+    onDateChange,
+  } = useDatePicker({ value, disabled, propertyType, onChange })
 
   return (
     <>
       <Overlay
-        onClick={(): void => setHidden(true)}
-        className={hidden ? 'hidden' : 'visible'}
+        onClick={(): void => setCalendarVisible(false)}
+        className={isCalendarVisible ? 'visible' : 'hidden'}
       />
-      <StyledDatePicker className={cssClass('DatePicker', hidden ? 'normal' : 'active')}>
+      <StyledDatePicker className={cssClass('DatePicker', isCalendarVisible ? 'active' : 'normal')}>
         <Input
-          value={stringValue || ''}
+          value={dateString || ''}
           onChange={(event): void => onChange(event.target.value)}
-          onFocus={(): void => setHidden(false)}
+          onFocus={(): void => setCalendarVisible(true)}
           disabled={disabled}
         />
         <Button
@@ -219,21 +210,21 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
           type="button"
           size="icon"
           disabled={disabled}
-          onClick={(): void => setHidden(!hidden)}
+          onClick={() => setCalendarVisible(!isCalendarVisible)}
         >
           <Icon icon="Calendar" />
         </Button>
-        {!hidden ? (
+        {isCalendarVisible && (
           <DatePickerWrapper>
             <ReactDatePicker
-              selected={dateValue}
-              onChange={onDatePickerChange}
+              selected={date}
+              onChange={onDateChange}
               inline
               showTimeInput={propertyType === 'datetime'}
               {...other}
             />
           </DatePickerWrapper>
-        ) : ''}
+        )}
       </StyledDatePicker>
     </>
   )
