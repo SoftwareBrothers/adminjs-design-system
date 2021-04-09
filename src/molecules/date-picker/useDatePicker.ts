@@ -22,7 +22,8 @@ const useDatePicker = ({ value, propertyType, disabled, onChange }:
   if (value && value.constructor.name !== 'Date') {
     const dateStringValue = value as string
 
-    const dateNum = parseISO(dateStringValue) || undefined
+    let dateNum: Date | undefined = parseISO(dateStringValue)
+    if (dateNum.toString() === 'Invalid Date') dateNum = undefined
     if (dateNum) {
       date = new Date(dateNum)
       dateString = formatDateProperty(date, propertyType)
