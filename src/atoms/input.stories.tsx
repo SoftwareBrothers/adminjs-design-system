@@ -1,6 +1,6 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '../../storybook/node_modules/@storybook/addon-knobs'
-import { Text, Input, Label, Button, Box } from '..'
+import { FormGroup, Text, Input, Label, Button, Box } from '..'
 import StoryWrapper from '../utils/story-wrapper'
 
 export default { title: 'DesignSystem/Atoms/Input', decorators: [withKnobs] }
@@ -9,6 +9,7 @@ const inputTypes = ['email', 'file', 'hidden', 'month', 'number', 'tel', 'text',
 
 export const Default: React.FC = () => {
   const borderless = boolean('borderless', false)
+  const disabled = boolean('disabled', false)
   const variant = select('variant', ['sm', 'lg', 'xl', 'default'], 'default')
   const type = select('type', inputTypes, 'text')
   const width = number('width', 1 / 2, {
@@ -20,15 +21,16 @@ export const Default: React.FC = () => {
   return (
     <Box width={1}>
       <StoryWrapper label="Knobs example">
-        <form>
+        <FormGroup>
           <Input
             width={width}
             type={type}
             variant={variant}
             borderless={borderless}
+            disabled={disabled}
           />
           <Button type="submit">Submit</Button>
-        </form>
+        </FormGroup>
       </StoryWrapper>
     </Box>
   )
