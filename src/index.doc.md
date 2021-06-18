@@ -1,4 +1,4 @@
-This package consists of all DesignSystem components from [AdminJS](adminbro.com) so you can
+This package consists of all DesignSystem components from [AdminJS](adminjs.co) so you can
 use all of them outside the `adminjs` core.
 
 ## Installation outside the AdminJS
@@ -41,9 +41,9 @@ function App() {
 
  ## Changing the theme
 
- The Design System provides you with the default [theme](https://adminbro.com/Theme.html).
+ The Design System provides you with the default [theme](https://adminjs.co/Theme.html).
  It contains all the parameters like paddings, colors, font, sizes etc. For the list of all
- available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
+ available parameters take a look at the [Theme spec](https://adminjs.co/Theme.html).
 
  But nothing stands in a way for you to change the default theme. To do that
  you can use the `combineStyles` method:

@@ -1,6 +1,6 @@
 # @adminjs/design-system
 
-This package consists of all DesignSystem components from [AdminJS](adminbro.com) so you can use all of them outside the `adminjs` core.
+This package consists of all DesignSystem components from [AdminJS](adminjs.co) so you can use all of them outside the `adminjs` core.
 
 It was created with the help of 2 amazing packages:
 
@@ -45,7 +45,7 @@ export default App;
 
 ## Changing theme
 
-Design System provides you with the default [theme](https://adminbro.com/Theme.html). It contains all the parameters like paddings, colors, font sizes etc. For the list of all available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
+Design System provides you with the default [theme](https://adminjs.co/Theme.html). It contains all the parameters like paddings, colors, font sizes etc. For the list of all available parameters take a look at the [Theme spec](https://adminjs.co/Theme.html).
 
 But nothing stands in a way for you to change the default theme. In order to do that you can use `combineStyles` method:
 
@@ -84,7 +84,7 @@ and then you can use it like a normal button component:
 
 ## Components
 
-For the list off all the components and their documentation go to [adminbro.com](adminbro.com)
+For the list off all the components and their documentation go to [adminjs.co](adminjs.co)
 
 ## Bundled packages
 

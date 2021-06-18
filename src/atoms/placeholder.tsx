@@ -50,7 +50,7 @@ const StyledPlaceholder = styled.div<LayoutProps>`
  * @component
  * @subcategory Atoms
  * @see PlaceholderProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-placeholder--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-placeholder--default Storybook}
  * @hideconstructor
  * @example <caption>Image placeholder</caption>
  * return (

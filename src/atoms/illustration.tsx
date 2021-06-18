@@ -52,7 +52,7 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  * @component
  * @subcategory Atoms
  * @see IllustrationProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-illustration--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-illustration--default Storybook}
  * @hideconstructor
  *
  * @example <caption>Folders</caption>

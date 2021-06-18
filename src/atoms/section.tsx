@@ -19,7 +19,7 @@ import { themeGet } from '../utils'
  *
  * @component
  * @subcategory Atoms
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-section--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-section--default Storybook}
  * @hideconstructor
  * @example
  * return (

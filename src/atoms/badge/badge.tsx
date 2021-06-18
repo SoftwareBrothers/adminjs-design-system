@@ -61,7 +61,7 @@ const sizeVariants = variant({
 /**
  * @load ./badge.doc.md
  * @see BadgeProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-badge--default StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-badge--default StoryBook}
  * @component
  * @hideconstructor
  * @section design-system

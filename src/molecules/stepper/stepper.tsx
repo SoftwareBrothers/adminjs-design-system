@@ -21,7 +21,7 @@ import { cssClass } from '../../utils/css-class'
  * @component
  * @subcategory Molecules
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-stepper--clickable-steps Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-stepper--clickable-steps Storybook}
  * @example <caption>Clickable steps</caption>
  * const { useState } = React
  * const steps = [{

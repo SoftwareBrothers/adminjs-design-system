@@ -61,7 +61,7 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
  * @subcategory Atoms
  * @section design-system
  * @see BoxProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-box--simple-white-gray-wrapper StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-box--simple-white-gray-wrapper StoryBook}
  */
 const Box = styled.section<BoxProps>`
   box-sizing: border-box;

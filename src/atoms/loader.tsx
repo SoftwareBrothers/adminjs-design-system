@@ -60,7 +60,7 @@ const Spinner = styled.div.attrs({
  * ```
  *
  * @component
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-loader--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-loader--default Storybook}
  * @hideconstructor
  * @subcategory Atoms
  * @example

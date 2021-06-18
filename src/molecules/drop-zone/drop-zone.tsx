@@ -159,7 +159,7 @@ type ErrorMessage = {
  * @see FileSizeUnit
  * @see OnDropDownChange
  * @see DropZoneProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropzone--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-dropzone--default Storybook}
  * @example <caption>Single file with validation</caption>
  * const maxSize = 1024 * 100
  * const mimeTypes = ['application/pdf']

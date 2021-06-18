@@ -123,7 +123,7 @@ export { Props as MessageBoxProps }
  * @subcategory Molecules
  * @hideconstructor
  * @see MessageBoxProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-messagebox--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-messagebox--default Storybook}
  * @example <caption>Different variants</caption>
  * return (
  *  <Box py="lg">

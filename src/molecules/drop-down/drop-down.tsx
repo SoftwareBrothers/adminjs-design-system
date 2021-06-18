@@ -36,7 +36,7 @@ type PositionProps = {
 /**
  * @load ./drop-down.doc.md
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropdown--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-dropdown--default Storybook}
  * @component
  * @subcategory Molecules
  * @section design-system

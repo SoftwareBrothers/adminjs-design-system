@@ -105,7 +105,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  * @component
  * @subcategory Atoms
  * @see LinkProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-link--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-link--default Storybook}
  * @hideconstructor
  * @example <caption>All color variants</caption>
  * const variants = ['primary', 'danger', 'success', 'info', 'secondary']

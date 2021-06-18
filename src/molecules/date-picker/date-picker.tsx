@@ -170,7 +170,7 @@ export type DatePickerProps = CustomProps & {
  * @component
  * @subcategory Molecules
  * @see https://reactdatepicker.com/
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-datepicker--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-datepicker--default Storybook}
  * @see DatePickerProps
  * @hideconstructor
  *

@@ -30,7 +30,7 @@ export type TextAreaProps = TypographyProps & InputProps
  *
  * @component
  * @subcategory Atoms
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-textarea--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-textarea--default Storybook}
  * @see TextAreaProps
  * @hideconstructor
  * @example

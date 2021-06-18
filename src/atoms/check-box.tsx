@@ -107,7 +107,7 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  * ```
  *
  * @component
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-checkbox--default StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-checkbox--default StoryBook}
  * @hideconstructor
  * @subcategory Atoms
  * @example

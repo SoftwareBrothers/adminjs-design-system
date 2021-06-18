@@ -115,7 +115,7 @@ export type InputProps = SpaceProps & LayoutProps & {
  * @component
  * @subcategory Atoms
  * @see InputProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-input--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-input--default Storybook}
  * @hideconstructor
  * @example
  * return (

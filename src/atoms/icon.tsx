@@ -98,7 +98,7 @@ const Wrapper = styled.span<IconProps>`
  * @component
  * @subcategory Atoms
  * @see IconProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-icon--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-icon--default Storybook}
  * @hideconstructor
  * @example <caption>Icons inside other elements</caption>
  * return (

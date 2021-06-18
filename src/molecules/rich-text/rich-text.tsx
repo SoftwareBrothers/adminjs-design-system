@@ -33,7 +33,7 @@ const Theme = styled(Box)<RichTextProps>`
  * @subcategory Molecules
  * @hideconstructor
  * @see RichTextProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-rich-text--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-rich-text--default Storybook}
  * @new In version 3.3
  * @section design-system
  */

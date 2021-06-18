@@ -111,7 +111,7 @@ const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultT
  * @component
  * @subcategory Atoms
  * @see LabelProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-label--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-label--default Storybook}
  * @hideconstructor
  * @example <caption>2 Different versions</caption>
  * return (

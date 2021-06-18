@@ -52,7 +52,7 @@ export type LoggedUserProps = {
  * @component
  * @subcategory Molecules
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-loggeduser--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-loggeduser--default Storybook}
  * @see LoggedUserProps
  * @section design-system
  * @deprecated In favour of {@link CurrentUserNav} component

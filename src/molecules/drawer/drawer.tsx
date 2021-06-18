@@ -59,7 +59,7 @@ const variants = variant({
  * @subcategory Molecules
  * @hideconstructor
  * @see DrawerProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-drawer--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-drawer--default Storybook}
  * @example
  * return (
  * <Box height="500px">

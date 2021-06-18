@@ -75,7 +75,7 @@ export type NavGroupProps = {
  * @subcategory Molecules
  * @hideconstructor
  * @see NavGroupProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navgroup--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-navgroup--default Storybook}
  * @example
  * return (
  *   <Box py="xl">
