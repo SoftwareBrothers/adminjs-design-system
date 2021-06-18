@@ -5,8 +5,8 @@
   "targets": {
     "adminjs-docs": {
       "hosting": {
-        "admin-storybook": [
-          "admin-storybook"
+        "adminjs-storybook": [
+          "adminjs-storybook"
         ]
       }
     }
