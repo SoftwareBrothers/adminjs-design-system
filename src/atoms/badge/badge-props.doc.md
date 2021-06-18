@@ -5,6 +5,6 @@ and {@link TypographyProps}
 ### Usage
 
 ```typescript
-import { BadgeProps } from '@admin-bro/design-system'
+import { BadgeProps } from '@adminjs/design-system'
 ```
 

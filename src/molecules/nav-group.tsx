@@ -68,7 +68,7 @@ export type NavGroupProps = {
  * ### Usage
  *
  * ```javascript
- * import { NavGroup, NavGroupProps } from '@admin-bro/design-system'
+ * import { NavGroup, NavGroupProps } from '@adminjs/design-system'
  * ```
  *
  * @component

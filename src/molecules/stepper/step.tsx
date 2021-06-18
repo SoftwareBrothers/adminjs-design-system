@@ -78,7 +78,7 @@ const StyledStep = styled.div<StyledStepProps>`
  * ### Usage
  *
  * ```javascript
- * import { Step, StepProps } from '@admin-bro/design-system'
+ * import { Step, StepProps } from '@adminjs/design-system'
  * ```
  *
  *

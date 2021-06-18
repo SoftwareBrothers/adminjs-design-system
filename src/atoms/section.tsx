@@ -14,7 +14,7 @@ import { themeGet } from '../utils'
  * ### Usage
  *
  * ```javascript
- * import { Section } from '@admin-bro/design-system'
+ * import { Section } from '@adminjs/design-system'
  * ```
  *
  * @component

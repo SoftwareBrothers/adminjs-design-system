@@ -12,5 +12,5 @@ Apart from those defined below it extends all
 ### Usage
 
 ```typescript
-import { BoxProps } from '@admin-bro/design-system'
+import { BoxProps } from '@adminjs/design-system'
 ```

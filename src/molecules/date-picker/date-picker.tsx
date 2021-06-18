@@ -164,7 +164,7 @@ export type DatePickerProps = CustomProps & {
  * ### Usage
  *
  * ```javascript
- * import { DatePicker, DatePickerProps } from '@admin-bro/design-system'
+ * import { DatePicker, DatePickerProps } from '@adminjs/design-system'
  * ```
  *
  * @component

@@ -46,7 +46,7 @@ export type LoggedUserProps = {
  * ### Usage
  *
  * ```javascript
- * import { LoggedUser, LoggedUserProps } from '@admin-bro/design-system'
+ * import { LoggedUser, LoggedUserProps } from '@adminjs/design-system'
  * ```
  *
  * @component

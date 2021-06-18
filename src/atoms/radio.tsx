@@ -87,7 +87,7 @@ export type RadioProps = React.HTMLProps<HTMLInputElement>
  * ### Usage
  *
  * ```javascript
- * import { Radio, RadioProps } from '@admin-bro/design-system'
+ * import { Radio, RadioProps } from '@adminjs/design-system'
  * ```
  *
  * @component

@@ -50,7 +50,7 @@ export type DropZoneItemProps = {
  * ### Usage
  *
  * ```javascript
- * import { DropZoneItem, DropZoneItemProps } from '@admin-bro/design-system'
+ * import { DropZoneItem, DropZoneItemProps } from '@adminjs/design-system'
  * ```
  *
  * @see DropZoneItem

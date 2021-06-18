@@ -105,7 +105,7 @@ const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultT
  * ### Usage
  *
  * ```javascript
- * import { Label, LabelProps } from '@admin-bro/design-system'
+ * import { Label, LabelProps } from '@adminjs/design-system'
  * ```
  *
  * @component

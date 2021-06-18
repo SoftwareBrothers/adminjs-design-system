@@ -116,7 +116,7 @@ export { Props as MessageBoxProps }
  * ### Usage
  *
  * ```javascript
- * import { MessageBox, MessageBoxProps } from '@admin-bro/design-system'
+ * import { MessageBox, MessageBoxProps } from '@adminjs/design-system'
  * ```
  *
  * @component

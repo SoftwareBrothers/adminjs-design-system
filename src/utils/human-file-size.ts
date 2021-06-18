@@ -9,7 +9,7 @@ export type DisplaySizeUnit = typeof UNITS[number];
  * @param {number} size
  * @param {'B' | 'KB' | 'MB' | 'GB' | 'TB'} [unit]
  * @returns {string}
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  */
 const humanFileSize = (size: number | string, unit?: DisplaySizeUnit): string => {
   let foundUnitIndex: number | null = null

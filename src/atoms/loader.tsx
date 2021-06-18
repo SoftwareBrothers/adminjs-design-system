@@ -56,7 +56,7 @@ const Spinner = styled.div.attrs({
  * ### Usage
  *
  * ```javascript
- * import { Loader } from '@admin-bro/design-system'
+ * import { Loader } from '@adminjs/design-system'
  * ```
  *
  * @component

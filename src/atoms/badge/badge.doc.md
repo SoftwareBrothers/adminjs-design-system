@@ -5,7 +5,7 @@ Component representing a badge.
 ### Usage
 
 ```typescript
-import { Badge } from '@admin-bro/design-system'
+import { Badge } from '@adminjs/design-system'
 
 const MyComponent = () => (
   <Badge>My badge</Badge>

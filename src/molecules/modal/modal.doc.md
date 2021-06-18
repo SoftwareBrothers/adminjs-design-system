@@ -5,7 +5,7 @@ Renders Modal
 ### Usage:
 
 ```javascript
-import { Modal, ModalProps, ModalInline } from '@admin-bro/design-system'
+import { Modal, ModalProps, ModalInline } from '@adminjs/design-system'
 ```
 
 Modal can be rendered either inline or as a regular Modal.

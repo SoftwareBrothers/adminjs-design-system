@@ -44,7 +44,7 @@ const StyledPlaceholder = styled.div<LayoutProps>`
  * ### Usage
  *
  * ```javascript
- * import { Placeholder, PlaceholderProps } from '@admin-bro/design-system'
+ * import { Placeholder, PlaceholderProps } from '@adminjs/design-system'
  * ```
  *
  * @component

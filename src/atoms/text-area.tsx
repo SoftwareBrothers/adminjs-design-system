@@ -25,7 +25,7 @@ export type TextAreaProps = TypographyProps & InputProps
  * ### Usage
  *
  * ```javascript
- * import { TextArea, TextAreaProps } from '@admin-bro/design-system'
+ * import { TextArea, TextAreaProps } from '@adminjs/design-system'
  * ```
  *
  * @component

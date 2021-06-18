@@ -10,14 +10,14 @@ import themeGet from './theme-get'
  *
  * ```typescript
  * import styled from 'styled-components'
- * import { contentCSS } from '@admin-bro/design-system'
+ * import { contentCSS } from '@adminjs/design-system'
  *
  * const myComponent = styled`
  *   ${contentCSS};
  * `
  * ```
  *
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  */
 const contentCSS = css`
   font-family: ${({ theme }): string => theme.font};
@@ -37,7 +37,7 @@ const contentCSS = css`
   figure, figcaption, footer, header, hgroup,
   main, menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
-    &:not([class*="admin-bro_"]) {
+    &:not([class*="adminjs_"]) {
       margin: 0;
       padding: 0;
     }

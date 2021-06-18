@@ -52,7 +52,7 @@ const sizeVariants = variant({
  * ### Usage:
  *
  * ```
- * import { InputCSS } from '@admin-bro/design-system'
+ * import { InputCSS } from '@adminjs/design-system'
  *
  * const MyStyledInput = styled.input`
  *   ${InputCSS}
@@ -109,7 +109,7 @@ export type InputProps = SpaceProps & LayoutProps & {
  * ### Usage
  *
  * ```javascript
- * import { Input, InputProps, InputCSS } from '@admin-bro/design-system'
+ * import { Input, InputProps, InputCSS } from '@adminjs/design-system'
  * ```
  *
  * @component

@@ -99,7 +99,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  * ### Usage
  *
  * ```javascript
- * import { Link, LinkProps } from '@admin-bro/design-system'
+ * import { Link, LinkProps } from '@adminjs/design-system'
  * ```
  *
  * @component

@@ -39,7 +39,7 @@ export type InfoBoxProps = {
  * ### Usage
  *
  * ```javascript
- * import { InfoBox, InfoBoxProps } from '@admin-bro/design-system'
+ * import { InfoBox, InfoBoxProps } from '@adminjs/design-system'
  * ```
  *
  * @component

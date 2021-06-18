@@ -1,5 +1,5 @@
 /**
- * @module @admin-bro/design-system
+ * @module @adminjs/design-system
  * @section design-system
  *
  * @load ./index.doc.md

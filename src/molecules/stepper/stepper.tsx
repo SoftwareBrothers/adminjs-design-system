@@ -15,7 +15,7 @@ import { cssClass } from '../../utils/css-class'
  * ### Usage
  *
  * ```javascript
- * import { Stepper, StepperProps } from '@admin-bro/design-system'
+ * import { Stepper, StepperProps } from '@adminjs/design-system'
  * ```
  *
  * @component

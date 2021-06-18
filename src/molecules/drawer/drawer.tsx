@@ -52,7 +52,7 @@ const variants = variant({
  * ### Usage
  *
  * ```javascript
- * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@admin-bro/design-system'
+ * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@adminjs/design-system'
  * ```
  *
  * @component

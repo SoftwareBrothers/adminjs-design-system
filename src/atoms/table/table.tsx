@@ -28,7 +28,7 @@ import { cssClass } from '../../utils/css-class'
  *   TableCaption,
  *   TableHead,
  *   TableBody,
- * } from '@admin-bro/design-system'
+ * } from '@adminjs/design-system'
  * ```
  *
  * @component

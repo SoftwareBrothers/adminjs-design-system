@@ -59,7 +59,7 @@ export type FormGroupProps = SpaceProps & {
  * ### Usage
  *
  * ```javascript
- * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@admin-bro/design-system'
+ * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@adminjs/design-system'
  * ```
  *
  * @hideconstructor

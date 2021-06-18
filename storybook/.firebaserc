@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "admin-bro-docs"
+    "default": "adminjs-docs"
   },
   "targets": {
-    "admin-bro-docs": {
+    "adminjs-docs": {
       "hosting": {
         "admin-storybook": [
           "admin-storybook"

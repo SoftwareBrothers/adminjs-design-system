@@ -81,7 +81,7 @@ const PaginationWrapper = styled(Box)`
  * ### Usage
  *
  * ```javascript
- * import { Pagination, PaginationProps } from '@admin-bro/design-system'
+ * import { Pagination, PaginationProps } from '@adminjs/design-system'
  * ```
  *
  * @component

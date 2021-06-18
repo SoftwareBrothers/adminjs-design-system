@@ -5,7 +5,7 @@ Component rendering entire navigation list
 ### Usage
 
 ```javascript
-import { Navigation } from '@admin-bro/design-system'
+import { Navigation } from '@adminjs/design-system'
 
 const navigationElements = [{
   label: 'Dashboard',
