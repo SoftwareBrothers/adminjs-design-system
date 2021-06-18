@@ -81,7 +81,7 @@ const Wrapper = styled.span<IconProps>`
  * List of all icons can be found here: https://www.carbondesignsystem.com/guidelines/icons/library/
  * but keys are not always 1 to 1 in a relation to the `icons-react` library.
  * If you have problem verifying the key of given icon - you can always open the
- * Chrome Terminal (with AdminBro open) and write there:
+ * Chrome Terminal (with AdminJS open) and write there:
  *
  * ```
  * Object.keys(CarbonIcons)
@@ -92,13 +92,13 @@ const Wrapper = styled.span<IconProps>`
  * ### Usage
  *
  * ```javascript
- * import { Icon, IconProps } from '@admin-bro/design-system'
+ * import { Icon, IconProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
  * @see IconProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-icon--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-icon--default Storybook}
  * @hideconstructor
  * @example <caption>Icons inside other elements</caption>
  * return (

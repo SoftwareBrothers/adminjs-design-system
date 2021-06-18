@@ -59,13 +59,13 @@ export type FormGroupProps = SpaceProps & {
  * ### Usage
  *
  * ```javascript
- * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@admin-bro/design-system'
+ * import { FormGroup, FormGroupProps, InputGroup, FormMessage } from '@adminjs/design-system'
  * ```
  *
  * @hideconstructor
  * @component
  * @see FormGroupProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-formgroup--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-formgroup--default Storybook}
  * @subcategory Molecules
  * @example <caption>Example 1: input with all sorts of buttons</caption>
  * return (

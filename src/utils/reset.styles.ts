@@ -7,14 +7,14 @@ import { css, createGlobalStyle } from 'styled-components'
  * ### Example
  *
  * ```javascript
- * import { reset } from '@admin-bro/design-system'
+ * import { reset } from '@adminjs/design-system'
  *
  * const myContentComponent = styled`
  *   ${reset};
  * `
  * ```
  * @new in version 3.3
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  */
 const reset = css`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -78,7 +78,7 @@ table {
  * ### Example
  *
  * ```jsx
- * import { Reset } from '@admin-bro/design-system'
+ * import { Reset } from '@adminjs/design-system'
  *
  * <ThemeProvider theme={theme}>
  *   <Reset />
@@ -88,7 +88,7 @@ table {
  * </ThemeProvider>
  * ```
  * @new in version 3.3
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  */
 const Reset = createGlobalStyle`${reset}`
 

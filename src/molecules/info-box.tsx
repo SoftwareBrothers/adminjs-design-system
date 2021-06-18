@@ -39,13 +39,13 @@ export type InfoBoxProps = {
  * ### Usage
  *
  * ```javascript
- * import { InfoBox, InfoBoxProps } from '@admin-bro/design-system'
+ * import { InfoBox, InfoBoxProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-infobox--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-infobox--default Storybook}
  * @see InfoBoxProps
  * @example
  * return (

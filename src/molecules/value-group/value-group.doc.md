@@ -6,7 +6,7 @@ maintains paddings and adds errors.
 ### Usage
 
 ```javascript
-import { ValueGroup } from '@admin-bro/design-system'
+import { ValueGroup } from '@adminjs/design-system'
 
 return (
   <ValueGroup

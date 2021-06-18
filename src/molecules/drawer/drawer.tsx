@@ -52,14 +52,14 @@ const variants = variant({
  * ### Usage
  *
  * ```javascript
- * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@admin-bro/design-system'
+ * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @hideconstructor
  * @see DrawerProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-drawer--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-drawer--default Storybook}
  * @example
  * return (
  * <Box height="500px">

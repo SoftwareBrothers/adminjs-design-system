@@ -99,13 +99,13 @@ export type LinkProps = ColorProps & SpaceProps & {
  * ### Usage
  *
  * ```javascript
- * import { Link, LinkProps } from '@admin-bro/design-system'
+ * import { Link, LinkProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
  * @see LinkProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-link--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-link--default Storybook}
  * @hideconstructor
  * @example <caption>All color variants</caption>
  * const variants = ['primary', 'danger', 'success', 'info', 'secondary']

@@ -164,13 +164,13 @@ export type DatePickerProps = CustomProps & {
  * ### Usage
  *
  * ```javascript
- * import { DatePicker, DatePickerProps } from '@admin-bro/design-system'
+ * import { DatePicker, DatePickerProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @see https://reactdatepicker.com/
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-datepicker--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-datepicker--default Storybook}
  * @see DatePickerProps
  * @hideconstructor
  *

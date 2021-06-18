@@ -13,7 +13,7 @@ export type IllustrationProps = {
   variant: 'Moon' | 'Rocket' | 'Astronaut'
     | 'DocumentCheck' | 'DocumentSearch' | 'FileSearch'
     | 'FlagInCog' | 'Folders' | 'Launch' | 'Planet'
-    | 'AdminBroLogo' | 'SoftwareBrothersLogo' | 'GithubLogo'
+    | 'AdminJSLogo' | 'SoftwareBrothersLogo' | 'GithubLogo'
     | 'SlackLogo';
   /** Optional max width restrictions */
   width?: number;
@@ -39,20 +39,20 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  *
  * <img src="components/illustration.png" />
  *
- * Awesome database with all the illustrations provided with AdminBro.
+ * Awesome database with all the illustrations provided with AdminJS.
  *
  * The best thing about them is that they follow your {@link Theme} color palette.
  *
  * ### Usage
  *
  * ```javascript
- * import { Illustration, IllustrationProps } from '@admin-bro/design-system'
+ * import { Illustration, IllustrationProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
  * @see IllustrationProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-illustration--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-illustration--default Storybook}
  * @hideconstructor
  *
  * @example <caption>Folders</caption>

@@ -1,10 +1,10 @@
-This package consists of all DesignSystem components from [AdminBro](adminbro.com) so you can
-use all of them outside the `admin-bro` core.
+This package consists of all DesignSystem components from [AdminJS](adminjs.co) so you can
+use all of them outside the `adminjs` core.
 
-## Installation outside the AdminBro
+## Installation outside the AdminJS
 
 ```bash
-yarn add styled-components @admin-bro/design-system
+yarn add styled-components @adminjs/design-system
 ```
 
 Optionally, if you use typescript, you might want to install types for `styled-components`
@@ -20,7 +20,7 @@ Design System needs a `theme` so to use it you have to use `ThemeProvider` from
 import { ThemeProvider } from 'styled-components'
 
 // theme is the default theme, which you can alter
-import { theme, Button, Box, Icon, Reset } from '@admin-bro/design-system'
+import { theme, Button, Box, Icon, Reset } from '@adminjs/design-system'
 
 function App() {
   return (
@@ -41,15 +41,15 @@ function App() {
 
  ## Changing the theme
 
- The Design System provides you with the default [theme](https://adminbro.com/Theme.html).
+ The Design System provides you with the default [theme](https://adminjs.co/Theme.html).
  It contains all the parameters like paddings, colors, font, sizes etc. For the list of all
- available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
+ available parameters take a look at the [Theme spec](https://adminjs.co/Theme.html).
 
  But nothing stands in a way for you to change the default theme. To do that
  you can use the `combineStyles` method:
 
  ```jsx
- import { combineStyles } from '@admin-bro/design-system`
+ import { combineStyles } from '@adminjs/design-system`
 
  const myTheme = combineStyles({
    colors: {
@@ -77,7 +77,7 @@ font-weights. That is why you should import it in your head:
  not the entire theme. You can achieve that with the `styled` method:
 
  ```jsx
- import { Button } from '@admin-bro/design-system'
+ import { Button } from '@adminjs/design-system'
  import styled from 'styled-components'
 
  const MyRoundedButton = styled(Button)`
@@ -99,8 +99,8 @@ font-weights. That is why you should import it in your head:
 
  This npm package comes with the bundled versions as well. You can find them under:
 
- - `node_modules/@admin-bro/design-system/bundle.development.js`
- - `node_modules/@admin-bro/design-system/bundle.production.js` (minified)
+ - `node_modules/@adminjs/design-system/bundle.development.js`
+ - `node_modules/@adminjs/design-system/bundle.production.js` (minified)
 
  (they can also be bundled by using `bundle`
  script: `yarn bundle` or `NODE_ENV=production yarn bundle`)

@@ -6,7 +6,7 @@ They can be used for any type of action.
 ### Usage
 
 ```jsx
-import { Button, ButtonCSS } from '@admin-bro/design-system'
+import { Button, ButtonCSS } from '@adminjs/design-system'
 
 // regular button
 return (

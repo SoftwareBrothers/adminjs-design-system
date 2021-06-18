@@ -5,7 +5,7 @@ This component is responsible for rendering elements on the sidebar navigation.
 ### Usage
 
 ```javascript
-import { NavigationElement } from '@admin-bro/design-system'
+import { NavigationElement } from '@adminjs/design-system'
 
 return (
   <NavigationElement

@@ -38,7 +38,7 @@ export {
  * ### Example
  *
  * ```javascript
- * import { Box, themeGet } from '@admin-bro/design-system'
+ * import { Box, themeGet } from '@adminjs/design-system'
  *
  * const myComponent = styled(Box)`
  *   padding: ${themeGet('space', 'xl')};

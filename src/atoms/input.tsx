@@ -52,7 +52,7 @@ const sizeVariants = variant({
  * ### Usage:
  *
  * ```
- * import { InputCSS } from '@admin-bro/design-system'
+ * import { InputCSS } from '@adminjs/design-system'
  *
  * const MyStyledInput = styled.input`
  *   ${InputCSS}
@@ -109,13 +109,13 @@ export type InputProps = SpaceProps & LayoutProps & {
  * ### Usage
  *
  * ```javascript
- * import { Input, InputProps, InputCSS } from '@admin-bro/design-system'
+ * import { Input, InputProps, InputCSS } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
  * @see InputProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-input--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-input--default Storybook}
  * @hideconstructor
  * @example
  * return (

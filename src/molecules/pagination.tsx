@@ -81,14 +81,14 @@ const PaginationWrapper = styled(Box)`
  * ### Usage
  *
  * ```javascript
- * import { Pagination, PaginationProps } from '@admin-bro/design-system'
+ * import { Pagination, PaginationProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @hideconstructor
  * @see PaginationProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-pagination--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-pagination--default Storybook}
  * @example
  * const location = { search: ''}
  * return (

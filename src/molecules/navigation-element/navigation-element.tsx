@@ -16,7 +16,7 @@ const PART_LENGTH_TO_ELLIPSIS = 15
  * @subcategory Molecules
  * @hideconstructor
  * @see NavigationElementProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navigation-element--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-navigation-element--default Storybook}
  * @section design-system
  * @new In version 3.3
  */

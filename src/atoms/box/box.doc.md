@@ -7,7 +7,7 @@ it can serve as the main wrapper for your content or as the layout building bloc
 ### Usage
 
 ```javascript
-import { Box } from '@admin-bro/design-system'
+import { Box } from '@adminjs/design-system'
 ```
 
 ### Props

@@ -25,12 +25,12 @@ export type TextAreaProps = TypographyProps & InputProps
  * ### Usage
  *
  * ```javascript
- * import { TextArea, TextAreaProps } from '@admin-bro/design-system'
+ * import { TextArea, TextAreaProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-textarea--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-textarea--default Storybook}
  * @see TextAreaProps
  * @hideconstructor
  * @example

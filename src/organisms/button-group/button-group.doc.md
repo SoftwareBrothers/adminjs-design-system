@@ -5,7 +5,7 @@ The component which renders Buttons in a group. It allows you to handle an array
 ### Usage
 
 ```javascript
-import { ButtonGroup } from '@admin-bro/design-system'
+import { ButtonGroup } from '@adminjs/design-system'
 ```
 
 ### Props
