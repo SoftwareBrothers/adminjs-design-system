@@ -184,6 +184,7 @@ export type DatePickerProps = CustomProps & {
  */
 const DatePicker: React.FC<DatePickerProps> = (props) => {
   const { value, onChange, disabled, propertyType, ...other } = props
+  const [inputValue, setInputValue] = React.useState('')
   const {
     date,
     dateString,
@@ -200,8 +201,12 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
       />
       <StyledDatePicker className={cssClass('DatePicker', isCalendarVisible ? 'active' : 'normal')}>
         <Input
-          value={dateString || ''}
-          onChange={(event): void => onChange(event.target.value)}
+          value={dateString !== undefined ? dateString : inputValue}
+          onChange={(event): void => {
+            const newValue = new Date(event.target.value).toString() !== 'Invalid Date' ? event.target.value : ''
+            setInputValue(newValue)
+            onChange(newValue)
+          }}
           onFocus={(): void => setCalendarVisible(true)}
           disabled={disabled}
         />
