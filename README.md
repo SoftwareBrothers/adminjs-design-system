@@ -1,6 +1,6 @@
 # @adminjs/design-system
 
-This package consists of all DesignSystem components from [AdminJS](adminjs.co) so you can use all of them outside the `adminjs` core.
+This package consists of all DesignSystem components from [AdminJS](https://adminjs.co) so you can use all of them outside the `adminjs` core.
 
 It was created with the help of 2 amazing packages:
 
