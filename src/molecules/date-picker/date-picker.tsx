@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDatePicker from 'react-datepicker'
 import type { ReactDatePickerProps } from 'react-datepicker'
 import styled from 'styled-components'
@@ -193,6 +193,13 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
     onDateChange,
   } = useDatePicker({ value, disabled, propertyType, onChange })
 
+  useEffect(() => {
+    // Only update input value if date is selected via the date picker
+    if(dateString && new Date(dateString).valueOf() !== new Date(inputValue).valueOf()) {
+      setInputValue(dateString);
+    }
+  }, [dateString]);
+
   return (
     <>
       <Overlay
@@ -201,11 +208,15 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
       />
       <StyledDatePicker className={cssClass('DatePicker', isCalendarVisible ? 'active' : 'normal')}>
         <Input
-          value={dateString !== undefined ? dateString : inputValue}
+          value={inputValue}
           onChange={(event): void => {
-            const newValue = new Date(event.target.value).toString() !== 'Invalid Date' ? event.target.value : ''
-            setInputValue(newValue)
-            onChange(newValue)
+            const newValue = new Date(event.target.value);
+            setInputValue(event.target.value)
+
+            // Check if input value is a valid date
+            if(!isNaN(newValue.valueOf())) {
+              onChange(event.target.value);
+            }
           }}
           onFocus={(): void => setCalendarVisible(true)}
           disabled={disabled}
