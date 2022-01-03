@@ -11,6 +11,7 @@ const Icon = styled.svg`
 `
 
 export const CheckboxRadioContainer = styled.span`
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   & + ${Label} {

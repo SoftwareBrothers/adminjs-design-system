@@ -145,9 +145,6 @@ const FormGroup = styled.div<FormGroupProps>`
   & ${Input} {
     ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
     ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.white}` : '')};
-    &:hover {
-      border-color: ${({ variant, theme }): string => (variant === 'filter' ? theme.colors.grey60 : theme.colors.grey60)};
-    }
   }
 
   & ${InputGroup} {
