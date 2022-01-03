@@ -143,9 +143,9 @@ export type DatePickerProps = CustomProps & {
    */
   value?: string | Date;
   /**
-   * on change callback taking string as a date
+   * on change callback taking Date object as a date
    */
-  onChange: (date: string) => void;
+  onChange: (date: Date) => void;
   /**
    * property type, could be either 'date' or 'datetime'
    */
@@ -216,7 +216,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
             // Check if input value is a valid date
             // eslint-disable-next-line no-restricted-globals
             if (!isNaN(newValue.valueOf())) {
-              onChange(event.target.value)
+              onChange(new Date(event.target.value))
             }
           }}
           onFocus={(): void => setCalendarVisible(true)}
