@@ -14,7 +14,7 @@ const addContent = css<ButtonProps>`
  * @load ./button.doc.md
  * @component
  * @see ButtonProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-button--default StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-button--default StoryBook}
  * @hideconstructor
  * @subcategory Atoms
  * @section design-system

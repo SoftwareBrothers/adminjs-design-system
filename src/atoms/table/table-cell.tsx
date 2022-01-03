@@ -13,6 +13,7 @@ const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
   border-bottom: 1px solid ${({ theme }): string => theme.colors.grey20};
   font-size: ${({ theme }): string => theme.fontSizes.default};
   line-height: ${({ theme }): string => theme.lineHeights.default};
+  word-break: break-word;
   vertical-align: middle;
   ${color}; 
   ${space};

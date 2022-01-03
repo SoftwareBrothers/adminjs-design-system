@@ -28,13 +28,13 @@ import { cssClass } from '../../utils/css-class'
  *   TableCaption,
  *   TableHead,
  *   TableBody,
- * } from '@admin-bro/design-system'
+ * } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @hideconstructor
  * @subcategory Atoms
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-table--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-table--default Storybook}
  * @example
  * return (
  * <Box pt="x4">

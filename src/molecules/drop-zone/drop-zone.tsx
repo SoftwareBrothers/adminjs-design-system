@@ -119,13 +119,13 @@ type ErrorMessage = {
  * ### usage
  *
  * ```javascript
- * import { DropZone, DropZoneProps } from '@admin-bro/design-system'
+ * import { DropZone, DropZoneProps } from '@adminjs/design-system'
  * ```
  *
  * how to use it in your custom component.tsx (TypesScript):
  * ```
  * import React, { useState } from 'react'
- * import { DropZone, Label, BasePropertyProps } from '@admin-bro/design-system'
+ * import { DropZone, Label, BasePropertyProps } from '@adminjs/design-system'
  * import { unflatten } from 'flat'
  *
  * const UploadPhoto: React.FC<BasePropertyProps> = (props) => {
@@ -159,7 +159,7 @@ type ErrorMessage = {
  * @see FileSizeUnit
  * @see OnDropDownChange
  * @see DropZoneProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-dropzone--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-dropzone--default Storybook}
  * @example <caption>Single file with validation</caption>
  * const maxSize = 1024 * 100
  * const mimeTypes = ['application/pdf']

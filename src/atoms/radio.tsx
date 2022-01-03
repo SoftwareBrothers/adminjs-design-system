@@ -87,12 +87,12 @@ export type RadioProps = React.HTMLProps<HTMLInputElement>
  * ### Usage
  *
  * ```javascript
- * import { Radio, RadioProps } from '@admin-bro/design-system'
+ * import { Radio, RadioProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @see RadioProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-radio--default StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-radio--default StoryBook}
  * @hideconstructor
  * @subcategory Atoms
  * @example

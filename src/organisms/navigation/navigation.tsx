@@ -12,7 +12,7 @@ import { Label } from '../../atoms/label'
  * @subcategory Organisms
  * @hideconstructor
  * @see NavigationProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-organisms-navigation--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-organisms-navigation--default Storybook}
  * @new In version 3.3
  * @section design-system
  */

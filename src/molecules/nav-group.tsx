@@ -68,14 +68,14 @@ export type NavGroupProps = {
  * ### Usage
  *
  * ```javascript
- * import { NavGroup, NavGroupProps } from '@admin-bro/design-system'
+ * import { NavGroup, NavGroupProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @hideconstructor
  * @see NavGroupProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-navgroup--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-navgroup--default Storybook}
  * @example
  * return (
  *   <Box py="xl">

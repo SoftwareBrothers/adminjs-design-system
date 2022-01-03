@@ -15,13 +15,13 @@ import { cssClass } from '../../utils/css-class'
  * ### Usage
  *
  * ```javascript
- * import { Stepper, StepperProps } from '@admin-bro/design-system'
+ * import { Stepper, StepperProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-stepper--clickable-steps Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-stepper--clickable-steps Storybook}
  * @example <caption>Clickable steps</caption>
  * const { useState } = React
  * const steps = [{

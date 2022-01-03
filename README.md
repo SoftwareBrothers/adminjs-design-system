@@ -1,6 +1,6 @@
-# @admin-bro/design-system
+# @adminjs/design-system
 
-This package consists of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the `admin-bro` core.
+This package consists of all DesignSystem components from [AdminJS](https://adminjs.co) so you can use all of them outside the `adminjs` core.
 
 It was created with the help of 2 amazing packages:
 
@@ -12,7 +12,7 @@ make sure to check them out to use the full potential of this design system.
 ## Installation
 
 ```sh
-yarn add styled-components @admin-bro/design-system
+yarn add styled-components @adminjs/design-system
 ```
 
 Optionally, if you use typescript, you might want to install types for `styled-components`
@@ -27,7 +27,7 @@ Design System needs a `theme` so in order to use it you have to use `ThemeProvid
 import { ThemeProvider } from 'styled-components'
 
 // theme is the default theme, which you can alter
-import { theme, Button, Box, Icon } from '@admin-bro/design-system'
+import { theme, Button, Box, Icon } from '@adminjs/design-system'
 
 function App() {
   return (
@@ -45,12 +45,12 @@ export default App;
 
 ## Changing theme
 
-Design System provides you with the default [theme](https://adminbro.com/Theme.html). It contains all the parameters like paddings, colors, font sizes etc. For the list of all available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
+Design System provides you with the default [theme](https://adminjs.co/Theme.html). It contains all the parameters like paddings, colors, font sizes etc. For the list of all available parameters take a look at the [Theme spec](https://adminjs.co/Theme.html).
 
 But nothing stands in a way for you to change the default theme. In order to do that you can use `combineStyles` method:
 
 ```
-import { combineStyles } from '@admin-bro/design-system`
+import { combineStyles } from '@adminjs/design-system`
 
 const myTheme = combineStyles({
   colors: {
@@ -68,7 +68,7 @@ const myTheme = combineStyles({
 Sometimes you might want to change the look and feel of a particular component - not the entire theme. You can achieve that with `styled` method:
 
 ```
-import { Button } from '@admin-bro/design-system'
+import { Button } from '@adminjs/design-system'
 import styled from 'styled-components'
 
 const MyRoundedButton = styled(Button)`
@@ -84,14 +84,14 @@ and then you can use it like a normal button component:
 
 ## Components
 
-For the list off all the components and their documentation go to [adminbro.com](adminbro.com)
+For the list off all the components and their documentation go to [adminjs.co](adminjs.co)
 
 ## Bundled packages
 
 This npm package comes with the bundled versions as well. You can find them under:
 
-- `node_modules/@admin-bro/design-system/bundle.development.js`
-- `node_modules/@admin-bro/design-system/bundle.production.js` (minified)
+- `node_modules/@adminjd/design-system/bundle.development.js`
+- `node_modules/@adminjs/design-system/bundle.production.js` (minified)
 
 (they can also be bundled by using `bundle` script: `yarn bundle` or `NODE_ENV=production yarn bundle`)
 
@@ -123,7 +123,7 @@ yarn storybook
 
 ## License
 
-AdminBro is Copyright © 2020 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [MIT LICENSE](LICENSE.md) file.
+AdminJS is Copyright © 2021 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [MIT LICENSE](LICENSE.md) file.
 
 ## About SoftwareBrothers.co
 

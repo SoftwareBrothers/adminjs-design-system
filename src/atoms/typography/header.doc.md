@@ -5,11 +5,11 @@ The Header component is a base for all headers.
 ### Usage
 
 ```javascript
-import { H1, H2, H3, H4, H5, H6 } from '@admin-bro/design-system'
+import { H1, H2, H3, H4, H5, H6 } from '@adminjs/design-system'
 
 // or
 
-import { Header } from '@admin-bro/design-system'
+import { Header } from '@adminjs/design-system'
 // Header.H1
 ```
 By default, the Heading component renders __H3__ element.

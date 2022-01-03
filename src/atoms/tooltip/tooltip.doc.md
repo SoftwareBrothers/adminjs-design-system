@@ -5,7 +5,7 @@ Renders Tooltip
 ### Usage
 
 ```jsx
-import { Tooltip, TooltipContent } from '@admin-bro/design-system'
+import { Tooltip, TooltipContent } from '@adminjs/design-system'
 
 // Wrapping existing element with a tooltip
 return (

@@ -5,7 +5,7 @@ Component rendering current user top-right menu.
 ### Usage
 
 ```javascript
-import { CurrentUserNav } from '@admin-bro/design-system'
+import { CurrentUserNav } from '@adminjs/design-system'
 
 return (
   <CurrentUserNav

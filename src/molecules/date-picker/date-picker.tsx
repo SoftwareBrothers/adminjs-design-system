@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDatePicker from 'react-datepicker'
 import type { ReactDatePickerProps } from 'react-datepicker'
 import styled from 'styled-components'
@@ -164,13 +164,13 @@ export type DatePickerProps = CustomProps & {
  * ### Usage
  *
  * ```javascript
- * import { DatePicker, DatePickerProps } from '@admin-bro/design-system'
+ * import { DatePicker, DatePickerProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Molecules
  * @see https://reactdatepicker.com/
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-datepicker--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-datepicker--default Storybook}
  * @see DatePickerProps
  * @hideconstructor
  *
@@ -184,6 +184,7 @@ export type DatePickerProps = CustomProps & {
  */
 const DatePicker: React.FC<DatePickerProps> = (props) => {
   const { value, onChange, disabled, propertyType, ...other } = props
+  const [inputValue, setInputValue] = React.useState('')
   const {
     date,
     dateString,
@@ -191,6 +192,13 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
     isCalendarVisible,
     onDateChange,
   } = useDatePicker({ value, disabled, propertyType, onChange })
+
+  useEffect(() => {
+    // Only update input value if date is selected via the date picker
+    if (dateString && new Date(dateString).valueOf() !== new Date(inputValue).valueOf()) {
+      setInputValue(dateString)
+    }
+  }, [dateString])
 
   return (
     <>
@@ -200,8 +208,17 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
       />
       <StyledDatePicker className={cssClass('DatePicker', isCalendarVisible ? 'active' : 'normal')}>
         <Input
-          value={dateString || ''}
-          onChange={(event): void => onChange(event.target.value)}
+          value={inputValue}
+          onChange={(event): void => {
+            const newValue = new Date(event.target.value)
+            setInputValue(event.target.value)
+
+            // Check if input value is a valid date
+            // eslint-disable-next-line no-restricted-globals
+            if (!isNaN(newValue.valueOf())) {
+              onChange(event.target.value)
+            }
+          }}
           onFocus={(): void => setCalendarVisible(true)}
           disabled={disabled}
         />

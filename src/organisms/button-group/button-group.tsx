@@ -8,7 +8,7 @@ import { ButtonInGroup } from './button-in-group'
 /**
  * @load ./button-group.doc.md
  * @hideconstructor
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-molecules-button-group--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-molecules-button-group--default Storybook}
  * @component
  * @subcategory Organisms
  * @section design-system

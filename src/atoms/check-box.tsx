@@ -89,7 +89,7 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
 /**
  * @typedef {object} CheckBoxProps
  * @alias CheckBoxProps
- * @memberof module:@admin-bro/design-system.CheckBox
+ * @memberof module:@adminjs/design-system.CheckBox
  * @property {string} [...] All props default to _checkbox_ html input like `onChange`,
  *                          `checked` etc.
  */
@@ -104,11 +104,11 @@ export type CheckBoxProps = React.HTMLProps<HTMLInputElement>
  * ### Usage
  *
  * ```javascript
- * import { CheckBox, CheckBoxProps } from '@admin-bro/design-system'
+ * import { CheckBox, CheckBoxProps } from '@adminjs/design-system'
  * ```
  *
  * @component
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-checkbox--default StoryBook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-checkbox--default StoryBook}
  * @hideconstructor
  * @subcategory Atoms
  * @example
@@ -137,7 +137,7 @@ const CheckBox: React.FC<CheckBoxProps> = (props) => {
   }, [checked])
 
   return (
-    <CheckboxRadioContainer className={[className ?? '', 'admin-bro_Checkbox'].join(' ')}>
+    <CheckboxRadioContainer className={[className ?? '', 'adminjs_Checkbox'].join(' ')}>
       <HiddenCheckbox
         checked={isChecked}
         onChange={handleChange}

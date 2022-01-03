@@ -5,7 +5,7 @@ RichText editor based on Quill.
 ### Usage
 
 ```javascript
-import { RichText, DefaultQuillToolbarOptions } from '@admin-bro/design-system'
+import { RichText, DefaultQuillToolbarOptions } from '@adminjs/design-system'
 
 const MyComponent = () => {
   const [value, setValue] = React.useState("Welcome")

@@ -153,7 +153,7 @@ const setPointer = (props: React.HTMLProps<HTMLButtonElement>): string => {
  *
  * Usage:
  * ```
- * import { ButtonCSS } from '@admin-bro/design-system'
+ * import { ButtonCSS } from '@adminjs/design-system'
  * import { Link } from 'react-router-dom'
  *
  * const MyStyledLink = styled(Link)`

@@ -2,22 +2,22 @@
 
 /**
  *
- * Generates class name for given component. It is used by AdminBro core to append namespaced
+ * Generates class name for given component. It is used by AdminJS core to append namespaced
  * classes.
  *
  * ### example
  *
  * ```javascript
- * import { cssClass } from '@admin-bro/design-system'
+ * import { cssClass } from '@adminjs/design-system'
  *
  * cssClass('Icon', 'my-regular-class-name')
- * // returns: 'admin-bro_Icon my-regular-class-name'
+ * // returns: 'adminjs_Icon my-regular-class-name'
  * ```
  *
  *
  * @param {string | Array<string>} className
  * @param {string}                [regularClass]
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  */
 const cssClass = (className: string | Array<string>, regularClass?: string): string => {
   let names: Array<string> = []
@@ -26,7 +26,7 @@ const cssClass = (className: string | Array<string>, regularClass?: string): str
   } else {
     names = [className as string]
   }
-  const parsed = names.map((name) => `admin-bro_${name}`)
+  const parsed = names.map((name) => `adminjs_${name}`)
   if (regularClass) {
     parsed.push(regularClass)
   }

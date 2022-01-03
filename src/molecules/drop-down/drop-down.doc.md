@@ -10,7 +10,7 @@ import {
   DropDownTrigger,
   DropDownMenu,
   DropDownItem
-} from '@admin-bro/design-system'
+} from '@adminjs/design-system'
 
 return (
   <DropDown>

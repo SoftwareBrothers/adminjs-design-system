@@ -34,7 +34,7 @@ export type QuillToolbarOptions = Array<
  * ### Usage
  *
  * ```javascript
- * import { DefaultQuillToolbarOptions } from '@admin-bro/design-system`
+ * import { DefaultQuillToolbarOptions } from '@adminjs/design-system`
  * ```
  *
  *

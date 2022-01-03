@@ -28,7 +28,7 @@ const mergeDeep = (target: any, ...sources: Array<any>) => {
  * ### Example
  *
  * ```jsx
- * import { combineStyles } from '@admin-bro/design-system`
+ * import { combineStyles } from '@adminjs/design-system`
  *
  * const myTheme = combineStyles({
  *   colors: {
@@ -38,7 +38,7 @@ const mergeDeep = (target: any, ...sources: Array<any>) => {
  * ```
  *
  * @param   {Partial<Theme>}         newTheme
- * @memberof module:@admin-bro/design-system
+ * @memberof module:@adminjs/design-system
  *
  * @return  {Theme}
  */

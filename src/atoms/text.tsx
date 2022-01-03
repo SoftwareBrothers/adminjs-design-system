@@ -57,13 +57,13 @@ export type TextProps = TypographyProps & SpaceProps & ColorProps & LayoutProps 
  * ### Usage
  *
  * ```javascript
- * import { Text, TextProps } from '@admin-bro/design-system'
+ * import { Text, TextProps } from '@adminjs/design-system'
  * ```
  *
  * @component
  * @subcategory Atoms
  * @see TextProps
- * @see {@link https://storybook.adminbro.com/?path=/story/designsystem-atoms-text--default Storybook}
+ * @see {@link https://storybook.adminjs.co/?path=/story/designsystem-atoms-text--default Storybook}
  * @hideconstructor
  * @example <caption>Lorem ipsum</caption>
  * return (
