@@ -195,10 +195,10 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 
   useEffect(() => {
     // Only update input value if date is selected via the date picker
-    if(dateString && new Date(dateString).valueOf() !== new Date(inputValue).valueOf()) {
-      setInputValue(dateString);
+    if (dateString && new Date(dateString).valueOf() !== new Date(inputValue).valueOf()) {
+      setInputValue(dateString)
     }
-  }, [dateString]);
+  }, [dateString])
 
   return (
     <>
@@ -210,12 +210,13 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
         <Input
           value={inputValue}
           onChange={(event): void => {
-            const newValue = new Date(event.target.value);
+            const newValue = new Date(event.target.value)
             setInputValue(event.target.value)
 
             // Check if input value is a valid date
-            if(!isNaN(newValue.valueOf())) {
-              onChange(event.target.value);
+            // eslint-disable-next-line no-restricted-globals
+            if (!isNaN(newValue.valueOf())) {
+              onChange(event.target.value)
             }
           }}
           onFocus={(): void => setCalendarVisible(true)}
