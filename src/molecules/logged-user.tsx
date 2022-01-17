@@ -57,7 +57,7 @@ export type LoggedUserProps = {
  * @section design-system
  * @deprecated In favour of {@link CurrentUserNav} component
  */
-export const LoggedUser: React.FC<LoggedUserProps> = (props) => {
+const LoggedUser: React.FC<LoggedUserProps> = (props) => {
   const { email, title, avatarUrl, children } = props
 
   return (
@@ -86,3 +86,6 @@ export const LoggedUser: React.FC<LoggedUserProps> = (props) => {
     </DropDown>
   )
 }
+
+export { LoggedUser }
+export default LoggedUser
