@@ -11,6 +11,7 @@
       "strictFunctionTypes": true,
       "strictBindCallApply": true,
       "noImplicitThis": true,
+      "skipLibCheck": true,
       "moduleResolution": "node",
       "module": "commonjs",
       "typeRoots": ["./vendor-types"],
