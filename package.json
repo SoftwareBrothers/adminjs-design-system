@@ -1,7 +1,7 @@
 {
   "name": "@adminjs/design-system",
   "version": "2.1.0",
-  "description": "DesignSystem on which AdminJS is build",
+  "description": "DesignSystem which AdminJS is built with",
   "main": "build/index.js",
   "types": "types/index.d.ts",
   "repository": "git@github.com:SoftwareBrothers/adminjs-design-system.git",
