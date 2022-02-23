@@ -24,6 +24,11 @@
   "browserslist": [
     "last 10 Chrome versions"
   ],
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
@@ -47,8 +52,8 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -72,10 +77,5 @@
   },
   "resolutions": {
     "date-fns": "2.15.0"
-  },
-  "peerDependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "styled-components": "^5.1.0"
   }
 }
