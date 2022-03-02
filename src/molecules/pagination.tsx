@@ -54,17 +54,17 @@ PaginationLink.defaultProps = {
 const PaginationWrapper = styled(Box)`
   display: inline-block;
   padding: 2px;
-  border: 1px solid ${({ theme }): string => theme.colors.grey20};
+  border: 1px solid ${({ theme }): string => theme.colors.border};
   & > :first-child {
     width: 56px;
-    border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-right: 1px solid ${({ theme }): string => theme.colors.border};
   }
   & > :nth-child(2) {
     padding-left: 16px;
   }
   & > :last-child {
     width: 56px;
-    border-left: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-left: 1px solid ${({ theme }): string => theme.colors.border};
   }
   & > :nth-last-child(2) {
     padding-right: 16px;

@@ -70,7 +70,7 @@ const sizeVariants = variant({
 const Badge = styled.span<BadgeProps>`
   border-radius: 20px;
   border: 1px solid ${({ theme }): string => theme.colors.grey40};
-  color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.white)};
+  color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.defaultText)};
   vertical-align: middle;
   font-family: ${({ theme }): string => theme.font};
   display: inline;

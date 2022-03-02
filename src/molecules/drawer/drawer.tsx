@@ -104,7 +104,7 @@ const Drawer = styled.section<DrawerProps>`
   &.hidden {
     right: ${({ width }): string => (`-${width?.toString()}`)};
   }
-  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.grey40};
+  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.shadow};
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -113,10 +113,10 @@ const Drawer = styled.section<DrawerProps>`
   box-sizing: border-box;
   & > ${DrawerFooter} {
     border-top: 1px solid ${({ theme }): string => theme.colors.primary20};
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};    
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
   }
   max-width: 100%;
-  
+
   ${space};
   ${color};
   ${layout};

@@ -9,7 +9,7 @@ const selectStyles = (theme: DefaultTheme) => ({
     ...provided,
     borderRadius: '0px',
     borderWidth: '1px',
-    background: theme.colors.white,
+    background: 'transparent',
     color: theme.colors.grey80,
     '&:hover': {
       borderColor: theme.colors.grey60,
@@ -21,11 +21,11 @@ const selectStyles = (theme: DefaultTheme) => ({
     ...provided,
     borderRadius: '0px',
     borderColor: theme.colors.grey20,
-    background: theme.colors.white,
+    background: theme.colors.container,
   }),
   input: () => ({
     color: theme.colors.grey80,
-    background: theme.colors.white,
+    background: theme.colors.container,
     border: 'none',
   }),
   singleValue: () => ({
@@ -34,7 +34,7 @@ const selectStyles = (theme: DefaultTheme) => ({
   option: (provided, state) => {
     let color = state.isSelected ? theme.colors.grey80 : theme.colors.grey60
     if (state.isFocused) {
-      color = theme.colors.white
+      color = theme.colors.container
     }
     return {
       ...provided,
@@ -66,7 +66,7 @@ const filterStyles = (theme: DefaultTheme) => ({
   option: (provided, state) => ({
     ...provided,
     color: state.isSelected ? theme.colors.white : theme.colors.grey20,
-    background: state.isFocused ? 'rgba(32,39,62,0.25)' : 'transparent',
+    background: state.isFocused ? theme.colors.primary20 : 'transparent',
   }),
   menu: (provided) => ({
     ...provided,

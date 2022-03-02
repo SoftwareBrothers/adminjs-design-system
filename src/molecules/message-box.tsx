@@ -48,12 +48,12 @@ const StyledMessageBox = styled.div<MessageBoxProps>`
   line-height: ${({ theme }): string => theme.lineHeights.default};
   box-shadow: 0 2px 0 0 ${({ theme }): string => theme.colors.success};
   background: ${({ theme }): string => theme.colors.successLight};
-  color: ${({ theme }): string => theme.colors.grey80};
+  color: ${({ theme }): string => theme.colors.defaultText};
   & > ${Button} {
     float: right;
     margin: 8px;
     & svg {
-      fill: ${({ theme }): string => theme.colors.grey80};
+      fill: ${({ theme }): string => theme.colors.defaultText};
     }
   }
   ${({ theme }): any => variants(theme)};
@@ -69,7 +69,7 @@ StyledCaption.defaultProps = {
 
 const StyledChildren = styled(Box)`
   padding: ${({ theme }): string => theme.space.lg} ${({ theme }): string => theme.space.xl};
-  background: ${({ theme }): string => theme.colors.white};
+  background: ${({ theme }): string => theme.colors.container};
   border-style: solid;
   border-width: 0 1px 1px 1px;
   border-color: ${({ theme }): string => theme.colors.successLight};

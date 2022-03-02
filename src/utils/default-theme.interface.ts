@@ -7,6 +7,7 @@ import {
   lineHeights,
   fontWeights,
   borders,
+  borderRadius,
   borderWidths,
   shadows,
 } from '../theme'
@@ -23,6 +24,7 @@ export interface Theme {
   font: typeof font;
   shadows: typeof shadows;
   borderWidths: typeof borderWidths;
+  borderRadius: typeof borderRadius;
 }
 
 export type ThemeOverride<T=Theme> = {

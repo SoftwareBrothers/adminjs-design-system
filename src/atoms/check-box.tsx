@@ -44,7 +44,7 @@ const checkboxBackground = (theme, checked, disabled): string => {
   if (checked) {
     return disabled ? theme.colors.grey40 : theme.colors.primary100
   }
-  return theme.colors.white
+  return theme.colors.transparent
 }
 
 const StyledCheckbox = styled.a<StyledProps>`
@@ -53,7 +53,7 @@ const StyledCheckbox = styled.a<StyledProps>`
   /* when it is placed within a container setting different font size */
   font-size: 12px;
   cursor: pointer;
-  border: 1px solid ${({ theme }): string => theme.colors.grey40};
+  border: 1px solid ${({ theme }): string => theme.colors.border};
   height: 16px;
   background: ${({ checked, theme, disabled }): string => checkboxBackground(theme, checked, disabled)};
   transition: all 150ms;

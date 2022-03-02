@@ -7,7 +7,7 @@ import { cssClass } from '../../utils/css-class'
  */
 const TableRow = styled.tr`
   &:hover {
-    background: ${({ theme }): string => theme.colors.grey20};
+    background: ${({ theme }): string => theme.colors.tableHover};
   }
 `
 

@@ -11,8 +11,6 @@ export type ButtonInGroupProps = ButtonProps & {
   icon?: string;
   /** Label, when set to null, with icon given, button will adjust it's margin */
   label?: string | null;
-  /** Variant compatible with Button variant */
-  variant?: VariantType;
   /** Variant href */
   href?: string;
   /**

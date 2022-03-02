@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Box, BoxProps, H4 } from '..'
 import { cssClass } from '../utils/css-class'
+import { themeGet } from '../utils'
 
 const StyledInfoBox = styled(Box)<BoxProps>`
   display: flex;
@@ -10,6 +11,7 @@ const StyledInfoBox = styled(Box)<BoxProps>`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  background-color: ${themeGet('colors', 'container')};
 `
 
 /**

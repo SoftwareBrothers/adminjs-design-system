@@ -60,7 +60,7 @@ const colors = {
   grey60: '#898A9A',
   grey40: '#C0C0CA',
   grey20: '#F6F7FB',
-  white: '#fff',
+  white: '#FFFFFF',
 
   // Alerts
   errorDark: '#DE405D',
@@ -81,6 +81,8 @@ const colors = {
 
   // global
   border: '#DDE1E5',
+  defaultText: '#18191A',
+  transparent: 'transparent',
 
   // Elements
   inputBorder: '#C0C0CA',
@@ -89,6 +91,18 @@ const colors = {
   filterInputBorder: 'rgba(255,255,255,0.15)',
   filterDisabled: 'rgba(83,91,142,0.05)',
   bg: '#F6F7FB',
+
+  container: '#FFFFFF',
+
+  // Navigation
+  navOpen: '#F6F7FB',
+  navClosed: 'transparent',
+
+  // Table
+  tableHover: '#F6F7FB',
+  tableHeader: '#F6F7FB',
+
+  shadow: 'rgba(137,138,154,0.15)'
 }
 
 /**
@@ -280,6 +294,21 @@ const borders = {
 }
 
 /**
+ * Border radius
+ *
+ * @memberof Theme
+ * @alias borders
+ * @property {string} input
+ * @property {string} filterInput
+ * @property {string} bg
+ * @property {string} default
+ */
+const borderRadius = {
+  navOpen: '0px',
+  navClosed: '0px',
+}
+
+/**
  * Border widths set for an entire layout. If you like to have border radius in Button's and Box'es
  * Then set default property.
  *
@@ -316,6 +345,7 @@ export {
   borders,
   breakpoints,
   borderWidths,
+  borderRadius
 }
 
 /**

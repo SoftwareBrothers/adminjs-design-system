@@ -51,7 +51,6 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   position: relative;
   z-index: 10000;
   border: none;
-  color: ${themeGet('colors', 'grey80')};
   font-family: ${themeGet('font')};
   border: solid transparent;
   border-width: 0 ${themeGet('space', 'sm')};
@@ -64,7 +63,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
 
   &:hover {
     border-color: ${themeGet('colors', 'primary100')};
-    background: ${themeGet('colors', 'grey20')};
+    background: ${themeGet('colors', 'hoverBg')};
   }
 
   & .${cssClass('Icon')} {
