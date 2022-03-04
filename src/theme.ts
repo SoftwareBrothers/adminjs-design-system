@@ -108,7 +108,7 @@ const colors = {
   // Dropdown
   dropdownHover: '#F6F7FB',
 
-  shadow: 'rgba(137,138,154,0.15)'
+  shadow: 'rgba(137,138,154,0.15)',
 }
 
 /**
@@ -351,7 +351,7 @@ export {
   borders,
   breakpoints,
   borderWidths,
-  borderRadius
+  borderRadius,
 }
 
 /**
