@@ -40,7 +40,7 @@ const colorVariants = variant<any, VariantType>({
  * @extends BoxProps
  */
 export type DropDownItemProps = BoxProps & {
-  colorVariant?: VariantType
+  colorVariant?: VariantType | 'text'
 }
 
 /**
@@ -63,7 +63,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
 
   &:hover {
     border-color: ${themeGet('colors', 'primary100')};
-    background: ${themeGet('colors', 'hoverBg')};
+    background: ${themeGet('colors', 'dropdownHover')};
   }
 
   & .${cssClass('Icon')} {

@@ -78,11 +78,11 @@ const colors = {
   // Backgrounds
   filterBg: '#343F87',
   hoverBg: '#535B8E',
+  container: '#FFFFFF',
 
   // global
   border: '#DDE1E5',
-  defaultText: '#18191A',
-  transparent: 'transparent',
+  defaultText: '#1C1C38',
 
   // Elements
   inputBorder: '#C0C0CA',
@@ -92,15 +92,21 @@ const colors = {
   filterDisabled: 'rgba(83,91,142,0.05)',
   bg: '#F6F7FB',
 
-  container: '#FFFFFF',
+  // Placeholder skeleton
+  placeholderBg: '#F6F7FB',
+  placeholder: '#C0C0CA',
 
   // Navigation
   navOpen: '#F6F7FB',
+  navOpenText: '#1C1C38',
   navClosed: 'transparent',
 
   // Table
   tableHover: '#F6F7FB',
   tableHeader: '#F6F7FB',
+
+  // Dropdown
+  dropdownHover: '#F6F7FB',
 
   shadow: 'rgba(137,138,154,0.15)'
 }

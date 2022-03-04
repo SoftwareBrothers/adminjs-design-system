@@ -7,7 +7,7 @@ import { LayoutProps, layout } from 'styled-system'
 import { cssClass } from '../utils/css-class'
 
 const linearGradient = (theme: DefaultTheme): string => (
-  `linear-gradient(to right, ${theme.colors.grey60} 8%, ${theme.colors.grey40} 18%, ${theme.colors.grey20} 33%)`
+  `linear-gradient(to right, ${theme.colors.placeholder} 8%, ${theme.colors.placeholderBg} 33%)`
 )
 
 const StyledPlaceholder = styled.div<LayoutProps>`
@@ -25,7 +25,7 @@ const StyledPlaceholder = styled.div<LayoutProps>`
   animation-iteration-count: infinite;
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
-  background: ${({ theme }): string => theme.colors.white};
+  background: ${({ theme }): string => theme.colors.placeholderBg};
   background: ${({ theme }): string => linearGradient(theme)};
   background-size: 1000px 104px;
   height: 338px;

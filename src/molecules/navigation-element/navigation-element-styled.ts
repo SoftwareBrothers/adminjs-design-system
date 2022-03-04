@@ -18,10 +18,10 @@ export const getBorderRadius = (props: StyledNavigationElementProps): string => 
 )
 
 export const getSelectedColor = (props: StyledNavigationElementProps): string => themeGet('colors',
-  props.isSelected ? 'primary100' : 'grey80')(props)
+  props.isSelected ? 'primary100' : props.isOpen ? 'navOpenText' : 'defaultText')(props)
 
 export const getHoverColor = (props: StyledNavigationElementProps): string => themeGet('colors',
-  props.isOpen ? 'grey80' : 'primary100')(props)
+  props.isOpen ? 'defaultText' : 'primary100')(props)
 
 export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>`
   background-color: ${getBg};
@@ -30,6 +30,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
   color: ${getSelectedColor};
   cursor: pointer;
   border-radius: ${getBorderRadius};
+  user-select: none;
   &:hover {
     color: ${getHoverColor};
   }

@@ -44,7 +44,7 @@ const checkboxBackground = (theme, checked, disabled): string => {
   if (checked) {
     return disabled ? theme.colors.grey40 : theme.colors.primary100
   }
-  return theme.colors.transparent
+  return 'transparent'
 }
 
 const StyledCheckbox = styled.a<StyledProps>`

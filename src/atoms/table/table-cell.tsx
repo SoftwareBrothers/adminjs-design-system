@@ -27,7 +27,7 @@ const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
 
 TableCell.defaultProps = {
   p: 'lg',
-  color: 'grey100',
+  color: 'defaultText',
   className: cssClass('TableCell'),
 }
 
