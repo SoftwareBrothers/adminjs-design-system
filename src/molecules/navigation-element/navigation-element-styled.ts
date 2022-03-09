@@ -22,7 +22,7 @@ export const getSelectedColor = (props: StyledNavigationElementProps): string =>
   props.isSelected ? 'primary100' : props.isOpen ? 'navOpenText' : 'defaultText')(props)
 
 export const getHoverColor = (props: StyledNavigationElementProps): string => themeGet('colors',
-  props.isOpen ? props.isSelected ? 'navOpenText' : 'defaultText' : 'primary100')(props)
+  props.isOpen ? 'defaultText' : 'primary100')(props)
 
 export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>`
   background-color: ${getBg};
@@ -33,7 +33,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
   border-radius: ${getBorderRadius};
   user-select: none;
   &:hover {
-    color: ${getHoverColor};
+    color: ${getSelectedColor};
   }
   & > * {
     align-self: center;
