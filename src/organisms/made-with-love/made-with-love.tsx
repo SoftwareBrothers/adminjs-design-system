@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
 const MadeWithLove: FC = () => (
   <StyledWrapper>
     <Text as="span" variant="sm">
-      With
+      Made with
     </Text>
     <Icon icon="FavoriteFilled" color="love" />
     <Text as="span" variant="sm">
