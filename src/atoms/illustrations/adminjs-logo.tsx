@@ -24,7 +24,7 @@ export const AdminJSLogo: React.FC<Props> = (props) => {
         </filter>
         <rect id="b" x="0" y="0" width="93" height="93" rx="20" />
       </defs>
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none" fillRule="evenodd">
         <g transform="translate(10 5)">
           <use fill="#000" filter="url(#a)" xlinkHref="#b" />
           <use fill="#4D70EB" xlinkHref="#b" />
