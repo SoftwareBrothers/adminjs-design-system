@@ -41,4 +41,4 @@ const MadeWithLove: FC = () => (
   </StyledWrapper>
 )
 
-export default { MadeWithLove }
+export default MadeWithLove

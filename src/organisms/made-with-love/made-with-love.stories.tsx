@@ -1,5 +1,5 @@
 import React from 'react'
-import { MadeWithLove } from './index'
+import MadeWithLove from './made-with-love'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
