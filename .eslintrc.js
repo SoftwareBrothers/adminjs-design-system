@@ -7,7 +7,6 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    ...(process.env.NODE_ENV === 'development' ? ['../../.eslintrc'] : []),
   ],
   parser: '@typescript-eslint/parser',
   ignorePatterns: [
