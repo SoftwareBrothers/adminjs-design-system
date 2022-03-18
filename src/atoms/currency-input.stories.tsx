@@ -1,12 +1,6 @@
 import React, { FC } from 'react'
-import {
-  withKnobs,
-  boolean,
-  number,
-  select,
-  text,
-} from '../../storybook/node_modules/@storybook/addon-knobs'
-import { FormGroup, Text, Input, Label, Button, Box, CurrencyInput } from '..'
+import { Box, Button, CurrencyInput, FormGroup } from '..'
+import { boolean, number, select, text, withKnobs } from '../../storybook/node_modules/@storybook/addon-knobs'
 import StoryWrapper from '../utils/story-wrapper'
 
 export default {
