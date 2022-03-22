@@ -67,6 +67,8 @@
   },
   "dependencies": {
     "@carbon/icons-react": "^10.14.0",
+    "@tiptap/react": "^2.0.0-beta.108",
+    "@tiptap/starter-kit": "^2.0.0-beta.183",
     "date-fns": "2.15.0",
     "jw-paginate": "^1.0.4",
     "lodash": "^4.17.20",
