@@ -13,7 +13,7 @@ export type IllustrationProps = {
   variant: 'Moon' | 'Rocket' | 'Astronaut'
     | 'DocumentCheck' | 'DocumentSearch' | 'FileSearch'
     | 'FlagInCog' | 'Folders' | 'Launch' | 'Planet'
-    | 'AdminJSLogo' | 'SoftwareBrothersLogo' | 'GithubLogo'
+    | 'AdminJSLogo' | 'GithubLogo'
     | 'SlackLogo';
   /** Optional max width restrictions */
   width?: number;

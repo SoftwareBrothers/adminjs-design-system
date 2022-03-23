@@ -43,7 +43,7 @@ export const Default: React.FC = ({ onClick }) => {
   }])
 
   return (
-    <StoryWrapper label="SoftwareBrothers footer info">
+    <StoryWrapper label="Current user navigation">
       <Box border="default" flex flexDirection="row-reverse" height="navbarHeight">
         <CurrentUserNav
           name={name}
