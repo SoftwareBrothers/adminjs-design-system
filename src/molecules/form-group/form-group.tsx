@@ -4,6 +4,7 @@ import { SpaceProps, space } from 'styled-system'
 import { Label } from '../../atoms/label'
 import { Button } from '../../atoms/button'
 import { Input } from '../../atoms/input'
+import { CurrencyInput } from '../../atoms/currency-input'
 import { Link } from '../../atoms/link'
 import InputGroup from './input-group'
 
@@ -13,7 +14,7 @@ const formGroupDisabledCSS = css`
 
 const formGroupWithErrorCSS = css`
   color: ${({ theme }): string => theme.colors.error};
-  ${Input} {
+  ${Input}, ${CurrencyInput} {
     color: ${({ theme }): string => theme.colors.error};
     border-color: ${({ theme }): string => theme.colors.error};
   }
@@ -138,11 +139,11 @@ const FormGroup = styled.div<FormGroupProps>`
   ${({ disabled }): any => (disabled ? formGroupDisabledCSS : '')};
   ${space};
 
-  & > ${Input} {
+  & > ${Input}, & > ${CurrencyInput} {
     width: 100%;
   }
 
-  & ${Input} {
+  & ${Input}, & ${CurrencyInput} {
     ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
     ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.white}` : '')};
   }
