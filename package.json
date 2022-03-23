@@ -66,7 +66,10 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@carbon/icons-react": "^10.14.0",
+    "@carbon/icons-react": "^10.48.0",
+    "@tiptap/extension-document": "^2.0.0-beta.15",
+    "@tiptap/extension-text": "^2.0.0-beta.15",
+    "@tiptap/extension-typography": "^2.0.0-beta.20",
     "@tiptap/react": "^2.0.0-beta.108",
     "@tiptap/starter-kit": "^2.0.0-beta.183",
     "date-fns": "2.15.0",

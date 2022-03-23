@@ -1,9 +1,21 @@
 import styled from 'styled-components'
-import { InputCSS } from '../../atoms/input'
+import { InputCSS, InputProps } from '../../atoms/input'
+import Text, { TextProps } from '../../atoms/text'
 
-const EditorWrapper = styled.div`
+export type EditorWrapperProps = TextProps & InputProps
+
+const EditorWrapper = styled(Text)<EditorWrapperProps>`
   ${InputCSS}
+
+  .ProseMirror-focused {
+    outline: none;
+  }
 `
+
+EditorWrapper.defaultProps = {
+  px: 'default',
+  py: 'sm',
+}
 
 export { EditorWrapper }
 
