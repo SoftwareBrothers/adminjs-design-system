@@ -52,7 +52,7 @@ const colors = {
 
   // accent
   accent: '#38CAF1',
-  love: '#e6282b', // SoftwareBrothers logo color
+  love: '#4D70EB', // Main AdminJS logo color
 
   // grey
   grey100: '#1C1C38',

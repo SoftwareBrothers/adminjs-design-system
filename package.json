@@ -14,6 +14,7 @@
     "lint": "eslint './src/**/*' './vendor-types/**/*'",
     "check:all": "yarn build && yarn lint",
     "bundle": "rollup --config ./config/rollup.js",
+    "storybook": "yarn --cwd \"storybook\" storybook",
     "dev": "yarn build && yarn bundle"
   },
   "husky": {
