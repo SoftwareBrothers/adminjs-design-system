@@ -6,7 +6,7 @@ export default { title: 'DesignSystem/Atoms/Illustration', decorators: [withKnob
 
 const VARIANTS = ['Moon', 'Rocket', 'Astronaut', 'DocumentCheck',
   'DocumentSearch', 'FileSearch', 'FlagInCog', 'Folders', 'Launch', 'Planet',
-  'AdminJSLogo', 'SoftwareBrothersLogo', 'GithubLogo',
+  'AdminJSLogo', 'GithubLogo',
   'SlackLogo']
 
 export const Default: React.FC = () => {
