@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import Document from '@tiptap/extension-document'
 import Text from '@tiptap/extension-text'
 import TextAlign from '@tiptap/extension-text-align'
@@ -11,11 +12,11 @@ import { EditorWrapper } from './rich-text-editor.styled'
 interface RichTextEditorProps {
   value: any
   onChange: (value: string) => void
-  options: Partial<EditorOptions>
+  options?: Partial<EditorOptions>
 }
 
 const RichTextEditor: FC<RichTextEditorProps> = (props) => {
-  const { value, onChange, options } = props
+  const { value, onChange, options = {} } = props
   const handleUpdate = useCallback(({ editor }: EditorEvents['update']) => {
     onChange(editor.getHTML())
   }, [])
