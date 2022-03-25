@@ -29,20 +29,19 @@ interface MenuButtonProps {
   name: string
   onClick: () => void
   icon?: string
+  attributes?: Record<string, any>
 }
 
 const MenuButton: FC<MenuButtonProps> = (props) => {
-  const { name, editor, onClick, icon } = props
+  const { name, editor, onClick, icon, attributes = {} } = props
+
   const isActive = useCallback(
-    (activeName: string, attributes?: Record<string, any>) => {
-      if (editor.isActive(activeName, attributes)) return 'active'
-      return ''
-    },
-    [name, editor],
+    () => (editor.isActive(name, attributes) ? 'active' : ''),
+    [name, attributes],
   )
 
   return (
-    <Text as="span" onClick={onClick} className={isActive(name)} size="icon" mx="md">
+    <Text as="span" onClick={onClick} className={isActive()} size="icon" mx="md">
       {icon ? <Icon icon={icon} /> : name}
     </Text>
   )

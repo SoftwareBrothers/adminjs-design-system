@@ -8,6 +8,7 @@ interface TiptapCommand {
   name: string
   onClick: () => void
   icon: string
+  attributes?: Record<string, any>
 }
 
 const useTiptaponClicks = (props: useTiptaponClicksProps): TiptapCommand[] => {
@@ -26,6 +27,7 @@ const useTiptaponClicks = (props: useTiptaponClicksProps): TiptapCommand[] => {
     command('italic', () => editor.chain().focus().toggleItalic().run(), 'TextItalic'),
     command('strike', () => editor.chain().focus().toggleStrike().run(), 'TextStrikethrough'),
     command('code', () => editor.chain().focus().toggleCode().run(), 'Code'),
+    command('paragraph', () => editor.chain().focus().setParagraph().run(), 'Paragraph'),
 
     command('textAlign.left', () => editor.chain().focus().setTextAlign('left').run(), 'TextAlignLeft'),
     command('textAlign.center', () => editor.chain().focus().setTextAlign('center').run(), 'TextAlignCenter'),
