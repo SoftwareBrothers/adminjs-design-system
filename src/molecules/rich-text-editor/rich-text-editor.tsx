@@ -1,35 +1,47 @@
-import { EditorContent, useEditor, EditorEvents } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import Typography from '@tiptap/extension-typography'
 import Document from '@tiptap/extension-document'
 import Text from '@tiptap/extension-text'
+import TextAlign from '@tiptap/extension-text-align'
+import Typography from '@tiptap/extension-typography'
+import { EditorContent, EditorEvents, EditorOptions, useEditor } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
-import { EditorWrapper } from './rich-text-editor.styled'
 import MenuBar from './menu-bar'
+import { EditorWrapper } from './rich-text-editor.styled'
 
 interface RichTextEditorProps {
   value: any
   onChange: (value: string) => void
+  options: Partial<EditorOptions>
 }
 
 const RichTextEditor: FC<RichTextEditorProps> = (props) => {
-  const { value, onChange } = props
+  const { value, onChange, options } = props
   const handleUpdate = useCallback(({ editor }: EditorEvents['update']) => {
     onChange(editor.getHTML())
   }, [])
 
   const editor = useEditor({
-    extensions: [Text, Typography, Document, StarterKit],
+    extensions: [
+      Text,
+      Typography,
+      Document,
+      StarterKit,
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      ...(options?.extensions || []),
+    ],
     content: value,
     onUpdate: handleUpdate,
     injectCSS: true,
+    ...options,
   })
 
   return (
-    <EditorWrapper>
+    <>
       <MenuBar editor={editor} />
-      <EditorContent editor={editor} />
-    </EditorWrapper>
+      <EditorWrapper>
+        <EditorContent editor={editor} />
+      </EditorWrapper>
+    </>
   )
 }
 

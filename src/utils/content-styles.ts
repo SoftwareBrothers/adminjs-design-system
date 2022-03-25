@@ -117,7 +117,7 @@ const contentCSS = css`
   }
 
   h3 {
-    
+
   }
 
   h4 {
@@ -252,6 +252,14 @@ const contentCSS = css`
 
   .tabs li + li {
     margin-top: 0;
+  }
+
+  code {
+    padding: 0.2em 0.4em !important;
+    margin: 0;
+    font-size: 85%;
+    background-color: #afb8c133;
+    border-radius: 6px;
   }
 `
 

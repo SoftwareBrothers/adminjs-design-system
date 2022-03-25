@@ -70,6 +70,7 @@
     "@carbon/icons-react": "^10.48.0",
     "@tiptap/extension-document": "^2.0.0-beta.15",
     "@tiptap/extension-text": "^2.0.0-beta.15",
+    "@tiptap/extension-text-align": "^2.0.0-beta.29",
     "@tiptap/extension-typography": "^2.0.0-beta.20",
     "@tiptap/react": "^2.0.0-beta.108",
     "@tiptap/starter-kit": "^2.0.0-beta.183",
