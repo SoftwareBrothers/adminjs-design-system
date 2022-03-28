@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import { Editor } from '@tiptap/react'
-import React, { FC, useCallback } from 'react'
+import React, { FC, useMemo } from 'react'
 import Icon from '../../atoms/icon'
 import Text from '../../atoms/text'
 import { MenuBarWrapper } from './rich-text-editor.styled'
@@ -35,13 +35,13 @@ interface MenuButtonProps {
 const MenuButton: FC<MenuButtonProps> = (props) => {
   const { name, editor, onClick, icon, attributes = {} } = props
 
-  const isActive = useCallback(
+  const isActive = useMemo(
     () => (editor.isActive(name, attributes) ? 'active' : ''),
     [name, attributes],
   )
 
   return (
-    <Text as="span" onClick={onClick} className={isActive()} size="icon" mx="md">
+    <Text as="span" onClick={onClick} className={isActive} size="icon" mx="md">
       {icon ? <Icon icon={icon} /> : name}
     </Text>
   )

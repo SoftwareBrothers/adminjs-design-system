@@ -1,9 +1,5 @@
 import { Editor } from '@tiptap/react'
 
-interface useTiptaponClicksProps {
-  editor: Editor
-}
-
 interface TiptapCommand {
   name: string
   onClick: () => void
@@ -11,7 +7,11 @@ interface TiptapCommand {
   attributes?: Record<string, any>
 }
 
-const useTiptaponClicks = (props: useTiptaponClicksProps): TiptapCommand[] => {
+interface useTiptapCommandsProps {
+  editor: Editor
+}
+
+const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   const { editor } = props
 
   function command(name: string, callback: () => void, icon: string): TiptapCommand {
@@ -45,4 +45,4 @@ const useTiptaponClicks = (props: useTiptaponClicksProps): TiptapCommand[] => {
   ]
 }
 
-export default useTiptaponClicks
+export default useTiptapCommands
