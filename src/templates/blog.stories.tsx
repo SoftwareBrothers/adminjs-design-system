@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {
   Box,
-  RichText,
+  RichTextEditor,
   Icon,
   Button,
   Input,
@@ -51,7 +51,7 @@ export const Default: React.FC = () => {
           <Input variant="xxl" borderless width={1} placeholder="My amazing new article" />
         </Box>
 
-        <RichText quill={{ theme: 'snow' }} borderless />
+        <RichTextEditor />
       </Box>
     </Box>
   )
