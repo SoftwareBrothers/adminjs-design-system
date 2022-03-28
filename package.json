@@ -66,7 +66,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@carbon/icons-react": "^10.14.0",
+    "@carbon/icons-react": "^10.49.0",
     "date-fns": "2.15.0",
     "jw-paginate": "^1.0.4",
     "lodash": "^4.17.20",
