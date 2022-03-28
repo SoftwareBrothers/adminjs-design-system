@@ -1,7 +1,7 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
-import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
-import RichTextEditor from './rich-text-editor'
+import { RichTextEditor } from './rich-text-editor'
 import StoryWrapper from '../../utils/story-wrapper'
 import { Text, Box } from '../..'
 
@@ -30,14 +30,21 @@ facilisis. Donec at dignissim dui. Ut et neque nisl.
 <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
 <li>Ut non enim metus.</li>
 </ul>
+<a href="https://en.wikipedia.org/wiki/World_Wide_Web">world wide web</a>
 <blockquote>
 And here it comes - the quote
 </blockquote>
 <h5>Header H5</h5>
+<p><code>var a = 'asd';</code></p>
 <pre>
-const a = 1;{'\n'}
+const a = 1;
 const b = 0;
-</pre>
+
+function sum(x, y) {
+    return x + y;
+}
+
+const c = sum(a, b);</pre>
 <p>And below there is a Table</p>
 <table>
 <thead>
@@ -53,7 +60,7 @@ const b = 0;
 
 export default { title: 'DesignSystem/Molecules/RichTextEditor', decorators: [withKnobs] }
 
-export const RichText: FC = () => {
+export const Default: React.FC = () => {
   const [value, setValue] = useState(html)
   const contentRef = useRef<any>()
 
@@ -64,17 +71,13 @@ export const RichText: FC = () => {
   }, [value])
 
   return (
-    <Box>
-      <Box>
-        <StoryWrapper label="Rich text editor - SNOW">
-          <RichTextEditor onChange={(content) => setValue(content)} value={value} />
-        </StoryWrapper>
-      </Box>
-      <Box>
-        <StoryWrapper label="Text preview">
-          <Text contentRef={contentRef} />
-        </StoryWrapper>
-      </Box>
+    <Box flex>
+      <StoryWrapper label="Rich text editor">
+        <RichTextEditor onChange={(content) => setValue(content)} value={value} />
+      </StoryWrapper>
+      <StoryWrapper label="Text preview">
+        <Text ref={contentRef} />
+      </StoryWrapper>
     </Box>
   )
 }

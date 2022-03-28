@@ -7,10 +7,18 @@ import { cssClass, themeGet } from '../../utils'
 export type EditorWrapperProps = TextProps & InputProps
 
 export const EditorWrapper = styled(Text)<EditorWrapperProps>`
+  position: relative;
   ${InputCSS}
 
   .ProseMirror-focused {
     outline: none;
+  }
+
+  .characterCount {
+    position: absolute;
+    bottom: ${themeGet('space', 'md')};
+    right: ${themeGet('space', 'lg')};
+    color: ${themeGet('colors', 'grey40')};
   }
 `
 EditorWrapper.defaultProps = {
@@ -39,6 +47,5 @@ export const MenuBarWrapper = styled(Box)`
 MenuBarWrapper.defaultProps = {
   px: 'md',
   py: 'md',
+  className: cssClass('MenuBarWrapper'),
 }
-
-export default { EditorWrapper, MenuBarWrapper }

@@ -23,11 +23,12 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   }
 
   return [
+    command('paragraph', () => editor.chain().focus().setParagraph().run(), 'Paragraph'),
+
     command('bold', () => editor.chain().focus().toggleBold().run(), 'TextBold'),
     command('italic', () => editor.chain().focus().toggleItalic().run(), 'TextItalic'),
     command('strike', () => editor.chain().focus().toggleStrike().run(), 'TextStrikethrough'),
     command('code', () => editor.chain().focus().toggleCode().run(), 'Code'),
-    command('paragraph', () => editor.chain().focus().setParagraph().run(), 'Paragraph'),
 
     command('textAlign.left', () => editor.chain().focus().setTextAlign('left').run(), 'TextAlignLeft'),
     command('textAlign.center', () => editor.chain().focus().setTextAlign('center').run(), 'TextAlignCenter'),
@@ -37,6 +38,7 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
     command('bulletList', () => editor.chain().focus().toggleBulletList().run(), 'ListBulleted'),
     command('orderedList', () => editor.chain().focus().toggleOrderedList().run(), 'ListNumbered'),
     command('blockquote', () => editor.chain().focus().toggleBlockquote().run(), 'Quotes'),
+    command('link', () => editor.chain().focus().unsetLink().run(), 'Unlink'),
 
     command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),

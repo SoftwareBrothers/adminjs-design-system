@@ -254,7 +254,8 @@ const contentCSS = css`
     margin-top: 0;
   }
 
-  code {
+  *:not(pre) > code {
+    color: red !important;
     padding: 0.2em 0.4em !important;
     margin: 0;
     font-size: 85%;
