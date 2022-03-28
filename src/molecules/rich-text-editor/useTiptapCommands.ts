@@ -23,8 +23,6 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   }
 
   return [
-    command('paragraph', () => editor.chain().focus().setParagraph().run(), 'Paragraph'),
-
     command('bold', () => editor.chain().focus().toggleBold().run(), 'TextBold'),
     command('italic', () => editor.chain().focus().toggleItalic().run(), 'TextItalic'),
     command('strike', () => editor.chain().focus().toggleStrike().run(), 'TextStrikethrough'),

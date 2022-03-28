@@ -29,7 +29,7 @@ interface RichTextEditorProps {
 }
 
 const RichTextEditor: FC<RichTextEditorProps> = (props) => {
-  const { value, onChange, options = { limit: 200 } } = props
+  const { value, onChange, options = {} } = props
   const handleUpdate = useCallback(({ editor }: EditorEvents['update']) => {
     onChange(editor.getHTML())
   }, [])
