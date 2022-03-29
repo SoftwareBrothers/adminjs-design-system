@@ -74,6 +74,7 @@ const Badge = styled.span<BadgeProps>`
   vertical-align: middle;
   font-family: ${({ theme }): string => theme.font};
   display: inline;
+  white-space: nowrap;
 
   ${space};
   ${color};
