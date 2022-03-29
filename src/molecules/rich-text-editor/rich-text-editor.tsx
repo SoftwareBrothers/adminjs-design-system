@@ -67,7 +67,7 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
         <EditorContent editor={editor} />
         {options.limit && (
           <span className="characterCount">
-            {editor?.storage.characterCount.characters()}/{limit}
+            {value?.length}/{limit}
           </span>
         )}
       </EditorWrapper>
