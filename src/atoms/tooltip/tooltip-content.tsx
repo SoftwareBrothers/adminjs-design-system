@@ -9,4 +9,4 @@ const TooltipContent = styled(Box)``
 
 TooltipContent.displayName = 'TooltipContent'
 
-export default TooltipContent
+export { TooltipContent, TooltipContent as default }

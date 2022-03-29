@@ -20,11 +20,11 @@ export const Default: FC = () => {
 
   // Currency props
   const prefix = text('prefix', '$')
-  const suffix = text('sufix', '')
+  const suffix = text('suffix', '')
   const decimalSeparator = text('decimalSeparator', '.')
-  const groupSeparator = text('groupSeparator', '.')
-  const allowDecimals = boolean('allowDecimals', false)
-  const decimalsLimit = number('decimalsLimit', 0, {
+  const groupSeparator = text('groupSeparator', ' ')
+  const allowDecimals = boolean('allowDecimals', true)
+  const decimalsLimit = number('decimalsLimit', 2, {
     min: 0,
     max: 5,
     step: 1,
@@ -32,7 +32,7 @@ export const Default: FC = () => {
 
   return (
     <Box width={1}>
-      <StoryWrapper label="Knobs example">
+      <StoryWrapper label="Currency input example">
         <FormGroup>
           <CurrencyInput
             width={width}

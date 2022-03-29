@@ -7,17 +7,11 @@ import replace from 'rollup-plugin-replace'
 const minify = process.env.NODE_ENV === 'production'
 const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx']
 
-const quillReplace = {
-  from: "const Quill: typeof QuillClass = typeof window === 'object' ? require('quill') : null",
-  to: "import Quill from 'quill'",
-}
-
 const plugins = [
   resolve({ extensions }),
   replace({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     'process.env.IS_BROWSER': 'true',
-    [quillReplace.from]: quillReplace.to,
   }),
   commonjs(),
   babel({
