@@ -1,16 +1,18 @@
+import noop from 'lodash/noop'
 import React, { FC } from 'react'
 import ReactSelect, { Props } from 'react-select'
 import { theme } from '../..'
-import { cssClass, selectStyles } from '../../utils'
+import { cssClass, filterStyles, selectStyles } from '../../utils'
 
 interface SelectProps extends Props {
   value: any
   onChange?: (selected) => void
+  variant?: 'default' | 'filter'
 }
 
 export const Select: FC<SelectProps> = (props) => {
-  const { value, onChange, ...selectProps } = props
-  const styles = selectStyles(theme)
+  const { value, onChange, variant, ...selectProps } = props
+  const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
   const handleChange: Props['onChange'] = (selected) => {
     if (typeof onChange === 'function') onChange(selected)
@@ -26,6 +28,11 @@ export const Select: FC<SelectProps> = (props) => {
       {...selectProps}
     />
   )
+}
+
+Select.defaultProps = {
+  variant: 'default',
+  onChange: noop,
 }
 
 export default Select

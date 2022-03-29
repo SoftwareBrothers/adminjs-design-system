@@ -1,23 +1,25 @@
+import noop from 'lodash/noop'
 import React, { FC } from 'react'
-import ReactSelect from 'react-select/async'
+import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
 import { theme } from '../..'
-import { cssClass, selectStyles } from '../../utils'
+import { cssClass, filterStyles, selectStyles } from '../../utils'
 
-interface SelectProps {
+interface SelectProps extends AsyncProps<unknown, boolean, any> {
   value: any
   onChange?: (selected) => void
+  variant?: 'default' | 'filter'
 }
 
 export const SelectAsync: FC<SelectProps> = (props) => {
-  const { value, onChange, ...selectProps } = props
-  const styles = selectStyles(theme)
+  const { value, onChange, variant, ...selectProps } = props
+  const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
   const handleChange = (selected) => {
     if (typeof onChange === 'function') onChange(selected)
   }
 
   return (
-    <ReactSelect
+    <ReactAsyncSelect
       className={cssClass('Select')}
       value={value}
       styles={styles}
@@ -26,6 +28,11 @@ export const SelectAsync: FC<SelectProps> = (props) => {
       {...selectProps}
     />
   )
+}
+
+SelectAsync.defaultProps = {
+  variant: 'default',
+  onChange: noop,
 }
 
 export default SelectAsync
