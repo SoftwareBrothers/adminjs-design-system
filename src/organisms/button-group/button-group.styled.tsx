@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import styled, { css } from 'styled-components'
 import Box from '../../atoms/box'
 import { Button } from '../../atoms/button'
@@ -7,7 +8,7 @@ import { ButtonGroupProps } from './button-group.types'
 
 export const BUTTON_IN_GROUP_CLASS_NAME = cssClass('ButtonGroupItem')
 
-export const buttonMargin = (props: Pick<ButtonGroupProps, 'size'>) => {
+export const buttonMargin = (props: Pick<ButtonGroupProps, 'size'>): ReturnType<typeof css> => {
   const { size } = props
   const margin = size === 'sm' ? 'md' : 'lg'
   return css`
@@ -20,18 +21,18 @@ export const buttonMargin = (props: Pick<ButtonGroupProps, 'size'>) => {
   `
 }
 
-export const hasHandler = (props: any) => {
+export const hasHandler = (props: any): ReturnType<typeof css> => {
   if (!props.onClick && !props.href) {
     return css`
-    &&& {
-      cursor: default;
-    }
+      &&& {
+        cursor: default;
+      }
     `
   }
   return ''
 }
 
-export const hasLabel = (props: any) => {
+export const hasLabel = (props: any): ReturnType<typeof css> => {
   if (!props.hasLabel) {
     return css`
       padding-left: ${themeGet('space', 'md')};
@@ -44,7 +45,7 @@ export const hasLabel = (props: any) => {
   return ''
 }
 
-export const StyledSingleButton = styled(Button)<{hasLabel: boolean}>`
+export const StyledSingleButton = styled(Button)<{ hasLabel: boolean }>`
   ${hasLabel};
   ${hasHandler};
 `

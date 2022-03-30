@@ -27,9 +27,8 @@ const NavigationElement: React.FC<NavigationElementProps> = (props) => {
   const expandable = typeof isOpen !== 'undefined'
   const chevron = isOpen ? 'ChevronUp' : 'ChevronDown'
 
-  const hasLongName =
-    label.split(' ').reduce((memo, part) => (memo.length > part.length ? memo : part), '').length >
-    PART_LENGTH_TO_ELLIPSIS
+  const hasLongName = label.split(' ').reduce((memo, part) => (memo.length > part.length ? memo : part), '').length
+    > PART_LENGTH_TO_ELLIPSIS
 
   return (
     <StyledNavigationElement

@@ -18,33 +18,18 @@ import { ModalStyled } from './modal-styled'
  * @section design-system
  */
 const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) => {
-  const { title,
-    subTitle,
-    variant,
-    onClose,
-    children,
-    buttons,
-    label,
-    icon,
-    ...boxProps
-  } = props
+  const { title, subTitle, variant, onClose, children, buttons, label, icon, ...boxProps } = props
   return (
     <ModalStyled variant={variant as BoxProps['variant']} {...boxProps}>
       {label && (
         <Label size="lg" variant={variant} className="modal-label">
-          {icon && (<Icon icon={icon} />)}
+          {icon && <Icon icon={icon} />}
           {label}
         </Label>
       )}
       {title && <H5>{title}</H5>}
       {onClose && (
-        <Button
-          className="close-button"
-          size="icon"
-          variant="text"
-          onClick={onClose}
-          rounded
-        >
+        <Button className="close-button" size="icon" variant="text" onClick={onClose} rounded>
           <Icon icon="CloseOutline" />
         </Button>
       )}
@@ -62,8 +47,4 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
   )
 }
 
-export {
-    ModalInline,
-    ModalInline as default,
-}
-
+export { ModalInline, ModalInline as default }
