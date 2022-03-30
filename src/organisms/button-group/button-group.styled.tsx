@@ -21,7 +21,7 @@ export const buttonMargin = (props: Pick<ButtonGroupProps, 'size'>): ReturnType<
   `
 }
 
-export const hasHandler = (props: any): ReturnType<typeof css> => {
+export const hasHandler = (props: any): ReturnType<typeof css> | string => {
   if (!props.onClick && !props.href) {
     return css`
       &&& {
@@ -32,7 +32,7 @@ export const hasHandler = (props: any): ReturnType<typeof css> => {
   return ''
 }
 
-export const hasLabel = (props: any): ReturnType<typeof css> => {
+export const hasLabel = (props: any): ReturnType<typeof css> | string => {
   if (!props.hasLabel) {
     return css`
       padding-left: ${themeGet('space', 'md')};
