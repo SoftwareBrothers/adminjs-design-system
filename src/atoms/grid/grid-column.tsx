@@ -1,7 +1,7 @@
 import { grid, GridProps } from 'styled-system'
 import styled from 'styled-components'
 
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 
 export type GridColumnProps = {
 

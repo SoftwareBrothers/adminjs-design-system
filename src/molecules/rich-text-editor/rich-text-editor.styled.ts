@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import { InputCSS, InputProps } from '../../atoms/input'
 import { Text, TextProps } from '../../atoms/text'
 import { cssClass, themeGet } from '../../utils'

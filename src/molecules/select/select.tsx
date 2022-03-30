@@ -1,7 +1,7 @@
 import noop from 'lodash/noop'
 import React, { FC } from 'react'
 import ReactSelect, { Props } from 'react-select'
-import { theme } from '../..'
+import * as theme from '../../theme'
 import { cssClass, filterStyles, selectStyles } from '../../utils'
 
 interface SelectProps extends Props {

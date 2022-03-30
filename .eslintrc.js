@@ -13,6 +13,7 @@ module.exports = {
     '*.json',
     'yarn.lock',
     '*.md',
+    'types/*',
   ],
   parserOptions: {
     ecmaFeatures: {

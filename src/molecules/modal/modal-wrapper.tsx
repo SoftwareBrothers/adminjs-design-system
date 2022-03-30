@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { ModalInline } from './modal-inline'
 import { ModalProps } from './modal-props'
 import { ModalStyled } from './modal-styled'
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import Overlay from '../../atoms/overlay'
 
 const Wrapper = styled(Box)`

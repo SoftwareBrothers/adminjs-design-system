@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import Icon from '../../atoms/icon'
 import { StyledSingleButton } from './button-group.styled'
 import { ButtonInGroupProps } from './button-group.types'

@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, Label, Text } from '../..'
+import Box from '../../atoms/box'
+import Label from '../../atoms/label'
+import Text from '../../atoms/text'
 import { ValueGroupProps } from './value-group-props'
 
 /**
@@ -24,7 +26,4 @@ const ValueGroup: React.FC<ValueGroupProps> = (props) => {
   )
 }
 
-export {
-  ValueGroup as default,
-  ValueGroup,
-}
+export { ValueGroup as default, ValueGroup }

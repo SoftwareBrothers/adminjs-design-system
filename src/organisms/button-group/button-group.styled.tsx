@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import { Button } from '../../atoms/button'
 import { cssClass, themeGet } from '../../utils'
 import { DropDownItemAction } from '../../molecules/drop-down'

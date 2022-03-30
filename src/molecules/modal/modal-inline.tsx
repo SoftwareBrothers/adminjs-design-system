@@ -1,5 +1,10 @@
 import React from 'react'
-import { BoxProps, Box, H5, Text, Button, Icon, Label } from '../..'
+import Box, { BoxProps } from '../../atoms/box'
+import { Button } from '../../atoms/button'
+import Icon from '../../atoms/icon'
+import Label from '../../atoms/label'
+import Text from '../../atoms/text'
+import { H5 } from '../../atoms/typography'
 import { ModalProps } from './modal-props'
 import { ModalStyled } from './modal-styled'
 
@@ -58,6 +63,7 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
 }
 
 export {
-  ModalInline,
-  ModalInline as default,
+    ModalInline,
+    ModalInline as default,
 }
+

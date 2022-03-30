@@ -1,7 +1,7 @@
 import filter from 'lodash/filter'
 import React, { FC, useState } from 'react'
 import { FormGroup } from '../..'
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import StoryWrapper from '../../utils/story-wrapper'
 import { Select } from './select'
 import { SelectAsync } from './select-async'

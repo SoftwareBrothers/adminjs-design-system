@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "release": "semantic-release",
-    "build": "tsc",
+    "build": "yarn clean && tsc",
     "clean": "rm -fR types && rm -fR build",
     "lint": "eslint './src/**/*' './vendor-types/**/*'",
     "check:all": "yarn build && yarn lint",

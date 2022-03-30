@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from '../../atoms/box/box'
+import { Box } from '../../atoms/box'
 import { Icon } from '../../atoms/icon'
 import { Button } from '../../atoms/button'
 

@@ -1,7 +1,7 @@
 import { grid, ResponsiveValue } from 'styled-system'
 import styled from 'styled-components'
 
-import Box from '../../atoms/box/box'
+import Box from '../../atoms/box'
 import { themeGet } from '../../utils'
 
 export type GridRowProps = {

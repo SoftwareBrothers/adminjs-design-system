@@ -2,8 +2,7 @@
   "compilerOptions": {
     "outDir": "build",
     "module": "commonjs",
-    "target": "es5",
-    "lib": ["es5", "es6", "es7", "ES2017", "DOM"],
+    "target": "es2017",
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",

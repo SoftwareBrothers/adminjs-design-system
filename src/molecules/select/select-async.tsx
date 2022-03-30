@@ -1,7 +1,7 @@
 import noop from 'lodash/noop'
 import React, { FC } from 'react'
 import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
-import { theme } from '../..'
+import * as theme from '../../theme'
 import { cssClass, filterStyles, selectStyles } from '../../utils'
 
 interface SelectProps extends AsyncProps<unknown, boolean, any> {
