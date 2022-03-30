@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
       "outDir": "./build",
-      "target": "es5",
-      "lib": ["es5", "es6", "es7", "ES2017", "DOM"],
+      "target": "es2017",
       "esModuleInterop": true,
       "jsx": "react",
       "declaration": true,
