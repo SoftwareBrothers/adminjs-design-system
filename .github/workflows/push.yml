@@ -28,7 +28,7 @@ jobs:
       - name: Bundle
         run: yarn bundle
       - name: Bundle minified
-        run: NODE_ENV=production yarn bundle
+        run: NODE_OPTIONS="--max_old_space_size=4096" NODE_ENV=production yarn bundle
       - name: Release
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
