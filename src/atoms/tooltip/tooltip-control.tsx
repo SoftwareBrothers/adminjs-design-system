@@ -26,7 +26,12 @@ const TooltipControl: React.FC<PortalProps> = (props) => {
 
   useEffect(() => {
     if (childRef.current) {
-      const { clientWidth, offsetTop, offsetLeft, clientHeight } = childRef.current
+      const {
+        width: clientWidth,
+        top: offsetTop,
+        left: offsetLeft,
+        height: clientHeight,
+      } = childRef.current.getBoundingClientRect()
       setElementPosition({
         width: clientWidth,
         top: offsetTop,
