@@ -1,6 +1,6 @@
 {
   "name": "@adminjs/design-system",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "DesignSystem which AdminJS is built with",
   "main": "build/index.js",
   "types": "types/index.d.ts",
