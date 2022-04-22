@@ -153,6 +153,13 @@ const FormGroup = styled.div<FormGroupProps>`
       ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
     }
   }
+
+  & [class*="DatePicker"] > .react-datepicker-wrapper {
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+  }
+  & [class*="DatePicker"] > .react-datepicker-wrapper input {
+    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.white}` : '')};
+  }
 `
 
 FormGroup.defaultProps = {

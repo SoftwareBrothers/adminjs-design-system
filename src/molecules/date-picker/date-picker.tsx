@@ -1,37 +1,65 @@
-import React, { useEffect } from 'react'
+import React, { useMemo } from 'react'
 import ReactDatePicker from 'react-datepicker'
 import type { ReactDatePickerProps } from 'react-datepicker'
 import styled from 'styled-components'
+import MaskedInput, { MaskedInputProps } from 'react-text-mask'
+import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import styles from '../../utils/datepicker.styles'
-import { Input } from '../../atoms/input'
-import { Button } from '../../atoms/button'
 import { Icon } from '../../atoms/icon'
-import { InputGroup } from '../form-group'
-import { cssClass } from '../../utils/css-class'
 import { PropertyType } from '../../utils'
-import useDatePicker from './useDatePicker'
+import { Box } from '../../atoms/box/box'
+import { cssClass } from '../../utils/css-class'
 
-const DatePickerWrapper = styled.div`
+const DatePickerIcon = styled(Icon)`
   position: absolute;
+  background: ${({ theme }) => theme.colors.primary100};
+  color: ${({ theme }) => theme.colors.white};
   right: 0;
-  top: ${({ theme }): string => theme.space.xxl};
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  min-width: 34px;
+  width: auto;
 `
 
-const StyledDatePicker = styled(InputGroup)`
+const StyledDatePicker = styled(Box)`
   ${styles};
   position: relative;
 
-  &.active ${Input}, &.active ${Button} {
-    z-index: 101;
+  & .react-datepicker-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    border: ${({ theme }) => `1px solid ${theme.colors.grey40}`};
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 24px;
   }
-  
+
+  & .react-datepicker-wrapper input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: ${({ theme }) => theme.colors.grey80};
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
   & .react-datepicker {
     border-radius: 0;
-    border: 1px solid ${({ theme }): string => theme.colors.primary100};
     padding: ${({ theme }): string => theme.space.default};
     font-family: ${({ theme }): string => theme.font};
     z-index: 101;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   & .react-datepicker__navigation--next {
@@ -108,22 +136,73 @@ const StyledDatePicker = styled(InputGroup)`
   }
 `
 
-const Overlay = styled.div`
-  opacity: 0;
-  background: #ccc;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
+const parseDateSafely = (newDate: any) => {
+  const timestamp = Date.parse(newDate)
 
-  &.hidden {
-    display: none;
+  if (!Number.isNaN(timestamp)) {
+    return new Date(timestamp)
   }
-`
+
+  return null
+}
+
+// https://github.com/text-mask/text-mask/issues/951
+const convertDateFnsFormatToDatePipeFormat = (format: string) => {
+  const tokens = format.split('')
+
+  return tokens.map((char) => {
+    if (char === 'M') return 'm'
+    if (char === 'm') return 'M'
+    return char
+  }).join('')
+}
+
+const defaultDateProps = {
+  date: {
+    format: 'yyyy/MM/dd',
+    placeholder: 'YYYY/MM/DD',
+    inputMask: [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/],
+  },
+  datetime: {
+    format: 'yyyy/MM/dd HH:mm',
+    placeholder: 'YYYY/MM/DD HH:mm',
+    inputMask: [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, ' ', /\d/, /\d/, ':', /\d/, /\d/],
+  },
+}
 
 type CustomProps = Partial<Omit<ReactDatePickerProps, 'value' | 'disabled' | 'onChange'>>
+type DateMaskOverride = ({
+  regex: string,
+  raw: undefined,
+} | {
+  raw: string,
+  regex: undefined,
+} | string)[]
+type InputMaskProps = Omit<MaskedInputProps, 'mask'> & { mask?: DateMaskOverride }
+
+const parseCustomMask = (mask: DateMaskOverride) => mask.map((el) => {
+  if (typeof el === 'string') return el
+  if (el.raw) return el.raw
+  if (!el.regex) throw new Error('Invalid input mask')
+
+  return new RegExp(el.regex)
+})
+
+const getDateInputProps = (
+  propertyType = 'datetime',
+  props: Pick<DatePickerProps, 'placeholderText' | 'dateFormat' | 'inputMask'>,
+) => {
+  const { dateFormat, placeholderText, inputMask } = props
+  const defaultProps = defaultDateProps[propertyType]
+  const format = dateFormat ?? defaultProps.format
+  const placeholder = placeholderText ?? defaultProps.placeholder
+  const mask = inputMask?.mask
+    ? parseCustomMask(inputMask.mask)
+    : defaultProps.inputMask
+  const dateFormatPipe = createAutoCorrectedDatePipe(convertDateFnsFormatToDatePipeFormat(format))
+
+  return { format, dateFormatPipe, placeholder, parsedMask: mask }
+}
 
 /**
  * Props for DatePicker
@@ -143,13 +222,17 @@ export type DatePickerProps = CustomProps & {
    */
   value?: string | Date;
   /**
-   * on change callback taking Date object as a date
+   * on change callback taking ISO string as a date
    */
-  onChange: (date: Date) => void;
+  onChange: (date: string | null) => void;
   /**
    * property type, could be either 'date' or 'datetime'
    */
   propertyType?: PropertyType;
+  /**
+   * input mask props for text input in case you want to use it, see: https://github.com/text-mask/text-mask
+   */
+  inputMask?: InputMaskProps;
 }
 
 /**
@@ -183,67 +266,51 @@ export type DatePickerProps = CustomProps & {
  * @section design-system
  */
 const DatePicker: React.FC<DatePickerProps> = (props) => {
-  const { value, onChange, disabled, propertyType, ...other } = props
-  const [inputValue, setInputValue] = React.useState('')
   const {
-    date,
-    dateString,
-    setCalendarVisible,
-    isCalendarVisible,
-    onDateChange,
-  } = useDatePicker({ value, disabled, propertyType, onChange })
+    value,
+    onChange,
+    disabled,
+    propertyType,
+    inputMask = {},
+    placeholderText,
+    dateFormat,
+    ...other
+  } = props
+  const { mask: _mask, ...otherInputMaskProps } = inputMask as InputMaskProps
 
-  useEffect(() => {
-    // Only update input value if date is selected via the date picker
-    if (dateString && new Date(dateString).valueOf() !== new Date(inputValue).valueOf()) {
-      setInputValue(dateString)
-    }
-  }, [dateString])
+  const handleChange = (newDate: Date | null) => {
+    onChange(parseDateSafely(newDate)?.toISOString?.() || '')
+  }
+
+  const dateValue = useMemo(() => parseDateSafely(value), [value])
+  const { dateFormatPipe, format, parsedMask, placeholder } = getDateInputProps(
+    propertyType,
+    { dateFormat, inputMask, placeholderText },
+  )
 
   return (
-    <>
-      <Overlay
-        onClick={(): void => setCalendarVisible(false)}
-        className={isCalendarVisible ? 'visible' : 'hidden'}
-      />
-      <StyledDatePicker className={cssClass('DatePicker', isCalendarVisible ? 'active' : 'normal')}>
-        <Input
-          value={inputValue}
-          onChange={(event): void => {
-            const newValue = new Date(event.target.value)
-            setInputValue(event.target.value)
-
-            // Check if input value is a valid date
-            // eslint-disable-next-line no-restricted-globals
-            if (!isNaN(newValue.valueOf())) {
-              onChange(new Date(event.target.value))
-            }
-          }}
-          onFocus={(): void => setCalendarVisible(true)}
-          disabled={disabled}
-        />
-        <Button
-          variant="primary"
-          type="button"
-          size="icon"
-          disabled={disabled}
-          onClick={() => setCalendarVisible(!isCalendarVisible)}
-        >
-          <Icon icon="Calendar" />
-        </Button>
-        {isCalendarVisible && (
-          <DatePickerWrapper>
-            <ReactDatePicker
-              selected={date}
-              onChange={onDateChange}
-              inline
-              showTimeInput={propertyType === 'datetime'}
-              {...other}
-            />
-          </DatePickerWrapper>
+    <StyledDatePicker className={cssClass('DatePicker')}>
+      <ReactDatePicker
+        customInput={(
+          <MaskedInput
+            pipe={dateFormatPipe}
+            mask={parsedMask}
+            keepCharPositions
+            guide
+            placeholder={placeholder}
+            disabled={disabled}
+            {...otherInputMaskProps}
+          />
         )}
-      </StyledDatePicker>
-    </>
+        selected={dateValue}
+        onChange={handleChange}
+        showTimeInput={propertyType === 'datetime'}
+        dateFormat={format}
+        disabled={disabled}
+        {...other}
+      />
+      <DatePickerIcon icon="Calendar" color="white" />
+    </StyledDatePicker>
   )
 }
 
