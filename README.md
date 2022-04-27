@@ -4,10 +4,10 @@ This package consists of all DesignSystem components from [AdminJS](https://admi
 
 It was created with the help of 2 amazing packages:
 
-- [styled-components](styled-components.com) which is a peerDependency
-- [styled-system](styled-stystem.com)
+- [styled-components](https://styled-components.com) which is a peerDependency
+- [styled-system](https://styled-system.com)
 
-make sure to check them out to use the full potential of this design system.
+Make sure to check them out to use the full potential of this design system.
 
 ## Installation
 
@@ -17,13 +17,13 @@ yarn add styled-components @adminjs/design-system
 
 Optionally, if you use typescript, you might want to install types for `styled-components`
 
-```
+```sh
 yarn add --dev @types/styled-components
 ```
 
 Design System needs a `theme` so in order to use it you have to use `ThemeProvider` from `styled-components` like this:
 
-```
+```js
 import { ThemeProvider } from 'styled-components'
 
 // theme is the default theme, which you can alter
@@ -49,7 +49,7 @@ Design System provides you with the default [theme](https://adminjs.co/Theme.htm
 
 But nothing stands in a way for you to change the default theme. In order to do that you can use `combineStyles` method:
 
-```
+```js
 import { combineStyles } from '@adminjs/design-system`
 
 const myTheme = combineStyles({
@@ -67,7 +67,7 @@ const myTheme = combineStyles({
 
 Sometimes you might want to change the look and feel of a particular component - not the entire theme. You can achieve that with `styled` method:
 
-```
+```js
 import { Button } from '@adminjs/design-system'
 import styled from 'styled-components'
 
@@ -78,7 +78,7 @@ const MyRoundedButton = styled(Button)`
 
 and then you can use it like a normal button component:
 
-```
+```html
 <MyRoundedButton variant="primary">Rounded I am</MyRoundedButton>
 ```
 
@@ -97,7 +97,7 @@ This npm package comes with the bundled versions as well. You can find them unde
 
 In order to use them you will have to host them (put to your 'public' folder) and then put them into the HEAD of your page:
 
-```
+```html
 <head>
 <!-- ... -->
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -115,7 +115,7 @@ If you find any UI errors - feel free to create a PR.
 
 Inside the repo there is a storybook folder containing all the stories. In order to run it go inside and:
 
-```
+```sh
 cd storybook
 yarn install
 yarn storybook
