@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 
 import Icon from '../../atoms/icon'
 import {
@@ -10,7 +10,21 @@ import { ButtonInGroupProps } from './button-group.types'
 
 export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => {
   const { variant, onClick, href, icon, label, buttons, source, ...rest } = props
-  const onClickHandler = onClick ? (event) => onClick(event, source) : undefined
+  const [loading, setLoading] = useState(false)
+
+  const onClickHandler = onClick
+    ? async (event) => {
+      setLoading(true)
+      await onClick(event, source)
+      setLoading(false)
+    }
+    : undefined
+
+  const iconName = useMemo(() => {
+    if (loading) return 'Fade'
+
+    return icon ?? ''
+  }, [loading])
 
   return (
     <DropDownItem
@@ -27,7 +41,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
         {buttons && buttons.length ? (
           <Icon icon="CaretLeft" ml="-24px" mr="0" />
         ) : ''}
-        {icon ? <Icon icon={icon} /> : ''}
+        {!loading && !icon ? '' : <Icon key={iconName.toString()} icon={iconName} spin={loading} />}
         {label}
       </StyledDropDownItemAction>
       {buttons && buttons.length ? (

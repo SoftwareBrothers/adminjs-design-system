@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Box from '../../atoms/box'
+import Box from '../../atoms/box/box'
 import { InputCSS, InputProps } from '../../atoms/input'
 import { Text, TextProps } from '../../atoms/text'
 import { cssClass, themeGet } from '../../utils'
@@ -27,7 +27,7 @@ EditorWrapper.defaultProps = {
   className: cssClass('EditorWrapper'),
 }
 
-export const MenuBarWrapper = styled(Box)`
+export const MenuBarWrapper: any = styled(Box)`
   border: 1px solid ${themeGet('colors', 'inputBorder')};
   border-bottom: none;
 

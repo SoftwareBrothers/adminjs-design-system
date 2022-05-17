@@ -23,7 +23,7 @@ export type ButtonInGroupProps = ButtonProps & {
   /**
    * On click handler invoked when button has been clicked.
    */
-  onClick?: (event, source: any) => void;
+  onClick?: (event, source: any) => any | Promise<any>;
   /**
    * Array of nested buttons.
    */
