@@ -27,7 +27,7 @@ EditorWrapper.defaultProps = {
   className: cssClass('EditorWrapper'),
 }
 
-export const MenuBarWrapper = styled(Box)`
+export const MenuBarWrapper: any = styled(Box)`
   border: 1px solid ${themeGet('colors', 'inputBorder')};
   border-bottom: none;
 

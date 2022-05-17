@@ -55,6 +55,9 @@ export default {
       'prop-types': 'PropTypes',
       'react-router': 'ReactRouter',
       'react-router-dom': 'ReactRouterDOM',
+      'react-select': 'ReactSelect',
+      'react-select/async': 'ReactSelectAsync',
+      'react-select/creatable': 'ReactSelectCreatable',
     },
   },
 }

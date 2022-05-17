@@ -10,7 +10,7 @@ jobs:
       - name: Setup
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: '16.x'
       - uses: actions/cache@v1
         id: yarn-cache
         with:
@@ -28,7 +28,7 @@ jobs:
       - name: Bundle
         run: yarn bundle
       - name: Bundle minified
-        run: NODE_ENV=production yarn bundle
+        run: NODE_OPTIONS="--max_old_space_size=4096" NODE_ENV=production yarn bundle
       - name: Release
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

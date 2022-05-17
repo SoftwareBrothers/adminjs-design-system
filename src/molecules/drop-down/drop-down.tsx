@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { BoxProps } from '../..'
+import { BoxProps } from '../../atoms/box'
 
 const StyledDropDown = styled.div`
   position: relative;

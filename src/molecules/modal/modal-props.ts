@@ -1,4 +1,5 @@
-import { ButtonProps, VariantType } from '../..'
+import { ButtonProps } from '../../atoms/button'
+import { VariantType } from '../../theme'
 
 /**
  * Props passed to Modal Component
@@ -18,16 +19,16 @@ export type ModalProps = {
   /**
    * color variant
    */
-  variant?: VariantType;
+  variant?: VariantType
 
   /** Modal footer buttons */
-  buttons?: Array<ButtonProps>;
+  buttons?: Array<ButtonProps>
 
   /** Label which is seen above the text */
-  label?: string,
+  label?: string
 
   /** Icon near the label */
-  icon?: string,
+  icon?: string
 
   /** Handler function triggered when overlay is clicked */
   onOverlayClick?: () => any

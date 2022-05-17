@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-
+import Box from '../../atoms/box'
 import { themeGet } from '../../utils'
-import { Box } from '../..'
 
 const StyledNavigation = styled(Box)`
   ul ul > li {
@@ -12,7 +11,4 @@ const StyledNavigation = styled(Box)`
   }
 `
 
-export {
-  StyledNavigation,
-  StyledNavigation as default,
-}
+export { StyledNavigation, StyledNavigation as default }

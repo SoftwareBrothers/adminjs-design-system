@@ -1,6 +1,9 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Box, Icon, Link, Text } from '../..'
+import Box from '../../atoms/box'
+import Icon from '../../atoms/icon'
+import Link from '../../atoms/link'
+import Text from '../../atoms/text'
 import { themeGet } from '../../utils'
 
 const StyledWrapper = styled(Box)`

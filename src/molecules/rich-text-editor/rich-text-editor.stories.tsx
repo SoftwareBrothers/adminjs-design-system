@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { withKnobs, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
+import React, { useEffect, useRef, useState } from 'react'
+import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { RichTextEditor } from './rich-text-editor'
 import StoryWrapper from '../../utils/story-wrapper'
