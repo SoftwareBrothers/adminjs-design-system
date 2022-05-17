@@ -1,10 +1,9 @@
-import styled from 'styled-components'
 import { getValueAndUnit } from 'polished'
+import styled from 'styled-components'
 import { variant as styledVariant } from 'styled-system'
-
-import { Box } from '../..'
-import themeGet from '../../utils/theme-get'
+import { Box } from '../../atoms/box'
 import { VariantType } from '../../theme'
+import themeGet from '../../utils/theme-get'
 
 const DEFAULT_WIDTH = 540
 const VARIANT_BORDER_WIDTH = 8
@@ -56,7 +55,4 @@ ModalStyled.defaultProps = {
   width: [1, DEFAULT_WIDTH],
 }
 
-export {
-  ModalStyled,
-  ModalStyled as default,
-}
+export { ModalStyled, ModalStyled as default }

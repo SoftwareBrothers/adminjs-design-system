@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Box, { BoxProps } from '../../atoms/box/box'
+import Box, { BoxProps } from '../../atoms/box'
 import { DEFAULT_STICK, DropDownStickProp } from './drop-down'
 import { cssClass } from '../../utils'
 

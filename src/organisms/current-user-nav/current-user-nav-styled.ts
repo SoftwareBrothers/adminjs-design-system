@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { cssClass, themeGet } from '../../utils'
-import { Box } from '../../index'
+import { Box } from '../../atoms/box'
 
 const StyledCurrentUserNav = styled(Box)`
   text-align: right;

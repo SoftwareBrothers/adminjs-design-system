@@ -1,22 +1,16 @@
 import styled from 'styled-components'
-import { NavigationElementProps } from './navigation-element-props'
-
-import { Title, Box } from '../..'
+import Box from '../../atoms/box'
+import { Title } from '../../atoms/typography'
 import { themeGet } from '../../utils'
+import { NavigationElementProps } from './navigation-element-props'
 
 export type StyledNavigationElementProps = Pick<NavigationElementProps, 'isSelected' | 'isOpen'>
 
-export const getBg = (props: StyledNavigationElementProps): string => (
-  props.isOpen
-    ? themeGet('colors', 'grey20')(props)
-    : 'transparent'
-)
+export const getBg = (props: StyledNavigationElementProps): string => (props.isOpen ? themeGet('colors', 'grey20')(props) : 'transparent')
 
-export const getSelectedColor = (props: StyledNavigationElementProps): string => themeGet('colors',
-  props.isSelected ? 'primary100' : 'grey80')(props)
+export const getSelectedColor = (props: StyledNavigationElementProps): string => themeGet('colors', props.isSelected ? 'primary100' : 'grey80')(props)
 
-export const getHoverColor = (props: StyledNavigationElementProps): string => themeGet('colors',
-  props.isOpen ? 'grey80' : 'primary100')(props)
+export const getHoverColor = (props: StyledNavigationElementProps): string => themeGet('colors', props.isOpen ? 'grey80' : 'primary100')(props)
 
 export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>`
   background-color: ${getBg};

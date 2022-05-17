@@ -1,15 +1,13 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { DefaultTheme } from 'styled-components'
-
+import { Props } from 'react-select'
 import focusShadowStyle from './focus-shadow.style'
 
-const selectStyles = (theme: DefaultTheme) => ({
+const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
   control: (provided, state) => ({
     ...provided,
     borderRadius: '0px',
     borderWidth: '1px',
-    background: theme.colors.white,
+    background: 'transparent',
     color: theme.colors.grey80,
     '&:hover': {
       borderColor: theme.colors.grey60,
@@ -23,12 +21,14 @@ const selectStyles = (theme: DefaultTheme) => ({
     borderColor: theme.colors.grey20,
     background: theme.colors.white,
   }),
-  input: () => ({
+  input: (provided) => ({
+    ...provided,
     color: theme.colors.grey80,
-    background: theme.colors.white,
+    background: 'transparent',
     border: 'none',
   }),
-  singleValue: () => ({
+  singleValue: (provided) => ({
+    ...provided,
     color: theme.colors.grey80,
   }),
   option: (provided, state) => {
@@ -39,14 +39,12 @@ const selectStyles = (theme: DefaultTheme) => ({
     return {
       ...provided,
       color,
-      background: state.isFocused
-        ? theme.colors.primary100
-        : 'transparent',
+      background: state.isFocused ? theme.colors.primary100 : 'transparent',
     }
   },
 })
 
-const filterStyles = (theme: DefaultTheme) => ({
+const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
   control: (provided, state) => ({
     ...provided,
     border: state.isFocused
@@ -66,7 +64,7 @@ const filterStyles = (theme: DefaultTheme) => ({
   option: (provided, state) => ({
     ...provided,
     color: state.isSelected ? theme.colors.white : theme.colors.grey20,
-    background: state.isFocused ? 'rgba(32,39,62,0.25)' : 'transparent',
+    background: state.isFocused ? theme.colors.primary20 : 'transparent',
   }),
   menu: (provided) => ({
     ...provided,
