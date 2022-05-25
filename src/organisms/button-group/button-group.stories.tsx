@@ -1,26 +1,16 @@
 import React from 'react'
-import { withKnobs, select, object } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { ButtonGroup, Box } from '../..'
 import { CardTitle } from '../../atoms/typography'
 import Label from '../../atoms/label'
 
-export default {
-  title: 'DesignSystem/Organisms/ButtonGroup',
-  decorators: [withKnobs],
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
-}
-export const Default: React.FC = ({ onClick }) => {
-  const size = select('Size variant', ['sm', 'default', 'lg'], 'default')
-
+export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
   const handleClick = (event, source) => {
     event.preventDefault()
     onClick(event, source)
   }
 
-  const buttons = object('objects', [{
+  const buttons = [{
     label: 'Edit',
     onClick: handleClick,
     icon: 'Edit',
@@ -75,26 +65,35 @@ export const Default: React.FC = ({ onClick }) => {
       variant: 'danger',
       icon: 'TrashCan',
     }],
-  }])
+  }]
 
   return (
     <Box variant="grey">
-      <Label>ButtonGroup default settings</Label>
+      <Label>ButtonGroup</Label>
       <Box variant="card" mb="xxl">
         <CardTitle>Big buttons</CardTitle>
         <ButtonGroup
-          buttons={buttons}
+          buttons={buttons as any}
           size={size}
-        />
-      </Box>
-      <Box variant="card">
-        <CardTitle>Small buttons</CardTitle>
-        <ButtonGroup
-          buttons={buttons}
-          size="sm"
-          rounded
+          rounded={rounded}
         />
       </Box>
     </Box>
   )
+}
+
+export default {
+  title: 'DesignSystem/Organisms/ButtonGroup',
+  argTypes: {
+    onClick: { action: 'clicked' },
+    size: {
+      defaultValue: 'default',
+      options: ['sm', 'default', 'lg'],
+      control: { type: 'select' },
+    },
+    rounded: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+  },
 }

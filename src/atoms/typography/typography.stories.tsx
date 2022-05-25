@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { withKnobs, select } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { Box, Text } from '../..'
 import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './index'
 import { Button } from '../button'
 import StoryWrapper from '../../utils/story-wrapper'
-
-export default { title: 'DesignSystem/Atoms/Typography', decorators: [withKnobs] }
 
 const BoxWithPaddings = styled(Box)`
   background: rgba(66,104,246,.3);
@@ -40,25 +37,18 @@ export const Headers: React.FC = () => (
   </StoryWrapper>
 )
 
-const TextStory: React.FC = () => {
-  const variant = select('Variant', {
-    'Extra Small [xs]': 'xs',
-    'Small [sm]': 'sm',
-    'Large [lg]': 'lg',
-  }, 'lg')
-  return (
-    <StoryWrapper label="Example Text container">
-      <Text variant={variant}>
-        Text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Est enim effectrix
-        multarum et magnarum voluptatum. Omnia contraria, quos etiam insanos esse vultis. Quid,
-        de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Duo Reges:
-        constructio interrete. Sed in rebus apertissimis nimium longi sumus.
-        <Button as="a">Button inside the text</Button>
-      </Text>
-    </StoryWrapper>
-  )
-}
+const TextStory: React.FC = (props) => (
+  <StoryWrapper label="Example Text container">
+    <Text {...props}>
+      Text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Est enim effectrix
+      multarum et magnarum voluptatum. Omnia contraria, quos etiam insanos esse vultis. Quid,
+      de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Duo Reges:
+      constructio interrete. Sed in rebus apertissimis nimium longi sumus.
+      <Button as="a">Button inside the text</Button>
+    </Text>
+  </StoryWrapper>
+)
 
 export const ContentStory: React.FC = () => (
   <StoryWrapper label="Example styled content inside Text component">
@@ -246,3 +236,14 @@ export const Captions: React.FC = () => (
     <Text variant="sm" mb={5}>Roboto 10 - line height - 12</Text>
   </StoryWrapper>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Typography',
+  argTypes: {
+    variant: {
+      defaultValue: 'lg',
+      options: ['xs', 'sm', 'lg'],
+      control: { type: 'select' },
+    },
+  },
+}

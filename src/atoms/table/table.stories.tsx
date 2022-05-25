@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
 import {
   Table,
@@ -19,13 +18,12 @@ import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
   title: 'DesignSystem/Atoms/Table',
-  decorators: [withKnobs],
   argTypes: {
     onClick: { action: 'clicked' },
   },
 }
 
-export const Default: React.FC = ({ onClick }) => {
+export const Default: React.FC<any> = ({ onClick }) => {
   const handleClick = (event) => {
     event.preventDefault()
     onClick(event)

@@ -1,12 +1,10 @@
 import React from 'react'
-import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { Section, Box, Button, Icon, Text, CardTitle } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
   title: 'DesignSystem/Atoms/Section',
-  decorators: [withKnobs],
   argTypes: {
     onClick: { action: 'clicked' },
   },

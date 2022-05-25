@@ -1,9 +1,6 @@
 import React from 'react'
-import { withKnobs, select, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs'
 import StoryWrapper from '../../utils/story-wrapper'
 import { Badge, Box, Label, Header, Text as TextComponent } from '../..'
-
-export default { title: 'DesignSystem/Atoms/Badge', decorators: [withKnobs] }
 
 enum BadgeVariant {
   Primary = 'primary',
@@ -20,22 +17,13 @@ enum BadgeSize {
   Large = 'lg',
 }
 
-export const Default: React.FC = () => {
-  const variant = select('Variant', Object.values(BadgeVariant), BadgeVariant.Primary)
-  const size = select('Size', Object.values(BadgeSize), BadgeSize.Default)
-  const outline = boolean('Outline', false)
-  return (
-    <StoryWrapper label="Badge props">
-      <Badge
-        variant={variant}
-        size={size}
-        outline={outline}
-      >
-        Badge example
-      </Badge>
-    </StoryWrapper>
-  )
-}
+export const Default: React.FC = (props) => (
+  <StoryWrapper label="Badge props">
+    <Badge {...props}>
+      Badge example
+    </Badge>
+  </StoryWrapper>
+)
 
 export const Examples: React.FC = () => (
   <Box width={1}>
@@ -80,3 +68,23 @@ export const Examples: React.FC = () => (
     </StoryWrapper>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Badge',
+  argTypes: {
+    variant: {
+      defaultValue: BadgeVariant.Primary,
+      options: Object.values(BadgeVariant),
+      control: { type: 'select' },
+    },
+    size: {
+      defaultValue: BadgeSize.Default,
+      options: Object.values(BadgeSize),
+      control: { type: 'select' },
+    },
+    outline: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+  },
+}

@@ -1,28 +1,15 @@
 import React from 'react'
-import { withKnobs, text, object } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { CurrentUserNav, Box } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
-export default {
-  title: 'DesignSystem/Organisms/CurrentUserNav',
-  decorators: [withKnobs],
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
-}
-
-export const Default: React.FC = ({ onClick }) => {
-  const name = text('name', 'Wojtek Krysiak')
-  const title = text('title', 'Master admin')
-  const avatar = text('avatar', 'https://api.adorable.io/avatars/285/abott@adorable.png')
-
+export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
   const handleClick = (event) => {
     event.preventDefault()
     onClick(event)
   }
 
-  const dropActions = object('dropActions', [{
+  const dropActions = [{
     label: 'My Profile',
     onClick: handleClick,
     icon: 'User',
@@ -30,9 +17,9 @@ export const Default: React.FC = ({ onClick }) => {
     label: 'log out',
     onClick: handleClick,
     icon: 'Logout',
-  }])
+  }]
 
-  const lineActions = object('lineActions', [{
+  const lineActions = [{
     label: 'Notification',
     onClick: handleClick,
     icon: 'NotificationNew',
@@ -40,7 +27,7 @@ export const Default: React.FC = ({ onClick }) => {
     label: 'Settings',
     onClick: handleClick,
     icon: 'Settings',
-  }])
+  }]
 
   return (
     <StoryWrapper label="Current user navigation">
@@ -55,4 +42,23 @@ export const Default: React.FC = ({ onClick }) => {
       </Box>
     </StoryWrapper>
   )
+}
+
+export default {
+  title: 'DesignSystem/Organisms/CurrentUserNav',
+  argTypes: {
+    onClick: { action: 'clicked' },
+    name: {
+      defaultValue: 'Wojtek Krysiak',
+      control: { type: 'text' },
+    },
+    title: {
+      defaultValue: 'Admin',
+      control: { type: 'text' },
+    },
+    avatar: {
+      defaultValue: 'https://api.adorable.io/avatars/285/abott@adorable.png',
+      control: { type: 'text' },
+    },
+  },
 }

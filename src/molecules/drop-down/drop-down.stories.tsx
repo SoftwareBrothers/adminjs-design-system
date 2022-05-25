@@ -10,19 +10,21 @@ import {
   Button,
   Icon,
 } from '../..'
-import { withKnobs, radios } from '../../../storybook/node_modules/@storybook/addon-knobs'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export default {
   title: 'DesignSystem/Molecules/DropDown',
-  decorators: [withKnobs],
   argTypes: {
     onClick: { action: 'clicked' },
+    stick: {
+      defaultValue: 'left',
+      options: ['left', 'right'],
+      control: { type: 'select' },
+    },
   },
 }
 
-export const Default: React.FC = ({ onClick }) => {
-  const stick = radios('stick', ['left', 'right'] as any, 'left')
+export const Default: React.FC<any> = ({ onClick, ...props }) => {
   const handleClick = (event) => {
     event.preventDefault()
     onClick(event)
@@ -30,7 +32,7 @@ export const Default: React.FC = ({ onClick }) => {
 
   return (
     <StoryWrapper label="Button trigger with nested DropDownItems">
-      <DropDown stick={stick}>
+      <DropDown {...props}>
         <DropDownTrigger>
           <Button>Get your cursor here!</Button>
         </DropDownTrigger>
@@ -55,7 +57,7 @@ export const Default: React.FC = ({ onClick }) => {
   )
 }
 
-export const Custom: React.FC = ({ onClick }) => {
+export const Custom: React.FC<any> = ({ onClick }) => {
   const handleClick = (event) => {
     event.preventDefault()
     onClick(event)
