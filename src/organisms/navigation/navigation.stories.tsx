@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { Navigation, Box, Label } from '../..'
-import { withKnobs, text } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
-import { NavigationProps } from './navigation'
+import { NavigationProps } from './navigation-props'
 
 export default {
   title: 'DesignSystem/Organisms/Navigation',
-  decorators: [withKnobs],
   argTypes: {
     onClick: { action: 'clicked' },
+    label: {
+      defaultValue: 'Navigation',
+      control: { type: 'text' },
+    },
   },
 }
 
-export const Default: React.FC = ({ onClick }) => {
-  const label = text('label', 'Navigation')
-
+export const Default: React.FC<any> = ({ onClick, label }) => {
   const [postgresOpen, setPostgresOpen] = useState(false)
   const [mongooseOpen, setMongooseOpen] = useState(false)
 

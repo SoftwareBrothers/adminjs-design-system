@@ -1,40 +1,19 @@
 import React from 'react'
-import { withKnobs, boolean, number, select } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 import { FormGroup, Text, Input, Label, Button, Box } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
-export default { title: 'DesignSystem/Atoms/Input', decorators: [withKnobs] }
-
 const inputTypes = ['email', 'file', 'hidden', 'month', 'number', 'tel', 'text', 'time', 'url', 'week']
 
-export const Default: React.FC = () => {
-  const borderless = boolean('borderless', false)
-  const disabled = boolean('disabled', false)
-  const variant = select('variant', ['sm', 'lg', 'xl', 'default'], 'default')
-  const type = select('type', inputTypes, 'text')
-  const width = number('width', 1 / 2, {
-    min: 0,
-    max: 1,
-    step: 0.1,
-  })
-
-  return (
-    <Box width={1}>
-      <StoryWrapper label="Knobs example">
-        <FormGroup>
-          <Input
-            width={width}
-            type={type}
-            variant={variant}
-            borderless={borderless}
-            disabled={disabled}
-          />
-          <Button type="submit">Submit</Button>
-        </FormGroup>
-      </StoryWrapper>
-    </Box>
-  )
-}
+export const Default: React.FC = (props) => (
+  <Box width={1}>
+    <StoryWrapper label="Knobs example">
+      <FormGroup>
+        <Input {...props} />
+        <Button type="submit">Submit</Button>
+      </FormGroup>
+    </StoryWrapper>
+  </Box>
+)
 
 export const Examples: React.FC = () => (
   <Box width={1}>
@@ -70,3 +49,36 @@ export const Examples: React.FC = () => (
     </StoryWrapper>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Input',
+  argTypes: {
+    borderless: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    variant: {
+      defaultValue: 'default',
+      options: ['sm', 'lg', 'xl', 'default'],
+      control: { type: 'select' },
+    },
+    width: {
+      defaultValue: 0.5,
+      control: {
+        type: 'number',
+        min: 0,
+        max: 1,
+        step: 0.1,
+      },
+    },
+    type: {
+      defaultValue: 'text',
+      options: inputTypes,
+      control: { type: 'select' },
+    },
+  },
+}

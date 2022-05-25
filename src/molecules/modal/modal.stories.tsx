@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
-import { radios, text, withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs'
 
-import { ModalInline, Box, Label, Button, Modal, VariantValues } from '../..'
+import { ModalInline, Box, Label, Button, Modal } from '../..'
 
-export default { title: 'DesignSystem/Molecules/Modal', decorators: [withKnobs] }
+const variants = [
+  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',
+]
 
-export const Default: React.FC = () => {
+export const Default: React.FC<any> = (props) => {
+  const {
+    label,
+    icon,
+    title,
+    variant,
+    subTitle,
+  } = props
   const [isVisible, setIsVisible] = useState(false)
-  const variant = radios('Variant',
-    VariantValues.reduce((memo, el) => ({ ...memo, [el]: el }), {}),
-    'default')
-  const title = text(
-    'title',
-    'Are you sure you want to delete this car?',
-  )
-  const subTitle = text(
-    'subTitle',
-    'This item will be deleted immediately. You can’t undo this action.',
-  )
-  const label = text('label', 'Warning')
-  const icon = text('icon', 'Warning')
-
   const modalProps = {
     label,
     icon,
@@ -52,4 +46,31 @@ export const Default: React.FC = () => {
       </Box>
     </Box>
   )
+}
+
+export default {
+  title: 'DesignSystem/Molecules/Modal',
+  argTypes: {
+    variant: {
+      defaultValue: variants[0],
+      options: variants,
+      control: { type: 'select' },
+    },
+    title: {
+      defaultValue: 'Are you sure you want to delete this car?',
+      control: { type: 'text' },
+    },
+    subTitle: {
+      defaultValue: 'This item will be deleted immediately. You can’t undo this action.',
+      control: { type: 'text' },
+    },
+    icon: {
+      defaultValue: 'Warning',
+      control: { type: 'text' },
+    },
+    label: {
+      defaultValue: 'Warning',
+      control: { type: 'text' },
+    },
+  },
 }

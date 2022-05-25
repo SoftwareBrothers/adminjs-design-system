@@ -1,24 +1,30 @@
 import React from 'react'
-import { withKnobs, select, number } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 import Illustration from './illustration'
 
-export default { title: 'DesignSystem/Atoms/Illustration', decorators: [withKnobs] }
-
-const VARIANTS = ['Moon', 'Rocket', 'Astronaut', 'DocumentCheck',
+const illustrationVariants = ['Moon', 'Rocket', 'Astronaut', 'DocumentCheck',
   'DocumentSearch', 'FileSearch', 'FlagInCog', 'Folders', 'Launch', 'Planet',
   'AdminJSLogo', 'GithubLogo',
-  'SlackLogo']
+  'SlackLogo'] as const
 
-export const Default: React.FC = () => {
-  const variant = select('Available illustration variant', VARIANTS, VARIANTS[0])
-  const width = number('Optional max width restrictions', 150)
-  const height = number('Optional max height restrictions', 150)
+export const Default: React.FC = (props) => (
+  <Illustration {...(props as any)} />
+)
 
-  return (
-    <Illustration
-      variant={variant as any}
-      width={width}
-      height={height}
-    />
-  )
+export default {
+  title: 'DesignSystem/Atoms/Illustration',
+  argTypes: {
+    variant: {
+      defaultValue: illustrationVariants[0],
+      options: illustrationVariants,
+      control: { type: 'select' },
+    },
+    width: {
+      defaultValue: 150,
+      control: { type: 'number' },
+    },
+    height: {
+      defaultValue: 150,
+      control: { type: 'number' },
+    },
+  },
 }
