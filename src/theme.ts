@@ -300,7 +300,8 @@ export type VariantType = 'primary'
   | 'light'
 
 export const VariantValues: Array<VariantType> = [
-  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light']
+  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',
+]
 
 // TODO: add transitions
 

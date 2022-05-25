@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { withKnobs } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { RichTextEditor } from './rich-text-editor'
 import StoryWrapper from '../../utils/story-wrapper'
@@ -58,8 +57,6 @@ const c = sum(a, b);</pre>
 <p>text goes on...</p>
 `
 
-export default { title: 'DesignSystem/Molecules/RichTextEditor', decorators: [withKnobs] }
-
 export const Default: React.FC = () => {
   const [value, setValue] = useState(html)
   const contentRef = useRef<any>()
@@ -80,4 +77,8 @@ export const Default: React.FC = () => {
       </StoryWrapper>
     </Box>
   )
+}
+
+export default {
+  title: 'DesignSystem/Molecules/RichTextEditor',
 }

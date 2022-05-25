@@ -1,41 +1,21 @@
 import React from 'react'
-import { withKnobs, select, boolean } from '../../../storybook/node_modules/@storybook/addon-knobs/dist'
 
 import { Button, Box, Icon as IconComponent, Label, Icon } from '../../../src'
 import StoryWrapper from '../../utils/story-wrapper'
 
-export default {
-  title: 'DesignSystem/Atoms/Button',
-  decorators: [withKnobs],
-  component: Button,
-}
-
 const variants = ['primary', 'light', 'danger', 'success', 'info', 'secondary', 'text'] as const
-
 const ButtonVariant = ['primary', 'danger', 'text', 'success', 'info', 'secondary'] as const
-
 const ButtonSize = ['sm', 'lg', 'icon', 'default'] as const
 
-export const Default: React.FC = () => {
-  const variant = select('Variant', ButtonVariant, 'primary')
-  const size = select('Size', ButtonSize, 'default')
-  const rounded = boolean('Rounded', false)
-  const disabled = boolean('Disabled', false)
-  return (
-    <Box width={1}>
-      <StoryWrapper label="Knobs example">
-        <Button
-          variant={variant}
-          size={size}
-          rounded={rounded}
-          disabled={disabled}
-        >
-          Example buttton
-        </Button>
-      </StoryWrapper>
-    </Box>
-  )
-}
+export const Default: React.FC = (props) => (
+  <Box width={1}>
+    <StoryWrapper label="Knobs example">
+      <Button {...props}>
+        Example buttton
+      </Button>
+    </StoryWrapper>
+  </Box>
+)
 
 export const Examples: React.FC = () => (
   <Box width={1}>
@@ -138,3 +118,24 @@ export const Examples: React.FC = () => (
     </StoryWrapper>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Button',
+  component: Button,
+  argTypes: {
+    variant: {
+      options: ButtonVariant,
+      control: { type: 'select' },
+    },
+    size: {
+      options: ButtonSize,
+      control: { type: 'select' },
+    },
+    rounded: {
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+  },
+}

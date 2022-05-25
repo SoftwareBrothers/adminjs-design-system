@@ -14,7 +14,7 @@ export type IllustrationProps = {
     | 'DocumentCheck' | 'DocumentSearch' | 'FileSearch'
     | 'FlagInCog' | 'Folders' | 'Launch' | 'Planet'
     | 'AdminJSLogo' | 'GithubLogo'
-    | 'SlackLogo';
+    | 'SlackLogo' | string;
   /** Optional max width restrictions */
   width?: number;
   /** Optional max height restrictions */
