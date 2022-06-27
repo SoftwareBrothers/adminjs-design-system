@@ -1,13 +1,10 @@
 import { getValueAndUnit } from 'polished'
-import { DefaultTheme } from 'styled-components'
 
-type Kind = keyof DefaultTheme
-
-function themeGet<T extends Kind>(
-  kind: T,
-  value?: keyof DefaultTheme[T],
+function themeGet(
+  kind: string,
+  value?: string | number,
   offset?: number | string,
-): DefaultTheme[T][any] | DefaultTheme[T] {
+): any {
   return ({ theme }) => {
     const themeVal = value ? theme[kind][value] : theme[kind]
 
