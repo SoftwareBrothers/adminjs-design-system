@@ -33,6 +33,8 @@ module.exports = {
     'import/no-unresolved': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/require-default-props': 'off',
+    'react/display-name': 'off',
     indent: [
       'error',
       2,
