@@ -25,6 +25,7 @@ export type DropDownStickProp = 'left' | 'right'
 export type DropDownProps = {
   /** Indicates if menu should stick to left or right */
   stick?: DropDownStickProp;
+  children?: React.ReactNode;
 } & BoxProps
 
 type PositionProps = {

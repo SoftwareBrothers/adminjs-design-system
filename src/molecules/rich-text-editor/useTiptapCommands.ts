@@ -8,11 +8,13 @@ interface TiptapCommand {
 }
 
 interface useTiptapCommandsProps {
-  editor: Editor
+  editor: Editor | null
 }
 
 const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   const { editor } = props
+
+  if (!editor) return []
 
   function command(name: string, callback: () => void, icon: string): TiptapCommand {
     return {
