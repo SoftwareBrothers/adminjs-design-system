@@ -36,6 +36,7 @@ export type StepProps = {
   onClick?: OnStepClickHandler;
   /** Optional className */
   className?: string;
+  children?: React.ReactNode;
 }
 
 const Circle = styled(Box)`

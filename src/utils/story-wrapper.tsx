@@ -2,7 +2,8 @@ import React from 'react'
 import { Box, Label, BoxProps } from '..'
 
 export type StoryWrapperProps = BoxProps & {
-  label: string
+  label: string;
+  children?: React.ReactNode;
 }
 
 const StoryWrapper: React.FC<StoryWrapperProps> = (props) => {

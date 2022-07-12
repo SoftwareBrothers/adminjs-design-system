@@ -1,5 +1,6 @@
 import { Editor } from '@tiptap/react'
 import React, { FC, useEffect, useRef, useState } from 'react'
+
 import MenuButton from './menu-button'
 
 interface ImageButtonProps {

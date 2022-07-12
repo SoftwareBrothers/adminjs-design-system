@@ -53,6 +53,7 @@ export type NavGroupProps = {
   title: string;
   /** Optional icon */
   icon?: string;
+  children?: React.ReactNode;
 }
 
 /**

@@ -38,4 +38,5 @@ export type ModalProps = {
    * If it is given - close button will appear.
    */
   onClose?: () => any
+  children?: React.ReactNode
 }

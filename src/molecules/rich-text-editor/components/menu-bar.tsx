@@ -13,9 +13,9 @@ interface MenuBarProps {
 }
 
 const MenuBar: FC<MenuBarProps> = ({ editor }) => {
-  if (!editor) return null
-
   const commands = useTiptapCommands({ editor })
+
+  if (!editor) return null
 
   return (
     <MenuBarWrapper>
