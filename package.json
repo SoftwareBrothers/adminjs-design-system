@@ -88,7 +88,7 @@
     "jw-paginate": "^1.0.4",
     "lodash": "^4.17.20",
     "polished": "^3.6.5",
-    "react-currency-input-field": "https://github.com/dziraf/react-currency-input-field.git",
+    "react-currency-input-field": "https://github.com/dziraf/react-currency-input-field",
     "react-datepicker": "^4.8.0",
     "react-phone-input-2": "^2.15.1",
     "react-select": "^5.2.2",
