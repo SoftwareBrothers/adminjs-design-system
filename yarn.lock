@@ -6157,9 +6157,10 @@ rc@1.2.8, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-"react-currency-input-field@https://github.com/dziraf/react-currency-input-field.git":
-  version "3.6.4"
-  resolved "git+ssh://git@github.com/dziraf/react-currency-input-field.git#6ee883672ecee131b1503d48319a50aa64fdcd26"
+react-currency-input-field@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/react-currency-input-field/-/react-currency-input-field-3.6.5.tgz#67ed7005a2f1402cb70a23050f6b997e6d1452b6"
+  integrity sha512-tP62WFAhkVv0RGOQVGEPE3MfgciQ4gkiASlmLBDu6tdfMC3jFhIkLU1uqUy3glUvRHyT4avnX/YVVbbXKHLtnA==
 
 react-datepicker@^4.8.0:
   version "4.8.0"
