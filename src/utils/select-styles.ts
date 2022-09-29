@@ -57,6 +57,7 @@ const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
   }),
   input: () => ({
     color: theme.colors.white,
+    display: 'none'
   }),
   singleValue: () => ({
     color: theme.colors.white,
