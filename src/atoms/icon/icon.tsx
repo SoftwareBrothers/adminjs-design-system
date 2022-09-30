@@ -128,11 +128,14 @@ const Wrapper = styled.span<IconProps>`
 const Icon: React.FC<IconProps> = (props) => {
   const { icon, size, color: givenColor, ...other } = props
   const iconSize = size || 16
-  const CarbonIcon = CarbonIcons[`${icon}${iconSize}`] || CarbonIcons.ErrorOutline16
+
+  if (!icon) return null
+
+  const CarbonIcon = CarbonIcons[icon] || CarbonIcons.ErrorOutline
 
   if (CarbonIcon) {
     return (
-      <Wrapper className={cssClass('Icon')} color={givenColor || 'grey100'} {...other}><CarbonIcon /></Wrapper>
+      <Wrapper className={cssClass('Icon')} color={givenColor || 'grey100'} {...other}><CarbonIcon size={iconSize} /></Wrapper>
     )
   }
   return null
