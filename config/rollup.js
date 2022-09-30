@@ -39,7 +39,6 @@ export default {
   external: [
     'react',
     'styled-components',
-    'prop-types',
     'react-dom',
     'react-router',
     'react-router-dom',
@@ -53,7 +52,6 @@ export default {
       react: 'React',
       'styled-components': 'styled',
       'react-dom': 'ReactDOM',
-      'prop-types': 'PropTypes',
       'react-router': 'ReactRouter',
       'react-router-dom': 'ReactRouterDOM',
       'react-select': 'ReactSelect',
