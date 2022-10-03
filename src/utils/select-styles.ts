@@ -57,9 +57,12 @@ const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
   }),
   input: () => ({
     color: theme.colors.white,
+    gridArea: '1/1/2/3',
+    gridTemplateColumns: '0px min-content',
   }),
   singleValue: () => ({
     color: theme.colors.white,
+    gridArea: '1/1/2/3',
   }),
   option: (provided, state) => ({
     ...provided,
