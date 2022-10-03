@@ -59,15 +59,9 @@ const PaginationWrapper = styled(Box)`
     width: 56px;
     border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
   }
-  & > :nth-child(2) {
-    padding-left: 16px;
-  }
   & > :last-child {
     width: 56px;
     border-left: 1px solid ${({ theme }): string => theme.colors.grey20};
-  }
-  & > :nth-last-child(2) {
-    padding-right: 16px;
   }
 `
 
@@ -121,6 +115,19 @@ const Pagination: React.FC<PaginationProps> = (props) => {
 
   return (
     <PaginationWrapper className={cssClass('Pagination')} {...rest}>
+      {
+        total >= 3
+          ? (
+            <PaginationLink
+              data-testid="first"
+              disabled={isFirstPage}
+              onClick={(): void => (!isFirstPage ? onChange(1) : undefined)}
+            >
+              <Icon icon="PageFirst" />
+            </PaginationLink>
+          )
+          : null
+      }
       <PaginationLink
         data-testid="previous"
         disabled={isFirstPage}
@@ -146,6 +153,20 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       >
         <Icon icon="ChevronRight" />
       </PaginationLink>
+      {
+        total >= 3
+          ? (
+            <PaginationLink
+              data-testid="last"
+              onClick={(): void => (!isLastPage ? onChange(paginate.endPage) : undefined)}
+              disabled={isLastPage}
+            >
+              <Icon icon="PageLast" />
+            </PaginationLink>
+          )
+          : null
+      }
+
     </PaginationWrapper>
   )
 }
