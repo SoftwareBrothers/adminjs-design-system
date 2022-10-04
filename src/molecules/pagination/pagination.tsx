@@ -7,6 +7,9 @@ import { Button, ButtonProps } from '../../atoms/button'
 import { Icon } from '../../atoms/icon'
 import { cssClass } from '../../utils/css-class'
 
+const MIN_PAGES_FOR_FIRST_PAGE_BUTTON = 3
+const FIRST_PAGE = 1
+
 /**
  * @alias PaginationProps
  * @memberof Pagination
@@ -59,15 +62,9 @@ const PaginationWrapper = styled(Box)`
     width: 56px;
     border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
   }
-  & > :nth-child(2) {
-    padding-left: 16px;
-  }
   & > :last-child {
     width: 56px;
     border-left: 1px solid ${({ theme }): string => theme.colors.grey20};
-  }
-  & > :nth-last-child(2) {
-    padding-right: 16px;
   }
 `
 
@@ -106,7 +103,7 @@ const PaginationWrapper = styled(Box)`
  */
 const Pagination: React.FC<PaginationProps> = (props) => {
   const { total, page, perPage, onChange, ...rest } = props
-  const currentPage = page || 1
+  const currentPage = page || FIRST_PAGE
   const paginate = JWPaginate(total, currentPage, perPage)
 
   const isFirstPage = currentPage === paginate.startPage
@@ -115,16 +112,29 @@ const Pagination: React.FC<PaginationProps> = (props) => {
   const prevPage = isFirstPage ? currentPage : currentPage - 1
   const nextPage = isLastPage ? currentPage : currentPage + 1
 
-  if (paginate.totalPages === 1 || total === 0) {
+  if (paginate.totalPages === FIRST_PAGE || total === 0) {
     return null
   }
 
   return (
     <PaginationWrapper className={cssClass('Pagination')} {...rest}>
+      {
+        total >= MIN_PAGES_FOR_FIRST_PAGE_BUTTON
+          ? (
+            <PaginationLink
+              data-testid="first"
+              disabled={isFirstPage}
+              onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
+            >
+              <Icon icon="PageFirst" />
+            </PaginationLink>
+          )
+          : null
+      }
       <PaginationLink
         data-testid="previous"
         disabled={isFirstPage}
-        onClick={(): void => (!isFirstPage ? onChange(prevPage) : undefined)}
+        onClick={() => (!isFirstPage ? onChange(prevPage) : undefined)}
       >
         <Icon icon="ChevronLeft" />
       </PaginationLink>
@@ -141,11 +151,25 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       ))}
       <PaginationLink
         data-testid="next"
-        onClick={(): void => (!isLastPage ? onChange(nextPage) : undefined)}
+        onClick={() => (!isLastPage ? onChange(nextPage) : undefined)}
         disabled={isLastPage}
       >
         <Icon icon="ChevronRight" />
       </PaginationLink>
+      {
+        total >= MIN_PAGES_FOR_FIRST_PAGE_BUTTON
+          ? (
+            <PaginationLink
+              data-testid="last"
+              onClick={() => (!isLastPage ? onChange(paginate.endPage) : undefined)}
+              disabled={isLastPage}
+            >
+              <Icon icon="PageLast" />
+            </PaginationLink>
+          )
+          : null
+      }
+
     </PaginationWrapper>
   )
 }
