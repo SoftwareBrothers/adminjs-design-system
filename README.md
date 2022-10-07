@@ -84,7 +84,7 @@ and then you can use it like a normal button component:
 
 ## Components
 
-For the list off all the components and their documentation go to [adminjs.co](adminjs.co)
+For the list off all the components and their documentation go to [adminjs.co](https://adminjs.co)
 
 ## Bundled packages
 
