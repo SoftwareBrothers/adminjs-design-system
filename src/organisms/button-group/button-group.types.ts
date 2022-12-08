@@ -28,6 +28,10 @@ export type ButtonInGroupProps = ButtonProps & {
    * Array of nested buttons.
    */
   buttons?: Array<ButtonInGroupProps>
+  /**
+   * CSS Selector
+   */
+  'data-css'?: string;
 } & {
   className?: string
 }
