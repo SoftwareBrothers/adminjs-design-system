@@ -69,6 +69,7 @@
   "dependencies": {
     "@carbon/icons-react": "^11.8.0",
     "@hypnosphi/create-react-context": "^0.3.1",
+    "@tiptap/core": "2.0.0-beta.182",
     "@tiptap/extension-character-count": "2.0.0-beta.31",
     "@tiptap/extension-code": "2.0.0-beta.28",
     "@tiptap/extension-document": "2.0.0-beta.17",
