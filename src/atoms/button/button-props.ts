@@ -1,4 +1,4 @@
-import { SpaceProps, TypographyProps } from 'styled-system'
+import { FlexboxProps, SpaceProps, TypographyProps } from 'styled-system'
 import { VariantType } from '../../theme'
 
 import { ColorProps } from '../../utils/color-props'
@@ -10,7 +10,7 @@ import { ColorProps } from '../../utils/color-props'
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
  */
-export type ButtonProps = ColorProps & SpaceProps & TypographyProps & {
+export type ButtonProps = ColorProps & SpaceProps & TypographyProps & FlexboxProps & {
   /**
    * Button color variant
    */
