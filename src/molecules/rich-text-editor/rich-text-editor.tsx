@@ -1,15 +1,11 @@
 /* eslint-disable react/require-default-props */
 import CharacterCount from '@tiptap/extension-character-count'
-import Code from '@tiptap/extension-code'
-import Document from '@tiptap/extension-document'
-import Heading from '@tiptap/extension-heading'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
-import Text from '@tiptap/extension-text'
 import TextAlign from '@tiptap/extension-text-align'
 import Typography from '@tiptap/extension-typography'
 import { EditorContent, EditorEvents, EditorOptions, useEditor } from '@tiptap/react'
@@ -38,18 +34,14 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
 
   const editor = useEditor({
     extensions: [
+      StarterKit,
       CharacterCount.configure({ limit, mode: 'nodeSize' }),
-      Code,
-      Document,
-      Heading,
       Image,
       Link.configure({ openOnClick: false }),
-      StarterKit,
       Table,
       TableCell,
       TableHeader,
       TableRow,
-      Text,
       TextAlign.configure({ types: ['heading', 'paragraph', 'image'] }),
       Typography,
       ...extensions,
