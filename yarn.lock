@@ -2101,6 +2101,17 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-typography/-/extension-typography-2.0.0-beta.206.tgz#61dc34a7ab229f3f7a791e41f8d12f7ddbd8e0b5"
   integrity sha512-Sam5iXt7zdY64xW1TaF09NEoRhKn5XobmnYFHPxHw0IGr4dnKPVMcpWkuczREcsQsCLzTGc262HAOcODv+39bQ==
 
+"@tiptap/prosemirror-tables@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/prosemirror-tables/-/prosemirror-tables-1.1.3.tgz#cd812487fc103f921299a0cf899485f147b418b2"
+  integrity sha512-Pp7Iyup+kxniDGEvFHX+BRw3et9vys83NVqk6B+PbVAztq64QyX/mY+vzcpFmOsF9/th+Po981igbGUG7C/8hw==
+  dependencies:
+    prosemirror-keymap "^1.1.2"
+    prosemirror-model "^1.8.1"
+    prosemirror-state "^1.3.1"
+    prosemirror-transform "^1.2.1"
+    prosemirror-view "^1.13.3"
+
 "@tiptap/react@^2.0.0-beta.206":
   version "2.0.0-beta.206"
   resolved "https://registry.yarnpkg.com/@tiptap/react/-/react-2.0.0-beta.206.tgz#bda3882a162e662fcc047a0b129e0984597bb7e8"
