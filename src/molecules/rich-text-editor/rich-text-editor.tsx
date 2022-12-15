@@ -45,9 +45,7 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
       TableRow,
       TextAlign.configure({ types: ['heading', 'paragraph', 'image'] }),
       Typography,
-      Color.configure({
-        types: ['textStyle'],
-      }),
+      Color,
       ...extensions,
     ],
     content: value,
