@@ -1,5 +1,6 @@
 /* eslint-disable react/require-default-props */
 import CharacterCount from '@tiptap/extension-character-count'
+import { Color } from '@tiptap/extension-color'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import Table from '@tiptap/extension-table'
@@ -44,6 +45,9 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
       TableRow,
       TextAlign.configure({ types: ['heading', 'paragraph', 'image'] }),
       Typography,
+      Color.configure({
+        types: ['textStyle'],
+      }),
       ...extensions,
     ],
     content: value,
