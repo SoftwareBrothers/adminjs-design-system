@@ -144,7 +144,7 @@ const Step: React.FC<StepProps> = (props) => {
           color={active ? 'primary100' : 'grey40'}
         >
           {completed ? (
-            <Icon icon="Checkmark" color="white" />
+            <Icon icon="Check" color="white" />
           ) : number}
         </Circle>
         <Text my="sm" pl="default" py="sm" color={active || completed ? 'grey100' : 'grey40'}>

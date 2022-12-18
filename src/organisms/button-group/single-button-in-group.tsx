@@ -17,7 +17,7 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
     : undefined
 
   const iconName = useMemo(() => {
-    if (loading) return 'Fade'
+    if (loading) return 'Loader'
 
     return icon ?? ''
   }, [loading])
@@ -33,7 +33,7 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
       {label}
       {buttons && buttons.length && label ? (
         <Box as="span" mr="-8px" ml="md">
-          <Icon icon="CaretDown" />
+          <Icon icon="ChevronDown" />
         </Box>
       ) : ''}
     </StyledSingleButton>

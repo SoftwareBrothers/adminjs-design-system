@@ -34,7 +34,7 @@ const MadeWithLove: FC = () => (
     <Text as="span" variant="sm">
       Made with
     </Text>
-    <Icon icon="FavoriteFilled" color="love" />
+    <Icon icon="Heart" color="love" />
     <Text as="span" variant="sm">
       by
     </Text>

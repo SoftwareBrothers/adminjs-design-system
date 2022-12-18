@@ -11,7 +11,7 @@ const HeadingSelect: FC<HeadingSelectProps> = (props) => {
   const { editor } = props
   const headingLevels: Level[] = [1, 2, 3, 4, 5, 6]
 
-  // TODO: Replace with dropdown
+  // TODO: ICON
   return (
     <>
       {headingLevels.map((level) => {

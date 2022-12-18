@@ -120,7 +120,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  * return (
  * <Box py="xl">
  *   <Link href="#" mr="xl">
- *     <Icon icon="Add" />
+ *     <Icon icon="Plus" />
  *     With an icon
  *   </Link>
  * </Box>

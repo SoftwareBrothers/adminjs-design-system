@@ -54,7 +54,7 @@ export type InfoBoxProps = {
  * <InfoBox title="There are no cars in the system">
  *   <Text>Currently there are no cars in the system</Text>
  *   <Text>To create first click</Text>
- *   <Button mt="lg"><Icon icon="Add" />Create</Button>
+ *   <Button mt="lg"><Icon icon="Plus" />Create</Button>
  * </InfoBox>
  * )
  * @section design-system

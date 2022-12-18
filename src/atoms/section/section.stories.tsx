@@ -20,7 +20,7 @@ export const Default: React.FC = () => (
           Section can be nested
         </Text>
         <Box>
-          <Button size="sm" rounded><Icon icon="Add" />Add something</Button>
+          <Button size="sm" rounded><Icon icon="Plus" />Add something</Button>
         </Box>
       </Section>
     </Section>

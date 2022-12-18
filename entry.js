@@ -1,9 +1,9 @@
 import ReactDatepicker from 'react-datepicker'
-import * as CarbonIcons from '@carbon/icons-react'
+import * as FeatherIcons from 'react-feather'
 
 import * as AdminJSDesignSystem from './src/index'
 
 window.ReactDatepicker = window.ReactDatepicker || ReactDatepicker
-window.CarbonIcons = window.CarbonIcons || CarbonIcons
+window.FeatherIcons = window.FeatherIcons || FeatherIcons
 
 export default AdminJSDesignSystem

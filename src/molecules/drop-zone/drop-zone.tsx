@@ -291,7 +291,7 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
           mt="default"
           variant="danger"
           size="sm"
-          icon="Warning"
+          icon="AlertCircle"
           message={error.title}
           onCloseClick={(): void => setError(null)}
         >

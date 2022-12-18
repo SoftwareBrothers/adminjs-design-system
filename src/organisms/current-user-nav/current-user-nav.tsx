@@ -49,7 +49,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
             </Box>
             {avatarUrl && <img src={avatarUrl} alt={name} />}
             {dropActions && dropActions.length && (
-              <Icon icon="OverflowMenuVertical" size={16} ml="md" />
+              <Icon icon="MoreVertical" size={16} ml="md" />
             )}
           </Box>
         </DropDownTrigger>

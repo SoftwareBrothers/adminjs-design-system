@@ -45,7 +45,7 @@ export const Default: React.FC<any> = ({ onClick }) => {
         <TableCaption>
           <CardTitle as="span">Example table: </CardTitle>
           <Button variant="text" onClick={handleClick}>
-            <Icon icon="Delete" />
+            <Icon icon="Trash" />
             Remove
           </Button>
         </TableCaption>
@@ -57,7 +57,7 @@ export const Default: React.FC<any> = ({ onClick }) => {
                 <Link href="/">
                   {head}
                   {i === 0 && (
-                    <Icon icon="CaretUp" />
+                    <Icon icon="ChevronUp" />
                   )}
                 </Link>
               </TableCell>

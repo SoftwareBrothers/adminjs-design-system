@@ -126,7 +126,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
               disabled={isFirstPage}
               onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
             >
-              <Icon icon="PageFirst" />
+              <Icon icon="SkipBack" />
             </PaginationLink>
           )
           : null
@@ -164,7 +164,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
               onClick={() => (!isLastPage ? onChange(paginate.endPage) : undefined)}
               disabled={isLastPage}
             >
-              <Icon icon="PageLast" />
+              <Icon icon="SkipForward" />
             </PaginationLink>
           )
           : null

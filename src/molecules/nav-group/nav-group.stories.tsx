@@ -5,7 +5,7 @@ import { NavGroup } from './nav-group'
 export default { title: 'DesignSystem/Molecules/NavGroup' }
 
 export const Default: React.FC = () => (
-  <NavGroup title="Some group title" icon="Add">
+  <NavGroup title="Some group title" icon="Plus">
     <Text>Some group element</Text>
   </NavGroup>
 )

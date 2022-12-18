@@ -11,7 +11,7 @@ export const Default: React.FC = () => (
     <Text>Currently there are no cars in the system</Text>
     <Text>To create first click</Text>
     <Button mt="lg">
-      <Icon icon="Add" />
+      <Icon icon="Plus" />
       Create
     </Button>
   </InfoBox>

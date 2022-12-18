@@ -12,8 +12,8 @@ return (
     href="#"
     open={true}
     isSelected={false}
-    icon='Car'
-    label="Cars"
+    icon="Activity"
+    label="Activities"
     onClick={(event, props) => {console.log(event, props)}}
   />
 )
@@ -32,8 +32,8 @@ This is a working example of a NavigationElement:
     const MyComponent = () => {
     const [isSelected, setIsSelected] = React.useState(false)
     const [isOpen, setIsOpen] = React.useState(false)
-    const icon = 'Car'
-    const label = 'Cars'
+    const icon = 'Activity'
+    const label = 'Activities'
     
     const onClickHandler = (event) => {
      event.preventDefault()
@@ -47,8 +47,8 @@ This is a working example of a NavigationElement:
           href="#"
           isOpen={isOpen}
           isSelected={isSelected}
-          icon='Car'
-          label="Cars"
+          icon="Activity"
+          label="Activities"
           onClick={onClickHandler}
         />
         {isOpen ? (
@@ -56,7 +56,7 @@ This is a working example of a NavigationElement:
         ) : ''}
         <NavigationElement
           href="#"
-          icon='ShoppingCart'
+          icon="ShoppingCart"
           label="Orders"
           onClick={(event) => event.preventDefault()}
         />

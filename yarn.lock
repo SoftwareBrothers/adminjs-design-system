@@ -1125,25 +1125,6 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
 
-"@carbon/icon-helpers@^10.33.0":
-  version "10.33.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.33.0.tgz#6b9e467529c7f950fe87a6f45ae0efdcb9b55a26"
-  integrity sha512-cdax+RiemAnrATgxL5zyCsD5CV1rJAVTjORXyKxhKSu9Fw6AFJEovJLR9+QQBbPaj/QNTB4o7mJ3YD15LLlB2w==
-
-"@carbon/icons-react@^11.8.0":
-  version "11.8.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.8.0.tgz#cae7405a364b567792bd90f9f120dab28b3652cf"
-  integrity sha512-bMn/+heKO8G/OdBAcL8/93lBfVdj6uq+B+Gm4Y/MoLNFXfV8TpO5e4rQ1cgshbfoIxtj2D2tUHmFmucBnrUerg==
-  dependencies:
-    "@carbon/icon-helpers" "^10.33.0"
-    "@carbon/telemetry" "0.1.0"
-    prop-types "^15.7.2"
-
-"@carbon/telemetry@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@carbon/telemetry/-/telemetry-0.1.0.tgz"
-  integrity sha512-kNWt0bkgPwGW0i5h7HFuljbKRXPvIhsKbB+1tEURAYLXoJg9iJLF1eGvWN5iVoFCS2zje4GR3OGOsvvKVe7Hlg==
-
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"
@@ -2150,11 +2131,6 @@
   version "1.1.2"
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
-
-"@types/carbon__icons-react@^11.8.0":
-  version "11.8.0"
-  resolved "https://registry.yarnpkg.com/@types/carbon__icons-react/-/carbon__icons-react-11.8.0.tgz#3e0f210d9715d938da1340082beb4c61ffbc196a"
-  integrity sha512-afuckfgjBeUHo/5lWgalThmvkfufyKkShIW8+wbNBd+4MUtDfkSg024s1EOEESZyN/0U4JhmQtBQtJI3eqpR+A==
 
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
@@ -6295,6 +6271,13 @@ react-fast-compare@^3.0.1:
   version "3.2.0"
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
+react-feather@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.10.tgz#0e9abf05a66754f7b7bb71757ac4da7fb6be3b68"
+  integrity sha512-BLhukwJ+Z92Nmdcs+EMw6dy1Z/VLiJTzEQACDUEnWMClhYnFykJCGWQx+NmwP/qQHGX/5CzQ+TGi8ofg2+HzVQ==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

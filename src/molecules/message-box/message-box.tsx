@@ -154,7 +154,7 @@ export { Props as MessageBoxProps }
  *     message="Info message"
  *     mt="default"
  *     variant="info"
- *     icon="AddComment"
+ *     icon="MessageCircle"
  *     onCloseClick={() => alert('close clicked')}
  *   >
  *     With inside text
@@ -171,7 +171,7 @@ const MessageBox: React.FC<Props> = (props) => {
       <StyledMessageBox variant={variant} size={size}>
         {onCloseClick ? (
           <Button variant="text" size="icon" onClick={onCloseClick}>
-            <Icon icon="Close" />
+            <Icon icon="X" />
           </Button>
         ) : ''}
         <StyledCaption>

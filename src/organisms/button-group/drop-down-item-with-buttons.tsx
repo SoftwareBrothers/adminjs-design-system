@@ -21,7 +21,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
     : undefined
 
   const iconName = useMemo(() => {
-    if (loading) return 'Fade'
+    if (loading) return 'Loader'
 
     return icon ?? ''
   }, [loading])
@@ -39,7 +39,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
         {...rest}
       >
         {buttons && buttons.length ? (
-          <Icon icon="CaretLeft" ml="-24px" mr="0" />
+          <Icon icon="ChevronLeft" ml="-24px" mr="0" />
         ) : ''}
         {!loading && !icon ? '' : <Icon key={iconName.toString()} icon={iconName} spin={loading} />}
         {label}
