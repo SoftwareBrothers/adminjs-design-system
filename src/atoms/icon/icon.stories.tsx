@@ -10,7 +10,7 @@ export default {
   argTypes: {
     icon: {
       defaultValue: 'Settings',
-      description: 'CamelCased name of an icon from https://www.carbondesignsystem.com/guidelines/icons/library/',
+      description: 'CamelCased name of an icon from https://www.npmjs.com/package/react-feather',
       control: { type: 'text' },
     },
     size: {

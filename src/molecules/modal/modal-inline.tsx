@@ -30,7 +30,7 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
       {title && <H5>{title}</H5>}
       {onClose && (
         <Button className="close-button" size="icon" variant="text" onClick={onClose} rounded>
-          <Icon icon="CloseOutline" />
+          <Icon icon="XCircle" />
         </Button>
       )}
       {subTitle && <Text>{subTitle}</Text>}

@@ -24,7 +24,7 @@ export const Examples: React.FC = () => (
         <Label>Small</Label>
         <Button size="sm">Small [sm]</Button>
         <Button size="sm" ml="md">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Add brand
         </Button>
       </Box>
@@ -32,15 +32,15 @@ export const Examples: React.FC = () => (
         <Label>Default</Label>
         <Button size="md">Default</Button>
         <Button size="md" ml="md">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Add brand
         </Button>
         <Button size="md" ml="md" variant="primary">
-          <Icon icon="Car" />
-          is driving
+          <Icon icon="Activity" />
+          Primary
         </Button>
         <Button size="md" ml="md" variant="danger">
-          is driving crazy
+          Danger
           <Icon icon="ArrowRight" />
         </Button>
       </Box>
@@ -48,24 +48,24 @@ export const Examples: React.FC = () => (
         <Label>Large</Label>
         <Button size="lg">Large [lg]</Button>
         <Button size="lg" ml="md">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Add brand
         </Button>
         <Button size="lg" ml="md" variant="primary">
-          <Icon icon="Car" />
-          is driving
+          <Icon icon="Activity" />
+          Primary
         </Button>
         <Button size="lg" ml="md" variant="danger">
-          is driving crazy
+          Danger
           <Icon icon="ArrowRight" />
         </Button>
       </Box>
       <Box mb="xl">
         <Label>Icon</Label>
-        <Button size="icon"><IconComponent icon="Add" /></Button>
+        <Button size="icon"><IconComponent icon="Plus" /></Button>
         <Button ml="md">Regular inside</Button>
-        <Button size="icon" ml="md" rounded><IconComponent icon="Add" /></Button>
-        <Button size="icon" ml="md" variant="text"><IconComponent icon="Add" /></Button>
+        <Button size="icon" ml="md" rounded><IconComponent icon="Plus" /></Button>
+        <Button size="icon" ml="md" variant="text"><IconComponent icon="Plus" /></Button>
       </Box>
     </StoryWrapper>
 
@@ -82,36 +82,36 @@ export const Examples: React.FC = () => (
       <Box mb="xl">
         <Label>Small with icon</Label>
         <Button size="sm">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Small [sm]
         </Button>
         <Button size="sm" variant="primary" ml="default">
-          <Icon icon="Car" />
+          <Icon icon="Activity" />
           With other icon
         </Button>
       </Box>
       <Box mb="xl">
         <Label>Default</Label>
         <Button size="default">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Default
         </Button>
         <Button size="default" ml="md" variant="light">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Light
         </Button>
       </Box>
       <Box mb="xl">
         <Label>Large</Label>
         <Button size="lg">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Large [lg]
         </Button>
       </Box>
       <Box mb="xl">
         <Label>Large</Label>
         <Button variant="text">
-          <Icon icon="Add" />
+          <Icon icon="Plus" />
           Text with icon
         </Button>
       </Box>

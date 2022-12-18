@@ -80,11 +80,11 @@ return (
  <Button size="icon" mr="default"><Icon icon="Settings" /></Button>
  <Button rounded size="icon" mr="default"><Icon icon="Settings" /></Button>
  <Button variant="danger" mr="default">
-   <Icon icon="Delete" />
+   <Icon icon="Trash" />
    Delete me
  </Button>
  <Button mr="default" variant="text" size="sm">
-   <Icon icon="Add" />
+   <Icon icon="Plus" />
    Create new item
  </Button>
 </Box>

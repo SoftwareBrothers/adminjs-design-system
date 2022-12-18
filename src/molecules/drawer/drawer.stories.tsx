@@ -13,11 +13,11 @@ export const Default: React.FC = (props) => (
       </Header.H3>
       <Box my="x3" p={0}>
         <Button>
-          <Icon icon="Information" />
+          <Icon icon="Info" />
           Info
         </Button>
         <Button ml="lg">
-          <Icon icon="Delete" />
+          <Icon icon="Trash" />
           Delete
         </Button>
       </Box>

@@ -42,7 +42,7 @@ export const Default: React.FC<any> = ({ onClick, ...props }) => {
             Some menu item
           </DropDownItem>
           <DropDownItem onClick={handleClick}>
-            <Icon icon="Audio" />
+            <Icon icon="Headphones" />
             Other item
             <DropDownMenu>
               <DropDownItem onClick={handleClick} colorVariant="danger">

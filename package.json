@@ -38,7 +38,6 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@semantic-release/git": "^9.0.0",
-    "@types/carbon__icons-react": "^11.8.0",
     "@types/react": "^18.0.15",
     "@types/react-datepicker": "^4.4.2",
     "@types/react-text-mask": "^5.4.11",
@@ -67,7 +66,6 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@carbon/icons-react": "^11.8.0",
     "@hypnosphi/create-react-context": "^0.3.1",
     "@tiptap/core": "^2.0.0-beta.206",
     "@tiptap/extension-character-count": "^2.0.0-beta.206",
@@ -103,6 +101,7 @@
     "prosemirror-view": "^1.28.2",
     "react-currency-input-field": "^3.6.5",
     "react-datepicker": "^4.8.0",
+    "react-feather": "^2.0.10",
     "react-phone-input-2": "^2.15.1",
     "react-select": "^5.2.2",
     "react-text-mask": "^5.4.3",

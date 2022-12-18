@@ -16,7 +16,7 @@ return (
   <DropDown>
     <DropDownTrigger>
       <Button>
-        <Icon icon="OverflowMenuHorizontal" />
+        <Icon icon="MoreHorizontal" />
         This is trigger
       </Button>
     </DropDownTrigger>
@@ -56,7 +56,7 @@ return (
     <DropDown>
       <DropDownTrigger>
         <Button>
-          <Icon icon="OverflowMenuHorizontal" />
+          <Icon icon="MoreHorizontal" />
           Hover me to see dropdown
         </Button>
       </DropDownTrigger>

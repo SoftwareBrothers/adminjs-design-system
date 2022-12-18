@@ -73,11 +73,11 @@ const variants = variant({
  *       </Header.H3>
  *       <Box my="x3" p={0}>
  *         <Button size="sm">
- *           <Icon icon="Information" />
+ *           <Icon icon="Info" />
  *           Info
  *         </Button>
  *         <Button size="sm" ml="lg">
- *           <Icon icon="Delete" />
+ *           <Icon icon="Trash" />
  *           Delete
  *         </Button>
  *       </Box>

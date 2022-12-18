@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { space, SpaceProps, color } from 'styled-system'
-import * as CarbonIcons from '@carbon/icons-react'
+import * as FeatherIcons from 'react-feather'
 import { cssClass } from '../../utils/css-class'
 import { ColorProps } from '../../utils/color-props'
 
@@ -15,13 +15,13 @@ import { ColorProps } from '../../utils/color-props'
  */
 export type IconProps = SpaceProps & ColorProps & {
   /**
-   * CamelCased name of an icon from https://www.carbondesignsystem.com/guidelines/icons/library/
+   * CamelCased name of an icon from https://feathericons.com/
    */
   icon?: string;
   /**
    * Size variant. Default to 16
    */
-  size?: 16 | 20 | 24 | 32;
+  size?: number;
   /**
    * Icon color
    */
@@ -77,17 +77,16 @@ const Wrapper = styled.span<IconProps>`
  *
  * <img src="components/icon.png" />
  *
- * Component wrapping [@carbon/icons-react](https://www.npmjs.com/package/@carbon/icons-react).
- * List of all icons can be found here: https://www.carbondesignsystem.com/guidelines/icons/library/
- * but keys are not always 1 to 1 in a relation to the `icons-react` library.
+ * Component wrapping [react-feather](https://www.npmjs.com/package/react-feather).
+ * List of all icons can be found here: https://feathericons.com/
  * If you have problem verifying the key of given icon - you can always open the
  * Chrome Terminal (with AdminJS open) and write there:
  *
  * ```
- * Object.keys(CarbonIcons)
+ * Object.keys(window.FeatherIcons)
  * ```
  *
- * to see list of all possible icon keys.
+ * to see list of all available icon keys.
  *
  * ### Usage
  *
@@ -103,8 +102,8 @@ const Wrapper = styled.span<IconProps>`
  * @example <caption>Icons inside other elements</caption>
  * return (
  *   <Box variant="grey">
- *     <Label mb="default"><Icon icon="Accessibility" />Icon in Label</Label>
- *     <Button><Icon icon="Accessibility" />Icon in button</Button>
+ *     <Label mb="default"><Icon icon="Camera" />Icon in Label</Label>
+ *     <Button><Icon icon="Camera" />Icon in button</Button>
  *   </Box>
  * )
  * @example <caption>Different sizes</caption>
@@ -112,7 +111,7 @@ const Wrapper = styled.span<IconProps>`
  * return (
  *   <Box variant="grey">
  *     {sizes.map(size => (
- *       <Label m="default"><Icon icon="Accessibility" size={size}/>Icon {size}</Label>
+ *       <Label m="default"><Icon icon="Camera" size={size}/>Icon {size}</Label>
  *     ))}
  *   </Box>
  * )
@@ -120,7 +119,7 @@ const Wrapper = styled.span<IconProps>`
  * @example <caption>Big rounded icon with background</caption>
  * return (
  *   <Box variant="grey">
- *     <Icon icon="Add" color="white" bg="primary100" rounded size={32} p="default"/>
+ *     <Icon icon="Plus" color="white" bg="primary100" rounded size={32} p="default"/>
  *   </Box>
  * )
  * @section design-system
@@ -131,11 +130,11 @@ const Icon: React.FC<IconProps> = (props) => {
 
   if (!icon) return null
 
-  const CarbonIcon = CarbonIcons[icon] || CarbonIcons.ErrorOutline
+  const FeatherIcon = FeatherIcons[icon] || FeatherIcons.Slash
 
-  if (CarbonIcon) {
+  if (FeatherIcon) {
     return (
-      <Wrapper className={cssClass('Icon')} color={givenColor || 'grey100'} {...other}><CarbonIcon size={iconSize} /></Wrapper>
+      <Wrapper className={cssClass('Icon')} {...other}><FeatherIcon size={iconSize} color={givenColor || 'grey100'} /></Wrapper>
     )
   }
   return null

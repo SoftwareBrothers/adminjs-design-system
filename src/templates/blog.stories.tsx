@@ -39,7 +39,7 @@ export const Default: React.FC = () => {
             <Icon icon="Settings" />
           </Button>
           <Button mr="default" variant="primary">
-            <Icon icon="Launch" />
+            <Icon icon="Send" />
             Publish
           </Button>
           <Button mr="default">
@@ -51,7 +51,7 @@ export const Default: React.FC = () => {
           <Input variant="xxl" borderless width={1} placeholder="My amazing new article" />
         </Box>
 
-        <RichTextEditor />
+        <RichTextEditor value="" onChange={() => { /* noop */ }} />
       </Box>
     </Box>
   )

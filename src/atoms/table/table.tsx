@@ -42,7 +42,7 @@ import { cssClass } from '../../utils/css-class'
  *   <TableCaption>
  *     <Text as="span">Monthly savings</Text>
  *     <Button variant="text" size="sm">
- *       <Icon icon="Delete" />
+ *       <Icon icon="Trash" />
  *       Remove
  *     </Button>
  *   </TableCaption>
@@ -52,13 +52,13 @@ import { cssClass } from '../../utils/css-class'
  *       <TableCell>
  *         <Link href="#">
  *           Name
- *           <Icon icon="CaretUp" />
+ *           <Icon icon="ChevronUp" />
  *         </Link>
  *       </TableCell>
  *       <TableCell>
  *         <Link href="#">
  *           Last
- *           <Icon icon="CaretDown" />
+ *           <Icon icon="ChevronDown" />
  *         </Link>
  *       </TableCell>
  *       <TableCell>Surname</TableCell>

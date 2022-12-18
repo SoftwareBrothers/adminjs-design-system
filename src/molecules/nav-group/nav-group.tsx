@@ -80,7 +80,7 @@ export type NavGroupProps = {
  * @example
  * return (
  *   <Box py="xl">
- *     <NavGroup title="Some group title" icon="Add">
+ *     <NavGroup title="Some group title" icon="Plus">
  *       <Text>Some group element</Text>
  *     </NavGroup>
  *   </Box>
