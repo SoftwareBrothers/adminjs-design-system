@@ -25,25 +25,25 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   }
 
   return [
-    command('bold', () => editor.chain().focus().toggleBold().run(), 'TextBold'),
-    command('italic', () => editor.chain().focus().toggleItalic().run(), 'TextItalic'),
-    command('strike', () => editor.chain().focus().toggleStrike().run(), 'TextStrikethrough'),
+    command('bold', () => editor.chain().focus().toggleBold().run(), 'Bold'),
+    command('italic', () => editor.chain().focus().toggleItalic().run(), 'Italic'),
+    command('strike', () => editor.chain().focus().toggleStrike().run(), 'Minus'),
     command('code', () => editor.chain().focus().toggleCode().run(), 'Code'),
 
-    command('textAlign.left', () => editor.chain().focus().setTextAlign('left').run(), 'TextAlignLeft'),
-    command('textAlign.center', () => editor.chain().focus().setTextAlign('center').run(), 'TextAlignCenter'),
-    command('textAlign.right', () => editor.chain().focus().setTextAlign('right').run(), 'TextAlignRight'),
-    command('textAlign.justify', () => editor.chain().focus().setTextAlign('justify').run(), 'TextAlignJustify'),
+    command('textAlign.left', () => editor.chain().focus().setTextAlign('left').run(), 'AlignLeft'),
+    command('textAlign.center', () => editor.chain().focus().setTextAlign('center').run(), 'AlignCenter'),
+    command('textAlign.right', () => editor.chain().focus().setTextAlign('right').run(), 'AlignRight'),
+    command('textAlign.justify', () => editor.chain().focus().setTextAlign('justify').run(), 'AlignJustify'),
 
-    command('bulletList', () => editor.chain().focus().toggleBulletList().run(), 'ListBulleted'),
-    command('orderedList', () => editor.chain().focus().toggleOrderedList().run(), 'ListNumbered'),
-    command('blockquote', () => editor.chain().focus().toggleBlockquote().run(), 'Quotes'),
-    command('link', () => editor.chain().focus().unsetLink().run(), 'Unlink'),
+    command('bulletList', () => editor.chain().focus().toggleBulletList().run(), 'List'),
+    command('orderedList', () => editor.chain().focus().toggleOrderedList().run(), 'Menu'),
+    command('blockquote', () => editor.chain().focus().toggleBlockquote().run(), 'MessageCircle'),
+    command('link', () => editor.chain().focus().unsetLink().run(), 'Link'),
 
-    command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
-    command('undo', () => editor.chain().focus().undo().run(), 'Undo'),
-    command('redo', () => editor.chain().focus().redo().run(), 'Redo'),
-    command('clear marks', () => editor.chain().focus().unsetAllMarks().run(), 'TextClearFormat'),
+    command('hard break', () => editor.chain().focus().setHardBreak().run(), 'CornerDownRight'),
+    command('undo', () => editor.chain().focus().undo().run(), 'Rewind'),
+    command('redo', () => editor.chain().focus().redo().run(), 'FastForward'),
+    command('clear marks', () => editor.chain().focus().unsetAllMarks().run(), 'Repeat'),
   ]
 }
 

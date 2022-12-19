@@ -16,7 +16,7 @@ const TableHead = styled.thead`
     white-space: nowrap;
     
     .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'primary100')};
+      stroke: ${themeGet('colors', 'primary100')};
     }
   }
 `

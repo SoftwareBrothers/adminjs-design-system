@@ -18,31 +18,31 @@ const labelVariants = variant<any, LabelVariantType>({
     primary: {
       color: 'primary100',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'primary100',
+        stroke: 'primary100',
       },
     },
     danger: {
       color: 'error',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'error',
+        stroke: 'error',
       },
     },
     success: {
       color: 'success',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'success',
+        stroke: 'success',
       },
     },
     info: {
       color: 'info',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'info',
+        stroke: 'info',
       },
     },
     secondary: {
       color: 'accent',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'accent',
+        stroke: 'accent',
       },
     },
     light: {
@@ -50,7 +50,7 @@ const labelVariants = variant<any, LabelVariantType>({
       mb: 'sm',
       fontWeight: 'light',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'grey60',
+        stroke: 'grey60',
       },
     },
     default: {},
@@ -89,7 +89,7 @@ const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultT
     ? css`
     color: ${theme.colors.grey40};
     & .${cssClass('Icon')} svg {
-      fill: ${theme.colors.grey40};
+      stroke: ${theme.colors.grey40};
     }
   `
     : css``

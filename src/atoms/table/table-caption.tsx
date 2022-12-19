@@ -29,12 +29,12 @@ const TableCaption = styled.caption`
   & ${Button} {
     color: ${themeGet('colors', 'white')};
     & > span svg {
-      fill: ${themeGet('colors', 'white')};
+      stroke: ${themeGet('colors', 'white')};
     }
     &:hover {
       color: ${themeGet('colors', 'white')};
       .${cssClass('Icon')} svg {
-        fill: ${themeGet('colors', 'white')};
+        stroke: ${themeGet('colors', 'white')};
       }
     }
   }

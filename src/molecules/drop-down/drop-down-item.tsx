@@ -15,7 +15,7 @@ const variantsShared = (color) => ({
     borderColor: color,
   },
   [`& .${cssClass('Icon')} svg`]: {
-    fill: color,
+    stroke: color,
   },
 })
 
@@ -69,7 +69,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
 
   & .${cssClass('Icon')} {
     padding-right: ${themeGet('space', 'default')};
-    fill: ${themeGet('colors', 'grey40')};
+    stroke: ${themeGet('colors', 'grey40')};
     flex-grow: 0;
     flex-shrink: 0;
   }

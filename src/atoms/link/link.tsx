@@ -23,11 +23,11 @@ const variants = variant({
       '&:hover': {
         color: 'hoverBg',
         '& svg': {
-          fill: 'hoverBg',
+          stroke: 'hoverBg',
         },
       },
       '& svg': {
-        fill: 'primary100',
+        stroke: 'primary100',
       },
     },
     danger: {
@@ -36,7 +36,7 @@ const variants = variant({
         color: 'error',
       },
       '& svg': {
-        fill: 'error',
+        stroke: 'error',
       },
     },
     success: {
@@ -45,7 +45,7 @@ const variants = variant({
         color: 'success',
       },
       '& svg': {
-        fill: 'success',
+        stroke: 'success',
       },
     },
     info: {
@@ -54,7 +54,7 @@ const variants = variant({
         color: 'hoverBg',
       },
       '& svg': {
-        fill: 'primary60',
+        stroke: 'primary60',
       },
     },
     secondary: {
@@ -63,7 +63,7 @@ const variants = variant({
         color: 'hoverBg',
       },
       '& svg': {
-        fill: 'accent',
+        stroke: 'accent',
       },
     },
   },
