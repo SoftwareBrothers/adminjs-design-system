@@ -11,7 +11,6 @@ const HeadingSelect: FC<HeadingSelectProps> = (props) => {
   const { editor } = props
   const headingLevels: Level[] = [1, 2, 3, 4, 5, 6]
 
-  // TODO: ICON
   return (
     <>
       {headingLevels.map((level) => {
@@ -22,9 +21,10 @@ const HeadingSelect: FC<HeadingSelectProps> = (props) => {
             key={name}
             name={name}
             onClick={() => editor.chain().focus().toggleHeading({ level }).run()}
-            icon={`Number_${level}`}
+            icon="FontSize"
             attributes={{ level }}
-          />
+          >{` ${level}`}
+          </MenuButton>
         )
       })}
       <MenuButton
