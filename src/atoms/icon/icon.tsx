@@ -64,7 +64,7 @@ const Wrapper = styled.span<IconProps>`
   font-size: ${({ theme }): string => theme.fontSizes.sm};
   
   & > svg {
-    ${({ theme, color: colorProp }): string => (colorProp ? `fill: ${theme.colors[colorProp]}` : '')};
+    ${({ theme, color: colorProp }): string => (colorProp ? `stroke: ${theme.colors[colorProp]}` : '')};
     ${({ spin }): any => (spin ? spinCss : '')};
   }
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px;' : '')};
@@ -134,7 +134,7 @@ const Icon: React.FC<IconProps> = (props) => {
 
   if (FeatherIcon) {
     return (
-      <Wrapper className={cssClass('Icon')} {...other}><FeatherIcon size={iconSize} color={givenColor || 'grey100'} /></Wrapper>
+      <Wrapper className={cssClass('Icon')} {...other} color={givenColor || 'grey100'}><FeatherIcon size={iconSize} color={givenColor || 'grey100'} /></Wrapper>
     )
   }
   return null

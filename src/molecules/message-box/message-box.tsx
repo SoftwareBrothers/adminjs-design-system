@@ -53,7 +53,7 @@ const StyledMessageBox = styled.div<MessageBoxProps>`
     float: right;
     margin: 8px;
     & svg {
-      fill: ${({ theme }): string => theme.colors.grey80};
+      stroke: ${({ theme }): string => theme.colors.grey80};
     }
   }
   ${({ theme }): any => variants(theme)};

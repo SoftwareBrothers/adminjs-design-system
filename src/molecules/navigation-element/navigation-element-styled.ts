@@ -28,7 +28,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
     flex-shrink: 0;
     padding-right: ${themeGet('space', 'lg')};
     & svg {
-      fill: ${getSelectedColor};
+      stroke: ${getSelectedColor};
     }
   }
   & > ${Title} {
@@ -40,7 +40,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
   & > .arrow-box {
     flex-shrink: 0;
     & svg {
-      fill: ${themeGet('colors', 'grey40')};
+      stroke: ${themeGet('colors', 'grey40')};
     }
   }
 `

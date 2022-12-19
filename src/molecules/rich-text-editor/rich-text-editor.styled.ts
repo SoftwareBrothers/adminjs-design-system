@@ -36,11 +36,11 @@ export const MenuBarWrapper: any = styled(Box)`
   }
 
   & .${cssClass('Icon')} svg {
-    fill: ${themeGet('colors', 'grey100')};
+    stroke: ${themeGet('colors', 'grey100')};
   }
 
   & .active .${cssClass('Icon')} svg {
-    fill: ${themeGet('colors', 'primary100')};
+    stroke: ${themeGet('colors', 'primary100')};
   }
 `
 

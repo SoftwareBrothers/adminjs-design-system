@@ -13,7 +13,7 @@ const variantShared = {
   color: 'white',
   'border-color': 'transparent',
   [`& .${cssClass('Icon')} svg`]: {
-    fill: 'white',
+    stroke: 'white',
   },
   '&:disabled': {
     bg: 'grey40',
@@ -68,7 +68,7 @@ const buttonVariants = variant({
       color: 'grey80',
       borderColor: 'grey40',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'grey80',
+        stroke: 'grey80',
       },
       '&:hover': {
         borderColor: 'grey60',
@@ -92,10 +92,10 @@ const buttonVariants = variant({
         borderColor: 'transparent',
       },
       '& svg': {
-        fill: 'primary100',
+        stroke: 'primary100',
       },
       [`&:hover .${cssClass('Icon')} svg`]: {
-        fill: 'hoverBg',
+        stroke: 'hoverBg',
       },
       className: cssClass(['Button', 'Button_Text']),
     },
@@ -189,14 +189,14 @@ export const ButtonCSS = css<ButtonProps>`
   }
 
   & .${cssClass('Icon')} svg {
-    fill: ${themeGet('colors', 'primary100')};
+    stroke: ${themeGet('colors', 'primary100')};
   }
   &:hover {
     color: ${themeGet('colors', 'white')};
     background: ${themeGet('colors', 'hoverBg')};
     border-color: ${themeGet('colors', 'hoverBg')};
     & .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'white')};
+      stroke: ${themeGet('colors', 'white')};
     }
   }
   &:focus {
@@ -210,7 +210,7 @@ export const ButtonCSS = css<ButtonProps>`
     background: ${themeGet('colors', 'white')};
     cursor: default;
     & .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'grey60')};
+      stroke: ${themeGet('colors', 'grey60')};
     }
   }
 

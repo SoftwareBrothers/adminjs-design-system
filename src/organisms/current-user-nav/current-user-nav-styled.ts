@@ -8,10 +8,10 @@ const StyledCurrentUserNav = styled(Box)`
 
   & .line-action {
     .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'grey80')};
+      stroke: ${themeGet('colors', 'grey80')};
     }
     &:hover .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'primary100')};
+      stroke: ${themeGet('colors', 'primary100')};
     }
   }
 
