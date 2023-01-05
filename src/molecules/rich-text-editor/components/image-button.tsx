@@ -10,6 +10,7 @@ interface ImageButtonProps {
 const ImageButton: FC<ImageButtonProps> = (props) => {
   const { editor } = props
   const [image, setImage] = useState<FileReader['result']>()
+  const [alt, setAlt] = useState<string>()
   const fileInput = useRef<HTMLInputElement>(null)
 
   const handleInputChange = (event) => {
@@ -23,12 +24,15 @@ const ImageButton: FC<ImageButtonProps> = (props) => {
   }
 
   const handleButtonClick = () => {
-    if (fileInput.current) fileInput.current.click()
+    if (fileInput.current) {
+      setAlt(prompt('Alt tag') || '')
+      fileInput.current.click()
+    }
   }
 
   useEffect(() => {
     if (image && typeof image === 'string') {
-      editor.chain().focus().setImage({ src: image }).run()
+      editor.chain().focus().setImage({ src: image, alt }).run()
     }
   }, [image])
 
