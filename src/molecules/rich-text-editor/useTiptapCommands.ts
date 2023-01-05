@@ -39,6 +39,7 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
     command('orderedList', () => editor.chain().focus().toggleOrderedList().run(), 'ListNumbered'),
     command('blockquote', () => editor.chain().focus().toggleBlockquote().run(), 'Quotes'),
     command('link', () => editor.chain().focus().unsetLink().run(), 'Unlink'),
+    command('addLink', () => editor.commands.setLink({ href: prompt('Link') || '' }), 'Link'),
 
     command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),
