@@ -36,8 +36,8 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
     extensions: [
       StarterKit,
       CharacterCount.configure({ limit, mode: 'nodeSize' }),
-      Image,
-      Link.configure({ openOnClick: false }),
+      Image.configure({ inline: true, allowBase64: true }),
+      Link.configure({ openOnClick: false, autolink: false }),
       Table,
       TableCell,
       TableHeader,
