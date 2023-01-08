@@ -4,7 +4,7 @@
       "target": "es2017",
       "esModuleInterop": true,
       "jsx": "react",
-      "declaration": true,
+      "declaration": false,
       "declarationDir": "./types",
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
