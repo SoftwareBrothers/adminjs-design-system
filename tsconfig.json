@@ -5,7 +5,6 @@
       "esModuleInterop": true,
       "jsx": "react",
       "declaration": false,
-      "declarationDir": "./types",
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "strictFunctionTypes": true,
