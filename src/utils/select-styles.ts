@@ -50,29 +50,29 @@ const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
     border: state.isFocused
       ? `1px solid ${theme.colors.primary100}`
       : `1px solid ${theme.colors.filterInputBorder}`,
-    borderRadius: '0px',
+    borderRadius: '2px',
     background: 'transparent',
     color: theme.colors.white,
     boxShadow: state.isFocused ? focusShadowStyle(theme) : 'none',
   }),
   input: () => ({
-    color: theme.colors.white,
+    color: theme.colors.grey100,
     gridArea: '1/1/2/3',
     gridTemplateColumns: '0px min-content',
   }),
   singleValue: () => ({
-    color: theme.colors.white,
+    color: theme.colors.grey100,
     gridArea: '1/1/2/3',
   }),
   option: (provided, state) => ({
     ...provided,
-    color: state.isSelected ? theme.colors.white : theme.colors.grey20,
+    color: state.isSelected ? theme.colors.grey100 : theme.colors.grey60,
     background: state.isFocused ? theme.colors.primary20 : 'transparent',
   }),
   menu: (provided) => ({
     ...provided,
-    borderRadius: '0px',
-    borderColor: theme.colors.grey20,
+    borderRadius: '2px',
+    borderColor: theme.colors.grey100,
     background: theme.colors.filterBg,
     zIndex: 5,
   }),

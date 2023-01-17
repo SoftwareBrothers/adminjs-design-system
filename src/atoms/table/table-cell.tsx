@@ -10,7 +10,7 @@ import { cssClass } from '../../utils/css-class'
  * @private
  */
 const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
-  border-bottom: 1px solid ${({ theme }): string => theme.colors.grey20};
+  border-bottom: 1px solid ${({ theme }): string => theme.colors.tableBorder};
   font-size: ${({ theme }): string => theme.fontSizes.default};
   line-height: ${({ theme }): string => theme.lineHeights.default};
   word-break: break-word;
@@ -21,7 +21,8 @@ const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
 
   ${TableHead} & {
     color: ${({ theme }): string => theme.colors.grey60};
-    border: none;
+    border-top:  1px solid ${({ theme }): string => theme.colors.tableBorder};
+    border-bottom:  1px solid ${({ theme }): string => theme.colors.tableBorder};
   }
 `
 

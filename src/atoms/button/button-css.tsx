@@ -171,8 +171,9 @@ export const ButtonCSS = css<ButtonProps>`
   font-family: ${({ theme }): string => theme.font};
   line-height: ${themeGet('lineHeights', 'lg')};
   vertical-align: middle;
+  border-radius: 4px;
 
-  border: 1px solid ${themeGet('colors', 'primary100')};
+  border: 1px solid ${themeGet('colors', 'grey40')};
   color: ${themeGet('colors', 'primary100')};
   
   ${(props) => setPointer(props as React.HTMLProps<HTMLButtonElement>)};

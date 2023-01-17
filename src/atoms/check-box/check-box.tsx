@@ -58,6 +58,7 @@ const StyledCheckbox = styled.a<StyledProps>`
   background: ${({ checked, theme, disabled }): string => checkboxBackground(theme, checked, disabled)};
   transition: all 150ms;
   position: relative;
+  border-radius: 2px;
 
   ${HiddenCheckbox}:focus + & {
     ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)};`};

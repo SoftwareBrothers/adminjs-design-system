@@ -11,10 +11,11 @@ import { PropertyType } from '../../utils'
 import { Box } from '../../atoms/box/box'
 import { cssClass } from '../../utils/css-class'
 
+// background: ${({ theme }) => theme.colors.primary100};
+
 const DatePickerIcon = styled(Icon)`
-  position: absolute;
-  background: ${({ theme }) => theme.colors.primary100};
-  color: ${({ theme }) => theme.colors.white};
+  position: absolute;  
+  color: ${({ theme }) => theme.colors.primary100};
   right: 0;
   top: 0;
   display: flex;
@@ -44,7 +45,7 @@ const StyledDatePicker = styled(Box)`
     width: 100%;
     height: 100%;
     background: transparent;
-    color: ${({ theme }) => theme.colors.grey80};
+    color: ${({ theme }) => theme.colors.grey100};
 
     &:focus-visible {
       outline: none;

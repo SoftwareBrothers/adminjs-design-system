@@ -29,7 +29,7 @@ const variants = variant({
     filter: {
       bg: 'filterBg',
       width: '400px',
-      color: 'white',
+      color: 'black',
       className: cssClass(['Drawer', 'Drawer_Filter']),
     },
   },

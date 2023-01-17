@@ -93,6 +93,8 @@ const Table = styled.table<LayoutProps>`
   position: relative;
   font-family: ${({ theme }): string => theme.font};
   color: ${({ theme }): string => theme.colors.grey100};
+  border-left: 1px solid ${({ theme }): string => theme.colors.tableBorder};
+  border-right: 1px solid ${({ theme }): string => theme.colors.tableBorder};
 
   ${layout};
   border-collapse: collapse;

@@ -51,7 +51,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   position: relative;
   z-index: 10000;
   border: none;
-  color: ${themeGet('colors', 'grey80')};
+  color: ${themeGet('colors', 'grey100')};
   font-family: ${themeGet('font')};
   border: solid transparent;
   border-width: 0 ${themeGet('space', 'sm')};

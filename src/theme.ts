@@ -44,31 +44,34 @@
  */
 const colors = {
   // Primary
-  primary100: '#4268F6',
-  primary80: '#6483F8',
-  primary60: '#879FFA',
-  primary40: '#A9BAFA',
-  primary20: '#CBD5FD',
-
+  primary100: '#3040D6',
+  // primary100: '#556FE3',
+  primary80: '#778CE9',
+  primary60: '#99A9EE',
+  primary40: '#BBC5F4',
+  primary20: '#DDE2F9',
   // accent
   accent: '#38CAF1',
   love: '#4D70EB', // Main AdminJS logo color
 
   // grey
-  grey100: '#1C1C38',
+  // zmienione
+  grey100: '#0C1E29',
   grey80: '#454655',
   grey60: '#898A9A',
-  grey40: '#C0C0CA',
-  grey20: '#F6F7FB',
+  // zmienione
+  grey40: '#BBC3CB',
+  // zmienione
+  grey20: '#F2F2F2',
   white: '#fff',
 
   // Alerts
-  errorDark: '#DE405D',
-  error: '#FF4567',
+  // errorDark: '#DE405D',
+  errorDark: 'magenta',
+  error: '#E93A2D',
   errorLight: '#FFA5B5',
-
   successDark: '#32A887',
-  success: '#70C9B0',
+  success: '#E93A2D',
   successLight: '#DBF0F1',
 
   infoDark: '#4268F6',
@@ -76,19 +79,29 @@ const colors = {
   infoLight: '#CBD5FD',
 
   // Backgrounds
-  filterBg: '#343F87',
-  hoverBg: '#535B8E',
+  // filterBg: '#343F87',
+  filterBg: '#FBFBFB',
+  // zmienione
+  hoverBg: '#F8F9F9',
+  // hoverBg: '#535B8E',
 
   // global
   border: '#DDE1E5',
+  // border: '#BBC3CB',
 
   // Elements
-  inputBorder: '#C0C0CA',
-  separator: '#C0C0CA',
-  highlight: '#F6F7FB',
-  filterInputBorder: 'rgba(255,255,255,0.15)',
+  // zmienione
+  inputBorder: '#BBC3CB',
+  // zmienione
+  separator: '#BBC3CB',
+  // zmienione
+  highlight: '#F2F2F2',
+  filterInputBorder: '#BBC3CB',
   filterDisabled: 'rgba(83,91,142,0.05)',
-  bg: '#F6F7FB',
+  // zmienione
+  bg: '#F2F2F2',
+  tableBorder: '#EEEEEF',
+  tableHeaderBackground: '#FBFBFB',
 }
 
 /**
@@ -273,9 +286,11 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} default
  */
 const borders = {
-  input: '1px solid #C0C0CA',
+  // zmienione
+  input: '1px solid #BBC3CB',
   filterInput: ' 1px rgba(255,255,255,0. solid15)',
-  bg: '1px solid #F6F7FB',
+  // zmienione
+  bg: '1px solid #F2F2F2',
   default: '1px solid #DDE1E5',
 }
 

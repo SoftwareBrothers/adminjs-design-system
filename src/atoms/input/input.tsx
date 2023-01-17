@@ -61,11 +61,13 @@ const sizeVariants = variant({
  * @memberof Input
  * @alias InputCSS
  */
+
 export const InputCSS = css<InputProps>`
   box-sizing: border-box;
-  color: ${({ theme }): string => theme.colors.grey80};
+  color: ${({ theme }): string => theme.colors.grey100};
   background: transparent;
   border: 1px solid ${({ theme }): string => theme.colors.inputBorder};
+  border-radius: 2px;
   font-size: ${({ theme }): string => theme.fontSizes.default};
   line-height: ${({ theme }): string => theme.lineHeights.lg};
   font-family: ${({ theme }): string => theme.font};

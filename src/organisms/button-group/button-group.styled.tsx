@@ -35,6 +35,7 @@ export const hasHandler = (props: any): ReturnType<typeof css> | string => {
 export const hasLabel = (props: any): ReturnType<typeof css> | string => {
   if (!props.hasLabel) {
     return css`
+      border: none;
       padding-left: ${themeGet('space', 'md')};
       padding-right: ${themeGet('space', 'md')};
       & > .${cssClass('Icon')} svg {
