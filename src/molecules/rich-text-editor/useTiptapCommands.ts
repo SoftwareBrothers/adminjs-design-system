@@ -11,6 +11,12 @@ interface useTiptapCommandsProps {
   editor: Editor | null
 }
 
+const isExternalLink = (url: string) => {
+  const tmp = document.createElement('a')
+  tmp.href = url
+  return tmp.host !== window.location.host
+}
+
 const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
   const { editor } = props
 
@@ -39,7 +45,27 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
     command('orderedList', () => editor.chain().focus().toggleOrderedList().run(), 'ListNumbered'),
     command('blockquote', () => editor.chain().focus().toggleBlockquote().run(), 'Quotes'),
     command('link', () => editor.chain().focus().unsetLink().run(), 'Unlink'),
-    command('addLink', () => editor.commands.setLink({ href: prompt('Link') || '' }), 'Link'),
+    // command('addLink', () => editor.commands.setLink({ href: prompt('Link') || '' }), 'Link'),
+    command(
+      'addLink',
+      () => {
+        const href = prompt('Href')
+        if (!href) return false
+
+        const isHrefExternal = isExternalLink(href)
+
+        const attributes = {
+          href,
+          ...isHrefExternal ? {
+            rel: 'noopener noreferrer nofollow',
+            target: '_blank',
+          } : {},
+        }
+
+        return editor.chain().focus().setMark('link', attributes).run()
+      },
+      'Link',
+    ),
 
     command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),

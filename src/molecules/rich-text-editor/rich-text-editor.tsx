@@ -24,6 +24,25 @@ interface RichTextEditorProps {
   options?: RichTextEditorOptions
 }
 
+const ExtendedLink = Link.extend({
+  addAttributes() {
+    return {
+      href: {
+        default: null,
+      },
+      rel: {
+        default: null,
+      },
+      target: {
+        default: null,
+      },
+      class: {
+        default: this.options.HTMLAttributes.class,
+      },
+    }
+  },
+})
+
 const RichTextEditor: FC<RichTextEditorProps> = (props) => {
   const { value, onChange, options = {} } = props
   const handleUpdate = useCallback(({ editor }: EditorEvents['update']) => {
@@ -37,7 +56,7 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
       StarterKit,
       CharacterCount.configure({ limit, mode: 'nodeSize' }),
       Image.configure({ inline: true, allowBase64: true }),
-      Link.configure({ openOnClick: false, autolink: false }),
+      ExtendedLink.configure({ openOnClick: false, autolink: false }),
       Table,
       TableCell,
       TableHeader,
