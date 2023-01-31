@@ -49,7 +49,3 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
     }
   }
 `
-
-// background-color: ${getBg};
-
-// background-color: ${getHoverBg};

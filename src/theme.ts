@@ -55,13 +55,10 @@ const colors = {
   love: '#4D70EB', // Main AdminJS logo color
 
   // grey
-  // zmienione
   grey100: '#0C1E29',
   grey80: '#454655',
   grey60: '#898A9A',
-  // zmienione
   grey40: '#BBC3CB',
-  // zmienione
   grey20: '#F2F2F2',
   white: '#fff',
 
@@ -78,27 +75,18 @@ const colors = {
   infoLight: '#CBD5FD',
 
   // Backgrounds
-  // filterBg: '#343F87',
   filterBg: '#FBFBFB',
-  // zmienione
   hoverBg: '#3040D6',
-  // hoverBg: '#F8F9F9',
-  // hoverBg: '#535B8E',
 
   // global
   border: '#DDE1E5',
-  // border: '#BBC3CB',
 
   // Elements
-  // zmienione
   inputBorder: '#BBC3CB',
-  // zmienione
   separator: '#BBC3CB',
-  // zmienione
   highlight: '#F2F2F2',
   filterInputBorder: '#BBC3CB',
   filterDisabled: 'rgba(83,91,142,0.05)',
-  // zmienione
   bg: '#F2F2F2',
   tableBorder: '#EEEEEF',
   tableHeaderBackground: '#FBFBFB',
@@ -318,10 +306,8 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} default
  */
 const borders = {
-  // zmienione
   input: '1px solid #BBC3CB',
   filterInput: ' 1px rgba(255,255,255,0. solid15)',
-  // zmienione
   bg: '1px solid #F2F2F2',
   default: '1px solid #DDE1E5',
 }

@@ -127,7 +127,6 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="first"
-              // disabled={isFirstPage}
               onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
             >
               <Icon icon="SkipBack" />
@@ -137,7 +136,6 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       }
       <PaginationLink
         data-testid="previous"
-        // disabled={isFirstPage}
         onClick={() => (!isFirstPage ? onChange(prevPage) : undefined)}
       >
         <Icon icon="ChevronLeft" />
@@ -156,7 +154,6 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       <PaginationLink
         data-testid="next"
         onClick={() => (!isLastPage ? onChange(nextPage) : undefined)}
-        // disabled={isLastPage}
       >
         <Icon icon="ChevronRight" />
       </PaginationLink>
@@ -166,7 +163,6 @@ const Pagination: React.FC<PaginationProps> = (props) => {
             <PaginationLink
               data-testid="last"
               onClick={() => (!isLastPage ? onChange(paginate.totalPages) : undefined)}
-              // disabled={isLastPage}
             >
               <Icon icon="SkipForward" />
             </PaginationLink>

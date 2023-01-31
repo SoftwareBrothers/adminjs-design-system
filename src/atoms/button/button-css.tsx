@@ -256,12 +256,3 @@ export const ButtonCSS = css<ButtonProps>`
 `
 
 export default ButtonCSS
-
-//   &:hover {
-//   color: ${themeGet('colors', 'white')};
-//   background: ${themeGet('colors', 'outlineButtonHoverBg')};
-//   border-color: ${themeGet('colors', 'primaryButtonHoverBg')};
-//   & .${cssClass('Icon')} svg {
-//     stroke: ${themeGet('colors', 'white')};
-//   }
-// }
