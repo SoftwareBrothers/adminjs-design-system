@@ -52,7 +52,6 @@ const PhoneInput = styled(ReactPhoneInput)<PhoneInputProps>`
   ${PhoneInputStyles}
   width: 100%;
   position: relative;
-
   & > input {
     ${InputCSS}
     ${space}
@@ -61,7 +60,7 @@ const PhoneInput = styled(ReactPhoneInput)<PhoneInputProps>`
   }
 
   .form-control, .flag-dropdown {
-    border-radius: 0;
+    border-radius: 2px;
   }
 `
 

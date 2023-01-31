@@ -45,7 +45,7 @@ export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
     label: 'Delete',
     onClick: handleClick,
     variant: 'danger',
-    icon: 'TrashCan',
+    icon: 'Trash2',
   }, {
     label: null,
     variant: 'light',
@@ -63,7 +63,7 @@ export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
       label: 'Delete',
       onClick: handleClick,
       variant: 'danger',
-      icon: 'TrashCan',
+      icon: 'Trash2',
     }],
   }]
 

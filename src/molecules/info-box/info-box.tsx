@@ -12,6 +12,7 @@ const StyledInfoBox = styled(Box)<BoxProps>`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin: -32px -32px -64px -32px;
 `
 
 /**
@@ -62,7 +63,7 @@ export type InfoBoxProps = {
 const InfoBox: React.FC<InfoBoxProps> = (props) => {
   const { children, title, testId } = props
   return (
-    <StyledInfoBox data-testid={testId} variant="white" className={cssClass('InfoBox')}>
+    <StyledInfoBox data-testid={testId} variant="grey" className={cssClass('InfoBox')}>
       <Box width={1 / 2}>
         <H4 mb="lg">{title}</H4>
         {children}

@@ -126,6 +126,7 @@ const Wrapper = styled.span<IconProps>`
  */
 const Icon: React.FC<IconProps> = (props) => {
   const { icon, size, color: givenColor, ...other } = props
+
   const iconSize = size || 16
 
   if (!icon) return null

@@ -10,11 +10,11 @@ import { cssClass, focusShadowStyle, themeGet } from '../../utils'
 import { ButtonProps } from './button-props'
 
 const variantShared = {
-  color: 'white',
-  'border-color': 'transparent',
-  [`& .${cssClass('Icon')} svg`]: {
-    stroke: 'white',
-  },
+  // color: 'white',
+  // 'border-color': 'transparent',
+  // [`& .${cssClass('Icon')} svg`]: {
+  //   stroke: 'white',
+  // },
   '&:disabled': {
     bg: 'grey40',
   },
@@ -22,60 +22,98 @@ const variantShared = {
 
 const buttonVariants = variant({
   variants: {
-    primary: {
-      bg: 'primary100',
+    default: {
+      color: 'primary100',
+      bg: 'transparent',
+      borderColor: 'primary100',
       '&:hover': {
-        bg: 'hoverBg',
+        color: 'primary100',
+        bg: 'lightButtonHoverBg',
+      },
+    },
+    primary: {
+      color: 'white',
+      bg: 'primaryButtonBg',
+      borderColor: 'transparent',
+      '&:hover': {
+        color: 'white',
+        bg: 'primaryButtonHoverBg',
+      },
+      '&:focus': {
+        bg: 'primaryButtonFocusBg',
+      },
+      [`& .${cssClass('Icon')} svg`]: {
+        stroke: 'white',
       },
       className: cssClass(['Button', 'Button_Primary']),
       ...variantShared,
     },
     danger: {
-      bg: 'error',
+      color: 'dangerButtonBg',
+      bg: 'transparent',
+      borderColor: 'dangerButtonBg',
       '&:hover': {
-        bg: 'errorDark',
-        borderColor: 'transparent',
+        color: 'dangerButtonBg',
+        bg: 'lightButtonHoverBg',
+        borderColor: 'dangerButtonBg',
+      },
+      [`& .${cssClass('Icon')} svg`]: {
+        stroke: 'dangerButtonBg',
       },
       className: cssClass(['Button', 'Button_Danger']),
       ...variantShared,
     },
     success: {
-      bg: 'success',
+      color: 'white',
+      bg: 'successButtonBg',
+      borderColor: 'transparent',
       '&:hover': {
-        bg: 'successDark',
+        bg: 'successButtonHoverBg',
         borderColor: 'transparent',
       },
       className: cssClass(['Button', 'Button_Success']),
       ...variantShared,
     },
     info: {
-      bg: 'info',
+      color: 'white',
+      bg: 'infoButtonBg',
+      borderColor: 'transparent',
       '&:hover': {
-        bg: 'infoDark',
+        bg: 'infoButtonHoverBg',
         borderColor: 'transparent',
       },
       className: cssClass(['Button', 'Button_Info']),
       ...variantShared,
     },
     secondary: {
-      bg: 'accent',
+      color: 'white',
+      bg: 'secondaryButtonBg',
+      borderColor: 'transparent',
+      '&:hover': {
+        bg: 'secondaryButtonHoverBg',
+        borderColor: 'transparent',
+      },
       className: cssClass(['Button', 'Button_Secondary']),
       ...variantShared,
     },
     light: {
-      bg: 'white',
-      className: cssClass(['Button', 'Button_Grey']),
       color: 'grey80',
+      bg: 'transparent',
+      className: cssClass(['Button', 'Button_Grey']),
       borderColor: 'grey40',
       [`& .${cssClass('Icon')} svg`]: {
         stroke: 'grey80',
       },
       '&:hover': {
         borderColor: 'grey60',
-        bg: 'grey60',
+        bg: 'lightButtonHoverBg',
+      },
+      '&:focus': {
+        bg: 'lightButtonFocusBg',
       },
     },
     text: {
+      color: 'primary100',
       bg: 'transparent',
       borderColor: 'transparent',
       '&:disabled': {
@@ -173,7 +211,7 @@ export const ButtonCSS = css<ButtonProps>`
   vertical-align: middle;
   border-radius: 4px;
 
-  border: 1px solid ${themeGet('colors', 'grey40')};
+  border: 1px solid ${themeGet('colors', 'primary100')};
   color: ${themeGet('colors', 'primary100')};
   
   ${(props) => setPointer(props as React.HTMLProps<HTMLButtonElement>)};
@@ -192,26 +230,19 @@ export const ButtonCSS = css<ButtonProps>`
   & .${cssClass('Icon')} svg {
     stroke: ${themeGet('colors', 'primary100')};
   }
-  &:hover {
-    color: ${themeGet('colors', 'white')};
-    background: ${themeGet('colors', 'hoverBg')};
-    border-color: ${themeGet('colors', 'hoverBg')};
-    & .${cssClass('Icon')} svg {
-      stroke: ${themeGet('colors', 'white')};
-    }
-  }
+
   &:focus {
     border-color: ${themeGet('colors', 'accent')};
     ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
   }
 
   &:disabled {
-    color: ${themeGet('colors', 'grey60')};
-    border-color: ${themeGet('colors', 'grey80')};
-    background: ${themeGet('colors', 'white')};
+    color: ${themeGet('colors', 'disabledButtonColor')};
+    border-color: ${themeGet('colors', 'grey40')};
+    background: ${themeGet('colors', 'grey40')};
     cursor: default;
     & .${cssClass('Icon')} svg {
-      stroke: ${themeGet('colors', 'grey60')};
+      stroke: ${themeGet('colors', 'disabledButtonColor')};
     }
   }
 
@@ -225,3 +256,12 @@ export const ButtonCSS = css<ButtonProps>`
 `
 
 export default ButtonCSS
+
+//   &:hover {
+//   color: ${themeGet('colors', 'white')};
+//   background: ${themeGet('colors', 'outlineButtonHoverBg')};
+//   border-color: ${themeGet('colors', 'primaryButtonHoverBg')};
+//   & .${cssClass('Icon')} svg {
+//     stroke: ${themeGet('colors', 'white')};
+//   }
+// }

@@ -38,6 +38,7 @@ const StyledDatePicker = styled(Box)`
     padding: 4px 8px;
     font-size: 14px;
     line-height: 24px;
+    border-radius: 2px;
   }
 
   & .react-datepicker-wrapper input {
@@ -310,7 +311,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
         disabled={disabled}
         {...other}
       />
-      <DatePickerIcon icon="Calendar" color="white" />
+      <DatePickerIcon icon="Calendar" color="primary100" />
     </StyledDatePicker>
   )
 }

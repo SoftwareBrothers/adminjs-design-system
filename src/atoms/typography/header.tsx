@@ -39,7 +39,7 @@ const Base = styled.h3<HeaderProps>`
 `
 
 Base.defaultProps = {
-  fontWeight: 'light',
+  fontWeight: 'normal',
   fontSize: 'h3',
   lineHeight: 'xl',
   className: cssClass(['Header', 'H3']),

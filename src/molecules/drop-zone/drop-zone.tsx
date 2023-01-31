@@ -7,6 +7,7 @@ import { Text } from '../../atoms/text'
 import { MessageBox } from '../message-box'
 import { DropZoneItem } from './drop-zone-item'
 import { humanFileSize, DisplaySizeUnit } from '../../utils/human-file-size'
+import Image from './image'
 
 const validateContentType = (
   mimeTypes: undefined | Array<string>,
@@ -78,6 +79,10 @@ export type DropZoneProps = {
    * Upload limit display e.g.: 'KB' (upper case)
    */
   uploadLimitIn?: FileSizeUnit;
+  /**
+   * Custom drop zone text
+   */
+  dropZoneText?: string;
 }
 
 const UploadInput = styled.input`
@@ -93,6 +98,7 @@ const UploadInput = styled.input`
 
 const StyledDropZone = styled(Box)`
   border: 1px dashed ${({ theme }): string => theme.colors.grey80};
+  border-radius: 4px;
   position: relative;
   text-align: center;
 
@@ -188,8 +194,7 @@ type ErrorMessage = {
  * @section design-system
  */
 const DropZone: React.FC<DropZoneProps> = (props) => {
-  const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props
-
+  const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, dropZoneText, ...other } = props
   const [, setIsDragging] = useState(false)
   const [error, setError] = useState<ErrorMessage | null>(null)
   const [filesToUpload, setFilesToUpload] = useState<Array<File>>(filesFromProps ?? [])
@@ -268,8 +273,9 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
       >
         <UploadInput type="file" onChange={(event): void => onDrop(event)} multiple={multiple} />
         <Box>
+          <Image />
           <Text fontSize="sm">
-            Pick or Drop File here to upload it.
+            {dropZoneText || 'Pick or Drop File here to upload it.'}
           </Text>
           <Box>
             {validate && validate.maxSize ? (

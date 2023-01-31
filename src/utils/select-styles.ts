@@ -5,7 +5,7 @@ import focusShadowStyle from './focus-shadow.style'
 const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
   control: (provided, state) => ({
     ...provided,
-    borderRadius: '0px',
+    borderRadius: '2px',
     borderWidth: '1px',
     background: 'transparent',
     color: theme.colors.grey80,

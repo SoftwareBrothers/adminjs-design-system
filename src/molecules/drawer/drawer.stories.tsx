@@ -17,7 +17,7 @@ export const Default: React.FC = (props) => (
           Info
         </Button>
         <Button ml="lg">
-          <Icon icon="Trash" />
+          <Icon icon="Trash2" />
           Delete
         </Button>
       </Box>

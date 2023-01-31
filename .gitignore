@@ -181,3 +181,5 @@ out
 /bundle.development.js
 /bundle.production.js
 .vscode
+
+.nova

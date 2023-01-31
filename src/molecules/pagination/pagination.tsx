@@ -57,7 +57,11 @@ PaginationLink.defaultProps = {
 const PaginationWrapper = styled(Box)`
   display: inline-block;
   padding: 2px;
+ 
   border: 1px solid ${({ theme }): string => theme.colors.grey20};
+  & > :hover {
+    text-decoration: none;
+  }
   & > :first-child {
     width: 56px;
     border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
@@ -123,7 +127,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="first"
-              disabled={isFirstPage}
+              // disabled={isFirstPage}
               onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
             >
               <Icon icon="SkipBack" />
@@ -133,7 +137,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       }
       <PaginationLink
         data-testid="previous"
-        disabled={isFirstPage}
+        // disabled={isFirstPage}
         onClick={() => (!isFirstPage ? onChange(prevPage) : undefined)}
       >
         <Icon icon="ChevronLeft" />
@@ -152,7 +156,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       <PaginationLink
         data-testid="next"
         onClick={() => (!isLastPage ? onChange(nextPage) : undefined)}
-        disabled={isLastPage}
+        // disabled={isLastPage}
       >
         <Icon icon="ChevronRight" />
       </PaginationLink>
@@ -162,7 +166,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
             <PaginationLink
               data-testid="last"
               onClick={() => (!isLastPage ? onChange(paginate.totalPages) : undefined)}
-              disabled={isLastPage}
+              // disabled={isLastPage}
             >
               <Icon icon="SkipForward" />
             </PaginationLink>

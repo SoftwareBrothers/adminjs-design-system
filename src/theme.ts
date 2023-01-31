@@ -66,13 +66,12 @@ const colors = {
   white: '#fff',
 
   // Alerts
-  // errorDark: '#DE405D',
-  errorDark: 'magenta',
-  error: '#E93A2D',
-  errorLight: '#FFA5B5',
-  successDark: '#32A887',
-  success: '#E93A2D',
-  successLight: '#DBF0F1',
+  errorDark: '#9d0616',
+  error: '#C20012',
+  errorLight: 'rgba(194, 0, 18, 0.1)',
+  successDark: '#007D7F',
+  success: '#007D7F',
+  successLight: 'rgba(0, 125, 127, 0.1)',
 
   infoDark: '#4268F6',
   info: '#879FFA',
@@ -82,7 +81,8 @@ const colors = {
   // filterBg: '#343F87',
   filterBg: '#FBFBFB',
   // zmienione
-  hoverBg: '#F8F9F9',
+  hoverBg: '#3040D6',
+  // hoverBg: '#F8F9F9',
   // hoverBg: '#535B8E',
 
   // global
@@ -102,6 +102,38 @@ const colors = {
   bg: '#F2F2F2',
   tableBorder: '#EEEEEF',
   tableHeaderBackground: '#FBFBFB',
+
+  outlineButtonHoverBg: 'rgba(48, 64, 214, 0.05)',
+  disabledButtonColor: '#6B7781',
+
+  primaryButtonBg: '#3040D6',
+  primaryButtonHoverBg: '#2839b3',
+  primaryButtonFocusBg: '#2636a1',
+
+  dangerButtonBg: '#C20012',
+  dangerButtonHoverBg: '#9d0616',
+  dangerButtonFocusBg: '#8b0919',
+
+  successButtonBg: '#48c78e',
+  successButtonHoverBg: '#3ec487',
+  successButtonFocusBg: '#3ec487',
+
+  infoButtonBg: '#3e8ed0',
+  infoButtonHoverBg: '#3488ce',
+  infoButtonFocusBg: '#3488ce',
+
+  secondaryButtonBg: '#485fc7',
+  secondaryButtonHoverBg: '#3e56c4',
+  secondaryButtonFocusBg: '#3e56c4',
+
+  lightButtonBg: '#F2F2F2',
+  lightButtonHoverBg: 'rgba(48, 64, 214, 0.05)',
+  lightButtonFocusBg: 'rgba(48, 64, 214, 0.1);',
+
+  textButtonBg: 'transparent',
+  textButtonHoverBg: 'transparent',
+  textButtonFocusBg: 'transparent',
+
 }
 
 /**
@@ -196,7 +228,7 @@ const fontWeights = {
   lighter: 200,
   light: 300,
   normal: 400,
-  bold: 500,
+  bold: 700,
   bolder: 900,
 }
 

@@ -5,7 +5,8 @@ export default css`
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   position: relative;
-  width: 100%
+  width: 100%;
+  border-radius: 2px;
 }
 
 :disabled {
@@ -973,7 +974,7 @@ export default css`
   margin-left: 0;
   background: #FFFFFF;
   border: 1px solid #CACACA;
-  border-radius: 5px;
+  border-radius: 2px;
   line-height: 25px;
   height: 35px;
   width: 300px;
