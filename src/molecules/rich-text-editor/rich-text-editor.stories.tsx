@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { RichTextEditor } from './rich-text-editor'
+import { Box, Text } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
-import { Text, Box } from '../..'
+import { RichTextEditor } from './rich-text-editor'
 
 const html = `
 <h1>Hello World</h1>
@@ -68,7 +68,7 @@ export const Default: React.FC = () => {
   }, [value])
 
   return (
-    <Box flex>
+    <Box flex style={{ gap: 48 }}>
       <StoryWrapper label="Rich text editor">
         <RichTextEditor onChange={(content) => setValue(content)} value={value} />
       </StoryWrapper>

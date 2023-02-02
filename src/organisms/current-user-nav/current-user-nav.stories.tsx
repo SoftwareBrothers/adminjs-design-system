@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CurrentUserNav, Box } from '../..'
+import { Box, CurrentUserNav } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
@@ -14,9 +14,9 @@ export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
     onClick: handleClick,
     icon: 'User',
   }, {
-    label: 'log out',
+    label: 'Log out',
     onClick: handleClick,
-    icon: 'Logout',
+    icon: 'LogOut',
   }]
 
   const lineActions = [{

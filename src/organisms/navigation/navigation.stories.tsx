@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigation, Box, Label } from '../..'
+import { Box, Label, Navigation } from '../..'
 
 import { NavigationProps } from './navigation-props'
 
@@ -27,14 +27,14 @@ export const Default: React.FC<any> = ({ onClick, label }) => {
     label: 'Navigation',
     elements: [{
       label: 'Dashboard',
-      icon: 'Dashboard',
+      icon: 'Database',
       isSelected: true,
       href: '/',
       onClick: handleClick,
       id: 'dashboard',
     }, {
       label: 'Postgres with long name and spaces',
-      icon: 'Sql',
+      icon: 'Database',
       onClick: (event) => {
         event.preventDefault()
         setPostgresOpen(!postgresOpen)
@@ -63,7 +63,7 @@ export const Default: React.FC<any> = ({ onClick, label }) => {
       }],
     }, {
       label: 'MongooseWithLongNameAndWithoutSpaces',
-      icon: 'Datastore',
+      icon: 'Database',
       isOpen: mongooseOpen,
       onClick: (event) => {
         event.preventDefault()

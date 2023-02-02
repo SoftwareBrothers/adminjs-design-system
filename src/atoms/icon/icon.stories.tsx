@@ -1,9 +1,8 @@
 import React from 'react'
+import * as FeatherIcons from 'react-feather'
+import { Box } from '../box'
+import { Label } from '../label'
 import Icon from './icon'
-
-export const Default: React.FC = (props) => (
-  <Icon {...props} />
-)
 
 export default {
   title: 'DesignSystem/Atoms/Icon',
@@ -11,18 +10,19 @@ export default {
     icon: {
       defaultValue: 'Settings',
       description: 'CamelCased name of an icon from https://www.npmjs.com/package/react-feather',
-      control: { type: 'text' },
+      control: { type: 'select' },
+      options: Object.keys(FeatherIcons),
     },
     size: {
-      defaultValue: 20,
-      control: { type: 'number', min: 16, max: 32, step: 4 },
+      defaultValue: 48,
+      control: { type: 'number', min: 16, max: 48, step: 4 },
     },
     color: {
-      defaultValue: 'white',
+      defaultValue: 'black',
       control: { type: 'color' },
     },
     bg: {
-      defaultValue: 'black',
+      defaultValue: 'white',
       control: { type: 'color' },
     },
     rounded: {
@@ -35,3 +35,16 @@ export default {
     },
   },
 }
+
+export const Default: React.FC = (props) => <Icon {...props} />
+
+export const Icons = () => (
+  <Box flex flexWrap="wrap" alignItems="center" style={{ gap: 16 }}>
+    {Object.keys(FeatherIcons).map((key) => (
+      <Box key={key} flex alignItems="center" flexDirection="column">
+        <Label>{key}</Label>
+        <Icon icon={key} size={24} />
+      </Box>
+    ))}
+  </Box>
+)
