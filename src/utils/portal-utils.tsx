@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
+import React, { FC, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import React, { useEffect, useState, FC } from 'react'
 
 import generateId from './generate-id'
 
@@ -17,8 +17,8 @@ const PortalUtils = {
 
   createPortalForKey: function createPortalForKey<Props>(
     idKey: string, Component: FC<Props>,
-  ): FC<Props> {
-    const Portal: FC<Props> = (props) => {
+  ): FC<Props & JSX.IntrinsicAttributes> {
+    const Portal: FC<Props & JSX.IntrinsicAttributes> = (props) => {
       const [id] = useState(generateId(idKey))
       const [portalElement] = useState<HTMLDivElement>(window.document.createElement('div'))
 
