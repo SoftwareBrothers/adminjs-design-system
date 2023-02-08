@@ -20,7 +20,7 @@ import themeGet from './theme-get'
  * @memberof module:@adminjs/design-system
  */
 const contentCSS = css`
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${({ theme }) => theme.font};
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};
   font-weight: ${themeGet('fontWeights', 'light')};

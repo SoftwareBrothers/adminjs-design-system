@@ -1,8 +1,8 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import styled from 'styled-components'
 
-import { CheckboxRadioContainer } from '../check-box'
 import focusShadowStyle from '../../utils/focus-shadow.style'
+import { CheckboxRadioContainer } from '../check-box'
 
 const Circle = styled.span`
   display: block;
@@ -11,7 +11,7 @@ const Circle = styled.span`
   margin-left: -4px;
   margin-top: -4px;
   border-radius: 9999px;
-  background: ${({ theme }): string => theme.colors.white};
+  background: ${({ theme }) => theme.colors.white};
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,17 +47,17 @@ const StyledRadio = styled.span<StyledProps>`
   display: inline-block;
   width: 16px;
   cursor: pointer;
-  border: 1px solid ${({ theme }): string => theme.colors.grey40};
+  border: 1px solid ${({ theme, checked, disabled }): string => (checked && !disabled ? theme.colors.primary100 : theme.colors.grey40)};
   border-radius: 1000px;
   height: 16px;
   transition: all 150ms;
   position: relative;
 
   ${HiddenRadio}:focus + & {
-    ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
+    ${({ theme }) => `box-shadow: ${focusShadowStyle(theme)}`};
   }
   ${HiddenRadio}:hover + & {
-    border-color: ${({ theme }): string => theme.colors.grey60};
+    border-color: ${({ theme }) => theme.colors.grey60};
   }
   ${Circle} {
     visibility: ${({ checked }): string => (checked ? 'visible' : 'hidden')};

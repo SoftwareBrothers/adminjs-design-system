@@ -128,7 +128,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  * @section design-system
  */
 const Link = styled.a<LinkProps>`
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${({ theme }) => theme.font};
   vertical-align: middle;
   cursor: pointer;
   text-decoration: none;
@@ -136,7 +136,7 @@ const Link = styled.a<LinkProps>`
     text-decoration: underline;
   }
   & svg {
-    padding-right: ${({ theme }): string => theme.space.default};
+    padding-right: ${({ theme }) => theme.space.default};
     vertical-align: text-top;
   }
   ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}

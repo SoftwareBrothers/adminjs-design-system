@@ -4,8 +4,6 @@ import { Text } from '../text'
 import { cssClass } from '../../utils/css-class'
 import { themeGet } from '../../utils'
 
-const CAPTION_HEIGHT = '42px'
-
 /**
  * @component
  * @private
@@ -14,34 +12,26 @@ const TableCaption = styled.caption`
   font-family: ${themeGet('font')};
   padding: ${themeGet('space', 'sm')} ${themeGet('space', 'lg')};
   text-align: left;
-  color: ${themeGet('colors', 'primary100')};
+  color: ${themeGet('colors', 'white')};
   font-size: ${themeGet('fontSizes', 'default')};
   line-height: ${themeGet('lineHeights', 'default')};
   position: absolute;
-  height: ${CAPTION_HEIGHT};
   left: 0;
   right: 0;
-  top: -${CAPTION_HEIGHT};
-  background: ${themeGet('colors', 'grey40')};
+  top: -4px;
+  transform: translateY(-100%);
+  background: ${themeGet('colors', 'primary100')};
+  border-radius: 4px;
   box-sizing: border-box;
   vertical-align: middle;
 
-  & ${Button} {
-    color: ${themeGet('colors', 'primary100')};
-    border-color: ${themeGet('colors', 'primary100')};
-    & > span svg {
-      stroke: ${themeGet('colors', 'primary100')};
-    }
-    &:hover {
-      color: ${themeGet('colors', 'primary100')};
-      .${cssClass('Icon')} svg {
-        stroke: ${themeGet('colors', 'primary100')};
-      }
-    }
+  &:first-child {
+    flex-grow: 1;
   }
 
-  & ${Text} {
-    color: ${themeGet('colors', 'primary100')};
+  & ${Button} {
+    color: ${themeGet('colors', 'white')};
+    border-color: ${themeGet('colors', 'white')};
   }
 `
 

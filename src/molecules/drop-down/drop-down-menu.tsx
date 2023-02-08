@@ -24,12 +24,12 @@ export const DropDownMenu = styled(Box).attrs<DropDownMenuProps>((props) => ({
     [`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className,
   ),
 }))<DropDownMenuProps>`
-  background: ${({ theme }): string => theme.colors.white};
+  background: ${({ theme }) => theme.colors.white};
   display: inline-block;
   position: absolute;
   z-index: 40;
   flex-direction: column;
-  box-shadow: ${({ theme }): string => theme.shadows.card};
+  box-shadow: ${({ theme }) => theme.shadows.card};
   ${({ isVisible }): string => (isVisible !== false ? '' : 'display: none;')};
 
   &.${cssClass('DropDown-Stick-left')} .${cssClass('DropDownMenu')} {

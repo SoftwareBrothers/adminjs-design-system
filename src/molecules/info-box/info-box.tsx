@@ -21,11 +21,12 @@ const StyledInfoBox = styled(Box)<BoxProps>`
  */
 export type InfoBoxProps = {
   /** Title of an InfoBox */
-  title: string;
+  title?: string;
   /** Inner content - usually couple of {@link Text} nodes */
   children: React.ReactNode;
   /** Optional testId */
   testId?: string;
+  variant?: BoxProps['variant'];
 }
 
 /**
@@ -60,17 +61,14 @@ export type InfoBoxProps = {
  * )
  * @section design-system
  */
-const InfoBox: React.FC<InfoBoxProps> = (props) => {
-  const { children, title, testId } = props
-  return (
-    <StyledInfoBox data-testid={testId} variant="grey" className={cssClass('InfoBox')}>
-      <Box width={1 / 2}>
-        <H4 mb="lg">{title}</H4>
-        {children}
-      </Box>
-    </StyledInfoBox>
-  )
-}
+const InfoBox: React.FC<InfoBoxProps> = ({ children, title, variant = 'grey', testId }) => (
+  <StyledInfoBox data-testid={testId} variant={variant} className={cssClass('InfoBox')}>
+    <Box width={1 / 2}>
+      {title && <H4 mb="lg">{title}</H4>}
+      {children}
+    </Box>
+  </StyledInfoBox>
+)
 
 export { InfoBox }
 export default InfoBox

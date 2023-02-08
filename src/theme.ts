@@ -45,13 +45,12 @@
 const colors = {
   // Primary
   primary100: '#3040D6',
-  // primary100: '#556FE3',
-  primary80: '#778CE9',
   primary60: '#99A9EE',
   primary40: '#BBC5F4',
   primary20: '#DDE2F9',
+
   // accent
-  accent: '#38CAF1',
+  accent: '#3B3552',
   love: '#4D70EB', // Main AdminJS logo color
 
   // grey
@@ -65,13 +64,18 @@ const colors = {
   // Alerts
   errorDark: '#9d0616',
   error: '#C20012',
-  errorLight: 'rgba(194, 0, 18, 0.1)',
+  errorLight: '#F9E5E7',
+
   successDark: '#007D7F',
   success: '#007D7F',
-  successLight: 'rgba(0, 125, 127, 0.1)',
+  successLight: '#E5F2F2',
+
+  warningDark: '#A14F17',
+  warning: '#A14F17',
+  warningLight: '#F6EDE8',
 
   infoDark: '#4268F6',
-  info: '#879FFA',
+  info: '#3040D6',
   infoLight: '#CBD5FD',
 
   // Backgrounds
@@ -79,7 +83,7 @@ const colors = {
   hoverBg: '#3040D6',
 
   // global
-  border: '#DDE1E5',
+  border: '#EEEEEF',
 
   // Elements
   inputBorder: '#BBC3CB',
@@ -87,42 +91,21 @@ const colors = {
   highlight: '#F2F2F2',
   filterInputBorder: '#BBC3CB',
   filterDisabled: 'rgba(83,91,142,0.05)',
-  bg: '#F2F2F2',
-  tableBorder: '#EEEEEF',
-  tableHeaderBackground: '#FBFBFB',
 
-  outlineButtonHoverBg: 'rgba(48, 64, 214, 0.05)',
-  disabledButtonColor: '#6B7781',
-
-  primaryButtonBg: '#3040D6',
-  primaryButtonHoverBg: '#2839b3',
-  primaryButtonFocusBg: '#2636a1',
-
-  dangerButtonBg: '#C20012',
-  dangerButtonHoverBg: '#9d0616',
-  dangerButtonFocusBg: '#8b0919',
-
-  successButtonBg: '#48c78e',
-  successButtonHoverBg: '#3ec487',
-  successButtonFocusBg: '#3ec487',
-
-  infoButtonBg: '#3e8ed0',
-  infoButtonHoverBg: '#3488ce',
-  infoButtonFocusBg: '#3488ce',
-
-  secondaryButtonBg: '#485fc7',
-  secondaryButtonHoverBg: '#3e56c4',
-  secondaryButtonFocusBg: '#3e56c4',
-
-  lightButtonBg: '#F2F2F2',
-  lightButtonHoverBg: 'rgba(48, 64, 214, 0.05)',
-  lightButtonFocusBg: 'rgba(48, 64, 214, 0.1);',
-
-  textButtonBg: 'transparent',
-  textButtonHoverBg: 'transparent',
-  textButtonFocusBg: 'transparent',
-
+  bg: '#F8F9F9',
+  text: '#0C1E29',
 }
+
+export const ColorVariants = {
+  primary: 'primary100',
+  secondary: 'accent',
+  danger: 'error',
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+}
+
+export type ColorVariant = keyof typeof ColorVariants
 
 /**
  * Sizes can be used with paddings, margins etc.
@@ -306,10 +289,10 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} default
  */
 const borders = {
-  input: '1px solid #BBC3CB',
-  filterInput: ' 1px rgba(255,255,255,0. solid15)',
-  bg: '1px solid #F2F2F2',
-  default: '1px solid #DDE1E5',
+  input: `1px solid ${colors.border}`,
+  filterInput: ' 1px rgba(255,255,255, 0.15)',
+  bg: `1px solid ${colors.bg}`,
+  default: `1px solid ${colors.border}`,
 }
 
 /**
@@ -324,13 +307,7 @@ const borderWidths = {
   default: '0px',
 }
 
-export type VariantType = 'primary'
-  | 'danger'
-  | 'success'
-  | 'info'
-  | 'secondary'
-  | 'default'
-  | 'light'
+export type VariantType = 'contained' | 'outlined' | string
 
 export const VariantValues: Array<VariantType> = [
   'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',

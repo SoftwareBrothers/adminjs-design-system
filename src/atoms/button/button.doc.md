@@ -79,7 +79,7 @@ return (
  </Button>
  <Button size="icon" mr="default"><Icon icon="Settings" /></Button>
  <Button rounded size="icon" mr="default"><Icon icon="Settings" /></Button>
- <Button variant="danger" mr="default">
+ <Button color="danger" mr="default">
    <Icon icon="Trash" />
    Delete me
  </Button>

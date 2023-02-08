@@ -3,7 +3,7 @@ import { Drawer, DrawerContent, DrawerFooter, Header, Button, Icon, Box, Text } 
 import { FullFeaturedFormGroup } from '../form-group/form-group.stories'
 
 export const Default: React.FC = (props) => (
-  <Drawer {...props} bg="grey20">
+  <Drawer {...props}>
     <DrawerContent>
       <Header.H3>
         <Button size="icon" rounded mr="lg">
@@ -31,7 +31,7 @@ export const Default: React.FC = (props) => (
       <FullFeaturedFormGroup />
     </DrawerContent>
     <DrawerFooter>
-      <Button variant="primary">
+      <Button variant="contained">
         Save
       </Button>
     </DrawerFooter>

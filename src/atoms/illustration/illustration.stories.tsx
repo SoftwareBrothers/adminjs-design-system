@@ -1,14 +1,11 @@
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import Illustration from './illustration'
+import { Box } from '../box'
+import * as illustrations from '../illustrations'
+import Label from '../label'
+import Illustration, { IllustrationVariant } from './illustration'
 
-const illustrationVariants = ['Moon', 'Rocket', 'Astronaut', 'DocumentCheck',
-  'DocumentSearch', 'FileSearch', 'FlagInCog', 'Folders', 'Launch', 'Planet',
-  'AdminJSLogo', 'GithubLogo',
-  'SlackLogo'] as const
-
-export const Default: React.FC = (props) => (
-  <Illustration {...(props as any)} />
-)
+const illustrationVariants = Object.keys(illustrations) as IllustrationVariant[]
 
 export default {
   title: 'DesignSystem/Atoms/Illustration',
@@ -27,4 +24,17 @@ export default {
       control: { type: 'number' },
     },
   },
-}
+} as ComponentMeta<typeof Illustration>
+
+export const Default: ComponentStory<typeof Illustration> = (props) => <Illustration {...props} />
+
+export const Icons = () => (
+  <Box display="grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+    {(illustrationVariants).map((key) => (
+      <Box key={key} flex alignItems="center" flexDirection="column">
+        <Label>{key}</Label>
+        <Illustration variant={key} width={150} height={150} />
+      </Box>
+    ))}
+  </Box>
+)

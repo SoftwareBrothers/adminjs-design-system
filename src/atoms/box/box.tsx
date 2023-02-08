@@ -67,9 +67,9 @@ const Box = styled.section<BoxProps>`
   box-sizing: border-box;
   min-width: 0;
   ${({ flex }): string => (flex && typeof flex === 'boolean' ? 'display: flex;' : '')}
-  font-family: ${({ theme }): string => theme.font};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
-  font-size: ${({ theme }): string => theme.fontSizes.default};
+  font-family: ${({ theme }) => theme.font};
+  line-height: ${({ theme }) => theme.lineHeights.default};
+  font-size: ${({ theme }) => theme.fontSizes.default};
   font-weight: normal;
   ${({ animate }): string => (animate ? 'transition: all 500ms;' : '')};
 

@@ -9,23 +9,23 @@ import { Link } from '../../atoms/link'
 import InputGroup from './input-group'
 
 const formGroupDisabledCSS = css`
-  color: ${({ theme }): string => theme.colors.grey40};
+  color: ${({ theme }) => theme.colors.grey40};
 `
 
 const formGroupWithErrorCSS = css`
-  color: ${({ theme }): string => theme.colors.error};
+  color: ${({ theme }) => theme.colors.error};
   ${Input}, ${CurrencyInput} {
-    color: ${({ theme }): string => theme.colors.error};
-    border-color: ${({ theme }): string => theme.colors.error};
+    color: ${({ theme }) => theme.colors.error};
+    border-color: ${({ theme }) => theme.colors.error};
   }
   &&& ${Label} {
-    color: ${({ theme }): string => theme.colors.error};
+    color: ${({ theme }) => theme.colors.error};
     &:before {
-      color: ${({ theme }): string => theme.colors.error};
+      color: ${({ theme }) => theme.colors.error};
     }
   }
   &&& ${Label}, &&& ${Button}, &&& ${Link} {
-    border-color: ${({ theme }): string => theme.colors.error};
+    border-color: ${({ theme }) => theme.colors.error};
   }
 `
 
@@ -74,12 +74,12 @@ export type FormGroupProps = SpaceProps & {
  *   <FormGroup>
  *     <Label required>Name</Label>
  *     <InputGroup>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *       <Input />
  *       <Label>100 KM</Label>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *     </InputGroup>
@@ -93,12 +93,12 @@ export type FormGroupProps = SpaceProps & {
  *   <FormGroup error>
  *     <Label required>Name</Label>
  *     <InputGroup>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *       <Input />
  *       <Label>100 KM</Label>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *     </InputGroup>
@@ -145,7 +145,7 @@ const FormGroup = styled.div<FormGroupProps>`
 
   & ${Input}, & ${CurrencyInput} {
     ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
-    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.grey100}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};
   }
 
   & ${InputGroup} {
@@ -158,7 +158,7 @@ const FormGroup = styled.div<FormGroupProps>`
     ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
   }
   & [class*="DatePicker"] > .react-datepicker-wrapper input {
-    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.grey100}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};
   }
 `
 

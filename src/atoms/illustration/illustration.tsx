@@ -1,6 +1,43 @@
 import React from 'react'
-import { ThemeProps, DefaultTheme, withTheme } from 'styled-components'
-import * as Illustrations from '../illustrations/index'
+import styled, { DefaultTheme, ThemeProps, withTheme } from 'styled-components'
+import * as Illustrations from '../illustrations'
+
+export type IllustrationVariant =
+  | 'Accept'
+  | 'AdminJSLogo'
+  | 'Astronaut'
+  | 'Bag'
+  | 'Beware'
+  | 'Box'
+  | 'Calendar'
+  | 'Cancel'
+  | 'Cards'
+  | 'Clip'
+  | 'Cloud'
+  | 'Cup'
+  | 'Details'
+  | 'Docs'
+  | 'DocumentCheck'
+  | 'DocumentSearch'
+  | 'Drawer'
+  | 'FileSearch'
+  | 'FlagInCog'
+  | 'Folders'
+  | 'Folder'
+  | 'GithubLogo'
+  | 'IdentityCard'
+  | 'Launch'
+  | 'Moon'
+  | 'Notebook'
+  | 'NotFound'
+  | 'Padlock'
+  | 'Photos'
+  | 'Planet'
+  | 'Plug'
+  | 'RocketNew'
+  | 'Rocket'
+  | 'SlackLogo'
+  | 'Tags'
 
 /**
  * @memberof Illustration
@@ -10,28 +47,33 @@ export type IllustrationProps = {
   /**
    * Available illustration variant
    */
-  variant: 'Moon' | 'Rocket' | 'Astronaut'
-    | 'DocumentCheck' | 'DocumentSearch' | 'FileSearch'
-    | 'FlagInCog' | 'Folders' | 'Launch' | 'Planet'
-    | 'AdminJSLogo' | 'GithubLogo'
-    | 'SlackLogo' | string;
+  variant: IllustrationVariant
   /** Optional max width restrictions */
-  width?: number;
+  width?: number
   /** Optional max height restrictions */
-  height?: number;
+  height?: number
 }
 
-type RawIllustrationType = IllustrationProps & ThemeProps<DefaultTheme> & {
-  // this fixes unknown error with some TSC version (monkey patch)
-  children?: React.ReactNode
-}
+const Wrapper = styled.div`  
+  [fill="#3040D6"] {
+    fill: ${({ theme }) => theme.colors.primary100}
+  }
+  
+  [stroke="#3B3552"] {
+    stroke: ${({ theme }) => theme.colors.accent}
+  }
+`
+
+type RawIllustrationType = IllustrationProps &
+  ThemeProps<DefaultTheme> & {
+    // this fixes unknown error with some TSC version (monkey patch)
+    children?: React.ReactNode
+  }
 
 const RawIllustration: React.FC<RawIllustrationType> = (props) => {
   const { variant, ...other } = props
   const IllustrationComponent = Illustrations[variant]
-  return (
-    <IllustrationComponent {...other} />
-  )
+  return <Wrapper><IllustrationComponent {...other} /></Wrapper>
 }
 
 /**

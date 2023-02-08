@@ -8,7 +8,7 @@ import { space, SpaceProps } from 'styled-system'
 export const DrawerContent = styled.section<SpaceProps>`
   flex-grow: 1;
   overflow: auto;
-  padding: ${({ theme }): string => theme.space.x3} ${({ theme }): string => theme.space.xxl} ${({ theme }): string => theme.space.xl};
+  padding: ${({ theme }) => theme.space.x3} ${({ theme }) => theme.space.xxl} ${({ theme }) => theme.space.xl};
   box-sizing: border-box;
   ${space};
 `

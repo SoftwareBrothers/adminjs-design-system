@@ -1,36 +1,54 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { DefaultTheme, keyframes } from 'styled-components'
 import { LayoutProps, layout } from 'styled-system'
 
+import { darken } from 'polished'
 import { cssClass } from '../../utils/css-class'
 
 const linearGradient = (theme: DefaultTheme): string => (
   `linear-gradient(to right, ${theme.colors.grey60} 8%, ${theme.colors.grey40} 18%, ${theme.colors.grey20} 33%)`
 )
 
-const StyledPlaceholder = styled.div<LayoutProps>`
-  @keyframes placeHolderShimmer{
-    0%{
-        background-position: -468px 0
-    }
-    100%{
-        background-position: 468px 0
-    }
+const waveKeyframe = keyframes`
+  0% {
+    transform: translateX(-100%);
   }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`
 
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  background: ${({ theme }): string => theme.colors.white};
-  background: ${({ theme }): string => linearGradient(theme)};
-  background-size: 1000px 104px;
-  height: 338px;
+const StyledPlaceholder = styled.div<LayoutProps>`
   position: relative;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+  &::after {
+    animation: ${waveKeyframe} 1.6s linear 0.5s infinite;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      ${({ theme }) => darken(0.03, theme.colors.border)},
+      transparent
+    );
+    content: '';
+    position: absolute;
+    transform: translateX(-100%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  background: ${({ theme }) => theme.colors.border};
+  background-size: 1000px 104px;
+  height: 338px;
+  border-radius: ${({ theme }) => theme.space.sm};
   ${layout};
 `
 

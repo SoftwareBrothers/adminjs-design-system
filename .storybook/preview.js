@@ -2,7 +2,7 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import ThemeDecorator from './theme-decorator'
 
 export const parameters = {
-  viewMode: 'docs',
+  // viewMode: 'docs',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -27,3 +27,16 @@ export const parameters = {
 }
 
 export const decorators = [ThemeDecorator]
+
+export const globalTypes = {
+  theme: {
+    title: 'Theme',
+    description: 'Theme for components',
+    defaultValue: 'default',
+    toolbar: {
+      icon: 'circlehollow',
+      dynamicTitle: true,
+      items: ['default', 'red', 'green', 'orange']
+    }
+  }
+};

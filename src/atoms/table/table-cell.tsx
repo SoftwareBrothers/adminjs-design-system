@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { color, space, layout, SpaceProps, LayoutProps } from 'styled-system'
+import { LayoutProps, SpaceProps, color, layout, space } from 'styled-system'
 import { ColorProps } from '../../utils/color-props'
 
-import TableHead from './table-head'
 import { cssClass } from '../../utils/css-class'
 
 /**
@@ -10,27 +9,24 @@ import { cssClass } from '../../utils/css-class'
  * @private
  */
 const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
-  border-top: 1px solid ${({ theme }): string => theme.colors.tableBorder};
-  border-bottom: 1px solid ${({ theme }): string => theme.colors.tableBorder};
-  font-size: ${({ theme }): string => theme.fontSizes.default};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  font-size: ${({ theme }) => theme.fontSizes.default};
+  line-height: ${({ theme }) => theme.lineHeights.default};
   word-break: break-word;
   vertical-align: middle;
   ${color}; 
   ${space};
   ${layout};
 
-  ${TableHead} & {
-    color: ${({ theme }): string => theme.colors.grey60};
-    border-top:  1px solid ${({ theme }): string => theme.colors.tableBorder};
-    border-bottom:  1px solid ${({ theme }): string => theme.colors.tableBorder};
-    font-weight: ${({ theme }): number => theme.fontWeights.bold};
+  &.options {
+    text-align: right;
   }
 `
 
 TableCell.defaultProps = {
   p: 'lg',
-  color: 'grey100',
+  color: 'text',
   className: cssClass('TableCell'),
 }
 

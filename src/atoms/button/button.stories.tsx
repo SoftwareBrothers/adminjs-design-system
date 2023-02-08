@@ -1,20 +1,15 @@
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { Button, Box, Icon as IconComponent, Label, Icon } from '../../../src'
+import { Box, Button, Icon, Icon as IconComponent, Label } from '../../../src'
 import StoryWrapper from '../../utils/story-wrapper'
 
-const variants = ['primary', 'light', 'danger', 'success', 'info', 'secondary', 'text'] as const
-const ButtonVariant = ['primary', 'danger', 'text', 'success', 'info', 'secondary'] as const
+const ButtonVariant = ['outlined', 'contained', 'light', 'text'] as const
 const ButtonSize = ['sm', 'lg', 'icon', 'default'] as const
+const colorVariants = ['primary', 'secondary', 'danger', 'success', 'info'] as const
 
-export const Default: React.FC = (props) => (
-  <Box width={1}>
-    <StoryWrapper label="Knobs example">
-      <Button {...props}>
-        Example buttton
-      </Button>
-    </StoryWrapper>
-  </Box>
+export const Default: ComponentStory<typeof Button> = (props) => (
+  <Button {...props}>Example button</Button>
 )
 
 export const Examples: React.FC = () => (
@@ -35,11 +30,11 @@ export const Examples: React.FC = () => (
           <Icon icon="Plus" />
           Add brand
         </Button>
-        <Button size="md" ml="md" variant="primary">
+        <Button size="md" ml="md" color="primary">
           <Icon icon="Activity" />
           Primary
         </Button>
-        <Button size="md" ml="md" variant="danger">
+        <Button size="md" ml="md" color="danger">
           Danger
           <Icon icon="ArrowRight" />
         </Button>
@@ -51,26 +46,32 @@ export const Examples: React.FC = () => (
           <Icon icon="Plus" />
           Add brand
         </Button>
-        <Button size="lg" ml="md" variant="primary">
+        <Button size="lg" ml="md" color="primary">
           <Icon icon="Activity" />
           Primary
         </Button>
-        <Button size="lg" ml="md" variant="danger">
+        <Button size="lg" ml="md" color="danger">
           Danger
           <Icon icon="ArrowRight" />
         </Button>
       </Box>
       <Box mb="xl">
         <Label>Icon</Label>
-        <Button size="icon"><IconComponent icon="Plus" /></Button>
+        <Button size="icon">
+          <IconComponent icon="Plus" />
+        </Button>
         <Button ml="md">Regular inside</Button>
-        <Button size="icon" ml="md" rounded><IconComponent icon="Plus" /></Button>
-        <Button size="icon" ml="md" variant="text"><IconComponent icon="Plus" /></Button>
+        <Button size="icon" ml="md" rounded>
+          <IconComponent icon="Plus" />
+        </Button>
+        <Button size="icon" ml="md" variant="text">
+          <IconComponent icon="Plus" />
+        </Button>
       </Box>
     </StoryWrapper>
 
     <StoryWrapper label="Variants">
-      {variants.map((variant) => (
+      {ButtonVariant.map((variant) => (
         <Box mb="xl" key={variant}>
           <Label>{variant}</Label>
           <Button variant={variant}>{variant}</Button>
@@ -85,7 +86,7 @@ export const Examples: React.FC = () => (
           <Icon icon="Plus" />
           Small [sm]
         </Button>
-        <Button size="sm" variant="primary" ml="default">
+        <Button size="sm" color="primary" ml="default">
           <Icon icon="Activity" />
           With other icon
         </Button>
@@ -122,20 +123,30 @@ export const Examples: React.FC = () => (
 export default {
   title: 'DesignSystem/Atoms/Button',
   component: Button,
+  args: {
+    disabled: false,
+    rounded: false,
+  },
+  parameters: {
+    controls: {
+      include: ['variant', 'disabled', 'rounded', 'size', 'color'],
+    },
+  },
   argTypes: {
     variant: {
       options: ButtonVariant,
+      defaultValue: ButtonVariant[0],
       control: { type: 'select' },
     },
     size: {
       options: ButtonSize,
+      defaultValue: ButtonSize[0],
       control: { type: 'select' },
     },
-    rounded: {
-      control: { type: 'boolean' },
-    },
-    disabled: {
-      control: { type: 'boolean' },
+    color: {
+      options: colorVariants,
+      defaultValue: colorVariants[0],
+      control: { type: 'select' },
     },
   },
-}
+} as ComponentMeta<typeof Button>

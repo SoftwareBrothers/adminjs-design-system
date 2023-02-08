@@ -1,16 +1,16 @@
 import React from 'react'
 import {
   Box,
-  FormGroup,
-  Label,
-  InputGroup,
   Button,
-  Icon,
-  Input,
-  FormMessage,
   DropDown,
   DropDownMenu,
   DropDownTrigger,
+  FormGroup,
+  FormMessage,
+  Icon,
+  Input,
+  InputGroup,
+  Label,
 } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
@@ -25,18 +25,18 @@ export const FullFeaturedFormGroup: React.FC = () => (
     <InputGroup>
       <DropDown>
         <DropDownTrigger>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             ==
           </Button>
         </DropDownTrigger>
         <DropDownMenu top="xxl">
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'>='}
           </Button>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'<='}
           </Button>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'><'}
           </Button>
         </DropDownMenu>

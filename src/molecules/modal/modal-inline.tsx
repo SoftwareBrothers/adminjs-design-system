@@ -30,13 +30,13 @@ const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (props) =>
       {title && <H5>{title}</H5>}
       {onClose && (
         <Button className="close-button" size="icon" variant="text" onClick={onClose} rounded>
-          <Icon icon="XCircle" />
+          <Icon icon="X" />
         </Button>
       )}
       {subTitle && <Text>{subTitle}</Text>}
       {children}
       {buttons && buttons.length && (
-        <Box flex flexDirection="row" justifyContent="flex-end">
+        <Box flex flexDirection="row" justifyContent="flex-end" mt="xl">
           {buttons.map((buttonProps, key) => (
             // eslint-disable-next-line react/no-array-index-key
             <Button key={key} mr="md" mt="sm" {...buttonProps} />

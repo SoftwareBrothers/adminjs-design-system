@@ -1,4 +1,5 @@
 import { ButtonProps } from '../../atoms/button'
+import { IconProps } from '../../atoms/icon'
 import { VariantType } from '../../theme'
 
 /**
@@ -8,7 +9,7 @@ import { VariantType } from '../../theme'
  */
 export type ButtonInGroupProps = ButtonProps & {
   /** Icon of a button */
-  icon?: string;
+  icon?: IconProps['icon'];
   /** Label, when set to null, with icon given, button will adjust it's margin */
   label?: string | null;
   /** Variant compatible with Button variant */

@@ -4,7 +4,9 @@ import { themeGet } from '../../utils'
 
 const StyledNavigation = styled(Box)`
   ul ul > li {
-    padding-left: ${themeGet('space', 'xxl')};
+    a {
+      padding-left: ${themeGet('space', 'x3')};
+    }
     &:last-child {
       margin-bottom: ${themeGet('space', 'lg')};
     }

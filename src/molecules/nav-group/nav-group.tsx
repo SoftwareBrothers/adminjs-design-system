@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Icon } from '../../atoms/icon'
+import { Icon, IconProps } from '../../atoms/icon'
 import { Box } from '../../atoms/box'
 import { Text } from '../../atoms/text'
 import { cssClass } from '../../utils/css-class'
@@ -52,7 +52,7 @@ export type NavGroupProps = {
   /** Title of the navigation group */
   title: string;
   /** Optional icon */
-  icon?: string;
+  icon?: IconProps['icon'];
   children?: React.ReactNode;
 }
 

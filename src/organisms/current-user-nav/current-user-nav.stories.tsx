@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, CurrentUserNav } from '../..'
+import { Box, CurrentUserNav, CurrentUserNavAction } from '../..'
 import StoryWrapper from '../../utils/story-wrapper'
 
 export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
@@ -9,7 +9,7 @@ export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
     onClick(event)
   }
 
-  const dropActions = [{
+  const dropActions: CurrentUserNavAction[] = [{
     label: 'My Profile',
     onClick: handleClick,
     icon: 'User',
@@ -19,10 +19,10 @@ export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
     icon: 'LogOut',
   }]
 
-  const lineActions = [{
+  const lineActions: CurrentUserNavAction[] = [{
     label: 'Notification',
     onClick: handleClick,
-    icon: 'NotificationNew',
+    icon: 'Bell',
   }, {
     label: 'Settings',
     onClick: handleClick,
@@ -57,7 +57,7 @@ export default {
       control: { type: 'text' },
     },
     avatar: {
-      defaultValue: 'https://api.adorable.io/avatars/285/abott@adorable.png',
+      defaultValue: 'https://placekitten.com/40/40',
       control: { type: 'text' },
     },
   },

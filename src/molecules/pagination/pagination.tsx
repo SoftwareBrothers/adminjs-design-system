@@ -1,6 +1,6 @@
+import JWPaginate from 'jw-paginate'
 import React from 'react'
 import styled from 'styled-components'
-import JWPaginate from 'jw-paginate'
 
 import { Box } from '../../atoms/box'
 import { Button, ButtonProps } from '../../atoms/button'
@@ -41,7 +41,7 @@ export type PaginationProps = {
 
 const PaginationLink = styled(Button).attrs((props: ButtonProps) => ({
   size: 'icon',
-  variant: props.variant ? props.variant : 'text',
+  variant: props.variant || 'text',
 }))`
   min-width: 28px;
   height: 28px;
@@ -58,17 +58,15 @@ const PaginationWrapper = styled(Box)`
   display: inline-block;
   padding: 2px;
  
-  border: 1px solid ${({ theme }): string => theme.colors.grey20};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   & > :hover {
     text-decoration: none;
   }
   & > :first-child {
-    width: 56px;
-    border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-right: 1px solid ${({ theme }) => theme.colors.border};
   }
   & > :last-child {
-    width: 56px;
-    border-left: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-left: 1px solid ${({ theme }) => theme.colors.border};
   }
 `
 
@@ -127,6 +125,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="first"
+              variant="text"
               onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
             >
               <Icon icon="SkipBack" />
@@ -136,6 +135,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       }
       <PaginationLink
         data-testid="previous"
+        variant="text"
         onClick={() => (!isFirstPage ? onChange(prevPage) : undefined)}
       >
         <Icon icon="ChevronLeft" />
@@ -144,7 +144,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         <PaginationLink
           key={p}
           onClick={(): void => onChange(p)}
-          variant={p === currentPage ? 'primary' : 'text'}
+          variant={p === currentPage ? 'contained' : 'text'}
           className={cssClass('PaginationLink', p === currentPage ? 'current' : '')}
           data-testid={`page-${p}`}
         >
@@ -153,6 +153,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       ))}
       <PaginationLink
         data-testid="next"
+        variant="text"
         onClick={() => (!isLastPage ? onChange(nextPage) : undefined)}
       >
         <Icon icon="ChevronRight" />
@@ -162,6 +163,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="last"
+              variant="text"
               onClick={() => (!isLastPage ? onChange(paginate.totalPages) : undefined)}
             >
               <Icon icon="SkipForward" />

@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 
-import { ButtonProps } from './button-props'
-import ButtonCSS from './button-css'
 import { cssClass, themeGet } from '../../utils'
+import ButtonCSS from './button-css'
+import { ButtonProps } from './button-props'
 
 const addContent = css<ButtonProps>`
   &:before {
-    content: "${({ label }) => label}";
+    content: '${({ label }) => label}';
   }
 `
 
@@ -23,11 +23,15 @@ const addContent = css<ButtonProps>`
 const Button = styled.button.attrs((props) => ({
   className: cssClass('Button', props.className),
 }))<ButtonProps>`
-  font-size: ${themeGet('fontSizes', 'default')};
-  background-color: transparent;
   ${ButtonCSS};
   ${({ label }) => (label ? addContent : '')};
 `
+
+Button.defaultProps = {
+  variant: 'text',
+  color: 'primary',
+  size: 'md',
+}
 
 export { Button }
 export default Button

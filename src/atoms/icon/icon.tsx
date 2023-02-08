@@ -1,9 +1,9 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
-import { space, SpaceProps, color } from 'styled-system'
 import * as FeatherIcons from 'react-feather'
-import { cssClass } from '../../utils/css-class'
+import styled, { css } from 'styled-components'
+import { SpaceProps, space, color as styledColor } from 'styled-system'
 import { ColorProps } from '../../utils/color-props'
+import { cssClass } from '../../utils/css-class'
 
 /**
  * Prop Types of an Icon component.
@@ -17,7 +17,7 @@ export type IconProps = SpaceProps & ColorProps & {
   /**
    * CamelCased name of an icon from https://feathericons.com/
    */
-  icon?: string;
+  icon?: keyof typeof FeatherIcons;
   /**
    * Size variant. Default to 16
    */
@@ -60,16 +60,16 @@ const spinCss = css`
 const Wrapper = styled.span<IconProps>`
   vertical-align: middle;
   display: inline-block;
-  line-height: ${({ theme }): string => theme.lineHeights.sm};
-  font-size: ${({ theme }): string => theme.fontSizes.sm};
+  line-height: ${({ theme }) => theme.lineHeights.sm};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   
   & > svg {
-    ${({ theme, color: colorProp }): string => (colorProp ? `stroke: ${theme.colors[colorProp]}` : '')};
+    stroke: ${({ theme, color }): string => (color && color !== 'inherit' ? theme.colors[color] : 'currentColor')};
     ${({ spin }): any => (spin ? spinCss : '')};
   }
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px;' : '')};
   ${space};
-  ${color};
+  ${styledColor};
 `
 
 /**
@@ -125,9 +125,7 @@ const Wrapper = styled.span<IconProps>`
  * @section design-system
  */
 const Icon: React.FC<IconProps> = (props) => {
-  const { icon, size, color: givenColor, ...other } = props
-
-  const iconSize = size || 16
+  const { icon, size = 16, color = 'inherit', ...other } = props
 
   if (!icon) return null
 
@@ -135,7 +133,7 @@ const Icon: React.FC<IconProps> = (props) => {
 
   if (FeatherIcon) {
     return (
-      <Wrapper className={cssClass('Icon')} {...other} color={givenColor || 'grey100'}><FeatherIcon size={iconSize} color={givenColor || 'grey100'} /></Wrapper>
+      <Wrapper icon={icon} className={cssClass('Icon')} {...other} color={color}><FeatherIcon size={size} color={color} /></Wrapper>
     )
   }
   return null

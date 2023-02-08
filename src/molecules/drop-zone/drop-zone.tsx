@@ -97,14 +97,14 @@ const UploadInput = styled.input`
 `
 
 const StyledDropZone = styled(Box)`
-  border: 1px dashed ${({ theme }): string => theme.colors.grey80};
+  border: 1px dashed ${({ theme }) => theme.colors.grey80};
   border-radius: 4px;
   position: relative;
   text-align: center;
 
   & ${Label} {
-    color: ${({ theme }): string => theme.colors.grey60};
-    font-size: ${({ theme }): string => theme.fontSizes.xs};
+    color: ${({ theme }) => theme.colors.grey60};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     padding-right: 4px;
     letter-spacing: 1px;
   }

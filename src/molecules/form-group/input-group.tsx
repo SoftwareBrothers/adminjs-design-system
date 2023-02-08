@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Label } from '../../atoms/label'
 import { Button } from '../../atoms/button'
 import { Input } from '../../atoms/input'
+import { Label } from '../../atoms/label'
 import { Link } from '../../atoms/link'
 
 /**
@@ -19,15 +19,20 @@ const InputGroup = styled.div`
     border-right: none;
   }
   ${Label}, & > ${Button}, & > ${Link}:last-child {
-    padding: ${({ theme }): string => theme.space.sm};
-    border: solid ${({ theme }): string => theme.colors.inputBorder};
+    padding: ${({ theme }) => theme.space.sm};
+    border: solid ${({ theme }) => theme.colors.inputBorder};
     border-width: 1px 1px 1px 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     margin: 0;
-    color: ${({ theme }): string => theme.colors.grey40};
+    color: ${({ theme }) => theme.colors.grey40};
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.primary100};
+    }
   }
 
   ${Button}:last-child:hover {
-    background: ${({ theme }): string => theme.colors.hoverBg};
+    background: ${({ theme }) => theme.colors.hoverBg};
   }
 
   ${Label}, ${Button}, ${Link} {
@@ -36,7 +41,7 @@ const InputGroup = styled.div`
   }
 
   ${Label}, ${Link} {
-    line-height: ${({ theme }): string => theme.lineHeights.lg};
+    line-height: ${({ theme }) => theme.lineHeights.lg};
   }
 
   ${Button}:first-child, ${Link}:first-child {
@@ -45,12 +50,12 @@ const InputGroup = styled.div`
 
   ${Input}:hover {
     & + ${Label}, & + ${Button}, & + ${Link} {
-      border-color: ${({ theme }): string => theme.colors.grey60};
+      border-color: ${({ theme }) => theme.colors.grey60};
     }
   } 
   ${Input}:focus {
     & + ${Label}, & + ${Button}, & + ${Link} {
-      border-color: ${({ theme }): string => theme.colors.primary100};
+      border-color: ${({ theme }) => theme.colors.primary100};
     }
   }
 `

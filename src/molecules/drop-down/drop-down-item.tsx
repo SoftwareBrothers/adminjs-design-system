@@ -61,6 +61,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
+  text-align: left;
 
   &:hover {
     border-color: ${themeGet('colors', 'primary100')};

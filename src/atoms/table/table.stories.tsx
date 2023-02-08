@@ -12,6 +12,7 @@ import {
   CheckBox,
   Link,
   CardTitle,
+  Text,
 } from '../..'
 
 import StoryWrapper from '../../utils/story-wrapper'
@@ -40,25 +41,25 @@ export const Default: React.FC<any> = ({ onClick }) => {
   ]
 
   return (
-    <StoryWrapper label="Full Table with Caption">
+    <StoryWrapper label="">
       <Table>
         <TableCaption>
-          <CardTitle as="span">Example table: </CardTitle>
-          <Button variant="text" onClick={handleClick}>
+          <Text as="span">Selected items </Text>
+          <Button onClick={handleClick}>
             <Icon icon="Trash" />
             Remove
           </Button>
         </TableCaption>
         <TableHead>
           <TableRow>
-            <TableCell><CheckBox /></TableCell>
+            <TableCell>
+              <CheckBox />
+            </TableCell>
             {header.map((head, i) => (
               <TableCell key={head} onClick={handleClick}>
                 <Link href="/">
                   {head}
-                  {i === 0 && (
-                    <Icon icon="ChevronUp" />
-                  )}
+                  {i === 0 && <Icon icon="ChevronUp" />}
                 </Link>
               </TableCell>
             ))}
@@ -67,7 +68,9 @@ export const Default: React.FC<any> = ({ onClick }) => {
         <TableBody>
           {data.map((row) => (
             <TableRow key={row[0]}>
-              <TableCell><CheckBox /></TableCell>
+              <TableCell>
+                <CheckBox />
+              </TableCell>
               {row.map((item) => (
                 <TableCell key={item}>{item}</TableCell>
               ))}

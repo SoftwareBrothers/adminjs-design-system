@@ -16,11 +16,7 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
     }
     : undefined
 
-  const iconName = useMemo(() => {
-    if (loading) return 'Loader'
-
-    return icon ?? ''
-  }, [loading])
+  const iconName = useMemo(() => (loading ? 'Loader' : icon), [loading])
 
   return (
     <StyledSingleButton
@@ -29,7 +25,7 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
       onClick={onClickHandler}
       {...buttonProps}
     >
-      {!loading && !icon ? '' : <Icon key={iconName.toString()} icon={iconName} spin={loading} />}
+      {!loading && !icon ? '' : <Icon key={iconName?.toString()} icon={iconName} spin={loading} />}
       {label}
       {buttons && buttons.length && label ? (
         <Box as="span" mr="-8px" ml="md">

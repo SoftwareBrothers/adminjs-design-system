@@ -1,4 +1,5 @@
 import { ButtonProps } from '../../atoms/button'
+import { IconProps } from '../../atoms/icon'
 import { VariantType } from '../../theme'
 
 /**
@@ -27,9 +28,6 @@ export type ModalProps = {
   /** Label which is seen above the text */
   label?: string
 
-  /** Icon near the label */
-  icon?: string
-
   /** Handler function triggered when overlay is clicked */
   onOverlayClick?: () => any
 
@@ -39,4 +37,4 @@ export type ModalProps = {
    */
   onClose?: () => any
   children?: React.ReactNode
-}
+} & Pick<IconProps, 'icon'>

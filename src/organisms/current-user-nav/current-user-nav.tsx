@@ -6,6 +6,7 @@ import { SmallText, Title } from '../../atoms/typography'
 import { DropDown, DropDownItem, DropDownMenu, DropDownTrigger } from '../../molecules/drop-down'
 import { CurrentUserNavProps } from './current-user-nav-props'
 import StyledCurrentUserNav from './current-user-nav-styled'
+import { Avatar } from '../../atoms/avatar'
 
 /**
  * @load ./current-user-nav.doc.md
@@ -47,10 +48,7 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
               <Title>{name}</Title>
               {title && <SmallText>{title}</SmallText>}
             </Box>
-            {avatarUrl && <img src={avatarUrl} alt={name} />}
-            {dropActions && dropActions.length && (
-              <Icon icon="MoreVertical" size={16} ml="md" />
-            )}
+            <Avatar src={avatarUrl} alt={name} marginLeft="lg">{name.slice(0, 1).toUpperCase()}</Avatar>
           </Box>
         </DropDownTrigger>
         {dropActions && dropActions.length && (

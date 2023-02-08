@@ -7,7 +7,7 @@ import { Button } from '../../atoms/button'
 const DropZoneImg = styled.div<{src: string}>`
   width: 80px;
   height: 80px;
-  margin-right: ${({ theme }): string => theme.space.lg};
+  margin-right: ${({ theme }) => theme.space.lg};
   background-image: url('${({ src }): string => src}');
   background-size: cover;
   background-repeat: no-repeat;

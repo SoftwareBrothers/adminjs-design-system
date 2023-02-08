@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ButtonGroup, Box } from '../..'
-import { CardTitle } from '../../atoms/typography'
+import { Box, ButtonGroup } from '../..'
 import Label from '../../atoms/label'
+import { CardTitle } from '../../atoms/typography'
 
 export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
   const handleClick = (event, source) => {
@@ -49,7 +49,7 @@ export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
   }, {
     label: null,
     variant: 'light',
-    icon: 'OverflowMenuHorizontal',
+    icon: 'MenuHorizontal',
     buttons: [{
       label: 'Edit',
       onClick: handleClick,

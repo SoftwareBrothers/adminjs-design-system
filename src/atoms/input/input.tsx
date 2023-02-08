@@ -8,10 +8,10 @@ const borderlessCSS = css`
   padding: 0;
   border-color: transparent;
   border-width: 0 0 1px 0;
-  color: ${({ theme }) => theme.colors.grey100};
+  color: ${({ theme }) => theme.colors.text};
   &:focus {
     box-shadow: none;
-    border-bottom: 1px solid ${({ theme }): string => theme.colors.inputBorder};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.inputBorder};
   }
 
   &:hover {
@@ -64,27 +64,28 @@ const sizeVariants = variant({
 
 export const InputCSS = css<InputProps>`
   box-sizing: border-box;
-  color: ${({ theme }): string => theme.colors.grey100};
+  color: ${({ theme }) => theme.colors.grey100};
   background: transparent;
-  border: 1px solid ${({ theme }): string => theme.colors.inputBorder};
-  border-radius: 2px;
-  font-size: ${({ theme }): string => theme.fontSizes.default};
-  line-height: ${({ theme }): string => theme.lineHeights.lg};
-  font-family: ${({ theme }): string => theme.font};
+  border: 1px solid ${({ theme }) => theme.colors.inputBorder};
+  border-radius: ${({ theme }) => theme.space.xs};
+  font-size: ${({ theme }) => theme.fontSizes.default};
+  line-height: ${({ theme }) => theme.lineHeights.lg};
+  font-family: ${({ theme }) => theme.font};
   outline: none;
+
   &:hover {
-    border-color: ${({ theme }): string => theme.colors.grey60};
+    border-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
   }
   &:focus {
-    border-color: ${({ theme }): string => theme.colors.primary100};
-    ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
+    border-color: ${({ theme }) => theme.colors.primary100};
   }
   &:disabled {
-    color: ${({ theme }): string => rgba(theme.colors.grey80, 0.5)};
-    border-color: ${({ theme }): string => rgba(theme.colors.inputBorder, 0.5)};
+    color: ${({ theme }) => rgba(theme.colors.grey80, 0.5)};
+    border-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
+    background-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
   }
 
-  ${({ borderless }): any => (borderless ? borderlessCSS : '')};
+  ${({ borderless }) => (borderless && borderlessCSS)};
   ${sizeVariants};
 `
 

@@ -6,6 +6,7 @@ const Options = {
   danger: 'danger',
   info: 'info',
   success: 'success',
+  warning: 'warning',
 }
 
 const Size = {
@@ -14,10 +15,10 @@ const Size = {
   lg: 'lg',
 }
 
-export const Default: React.FC<any> = (props) => (
+export const Default: React.FC<any> = ({ withInsideText, ...props }) => (
   <Box py="lg">
-    <MessageBox {...props}>
-      With inside text
+    <MessageBox onCloseClick={() => {}} {...props}>
+      {withInsideText && 'With inside text'}
     </MessageBox>
   </Box>
 )
@@ -25,8 +26,12 @@ export const Default: React.FC<any> = (props) => (
 export default {
   title: 'DesignSystem/Molecules/MessageBox',
   argTypes: {
+    withInsideText: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
     variant: {
-      defaultValue: Options.info,
+      defaultValue: Options.success,
       options: Options,
       control: { type: 'select' },
     },
@@ -34,10 +39,6 @@ export default {
       defaultValue: Size.sm,
       options: Size,
       control: { type: 'select' },
-    },
-    icon: {
-      defaultValue: 'AddComment',
-      control: { type: 'text' },
     },
     message: {
       defaultValue: 'Some message',
