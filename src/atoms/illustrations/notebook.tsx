@@ -12,10 +12,10 @@ export const Notebook: React.FC<Props> = ({ width = 152, height = 152 }) => (
     <rect x="50.1162" y="45.5732" width="23.0078" height="60.8062" rx="2" fill="#3040D6" fillOpacity="0.05" />
     <path d="M87.0928 64.0622H110.101" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M87.0928 70.6355H110.101" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="106.814" cy="55.4337" r="4.10853" fill="#3040D6" fillOpacity="0.2" />
+    <circle cx="106.814" cy="55.4337" r="4.10853" fill="#3040D6" />
     <path d="M87.0928 89.5349H110.101" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M87.0928 96.1081H110.101" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="106.814" cy="80.9074" r="4.10853" fill="#3040D6" fillOpacity="0.2" />
+    <circle cx="106.814" cy="80.9074" r="4.10853" fill="#3040D6" />
     <path d="M118.657 43.0371H123.303C123.993 43.0371 124.553 43.5968 124.553 44.2871V65.76C124.553 66.4503 123.993 67.01 123.303 67.01H118.657V43.0371Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path d="M118.728 55.0232H124.48" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M75.9997 43.5466V108.407" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />

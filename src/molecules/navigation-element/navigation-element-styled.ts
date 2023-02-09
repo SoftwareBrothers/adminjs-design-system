@@ -1,9 +1,9 @@
 import styled from 'styled-components'
+import { rgba } from 'polished'
 import Box from '../../atoms/box'
 import { Title } from '../../atoms/typography'
 import { themeGet } from '../../utils'
 import { NavigationElementProps } from './navigation-element-props'
-import { rgba } from 'polished'
 
 export type StyledNavigationElementProps = Pick<NavigationElementProps, 'isSelected' | 'isOpen'>
 

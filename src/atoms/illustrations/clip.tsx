@@ -8,7 +8,7 @@ export const Clip: React.FC<Props> = ({ width = 152, height = 152 }) => (
     <rect x="40.6279" y="36.5117" width="70.7442" height="85.2558" rx="2" fill="#3040D6" fillOpacity="0.05" />
     <rect x="44.0986" y="38.1689" width="63.8023" height="79.2209" rx="1.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path d="M63.3022 80.5004H88.6976" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="76.0002" cy="63.7214" r="8.16279" fill="#3040D6" fillOpacity="0.2" />
+    <circle cx="76.0002" cy="63.7214" r="8.16279" fill="#3040D6" />
     <path d="M63.3022 89.5697H88.6976" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M63.3022 98.64H88.6976" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <mask id="path-9-inside-1_0_2394" fill="white">

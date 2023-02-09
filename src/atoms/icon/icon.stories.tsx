@@ -38,7 +38,7 @@ export default {
 
 export const Default: React.FC = (props) => <Icon {...props} />
 
-export const Icons = () => (
+export const Icons: React.FC = () => (
   <Box display="grid" style={{ gridTemplateColumns: 'repeat(10, 1fr)', gap: 16 }}>
     {Object.keys(FeatherIcons).map((key) => (
       <Box key={key} flex alignItems="center" flexDirection="column">

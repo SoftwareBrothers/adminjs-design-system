@@ -194,6 +194,7 @@ type ErrorMessage = {
  * @section design-system
  */
 const DropZone: React.FC<DropZoneProps> = (props) => {
+  // eslint-disable-next-line max-len
   const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, dropZoneText, ...other } = props
   const [, setIsDragging] = useState(false)
   const [error, setError] = useState<ErrorMessage | null>(null)
@@ -295,7 +296,7 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
       {error ? (
         <MessageBox
           mt="default"
-          variant="danger"
+          color="danger"
           size="sm"
           icon="AlertCircle"
           message={error.title}

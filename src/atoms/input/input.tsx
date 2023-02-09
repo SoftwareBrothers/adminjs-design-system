@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { rgba } from 'polished'
 import { space, SpaceProps, layout, LayoutProps, variant } from 'styled-system'
-import focusShadowStyle from '../../utils/focus-shadow.style'
 import { cssClass } from '../../utils/css-class'
 
 const borderlessCSS = css`

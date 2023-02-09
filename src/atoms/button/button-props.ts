@@ -1,5 +1,5 @@
 import { FlexboxProps, SpaceProps, TypographyProps } from 'styled-system'
-import { ColorVariant } from '../../theme'
+import { ColorVariant, VariantType } from '../../theme'
 
 import { ColorProps } from '../../utils/color-props'
 
@@ -18,7 +18,7 @@ export type ButtonProps = ColorProps &
      * Button variant
      * @default 'contained'
      */
-    variant?: 'contained' | 'outlined' | 'light' | 'text'
+    variant?: 'contained' | 'outlined' | 'light' | 'text' | VariantType
     /**
      * Button color variant
      * @default 'primary'

@@ -4,7 +4,7 @@ import { Props } from './props.type'
 export const Plug: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
-    <circle cx="60.1705" cy="51.3659" r="14.3659" fill="#3040D6" fillOpacity="0.2" />
+    <circle cx="60.1705" cy="51.3659" r="14.3659" fill="#3040D6" />
     <path d="M58.7803 76.854H51.3656" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M30.0488 76.854H18" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M40.2441 43.4883L34.6916 71.8064C34.207 74.2774 36.0988 76.5761 38.6168 76.5761H41.8715C44.3895 76.5761 46.2812 78.8748 45.7967 81.3457L40.2441 109.664" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />

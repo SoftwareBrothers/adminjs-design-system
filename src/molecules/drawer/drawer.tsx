@@ -1,7 +1,6 @@
 /* eslint-disable no-shadow */
 import styled from 'styled-components'
 import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
-import DrawerFooter from './drawer-footer'
 import { cssClass } from '../../utils/css-class'
 import { DEFAULT_DRAWER_WIDTH } from '../../constants'
 

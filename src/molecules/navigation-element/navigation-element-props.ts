@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from '../../atoms/icon'
+import type { IconProps } from '../../atoms/icon'
 
 /**
  * Handler function for a NavigationElementProps['onClick']
@@ -23,6 +23,8 @@ export type NavigationElementOnClickHandler = (
 export type NavigationElementProps = {
   /** Link href property */
   href?: string;
+  /** Icon name */
+  icon?: IconProps['icon'];
   /**
    * Indicates if navigation element should be open(able). If set to undefined: element wont be
    * "openable". Tf set to either false or true - element will be open or close.
@@ -36,4 +38,4 @@ export type NavigationElementProps = {
   id?: string,
   /** On Click handler */
   onClick?: NavigationElementOnClickHandler;
-} & Pick<IconProps, 'icon'>
+}

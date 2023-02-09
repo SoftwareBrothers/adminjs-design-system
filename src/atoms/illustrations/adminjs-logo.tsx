@@ -15,7 +15,8 @@ export const AdminJSLogo: React.FC<Props> = ({ width = 113, height = 113 }) => (
         <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
         <feColorMatrix
           values="0 0 0 0 0.301960784 0 0 0 0 0.439215686 0 0 0 0 0.921568627 0 0 0 0.402289117 0"
-          in="shadowBlurOuter1" />
+          in="shadowBlurOuter1"
+        />
       </filter>
       <rect id="b" x="0" y="0" width="93" height="93" rx="20" />
     </defs>
@@ -26,7 +27,8 @@ export const AdminJSLogo: React.FC<Props> = ({ width = 113, height = 113 }) => (
       </g>
       <path
         d="M56.5 28 83 74H68.932l-3.282-5.698a5.632 5.632 0 0 0-4.63-2.815l-.25-.006h-8.54a5.632 5.632 0 0 0-4.88 2.82L44.066 74H30l26.5-46zm0 20.444c-3.114 0-5.638 2.543-5.638 5.68 0 3.136 2.524 5.678 5.638 5.678s5.638-2.542 5.638-5.679c0-3.136-2.524-5.679-5.638-5.679z"
-        fill="#FFF" />
+        fill="#FFF"
+      />
     </g>
   </svg>
 )

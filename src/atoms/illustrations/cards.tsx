@@ -11,7 +11,7 @@ export const Cards: React.FC<Props> = ({ width = 152, height = 152 }) => (
     <path d="M51.8975 80.41H78.171" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M51.8975 89.4706H70.9231" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <rect x="41.7759" y="54.4336" width="85.4744" height="13.9017" fill="white" stroke="#3B3552" strokeWidth="1.5" />
-    <rect x="43.7437" y="56.4014" width="81.5385" height="9.96581" rx="1" fill="#3040D6" fillOpacity="0.2" />
+    <rect x="43.7437" y="56.4014" width="81.5385" height="9.96581" rx="1" fill="#3040D6" />
   </svg>
 
 )

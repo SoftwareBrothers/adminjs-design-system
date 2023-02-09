@@ -11,7 +11,6 @@ import {
   Icon,
   CheckBox,
   Link,
-  CardTitle,
   Text,
 } from '../..'
 

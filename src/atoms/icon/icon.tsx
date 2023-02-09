@@ -17,7 +17,7 @@ export type IconProps = SpaceProps & ColorProps & {
   /**
    * CamelCased name of an icon from https://feathericons.com/
    */
-  icon?: keyof typeof FeatherIcons;
+  icon?: keyof typeof FeatherIcons | string;
   /**
    * Size variant. Default to 16
    */

@@ -28,7 +28,7 @@ export default {
 
 export const Default: ComponentStory<typeof Illustration> = (props) => <Illustration {...props} />
 
-export const Icons = () => (
+export const Icons: React.FC = () => (
   <Box display="grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
     {(illustrationVariants).map((key) => (
       <Box key={key} flex alignItems="center" flexDirection="column">

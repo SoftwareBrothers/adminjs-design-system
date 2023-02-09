@@ -1,4 +1,4 @@
-import { IconProps } from '../../atoms/icon'
+import type { IconProps } from '../../atoms/icon'
 
 /**
  * Action element passed to CurrentUserNavProps

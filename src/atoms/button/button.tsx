@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
-import { cssClass, themeGet } from '../../utils'
+import { cssClass } from '../../utils'
 import ButtonCSS from './button-css'
-import { ButtonProps } from './button-props'
+import type { ButtonProps } from './button-props'
 
 const addContent = css<ButtonProps>`
   &:before {

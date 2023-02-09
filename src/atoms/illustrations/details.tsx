@@ -14,7 +14,7 @@ export const Details: React.FC<Props> = ({ width = 152, height = 152 }) => (
     <path d="M107.227 94.4844L111.919 99.177" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <circle cx="87.2421" cy="74.4999" r="20.621" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <circle cx="87.2418" cy="74.4996" r="18.1452" fill="#3040D6" fillOpacity="0.05" />
-    <circle cx="93.2904" cy="80.5487" r="4.83871" fill="#3040D6" fillOpacity="0.2" />
+    <circle cx="93.2904" cy="80.5487" r="4.83871" fill="#3040D6" />
     <path d="M87.2418 60.3867C79.4475 60.3867 73.1289 66.7053 73.1289 74.4996" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path fillRule="evenodd" clipRule="evenodd" d="M114.411 99.8936C114.801 99.5031 115.434 99.5031 115.825 99.8936L127.526 111.595C127.917 111.986 127.917 112.619 127.526 113.009L124.949 115.587C124.558 115.977 123.925 115.977 123.535 115.587L111.833 103.885C111.443 103.495 111.443 102.862 111.833 102.471L114.411 99.8936Z" fill="#3040D6" fillOpacity="0.05" />
   </svg>

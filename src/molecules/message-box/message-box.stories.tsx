@@ -1,23 +1,11 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { Box } from '../../atoms/box'
 import { MessageBox } from './message-box'
 
-const Options = {
-  danger: 'danger',
-  info: 'info',
-  success: 'success',
-  warning: 'warning',
-}
-
-const Size = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg',
-}
-
 export const Default: React.FC<any> = ({ withInsideText, ...props }) => (
   <Box py="lg">
-    <MessageBox onCloseClick={() => {}} {...props}>
+    <MessageBox onCloseClick={() => action('onCloseClick')} {...props}>
       {withInsideText && 'With inside text'}
     </MessageBox>
   </Box>
@@ -30,14 +18,14 @@ export default {
       defaultValue: false,
       control: { type: 'boolean' },
     },
-    variant: {
-      defaultValue: Options.success,
-      options: Options,
+    color: {
+      defaultValue: 'info',
+      options: ['danger', 'info', 'success', 'warning'],
       control: { type: 'select' },
     },
     size: {
-      defaultValue: Size.sm,
-      options: Size,
+      defaultValue: 'sm',
+      options: ['sm', 'md', 'lg'],
       control: { type: 'select' },
     },
     message: {

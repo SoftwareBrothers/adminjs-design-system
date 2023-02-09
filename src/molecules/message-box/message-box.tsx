@@ -50,17 +50,19 @@ type MessageBoxProps = {
   /** Title content of a message */
   message?: string
   /**
-   * Variant
+   * Color
    * @default 'info'
    */
-  variant?: 'danger' | 'warning' | 'success' | 'info'
+  color?: 'danger' | 'warning' | 'success' | 'info'
+  /** Icon which will be seen in the title */
+  icon?: IconProps['icon'];
   /** Size variant */
   size?: 'sm'
   /** Optional html style property */
   style?: Record<string, string>
   /** Optional children, when given component will be expanded */
   children?: React.ReactNode
-} & Partial<Pick<IconProps, 'icon'>>
+}
 
 type Props = SpaceProps & MessageBoxProps
 export { Props as MessageBoxProps }
@@ -127,7 +129,7 @@ export { Props as MessageBoxProps }
  * @section design-system
  */
 export const MessageBox: React.FC<Props> = (props) => {
-  const { onCloseClick, message, icon, children, variant = 'info', size, ...other } = props
+  const { onCloseClick, message, icon, children, color: variant = 'info', size, ...other } = props
 
   const variantIcon: Record<typeof variant, IconProps['icon']> = {
     success: 'Check',

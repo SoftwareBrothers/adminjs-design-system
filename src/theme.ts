@@ -307,11 +307,7 @@ const borderWidths = {
   default: '0px',
 }
 
-export type VariantType = 'contained' | 'outlined' | string
-
-export const VariantValues: Array<VariantType> = [
-  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',
-]
+export type VariantType = 'contained' | 'outlined' | 'text' | 'light' | 'default' | ColorVariant | undefined;
 
 // TODO: add transitions
 

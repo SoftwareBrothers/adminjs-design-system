@@ -1,5 +1,5 @@
 import { ButtonProps } from '../../atoms/button'
-import { IconProps } from '../../atoms/icon'
+import type { IconProps } from '../../atoms/icon'
 import { VariantType } from '../../theme'
 
 /**

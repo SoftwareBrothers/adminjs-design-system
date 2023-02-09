@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Button } from '../button'
-import { Text } from '../text'
 import { cssClass } from '../../utils/css-class'
 import { themeGet } from '../../utils'
 
