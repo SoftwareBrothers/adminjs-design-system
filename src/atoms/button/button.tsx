@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components'
 
+import React from 'react'
 import { cssClass } from '../../utils'
 import ButtonCSS from './button-css'
 import type { ButtonProps } from './button-props'
+import { ColorVariant } from '../../theme'
 
 const addContent = css<ButtonProps>`
   &:before {
@@ -26,6 +28,18 @@ const Button = styled.button.attrs((props) => ({
   ${ButtonCSS};
   ${({ label }) => (label ? addContent : '')};
 `
+
+// const Button: React.FC<ButtonProps> = ({
+//   variant = 'text',
+//   color = 'primary',
+//   size = 'md',
+//   ...props
+// }) => {
+//   const isLegacyButton = ['danger'].includes(variant)
+//   const mappedVariant = isLegacyButton ? 'contained' : variant
+//   const mappedColor = isLegacyButton ? variant as ColorVariant : color
+//   return <StyledButton  {...props} variant={mappedVariant} color={mappedColor} size={size} />
+// }
 
 Button.defaultProps = {
   variant: 'text',

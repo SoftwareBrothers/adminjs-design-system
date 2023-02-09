@@ -34,7 +34,7 @@ export const globalTypes = {
     description: 'Theme for components',
     defaultValue: 'default',
     toolbar: {
-      icon: 'circlehollow',
+      icon: 'paintbrush',
       dynamicTitle: true,
       items: ['default', 'red', 'green', 'orange']
     }

@@ -296,7 +296,7 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
       {error ? (
         <MessageBox
           mt="default"
-          color="danger"
+          variant="danger"
           size="sm"
           icon="AlertCircle"
           message={error.title}

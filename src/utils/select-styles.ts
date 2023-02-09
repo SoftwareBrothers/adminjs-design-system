@@ -1,78 +1,43 @@
-import { DefaultTheme } from 'styled-components'
-import { Props } from 'react-select'
-import focusShadowStyle from './focus-shadow.style'
+import type { Props } from 'react-select'
+import type { DefaultTheme } from 'styled-components'
 
 const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
-  control: (provided, state) => ({
-    ...provided,
-    borderRadius: '2px',
-    borderWidth: '1px',
+  control: (baseStyles) => ({
+    ...baseStyles,
+    boxShadow: 'none',
     background: 'transparent',
-    color: theme.colors.grey80,
-    '&:hover': {
-      borderColor: theme.colors.grey60,
-    },
-    borderColor: state.isFocused ? theme.colors.primary100 : theme.colors.inputBorder,
-    boxShadow: state.isFocused ? focusShadowStyle(theme) : 'none',
+    borderColor: theme.colors.inputBorder,
   }),
-  menu: (provided) => ({
-    ...provided,
-    borderRadius: '0px',
-    borderColor: theme.colors.grey20,
-    background: theme.colors.white,
+  input: (baseStyles) => ({
+    ...baseStyles,
+    color: theme.colors.text,
   }),
-  input: (provided) => ({
-    ...provided,
-    color: theme.colors.grey80,
-    background: 'transparent',
-    border: 'none',
+  menu: (baseStyles) => ({
+    ...baseStyles,
+    boxShadow: 'none',
+    border: theme.borders.input,
   }),
-  singleValue: (provided) => ({
-    ...provided,
-    color: theme.colors.grey80,
-  }),
-  option: (provided, state) => {
-    let color = state.isSelected ? theme.colors.grey80 : theme.colors.grey60
-    if (state.isFocused) {
-      color = theme.colors.white
-    }
-    return {
-      ...provided,
-      color,
-      background: state.isFocused ? theme.colors.primary100 : 'transparent',
-    }
-  },
 })
 
 const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
-  control: (provided, state) => ({
+  control: (provided) => ({
     ...provided,
-    border: state.isFocused
-      ? `1px solid ${theme.colors.primary100}`
-      : `1px solid ${theme.colors.filterInputBorder}`,
-    borderRadius: '2px',
+    boxShadow: 'none',
     background: 'transparent',
-    color: theme.colors.white,
-    boxShadow: state.isFocused ? focusShadowStyle(theme) : 'none',
+    borderColor: theme.colors.inputBorder,
   }),
   input: () => ({
-    color: theme.colors.grey100,
+    color: theme.colors.text,
     gridArea: '1/1/2/3',
     gridTemplateColumns: '0px min-content',
   }),
   singleValue: () => ({
-    color: theme.colors.grey100,
+    color: theme.colors.text,
     gridArea: '1/1/2/3',
-  }),
-  option: (provided, state) => ({
-    ...provided,
-    color: state.isSelected ? theme.colors.grey100 : theme.colors.grey60,
-    background: state.isFocused ? theme.colors.primary20 : 'transparent',
   }),
   menu: (provided) => ({
     ...provided,
-    borderRadius: '2px',
-    borderColor: theme.colors.grey100,
+    borderColor: theme.colors.border,
     background: theme.colors.filterBg,
     zIndex: 5,
   }),

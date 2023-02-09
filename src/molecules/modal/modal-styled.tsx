@@ -2,7 +2,7 @@ import { getValueAndUnit } from 'polished'
 import styled from 'styled-components'
 import { variant as styledVariant } from 'styled-system'
 import { Box } from '../../atoms/box'
-import { VariantType } from '../../theme'
+import type { VariantType } from '../../theme'
 import themeGet from '../../utils/theme-get'
 
 const DEFAULT_WIDTH = 540

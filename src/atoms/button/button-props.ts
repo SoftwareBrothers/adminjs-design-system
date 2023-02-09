@@ -18,7 +18,7 @@ export type ButtonProps = ColorProps &
      * Button variant
      * @default 'contained'
      */
-    variant?: 'contained' | 'outlined' | 'light' | 'text' | VariantType
+    variant?: 'contained' | 'outlined' | 'text' | VariantType
     /**
      * Button color variant
      * @default 'primary'

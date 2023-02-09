@@ -60,6 +60,7 @@ const colors = {
   grey40: '#BBC3CB',
   grey20: '#F2F2F2',
   white: '#fff',
+  black: '#000',
 
   // Alerts
   errorDark: '#9d0616',
@@ -307,7 +308,7 @@ const borderWidths = {
   default: '0px',
 }
 
-export type VariantType = 'contained' | 'outlined' | 'text' | 'light' | 'default' | ColorVariant;
+export type VariantType = 'success' | 'info' | 'primary' | 'secondary' | 'danger' | 'light' | 'default';
 
 // TODO: add transitions
 

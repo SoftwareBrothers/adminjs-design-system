@@ -114,7 +114,7 @@
     "react-datepicker": "^4.8.0",
     "react-feather": "^2.0.10",
     "react-phone-input-2": "^2.15.1",
-    "react-select": "^5.2.2",
+    "react-select": "^5.7.0",
     "react-text-mask": "^5.4.3",
     "styled-system": "^5.1.5",
     "text-mask-addons": "^3.8.0"

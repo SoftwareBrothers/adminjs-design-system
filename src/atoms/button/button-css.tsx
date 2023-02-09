@@ -1,19 +1,37 @@
 import { css } from 'styled-components'
-import { space, color as styledColor, typography, variant } from 'styled-system'
+import { space, color as styledColor, typography, variant as styledVariant } from 'styled-system'
 
 import { darken, rgba } from 'polished'
-import { ColorVariants } from '../../theme'
+import { ColorVariants, VariantType } from '../../theme'
 import { cssClass, themeGet } from '../../utils'
 import { ButtonProps } from './button-props'
 
-const buttonVariants = ({ color = 'primary' }: ButtonProps) => variant({
-  variants: {
-    default: {
-      bg: 'transparent',
+const handleLegacyButton = (variant: VariantType) => {
+  const color = ColorVariants[variant] || 'primary100'
+  return {
+    [variant]: {
+      className: cssClass(['Button', 'Button_Legacy']),
+      borderColor: 'currentColor',
+      color: (theme) => theme.colors[color],
+      '&:hover': {
+        bg: (theme) => rgba(theme.colors[color], 0.05),
+      },
+      '&:focus, &:active': {
+        bg: (theme) => rgba(theme.colors[color], 0.1),
+      },
     },
+  }
+}
+const legacyButtons = (
+  ['danger', 'default', 'info', 'primary', 'secondary', 'success'] as VariantType[]
+).reduce((acc, variant) => ({ ...acc, ...handleLegacyButton(variant) }), {})
+
+const buttonVariants = ({ color = 'primary' }: ButtonProps) => styledVariant({
+  variants: {
+    ...legacyButtons,
     contained: {
       className: cssClass(['Button', 'Button_Contained']),
-      color: 'white',
+      color: (theme) => theme.colors.white,
       bg: (theme) => theme.colors[ColorVariants[color]],
       borderColor: (theme) => theme.colors[ColorVariants[color]],
       '&:hover': {
@@ -24,19 +42,9 @@ const buttonVariants = ({ color = 'primary' }: ButtonProps) => variant({
         bg: (theme) => darken(0.2, theme.colors[ColorVariants[color]]),
         borderColor: (theme) => darken(0.2, theme.colors[ColorVariants[color]]),
       },
-      '&:disabled': {
-        bg: 'grey40',
-        borderColor: 'grey40',
-        color: 'grey80',
-        '&:hover, &:focus, &:active': {
-          bg: 'grey40',
-          borderColor: 'grey40',
-        },
-      },
     },
     outlined: {
       className: cssClass(['Button', 'Button_Outlined']),
-      bg: 'transparent',
       borderColor: 'currentColor',
       color: (theme) => theme.colors[ColorVariants[color]],
       '&:hover': {
@@ -49,7 +57,6 @@ const buttonVariants = ({ color = 'primary' }: ButtonProps) => variant({
     light: {
       className: cssClass(['Button', 'Button_Light']),
       color: (theme) => color && theme.colors[ColorVariants[color]],
-      bg: 'transparent',
       borderColor: 'grey40',
       [`& .${cssClass('Icon')} svg`]: {
         stroke: 'grey80',
@@ -64,7 +71,6 @@ const buttonVariants = ({ color = 'primary' }: ButtonProps) => variant({
     text: {
       className: cssClass(['Button', 'Button_Text']),
       color: (theme) => color && theme.colors[ColorVariants[color]],
-      bg: 'transparent',
       borderColor: 'transparent',
       '&:disabled': {
         'border-color': 'transparent',
@@ -79,7 +85,7 @@ const buttonVariants = ({ color = 'primary' }: ButtonProps) => variant({
   },
 })
 
-const sizeVariants = variant({
+const sizeVariants = styledVariant({
   prop: 'size',
   variants: {
     sm: {
@@ -146,7 +152,7 @@ export const ButtonCSS = css<ButtonProps>`
   font-size: ${themeGet('fontSizes', 'default')};
   vertical-align: middle;
   border-radius: ${themeGet('space', 'sm')};
-  user-select: nine;
+  user-select: none;
   text-align: center;
 
   border: 1px solid ${themeGet('colors', 'primary100')};
@@ -168,9 +174,23 @@ export const ButtonCSS = css<ButtonProps>`
     color: inherit;
   }
 
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px' : '')};
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: auto;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: transparent;
+    }
+  }
 
   ${styledColor};
   ${space};

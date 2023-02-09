@@ -4,7 +4,7 @@ import React from 'react'
 import { Box, Button, Icon, Icon as IconComponent, Label } from '../../../src'
 import StoryWrapper from '../../utils/story-wrapper'
 
-const ButtonVariant = ['outlined', 'contained', 'light', 'text'] as const
+const ButtonVariant = ['danger', 'outlined', 'contained', 'light', 'text'] as const
 const ButtonSize = ['sm', 'lg', 'icon', 'default'] as const
 const colorVariants = ['primary', 'secondary', 'danger', 'success', 'info'] as const
 

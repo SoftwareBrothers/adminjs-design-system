@@ -9,7 +9,7 @@ import {
 import { cssClass } from '../../utils/css-class'
 import themeGet from '../../utils/theme-get'
 import { ColorProps } from '../../utils/color-props'
-import { VariantType } from '../../theme'
+import type { VariantType } from '../../theme'
 
 export type LabelVariantType = VariantType
 

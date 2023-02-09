@@ -1,3 +1,4 @@
+import type { ComponentMeta } from '@storybook/react'
 import filter from 'lodash/filter'
 import React, { FC, useState } from 'react'
 import { FormGroup } from '../..'
@@ -6,7 +7,18 @@ import StoryWrapper from '../../utils/story-wrapper'
 import { Select } from './select'
 import { SelectAsync } from './select-async'
 
-export default { title: 'DesignSystem/Molecules/Select' }
+export default {
+  title: 'DesignSystem/Molecules/Select',
+  component: Select,
+  parameters: { controls: { include: ['variant'] } },
+  argTypes: {
+    variant: {
+      defaultValue: 'default',
+      options: ['default', 'filter'],
+      control: { type: 'select' },
+    },
+  },
+} as ComponentMeta<typeof Select>
 
 export const Default: FC = () => {
   const [value, setValue] = useState()

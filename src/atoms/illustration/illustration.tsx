@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { DefaultTheme, ThemeProps, withTheme } from 'styled-components'
 import * as Illustrations from '../illustrations'
+import { cssClass } from '../../utils'
 
 export type IllustrationVariant =
   | 'Accept'
@@ -54,7 +55,9 @@ export type IllustrationProps = {
   height?: number
 }
 
-const Wrapper = styled.div`  
+const Wrapper = styled.div.attrs((props) => ({
+  className: cssClass('Illustration', props.className),
+}))`
   [fill="#3040D6"] {
     fill: ${({ theme }) => theme.colors.primary100}
   }

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { rgba } from 'polished'
+import { darken, rgba } from 'polished'
 import { space, SpaceProps, layout, LayoutProps, variant } from 'styled-system'
 import { cssClass } from '../../utils/css-class'
 
@@ -73,7 +73,7 @@ export const InputCSS = css<InputProps>`
   outline: none;
 
   &:hover {
-    border-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
+    border-color: ${({ theme }) => darken(0.1, theme.colors.inputBorder)};
   }
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary100};

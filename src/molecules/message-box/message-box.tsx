@@ -50,10 +50,10 @@ type MessageBoxProps = {
   /** Title content of a message */
   message?: string
   /**
-   * Color
+   * Variant
    * @default 'info'
    */
-  color?: 'danger' | 'warning' | 'success' | 'info'
+  variant?: 'danger' | 'warning' | 'success' | 'info'
   /** Icon which will be seen in the title */
   icon?: IconProps['icon'];
   /** Size variant */
@@ -129,7 +129,7 @@ export { Props as MessageBoxProps }
  * @section design-system
  */
 export const MessageBox: React.FC<Props> = (props) => {
-  const { onCloseClick, message, icon, children, color: variant = 'info', size, ...other } = props
+  const { onCloseClick, message, icon, children, variant = 'info', size, ...other } = props
 
   const variantIcon: Record<typeof variant, IconProps['icon']> = {
     success: 'Check',

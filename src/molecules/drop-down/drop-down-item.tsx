@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { space, variant } from 'styled-system'
 
 import Box, { BoxProps } from '../../atoms/box'
-import { VariantType } from '../../theme'
+import type { VariantType } from '../../theme'
 import { cssClass, themeGet } from '../../utils'
 import DropDownMenu from './drop-down-menu'
 
