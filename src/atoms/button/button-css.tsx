@@ -6,9 +6,12 @@ import { ColorVariants, VariantType } from '../../theme'
 import { cssClass, themeGet } from '../../utils'
 import { ButtonProps } from './button-props'
 
-const handleLegacyButton = (variant: VariantType) => {
+const legacyButtonVariants = (
+  ['danger', 'default', 'info', 'primary', 'secondary', 'success'] as VariantType[]
+).reduce((acc, variant) => {
   const color = ColorVariants[variant] || 'primary100'
   return {
+    ...acc,
     [variant]: {
       className: cssClass(['Button', 'Button_Legacy']),
       borderColor: 'currentColor',
@@ -21,14 +24,11 @@ const handleLegacyButton = (variant: VariantType) => {
       },
     },
   }
-}
-const legacyButtons = (
-  ['danger', 'default', 'info', 'primary', 'secondary', 'success'] as VariantType[]
-).reduce((acc, variant) => ({ ...acc, ...handleLegacyButton(variant) }), {})
+}, {})
 
 const buttonVariants = ({ color = 'primary' }: ButtonProps) => styledVariant({
   variants: {
-    ...legacyButtons,
+    ...legacyButtonVariants,
     contained: {
       className: cssClass(['Button', 'Button_Contained']),
       color: (theme) => theme.colors.white,

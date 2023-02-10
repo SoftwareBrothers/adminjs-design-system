@@ -144,18 +144,18 @@ const FormGroup = styled.div<FormGroupProps>`
   }
 
   & ${Input}, & ${CurrencyInput} {
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
     ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};
   }
 
   & ${InputGroup} {
     ${Label}, ${Button}:last-child, ${Link}:last-child {
-      ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+      ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
     }
   }
 
   & [class*="DatePicker"] > .react-datepicker-wrapper {
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
   }
   & [class*="DatePicker"] > .react-datepicker-wrapper input {
     ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};

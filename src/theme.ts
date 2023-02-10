@@ -43,15 +43,19 @@
  * @property {string} bg=#F6F7FB      <div style="background: #F6F7FB; height: 20px;" />
  */
 const colors = {
-  // Primary
+  // global
+  border: '#EEEEEF',
+  text: '#0C1E29',
+
+  // primary
   primary100: '#3040D6',
+  primary80: '#6483F8',
   primary60: '#99A9EE',
   primary40: '#BBC5F4',
   primary20: '#DDE2F9',
 
   // accent
   accent: '#3B3552',
-  love: '#4D70EB', // Main AdminJS logo color
 
   // grey
   grey100: '#0C1E29',
@@ -59,10 +63,12 @@ const colors = {
   grey60: '#898A9A',
   grey40: '#BBC3CB',
   grey20: '#F2F2F2',
+
+  // common
   white: '#fff',
   black: '#000',
 
-  // Alerts
+  // alerts
   errorDark: '#9d0616',
   error: '#C20012',
   errorLight: '#F9E5E7',
@@ -79,22 +85,16 @@ const colors = {
   info: '#3040D6',
   infoLight: '#CBD5FD',
 
-  // Backgrounds
+  // backgrounds
+  bg: '#F8F9F9',
   filterBg: '#FBFBFB',
-  hoverBg: '#3040D6',
 
-  // global
-  border: '#EEEEEF',
-
-  // Elements
+  // elements
   inputBorder: '#BBC3CB',
   separator: '#BBC3CB',
   highlight: '#F2F2F2',
-  filterInputBorder: '#BBC3CB',
-  filterDisabled: 'rgba(83,91,142,0.05)',
-
-  bg: '#F8F9F9',
-  text: '#0C1E29',
+  // AdminJS logo color
+  love: '#4D70EB',
 }
 
 export const ColorVariants = {

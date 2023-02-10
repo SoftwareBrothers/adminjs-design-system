@@ -26,13 +26,6 @@ const InputGroup = styled.div`
     border-bottom-left-radius: 0;
     margin: 0;
     color: ${({ theme }) => theme.colors.grey40};
-    &:hover {
-      border-color: ${({ theme }) => theme.colors.primary100};
-    }
-  }
-
-  ${Button}:last-child:hover {
-    background: ${({ theme }) => theme.colors.hoverBg};
   }
 
   ${Label}, ${Button}, ${Link} {

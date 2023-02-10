@@ -20,51 +20,18 @@ const variants = variant({
   variants: {
     primary: {
       color: 'primary100',
-      '&:hover': {
-        color: 'hoverBg',
-        '& svg': {
-          stroke: 'hoverBg',
-        },
-      },
-      '& svg': {
-        stroke: 'primary100',
-      },
     },
     danger: {
       color: 'error',
-      '&:hover': {
-        color: 'error',
-      },
-      '& svg': {
-        stroke: 'error',
-      },
     },
     success: {
       color: 'success',
-      '&:hover': {
-        color: 'success',
-      },
-      '& svg': {
-        stroke: 'success',
-      },
     },
     info: {
       color: 'primary60',
-      '&:hover': {
-        color: 'hoverBg',
-      },
-      '& svg': {
-        stroke: 'primary60',
-      },
     },
     secondary: {
       color: 'accent',
-      '&:hover': {
-        color: 'hoverBg',
-      },
-      '& svg': {
-        stroke: 'accent',
-      },
     },
   },
 })
@@ -132,6 +99,7 @@ const Link = styled.a<LinkProps>`
   vertical-align: middle;
   cursor: pointer;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
@@ -147,6 +115,7 @@ const Link = styled.a<LinkProps>`
 `
 
 Link.defaultProps = {
+  variant: 'primary',
   color: 'grey60',
   className: cssClass('Link'),
 }
