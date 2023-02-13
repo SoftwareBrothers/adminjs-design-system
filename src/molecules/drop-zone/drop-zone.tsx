@@ -9,7 +9,7 @@ import { Text } from '../../atoms/text'
 import { DisplaySizeUnit, humanFileSize } from '../../utils/human-file-size'
 import { MessageBox } from '../message-box'
 import { DropZoneItem } from './drop-zone-item'
-import Image from './image'
+import Image from './drop-zone-image'
 
 const validateContentType = (mimeTypes: undefined | Array<string>, mimeType: string): boolean => {
   if (!mimeTypes || !mimeTypes.length) {
@@ -328,7 +328,9 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
       >
         <UploadInput type="file" onChange={(event): void => onDrop(event)} multiple={multiple} />
         <Box>
-          <Image />
+          <Box color="primary100">
+            <Image />
+          </Box>
           <Text fontSize="sm">{t.placeholder}</Text>
           <Box>
             {validate && validate.maxSize ? (
