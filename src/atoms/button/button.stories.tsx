@@ -1,12 +1,12 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { Box, Button, Icon, Icon as IconComponent, Label } from '../../../src'
+import { Box, Button, Icon, Label } from '../../../src'
 import StoryWrapper from '../../utils/story-wrapper'
 
 const ButtonVariant = ['text', 'outlined', 'contained', 'light'] as const
 const ButtonSize = ['default', 'sm', 'lg', 'icon'] as const
-const colorVariants = ['primary', 'secondary', 'danger', 'success', 'info'] as const
+const ButtonColor = ['primary', 'secondary', 'danger', 'success', 'info'] as const
 
 export const Default: ComponentStory<typeof Button> = (props) => (
   <Button {...props}>Example button</Button>
@@ -14,108 +14,74 @@ export const Default: ComponentStory<typeof Button> = (props) => (
 
 export const Examples: React.FC = () => (
   <Box width={1}>
-    <StoryWrapper label="Different versions">
-      <Box mb="xl">
-        <Label>Small</Label>
-        <Button size="sm">Small [sm]</Button>
-        <Button size="sm" ml="md">
-          <Icon icon="Plus" />
-          Add brand
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Default</Label>
-        <Button size="md">Default</Button>
-        <Button size="md" ml="md">
-          <Icon icon="Plus" />
-          Add brand
-        </Button>
-        <Button size="md" ml="md" color="primary">
-          <Icon icon="Activity" />
-          Primary
-        </Button>
-        <Button size="md" ml="md" color="danger">
-          Danger
-          <Icon icon="ArrowRight" />
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button size="lg">Large [lg]</Button>
-        <Button size="lg" ml="md">
-          <Icon icon="Plus" />
-          Add brand
-        </Button>
-        <Button size="lg" ml="md" color="primary">
-          <Icon icon="Activity" />
-          Primary
-        </Button>
-        <Button size="lg" ml="md" color="danger">
-          Danger
-          <Icon icon="ArrowRight" />
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Icon</Label>
-        <Button size="icon">
-          <IconComponent icon="Plus" />
-        </Button>
-        <Button ml="md">Regular inside</Button>
-        <Button size="icon" ml="md" rounded>
-          <IconComponent icon="Plus" />
-        </Button>
-        <Button size="icon" ml="md" variant="text">
-          <IconComponent icon="Plus" />
-        </Button>
-      </Box>
-    </StoryWrapper>
-
-    <StoryWrapper label="Variants">
+    <StoryWrapper label="Variants" flex>
       {ButtonVariant.map((variant) => (
-        <Box mb="xl" key={variant}>
+        <Box key={variant}>
           <Label>{variant}</Label>
           <Button variant={variant}>{variant}</Button>
         </Box>
       ))}
     </StoryWrapper>
 
+    <StoryWrapper label="Sizes">
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant}>
+                {variant} {size}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
+    <StoryWrapper label="Colors">
+      {ButtonColor.map((color) => (
+        <>
+          <Label>{color}</Label>
+          <Box key={color} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} color={color} variant={variant}>
+                {variant} {color}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
+    <StoryWrapper label="Rounded">
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant} rounded>
+                {variant} rounded
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
     <StoryWrapper label="With icons">
-      <Box mb="xl">
-        <Label>Small with icon</Label>
-        <Button size="sm">
-          <Icon icon="Plus" />
-          Small [sm]
-        </Button>
-        <Button size="sm" color="primary" ml="default">
-          <Icon icon="Activity" />
-          With other icon
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Default</Label>
-        <Button size="default">
-          <Icon icon="Plus" />
-          Default
-        </Button>
-        <Button size="default" ml="md" variant="light">
-          <Icon icon="Plus" />
-          Light
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button size="lg">
-          <Icon icon="Plus" />
-          Large [lg]
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button variant="text">
-          <Icon icon="Plus" />
-          Text with icon
-        </Button>
-      </Box>
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant}>
+                <Icon icon="Plus" />
+                {size !== 'icon' && [variant, size].join(' ')}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
     </StoryWrapper>
   </Box>
 )
@@ -144,8 +110,8 @@ export default {
       control: { type: 'select' },
     },
     color: {
-      options: colorVariants,
-      defaultValue: colorVariants[0],
+      options: ButtonColor,
+      defaultValue: ButtonColor[0],
       control: { type: 'select' },
     },
   },

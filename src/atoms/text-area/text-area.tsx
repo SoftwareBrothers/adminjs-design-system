@@ -52,7 +52,7 @@ const TextArea = styled.textarea<TextAreaProps>`
 TextArea.defaultProps = {
   px: 'default',
   py: 'default',
-  fontSize: 'lg',
+  fontSize: 'default',
   className: cssClass('TextArea'),
 }
 
