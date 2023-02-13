@@ -175,7 +175,10 @@ build
 types
 
 # storybook
-out
+storybook-static
+
+# firebaase
+.firebase
 
 # rollup bundle
 /bundle.development.js

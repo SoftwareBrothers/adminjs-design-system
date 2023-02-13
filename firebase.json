@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "out",
+    "public": "storybook-static",
     "target": "adminjs-storybook",
     "ignore": [
       "firebase.json",

@@ -4,8 +4,8 @@ import React from 'react'
 import { Box, Button, Icon, Icon as IconComponent, Label } from '../../../src'
 import StoryWrapper from '../../utils/story-wrapper'
 
-const ButtonVariant = ['danger', 'outlined', 'contained', 'light', 'text'] as const
-const ButtonSize = ['sm', 'lg', 'icon', 'default'] as const
+const ButtonVariant = ['text', 'outlined', 'contained', 'light'] as const
+const ButtonSize = ['default', 'sm', 'lg', 'icon'] as const
 const colorVariants = ['primary', 'secondary', 'danger', 'success', 'info'] as const
 
 export const Default: ComponentStory<typeof Button> = (props) => (
