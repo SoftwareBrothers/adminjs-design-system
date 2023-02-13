@@ -48,6 +48,7 @@ export default {
       control: { type: 'number' },
     },
     mimeTypes: {
+      description: 'Allowed file types',
       defaultValue: ['application/pdf', 'image/png'],
       control: { type: 'object' },
     },
@@ -58,22 +59,32 @@ export default {
       control: { type: 'select' },
     },
     placeholder: {
+      name: 'translations.placeholder',
+      description: 'Translated placeholder',
       defaultValue: DROPZONE_DEFAULT_TRANSLATIONS.placeholder,
       control: { type: 'text' },
     },
     acceptedSize: {
+      name: 'translations.acceptedSize',
+      description: 'Translated accepted size label',
       defaultValue: DROPZONE_DEFAULT_TRANSLATIONS.acceptedSize,
       control: { type: 'text' },
     },
     acceptedType: {
+      name: 'translations.acceptedType',
+      description: 'Translated accepted type label',
       defaultValue: DROPZONE_DEFAULT_TRANSLATIONS.acceptedType,
       control: { type: 'text' },
     },
     unsupportedSize: {
+      name: 'translations.unsupportedSize',
+      description: 'Translated validation error for unsupported size',
       defaultValue: DROPZONE_DEFAULT_TRANSLATIONS.unsupportedSize,
       control: { type: 'text' },
     },
     unsupportedType: {
+      name: 'translations.unsupportedType',
+      description: 'Translated validation error for unsupported type',
       defaultValue: DROPZONE_DEFAULT_TRANSLATIONS.unsupportedType,
       control: { type: 'text' },
     },

@@ -19,7 +19,7 @@ const Spinner = styled.div.attrs({
     left: 6px;
     width: 13px;
     background: ${({ theme }) => theme.colors.primary100};
-    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation: lds-facebook 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   }
   & div:nth-child(1) {
     left: 6px;
@@ -34,11 +34,11 @@ const Spinner = styled.div.attrs({
     animation-delay: 0;
   }
   @keyframes lds-facebook {
-    0% {
+    0%, 80%, 100% {
       top: 6px;
       height: 51px;
     }
-    50%, 100% {
+    40% {
       top: 19px;
       height: 26px;
     }

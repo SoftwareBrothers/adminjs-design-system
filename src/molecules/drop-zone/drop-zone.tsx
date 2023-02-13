@@ -40,7 +40,7 @@ const inUnit = (size: string | number, unit?: FileSizeUnit): string => {
 }
 
 export const DROPZONE_DEFAULT_TRANSLATIONS = {
-  placeholder: 'Drop your image here, or click to browse',
+  placeholder: 'Drop your file here, or click to browse',
   acceptedSize: 'Max size: {{maxSize}}',
   acceptedType: 'Supports: {{mimeTypes}}',
   unsupportedSize: 'File {{fileName}} is too big',
@@ -109,8 +109,8 @@ export type DropZoneProps = {
    *   placeholder: 'Drop your image here, or click to browse',
    *   acceptedSize: 'Max size: {{maxSize}}',
    *   acceptedType: 'Supports: {{mimeTypes}}',
-   *     unsupportedSize: 'File {{fileName}} is too big',
-   *     unsupportedType: 'File {{fileName}} has unsupported type: {{fileType}}',
+   *   unsupportedSize: 'File {{fileName}} is too big',
+   *   unsupportedType: 'File {{fileName}} has unsupported type: {{fileType}}',
    * }
    */
   translations?: Partial<typeof DROPZONE_DEFAULT_TRANSLATIONS>
