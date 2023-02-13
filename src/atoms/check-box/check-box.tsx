@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import focusShadowStyle from '../../utils/focus-shadow.style'
 import { Label } from '../label'
@@ -52,7 +52,6 @@ const StyledCheckbox = styled.a<StyledProps>`
   width: 16px;
   /* when it is placed within a container setting different font size */
   font-size: 12px;
-  cursor: pointer;
   border: 1px solid ${({ theme, checked, disabled }): string => (checked && !disabled ? theme.colors.primary100 : theme.colors.inputBorder)};
   height: 16px;
   background: ${({ checked, theme, disabled }): string => checkboxBackground(theme, checked, disabled)};
@@ -69,6 +68,10 @@ const StyledCheckbox = styled.a<StyledProps>`
   ${Icon} {
     visibility: ${(props): string => (props.checked ? 'visible' : 'hidden')};
   }
+
+  ${({ disabled }) => (!disabled && css`
+    cursor: pointer;
+  `)}
 
   &:after {
     content: '';
@@ -126,6 +129,7 @@ const CheckBox: React.FC<CheckBoxProps> = (props) => {
 
   const [isChecked, setChecked] = useState(checked ?? false)
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    if (disabled) return
     if (onChange) {
       onChange(event)
     } else {
