@@ -2,7 +2,7 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import ThemeDecorator from './theme-decorator'
 
 export const parameters = {
-  // viewMode: 'docs',
+  viewMode: 'docs',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {

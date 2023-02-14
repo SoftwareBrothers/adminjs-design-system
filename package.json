@@ -16,6 +16,7 @@
     "bundle": "rollup --config ./config/rollup.js",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
+    "storybook:deploy": "firebase deploy --only hosting",
     "dev": "yarn build && yarn bundle"
   },
   "husky": {

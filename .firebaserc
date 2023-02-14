@@ -7,6 +7,9 @@
       "hosting": {
         "adminjs-storybook": [
           "adminjs-storybook"
+        ],
+        "adminjs-storybook-beta": [
+          "adminjs-storybook-beta"
         ]
       }
     }

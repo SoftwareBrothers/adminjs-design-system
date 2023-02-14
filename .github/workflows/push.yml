@@ -51,19 +51,9 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-
-      - uses: actions/cache@v1
-        id: yarn2-cache
-        with:
-          path: storybook/node_modules
-          key: ${{ runner.os }}-node_modules2-${{ hashFiles('**/storybook/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules2-
-      - name: Install example
-        if: steps.yarn2-cache.outputs.cache-hit != 'true'
-        run: cd storybook && yarn install
       - name: Build storybook
-        run: cd storybook && yarn storybook:build
+        run:  yarn storybook:build
       - name: Deploy storybook
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: cd storybook && yarn deploy --token "$FIREBASE_TOKEN"
+        run: yarn storybook:deploy --only adminjs-storybook --token "$FIREBASE_TOKEN"
