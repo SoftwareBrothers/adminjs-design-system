@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { DefaultTheme, css } from 'styled-components'
 import { space, color as styledColor, typography, variant as styledVariant } from 'styled-system'
 
 import { darken, rgba } from 'polished'
@@ -6,25 +6,24 @@ import { ColorVariants, VariantType } from '../../theme'
 import { cssClass, themeGet } from '../../utils'
 import { ButtonProps } from './button-props'
 
+const getColor = (theme: DefaultTheme) => (color: string): string => theme.colors[ColorVariants[color] || 'primary100']
+
 const legacyButtonVariants = (
   ['danger', 'default', 'info', 'primary', 'secondary', 'success'] as VariantType[]
-).reduce((acc, variant) => {
-  const color = ColorVariants[variant] || 'primary100'
-  return {
-    ...acc,
-    [variant]: {
-      className: cssClass(['Button', 'Button_Legacy']),
-      borderColor: 'currentColor',
-      color: (theme) => theme.colors[color],
-      '&:hover': {
-        bg: (theme) => rgba(theme.colors[color], 0.05),
-      },
-      '&:focus, &:active': {
-        bg: (theme) => rgba(theme.colors[color], 0.1),
-      },
+).reduce((acc, color) => ({
+  ...acc,
+  [color]: {
+    className: cssClass(['Button', 'Button_Legacy']),
+    borderColor: 'currentColor',
+    color: (theme) => getColor(theme)(color),
+    '&:hover': {
+      bg: (theme) => rgba(getColor(theme)(color), 0.05),
     },
-  }
-}, {})
+    '&:focus, &:active': {
+      bg: (theme) => rgba(getColor(theme)(color), 0.1),
+    },
+  },
+}), {})
 
 const buttonVariants = ({ color = 'primary' }: ButtonProps) => styledVariant({
   variants: {
@@ -32,54 +31,54 @@ const buttonVariants = ({ color = 'primary' }: ButtonProps) => styledVariant({
     contained: {
       className: cssClass(['Button', 'Button_Contained']),
       color: (theme) => theme.colors.white,
-      bg: (theme) => theme.colors[ColorVariants[color]],
-      borderColor: (theme) => theme.colors[ColorVariants[color]],
+      bg: (theme) => getColor(theme)(color),
+      borderColor: (theme) => getColor(theme)(color),
       '&:hover': {
-        bg: (theme) => darken(0.15, theme.colors[ColorVariants[color]]),
-        borderColor: (theme) => darken(0.15, theme.colors[ColorVariants[color]]),
+        bg: (theme) => darken(0.15, getColor(theme)(color)),
+        borderColor: (theme) => darken(0.15, getColor(theme)(color)),
       },
       '&:focus, &:active': {
-        bg: (theme) => darken(0.2, theme.colors[ColorVariants[color]]),
-        borderColor: (theme) => darken(0.2, theme.colors[ColorVariants[color]]),
+        bg: (theme) => darken(0.2, getColor(theme)(color)),
+        borderColor: (theme) => darken(0.2, getColor(theme)(color)),
       },
     },
     outlined: {
       className: cssClass(['Button', 'Button_Outlined']),
       borderColor: 'currentColor',
-      color: (theme) => theme.colors[ColorVariants[color]],
+      color: (theme) => getColor(theme)(color),
       '&:hover': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.05),
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
       },
       '&:focus, &:active': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.1),
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
     },
     light: {
       className: cssClass(['Button', 'Button_Light']),
-      color: (theme) => color && theme.colors[ColorVariants[color]],
+      color: (theme) => color && getColor(theme)(color),
       borderColor: 'grey40',
       [`& .${cssClass('Icon')} svg`]: {
         stroke: 'grey80',
       },
       '&:hover': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.05),
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
       },
       '&:focus, &:active': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.1),
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
     },
     text: {
       className: cssClass(['Button', 'Button_Text']),
-      color: (theme) => color && theme.colors[ColorVariants[color]],
+      color: (theme) => color && getColor(theme)(color),
       borderColor: 'transparent',
       '&:disabled': {
         'border-color': 'transparent',
       },
       '&:hover': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.05),
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
       },
       '&:focus, &:active': {
-        bg: (theme) => rgba(theme.colors[ColorVariants[color]], 0.1),
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
     },
   },
