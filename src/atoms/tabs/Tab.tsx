@@ -8,7 +8,7 @@ export interface TabProps extends PropsWithChildren {
    */
   id: string
   /**
-   * Title of the Tab that will be show on the tab navigation bar.
+   * Title of the Tab that will be shown on the tab navigation bar.
    */
   label: string
 }
