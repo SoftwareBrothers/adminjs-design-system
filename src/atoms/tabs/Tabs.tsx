@@ -147,4 +147,5 @@ export const useTabs = (): TabContextType => {
   return ctx
 }
 
+export { Tabs }
 export default Tabs

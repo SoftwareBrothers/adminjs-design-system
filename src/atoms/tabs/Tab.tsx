@@ -32,4 +32,5 @@ const Tab: FC<TabProps> = ({ id, label, children }) => {
   return <>{children}</>
 }
 
+export { Tab }
 export default Tab
