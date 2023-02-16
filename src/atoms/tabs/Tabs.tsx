@@ -22,6 +22,10 @@ export interface TabsProps extends PropsWithChildren {
    */
   onChange?: (tabId: string) => void
   /**
+   * Whether tabs container should fill remaining space
+   */
+  fullWidth?: boolean
+  /**
    * Custom component to use as the Tabs header instead of default 'div'.
    */
   headerComponent?: ComponentType
@@ -70,13 +74,18 @@ const StyledButton = styled.button<{ active: boolean }>`
   `}
 `
 
-const StyledContent = styled.div.attrs({ role: '' })`
+const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
 `
 
 const StyledHeader = styled.div`
   display: flex;
+`
+
+const StyledSpacer = styled.div`
+  flex-grow: 1;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.border};
 `
 
 /**
@@ -89,6 +98,7 @@ const Tabs: FC<TabsProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = () => {},
   children,
+  fullWidth = true,
   headerComponent: Header = StyledHeader,
   buttonComponent: Button = StyledButton,
   contentComponent: Content = StyledContent,
@@ -117,15 +127,16 @@ const Tabs: FC<TabsProps> = ({
 
   return (
     <TabContext.Provider value={memoizedContext}>
-      <StyledContent>
+      <StyledContent role="tablist">
         <Header>
           {tabs.map(({ id, title }) => (
-            <Button active={id === currentTab} key={id} onClick={() => onChange(id)} tabId={id}>
+            <Button role="tab" active={id === currentTab} key={id} onClick={() => onChange(id)} tabId={id}>
               {title}
             </Button>
           ))}
+          {fullWidth && <StyledSpacer />}
         </Header>
-        <Content>{children}</Content>
+        <Content role="tabpanel">{children}</Content>
       </StyledContent>
     </TabContext.Provider>
   )
