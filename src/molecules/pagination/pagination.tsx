@@ -161,7 +161,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="last"
-              onClick={() => (!isLastPage ? onChange(paginate.endPage) : undefined)}
+              onClick={() => (!isLastPage ? onChange(paginate.totalPages) : undefined)}
               disabled={isLastPage}
             >
               <Icon icon="PageLast" />
