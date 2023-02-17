@@ -29,7 +29,7 @@ export type ModalProps = {
   label?: string
 
   /** Icon near the label */
-  icon?: IconProps['icon'];
+  icon?: IconProps['icon']
 
   /** Handler function triggered when overlay is clicked */
   onOverlayClick?: () => any

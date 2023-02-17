@@ -1,6 +1,6 @@
+import { MouseEventHandler } from 'react'
 import { FlexboxProps, SpaceProps, TypographyProps } from 'styled-system'
 import { ColorVariant, VariantType } from '../../theme'
-
 import { ColorProps } from '../../utils/color-props'
 
 /**
@@ -37,4 +37,6 @@ export type ButtonProps = ColorProps &
      * You can either pass an label prop - or use react Children.
      */
     label?: string
+  } & {
+    onClick?: MouseEventHandler<HTMLButtonElement>
   }

@@ -7,7 +7,7 @@ import { VariantType } from '../../theme'
  *
  * @memberof ButtonGroup
  */
-export type ButtonInGroupProps = ButtonProps & {
+export type ButtonInGroupProps = Omit<ButtonProps, 'onClick'> & {
   /** Icon of a button */
   icon?: IconProps['icon'];
   /** Label, when set to null, with icon given, button will adjust it's margin */
