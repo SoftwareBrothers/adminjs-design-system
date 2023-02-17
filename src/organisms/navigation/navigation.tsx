@@ -20,7 +20,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   const { label, elements } = props
   return (
     <StyledNavigation px="xl" py="lg">
-      <Label pl="lg" mb="md" uppercase>{label}</Label>
+      {!!label?.length && <Label pl="lg" mb="md" uppercase>{label}</Label>}
       <ul>
         {elements.map((element, id) => (
           <NavigationElementWrapper key={[id, element.href].join('-')} {...element} />

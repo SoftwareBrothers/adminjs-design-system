@@ -19,6 +19,6 @@ export type NavigationElementWithChildrenProps = NavigationElementProps & {
  * @alias NavigationProps
  */
 export type NavigationProps = {
-  label: string;
+  label?: string;
   elements: Array<NavigationElementWithChildrenProps>;
 }
