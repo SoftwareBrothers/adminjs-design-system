@@ -29,6 +29,12 @@ const variants = variant({
       className: cssClass(['Box', 'Box_Card']),
       boxShadow: 'card',
     },
+    transparent: {
+      px: ['default', 'xxl'],
+      py: 'xxl',
+      bg: 'transparent',
+      className: cssClass(['Box', 'Box_Transparent']),
+    },
   },
 })
 
