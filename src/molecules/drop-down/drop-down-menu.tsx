@@ -30,6 +30,7 @@ export const DropDownMenu = styled(Box).attrs<DropDownMenuProps>((props) => ({
   z-index: 40;
   flex-direction: column;
   box-shadow: ${({ theme }) => theme.shadows.card};
+  border-radius: ${({ theme }) => theme.space.sm};
   ${({ isVisible }): string => (isVisible !== false ? '' : 'display: none;')};
 
   &.${cssClass('DropDown-Stick-left')} .${cssClass('DropDownMenu')} {

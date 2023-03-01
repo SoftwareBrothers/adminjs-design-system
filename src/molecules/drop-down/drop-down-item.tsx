@@ -1,3 +1,4 @@
+import { rgba } from 'polished'
 import styled from 'styled-components'
 import { space, variant } from 'styled-system'
 
@@ -6,13 +7,13 @@ import type { VariantType } from '../../theme'
 import { cssClass, themeGet } from '../../utils'
 import DropDownMenu from './drop-down-menu'
 
-const variantsShared = (color) => ({
+const variantsShared = (theme, color) => ({
   color,
   [`& .${cssClass('DropDownItemAction')}`]: {
     color,
   },
   '&:hover': {
-    borderColor: color,
+    bg: rgba(theme.colors[color], 0.03),
   },
   [`& .${cssClass('Icon')} svg`]: {
     stroke: color,
@@ -22,12 +23,12 @@ const variantsShared = (color) => ({
 const colorVariants = variant<any, VariantType>({
   prop: 'colorVariant',
   variants: {
-    primary: variantsShared('primary100'),
-    danger: variantsShared('error'),
-    success: variantsShared('success'),
-    info: variantsShared('info'),
-    secondary: { bg: 'accent' },
-    light: variantsShared('grey80'),
+    primary: (theme) => variantsShared(theme, 'primary100'),
+    danger: (theme) => variantsShared(theme, 'error'),
+    success: (theme) => variantsShared(theme, 'success'),
+    info: (theme) => variantsShared(theme, 'info'),
+    secondary: (theme) => variantsShared(theme, 'accent'),
+    light: (theme) => variantsShared(theme, 'grey80'),
     default: {},
   },
 })
@@ -64,8 +65,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   text-align: left;
 
   &:hover {
-    border-color: ${themeGet('colors', 'primary100')};
-    background: ${themeGet('colors', 'grey20')};
+    background: ${({ theme }) => rgba(theme.colors.black, 0.03)};
   }
 
   & .${cssClass('Icon')} {

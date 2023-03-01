@@ -104,6 +104,7 @@ export const ColorVariants = {
   success: 'success',
   info: 'info',
   warning: 'warning',
+  text: 'text',
 }
 
 export type ColorVariant = keyof typeof ColorVariants
@@ -245,7 +246,7 @@ const shadows = {
   login: '0 15px 24px 0 rgba(137,138,154,0.15)',
   cardHover: '0 4px 12px 0 rgba(137,138,154,0.4)',
   drawer: '-2px 0 8px 0 rgba(137,138,154,0.2)',
-  card: '0 1px 6px 0 rgba(137,138,154,0.4)',
+  card: '0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1)',
   inputFocus: '0 2px 4px 0 rgba(135,159,250,0.4)',
   buttonFocus: '0 4px 6px 0 rgba(56,202,241,0.3)',
 }
