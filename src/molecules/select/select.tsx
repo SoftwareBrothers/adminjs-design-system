@@ -1,6 +1,7 @@
 import noop from 'lodash/noop'
-import React, { FC } from 'react'
-import ReactSelect, { Props } from 'react-select'
+import React, { FC, forwardRef } from 'react'
+import ReactSelect, { GroupBase, Props } from 'react-select'
+import SelectType from 'react-select/base'
 import * as theme from '../../theme'
 import { cssClass, filterStyles, selectStyles } from '../../utils'
 
@@ -10,7 +11,7 @@ interface SelectProps extends Props {
   variant?: 'default' | 'filter'
 }
 
-export const Select: FC<SelectProps> = (props) => {
+export const Select: FC<SelectProps> = forwardRef<SelectType<any, boolean, GroupBase<unknown>>, SelectProps>((props, ref) => {
   const { value, onChange, variant, ...selectProps } = props
   const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
@@ -26,9 +27,10 @@ export const Select: FC<SelectProps> = (props) => {
       onChange={handleChange}
       isClearable
       {...selectProps}
+      ref={ref}
     />
   )
-}
+})
 
 Select.defaultProps = {
   variant: 'default',
