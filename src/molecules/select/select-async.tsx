@@ -1,6 +1,7 @@
 import noop from 'lodash/noop'
-import React, { FC } from 'react'
+import React, { FC, forwardRef } from 'react'
 import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
+import Select from 'react-select/base'
 import * as theme from '../../theme'
 import { cssClass, filterStyles, selectStyles } from '../../utils'
 
@@ -10,7 +11,7 @@ interface SelectProps extends AsyncProps<unknown, boolean, any> {
   variant?: 'default' | 'filter'
 }
 
-export const SelectAsync: FC<SelectProps> = (props) => {
+export const SelectAsync: FC<SelectProps> = forwardRef<Select<any, boolean, any>, SelectProps>((props, ref) => {
   const { value, onChange, variant, ...selectProps } = props
   const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
@@ -26,9 +27,10 @@ export const SelectAsync: FC<SelectProps> = (props) => {
       onChange={handleChange}
       isClearable
       {...selectProps}
+      ref={ref}
     />
   )
-}
+})
 
 SelectAsync.defaultProps = {
   variant: 'default',
