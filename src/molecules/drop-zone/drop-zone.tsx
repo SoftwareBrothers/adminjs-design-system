@@ -78,6 +78,30 @@ export type DropZoneProps = {
    * Upload limit display e.g.: 'KB' (upper case)
    */
   uploadLimitIn?: FileSizeUnit;
+  /**
+   * Message that instructs the user on how to user the drop-zone
+   */
+  instructionsMessage?: string;
+  /**
+   * Label for the max size
+   */
+  maxSizeLabel?: string;
+  /**
+   * Title for the wrong size error
+   */
+  wrongSizeTitle?: string;
+  /**
+   * Function to build the message for the wrong size error
+   */
+  wrongSizeMessage?: (file: File) => string;
+  /**
+   * Title for the wrong type error
+   */
+  wrongTypeTitle?: string;
+  /**
+   * Function to build the message for the wrong type error
+   */
+  wrongTypeMessage?: (file: File) => string;
 }
 
 const UploadInput = styled.input`
@@ -188,7 +212,20 @@ type ErrorMessage = {
  * @section design-system
  */
 const DropZone: React.FC<DropZoneProps> = (props) => {
-  const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props
+  const {
+    validate,
+    onChange,
+    multiple,
+    files: filesFromProps,
+    uploadLimitIn,
+    instructionsMessage = 'Pick or Drop File here to upload it.',
+    maxSizeLabel = 'Max size',
+    wrongSizeTitle = 'Wrong Size',
+    wrongSizeMessage = (file) => `File: ${file.name} size is too big`,
+    wrongTypeTitle = 'Wrong Type',
+    wrongTypeMessage = (file) => `File: ${file.name} has unsupported type: ${file.type}`,
+    ...other
+  } = props
 
   const [, setIsDragging] = useState(false)
   const [error, setError] = useState<ErrorMessage | null>(null)
@@ -224,11 +261,11 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
       const file = files.item(i) as File
       if (!file) { return }
       if (validate && !validateSize(validate.maxSize, file && file.size)) {
-        setError({ message: `File: ${file.name} size is too big`, title: 'Wrong Size' })
+        setError({ message: wrongSizeMessage(file), title: wrongSizeTitle })
         return
       }
       if (validate && !validateContentType(validate.mimeTypes, file.type)) {
-        setError({ message: `File: ${file.name} has unsupported type: ${file.type}`, title: 'Wrong Type' })
+        setError({ message: wrongTypeMessage(file), title: wrongTypeTitle })
         return
       }
       validatedFiles.push(file)
@@ -269,12 +306,12 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
         <UploadInput type="file" onChange={(event): void => onDrop(event)} multiple={multiple} />
         <Box>
           <Text fontSize="sm">
-            Pick or Drop File here to upload it.
+            {instructionsMessage}
           </Text>
           <Box>
             {validate && validate.maxSize ? (
               <Text variant="xs" color="grey60" lineHeight="default" mt="sm">
-                <Label inline uppercase>Max size:</Label>
+                <Label inline uppercase>{maxSizeLabel}:</Label>
                 {displayUploadLimit()}
               </Text>
             ) : ''}
