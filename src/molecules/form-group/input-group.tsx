@@ -1,8 +1,9 @@
-import styled from 'styled-components'
-import { Button } from '../../atoms/button'
-import { Input } from '../../atoms/input'
-import { Label } from '../../atoms/label'
-import { Link } from '../../atoms/link'
+import { styled } from 'styled-components'
+
+import { Button } from '../../atoms/button/index.js'
+import { Input } from '../../atoms/input/index.js'
+import { Label } from '../../atoms/label/index.js'
+import { Link } from '../../atoms/link/index.js'
 
 /**
  * @component

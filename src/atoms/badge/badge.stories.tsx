@@ -1,9 +1,10 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Badge, Box, Header, Text as TextComponent } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
 
-enum BadgeVariant {
+import { Badge, Box, Header, Text as TextComponent } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+
+export enum BadgeVariant {
   Default = 'default',
   Primary = 'primary',
   Danger = 'danger',
@@ -12,7 +13,7 @@ enum BadgeVariant {
   Secondary = 'secondary',
 }
 
-enum BadgeSize {
+export enum BadgeSize {
   Small = 'sm',
   Default = 'default',
   Large = 'lg',

@@ -1,7 +1,8 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { Box } from '../../atoms/box'
-import { MessageBox } from './message-box'
+
+import { Box } from '../../atoms/box/index.js'
+import { MessageBox } from './message-box.js'
 
 export const Default: React.FC<any> = ({ withInsideText, ...props }) => (
   <Box py="lg">

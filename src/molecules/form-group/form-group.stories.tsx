@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Box,
   Button,
@@ -11,8 +12,8 @@ import {
   Input,
   InputGroup,
   Label,
-} from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+} from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default {
   title: 'DesignSystem/Molecules/FormGroup',

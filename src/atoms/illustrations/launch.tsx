@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 export const Launch: React.FC<Props> = ({ width = 165, height = 184 }) => (
   <svg width={width} height={height} viewBox="0 0 165 184" version="1.1" xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Loader } from '../..'
+
+import { Loader } from './loader.js'
 
 export default { title: 'DesignSystem/Atoms/Loader' }
 

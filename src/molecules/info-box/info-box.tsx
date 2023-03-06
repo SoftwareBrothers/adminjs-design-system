@@ -1,11 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import Illustration, { IllustrationVariant } from '../../atoms/illustration'
-import Box, { BoxProps } from '../../atoms/box'
-import { H4 } from '../../atoms/typography'
+import { Illustration, IllustrationVariant } from '../../atoms/illustration/index.js'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { H4 } from '../../atoms/typography/index.js'
 
-import { cssClass } from '../../utils/css-class'
+import { cssClass } from '../../utils/css-class.js'
 
 const StyledInfoBox = styled(Box)<BoxProps>`
   display: flex;

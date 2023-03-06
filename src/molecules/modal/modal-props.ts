@@ -1,6 +1,6 @@
-import type { ButtonProps } from '../../atoms/button'
-import type { IconProps } from '../../atoms/icon'
-import { VariantType } from '../../theme'
+import type { ButtonProps } from '../../atoms/button/index.js'
+import type { IconProps } from '../../atoms/icon/index.js'
+import { VariantType } from '../../theme.js'
 
 /**
  * Props passed to Modal Component

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 export const AdminJSLogo: React.FC<Props> = ({ width = 113, height = 113 }) => (
   <svg

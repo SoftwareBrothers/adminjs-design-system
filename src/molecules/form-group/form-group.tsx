@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components'
 import { SpaceProps, space } from 'styled-system'
+import { styled, css } from 'styled-components'
 
-import { Label } from '../../atoms/label'
-import { Button } from '../../atoms/button'
-import { Input } from '../../atoms/input'
-import { CurrencyInput } from '../../atoms/currency-input'
-import { Link } from '../../atoms/link'
-import InputGroup from './input-group'
+import { Label } from '../../atoms/label/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Input } from '../../atoms/input/index.js'
+import { CurrencyInput } from '../../atoms/currency-input/index.js'
+import { Link } from '../../atoms/link/index.js'
+import InputGroup from './input-group.js'
 
 const formGroupDisabledCSS = css`
   color: ${({ theme }) => theme.colors.grey40};
@@ -133,7 +133,7 @@ export type FormGroupProps = SpaceProps & {
  * )
  * @section design-system
  */
-const FormGroup = styled.div<FormGroupProps>`
+export const FormGroup = styled.div<FormGroupProps>`
   width: 100%;
   ${({ error }): any => (error ? formGroupWithErrorCSS : '')};
   ${({ disabled }): any => (disabled ? formGroupDisabledCSS : '')};
@@ -166,5 +166,4 @@ FormGroup.defaultProps = {
   mb: 'lg',
 }
 
-export { FormGroup }
 export default FormGroup

@@ -1,11 +1,11 @@
 import JWPaginate from 'jw-paginate'
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Box } from '../../atoms/box'
-import { Button, ButtonProps } from '../../atoms/button'
-import { Icon } from '../../atoms/icon'
-import { cssClass } from '../../utils/css-class'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Button, ButtonProps } from '../../atoms/button/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 const MIN_PAGES_FOR_FIRST_PAGE_BUTTON = 3
 const FIRST_PAGE = 1
@@ -39,10 +39,10 @@ export type PaginationProps = {
   onChange: (pageNumber: number) => void;
 }
 
-const PaginationLink = styled(Button).attrs((props: ButtonProps) => ({
-  size: 'icon',
-  variant: props.variant || 'text',
-}))`
+const PaginationButton = (props: ButtonProps) => ({ size: 'icon' as const, variant: props.variant || 'text' as const })
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const PaginationLink: any = styled(Button).attrs(PaginationButton)<ButtonProps>`
   min-width: 28px;
   height: 28px;
   line-height: 12px;
@@ -54,7 +54,7 @@ PaginationLink.defaultProps = {
   className: cssClass('PaginationLink'),
 }
 
-const PaginationWrapper = styled(Box)`
+const PaginationWrapper = styled(Box)<BoxProps>`
   display: inline-block;
   padding: 2px;
  

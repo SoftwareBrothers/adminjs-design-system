@@ -1,10 +1,10 @@
-import { DefaultTheme, css } from 'styled-components'
 import { space, color as styledColor, typography, variant as styledVariant } from 'styled-system'
-
 import { darken, rgba } from 'polished'
-import { ColorVariants, VariantType } from '../../theme'
-import { cssClass, themeGet } from '../../utils'
-import { ButtonProps } from './button-props'
+import { css, DefaultTheme } from 'styled-components'
+
+import { ColorVariants, VariantType } from '../../theme.js'
+import { cssClass, themeGet } from '../../utils/index.js'
+import { ButtonProps } from './button-props.js'
 
 const getColor = (theme: DefaultTheme) => (color: string): string => theme.colors[ColorVariants[color] || 'primary100']
 
@@ -141,7 +141,7 @@ const sizeVariants = styledVariant({
  * @memberof Button
  * @alias ButtonCSS
  */
-export const ButtonCSS = css<ButtonProps>`
+export const ButtonCSS: ReturnType<typeof css> = css<ButtonProps>`
   -webkit-appearance: none;
   -moz-appearance: none;
   display: inline-block;

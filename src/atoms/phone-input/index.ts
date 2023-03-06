@@ -1,2 +1,1 @@
-export * from './phone-input'
-export { default } from './phone-input'
+export * from './phone-input.js'

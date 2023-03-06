@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import { Box, Button, PhoneInput, FormGroup } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import { Box, Button, PhoneInput, FormGroup } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export const Default: FC = (props) => (
   <Box width={1}>

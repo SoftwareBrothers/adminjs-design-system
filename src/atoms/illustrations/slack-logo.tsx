@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 export const Slack: React.FC<Props> = ({ width = 72, height = 72 }) => (
   <svg

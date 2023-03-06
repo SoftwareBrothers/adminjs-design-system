@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren, useLayoutEffect } from 'react'
 
-import { useTabs } from './Tabs'
+import { useTabs } from './tabs.js'
 
 export interface TabProps extends PropsWithChildren {
   /**
@@ -29,6 +29,7 @@ const Tab: FC<TabProps> = ({ id, label, children }) => {
     return null
   }
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>
 }
 

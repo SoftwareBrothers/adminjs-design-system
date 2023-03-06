@@ -1,6 +1,6 @@
 import { getValueAndUnit } from 'polished'
 
-function themeGet(
+export function themeGet(
   kind: string,
   value?: string | number,
   offset?: number | string,
@@ -23,10 +23,7 @@ function themeGet(
   }
 }
 
-export {
-  themeGet as default,
-  themeGet,
-}
+export default themeGet
 
 /**
  *

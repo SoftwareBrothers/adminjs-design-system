@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 export const GithubLogo: React.FC<Props> = ({ width = 72, height = 71 }) => (
   <svg width={width} height={height} viewBox="0 0 72 71" version="1.1" xmlns="http://www.w3.org/2000/svg">

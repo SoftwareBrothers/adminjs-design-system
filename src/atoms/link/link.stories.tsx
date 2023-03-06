@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from './link'
 
-enum LinkVariant {
+import Link from './link.js'
+
+export enum LinkVariant {
   Primary = 'primary',
   Danger = 'danger',
   Success = 'success',
@@ -9,7 +10,7 @@ enum LinkVariant {
   Secondary = 'secondary'
 }
 
-enum LinkSize {
+export enum LinkSize {
   Sm = 'sm',
   Lg = 'lg'
 }

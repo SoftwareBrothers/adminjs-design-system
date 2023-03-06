@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import { PropsWithChildren } from 'react'
 import { color, space, variant, SpaceProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
-import { ColorProps } from '../../utils/color-props'
+import { styled } from 'styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 
 const sizeVariants = variant({
   prop: 'size',
@@ -54,7 +56,7 @@ export type LinkProps = ColorProps & SpaceProps & {
   variant?: 'primary' | 'danger' | 'success' | 'info' | 'secondary';
   /** Size variant */
   size?: 'sm' | 'lg';
-}
+} & PropsWithChildren
 
 /**
  * @classdesc

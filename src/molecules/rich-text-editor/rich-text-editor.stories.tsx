@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { Box, Text } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
-import { RichTextEditor } from './rich-text-editor'
+import { Box, Text } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { RichTextEditor } from './rich-text-editor.js'
 
 const html = `
 <h1>Hello World</h1>

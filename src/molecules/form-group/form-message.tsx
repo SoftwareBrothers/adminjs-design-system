@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import Text from '../../atoms/text'
+import { Text } from '../../atoms/text/index.js'
 
 /**
  * @component

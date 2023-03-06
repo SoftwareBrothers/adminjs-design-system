@@ -1,8 +1,9 @@
 import { Editor } from '@tiptap/react'
-import React, { FC, useMemo } from 'react'
-import styled from 'styled-components'
-import Text from '../../../atoms/text'
-import * as EditorIcons from '../icons'
+import React, { FC, useMemo, PropsWithChildren } from 'react'
+import { styled } from 'styled-components'
+
+import { Text, TextProps } from '../../../atoms/text/index.js'
+import * as EditorIcons from '../icons/index.js'
 
 interface MenuButtonProps {
   editor: Editor
@@ -13,7 +14,7 @@ interface MenuButtonProps {
   children?: any
 }
 
-const StyledText = styled(Text)`
+const StyledText: any = styled(Text)<PropsWithChildren<TextProps>>`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.grey80};
   & svg path {

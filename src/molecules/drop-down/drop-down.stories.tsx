@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Badge,
   Box,
@@ -9,8 +10,8 @@ import {
   DropDownItem,
   Button,
   Icon,
-} from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+} from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default {
   title: 'DesignSystem/Molecules/DropDown',
@@ -45,7 +46,7 @@ export const Default: React.FC<any> = ({ onClick, ...props }) => {
             <Icon icon="Headphones" />
             Other item
             <DropDownMenu>
-              <DropDownItem onClick={handleClick} colorcolor="danger">
+              <DropDownItem onClick={handleClick} color="danger">
                 <Icon icon="Edit" />
                 Some danger item
               </DropDownItem>

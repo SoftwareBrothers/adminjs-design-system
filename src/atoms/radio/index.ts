@@ -1,2 +1,1 @@
-export * from './radio'
-export { default } from './radio'
+export * from './radio.js'

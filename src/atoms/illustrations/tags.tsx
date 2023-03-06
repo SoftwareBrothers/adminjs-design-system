@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 export const Tags: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">

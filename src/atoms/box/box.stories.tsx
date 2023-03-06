@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Box, Text, Header, Button } from '../..'
+
+import { Box, Text, Header, Button } from '../../index.js'
 
 export default {
   title: 'DesignSystem/Atoms/Box',

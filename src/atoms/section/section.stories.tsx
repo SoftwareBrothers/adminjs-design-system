@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Section, Box, Button, Icon, Text, CardTitle } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Section, Box, Button, Icon, Text, CardTitle } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default {
   title: 'DesignSystem/Atoms/Section',

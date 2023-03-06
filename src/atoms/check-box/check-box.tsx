@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import styled, { css } from 'styled-components'
+import { styled, css } from 'styled-components'
 
-import focusShadowStyle from '../../utils/focus-shadow.style'
-import { Label } from '../label'
+import focusShadowStyle from '../../utils/focus-shadow.style.js'
+import { Label } from '../label/index.js'
 
 const Icon = styled.svg`
   fill: none;

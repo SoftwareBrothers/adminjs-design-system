@@ -1,8 +1,9 @@
 import React from 'react'
-import Box from '../../atoms/box'
-import Label from '../../atoms/label'
-import Text from '../../atoms/text'
-import { ValueGroupProps } from './value-group-props'
+
+import { Box } from '../../atoms/box/index.js'
+import { Label } from '../../atoms/label/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { ValueGroupProps } from './value-group-props.js'
 
 /**
  * @load ./value-group.doc.md
@@ -14,7 +15,7 @@ import { ValueGroupProps } from './value-group-props'
  * @new In version 3.3
  * @section design-system
  */
-const ValueGroup: React.FC<ValueGroupProps> = (props) => {
+export const ValueGroup: React.FC<ValueGroupProps> = (props) => {
   const { label, value, children } = props
 
   return (
@@ -26,4 +27,4 @@ const ValueGroup: React.FC<ValueGroupProps> = (props) => {
   )
 }
 
-export { ValueGroup as default, ValueGroup }
+export default ValueGroup

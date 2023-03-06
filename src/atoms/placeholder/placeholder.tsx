@@ -1,15 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
-
-import styled, { DefaultTheme, keyframes } from 'styled-components'
 import { LayoutProps, layout } from 'styled-system'
-
 import { darken } from 'polished'
-import { cssClass } from '../../utils/css-class'
+import { styled, keyframes } from 'styled-components'
 
-const linearGradient = (theme: DefaultTheme): string => (
-  `linear-gradient(to right, ${theme.colors.grey60} 8%, ${theme.colors.grey40} 18%, ${theme.colors.grey20} 33%)`
-)
+import { cssClass } from '../../utils/css-class.js'
 
 const waveKeyframe = keyframes`
   0% {
@@ -53,6 +48,20 @@ const StyledPlaceholder = styled.div<LayoutProps>`
 `
 
 /**
+ * Prop Types of a Placeholder component.
+ * Apart from standard html props it extends {@link LayoutProps}
+ * @typedef {object} PlaceholderProps
+ * @memberof Placeholder
+ * @alias PlaceholderProps
+ * @property {string} [...] All props default to _div_ html component like `style`,
+ *                          `id` etc.
+ * @property {string} [...] Props from {@link LayoutProps}
+ */
+export type PlaceholderProps = LayoutProps & React.HTMLProps<HTMLDivElement> & {
+  as?: 'div' | 'span';
+}
+
+/**
  * @classdesc
  *
  * <img src="components/placeholder.png" />
@@ -89,21 +98,6 @@ const StyledPlaceholder = styled.div<LayoutProps>`
 const Placeholder: React.FC<PlaceholderProps> = ({ as: htmlAs, ref, ...other }) => (
   <StyledPlaceholder as={htmlAs} {...other} className={cssClass('Placeholder')} />
 )
-
-export type PlaceholderProps = LayoutProps & React.HTMLProps<HTMLDivElement> & {
-  as?: 'div' | 'span';
-}
-
-/**
- * Prop Types of a Placeholder component.
- * Apart from standard html props it extends {@link LayoutProps}
- * @typedef {object} PlaceholderProps
- * @memberof Placeholder
- * @alias PlaceholderProps
- * @property {string} [...] All props default to _div_ html component like `style`,
- *                          `id` etc.
- * @property {string} [...] Props from {@link LayoutProps}
- */
 
 export { Placeholder }
 export default Placeholder

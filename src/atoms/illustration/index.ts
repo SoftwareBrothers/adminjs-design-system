@@ -1,2 +1,1 @@
-export * from './illustration'
-export { default } from './illustration'
+export * from './illustration.js'

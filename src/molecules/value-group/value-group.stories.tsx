@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ValueGroup, Box, CardTitle, Text } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+import { ValueGroup, Box, CardTitle, Text } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export const Default: React.FC<any> = ({ onClick }) => {
   const handleClick = (event) => {

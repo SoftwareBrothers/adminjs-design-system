@@ -1,5 +1,6 @@
 import React from 'react'
-import { Props } from './props.type'
+
+import { Props } from './props.type.js'
 
 const Moon: React.FC<Props> = ({ width = 260, height = 260 }) => (
   <svg width={width} height={height} viewBox="0 0 260 260" version="1.1" xmlns="http://www.w3.org/2000/svg">

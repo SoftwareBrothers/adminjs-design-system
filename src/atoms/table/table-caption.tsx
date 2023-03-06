@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { Button } from '../button'
-import { cssClass } from '../../utils/css-class'
-import { themeGet } from '../../utils'
+import { styled } from 'styled-components'
+
+import { Button } from '../button/index.js'
+import { themeGet, cssClass } from '../../utils/index.js'
 
 /**
  * @component

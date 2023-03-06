@@ -1,6 +1,7 @@
 import React from 'react'
-import { Text } from '../..'
-import { Pagination } from './pagination'
+
+import { Text } from '../../index.js'
+import { Pagination } from './pagination.js'
 
 export default { title: 'DesignSystem/Molecules/Pagination' }
 

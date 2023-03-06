@@ -1,10 +1,11 @@
-import styled from 'styled-components'
-import Box from '../../atoms/box/box'
-import { InputCSS, InputProps } from '../../atoms/input'
-import { Text, TextProps } from '../../atoms/text'
-import { cssClass, themeGet } from '../../utils'
+import { styled } from 'styled-components'
 
-export type EditorWrapperProps = TextProps & InputProps
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { InputCSS, InputProps } from '../../atoms/input/index.js'
+import { Text, TextProps } from '../../atoms/text/index.js'
+import { cssClass, themeGet } from '../../utils/index.js'
+
+export type EditorWrapperProps = TextProps & InputProps & BoxProps
 
 export const EditorWrapper = styled(Text)<EditorWrapperProps>`
   position: relative;

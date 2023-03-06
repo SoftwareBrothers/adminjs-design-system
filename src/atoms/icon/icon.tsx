@@ -1,9 +1,10 @@
 import React from 'react'
 import * as FeatherIcons from 'react-feather'
-import styled, { css } from 'styled-components'
 import { SpaceProps, space, color as styledColor } from 'styled-system'
-import { ColorProps } from '../../utils/color-props'
-import { cssClass } from '../../utils/css-class'
+import { styled, css } from 'styled-components'
+
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * Prop Types of an Icon component.

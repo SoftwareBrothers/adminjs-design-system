@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
-import themeGet from './theme-get'
+
+import themeGet from './theme-get.js'
 
 /**
  *
@@ -19,7 +20,7 @@ import themeGet from './theme-get'
  *
  * @memberof module:@adminjs/design-system
  */
-const contentCSS = css`
+const contentCSS: ReturnType<typeof css> = css`
   font-family: ${({ theme }) => theme.font};
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};

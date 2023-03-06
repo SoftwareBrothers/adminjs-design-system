@@ -1,4 +1,4 @@
-import type { IconProps } from '../../atoms/icon'
+import type { IconProps } from '../../atoms/icon/index.js'
 
 /**
  * Action element passed to CurrentUserNavProps

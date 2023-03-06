@@ -1,6 +1,7 @@
 import React from 'react'
-import { Tooltip, TooltipContent, Button, H4, Text, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import { Tooltip, TooltipContent, Button, H4, Text, Box } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 const Direction = {
   right: 'right',

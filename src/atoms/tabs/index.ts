@@ -1,2 +1,2 @@
-export * from './Tabs'
-export * from './Tab'
+export * from './tabs.js'
+export * from './tab.js'

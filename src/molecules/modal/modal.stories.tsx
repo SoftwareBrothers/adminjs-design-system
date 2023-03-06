@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { ModalInline, Box, Label, Button, Modal } from '../..'
+import { ModalInline, Box, Label, Button, Modal } from '../../index.js'
 
 const variants = [
   'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',

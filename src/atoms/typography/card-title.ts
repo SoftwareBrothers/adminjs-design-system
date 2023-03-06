@@ -1,10 +1,10 @@
-import styled from 'styled-components'
 import { TypographyProps, SpaceProps } from 'styled-system'
+import { styled } from 'styled-components'
 
-import themeGet from '../../utils/theme-get'
-import CaptionShared from './caption-shared'
+import themeGet from '../../utils/theme-get.js'
+import CaptionShared from './caption-shared.js'
 
-const CardTitle = styled('div')<TypographyProps & SpaceProps>`
+export const CardTitle = styled('div')<TypographyProps & SpaceProps>`
   ${CaptionShared};
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};
@@ -14,7 +14,4 @@ const CardTitle = styled('div')<TypographyProps & SpaceProps>`
   }
 `
 
-export {
-  CardTitle as default,
-  CardTitle,
-}
+export default CardTitle

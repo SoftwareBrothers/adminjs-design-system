@@ -1,8 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from '../box/box'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { Box } from '../box/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 const Spinner = styled.div.attrs({
   className: 'lds-facebook',

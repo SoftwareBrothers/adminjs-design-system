@@ -12,9 +12,8 @@ import {
   CheckBox,
   Link,
   Text,
-} from '../..'
-
-import StoryWrapper from '../../utils/story-wrapper'
+} from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default {
   title: 'DesignSystem/Atoms/Table',

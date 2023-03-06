@@ -1,6 +1,7 @@
 import React from 'react'
 import type { ComponentMeta } from '@storybook/react'
-import { DROPZONE_DEFAULT_TRANSLATIONS, DropZone, DropZoneProps } from '../..'
+
+import { DROPZONE_DEFAULT_TRANSLATIONS, DropZone, DropZoneProps } from '../../index.js'
 
 export const Default: React.FC<
   DropZoneProps & { maxSize: number; mimeTypes: string[] } & typeof DROPZONE_DEFAULT_TRANSLATIONS

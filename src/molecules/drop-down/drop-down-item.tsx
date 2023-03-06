@@ -1,11 +1,11 @@
 import { rgba } from 'polished'
-import styled from 'styled-components'
 import { space, variant } from 'styled-system'
+import { styled } from 'styled-components'
 
-import Box, { BoxProps } from '../../atoms/box'
-import type { VariantType } from '../../theme'
-import { cssClass, themeGet } from '../../utils'
-import DropDownMenu from './drop-down-menu'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import type { VariantType } from '../../theme.js'
+import { cssClass, themeGet } from '../../utils/index.js'
+import DropDownMenu from './drop-down-menu.js'
 
 const variantsShared = (theme, color) => ({
   color,
@@ -56,7 +56,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   font-family: ${themeGet('font')};
   border: solid transparent;
   border-width: 0 ${themeGet('space', 'sm')};
-  ${({ onClick }) => (onClick ? 'cursor: pointer;' : '')};
+  ${({ onClick }: any) => (onClick ? 'cursor: pointer;' : '')};
   text-decoration: none;
   display: flex;
   flex-direction: row;

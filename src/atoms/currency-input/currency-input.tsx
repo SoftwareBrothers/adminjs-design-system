@@ -1,11 +1,13 @@
-import styled from 'styled-components'
 import { space, typography, layout, TypographyProps } from 'styled-system'
 import CurrencyInputField, {
   CurrencyInputProps as CurrencyInputFieldProps,
   formatValue as formatCurrencyProperty,
 } from 'react-currency-input-field'
-import { InputCSS, InputProps } from '../input'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { InputCSS, InputProps } from '../input/index.js'
+import { cssClass } from '../../utils/css-class.js'
+
 /**
  * Prop Types of a CurrencyInput component.
  * CurrencyInput is based on `react-currency-input-field` @see {@link https://github.com/cchanxzy/react-currency-input-field React Currency Input Field Component}
@@ -48,7 +50,8 @@ export type CurrencyInputProps = TypographyProps &
  * )
  * @section design-system
  */
-const CurrencyInput = styled(CurrencyInputField)<CurrencyInputProps>`
+const CurrencyInputComponent = CurrencyInputField.default ?? CurrencyInputField
+const CurrencyInput = styled(CurrencyInputComponent)<CurrencyInputProps>`
   ${InputCSS}
   ${space};
   ${layout};

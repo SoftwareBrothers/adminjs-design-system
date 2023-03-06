@@ -8,8 +8,9 @@ import React, {
   useContext,
   ComponentType,
 } from 'react'
-import styled, { css } from 'styled-components'
-import assert from '../../utils/assert'
+import { styled, css } from 'styled-components'
+
+import assert from '../../utils/assert.js'
 
 export interface TabsProps extends PropsWithChildren {
   /**
@@ -28,19 +29,20 @@ export interface TabsProps extends PropsWithChildren {
   /**
    * Custom component to use as the Tabs header instead of default 'div'.
    */
-  headerComponent?: ComponentType
+  headerComponent?: ComponentType<PropsWithChildren<any>>
   /**
    * Custom component to use as the Tab button instead of default 'button'.
    */
-  buttonComponent?: ComponentType<{
+  buttonComponent?: ComponentType<PropsWithChildren<{
     onClick: () => void
     active: boolean
     tabId: string
-  }>
+    role?: string
+  }>>
   /**
    * Custom component to use as the Tabs content container instead of default 'div'.
    */
-  contentComponent?: ComponentType
+  contentComponent?: ComponentType<PropsWithChildren<{ role?: string }>>
 }
 
 interface TabData {
@@ -126,6 +128,7 @@ const Tabs: FC<TabsProps> = ({
   )
 
   return (
+    // eslint-disable-next-line no-use-before-define
     <TabContext.Provider value={memoizedContext}>
       <StyledContent role="tablist">
         <Header>

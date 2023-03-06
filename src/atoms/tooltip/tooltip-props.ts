@@ -1,6 +1,7 @@
 import { ReactNode, RefObject } from 'react'
-import { DirectionProps } from '../../utils/direction-props'
-import { BoxProps } from '../box/box'
+
+import { DirectionProps } from '../../utils/direction-props.js'
+import { BoxProps } from '../box/index.js'
 
 /**
  * Props passed to the {@link Tooltip} component.

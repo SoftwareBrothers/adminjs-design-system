@@ -1,41 +1,13 @@
 /* eslint-disable max-len */
 import React from 'react'
-import styled, { DefaultTheme } from 'styled-components'
 import { SpaceProps, variant as styledVariant } from 'styled-system'
+import { styled, DefaultTheme } from 'styled-components'
 
-import { Box } from '../../atoms/box'
-import { Button } from '../../atoms/button'
-import { Icon, IconProps } from '../../atoms/icon'
-import { cssClass } from '../../utils/css-class'
-import { Text } from '../../atoms/text'
-
-const sizeVariants = styledVariant({
-  prop: 'size',
-  variants: {
-    sm: {
-      boxShadow: 'none',
-      [`& > ${Button}`]: {
-        margin: '0px',
-      },
-    },
-  },
-})
-
-const StyledMessageBox = styled(Box)<MessageBoxProps>`
-  line-height: ${({ theme }) => theme.lineHeights.default};
-  border-radius: 4px;
-  color: ${({ theme }) => theme.colors.text};
-  padding: 12px 22px;
-  z-index: 50;
-  & > ${Button} {
-    float: right;
-    margin: 8px;
-    & svg {
-      stroke: ${({ theme }) => theme.colors.text};
-    }
-  }
-  ${sizeVariants};
-`
+import { Box } from '../../atoms/box/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Icon, IconProps } from '../../atoms/icon/index.js'
+import { cssClass } from '../../utils/css-class.js'
+import { Text } from '../../atoms/text/index.js'
 
 /**
  * Prop Types of a MessageBox component.
@@ -44,7 +16,7 @@ const StyledMessageBox = styled(Box)<MessageBoxProps>`
  * @memberof MessageBox
  * @alias MessageBoxProps
  */
-type MessageBoxProps = {
+ type MessageBoxProps = {
   /** Triggered when user clicks close button. If not given close button won't be seen */
   onCloseClick?: () => void
   /** Title content of a message */
@@ -66,6 +38,34 @@ type MessageBoxProps = {
 
 type Props = SpaceProps & MessageBoxProps
 export { Props as MessageBoxProps }
+
+const sizeVariants = styledVariant({
+  prop: 'size',
+  variants: {
+    sm: {
+      boxShadow: 'none',
+      [`& > ${Button}`]: {
+        margin: '0px',
+      },
+    },
+  },
+})
+
+const StyledMessageBox: any = styled(Box)<MessageBoxProps>`
+  line-height: ${({ theme }) => theme.lineHeights.default};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.text};
+  padding: 12px 22px;
+  z-index: 50;
+  & > ${Button} {
+    float: right;
+    margin: 8px;
+    & svg {
+      stroke: ${({ theme }) => theme.colors.text};
+    }
+  }
+  ${sizeVariants};
+`
 
 /**
  * @classdesc

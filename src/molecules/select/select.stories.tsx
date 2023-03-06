@@ -1,11 +1,12 @@
 import type { ComponentMeta } from '@storybook/react'
-import filter from 'lodash/filter'
+import filter from 'lodash/filter.js'
 import React, { FC, useState } from 'react'
-import { FormGroup } from '../..'
-import Box from '../../atoms/box'
-import StoryWrapper from '../../utils/story-wrapper'
-import { Select } from './select'
-import { SelectAsync } from './select-async'
+
+import { FormGroup } from '../../index.js'
+import { Box } from '../../atoms/box/index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Select } from './select.js'
+import { SelectAsync } from './select-async.js'
 
 export default {
   title: 'DesignSystem/Molecules/Select',

@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react'
-import Box from '../../atoms/box/box'
-import Icon from '../../atoms/icon'
-import { StyledSingleButton } from './button-group.styled'
-import { ButtonInGroupProps } from './button-group.types'
+
+import { Box } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { StyledSingleButton } from './button-group.styled.js'
+import { ButtonInGroupProps } from './button-group.types.js'
 
 export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
   const { icon, label, buttons, source, onClick, ...buttonProps } = props
@@ -36,6 +37,4 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
   )
 }
 
-export {
-  SingleButtonInGroup as default,
-}
+export default SingleButtonInGroup

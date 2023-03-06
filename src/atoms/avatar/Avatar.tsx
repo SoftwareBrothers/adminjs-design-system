@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { MarginProps, space } from 'styled-system'
+import { styled } from 'styled-components'
 
 type AvatarProps = MarginProps & {
   alt?: string
@@ -27,7 +27,7 @@ const Avatar = styled.div<AvatarProps>`
     height: 100%;
     border-radius: 50%;
     background-color: transparent;
-    background-image: url('${({ src }) => src}');
+    background-image: url('${({ src }: any) => src}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

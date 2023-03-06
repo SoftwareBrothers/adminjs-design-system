@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import { zIndex, ZIndexProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
+
+import { cssClass } from '../../utils/css-class.js'
 
 export const Overlay = styled.div<ZIndexProps>`
   width: 100%;

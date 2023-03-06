@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button } from '../../atoms/button'
-import { Icon } from '../../atoms/icon'
-import { Text } from '../../atoms/text'
-import { InfoBox } from './info-box'
+
+import { Button } from '../../atoms/button/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { InfoBox } from './info-box.js'
 
 export default { title: 'DesignSystem/Molecules/InfoBox' }
 

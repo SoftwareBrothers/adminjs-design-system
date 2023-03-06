@@ -11,8 +11,9 @@ import Typography from '@tiptap/extension-typography'
 import { EditorContent, EditorEvents, EditorOptions, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
-import MenuBar from './components/menu-bar'
-import { EditorWrapper } from './rich-text-editor.styled'
+
+import MenuBar from './components/menu-bar.js'
+import { EditorWrapper } from './rich-text-editor.styled.js'
 
 interface RichTextEditorOptions extends Partial<EditorOptions> {
   limit?: number

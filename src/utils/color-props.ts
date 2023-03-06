@@ -1,10 +1,7 @@
-import { ColorProps } from 'styled-system'
+import { NewColorProps as ColorProps } from 'styled-system'
 
-type NewColorProps = Omit<ColorProps, 'color'> & {
+export type NewColorProps = Omit<ColorProps, 'color'> & {
   color?: string
 }
 
-export {
-  NewColorProps as default,
-  NewColorProps as ColorProps,
-}
+export default NewColorProps

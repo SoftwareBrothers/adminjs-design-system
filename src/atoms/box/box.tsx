@@ -1,12 +1,15 @@
-import styled from 'styled-components'
+import { PropsWithChildren } from 'react'
+
 import {
   space, SpaceProps, color, layout,
   LayoutProps, flexbox, FlexboxProps, border, BorderProps,
   position, PositionProps, variant, grid,
   shadow, ShadowProps,
 } from 'styled-system'
-import { ColorProps } from '../../utils/color-props'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 const variants = variant({
   variants: {
@@ -65,7 +68,7 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
     animate?: boolean;
     /** Optional class name passed down to the wrapper */
     className?: string;
-  }
+  } & PropsWithChildren
 
 /**
  * @load ./box.doc.md

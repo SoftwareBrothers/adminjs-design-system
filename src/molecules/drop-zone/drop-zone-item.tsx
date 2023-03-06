@@ -1,10 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from '../../atoms/box'
-import { Icon } from '../../atoms/icon'
-import { Button } from '../../atoms/button'
-import { Text } from '../../atoms/text'
-import { humanFileSize } from '../../utils'
+import { styled } from 'styled-components'
+
+import { Box } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { humanFileSize } from '../../utils/index.js'
 
 const DropZoneImg = styled.div<{ src: string }>`
   width: 100%;

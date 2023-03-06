@@ -1,8 +1,9 @@
 /* eslint-disable no-shadow */
-import styled from 'styled-components'
 import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
-import { DEFAULT_DRAWER_WIDTH } from '../../constants'
+import { styled } from 'styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
+import { DEFAULT_DRAWER_WIDTH } from '../../constants.js'
 
 /**
  * Props for Drawer component. Apart from those described below it also extends all

@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import Box, { BoxProps } from '../../atoms/box'
-import { DEFAULT_STICK, DropDownStickProp } from './drop-down'
-import { cssClass } from '../../utils'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { DEFAULT_STICK, DropDownStickProp } from './drop-down.js'
+import { cssClass } from '../../utils/index.js'
 
 /**
  * Props passed to DropDownMenu element.
@@ -20,9 +20,7 @@ export type DropDownMenuProps = BoxProps & {
  * @private
  */
 export const DropDownMenu = styled(Box).attrs<DropDownMenuProps>((props) => ({
-  className: cssClass(
-    [`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className,
-  ),
+  className: cssClass([`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className),
 }))<DropDownMenuProps>`
   background: ${({ theme }) => theme.colors.container};
   display: inline-block;
