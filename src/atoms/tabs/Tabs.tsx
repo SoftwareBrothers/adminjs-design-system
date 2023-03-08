@@ -1,5 +1,4 @@
 import React, {
-  FC,
   createContext,
   useCallback,
   useState,
@@ -95,7 +94,7 @@ const StyledSpacer = styled.div`
  * to display below. Children of the selected Tab are then rendered below the
  * navigation bar.
  */
-const Tabs: FC<TabsProps> = ({
+export const Tabs: React.FC<TabsProps> = ({
   currentTab,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = () => {},
@@ -161,5 +160,4 @@ export const useTabs = (): TabContextType => {
   return ctx
 }
 
-export { Tabs }
 export default Tabs

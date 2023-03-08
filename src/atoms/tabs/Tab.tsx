@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useLayoutEffect } from 'react'
+import React, { PropsWithChildren, useLayoutEffect } from 'react'
 
 import { useTabs } from './tabs.js'
 
@@ -17,7 +17,7 @@ export interface TabProps extends PropsWithChildren {
  * Renders children inside Tabs component. Each Tab will add a single tab in
  * the navigation bar.
  */
-const Tab: FC<TabProps> = ({ id, label, children }) => {
+export const Tab: React.FC<TabProps> = ({ id, label, children }) => {
   const { currentTab, registerTab, unregisterTab } = useTabs()
 
   useLayoutEffect(() => {
@@ -33,5 +33,4 @@ const Tab: FC<TabProps> = ({ id, label, children }) => {
   return <>{children}</>
 }
 
-export { Tab }
 export default Tab

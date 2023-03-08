@@ -28,7 +28,13 @@ const plugins = [
       pluginStyled,
     ],
     presets: [
-      presetEnv,
+      [presetEnv, {
+        targets: {
+          node: '18',
+        },
+        loose: true,
+        modules: false,
+      }],
       presetReact,
       presetTs,
     ],
