@@ -53,7 +53,7 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
     /** If box should be rendered as flex. You can pass boolean or FlexboxProps['flex'] */
     flex?: FlexboxFlexProp;
     /** Box variants */
-    variant?: 'grey' | 'white' | 'card';
+    variant?: 'grey' | 'white' | 'card' | 'transparent';
     /** If set to true it makes css changes as 500ms transitions */
     animate?: boolean;
     /** Optional class name passed down to the wrapper */
