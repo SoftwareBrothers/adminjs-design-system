@@ -1,8 +1,8 @@
 import noop from 'lodash/noop'
 import React, { FC } from 'react'
 import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
-import * as theme from '../../theme'
 import { cssClass, filterStyles, selectStyles } from '../../utils'
+import useSelectTheme from './select-theme'
 
 interface SelectProps extends AsyncProps<unknown, boolean, any> {
   value: any
@@ -12,6 +12,7 @@ interface SelectProps extends AsyncProps<unknown, boolean, any> {
 
 export const SelectAsync: FC<SelectProps> = (props) => {
   const { value, onChange, variant, ...selectProps } = props
+  const { theme, selectTheme } = useSelectTheme()
   const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
   const handleChange = (selected) => {
@@ -21,6 +22,7 @@ export const SelectAsync: FC<SelectProps> = (props) => {
   return (
     <ReactAsyncSelect
       className={cssClass('Select')}
+      theme={selectTheme}
       value={value}
       styles={styles}
       onChange={handleChange}
