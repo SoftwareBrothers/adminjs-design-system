@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Illustration, { IllustrationVariant } from '../../atoms/illustration'
 import Box, { BoxProps } from '../../atoms/box'
 import { H4 } from '../../atoms/typography'
 
 import { cssClass } from '../../utils/css-class'
 
-const StyledInfoBox = styled(Box)<BoxProps>`
+const StyledInfoBox = styled(Box) <BoxProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin: -32px -32px -64px -32px;
 `
 
 /**
@@ -24,6 +24,8 @@ export type InfoBoxProps = {
   title?: string;
   /** Inner content - usually couple of {@link Text} nodes */
   children: React.ReactNode;
+  /** Infobox illustration {@link Illustration} or custom element above title */
+  illustration?: IllustrationVariant | React.ReactElement;
   /** Optional testId */
   testId?: string;
   variant?: BoxProps['variant'];
@@ -61,12 +63,11 @@ export type InfoBoxProps = {
  * )
  * @section design-system
  */
-const InfoBox: React.FC<InfoBoxProps> = ({ children, title, variant = 'grey', testId }) => (
+const InfoBox: React.FC<InfoBoxProps> = ({ children, title, illustration, variant = 'transparent', testId }) => (
   <StyledInfoBox data-testid={testId} variant={variant} className={cssClass('InfoBox')}>
-    <Box width={1 / 2}>
-      {title && <H4 mb="lg">{title}</H4>}
-      {children}
-    </Box>
+    {illustration && typeof illustration === 'string' ? <Illustration variant={illustration} /> : illustration}
+    {title && <H4 mb="lg">{title}</H4>}
+    {children}
   </StyledInfoBox>
 )
 

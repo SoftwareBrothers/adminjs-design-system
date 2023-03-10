@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {
   space, SpaceProps, color, layout,
   LayoutProps, flexbox, FlexboxProps, border, BorderProps,
-  position, PositionProps, variant,
+  position, PositionProps, variant, grid,
   shadow, ShadowProps,
 } from 'styled-system'
 import { ColorProps } from '../../utils/color-props'
@@ -83,6 +83,7 @@ const Box = styled.section<BoxProps>`
   ${color};
   ${layout};
   ${flexbox};
+  ${grid};
   ${border};
   ${shadow};
   ${position};
