@@ -9,6 +9,7 @@ import { cssClass } from '../../utils/css-class'
 
 const StyledInfoBox = styled(Box) <BoxProps>`
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
