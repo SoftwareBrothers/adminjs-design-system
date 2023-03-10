@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useLayoutEffect } from 'react'
 
-import { useTabs } from './tabs.js'
+import { useTabs } from './tabsx.js'
 
 export interface TabProps extends PropsWithChildren {
   /**
