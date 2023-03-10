@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Drawer: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <circle cx="109.823" cy="58.5366" r="16.1772" fill="#3040D6" />
     <circle cx="109.823" cy="58.5366" r="16.1772" fill="#3040D6" />
     <path fillRule="evenodd" clipRule="evenodd" d="M59.9906 97.8126H34.2278C33.9785 97.8126 33.7764 97.6105 33.7764 97.3612C33.7764 97.3314 33.7793 97.3018 33.7851 97.2726L42.1256 55.5703C42.4632 53.8822 43.9455 52.667 45.6671 52.667H107.012C108.734 52.667 110.216 53.8822 110.554 55.5703L118.894 97.2726C118.943 97.5171 118.785 97.755 118.54 97.8039C118.511 97.8097 118.481 97.8126 118.452 97.8126H91.885V111.795H68.3362L59.9906 97.8126Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />

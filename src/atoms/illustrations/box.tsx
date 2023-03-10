@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Box: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <circle cx="60.1538" cy="44.3911" r="12.0581" fill="#3040D6" />
     <path fillRule="evenodd" clipRule="evenodd" d="M26.9545 45.3592C26.4894 44.0567 27.4549 42.6865 28.838 42.6865H57.9239C58.7691 42.6865 59.5231 43.2179 59.8074 44.0139L66.9091 63.8986H33.5758L26.9545 45.3592Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path fillRule="evenodd" clipRule="evenodd" d="M125.045 45.3592C125.511 44.0567 124.545 42.6865 123.162 42.6865H94.0761C93.2309 42.6865 92.4769 43.2179 92.1926 44.0139L85.0909 63.8986H118.424L125.045 45.3592Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />

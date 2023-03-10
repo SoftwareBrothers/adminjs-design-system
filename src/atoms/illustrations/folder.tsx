@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Folder: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <mask id="path-2-inside-1_0_2389" fill="white">
       <path fillRule="evenodd" clipRule="evenodd" d="M47.8095 35C45.6004 35 43.8095 36.7909 43.8095 39V44.9048H37.9048C35.6956 44.9048 33.9048 46.6956 33.9048 48.9048V93.7302C33.9048 95.9393 35.6956 97.7302 37.9048 97.7302H107.492C109.701 97.7302 111.492 95.9393 111.492 93.7302V48.9048C111.492 46.6956 109.701 44.9048 107.492 44.9048H80.127V39C80.127 36.7909 78.3362 35 76.127 35H47.8095Z" />
     </mask>

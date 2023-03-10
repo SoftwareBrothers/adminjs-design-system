@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Clip: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <rect x="37.75" y="33.6338" width="76.5" height="91.0116" rx="3.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <rect x="40.6279" y="36.5117" width="70.7442" height="85.2558" rx="2" fill="#3040D6" fillOpacity="0.05" />
     <rect x="44.0986" y="38.1689" width="63.8023" height="79.2209" rx="1.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />

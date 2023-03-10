@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Padlock: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <rect x="39.75" y="62.208" width="72.5" height="56.3125" rx="3.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path d="M45.5 89.4V100.6" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M45.5 105.2V110.8" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />

@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const RocketNew: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <path d="M59.8604 39.8925C59.8604 36.3622 61.0179 32.9292 63.1556 30.1197C69.6145 21.6308 82.3852 21.6308 88.8442 30.1197C90.9819 32.9292 92.1394 36.3622 92.1394 39.8925V109.692H59.8604V39.8925Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path fillRule="evenodd" clipRule="evenodd" d="M80.3591 25.5337C80.9896 26.0135 81.5525 26.5763 82.0323 27.2069C86.5715 33.1727 89.0294 40.4622 89.0294 47.9585V99.5768L78.4131 99.5763L78.4134 26.6599C78.4134 25.6234 79.5342 24.9061 80.3591 25.5337Z" fill="#3040D6" fillOpacity="0.05" />
     <path d="M92.1914 54.2785C92.1914 52.6956 92.7301 51.1598 93.719 49.9238C96.5096 46.4355 101.815 46.4355 104.606 49.9238C105.595 51.1598 106.133 52.6956 106.133 54.2785V109.692H92.1914V54.2785Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />

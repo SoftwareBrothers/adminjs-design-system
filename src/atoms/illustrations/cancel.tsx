@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Cancel: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <circle cx="106.552" cy="54.4483" r="17.4483" fill="#3040D6" />
     <circle cx="75.4483" cy="76.4483" r="39.4483" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path fillRule="evenodd" clipRule="evenodd" d="M94.4566 55.3942C93.9524 52.5876 97.1355 50.5582 99.2233 52.5005C101.189 54.3291 103.108 56.331 104.211 58.0518C107.613 63.3609 109.586 69.674 109.586 76.448C109.586 95.3018 94.3022 110.586 75.4484 110.586C72.1858 110.586 67.9237 109.349 64.2042 107.979C61.4858 106.978 61.9438 103.199 64.7455 102.463C66.6153 101.971 68.4144 101.415 69.7243 100.832C84.7188 94.1566 95.1725 79.1265 95.1725 61.6549C95.1725 59.9403 94.8626 57.6539 94.4566 55.3942Z" fill="#3040D6" fillOpacity="0.05" />

@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Plug: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <circle cx="60.1705" cy="51.3659" r="14.3659" fill="#3040D6" />
     <path d="M58.7803 76.854H51.3656" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M30.0488 76.854H18" stroke="#3B3552" strokeWidth="1.5" strokeLinecap="round" />

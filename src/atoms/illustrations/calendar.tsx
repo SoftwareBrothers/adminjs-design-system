@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Calendar: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <rect x="46.5278" y="32.0166" width="68.7222" height="83.6444" rx="3.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <rect x="49.2891" y="34.7773" width="63.2" height="78.1222" rx="2" fill="#3040D6" fillOpacity="0.05" />
     <rect x="37.75" y="38.1611" width="68.7222" height="83.6444" rx="3.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />

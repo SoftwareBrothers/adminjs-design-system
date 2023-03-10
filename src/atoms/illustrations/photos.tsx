@@ -3,7 +3,7 @@ import { Props } from './props.type'
 
 export const Photos: React.FC<Props> = ({ width = 152, height = 152 }) => (
   <svg width={width} height={height} viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="76" cy="76" r="76" fill="#F8F9F9" />
+    <circle cx="76" cy="76" r="76" fill="white" />
     <path d="M25.5449 60.3356C25.0803 58.6018 26.1092 56.8197 27.843 56.3552L84.765 41.103C86.4987 40.6384 88.2808 41.6673 88.7454 43.4011L106.257 108.756C106.722 110.489 105.693 112.271 103.959 112.736L47.037 127.988C45.3032 128.453 43.5211 127.424 43.0566 125.69L25.5449 60.3356Z" fill="white" stroke="#3B3552" strokeWidth="1.5" />
     <path fillRule="evenodd" clipRule="evenodd" d="M29.5254 61.6008C29.2396 60.5339 29.8727 59.4372 30.9397 59.1513L84.2298 44.8723C85.2967 44.5864 86.3934 45.2195 86.6793 46.2865L102.956 107.031C103.242 108.098 102.609 109.195 101.542 109.481L48.2515 123.76C47.1846 124.046 46.0879 123.413 45.802 122.346L29.5254 61.6008Z" fill="#3040D6" fillOpacity="0.05" />
     <rect x="47.0508" y="32.75" width="72.22" height="83.86" rx="3.25" fill="white" stroke="#3B3552" strokeWidth="1.5" />
