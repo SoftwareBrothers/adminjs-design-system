@@ -50,7 +50,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  *
  * Awesome database with all the illustrations provided with AdminJS.
  *
- * The best thing about them is that they follow your {@link Theme} color palette.
  *
  * ### Usage
  *
