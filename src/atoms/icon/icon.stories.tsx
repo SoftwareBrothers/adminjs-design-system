@@ -1,8 +1,9 @@
 import React from 'react'
 import * as FeatherIcons from 'react-feather'
-import { Box } from '../box'
-import { Label } from '../label'
-import Icon from './icon'
+
+import { Box } from '../box/index.js'
+import { Label } from '../label/index.js'
+import Icon from './icon.js'
 
 export default {
   title: 'DesignSystem/Atoms/Icon',

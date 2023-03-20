@@ -1,3 +1,3 @@
-export * from './button'
-export * from './button-props'
-export * from './button-css'
+export * from './button.js'
+export * from './button-props.js'
+export * from './button-css.js'

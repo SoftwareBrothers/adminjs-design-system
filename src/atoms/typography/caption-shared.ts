@@ -1,16 +1,13 @@
-import { css } from 'styled-components'
 import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
+import { css } from 'styled-components'
 
-import themeGet from '../../utils/theme-get'
+import themeGet from '../../utils/theme-get.js'
 
-const CaptionShared = css<TypographyProps & SpaceProps>`
+export const CaptionShared: ReturnType<typeof css> = css<TypographyProps & SpaceProps>`
   font-family: ${themeGet('font')};
   font-weight: ${themeGet('fontWeights', 'normal')};
   ${typography};
   ${space};
 `
 
-export {
-  CaptionShared as default,
-  CaptionShared,
-}
+export default CaptionShared

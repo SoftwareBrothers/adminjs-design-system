@@ -1,4 +1,3 @@
-import styled, { css, DefaultTheme, ThemedCssFunction } from 'styled-components'
 import {
   color, space,
   SpaceProps,
@@ -6,10 +5,12 @@ import {
   typography,
   variant,
 } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
-import themeGet from '../../utils/theme-get'
-import { ColorProps } from '../../utils/color-props'
-import type { VariantType } from '../../theme'
+import { styled, css } from 'styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
+import themeGet from '../../utils/theme-get.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import type { VariantType } from '../../theme.js'
 
 export type LabelVariantType = VariantType
 
@@ -84,7 +85,7 @@ export type LabelProps = ColorProps & SpaceProps & TypographyProps & {
   size?: 'default' | 'lg'
 }
 
-const setDisabled = ({ disabled, theme }): ReturnType<ThemedCssFunction<DefaultTheme>> => (
+const setDisabled = ({ disabled, theme }): any => (
   disabled
     ? css`
     color: ${theme.colors.grey40};

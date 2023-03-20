@@ -1,5 +1,6 @@
 import React, { useState, SetStateAction } from 'react'
-import { Box, Stepper, Step, Button } from '../..'
+
+import { Box, Stepper, Step, Button } from '../../index.js'
 
 const steps = [{
   number: 1, label: 'Do this first',

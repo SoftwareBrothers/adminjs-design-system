@@ -1,13 +1,14 @@
-import styled from 'styled-components'
 import { rgba } from 'polished'
-import Box from '../../atoms/box'
-import { Title } from '../../atoms/typography'
-import { themeGet } from '../../utils'
-import { NavigationElementProps } from './navigation-element-props'
+import { styled } from 'styled-components'
+
+import { Box } from '../../atoms/box/index.js'
+import { Title } from '../../atoms/typography/index.js'
+import { themeGet } from '../../utils/index.js'
+import { NavigationElementProps } from './navigation-element-props.js'
 
 export type StyledNavigationElementProps = Pick<NavigationElementProps, 'isSelected' | 'isOpen'>
 
-export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>`
+export const StyledNavigationElement: any = styled(Box)<StyledNavigationElementProps>`
   padding: ${themeGet('space', 'md', '-1px')} ${themeGet('space', 'lg')};
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text};

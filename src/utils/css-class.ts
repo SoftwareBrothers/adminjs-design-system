@@ -19,7 +19,7 @@
  * @param {string}                [regularClass]
  * @memberof module:@adminjs/design-system
  */
-const cssClass = (className: string | Array<string>, regularClass?: string): string => {
+export const cssClass = (className: string | Array<string>, regularClass?: string): string => {
   let names: Array<string> = []
   if ((className as any).join) {
     names = className as Array<string>
@@ -34,7 +34,4 @@ const cssClass = (className: string | Array<string>, regularClass?: string): str
   return parsed.join(' ')
 }
 
-export {
-  cssClass as default,
-  cssClass,
-}
+export default cssClass

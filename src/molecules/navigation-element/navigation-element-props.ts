@@ -1,18 +1,7 @@
+/* eslint-disable no-use-before-define */
 import React from 'react'
-import type { IconProps } from '../../atoms/icon'
 
-/**
- * Handler function for a NavigationElementProps['onClick']
- *
- * @memberof NavigationElement
- * @alias NavigationElementOnClickHandler
- */
-export type NavigationElementOnClickHandler = (
-  /** React.MouseEvent */
-  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  /** All props (along with the `id`) are also passed to the handler */
-  props: NavigationElementProps
-) => void
+import type { IconProps } from '../../atoms/icon/index.js'
 
 /**
  * Prop Types of a NavigationElement component.
@@ -39,3 +28,16 @@ export type NavigationElementProps = {
   /** On Click handler */
   onClick?: NavigationElementOnClickHandler;
 }
+
+/**
+ * Handler function for a NavigationElementProps['onClick']
+ *
+ * @memberof NavigationElement
+ * @alias NavigationElementOnClickHandler
+ */
+export type NavigationElementOnClickHandler = (
+  /** React.MouseEvent */
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  /** All props (along with the `id`) are also passed to the handler */
+  props: NavigationElementProps
+) => void

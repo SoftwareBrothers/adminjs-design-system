@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import {
   Box,
   RichTextEditor,
@@ -10,7 +11,7 @@ import {
   DrawerContent,
   Label,
   DropZone,
-} from '..'
+} from '../index.js'
 
 export default { title: 'DesignSystem/Templates/Blog' }
 

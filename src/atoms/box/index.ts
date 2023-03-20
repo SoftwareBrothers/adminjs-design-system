@@ -1,2 +1,1 @@
-export * from './box'
-export { default } from './box'
+export * from './box.js'

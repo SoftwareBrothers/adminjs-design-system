@@ -1,9 +1,10 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Box } from '../box'
-import * as illustrations from '../illustrations'
-import Label from '../label'
-import Illustration, { IllustrationVariant } from './illustration'
+
+import { Box } from '../box/index.js'
+import * as illustrations from '../illustrations/index.js'
+import Label from '../label/index.js'
+import Illustration, { IllustrationVariant } from './illustration.js'
 
 const illustrationVariants = Object.keys(illustrations) as IllustrationVariant[]
 

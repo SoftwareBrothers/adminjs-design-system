@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavigationElement, Box } from '../..'
 
-import StoryWrapper from '../../utils/story-wrapper'
+import { NavigationElement, Box } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export const Default: React.FC<any> = (props) => {
   const [isOpen, setOpen] = useState(false)

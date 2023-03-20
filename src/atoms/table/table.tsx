@@ -1,6 +1,7 @@
-import styled from 'styled-components'
 import { layout, LayoutProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @classdesc

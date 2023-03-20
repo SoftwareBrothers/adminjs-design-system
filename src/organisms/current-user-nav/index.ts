@@ -1,3 +1,3 @@
-export * from './current-user-nav'
-export * from './current-user-nav-props'
-export * from './current-user-nav-styled'
+export * from './current-user-nav.js'
+export * from './current-user-nav-props.js'
+export * from './current-user-nav-styled.js'

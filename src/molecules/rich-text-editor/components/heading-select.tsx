@@ -1,7 +1,9 @@
-import { Level } from '@tiptap/extension-heading'
 import { Editor } from '@tiptap/react'
 import React, { FC } from 'react'
-import MenuButton from './menu-button'
+
+import MenuButton from './menu-button.js'
+
+type Level = 1 | 2 | 3 | 4 | 5 | 6
 
 interface HeadingSelectProps {
   editor: Editor

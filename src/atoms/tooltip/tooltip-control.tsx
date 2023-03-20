@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import useWindowSize from '../../hooks/use-window-size'
 
-import { PortalProps } from './tooltip-props'
-import { StyledTooltip } from './tooltip-styled'
+import useWindowSize from '../../hooks/use-window-size.js'
+import { PortalProps } from './tooltip-props.js'
+import { StyledTooltip } from './tooltip-styled.js'
 
 type PositionProps = {
   top: number;
@@ -16,7 +16,7 @@ type PositionProps = {
  * @private
  * @memberof Tooltip
  */
-const TooltipControl: React.FC<PortalProps> = (props) => {
+export const TooltipControl: React.FC<PortalProps> = (props) => {
   const { title, childRef, direction = 'bottom', ContentElement, size } = props
   const tooltipRef = useRef<HTMLElement>(null)
   const [dimension, setDimension] = useState<Pick<PositionProps, 'width' | 'height'> | null>(null)
@@ -113,7 +113,4 @@ const TooltipControl: React.FC<PortalProps> = (props) => {
   )
 }
 
-export {
-  TooltipControl as default,
-  TooltipControl,
-}
+export default TooltipControl

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Drawer, DrawerContent, DrawerFooter, Header, Button, Icon, Box, Text } from '../..'
-import { FullFeaturedFormGroup } from '../form-group/form-group.stories'
+
+import { Drawer, DrawerContent, DrawerFooter, Header, Button, Icon, Box, Text } from '../../index.js'
+import { FullFeaturedFormGroup } from '../form-group/form-group.stories.js'
 
 export const Default: React.FC = (props) => (
   <Drawer {...props}>

@@ -1,6 +1,6 @@
-import { ButtonProps } from '../../atoms/button'
-import type { IconProps } from '../../atoms/icon'
-import { VariantType } from '../../theme'
+import { ButtonProps } from '../../atoms/button/index.js'
+import type { IconProps } from '../../atoms/icon/index.js'
+import { VariantType } from '../../theme.js'
 
 /**
  * Props of buttons in {@link ButtonGroup}

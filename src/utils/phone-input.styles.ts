@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export default css`
+const phoneInputStyles: ReturnType<typeof css> = css`
 {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1166,3 +1166,5 @@ input[disabled]+.flag-dropdown:hover .selected-flag {
   padding: 0 2px;
   white-space: nowrap
 }`
+
+export default phoneInputStyles

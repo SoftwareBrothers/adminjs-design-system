@@ -1,15 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import styled, { css } from 'styled-components'
-
-import template from 'lodash/template'
+import template from 'lodash/template.js'
 import { rgba } from 'polished'
-import { Box } from '../../atoms/box'
-import { Label } from '../../atoms/label'
-import { Text } from '../../atoms/text'
-import { DisplaySizeUnit, humanFileSize } from '../../utils/human-file-size'
-import { MessageBox } from '../message-box'
-import { DropZoneItem } from './drop-zone-item'
-import Image from './drop-zone-image'
+import { styled, css } from 'styled-components'
+
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Label } from '../../atoms/label/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { DisplaySizeUnit, humanFileSize } from '../../utils/human-file-size.js'
+import { MessageBox } from '../message-box/index.js'
+import { DropZoneItem } from './drop-zone-item.js'
+import Image from './drop-zone-image.js'
+
+/**
+ * @memberof DropZone
+ * @alias FileSizeUnit
+ */
+type FileSizeUnit = DisplaySizeUnit
 
 const validateContentType = (mimeTypes: undefined | Array<string>, mimeType: string): boolean => {
   if (!mimeTypes || !mimeTypes.length) {
@@ -54,12 +60,6 @@ const translate = (str: string, params?: Record<string, string | number>) => {
     return str
   }
 }
-
-/**
- * @memberof DropZone
- * @alias FileSizeUnit
- */
-type FileSizeUnit = DisplaySizeUnit
 
 /**
  * @returns {void}
@@ -127,7 +127,7 @@ const UploadInput = styled.input`
   width: 100%;
 `
 
-const StyledDropZone = styled(Box)<{ isDragging: boolean }>`
+const StyledDropZone: any = styled(Box)<{ isDragging: boolean } & BoxProps>`
   border: 1px dashed ${({ theme }) => theme.colors.inputBorder};
   border-radius: ${({ theme }) => theme.space.sm};
   position: relative;

@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components'
 import { darken, rgba } from 'polished'
 import { space, SpaceProps, layout, LayoutProps, variant } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
+import { styled, css } from 'styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 const borderlessCSS = css`
   padding: 0;
@@ -46,6 +47,19 @@ const sizeVariants = variant({
 })
 
 /**
+ * Prop Types of an Input component.
+ * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
+ *
+ * @memberof Input
+ * @alias InputProps
+ * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
+ */
+export type InputProps = SpaceProps & LayoutProps & {
+  borderless?: boolean;
+  variant?: 'sm' | 'lg' | 'xl' | 'default' | 'xxl';
+}
+
+/**
  * Input CSS Styles which can be reused in another input component with styled-components
  *
  * ### Usage:
@@ -60,8 +74,7 @@ const sizeVariants = variant({
  * @memberof Input
  * @alias InputCSS
  */
-
-export const InputCSS = css<InputProps>`
+export const InputCSS: ReturnType<typeof css> = css<InputProps>`
   box-sizing: border-box;
   color: ${({ theme }) => theme.colors.grey100};
   background: transparent;
@@ -87,19 +100,6 @@ export const InputCSS = css<InputProps>`
   ${({ borderless }) => (borderless && borderlessCSS)};
   ${sizeVariants};
 `
-
-/**
- * Prop Types of an Input component.
- * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
- *
- * @memberof Input
- * @alias InputProps
- * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
- */
-export type InputProps = SpaceProps & LayoutProps & {
-  borderless?: boolean;
-  variant?: 'sm' | 'lg' | 'xl' | 'default' | 'xxl';
-}
 
 /**
  * @classdesc

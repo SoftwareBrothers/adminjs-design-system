@@ -1,12 +1,13 @@
 import React from 'react'
-import Box from '../../atoms/box'
-import { Button } from '../../atoms/button'
-import Icon from '../../atoms/icon'
-import { SmallText, Title } from '../../atoms/typography'
-import { DropDown, DropDownItem, DropDownMenu, DropDownTrigger } from '../../molecules/drop-down'
-import { CurrentUserNavProps } from './current-user-nav-props'
-import StyledCurrentUserNav from './current-user-nav-styled'
-import { Avatar } from '../../atoms/avatar'
+
+import { Box } from '../../atoms/box/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { SmallText, Title } from '../../atoms/typography/index.js'
+import { DropDown, DropDownItem, DropDownMenu, DropDownTrigger } from '../../molecules/drop-down/index.js'
+import { CurrentUserNavProps } from './current-user-nav-props.js'
+import StyledCurrentUserNav from './current-user-nav-styled.js'
+import { Avatar } from '../../atoms/avatar/index.js'
 
 /**
  * @load ./current-user-nav.doc.md
@@ -18,7 +19,7 @@ import { Avatar } from '../../atoms/avatar'
  * @new In version 3.3
  * @section design-system
  */
-const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
+export const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
   const { name, title, avatarUrl, dropActions, lineActions } = props
 
   return (
@@ -66,4 +67,4 @@ const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
   )
 }
 
-export { CurrentUserNav as default, CurrentUserNav }
+export default CurrentUserNav

@@ -1,10 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
-import { Button } from '../button'
-import { Badge } from '../badge/badge'
-import { cssClass } from '../../utils/css-class'
-import themeGet from '../../utils/theme-get'
+import { styled } from 'styled-components'
+
+import { Button } from '../button/index.js'
+import { Badge } from '../badge/index.js'
+import { cssClass } from '../../utils/css-class.js'
+import themeGet from '../../utils/theme-get.js'
 
 /**
  * Prop Types of an Header components.
@@ -47,7 +48,7 @@ Base.defaultProps = {
   marginBottom: 'xl',
 }
 
-const H1 = styled((props) => <Base as="h1" {...props} />)``
+export const H1 = styled((props) => <Base as="h1" {...props} />)``
 H1.defaultProps = {
   fontSize: 'h1',
   lineHeight: 'xxl',
@@ -56,7 +57,7 @@ H1.defaultProps = {
   marginBottom: 'x3',
 }
 
-const H2 = styled((props) => <Base as="h2" {...props} />)`
+export const H2 = styled((props) => <Base as="h2" {...props} />)`
   & ${Button}, a {
     margin-bottom: 4px;
   }
@@ -70,9 +71,9 @@ H2.defaultProps = {
   marginBottom: 'xxl',
 }
 
-const H3 = Base
+export const H3 = Base
 
-const H4 = styled((props) => <Base as="h4" {...props} />)``
+export const H4 = styled((props) => <Base as="h4" {...props} />)``
 H4.defaultProps = {
   fontSize: 'h4',
   lineHeight: 'xl',
@@ -81,7 +82,7 @@ H4.defaultProps = {
   marginBottom: 'xl',
 }
 
-const H5 = styled((props) => <Base as="h5" {...props} />)``
+export const H5 = styled((props) => <Base as="h5" {...props} />)``
 H5.defaultProps = {
   fontSize: 'xl',
   lineHeight: 'lg',
@@ -91,7 +92,7 @@ H5.defaultProps = {
   fontWeight: 'normal',
 }
 
-const H6 = styled((props) => <Base as="h6" {...props} />)``
+export const H6 = styled((props) => <Base as="h6" {...props} />)``
 H6.defaultProps = {
   fontSize: 'lg',
   lineHeight: 'lg',
@@ -110,7 +111,7 @@ H6.defaultProps = {
  * @hideconstructor
  * @section design-system
  */
-const Header = H3 as any
+export const Header = H3 as any
 
 Header.H1 = H1
 Header.H2 = H2
@@ -119,13 +120,4 @@ Header.H4 = H4
 Header.H5 = H5
 Header.H6 = H6
 
-export {
-  Header as default,
-  Header,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-}
+export default Header

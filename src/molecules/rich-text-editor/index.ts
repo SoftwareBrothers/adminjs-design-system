@@ -1,2 +1,2 @@
-export * from './rich-text-editor'
-export * from './rich-text-editor-props'
+export * from './rich-text-editor.js'
+export * from './rich-text-editor-props.js'

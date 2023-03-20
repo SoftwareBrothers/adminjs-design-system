@@ -1,8 +1,9 @@
-import styled from 'styled-components'
 import { color, space, typography, SpaceProps, TypographyProps, variant } from 'styled-system'
-import { VariantType } from '../../theme'
-import { ColorProps } from '../../utils/color-props'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { VariantType } from '../../theme.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @load ./badge-props.doc.md

@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Box, Text } from '../..'
-import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './index'
-import { Button } from '../button'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Box, Text } from '../../index.js'
+import { Caption, CardTitle, SmallText, H1, H2, H3, H4, H5, Header } from './index.js'
+import { Button } from '../button/index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 const BoxWithPaddings = styled(Box)`
   background: rgba(66,104,246,.3);

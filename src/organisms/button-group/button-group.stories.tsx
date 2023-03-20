@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Box, ButtonGroup } from '../..'
-import Label from '../../atoms/label'
-import { CardTitle } from '../../atoms/typography'
+import { Box, ButtonGroup } from '../../index.js'
+import { Label } from '../../atoms/label/index.js'
+import { CardTitle } from '../../atoms/typography/index.js'
 
 export const Default: React.FC<any> = ({ onClick, size, rounded }) => {
   const handleClick = (event, source) => {

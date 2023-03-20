@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import React from 'react'
-import { Label, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import { Label, Box } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 const variants = ['primary', 'danger', 'success', 'info', 'secondary'] as const
 

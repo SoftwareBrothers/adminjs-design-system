@@ -1,7 +1,8 @@
 import { MouseEventHandler } from 'react'
 import { FlexboxProps, SpaceProps, TypographyProps } from 'styled-system'
-import { ColorVariant, VariantType } from '../../theme'
-import { ColorProps } from '../../utils/color-props'
+
+import { ColorVariant, VariantType } from '../../theme.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 
 /**
  * @load ./button-props.doc.md

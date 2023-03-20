@@ -9,8 +9,8 @@ import {
   borders,
   borderWidths,
   shadows,
-} from '../theme'
-import { NonNullishPartialRecord } from './non-nullish-partial-record.type'
+} from '../theme.js'
+import type { NonNullishPartialRecord } from './non-nullish-partial-record.type.js'
 
 export interface Theme {
   colors: typeof colors;

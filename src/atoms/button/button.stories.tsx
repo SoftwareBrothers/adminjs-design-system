@@ -1,8 +1,8 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { Box, Button, Icon, Label } from '../../../src'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Box, Button, Icon, Label } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 const ButtonVariant = ['text', 'outlined', 'contained', 'light'] as const
 const ButtonSize = ['default', 'sm', 'lg', 'icon'] as const

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { NavigationElement } from '../../molecules/navigation-element'
-import { NavigationElementWithChildrenProps } from './navigation-props'
+import { NavigationElement } from '../../molecules/navigation-element/index.js'
+import { NavigationElementWithChildrenProps } from './navigation-props.js'
 
-const NavigationElementWrapper: React.FC<NavigationElementWithChildrenProps> = (props) => {
+export const NavigationElementWrapper: React.FC<NavigationElementWithChildrenProps> = (props) => {
   const { elements, isOpen } = props
   return (
     <li>
@@ -22,7 +22,4 @@ const NavigationElementWrapper: React.FC<NavigationElementWithChildrenProps> = (
   )
 }
 
-export {
-  NavigationElementWrapper,
-  NavigationElementWrapper as default,
-}
+export default NavigationElementWrapper

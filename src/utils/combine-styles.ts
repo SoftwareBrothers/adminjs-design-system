@@ -1,5 +1,5 @@
-import * as theme from '../theme'
-import { Theme, ThemeOverride } from './default-theme.interface'
+import * as theme from '../theme.js'
+import type { Theme, ThemeOverride } from './default-theme.interface.js'
 
 const isObject = (item: any) => (item && typeof item === 'object' && !Array.isArray(item))
 

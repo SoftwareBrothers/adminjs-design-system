@@ -2,12 +2,11 @@
 import { Editor } from '@tiptap/react'
 import React, { FC } from 'react'
 
-import { MenuBarWrapper } from '../rich-text-editor.styled'
-import useTiptapCommands from '../useTiptapCommands'
-
-import HeadingSelect from './heading-select'
-import ImageButton from './image-button'
-import MenuButton from './menu-button'
+import { MenuBarWrapper } from '../rich-text-editor.styled.js'
+import useTiptapCommands from '../useTiptapCommands.js'
+import HeadingSelect from './heading-select.js'
+import ImageButton from './image-button.js'
+import MenuButton from './menu-button.js'
 
 interface MenuBarProps {
   editor: Editor | null

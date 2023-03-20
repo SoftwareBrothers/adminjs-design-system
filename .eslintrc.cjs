@@ -19,7 +19,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 20,
     sourceType: 'module',
   },
   plugins: [
@@ -42,6 +42,10 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'object-curly-newline': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'import/prefer-default-export': 'off',
+    'react/function-component-definition': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
   },
   overrides: [{
     files: ['*.tsx'],

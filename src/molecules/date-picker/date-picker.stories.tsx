@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { DatePicker } from '../../index'
+
+import { DatePicker } from '../../index.js'
 
 const propertyTypes = {
   Date: 'date',

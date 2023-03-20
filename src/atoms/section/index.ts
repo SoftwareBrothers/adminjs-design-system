@@ -1,2 +1,1 @@
-export * from './section'
-export { default } from './section'
+export * from './section.js'

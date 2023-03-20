@@ -1,2 +1,1 @@
-export * from './label'
-export { default } from './label'
+export * from './label.js'

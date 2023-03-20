@@ -1,2 +1,1 @@
-export * from './placeholder'
-export { default } from './placeholder'
+export * from './placeholder.js'

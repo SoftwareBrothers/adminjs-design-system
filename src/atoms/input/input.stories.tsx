@@ -1,6 +1,7 @@
 import React from 'react'
-import { FormGroup, Text, Input, Label, Button, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import { FormGroup, Text, Input, Label, Button, Box } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 const inputTypes = ['email', 'file', 'hidden', 'month', 'number', 'tel', 'text', 'time', 'url', 'week']
 

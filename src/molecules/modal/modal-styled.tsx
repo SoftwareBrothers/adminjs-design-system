@@ -1,9 +1,10 @@
 import { getValueAndUnit } from 'polished'
-import styled from 'styled-components'
 import { variant as styledVariant } from 'styled-system'
-import { Box } from '../../atoms/box'
-import type { VariantType } from '../../theme'
-import themeGet from '../../utils/theme-get'
+import { styled } from 'styled-components'
+
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import type { VariantType } from '../../theme.js'
+import themeGet from '../../utils/theme-get.js'
 
 const DEFAULT_WIDTH = 540
 const VARIANT_BORDER_WIDTH = 8
@@ -31,7 +32,7 @@ const variants = (props) => styledVariant<any, VariantType>({
   },
 })
 
-const ModalStyled = styled(Box)`
+export const ModalStyled = styled(Box)<BoxProps>`
   position: relative;
   & > .close-button {
     position: absolute;
@@ -55,4 +56,4 @@ ModalStyled.defaultProps = {
   width: [1, DEFAULT_WIDTH],
 }
 
-export { ModalStyled, ModalStyled as default }
+export default ModalStyled

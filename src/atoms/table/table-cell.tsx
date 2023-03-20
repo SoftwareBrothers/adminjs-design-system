@@ -1,8 +1,8 @@
-import styled from 'styled-components'
 import { LayoutProps, SpaceProps, color, layout, space } from 'styled-system'
-import { ColorProps } from '../../utils/color-props'
+import { styled } from 'styled-components'
 
-import { cssClass } from '../../utils/css-class'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @component

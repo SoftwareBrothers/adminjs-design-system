@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, BoxProps, Label } from '..'
+
+import { Box, BoxProps, Label } from '../index.js'
 
 export type StoryWrapperProps = BoxProps & {
   label: string

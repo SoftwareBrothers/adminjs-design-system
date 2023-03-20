@@ -1,17 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import React, { useMemo } from 'react'
-import ReactDatePicker from 'react-datepicker'
-import type { ReactDatePickerProps } from 'react-datepicker'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
+import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
 import MaskedInput, { MaskedInputProps } from 'react-text-mask'
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
+import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe.js'
 
-import styles from '../../utils/datepicker.styles'
-import { Icon } from '../../atoms/icon'
-import { PropertyType } from '../../utils'
-import { Box } from '../../atoms/box/box'
-import { cssClass } from '../../utils/css-class'
+import styles from '../../utils/datepicker.styles.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { PropertyType } from '../../utils/index.js'
+import { Box } from '../../atoms/box/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
-// background: ${({ theme }) => theme.colors.primary100};
+const Mask = MaskedInput.default ?? MaskedInput
+const autocorrectedDatePipe = createAutoCorrectedDatePipe.default ?? createAutoCorrectedDatePipe
 
 const DatePickerIcon = styled(Icon)`
   position: absolute;  
@@ -173,6 +175,7 @@ const defaultDateProps = {
 }
 
 type CustomProps = Partial<Omit<ReactDatePickerProps, 'value' | 'disabled' | 'onChange'>>
+
 type DateMaskOverride = ({
   regex: string,
   raw: undefined,
@@ -180,31 +183,8 @@ type DateMaskOverride = ({
   raw: string,
   regex: undefined,
 } | string)[]
+
 type InputMaskProps = Omit<MaskedInputProps, 'mask'> & { mask?: DateMaskOverride }
-
-const parseCustomMask = (mask: DateMaskOverride) => mask.map((el) => {
-  if (typeof el === 'string') return el
-  if (el.raw) return el.raw
-  if (!el.regex) throw new Error('Invalid input mask')
-
-  return new RegExp(el.regex)
-})
-
-const getDateInputProps = (
-  propertyType = 'datetime',
-  props: Pick<DatePickerProps, 'placeholderText' | 'dateFormat' | 'inputMask'>,
-) => {
-  const { dateFormat, placeholderText, inputMask } = props
-  const defaultProps = defaultDateProps[propertyType]
-  const format = dateFormat ?? defaultProps.format
-  const placeholder = placeholderText ?? defaultProps.placeholder
-  const mask = inputMask?.mask
-    ? parseCustomMask(inputMask.mask)
-    : defaultProps.inputMask
-  const dateFormatPipe = createAutoCorrectedDatePipe(convertDateFnsFormatToDatePipeFormat(format))
-
-  return { format, dateFormatPipe, placeholder, parsedMask: mask }
-}
 
 /**
  * Props for DatePicker
@@ -235,6 +215,32 @@ export type DatePickerProps = CustomProps & {
    * input mask props for text input in case you want to use it, see: https://github.com/text-mask/text-mask
    */
   inputMask?: InputMaskProps;
+}
+
+const parseCustomMask = (mask: DateMaskOverride) => mask.map((el) => {
+  if (typeof el === 'string') return el
+  if (el.raw) return el.raw
+  if (!el.regex) throw new Error('Invalid input mask')
+
+  return new RegExp(el.regex)
+})
+
+const getDateInputProps = (
+  // eslint-disable-next-line default-param-last
+  propertyType = 'datetime',
+  props: Pick<DatePickerProps, 'placeholderText' | 'dateFormat' | 'inputMask'>,
+) => {
+  const { dateFormat, placeholderText, inputMask } = props
+  const defaultProps = defaultDateProps[propertyType]
+  const format = dateFormat ?? defaultProps.format
+  const placeholder = placeholderText ?? defaultProps.placeholder
+  const mask = inputMask?.mask
+    ? parseCustomMask(inputMask.mask)
+    : defaultProps.inputMask
+  // eslint-disable-next-line max-len
+  const dateFormatPipe = autocorrectedDatePipe(convertDateFnsFormatToDatePipeFormat(format))
+
+  return { format, dateFormatPipe, placeholder, parsedMask: mask }
 }
 
 /**
@@ -278,6 +284,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
     dateFormat,
     ...other
   } = props
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { mask: _mask, ...otherInputMaskProps } = inputMask as InputMaskProps
 
   const handleChange = (newDate: Date | null) => {
@@ -294,7 +301,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
     <StyledDatePicker className={cssClass('DatePicker')}>
       <ReactDatePicker
         customInput={(
-          <MaskedInput
+          <Mask
             pipe={dateFormatPipe}
             mask={parsedMask}
             keepCharPositions

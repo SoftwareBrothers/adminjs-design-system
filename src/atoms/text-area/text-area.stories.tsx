@@ -1,6 +1,7 @@
 import React from 'react'
-import { TextArea, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import { TextArea, Box } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default { title: 'DesignSystem/Atoms/TextArea' }
 

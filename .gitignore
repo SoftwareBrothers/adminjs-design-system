@@ -186,3 +186,4 @@ storybook-static
 .vscode
 
 .nova
+storybook/out

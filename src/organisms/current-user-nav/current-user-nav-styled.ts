@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { cssClass, themeGet } from '../../utils'
-import { Box } from '../../atoms/box'
+import { cssClass, themeGet } from '../../utils/index.js'
+import { Box, BoxProps } from '../../atoms/box/index.js'
 
-const StyledCurrentUserNav = styled(Box)`
+export const StyledCurrentUserNav = styled(Box)<BoxProps>`
   text-align: right;
 
   & .line-action {
@@ -28,7 +28,4 @@ StyledCurrentUserNav.defaultProps = {
   flexDirection: 'row',
 }
 
-export {
-  StyledCurrentUserNav as default,
-  StyledCurrentUserNav,
-}
+export default StyledCurrentUserNav

@@ -1,2 +1,2 @@
-export * from './value-group'
-export * from './value-group-props'
+export * from './value-group.js'
+export * from './value-group-props.js'

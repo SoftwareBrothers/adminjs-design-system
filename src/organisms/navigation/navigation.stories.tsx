@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Box, Label, Navigation } from '../..'
 
-import { NavigationProps } from './navigation-props'
+import { Box, Label, Navigation } from '../../index.js'
+import { NavigationProps } from './navigation-props.js'
 
 export default {
   title: 'DesignSystem/Organisms/Navigation',

@@ -1,6 +1,7 @@
 import React from 'react'
-import MadeWithLove from './made-with-love'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import MadeWithLove from './made-with-love.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export default {
   title: 'DesignSystem/Organisms/MadeWithLove',

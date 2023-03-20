@@ -1,7 +1,8 @@
-import styled from 'styled-components'
 import { space, typography, layout, TypographyProps } from 'styled-system'
-import { InputCSS, InputProps } from '../input'
-import { cssClass } from '../../utils/css-class'
+import { styled } from 'styled-components'
+
+import { InputCSS, InputProps } from '../input/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * Prop Types of a TextArea component.

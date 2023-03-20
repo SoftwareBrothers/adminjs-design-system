@@ -1,5 +1,6 @@
 import React from 'react'
-import { Placeholder, Box, Label } from '../..'
+
+import { Placeholder, Box, Label } from '../../index.js'
 
 export default { title: 'DesignSystem/Atoms/Placeholder' }
 

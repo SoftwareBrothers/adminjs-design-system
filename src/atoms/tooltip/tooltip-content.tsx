@@ -1,12 +1,13 @@
-import styled from 'styled-components'
-import Box from '../box/box'
+import { styled } from 'styled-components'
+
+import { Box } from '../box/index.js'
 
 /**
  * @component
  * @private
  */
-const TooltipContent = styled(Box)``
+export const TooltipContent = styled(Box)``
 
 TooltipContent.displayName = 'TooltipContent'
 
-export { TooltipContent, TooltipContent as default }
+export default TooltipContent

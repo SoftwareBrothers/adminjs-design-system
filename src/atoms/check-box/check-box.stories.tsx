@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
-import { Box, CheckBox, Label } from '../..'
+
+import { Box, CheckBox, Label } from '../../index.js'
 
 export default {
   title: 'DesignSystem/Atoms/CheckBox',

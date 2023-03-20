@@ -1,7 +1,8 @@
 import React from 'react'
-import styled, { DefaultTheme, ThemeProps, withTheme } from 'styled-components'
-import * as Illustrations from '../illustrations'
-import { cssClass } from '../../utils'
+import { styled, DefaultTheme, withTheme } from 'styled-components'
+
+import * as Illustrations from '../illustrations/index.js'
+import { cssClass } from '../../utils/index.js'
 
 export type IllustrationVariant = keyof typeof Illustrations
 
@@ -31,7 +32,7 @@ const Wrapper = styled.div.attrs((props) => ({
 `
 
 type RawIllustrationType = IllustrationProps &
-  ThemeProps<DefaultTheme> & {
+  { theme: DefaultTheme, [key: string]: any } & {
     // this fixes unknown error with some TSC version (monkey patch)
     children?: React.ReactNode
   }
@@ -49,7 +50,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  *
  * Awesome database with all the illustrations provided with AdminJS.
  *
- * The best thing about them is that they follow your {@link Theme} color palette.
  *
  * ### Usage
  *
@@ -77,7 +77,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  * )
  * @section design-system
  */
-const Illustration = withTheme(RawIllustration)
+export const Illustration = withTheme(RawIllustration)
 
-export { Illustration }
 export default Illustration

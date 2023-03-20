@@ -5,16 +5,16 @@
  * @load .index.doc.md
  */
 
-import * as theme from './theme'
+import * as theme from './theme.js'
 
 export { theme }
 
-export * from './atoms'
-export * from './molecules'
-export * from './organisms'
+export * from './atoms/index.js'
+export * from './molecules/index.js'
+export * from './organisms/index.js'
 
-export * from './constants'
-export * from './global'
-export * from './theme'
-export * from './utils'
-export * from './utils/default-theme.interface'
+export * from './constants.js'
+export * from './global.js'
+export * from './theme.js'
+export * from './utils/index.js'
+export type { Theme, ThemeOverride } from './utils/default-theme.interface.js'

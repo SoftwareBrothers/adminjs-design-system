@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Box, CurrentUserNav, CurrentUserNavAction } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Box, CurrentUserNav, CurrentUserNavAction } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
 
 export const Default: React.FC<any> = ({ onClick, name, title, avatar }) => {
   const handleClick = (event) => {
