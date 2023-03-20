@@ -33,10 +33,8 @@ import { themeGet } from '../../utils'
  * @section design-system
  */
 const Section = styled(Box)`
-  border: 1px dotted ${themeGet('colors', 'primary20')};
-  padding: ${themeGet('space', 'xl')};
-  border-left: ${themeGet('space', 'md')} solid ${themeGet('colors', 'primary20')};
-  padding-left: ${themeGet('space', 'xl')};
+  border: 1px dashed ${({ theme }) => theme.colors.inputBorder};
+  padding: ${themeGet('space', 'lg')};
 `
 
 Section.defaultProps = {

@@ -88,6 +88,8 @@ const colors = {
   // backgrounds
   bg: '#F8F9F9',
   filterBg: '#FBFBFB',
+  container: '#FFFFFF',
+  sidebar: '#FFFFFF',
 
   // elements
   inputBorder: '#BBC3CB',
@@ -313,6 +315,8 @@ export type VariantType = 'success' | 'info' | 'primary' | 'secondary' | 'danger
 
 // TODO: add transitions
 
+const defaultProps = {}
+
 export {
   colors,
   lineHeights,
@@ -325,6 +329,7 @@ export {
   borders,
   breakpoints,
   borderWidths,
+  defaultProps,
 }
 
 /**

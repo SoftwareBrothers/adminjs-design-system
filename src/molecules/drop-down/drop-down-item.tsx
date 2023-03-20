@@ -29,7 +29,7 @@ const colorVariants = variant<any, VariantType>({
     info: (theme) => variantsShared(theme, 'info'),
     secondary: (theme) => variantsShared(theme, 'accent'),
     light: (theme) => variantsShared(theme, 'grey80'),
-    default: {},
+    default: (theme) => variantsShared(theme, 'text'),
   },
 })
 
@@ -52,7 +52,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   position: relative;
   z-index: 10000;
   border: none;
-  color: ${themeGet('colors', 'grey100')};
+  color: ${themeGet('colors', 'text')};
   font-family: ${themeGet('font')};
   border: solid transparent;
   border-width: 0 ${themeGet('space', 'sm')};
@@ -65,7 +65,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   text-align: left;
 
   &:hover {
-    background: ${({ theme }) => rgba(theme.colors.black, 0.03)};
+    background: ${({ theme }) => rgba(theme.colors.text, 0.03)};
   }
 
   & .${cssClass('Icon')} {

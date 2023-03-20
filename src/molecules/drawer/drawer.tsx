@@ -106,7 +106,7 @@ const Drawer = styled.section<DrawerProps>`
   transition: transform 0.25s ease-in-out;
 
   box-shadow: -1px 0px 0px #EEEEEF, -4px 0px 16px rgba(107, 119, 129, 0.1);
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.container};
   overflow-y: auto;
   overflow-x: hidden;
   

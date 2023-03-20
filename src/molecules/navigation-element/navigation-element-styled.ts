@@ -48,7 +48,7 @@ export const StyledNavigationElement = styled(Box)<StyledNavigationElementProps>
 
   ${({ theme, isSelected }) => !isSelected && {
     '&:hover': {
-      backgroundColor: theme.colors.grey20,
+      backgroundColor: rgba(theme.colors.text, 0.2),
     },
   }};
 

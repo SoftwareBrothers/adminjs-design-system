@@ -17,6 +17,13 @@ const variants = variant({
       px: ['0', 'xl'],
       className: cssClass(['Box', 'Box_Grey']),
     },
+    container: {
+      flexGrow: 1,
+      bg: 'container',
+      py: 'xl',
+      px: ['0', 'xl'],
+      className: cssClass(['Box', 'Box_Grey']),
+    },
     white: {
       px: ['default', 'xxl'],
       py: 'xxl',
@@ -53,7 +60,7 @@ export type BoxProps = SpaceProps & ColorProps & LayoutProps &
     /** If box should be rendered as flex. You can pass boolean or FlexboxProps['flex'] */
     flex?: FlexboxFlexProp;
     /** Box variants */
-    variant?: 'grey' | 'white' | 'card' | 'transparent';
+    variant?: 'grey' | 'white' | 'card' | 'transparent' | 'container';
     /** If set to true it makes css changes as 500ms transitions */
     animate?: boolean;
     /** Optional class name passed down to the wrapper */

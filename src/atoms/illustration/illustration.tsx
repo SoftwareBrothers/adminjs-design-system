@@ -10,9 +10,7 @@ export type IllustrationVariant = keyof typeof Illustrations
  * @alias IllustrationProps
  */
 export type IllustrationProps = {
-  /**
-   * Available illustration variant
-   */
+  /** Available illustration variant */
   variant: IllustrationVariant
   /** Optional max width restrictions */
   width?: number

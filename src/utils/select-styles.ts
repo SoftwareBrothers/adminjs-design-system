@@ -10,11 +10,16 @@ const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
   }),
   input: (baseStyles) => ({
     ...baseStyles,
-    color: theme.colors.text,
+    color: theme.colors.grey100,
+  }),
+  singleValue: (baseStyles) => ({
+    ...baseStyles,
+    color: theme.colors.grey100,
   }),
   menu: (baseStyles) => ({
     ...baseStyles,
     boxShadow: 'none',
+    background: theme.colors.container,
     border: theme.borders.input,
   }),
 })
@@ -27,12 +32,12 @@ const filterStyles = (theme: DefaultTheme): Props['styles'] => ({
     borderColor: theme.colors.inputBorder,
   }),
   input: () => ({
-    color: theme.colors.text,
+    color: theme.colors.grey100,
     gridArea: '1/1/2/3',
     gridTemplateColumns: '0px min-content',
   }),
   singleValue: () => ({
-    color: theme.colors.text,
+    color: theme.colors.grey100,
     gridArea: '1/1/2/3',
   }),
   menu: (provided) => ({

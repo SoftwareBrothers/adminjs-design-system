@@ -24,7 +24,7 @@ export const DropDownMenu = styled(Box).attrs<DropDownMenuProps>((props) => ({
     [`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className,
   ),
 }))<DropDownMenuProps>`
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.container};
   display: inline-block;
   position: absolute;
   z-index: 40;
