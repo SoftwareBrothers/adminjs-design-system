@@ -1,6 +1,7 @@
 import { rgba } from 'polished'
 import { ThemeConfig } from 'react-select'
-import { DefaultTheme, useTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components'
+import { useTheme } from 'styled-components'
 
 const useSelectTheme = (): { theme: DefaultTheme; selectTheme: ThemeConfig } => {
   const theme = useTheme()

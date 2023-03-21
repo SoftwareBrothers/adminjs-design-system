@@ -24,7 +24,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "storybook:deploy": "firebase deploy --only hosting",
-    "dev": "yarn build && yarn bundle"
+    "dev": "yarn build && yarn bundle",
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
@@ -75,6 +76,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.11",
     "husky": "^4.2.5",
+    "patch-package": "^6.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.17.3",
