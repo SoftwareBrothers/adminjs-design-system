@@ -32,14 +32,9 @@ const ImageButton: FC<ImageButtonProps> = (props) => {
 
   useEffect(() => {
     if (image && typeof image === 'string') {
-      const img = new Image();
-      img.src = image;
-
       editor.chain().focus().setImage({
         src: image,
         alt,
-        width: img.width,
-        height: img.height,
       }).run()
     }
   }, [image])
