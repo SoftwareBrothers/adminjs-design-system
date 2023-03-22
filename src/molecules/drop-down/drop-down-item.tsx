@@ -1,6 +1,7 @@
 import { rgba } from 'polished'
-import { space, variant } from 'styled-system'
+import type { PropsWithChildren } from 'react'
 import { styled } from 'styled-components'
+import { space, variant } from 'styled-system'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import type { VariantType } from '../../theme.js'
@@ -42,7 +43,7 @@ const colorVariants = variant<any, VariantType>({
  */
 export type DropDownItemProps = BoxProps & {
   colorVariant?: VariantType
-}
+} & PropsWithChildren
 
 /**
  * @component

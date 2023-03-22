@@ -42,7 +42,7 @@
  * @property {string} filterDisabled=rgba(83,91,142,0.05)      <div style="background: rgba(83,91,142,0.05); height: 20px;" />
  * @property {string} bg=#F6F7FB      <div style="background: #F6F7FB; height: 20px;" />
  */
-const colors = {
+export const colors = {
   // global
   border: '#EEEEEF',
   text: '#0C1E29',
@@ -137,7 +137,7 @@ export type ColorVariant = keyof typeof ColorVariants
  * @property {string} x5=80px       80px - <span class="space-box" style="width: 80px;" />
  * @property {string} x6=128px      128px - <span class="space-box" style="width: 128px;" />
  */
-const space = {
+export const space = {
   xs: '2px',
   sm: '4px',
   default: '8px',
@@ -158,7 +158,7 @@ const space = {
  * @property {string} sidebarWidth=300px
  * @property {string} maxFormWidth=740px
  */
-const sizes = {
+export const sizes = {
   navbarHeight: '64px',
   sidebarWidth: '300px',
   maxFormWidth: '740px',
@@ -177,7 +177,7 @@ const sizes = {
  * @property {string} h2=32px      <div style="font-size: 32px;">'h2' font size</div>
  * @property {string} h1=40px      <div style="font-size: 40px;">'h1' font size</div>
  */
-const fontSizes = {
+export const fontSizes = {
   xs: '10px',
   sm: '12px',
   default: '14px',
@@ -199,7 +199,7 @@ const fontSizes = {
  * @property {string} normal=500
  * @property {string} bolder=900
  */
-const fontWeights = {
+export const fontWeights = {
   lighter: 200,
   light: 300,
   normal: 400,
@@ -217,7 +217,7 @@ const fontWeights = {
  * @property {string} xl=32px
  * @property {string} xxl=40px
  */
-const lineHeights = {
+export const lineHeights = {
   xs: '10px',
   sm: '12px',
   default: '16px',
@@ -244,7 +244,7 @@ const lineHeights = {
  * @property {string} inputFocus         <div class="shadow-div" style="box-shadow: 0 2px 4px 0 rgba(135,159,250,0.4);"/>
  * @property {string} buttonFocus        <div class="shadow-div" style="box-shadow: 0 4px 6px 0 rgba(56,202,241,0.3);"/>
  */
-const shadows = {
+export const shadows = {
   login: '0 15px 24px 0 rgba(137,138,154,0.15)',
   cardHover: '0 4px 12px 0 rgba(137,138,154,0.4)',
   drawer: '-2px 0 8px 0 rgba(137,138,154,0.2)',
@@ -273,14 +273,14 @@ const shadows = {
  * @property {string} 2=1024px
  * @property {string} 3=1324px
  */
-const breakpoints = [
+export const breakpoints = [
   '577px',
   '769px',
   '1024px',
   '1324px', // 1024 + sidebarWidth
 ]
 
-const font = '\'Roboto\', sans-serif' as string
+export const font = '\'Roboto\', sans-serif' as string
 
 /**
  * Border styles
@@ -292,7 +292,7 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} bg
  * @property {string} default
  */
-const borders = {
+export const borders = {
   input: `1px solid ${colors.border}`,
   filterInput: ' 1px rgba(255,255,255, 0.15)',
   bg: `1px solid ${colors.bg}`,
@@ -307,7 +307,7 @@ const borders = {
  * @alias borderWidths
  * @property {string} default - default border with
  */
-const borderWidths = {
+export const borderWidths = {
   default: '0px',
 }
 
@@ -315,22 +315,7 @@ export type VariantType = 'success' | 'info' | 'primary' | 'secondary' | 'danger
 
 // TODO: add transitions
 
-const defaultProps = {}
-
-export {
-  colors,
-  lineHeights,
-  fontWeights,
-  fontSizes,
-  sizes,
-  space,
-  font,
-  shadows,
-  borders,
-  breakpoints,
-  borderWidths,
-  defaultProps,
-}
+export const defaultProps = {}
 
 /**
  * The color utility parses a component's color and bg props and converts them into CSS

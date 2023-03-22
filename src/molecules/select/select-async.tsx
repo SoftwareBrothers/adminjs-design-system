@@ -2,7 +2,7 @@
 // @ts-nocheck
 import noop from 'lodash/noop.js'
 import React, { FC } from 'react'
-import ReactAsyncSelect, { AsyncProps } from 'react-select/async/dist/react-select-async.cjs.js'
+import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
 
 import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'

@@ -1,8 +1,8 @@
-import React from 'react'
-import { styled, DefaultTheme, withTheme } from 'styled-components'
+import React, { PropsWithChildren } from 'react'
+import { styled } from 'styled-components'
 
-import * as Illustrations from '../illustrations/index.js'
 import { cssClass } from '../../utils/index.js'
+import * as Illustrations from '../illustrations/index.js'
 
 export type IllustrationVariant = keyof typeof Illustrations
 
@@ -22,25 +22,25 @@ export type IllustrationProps = {
 const Wrapper = styled.div.attrs((props) => ({
   className: cssClass('Illustration', props.className),
 }))`
-  [fill="#3040D6"] {
-    fill: ${({ theme }) => theme.colors.primary100}
+  [fill='#3040D6'] {
+    fill: ${({ theme }) => theme.colors.primary100};
   }
-  
-  [stroke="#3B3552"] {
-    stroke: ${({ theme }) => theme.colors.accent}
+
+  [stroke='#3B3552'] {
+    stroke: ${({ theme }) => theme.colors.accent};
   }
 `
 
-type RawIllustrationType = IllustrationProps &
-  { theme: DefaultTheme, [key: string]: any } & {
-    // this fixes unknown error with some TSC version (monkey patch)
-    children?: React.ReactNode
-  }
+type RawIllustrationType = IllustrationProps & PropsWithChildren
 
 const RawIllustration: React.FC<RawIllustrationType> = (props) => {
   const { variant, ...other } = props
   const IllustrationComponent = Illustrations[variant]
-  return <Wrapper><IllustrationComponent {...other} /></Wrapper>
+  return (
+    <Wrapper>
+      <IllustrationComponent {...other} />
+    </Wrapper>
+  )
 }
 
 /**
@@ -77,6 +77,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  * )
  * @section design-system
  */
-export const Illustration = withTheme(RawIllustration)
+export const Illustration = RawIllustration
 
 export default Illustration
