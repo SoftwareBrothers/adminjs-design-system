@@ -30,7 +30,7 @@ const StyledLink: any = styled(Link)<LinkProps>`
   }
 `
 
-const MadeWithLove: FC = () => (
+export const MadeWithLove: FC = () => (
   <StyledWrapper>
     <Text as="span" variant="sm">
       Made with

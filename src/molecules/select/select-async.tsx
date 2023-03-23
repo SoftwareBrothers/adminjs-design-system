@@ -2,12 +2,12 @@
 // @ts-nocheck
 import noop from 'lodash/noop.js'
 import React, { FC } from 'react'
-import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
+import ReactAsyncSelect, { AsyncProps, Option, IsMulti, Group } from 'react-select/async'
 
 import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 
-interface SelectProps extends AsyncProps<unknown, boolean, any> {
+interface SelectProps extends AsyncProps<Option, IsMulti, Group> {
   value: unknown
   onChange?: (selected) => void
   variant?: 'default' | 'filter'
