@@ -1,3 +1,12 @@
+diff --git a/node_modules/react-select/async/dist/react-select-async.cjs.d.ts b/node_modules/react-select/async/dist/react-select-async.cjs.d.ts
+index ec9574d..caff711 100644
+--- a/node_modules/react-select/async/dist/react-select-async.cjs.d.ts
++++ b/node_modules/react-select/async/dist/react-select-async.cjs.d.ts
+@@ -1,2 +1,2 @@
+-export * from "../../dist/declarations/src/async/index";
+-export { default } from "../../dist/declarations/src/async/index";
++export * from "../../dist/declarations/src/async/index.js";
++export { default } from "../../dist/declarations/src/async/index.js";
 diff --git a/node_modules/react-select/async/package.json b/node_modules/react-select/async/package.json
 index b58d5d1..f2ef1f0 100644
 --- a/node_modules/react-select/async/package.json
@@ -10,3 +19,12 @@ index b58d5d1..f2ef1f0 100644
 +  "types": "dist/react-select-async.cjs.d.ts",
 +  "type": "module"
  }
+diff --git a/node_modules/react-select/dist/react-select.cjs.d.ts b/node_modules/react-select/dist/react-select.cjs.d.ts
+index d4647d2..9aa3173 100644
+--- a/node_modules/react-select/dist/react-select.cjs.d.ts
++++ b/node_modules/react-select/dist/react-select.cjs.d.ts
+@@ -1,2 +1,2 @@
+-export * from "./declarations/src/index";
+-export { default } from "./declarations/src/index";
++export * from "./declarations/src/index.js";
++export { default } from "./declarations/src/index.js";
