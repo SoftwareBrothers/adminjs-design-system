@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     AdminJS?: {
-      [key: string]: number,
+      [key: string]: any,
     };
   }
 }
