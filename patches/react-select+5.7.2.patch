@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-select/async/package.json b/node_modules/react-select/async/package.json
+index b58d5d1..f2ef1f0 100644
+--- a/node_modules/react-select/async/package.json
++++ b/node_modules/react-select/async/package.json
+@@ -1,5 +1,6 @@
+ {
+   "main": "dist/react-select-async.cjs.js",
+   "module": "dist/react-select-async.esm.js",
+-  "types": "dist/react-select-async.cjs.d.ts"
++  "types": "dist/react-select-async.cjs.d.ts",
++  "type": "module"
+ }

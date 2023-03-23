@@ -5,7 +5,7 @@ import ReactSelect, { Props } from 'react-select'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 import useSelectTheme from './select-theme.js'
 
-const SelectComponent = (ReactSelect as any).default ?? ReactSelect
+const SelectComponent = ReactSelect.default
 
 interface SelectProps extends Props {
   value: any

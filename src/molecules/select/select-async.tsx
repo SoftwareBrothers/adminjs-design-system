@@ -8,7 +8,7 @@ import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 
 interface SelectProps extends AsyncProps<unknown, boolean, any> {
-  value: any
+  value: unknown
   onChange?: (selected) => void
   variant?: 'default' | 'filter'
 }
