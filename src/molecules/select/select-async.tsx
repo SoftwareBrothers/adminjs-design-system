@@ -2,13 +2,12 @@
 import noop from 'lodash/noop.js'
 import React, { FC } from 'react'
 import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
-import type { GroupBase } from 'react-select'
 
 import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 
 interface SelectProps<Option = unknown, IsMulti extends boolean = false>
-  extends AsyncProps<Option, IsMulti, GroupBase<Option>> {
+  extends AsyncProps<Option, IsMulti, any> {
   value: Option
   onChange?: (selected) => void
   variant?: 'default' | 'filter'

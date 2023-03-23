@@ -19,6 +19,18 @@ index b58d5d1..f2ef1f0 100644
 +  "types": "dist/react-select-async.cjs.d.ts",
 +  "type": "module"
  }
+diff --git a/node_modules/react-select/base/package.json b/node_modules/react-select/base/package.json
+index 957568d..c0b1107 100644
+--- a/node_modules/react-select/base/package.json
++++ b/node_modules/react-select/base/package.json
+@@ -1,5 +1,6 @@
+ {
+   "main": "dist/react-select-base.cjs.js",
+   "module": "dist/react-select-base.esm.js",
+-  "types": "dist/react-select-base.cjs.d.ts"
++  "types": "dist/react-select-base.cjs.d.ts",
++  "type": "module"
+ }
 diff --git a/node_modules/react-select/dist/declarations/src/Async.d.ts b/node_modules/react-select/dist/declarations/src/Async.d.ts
 index 68766ca..d4a7a20 100644
 --- a/node_modules/react-select/dist/declarations/src/Async.d.ts

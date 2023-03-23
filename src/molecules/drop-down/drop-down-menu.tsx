@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { PropsWithChildren } from 'react'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import { DEFAULT_STICK, DropDownStickProp } from './drop-down.js'
@@ -10,10 +11,10 @@ import { cssClass } from '../../utils/index.js'
  *
  * @memberof DropDown
  */
-export type DropDownMenuProps = BoxProps & {
+export type DropDownMenuProps = PropsWithChildren<BoxProps & {
   isVisible?: boolean;
   stick?: DropDownStickProp;
-}
+}>
 
 /**
  * @component

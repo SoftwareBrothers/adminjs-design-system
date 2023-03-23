@@ -5,8 +5,6 @@ import ReactSelect, { Props } from 'react-select'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 import useSelectTheme from './select-theme.js'
 
-const SelectComponent = ReactSelect
-
 interface SelectProps extends Props {
   value: any
   onChange?: (selected) => void
@@ -23,7 +21,7 @@ export const Select: FC<SelectProps> = (props) => {
   }
 
   return (
-    <SelectComponent
+    <ReactSelect
       className={cssClass('Select')}
       value={value}
       theme={selectTheme}
