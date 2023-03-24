@@ -41,9 +41,10 @@ const colorVariants = variant<any, VariantType>({
  * @memberof DropDown
  * @extends BoxProps
  */
-export type DropDownItemProps = BoxProps & {
-  colorVariant?: VariantType
-} & PropsWithChildren
+export type DropDownItemProps = PropsWithChildren & BoxProps & {
+  colorVariant?: VariantType;
+  onClick?: (e: Event) => void;
+}
 
 /**
  * @component

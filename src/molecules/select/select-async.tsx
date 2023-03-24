@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 import noop from 'lodash/noop.js'
 import React, { FC } from 'react'
 import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
@@ -7,8 +6,9 @@ import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
 import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 
-interface SelectProps extends AsyncProps<unknown, boolean, any> {
-  value: any
+interface SelectProps<Option = unknown, IsMulti extends boolean = false>
+  extends AsyncProps<Option, IsMulti, any> {
+  value: Option
   onChange?: (selected) => void
   variant?: 'default' | 'filter'
 }
