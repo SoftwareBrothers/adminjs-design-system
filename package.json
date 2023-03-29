@@ -25,7 +25,7 @@
     "storybook:build": "build-storybook",
     "storybook:deploy": "firebase deploy --only hosting",
     "dev": "yarn build && yarn bundle",
-    "prepare": "patch-package && husky install"
+    "prepare": "yarn patch-package && husky install"
   },
   "husky": {
     "hooks": {
