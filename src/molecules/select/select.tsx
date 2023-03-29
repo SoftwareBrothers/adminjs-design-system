@@ -1,9 +1,13 @@
 import noop from 'lodash/noop.js'
-import React, { FC } from 'react'
-import ReactSelect, { Props } from 'react-select'
+import React, { FC, lazy } from 'react'
+import { Props } from 'react-select'
 
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
 import useSelectTheme from './select-theme.js'
+
+const ReactSelect = lazy(() => import('react-select') as any) as any
+
+const SelectComponent = ReactSelect.default || ReactSelect
 
 interface SelectProps extends Props {
   value: any
@@ -21,7 +25,7 @@ export const Select: FC<SelectProps> = (props) => {
   }
 
   return (
-    <ReactSelect
+    <SelectComponent
       className={cssClass('Select')}
       value={value}
       theme={selectTheme}

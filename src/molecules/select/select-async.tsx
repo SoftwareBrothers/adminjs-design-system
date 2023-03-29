@@ -1,10 +1,13 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import noop from 'lodash/noop.js'
-import React, { FC } from 'react'
-import ReactAsyncSelect, { AsyncProps } from 'react-select/async'
+import React, { FC, lazy } from 'react'
+import { AsyncProps } from 'react-select/async'
 
 import useSelectTheme from './select-theme.js'
 import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
+
+const ReactAsyncSelect = lazy(() => import('react-select/async') as any) as any
+
+const SelectAsyncComponent = ReactAsyncSelect.default || ReactAsyncSelect
 
 interface SelectProps<Option = unknown, IsMulti extends boolean = false>
   extends AsyncProps<Option, IsMulti, any> {
@@ -23,7 +26,7 @@ export const SelectAsync: FC<SelectProps> = (props) => {
   }
 
   return (
-    <ReactAsyncSelect
+    <SelectAsyncComponent
       className={cssClass('Select')}
       theme={selectTheme}
       value={value}
