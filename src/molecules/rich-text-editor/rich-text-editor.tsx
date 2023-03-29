@@ -8,13 +8,20 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import TextAlign from '@tiptap/extension-text-align'
 import Typography from '@tiptap/extension-typography'
-import { EditorContent, EditorEvents, EditorOptions, useEditor } from '@tiptap/react'
+// Note: Types for @tiptap/react are temporarily ignored due to:
+// https://github.com/ueberdosis/tiptap/issues/3488
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
 
 import MenuBar from './components/menu-bar.js'
 import { EditorWrapper } from './rich-text-editor.styled.js'
 
+interface EditorOptions {
+  [key: string]: any;
+}
 interface RichTextEditorOptions extends Partial<EditorOptions> {
   limit?: number
 }
@@ -27,7 +34,7 @@ interface RichTextEditorProps {
 
 const RichTextEditor: FC<RichTextEditorProps> = (props) => {
   const { value, onChange, options = {} } = props
-  const handleUpdate = useCallback(({ editor }: EditorEvents['update']) => {
+  const handleUpdate = useCallback(({ editor }) => {
     onChange(editor.getHTML())
   }, [])
 

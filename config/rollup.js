@@ -58,6 +58,7 @@ export default {
     name: 'AdminJSDesignSystem',
     format: 'iife',
     interop: 'auto',
+    inlineDynamicImports: true,
     globals: {
       react: 'React',
       'styled-components': 'styled',
