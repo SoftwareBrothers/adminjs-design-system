@@ -2,13 +2,13 @@ import React from 'react'
 import * as FeatherIcons from 'react-feather'
 import { SpaceProps, space, color as styledColor } from 'styled-system'
 // import { styled, css } from 'styled-components'
-import emotionStyled from '@emotion/styled'
+import * as emotionStyled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 import { cssClass } from '../../utils/css-class.js'
 
-const styled = emotionStyled.default || emotionStyled
+const styled = emotionStyled.default.default || emotionStyled.default
 
 /**
  * Prop Types of an Icon component.
@@ -65,11 +65,11 @@ const spinCss = css`
 const Wrapper = styled.span<IconProps>`
   vertical-align: middle;
   display: inline-block;
-  line-height: ${({ theme }) => theme.lineHeights.sm};
-  font-size: ${({ theme }) => theme.fontSizes.sm};
+  line-height: ${(props) => props.theme.lineHeights?.sm};
+  font-size: ${(props) => props.theme.fontSizes?.sm};
   
   & > svg {
-    stroke: ${({ theme, color }): string => (color && color !== 'inherit' ? theme.colors[color] : 'currentColor')};
+    stroke: ${({ theme, color }): string => (color && color !== 'inherit' ? theme.colors?.[color] : 'currentColor')};
     ${({ spin }): any => (spin ? spinCss : '')};
   }
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px;' : '')};
