@@ -1,5 +1,8 @@
 module.exports = {
-  "plugins": [["babel-plugin-styled-components", { "diplayName": true }]],
+  "plugins": [
+    ["babel-plugin-styled-components", { "diplayName": true }],
+    '@emotion'
+  ],
   "presets": [
     "@babel/preset-react",
     ["@babel/preset-env", {
@@ -9,6 +12,6 @@ module.exports = {
       "loose": true,
       "modules": false
     }],
-    "@babel/preset-typescript"
+    "@babel/preset-typescript",
   ]
 }

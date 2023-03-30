@@ -8,6 +8,7 @@ import presetEnv from '@babel/preset-env'
 import presetReact from '@babel/preset-react'
 import presetTs from '@babel/preset-typescript'
 import pluginStyled from 'babel-plugin-styled-components'
+import pluginEmotion from '@emotion/babel-plugin'
 
 const minify = process.env.NODE_ENV === 'production'
 const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx']
@@ -26,6 +27,7 @@ const plugins = [
     babelHelpers: 'bundled',
     plugins: [
       pluginStyled,
+      pluginEmotion,
     ],
     presets: [
       [presetEnv, {
@@ -51,6 +53,8 @@ export default {
     'react-dom',
     'react-router',
     'react-router-dom',
+    '@emotion/styled',
+    '@emotion/react',
   ],
   output: {
     file: minify ? 'bundle.production.js' : 'bundle.development.js',
@@ -62,6 +66,8 @@ export default {
     globals: {
       react: 'React',
       'styled-components': 'styled',
+      '@emotion/styled': 'emotionStyled',
+      '@emotion/react': 'emotionReact',
       'react-dom': 'ReactDOM',
       'react-router': 'ReactRouter',
       'react-router-dom': 'ReactRouterDOM',

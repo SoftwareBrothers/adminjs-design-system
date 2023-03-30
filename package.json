@@ -24,7 +24,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "storybook:deploy": "firebase deploy --only hosting",
-    "dev": "yarn build && yarn bundle",
+    "dev": "yarn build && yarn types && yarn bundle",
     "prepare": "husky install"
   },
   "husky": {
@@ -36,6 +36,8 @@
     "last 5 Chrome versions"
   ],
   "peerDependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "styled-components": "6.0.0-beta.11"
@@ -47,6 +49,9 @@
     "@babel/preset-typescript": "^7.21.0",
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
+    "@emotion/babel-plugin": "^11.10.6",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
