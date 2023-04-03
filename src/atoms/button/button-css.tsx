@@ -161,15 +161,9 @@ export const ButtonCSS: ReturnType<typeof css> = css<ButtonProps>`
   text-decoration: none;
   box-sizing: border-box;
 
-  & > .${cssClass('Icon')} {
-    vertical-align: middle;
-  }
-
-  & > .${cssClass('Icon')} svg {
-    margin: 0 ${themeGet('space', 'md')} 0 0;
-  }
-
   & .${cssClass('Icon')} {
+    vertical-align: middle;
+    margin: 0 ${themeGet('space', 'md')} 0 0;
     color: inherit;
   }
 
