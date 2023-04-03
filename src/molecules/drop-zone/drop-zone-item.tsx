@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Box } from '../../atoms/box/index.js'
 import { Icon } from '../../atoms/icon/index.js'

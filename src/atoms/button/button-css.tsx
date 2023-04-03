@@ -1,6 +1,6 @@
 import { space, color as styledColor, typography, variant as styledVariant } from 'styled-system'
 import { darken, rgba } from 'polished'
-import { css, DefaultTheme } from 'styled-components'
+import { css, DefaultTheme } from '@styled-components'
 
 import { ColorVariants, VariantType } from '../../theme.js'
 import { cssClass, themeGet } from '../../utils/index.js'

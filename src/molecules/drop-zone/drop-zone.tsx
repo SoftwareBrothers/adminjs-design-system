@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import template from 'lodash/template.js'
 import { rgba } from 'polished'
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import { Label } from '../../atoms/label/index.js'

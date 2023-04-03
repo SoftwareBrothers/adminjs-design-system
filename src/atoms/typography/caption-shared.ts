@@ -1,5 +1,5 @@
 import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
-import { css } from 'styled-components'
+import { css } from '@styled-components'
 
 import themeGet from '../../utils/theme-get.js'
 

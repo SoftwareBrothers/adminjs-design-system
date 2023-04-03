@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from '@styled-components'
 
 import themeGet from './theme-get.js'
 
@@ -10,7 +10,7 @@ import themeGet from './theme-get.js'
  * ### Example
  *
  * ```typescript
- * import styled from 'styled-components'
+ * import { styled } from '@styled-components'
  * import { contentCSS } from '@adminjs/design-system'
  *
  * const myComponent = styled`

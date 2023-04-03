@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { cssClass } from '../../utils/css-class.js'
 import { DEFAULT_DRAWER_WIDTH } from '../../constants.js'

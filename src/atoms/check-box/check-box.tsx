@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import focusShadowStyle from '../../utils/focus-shadow.style.js'
 import { Label } from '../label/index.js'

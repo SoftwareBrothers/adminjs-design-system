@@ -1,5 +1,5 @@
 import { parseToRgb } from 'polished'
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme } from '@styled-components'
 
 export default (theme: DefaultTheme): string => {
   const rgb = parseToRgb(theme.colors.accent)

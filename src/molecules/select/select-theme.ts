@@ -1,8 +1,8 @@
 import { rgba } from 'polished'
 import { useEffect, useState } from 'react'
 import type { ThemeConfig } from 'react-select'
-import type { DefaultTheme } from 'styled-components'
-import { useTheme } from 'styled-components'
+import type { DefaultTheme } from '@styled-components'
+import { useTheme } from '@styled-components'
 
 import * as defautTheme from '../../theme.js'
 

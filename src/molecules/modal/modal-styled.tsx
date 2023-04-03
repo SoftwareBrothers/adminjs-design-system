@@ -1,6 +1,6 @@
 import { getValueAndUnit } from 'polished'
 import { variant as styledVariant } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import type { VariantType } from '../../theme.js'

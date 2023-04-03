@@ -7,7 +7,7 @@ import React, {
   useContext,
   ComponentType,
 } from 'react'
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import assert from '../../utils/assert.js'
 

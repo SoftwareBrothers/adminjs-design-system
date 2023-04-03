@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Illustration, IllustrationVariant } from '../../atoms/illustration/index.js'
 import { Box, BoxProps } from '../../atoms/box/index.js'

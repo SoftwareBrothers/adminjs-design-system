@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import focusShadowStyle from '../../utils/focus-shadow.style.js'
 import { CheckboxRadioContainer } from '../check-box/index.js'

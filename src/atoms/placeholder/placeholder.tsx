@@ -2,7 +2,7 @@
 import React from 'react'
 import { LayoutProps, layout } from 'styled-system'
 import { darken } from 'polished'
-import { styled, keyframes } from 'styled-components'
+import { styled, keyframes } from '@styled-components'
 
 import { cssClass } from '../../utils/css-class.js'
 

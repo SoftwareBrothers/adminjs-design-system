@@ -1,5 +1,5 @@
 import type { Props } from 'react-select'
-import type { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from '@styled-components'
 
 const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
   control: (baseStyles) => ({

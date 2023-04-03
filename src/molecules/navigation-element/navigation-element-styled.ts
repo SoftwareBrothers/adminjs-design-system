@@ -1,5 +1,5 @@
 import { rgba } from 'polished'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Box } from '../../atoms/box/index.js'
 import { Title } from '../../atoms/typography/index.js'

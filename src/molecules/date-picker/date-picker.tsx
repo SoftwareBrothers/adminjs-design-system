@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import React, { useMemo } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
 import MaskedInput, { MaskedInputProps } from 'react-text-mask'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe.js'
