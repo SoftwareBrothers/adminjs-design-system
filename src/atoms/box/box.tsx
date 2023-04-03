@@ -1,12 +1,11 @@
 import { PropsWithChildren } from 'react'
-
 import {
   space, SpaceProps, color, layout,
   LayoutProps, flexbox, FlexboxProps, border, BorderProps,
   position, PositionProps, variant, grid,
   shadow, ShadowProps,
 } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 import { cssClass } from '../../utils/css-class.js'

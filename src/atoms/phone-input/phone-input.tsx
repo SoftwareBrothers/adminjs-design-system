@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactPhoneInput, { PhoneInputProps as ReactPhoneInputProps } from 'react-phone-input-2'
 import { space, typography, layout, TypographyProps } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { InputCSS, InputProps } from '../input/index.js'
 import PhoneInputStyles from '../../utils/phone-input.styles.js'

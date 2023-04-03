@@ -1,5 +1,5 @@
 import { LayoutProps, SpaceProps, color, layout, space } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 import { cssClass } from '../../utils/css-class.js'

@@ -1,6 +1,6 @@
 import { rgba } from 'polished'
 import type { PropsWithChildren } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 import { space, variant } from 'styled-system'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'

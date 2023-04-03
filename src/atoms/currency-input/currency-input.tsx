@@ -3,7 +3,7 @@ import CurrencyInputField, {
   CurrencyInputProps as CurrencyInputFieldProps,
   formatValue as formatCurrencyProperty,
 } from 'react-currency-input-field'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { InputCSS, InputProps } from '../input/index.js'
 import { cssClass } from '../../utils/css-class.js'

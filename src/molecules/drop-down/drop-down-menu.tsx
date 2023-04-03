@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 import { PropsWithChildren } from 'react'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'

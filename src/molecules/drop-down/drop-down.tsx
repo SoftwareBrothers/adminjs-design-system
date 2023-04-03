@@ -1,6 +1,6 @@
 /* eslint-disable default-case */
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { BoxProps } from '../../atoms/box/index.js'
 

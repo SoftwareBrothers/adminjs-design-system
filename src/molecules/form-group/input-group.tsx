@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Button } from '../../atoms/button/index.js'
 import { Input } from '../../atoms/input/index.js'

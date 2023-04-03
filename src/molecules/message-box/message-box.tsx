@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { SpaceProps, variant as styledVariant } from 'styled-system'
-import { styled, DefaultTheme } from 'styled-components'
+import { styled, DefaultTheme } from '@styled-components'
 
 import { Box } from '../../atoms/box/index.js'
 import { Button } from '../../atoms/button/index.js'

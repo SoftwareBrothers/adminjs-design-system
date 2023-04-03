@@ -1,5 +1,13 @@
 module.exports = {
-  "plugins": [["babel-plugin-styled-components", { "diplayName": true }]],
+  "plugins": [
+    ["module-resolver", {
+      "cwd": "./build/",
+      "root": ["./src/"],
+      "alias": {
+        "@styled-components": "./utils/styled-components.js"
+      }
+    }]
+  ],
   "presets": [
     "@babel/preset-react",
     ["@babel/preset-env", {
@@ -7,7 +15,7 @@ module.exports = {
         "node": "18"
       },
       "loose": true,
-      "modules": false
+      "modules": false,
     }],
     "@babel/preset-typescript"
   ]

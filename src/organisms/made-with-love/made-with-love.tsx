@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import { Icon } from '../../atoms/icon/index.js'

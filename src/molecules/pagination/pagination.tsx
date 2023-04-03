@@ -1,6 +1,6 @@
 import JWPaginate from 'jw-paginate'
 import React from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import { Button, ButtonProps } from '../../atoms/button/index.js'

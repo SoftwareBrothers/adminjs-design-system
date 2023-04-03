@@ -7,7 +7,6 @@ import replace from '@rollup/plugin-replace'
 import presetEnv from '@babel/preset-env'
 import presetReact from '@babel/preset-react'
 import presetTs from '@babel/preset-typescript'
-import pluginStyled from 'babel-plugin-styled-components'
 
 const minify = process.env.NODE_ENV === 'production'
 const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx']
@@ -24,9 +23,6 @@ const plugins = [
     extensions,
     babelrc: false,
     babelHelpers: 'bundled',
-    plugins: [
-      pluginStyled,
-    ],
     presets: [
       [presetEnv, {
         targets: {
@@ -47,10 +43,11 @@ export default {
   plugins,
   external: [
     'react',
-    'styled-components',
+    '@adminjs/design-system/styled-components',
     'react-dom',
     'react-router',
     'react-router-dom',
+    'react-feather',
   ],
   output: {
     file: minify ? 'bundle.production.js' : 'bundle.development.js',
@@ -61,10 +58,11 @@ export default {
     inlineDynamicImports: true,
     globals: {
       react: 'React',
-      'styled-components': 'styled',
+      '@adminjs/design-system/styled-components': 'styled',
       'react-dom': 'ReactDOM',
       'react-router': 'ReactRouter',
       'react-router-dom': 'ReactRouterDOM',
+      'react-feather': 'FeatherIcons',
       'react-select': 'ReactSelect',
       'react-select/async': 'ReactSelectAsync',
       'react-select/creatable': 'ReactSelectCreatable',

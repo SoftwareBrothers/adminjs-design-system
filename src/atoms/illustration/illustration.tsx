@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { cssClass } from '../../utils/index.js'
 import * as Illustrations from '../illustrations/index.js'
