@@ -16,9 +16,6 @@ const variantsShared = (theme, color) => ({
   '&:hover': {
     bg: rgba(theme.colors[color], 0.03),
   },
-  [`& .${cssClass('Icon')} svg`]: {
-    stroke: color,
-  },
 })
 
 const colorVariants = variant<any, VariantType>({
@@ -41,23 +38,19 @@ const colorVariants = variant<any, VariantType>({
  * @memberof DropDown
  * @extends BoxProps
  */
-export type DropDownItemProps = PropsWithChildren & BoxProps & {
-  colorVariant?: VariantType;
-  onClick?: (e: Event) => void;
-}
+export type DropDownItemProps = PropsWithChildren &
+  BoxProps & {
+    colorVariant?: VariantType
+    onClick?: (e: Event) => void
+  }
 
 /**
  * @component
  * @private
  */
 export const DropDownItem = styled(Box)<DropDownItemProps>`
-  position: relative;
-  z-index: 10000;
-  border: none;
-  color: ${themeGet('colors', 'text')};
-  font-family: ${themeGet('font')};
-  border: solid transparent;
-  border-width: 0 ${themeGet('space', 'sm')};
+  color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.font};
   ${({ onClick }: any) => (onClick ? 'cursor: pointer;' : '')};
   text-decoration: none;
   display: flex;
@@ -71,8 +64,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   }
 
   & .${cssClass('Icon')} {
-    padding-right: ${themeGet('space', 'default')};
-    stroke: ${themeGet('colors', 'grey40')};
+    padding-right: ${({ theme }) => theme.space.default};
     flex-grow: 0;
     flex-shrink: 0;
   }
@@ -88,10 +80,11 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   }
 
   & a {
-    color: ${themeGet('colors', 'grey80')};
+    color: inherit;
     text-decoration: none;
   }
-  padding: ${themeGet('space', 'lg')} ${themeGet('space', 'xxl')};
+
+  padding: ${({ theme }) => `${theme.space.lg} ${theme.space.xxl}`};
 
   ${space};
   ${colorVariants};

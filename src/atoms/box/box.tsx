@@ -1,16 +1,58 @@
 import { PropsWithChildren } from 'react'
 import {
-  space, SpaceProps, color, layout,
-  LayoutProps, flexbox, FlexboxProps, border, BorderProps,
-  position, PositionProps, variant, grid,
-  shadow, ShadowProps,
+  space,
+  SpaceProps,
+  color,
+  layout,
+  LayoutProps,
+  flexbox,
+  FlexboxProps,
+  border,
+  BorderProps,
+  position,
+  PositionProps,
+  variant,
+  grid,
+  shadow,
+  ShadowProps,
+  BorderRadiusProps,
+  borderRadius,
 } from 'styled-system'
 import { styled } from '@styled-components'
 
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 import { cssClass } from '../../utils/css-class.js'
 
-const variants = variant({
+type FlexboxFlexProp = boolean | FlexboxProps['flex']
+
+/**
+ * @load ./box-props.doc.md
+ * @memberof Box
+ * @alias BoxProps
+ * @property {string} [...] Other props from {@link SpaceProps}, {@link ColorProps},
+ *                          {@link LayoutProps}, {@link FlexboxProps},
+ *                          {@link PositionProps} and {@link BorderProps}.
+ */
+export type BoxProps = PropsWithChildren &
+  BorderProps &
+  BorderRadiusProps &
+  ColorProps &
+  LayoutProps &
+  Omit<FlexboxProps, 'flex'> &
+  PositionProps &
+  ShadowProps &
+  SpaceProps & {
+    /** If box should be rendered as flex. You can pass boolean or FlexboxProps['flex'] */
+    flex?: FlexboxFlexProp
+    /** Box variants */
+    variant?: 'grey' | 'white' | 'card' | 'transparent' | 'container'
+    /** If set to true it makes css changes as 500ms transitions */
+    animate?: boolean
+    /** Optional class name passed down to the wrapper */
+    className?: string
+  }
+
+const variants = variant<BoxProps>({
   variants: {
     grey: {
       flexGrow: 1,
@@ -24,7 +66,8 @@ const variants = variant({
       bg: 'container',
       py: 'xl',
       px: ['0', 'xl'],
-      className: cssClass(['Box', 'Box_Grey']),
+      className: cssClass(['Box', 'Box_Container']),
+      borderRadius: 'md',
     },
     white: {
       px: ['default', 'xxl'],
@@ -46,28 +89,6 @@ const variants = variant({
     },
   },
 })
-
-type FlexboxFlexProp = boolean | FlexboxProps['flex']
-
-/**
- * @load ./box-props.doc.md
- * @memberof Box
- * @alias BoxProps
- * @property {string} [...] Other props from {@link SpaceProps}, {@link ColorProps},
- *                          {@link LayoutProps}, {@link FlexboxProps},
- *                          {@link PositionProps} and {@link BorderProps}.
- */
-export type BoxProps = SpaceProps & ColorProps & LayoutProps &
-  Omit<FlexboxProps, 'flex'> & BorderProps & PositionProps & ShadowProps & {
-    /** If box should be rendered as flex. You can pass boolean or FlexboxProps['flex'] */
-    flex?: FlexboxFlexProp;
-    /** Box variants */
-    variant?: 'grey' | 'white' | 'card' | 'transparent' | 'container';
-    /** If set to true it makes css changes as 500ms transitions */
-    animate?: boolean;
-    /** Optional class name passed down to the wrapper */
-    className?: string;
-  } & PropsWithChildren
 
 /**
  * @load ./box.doc.md
@@ -94,6 +115,7 @@ const Box = styled.section<BoxProps>`
   ${flexbox};
   ${grid};
   ${border};
+  ${borderRadius}
   ${shadow};
   ${position};
   ${variants};

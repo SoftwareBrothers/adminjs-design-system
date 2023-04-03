@@ -17,26 +17,27 @@ const Avatar = styled.div<AvatarProps>`
   flex-shrink: 0;
   line-height: 1;
   overflow: hidden;
-  font-size:  ${({ theme }) => theme.space.lg};
+  font-size: ${({ theme }) => theme.space.lg};
   user-select: none;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: transparent;
-    background-image: url('${({ src }: any) => src}');
+    background-image: url('${({ src }) => src}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   background-color: ${({ theme }) => theme.colors.primary100};
   color: ${({ theme }) => theme.colors.white};
 
   ${space}
 `
 
+export { Avatar }
 export default Avatar

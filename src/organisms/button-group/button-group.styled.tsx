@@ -39,7 +39,7 @@ export const hasLabel = (props: any): ReturnType<typeof css> | string => {
       border: none;
       padding-left: ${themeGet('space', 'md')};
       padding-right: ${themeGet('space', 'md')};
-      & > .${cssClass('Icon')} svg {
+      & > .${cssClass('Icon')} {
         margin-right: 0;
       }
     `

@@ -4,7 +4,6 @@ import { Box, BoxProps } from '../../atoms/box/index.js'
 import { cssClass } from '../../utils/index.js'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export const DropDownItemAction = styled(Box).attrs<BoxProps>((props) => ({
   className: cssClass('DropDownItemAction', props.className),
 }))`
