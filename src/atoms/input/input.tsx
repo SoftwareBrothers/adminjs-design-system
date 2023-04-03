@@ -1,6 +1,6 @@
 import { darken, rgba } from 'polished'
 import { space, SpaceProps, layout, LayoutProps, variant } from 'styled-system'
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import { cssClass } from '../../utils/css-class.js'
 

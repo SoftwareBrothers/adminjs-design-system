@@ -1,5 +1,5 @@
 import { SpaceProps, space } from 'styled-system'
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import { Label } from '../../atoms/label/index.js'
 import { Button } from '../../atoms/button/index.js'

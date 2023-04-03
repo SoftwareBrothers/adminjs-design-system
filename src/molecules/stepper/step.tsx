@@ -1,6 +1,6 @@
 import React from 'react'
 import { SpaceProps, space } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Icon } from '../../atoms/icon/index.js'
 import { Text } from '../../atoms/text/index.js'

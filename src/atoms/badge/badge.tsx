@@ -1,5 +1,5 @@
 import { color, space, typography, SpaceProps, TypographyProps, variant } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { VariantType } from '../../theme.js'
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'

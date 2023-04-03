@@ -8,7 +8,7 @@ import {
   layout,
   LayoutProps,
 } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import contentCSS from '../../utils/content-styles.js'
 import { cssClass } from '../../utils/css-class.js'

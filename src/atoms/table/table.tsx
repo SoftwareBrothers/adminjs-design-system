@@ -1,5 +1,5 @@
 import { layout, LayoutProps } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { cssClass } from '../../utils/css-class.js'
 

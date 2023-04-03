@@ -1,4 +1,4 @@
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import { cssClass } from '../../utils/index.js'
 import ButtonCSS from './button-css.js'

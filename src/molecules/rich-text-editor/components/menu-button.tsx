@@ -1,6 +1,6 @@
 import { Editor } from '@tiptap/react'
 import React, { FC, useMemo, PropsWithChildren } from 'react'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Text, TextProps } from '../../../atoms/text/index.js'
 import * as EditorIcons from '../icons/index.js'

@@ -1,5 +1,5 @@
 /* cSpell:disable */
-import { css, createGlobalStyle } from 'styled-components'
+import { css, createGlobalStyle } from '@styled-components'
 
 /**
  * Resets css styles which can be applied to element created by styled-component

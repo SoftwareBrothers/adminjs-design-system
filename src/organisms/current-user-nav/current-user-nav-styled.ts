@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { cssClass, themeGet } from '../../utils/index.js'
 import { Box, BoxProps } from '../../atoms/box/index.js'

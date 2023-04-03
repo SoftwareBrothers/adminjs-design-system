@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { styled, css } from 'styled-components'
+import { styled, css } from '@styled-components'
 
 import { Box } from '../../atoms/box/index.js'
 import { Button } from '../../atoms/button/index.js'

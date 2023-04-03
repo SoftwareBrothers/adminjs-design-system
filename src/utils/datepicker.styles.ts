@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from '@styled-components'
 
 const datepickerStyles: ReturnType<typeof css> = css`
   .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { color, space, variant, SpaceProps } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { cssClass } from '../../utils/css-class.js'
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'

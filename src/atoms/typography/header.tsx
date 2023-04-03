@@ -1,6 +1,6 @@
 import React from 'react'
 import { typography, TypographyProps, space, SpaceProps } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 import { Button } from '../button/index.js'
 import { Badge } from '../badge/index.js'

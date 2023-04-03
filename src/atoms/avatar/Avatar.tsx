@@ -1,5 +1,5 @@
 import { MarginProps, space } from 'styled-system'
-import { styled } from 'styled-components'
+import { styled } from '@styled-components'
 
 type AvatarProps = MarginProps & {
   alt?: string
