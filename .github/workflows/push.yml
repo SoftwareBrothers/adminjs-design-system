@@ -25,6 +25,8 @@ jobs:
         run: yarn lint
       - name: Build
         run: yarn build
+      - name: Types
+        run: yarn types
       - name: Bundle
         run: yarn bundle
       - name: Bundle minified
@@ -51,8 +53,10 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-
+      - name: Build
+        run: yarn build
       - name: Build storybook
-        run:  yarn storybook:build
+        run: yarn storybook:build
       - name: Deploy storybook
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

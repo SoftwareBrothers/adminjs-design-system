@@ -1,12 +1,12 @@
 import { MarginProps, space } from 'styled-system'
 import { styled } from '@styled-components'
 
-type AvatarProps = MarginProps & {
+export type AvatarProps = MarginProps & {
   alt?: string
   src?: string
 }
 
-const Avatar = styled.div<AvatarProps>`
+export const Avatar = styled.div<AvatarProps>`
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -39,5 +39,4 @@ const Avatar = styled.div<AvatarProps>`
   ${space}
 `
 
-export { Avatar }
 export default Avatar

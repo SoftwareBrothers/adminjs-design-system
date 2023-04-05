@@ -1,5 +1,6 @@
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
-import ThemeDecorator from './theme-decorator.js'
+
+import ThemeDecorator from './theme-decorator.jsx'
 
 export const parameters = {
   viewMode: 'docs',

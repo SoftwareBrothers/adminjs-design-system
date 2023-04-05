@@ -1,5 +1,5 @@
 import { space, typography, layout, TypographyProps } from 'styled-system'
-import CurrencyInputField, {
+import CurrencyInputFieldLib, {
   CurrencyInputProps as CurrencyInputFieldProps,
   formatValue as formatCurrencyProperty,
 } from 'react-currency-input-field'
@@ -7,6 +7,9 @@ import { styled } from '@styled-components'
 
 import { InputCSS, InputProps } from '../input/index.js'
 import { cssClass } from '../../utils/css-class.js'
+
+const CurrencyInputField = (CurrencyInputFieldLib as any).default ?? CurrencyInputFieldLib
+const CurrencyInputComponent = CurrencyInputField.default ?? CurrencyInputField
 
 /**
  * Prop Types of a CurrencyInput component.
@@ -50,7 +53,6 @@ export type CurrencyInputProps = TypographyProps &
  * )
  * @section design-system
  */
-const CurrencyInputComponent = CurrencyInputField.default ?? CurrencyInputField
 const CurrencyInput = styled(CurrencyInputComponent)<CurrencyInputProps>`
   ${InputCSS}
   ${space};
