@@ -118,7 +118,7 @@ const sizeVariants = styledVariant({
       lineHeight: 'sm',
       minWidth: '34px',
       height: '34px',
-      [`& .${cssClass('Icon')} svg`]: {
+      [`& .${cssClass('Icon')}`]: {
         padding: 0,
         margin: 0,
       },
