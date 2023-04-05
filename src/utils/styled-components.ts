@@ -1,8 +1,9 @@
-import _styled from 'styled-components'
+import * as _styled from 'styled-components'
 
 export * from 'styled-components'
 
-const styled = _styled.default ?? _styled
+const defStyled = _styled.default ?? _styled
+const styled = defStyled?.default ?? defStyled
 
 export { styled }
 export default styled
