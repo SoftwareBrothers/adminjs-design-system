@@ -8,6 +8,7 @@ import PhoneInputStyles from '../../utils/phone-input.styles.js'
 import { cssClass } from '../../utils/css-class.js'
 
 const ReactPhoneInput = (ReactPhoneInputLib as any).default ?? ReactPhoneInputLib
+const ReactPhoneInputComponent = ReactPhoneInput.default ?? ReactPhoneInput
 
 /**
  * Prop Types of a PhoneInput component.
@@ -50,7 +51,7 @@ export type PhoneInputProps = ReactPhoneInputProps &
  * )
  * @section design-system
  */
-const PhoneInput = styled((props) => <ReactPhoneInput {...props} />)<PhoneInputProps>`
+const PhoneInput = styled(ReactPhoneInputComponent)<PhoneInputProps>`
   ${PhoneInputStyles}
   width: 100%;
   position: relative;
