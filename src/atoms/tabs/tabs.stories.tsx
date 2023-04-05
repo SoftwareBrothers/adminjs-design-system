@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import { Box } from '../box/index.js'
-import Tab from './tab.jsx'
-import Tabs from './tabs.jsx'
+import Tab from './tab.js'
+import Tabs from './tabs.js'
 
 export default {
   title: 'DesignSystem/Atoms/Tabs',

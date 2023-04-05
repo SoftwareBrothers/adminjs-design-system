@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react'
+import { ThemeProvider } from '@styled-components'
 
-import { ThemeProvider } from 'styled-components'
-import { Box, GlobalStyle, theme } from '../src/index.js'
+import { Box } from '../build/atoms/box/box.js'
+import { GlobalStyle } from '../build/global.js'
+import * as theme from '../build/theme.js'
 
 const themes = {
   default: { ...theme },
