@@ -1,9 +1,11 @@
-import type { StoryObj, Meta, StoryFn } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { DROPZONE_DEFAULT_TRANSLATIONS, DropZone } from './index.js'
+import { DROPZONE_DEFAULT_TRANSLATIONS, DropZone, DropZoneProps } from './index.js'
 
-export const Default: StoryObj = {
+export const Default: StoryObj<
+  DropZoneProps & { maxSize: number; mimeTypes: string[] } & typeof DROPZONE_DEFAULT_TRANSLATIONS
+> = {
   render: ({
     multiple,
     maxSize,
