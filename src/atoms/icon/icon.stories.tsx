@@ -7,6 +7,10 @@ import Icon from './icon.js'
 
 export default {
   title: 'DesignSystem/Atoms/Icon',
+  args: {
+    icon: Object.keys(FeatherIcons)[0] ?? 'Activity',
+    size: 48,
+  },
   argTypes: {
     icon: {
       defaultValue: 'Settings',

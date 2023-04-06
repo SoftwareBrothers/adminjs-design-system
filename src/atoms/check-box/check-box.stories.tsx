@@ -1,4 +1,3 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
 import { Box, CheckBox, Label } from '../../index.js'
@@ -6,9 +5,9 @@ import { Box, CheckBox, Label } from '../../index.js'
 export default {
   title: 'DesignSystem/Atoms/CheckBox',
   component: CheckBox,
-} as ComponentMeta<typeof CheckBox>
+}
 
-export const Default: ComponentStory<typeof CheckBox> = (props) => (
+export const Default = (props) => (
   <Box flexDirection="column" marginRight={15}>
     <CheckBox id="default-checkbox" {...props} />
     <Label inline htmlFor="default-checkbox" ml="default">

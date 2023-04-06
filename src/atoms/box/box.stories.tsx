@@ -1,4 +1,3 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
 import { Box, Text, Header, Button } from '../../index.js'
@@ -11,9 +10,9 @@ export default {
       include: ['variant'],
     },
   },
-} as ComponentMeta<typeof Box>
+}
 
-export const Default: ComponentStory<typeof Box> = (props) => <Box {...props}>Box example</Box>
+export const Default = (props) => <Box {...props}>Box example</Box>
 
 export const simpleWhiteGrayWrapper: React.FC = () => (
   <Box variant="grey">

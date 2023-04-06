@@ -27,7 +27,12 @@ export const Default: React.FC<any> = (props) => {
 }
 
 export default {
-  title: 'DesignSystem/Molecules/Navigation',
+  title: 'DesignSystem/Molecules/NavigationElement',
+  args: {
+    label: 'Dashboard',
+    icon: 'Activity',
+    isSelected: false,
+  },
   argTypes: {
     isSelected: {
       defaultValue: false,

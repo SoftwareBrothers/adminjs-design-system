@@ -1,10 +1,9 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
 import { Badge, Box, Header, Text as TextComponent } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
 
-export enum BadgeVariant {
+enum BadgeVariant {
   Default = 'default',
   Primary = 'primary',
   Danger = 'danger',
@@ -13,34 +12,38 @@ export enum BadgeVariant {
   Secondary = 'secondary',
 }
 
-export enum BadgeSize {
+enum BadgeSize {
   Small = 'sm',
   Default = 'default',
   Large = 'lg',
 }
 
-export const Default: ComponentStory<typeof Badge> = (props) => (
+const variants = Object.values(BadgeVariant)
+const sizes = Object.values(BadgeSize)
+
+export const Default = (props) => (
   <Badge {...props}>Badge example</Badge>
 )
 
 export const Examples: React.FC = () => (
   <Box width={1}>
     <StoryWrapper label="Badge regular">
-      {Object.values(BadgeVariant).map((variant) => (
+      <Badge variant="primary" mr="default">primary</Badge>
+      {variants.map((variant) => (
         <Badge variant={variant} key={variant} mr="default">
           {variant}
         </Badge>
       ))}
     </StoryWrapper>
     <StoryWrapper label="Badge outlined">
-      {Object.values(BadgeVariant).map((variant) => (
+      {variants.map((variant) => (
         <Badge variant={variant} key={variant} mr="default" outline>
           {variant}
         </Badge>
       ))}
     </StoryWrapper>
     <StoryWrapper label="Badge sizes">
-      {Object.values(BadgeSize).map((size) => (
+      {sizes.map((size) => (
         <Badge variant="primary" size={size} key={size} mr="default">
           {size}
         </Badge>
@@ -73,15 +76,20 @@ export default {
       include: ['variant', 'size', 'outline'],
     },
   },
+  args: {
+    variant: BadgeVariant.Primary,
+    size: BadgeSize.Default,
+    outline: false,
+  },
   argTypes: {
     variant: {
       defaultValue: BadgeVariant.Primary,
-      options: Object.values(BadgeVariant),
+      options: variants,
       control: { type: 'select' },
     },
     size: {
       defaultValue: BadgeSize.Default,
-      options: Object.values(BadgeSize),
+      options: sizes,
       control: { type: 'select' },
     },
     outline: {
@@ -89,4 +97,4 @@ export default {
       control: { type: 'boolean' },
     },
   },
-} as ComponentMeta<typeof Badge>
+}

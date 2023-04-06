@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { DatePicker } from '../../index.js'
+import { Box, DatePicker } from '../../index.js'
 
 const propertyTypes = {
   Date: 'date',
@@ -8,16 +8,23 @@ const propertyTypes = {
 }
 
 export const Default: React.FC = (props) => {
-  const [date, setDate] = useState<string>('2020-12-01T14:32:00.000Z')
+  const [date, setDate] = useState<string | null>('2020-12-01T14:32:00.000Z')
   const { disabled, propertyType } = props as any
 
+  const handleChange = (value) => {
+    if (value) setDate(value)
+    else setDate(null)
+  }
+
   return (
-    <DatePicker
-      onChange={setDate}
-      value={date}
-      disabled={disabled}
-      propertyType={propertyType}
-    />
+    <Box height="320px">
+      <DatePicker
+        onChange={handleChange}
+        value={date ?? ''}
+        disabled={disabled}
+        propertyType={propertyType}
+      />
+    </Box>
   )
 }
 

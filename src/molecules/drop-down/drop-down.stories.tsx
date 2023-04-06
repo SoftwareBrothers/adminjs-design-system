@@ -33,27 +33,29 @@ export const Default: React.FC<any> = ({ onClick, ...props }) => {
 
   return (
     <StoryWrapper label="Button trigger with nested DropDownItems">
-      <DropDown {...props}>
-        <DropDownTrigger>
-          <Button>Get your cursor here!</Button>
-        </DropDownTrigger>
-        <DropDownMenu>
-          <DropDownItem onClick={handleClick}>
-            <Icon icon="Video" />
-            Some menu item
-          </DropDownItem>
-          <DropDownItem onClick={handleClick}>
-            <Icon icon="Headphones" />
-            Other item
-            <DropDownMenu>
-              <DropDownItem onClick={handleClick} color="danger">
-                <Icon icon="Edit" />
-                Some danger item
-              </DropDownItem>
-            </DropDownMenu>
-          </DropDownItem>
-        </DropDownMenu>
-      </DropDown>
+      <Box height="200px">
+        <DropDown {...props}>
+          <DropDownTrigger>
+            <Button>Get your cursor here!</Button>
+          </DropDownTrigger>
+          <DropDownMenu>
+            <DropDownItem onClick={handleClick}>
+              <Icon icon="Video" />
+              Some menu item
+            </DropDownItem>
+            <DropDownItem onClick={handleClick}>
+              <Icon icon="Headphones" />
+              Other item
+              <DropDownMenu>
+                <DropDownItem onClick={handleClick} color="danger">
+                  <Icon icon="Edit" />
+                  Some danger item
+                </DropDownItem>
+              </DropDownMenu>
+            </DropDownItem>
+          </DropDownMenu>
+        </DropDown>
+      </Box>
     </StoryWrapper>
   )
 }

@@ -1,4 +1,3 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
 import { Box, Button, Icon, Label } from '../../index.js'
@@ -8,7 +7,7 @@ const ButtonVariant = ['text', 'outlined', 'contained', 'light'] as const
 const ButtonSize = ['default', 'sm', 'lg', 'icon'] as const
 const ButtonColor = ['primary', 'secondary', 'danger', 'success', 'info'] as const
 
-export const Default: ComponentStory<typeof Button> = (props) => (
+export const Default = (props) => (
   <Button {...props}>Example button</Button>
 )
 
@@ -115,4 +114,4 @@ export default {
       control: { type: 'select' },
     },
   },
-} as ComponentMeta<typeof Button>
+}
