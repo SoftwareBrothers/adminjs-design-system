@@ -1,21 +1,16 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Box, Text, Header, Button } from '../../index.js'
+import { Button, Header, Text } from '../index.js'
+import { Box, BoxProps } from './index.js'
 
-export default {
-  title: 'DesignSystem/Atoms/Box',
-  component: Box,
-  parameters: {
-    controls: {
-      include: ['variant'],
-    },
-  },
-} as ComponentMeta<typeof Box>
+export const Default: StoryObj = {
+  render: (props) => <Box {...props}>Box example</Box>,
+}
 
-export const Default: ComponentStory<typeof Box> = (props) => <Box {...props}>Box example</Box>
+const variants: BoxProps['variant'][] = ['card', 'container', 'grey', 'transparent', 'white']
 
-export const simpleWhiteGrayWrapper: React.FC = () => (
+export const simpleWhiteGrayWrapper: StoryFn = () => (
   <Box variant="grey">
     <Box variant="white">
       <Text>This is the default wrapper in the application</Text>
@@ -23,7 +18,7 @@ export const simpleWhiteGrayWrapper: React.FC = () => (
   </Box>
 )
 
-export const positioningButtons: React.FC = () => (
+export const positioningButtons: StoryFn = () => (
   <Box variant="grey">
     <Box variant="white" flex flexDirection="row">
       <Box flexGrow={1}>
@@ -35,3 +30,16 @@ export const positioningButtons: React.FC = () => (
     </Box>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Box',
+  component: Box,
+  parameters: {
+    controls: {
+      include: ['variant'],
+    },
+  },
+  argTypes: {
+    variant: { options: variants, control: { type: 'select' } },
+  },
+} as Meta<typeof Box>

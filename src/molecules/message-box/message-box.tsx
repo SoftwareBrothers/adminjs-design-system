@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
+import { DefaultTheme, styled } from '@styled-components'
 import React from 'react'
 import { SpaceProps, variant as styledVariant } from 'styled-system'
-import { styled, DefaultTheme } from '@styled-components'
 
 import { Box } from '../../atoms/box/index.js'
 import { Button } from '../../atoms/button/index.js'
 import { Icon, IconProps } from '../../atoms/icon/index.js'
-import { cssClass } from '../../utils/css-class.js'
 import { Text } from '../../atoms/text/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * Prop Types of a MessageBox component.
@@ -167,7 +167,7 @@ export const MessageBox: React.FC<Props> = (props) => {
           </Box>
 
           {onCloseClick && (
-            <Button variant="text" size="icon" onClick={onCloseClick} rounded color={variant}>
+            <Button variant="text" size="icon" onClick={onCloseClick} rounded color={variant} ml="xl">
               <Icon icon="X" />
             </Button>
           )}

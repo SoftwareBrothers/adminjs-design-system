@@ -1,33 +1,19 @@
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import filter from 'lodash/filter.js'
-import React, { FC, useState } from 'react'
+import React, { useState } from 'react'
 
-import { FormGroup } from '../../index.js'
-import { Box } from '../../atoms/box/index.js'
+import { Box, FormGroup } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
-import { Select } from './select.js'
-import { SelectAsync } from './select-async.js'
+import { Select, SelectAsync } from './index.js'
 
-export default {
-  title: 'DesignSystem/Molecules/Select',
-  component: Select,
-  parameters: { controls: { include: ['variant'] } },
-  argTypes: {
-    variant: {
-      defaultValue: 'default',
-      options: ['default', 'filter'],
-      control: { type: 'select' },
-    },
-  },
-} as ComponentMeta<typeof Select>
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+]
 
-export const Default: FC = () => {
+export const Default: StoryFn = () => {
   const [value, setValue] = useState()
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ]
 
   return (
     <Box width={1}>
@@ -40,17 +26,11 @@ export const Default: FC = () => {
   )
 }
 
-export const Async: FC = () => {
+export const Async: StoryFn = () => {
   const [valueAsync, setValueAsync] = useState()
   const [isLoading, setIsLoading] = useState(false)
 
   const loadOptions = async (inputValue: string): Promise<any[]> => {
-    const options = [
-      { value: 'chocolate', label: 'Chocolate' },
-      { value: 'strawberry', label: 'Strawberry' },
-      { value: 'vanilla', label: 'Vanilla' },
-    ]
-
     setIsLoading(true)
     const found = filter(options, ({ value }) => value.includes(inputValue))
     setIsLoading(false)
@@ -72,3 +52,15 @@ export const Async: FC = () => {
     </Box>
   )
 }
+
+export default {
+  title: 'DesignSystem/Molecules/Select',
+  component: Select,
+  parameters: { controls: { include: ['variant'] } },
+  args: {
+    variant: 'default',
+  },
+  argTypes: {
+    variant: { options: ['default', 'filter'], control: { type: 'select' } },
+  },
+} as Meta<typeof Select>

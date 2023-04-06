@@ -1,22 +1,22 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import {
   Box,
-  RichTextEditor,
-  Icon,
   Button,
-  Input,
   Drawer,
-  Header,
   DrawerContent,
-  Label,
   DropZone,
+  Header,
+  Icon,
+  Input,
+  Label,
+  RichTextEditor,
 } from '../index.js'
 
-export default { title: 'DesignSystem/Templates/Blog' }
-
-export const Default: React.FC = () => {
+export const Default: StoryFn = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
+
   return (
     <Box variant="grey" width={1}>
       {isDrawerVisible && (
@@ -30,7 +30,6 @@ export const Default: React.FC = () => {
             </Header.H3>
             <Label>Drop splash screen</Label>
             <DropZone />
-
           </DrawerContent>
         </Drawer>
       )}
@@ -52,8 +51,17 @@ export const Default: React.FC = () => {
           <Input variant="xxl" borderless width={1} placeholder="My amazing new article" />
         </Box>
 
-        <RichTextEditor value="" onChange={() => { /* noop */ }} />
+        <RichTextEditor
+          value=""
+          onChange={() => {
+            /* noop */
+          }}
+        />
       </Box>
     </Box>
   )
 }
+
+export default {
+  title: 'DesignSystem/Templates/Blog',
+} as Meta

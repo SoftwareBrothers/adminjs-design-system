@@ -1,25 +1,19 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { Box } from '../box/index.js'
-import Tab from './tab.js'
-import Tabs from './tabs.js'
+import { Box } from '../index.js'
+import { Tab, Tabs } from './index.js'
 
-export default {
-  title: 'DesignSystem/Atoms/Tabs',
-}
-
-const Template = () => {
+export const Default: StoryFn = () => {
   const [selectedTab, setSelectedTab] = useState('first')
 
   return (
     <Tabs currentTab={selectedTab} onChange={setSelectedTab}>
       <Tab id="first" label="First tab">
-        <Box width={700} height={500}>
-          First
-        </Box>
+        First
       </Tab>
       <Tab id="second" label="Second tab">
-        Second
+        <Box color="primary100">Second</Box>
       </Tab>
       <Tab id="third" label="Third tab">
         Third
@@ -28,4 +22,7 @@ const Template = () => {
   )
 }
 
-export const Default = Template.bind({})
+export default {
+  title: 'DesignSystem/Atoms/Tabs',
+  component: Tabs,
+} as Meta<typeof Tabs>
