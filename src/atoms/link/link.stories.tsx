@@ -1,50 +1,43 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Link } from './link.js'
+import { Link } from './index.js'
 
 enum LinkVariant {
   Primary = 'primary',
   Danger = 'danger',
   Success = 'success',
   Info = 'info',
-  Secondary = 'secondary'
+  Secondary = 'secondary',
 }
 
 enum LinkSize {
   Sm = 'sm',
-  Lg = 'lg'
+  Lg = 'lg',
 }
 
 const variants = Object.values(LinkVariant)
 const sizes = Object.values(LinkSize)
 
-export const Default: React.FC = (props) => (
-  <Link {...props} href="/">
-    just a link
-  </Link>
-)
+export const Default: StoryObj = {
+  render: (props) => (
+    <Link {...props} href="/">
+      just a link
+    </Link>
+  ),
+}
 
 export default {
   title: 'DesignSystem/Atoms/Link',
+  component: Link,
   args: {
     uppercase: false,
     variant: LinkVariant.Primary,
     size: LinkSize.Sm,
   },
   argTypes: {
-    uppercase: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
-    variant: {
-      defaultValue: LinkVariant.Primary,
-      options: variants,
-      control: { type: 'select' },
-    },
-    size: {
-      defaultValue: LinkSize.Sm,
-      options: sizes,
-      control: { type: 'select' },
-    },
+    uppercase: { control: { type: 'boolean' } },
+    variant: { options: variants, control: { type: 'select' } },
+    size: { options: sizes, control: { type: 'select' } },
   },
-}
+} as Meta<typeof Link>

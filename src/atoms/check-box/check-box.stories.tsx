@@ -1,22 +1,21 @@
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Box, CheckBox, Label } from '../../index.js'
+import { Box, Label } from '../index.js'
+import { CheckBox } from './index.js'
 
-export default {
-  title: 'DesignSystem/Atoms/CheckBox',
-  component: CheckBox,
+export const Default: StoryObj = {
+  render: (props) => (
+    <Box flexDirection="column" marginRight={15}>
+      <CheckBox id="default-checkbox" {...props} />
+      <Label inline htmlFor="default-checkbox" ml="default">
+        Check me!
+      </Label>
+    </Box>
+  ),
 }
 
-export const Default = (props) => (
-  <Box flexDirection="column" marginRight={15}>
-    <CheckBox id="default-checkbox" {...props} />
-    <Label inline htmlFor="default-checkbox" ml="default">
-      Check me!
-    </Label>
-  </Box>
-)
-
-export const AllStates: React.FC = () => (
+export const AllStates: StoryFn = () => (
   <Box flex>
     <Box flexDirection="column" marginRight={15}>
       <CheckBox id="checkbox1" checked />
@@ -38,3 +37,8 @@ export const AllStates: React.FC = () => (
     </Box>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/CheckBox',
+  component: CheckBox,
+} as Meta<typeof CheckBox>

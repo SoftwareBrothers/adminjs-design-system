@@ -1,86 +1,81 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import {
-  Badge,
-  Box,
-  Text,
-  DropDown,
-  DropDownTrigger,
-  DropDownMenu,
-  DropDownItem,
-  Button,
-  Icon,
-} from '../../index.js'
+import { Badge, Box, Button, Icon, Text } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
+import { DropDown, DropDownItem, DropDownMenu, DropDownProps, DropDownTrigger } from './index.js'
 
-export default {
-  title: 'DesignSystem/Molecules/DropDown',
-  argTypes: {
-    onClick: { action: 'clicked' },
-    stick: {
-      defaultValue: 'left',
-      options: ['left', 'right'],
-      control: { type: 'select' },
-    },
+export const Default: StoryObj<DropDownProps & { onClick: (e) => void }> = {
+  render: ({ onClick, ...props }) => {
+    const handleClick = (event) => {
+      event.preventDefault()
+      onClick(event)
+    }
+
+    return (
+      <StoryWrapper label="Button trigger with nested DropDownItems">
+        <Box height="200px">
+          <DropDown {...props}>
+            <DropDownTrigger>
+              <Button>Get your cursor here!</Button>
+            </DropDownTrigger>
+            <DropDownMenu>
+              <DropDownItem onClick={handleClick}>
+                <Icon icon="Video" />
+                Some menu item
+              </DropDownItem>
+              <DropDownItem onClick={handleClick}>
+                <Icon icon="Headphones" />
+                Other item
+                <DropDownMenu>
+                  <DropDownItem onClick={handleClick} color="danger">
+                    <Icon icon="Edit" />
+                    Some danger item
+                  </DropDownItem>
+                </DropDownMenu>
+              </DropDownItem>
+            </DropDownMenu>
+          </DropDown>
+        </Box>
+      </StoryWrapper>
+    )
   },
 }
 
-export const Default: React.FC<any> = ({ onClick, ...props }) => {
-  const handleClick = (event) => {
-    event.preventDefault()
-    onClick(event)
-  }
+export const Custom: StoryObj<{ onClick: (e) => void }> = {
+  render: ({ onClick }) => {
+    const handleClick = (event) => {
+      event.preventDefault()
+      onClick(event)
+    }
 
-  return (
-    <StoryWrapper label="Button trigger with nested DropDownItems">
-      <Box height="200px">
-        <DropDown {...props}>
+    return (
+      <StoryWrapper label="Badge trigger with TextContent">
+        <DropDown>
           <DropDownTrigger>
-            <Button>Get your cursor here!</Button>
+            <Badge>Get your cursor here!</Badge>
           </DropDownTrigger>
           <DropDownMenu>
-            <DropDownItem onClick={handleClick}>
-              <Icon icon="Video" />
-              Some menu item
-            </DropDownItem>
-            <DropDownItem onClick={handleClick}>
-              <Icon icon="Headphones" />
-              Other item
-              <DropDownMenu>
-                <DropDownItem onClick={handleClick} color="danger">
-                  <Icon icon="Edit" />
-                  Some danger item
-                </DropDownItem>
-              </DropDownMenu>
-            </DropDownItem>
+            <Box p="xxl" width={300}>
+              <Text>
+                <h3>I am inside dropdown Menu</h3>
+                <Button onClick={handleClick}>Click me if you dare</Button>
+              </Text>
+            </Box>
           </DropDownMenu>
         </DropDown>
-      </Box>
-    </StoryWrapper>
-  )
+      </StoryWrapper>
+    )
+  },
 }
 
-export const Custom: React.FC<any> = ({ onClick }) => {
-  const handleClick = (event) => {
-    event.preventDefault()
-    onClick(event)
-  }
-
-  return (
-    <StoryWrapper label="Badge trigger with TextContent">
-      <DropDown>
-        <DropDownTrigger>
-          <Badge>Get your cursor here!</Badge>
-        </DropDownTrigger>
-        <DropDownMenu>
-          <Box p="xxl" width={300}>
-            <Text>
-              <h3>I am inside dropdown Menu</h3>
-              <Button onClick={handleClick}>Click me if you dare</Button>
-            </Text>
-          </Box>
-        </DropDownMenu>
-      </DropDown>
-    </StoryWrapper>
-  )
-}
+export default {
+  title: 'DesignSystem/Molecules/DropDown',
+  args: {
+    stick: 'left',
+  },
+  argTypes: {
+    onClick: { action: 'clicked' },
+    stick: { options: ['left', 'right'], control: { type: 'select' } },
+  },
+} as Meta<typeof DropDown>

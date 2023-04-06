@@ -1,22 +1,27 @@
 import React from 'react'
 
-import { FormGroup, Text, Input, Label, Button, Box } from '../../index.js'
+import { StoryFn, StoryObj } from '@storybook/react'
 import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Label, Text } from '../index.js'
+import { Input } from './index.js'
 
-const inputTypes = ['email', 'file', 'hidden', 'month', 'number', 'tel', 'text', 'time', 'url', 'week']
+const inputTypes = [
+  'email',
+  'file',
+  'hidden',
+  'month',
+  'number',
+  'tel',
+  'text',
+  'time',
+  'url',
+  'week',
+]
+const inputVariants = ['sm', 'lg', 'xl', 'default']
 
-export const Default: React.FC = (props) => (
-  <Box width={1}>
-    <StoryWrapper label="Knobs example">
-      <FormGroup>
-        <Input {...props} />
-        <Button type="submit">Submit</Button>
-      </FormGroup>
-    </StoryWrapper>
-  </Box>
-)
+export const Default: StoryObj = {}
 
-export const Examples: React.FC = () => (
+export const Examples: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Regular input">
       <Input width="300px" id="input1" placeholder="Simple input field..." />
@@ -53,33 +58,18 @@ export const Examples: React.FC = () => (
 
 export default {
   title: 'DesignSystem/Atoms/Input',
+  component: Input,
+  args: {
+    type: 'text',
+    disabled: false,
+    borderless: false,
+    variant: 'default',
+  },
   argTypes: {
-    borderless: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
-    disabled: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
-    variant: {
-      defaultValue: 'default',
-      options: ['sm', 'lg', 'xl', 'default'],
-      control: { type: 'select' },
-    },
-    width: {
-      defaultValue: 0.5,
-      control: {
-        type: 'number',
-        min: 0,
-        max: 1,
-        step: 0.1,
-      },
-    },
-    type: {
-      defaultValue: 'text',
-      options: inputTypes,
-      control: { type: 'select' },
-    },
+    borderless: { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
+    variant: { options: inputVariants, control: { type: 'select' } },
+    width: { control: { type: 'number', min: 0, max: 1, step: 0.1 } },
+    type: { options: inputTypes, control: { type: 'select' } },
   },
 }

@@ -1,7 +1,9 @@
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Badge, Box, Header, Text as TextComponent } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Header, Text as TextComponent } from '../index.js'
+import { Badge } from './index.js'
 
 enum BadgeVariant {
   Default = 'default',
@@ -21,14 +23,16 @@ enum BadgeSize {
 const variants = Object.values(BadgeVariant)
 const sizes = Object.values(BadgeSize)
 
-export const Default = (props) => (
-  <Badge {...props}>Badge example</Badge>
-)
+export const Default: StoryObj<typeof Badge> = {
+  render: (args) => <Badge {...args}>Badge example</Badge>,
+}
 
-export const Examples: React.FC = () => (
+export const Examples: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Badge regular">
-      <Badge variant="primary" mr="default">primary</Badge>
+      <Badge variant="primary" mr="default">
+        primary
+      </Badge>
       {variants.map((variant) => (
         <Badge variant={variant} key={variant} mr="default">
           {variant}
@@ -71,30 +75,14 @@ export const Examples: React.FC = () => (
 export default {
   title: 'DesignSystem/Atoms/Badge',
   component: Badge,
-  parameters: {
-    controls: {
-      include: ['variant', 'size', 'outline'],
-    },
-  },
   args: {
     variant: BadgeVariant.Primary,
     size: BadgeSize.Default,
     outline: false,
   },
   argTypes: {
-    variant: {
-      defaultValue: BadgeVariant.Primary,
-      options: variants,
-      control: { type: 'select' },
-    },
-    size: {
-      defaultValue: BadgeSize.Default,
-      options: sizes,
-      control: { type: 'select' },
-    },
-    outline: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
+    variant: { options: variants, control: { type: 'select' } },
+    size: { options: sizes, control: { type: 'select' } },
+    outline: { control: { type: 'boolean' } },
   },
-}
+} as Meta<typeof Badge>
