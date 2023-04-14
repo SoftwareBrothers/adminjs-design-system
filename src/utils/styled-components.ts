@@ -7,3 +7,4 @@ const defStyled = _styled.default ?? _styled
 const styled = defStyled?.default ?? defStyled
 
 export { styled, ThemeProvider, css, createGlobalStyle, DefaultTheme, keyframes, useTheme }
+export default styled
