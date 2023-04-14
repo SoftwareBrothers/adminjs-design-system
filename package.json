@@ -1,6 +1,6 @@
 {
   "name": "@adminjs/design-system",
-  "version": "4.0.0-beta-v4.10",
+  "version": "4.0.0-beta-v4.11",
   "description": "DesignSystem which AdminJS is built with",
   "type": "module",
   "exports": {
