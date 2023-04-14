@@ -1,3 +1,4 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useEffect, useRef, useState } from 'react'
 
 import { Box, Text } from '../../index.js'
@@ -57,7 +58,7 @@ const c = sum(a, b);</pre>
 <p>text goes on...</p>
 `
 
-export const Default: React.FC = () => {
+export const Default: StoryFn = () => {
   const [value, setValue] = useState(html)
   const contentRef = useRef<any>()
 
@@ -81,4 +82,5 @@ export const Default: React.FC = () => {
 
 export default {
   title: 'DesignSystem/Molecules/RichTextEditor',
-}
+  component: RichTextEditor,
+} as Meta<typeof RichTextEditor>

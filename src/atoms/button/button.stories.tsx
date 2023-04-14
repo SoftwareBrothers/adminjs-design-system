@@ -1,18 +1,19 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Box, Button, Icon, Label } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Icon, Label } from '../index.js'
+import { Button, ButtonProps } from './index.js'
 
-const ButtonVariant = ['text', 'outlined', 'contained', 'light'] as const
-const ButtonSize = ['default', 'sm', 'lg', 'icon'] as const
-const ButtonColor = ['primary', 'secondary', 'danger', 'success', 'info'] as const
+const ButtonVariant: ButtonProps['variant'][] = ['text', 'outlined', 'contained', 'light']
+const ButtonSize: ButtonProps['size'][] = ['default', 'sm', 'lg', 'icon']
+const ButtonColor: ButtonProps['color'][] = ['primary', 'secondary', 'danger', 'success', 'info']
 
-export const Default: ComponentStory<typeof Button> = (props) => (
-  <Button {...props}>Example button</Button>
-)
+export const Default: StoryObj = {
+  render: (args) => <Button {...args}>Example button</Button>,
+}
 
-export const Examples: React.FC = () => (
+export const Examples: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Variants" flex>
       {ButtonVariant.map((variant) => (
@@ -90,6 +91,9 @@ export default {
   title: 'DesignSystem/Atoms/Button',
   component: Button,
   args: {
+    variant: ButtonVariant[0],
+    size: ButtonSize[0],
+    color: ButtonColor[0],
     disabled: false,
     rounded: false,
   },
@@ -99,20 +103,9 @@ export default {
     },
   },
   argTypes: {
-    variant: {
-      options: ButtonVariant,
-      defaultValue: ButtonVariant[0],
-      control: { type: 'select' },
-    },
-    size: {
-      options: ButtonSize,
-      defaultValue: ButtonSize[0],
-      control: { type: 'select' },
-    },
-    color: {
-      options: ButtonColor,
-      defaultValue: ButtonColor[0],
-      control: { type: 'select' },
-    },
+    onClick: { action: 'clicked' },
+    variant: { options: ButtonVariant, control: { type: 'select' } },
+    size: { options: ButtonSize, control: { type: 'select' } },
+    color: { options: ButtonColor, control: { type: 'select' } },
   },
-} as ComponentMeta<typeof Button>
+}

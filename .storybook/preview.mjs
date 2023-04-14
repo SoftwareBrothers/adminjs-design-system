@@ -2,9 +2,10 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import ThemeDecorator from './theme-decorator.jsx'
 
+/** @type { import('@storybook/react').Preview } */
 export const parameters = {
-  viewMode: 'docs',
   actions: { argTypesRegex: '^on[A-Z].*' },
+  docs: { source: { code: null } },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -37,7 +38,7 @@ export const globalTypes = {
     toolbar: {
       icon: 'paintbrush',
       dynamicTitle: true,
-      items: ['default', 'red', 'green', 'orange']
-    }
-  }
-};
+      items: ['default', 'red', 'green', 'orange'],
+    },
+  },
+}

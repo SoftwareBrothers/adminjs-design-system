@@ -20,7 +20,7 @@ import { Avatar } from '../../atoms/avatar/index.js'
  * @section design-system
  */
 export const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
-  const { name, title, avatarUrl, dropActions, lineActions } = props
+  const { name = '', title = '', avatarUrl, dropActions, lineActions } = props
 
   return (
     <StyledCurrentUserNav>

@@ -1,6 +1,12 @@
 import React from 'react'
 import * as FeatherIcons from 'react-feather'
-import { SpaceProps, space, color as styledColor } from 'styled-system'
+import {
+  SpaceProps,
+  space,
+  color as styledColor,
+  BorderRadiusProps,
+  borderRadius,
+} from 'styled-system'
 import { styled, css } from '@styled-components'
 
 import { NewColorProps as ColorProps } from '../../utils/color-props.js'
@@ -15,6 +21,7 @@ import { cssClass } from '../../utils/css-class.js'
  * @property {string} [...] Other props from {@link ColorProps} and {@link SpaceProps}
  */
 export type IconProps = SpaceProps &
+  BorderRadiusProps &
   ColorProps & {
     /**
      * CamelCased name of an icon from https://feathericons.com/
@@ -72,6 +79,7 @@ const Wrapper = styled.span<IconProps>`
   ${({ rounded }) => (rounded ? 'border-radius: 9999px;' : '')};
   ${space};
   ${styledColor};
+  ${borderRadius}
 `
 
 /**

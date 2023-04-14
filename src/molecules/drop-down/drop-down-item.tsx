@@ -5,7 +5,7 @@ import { space, variant } from 'styled-system'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import type { VariantType } from '../../theme.js'
-import { cssClass, themeGet } from '../../utils/index.js'
+import { cssClass } from '../../utils/index.js'
 import DropDownMenu from './drop-down-menu.js'
 
 const variantsShared = (theme, color) => ({

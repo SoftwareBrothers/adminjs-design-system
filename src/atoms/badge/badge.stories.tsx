@@ -1,10 +1,11 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Badge, Box, Header, Text as TextComponent } from '../../index.js'
 import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Header, Text as TextComponent } from '../index.js'
+import { Badge } from './index.js'
 
-export enum BadgeVariant {
+enum BadgeVariant {
   Default = 'default',
   Primary = 'primary',
   Danger = 'danger',
@@ -13,34 +14,40 @@ export enum BadgeVariant {
   Secondary = 'secondary',
 }
 
-export enum BadgeSize {
+enum BadgeSize {
   Small = 'sm',
   Default = 'default',
   Large = 'lg',
 }
 
-export const Default: ComponentStory<typeof Badge> = (props) => (
-  <Badge {...props}>Badge example</Badge>
-)
+const variants = Object.values(BadgeVariant)
+const sizes = Object.values(BadgeSize)
 
-export const Examples: React.FC = () => (
+export const Default: StoryObj<typeof Badge> = {
+  render: (args) => <Badge {...args}>Badge example</Badge>,
+}
+
+export const Examples: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Badge regular">
-      {Object.values(BadgeVariant).map((variant) => (
+      <Badge variant="primary" mr="default">
+        primary
+      </Badge>
+      {variants.map((variant) => (
         <Badge variant={variant} key={variant} mr="default">
           {variant}
         </Badge>
       ))}
     </StoryWrapper>
     <StoryWrapper label="Badge outlined">
-      {Object.values(BadgeVariant).map((variant) => (
+      {variants.map((variant) => (
         <Badge variant={variant} key={variant} mr="default" outline>
           {variant}
         </Badge>
       ))}
     </StoryWrapper>
     <StoryWrapper label="Badge sizes">
-      {Object.values(BadgeSize).map((size) => (
+      {sizes.map((size) => (
         <Badge variant="primary" size={size} key={size} mr="default">
           {size}
         </Badge>
@@ -68,25 +75,14 @@ export const Examples: React.FC = () => (
 export default {
   title: 'DesignSystem/Atoms/Badge',
   component: Badge,
-  parameters: {
-    controls: {
-      include: ['variant', 'size', 'outline'],
-    },
+  args: {
+    variant: BadgeVariant.Primary,
+    size: BadgeSize.Default,
+    outline: false,
   },
   argTypes: {
-    variant: {
-      defaultValue: BadgeVariant.Primary,
-      options: Object.values(BadgeVariant),
-      control: { type: 'select' },
-    },
-    size: {
-      defaultValue: BadgeSize.Default,
-      options: Object.values(BadgeSize),
-      control: { type: 'select' },
-    },
-    outline: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
+    variant: { options: variants, control: { type: 'select' } },
+    size: { options: sizes, control: { type: 'select' } },
+    outline: { control: { type: 'boolean' } },
   },
-} as ComponentMeta<typeof Badge>
+} as Meta<typeof Badge>

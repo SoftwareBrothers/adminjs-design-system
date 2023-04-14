@@ -67,7 +67,7 @@ const variants = variant<BoxProps>({
       py: 'xl',
       px: ['0', 'xl'],
       className: cssClass(['Box', 'Box_Container']),
-      borderRadius: 'md',
+      borderRadius: 8,
     },
     white: {
       px: ['default', 'xxl'],
