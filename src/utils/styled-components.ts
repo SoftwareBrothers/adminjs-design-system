@@ -2,7 +2,6 @@ import _styled from 'styled-components'
 
 export * from 'styled-components'
 
-const styled = _styled.default ?? _styled
+export const styled = typeof _styled === 'function' ? _styled : _styled.default
 
-export { styled }
 export default styled
