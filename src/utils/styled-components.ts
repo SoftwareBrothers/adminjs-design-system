@@ -2,6 +2,7 @@ import _styled from 'styled-components'
 
 export * from 'styled-components'
 
-export const styled = typeof _styled === 'function' ? _styled : _styled.default
+const styled = typeof _styled === 'function' ? _styled : _styled.default
 
-export default styled
+// eslint-disable-next-line no-restricted-exports
+export { styled as default, styled }
