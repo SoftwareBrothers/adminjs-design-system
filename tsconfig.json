@@ -18,8 +18,9 @@
     "typeRoots": ["./vendor-types"],
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "@styled-components": ["src/utils/styled-components.js"]
+      "@styled-components": ["src/utils/styled.js"]
     }
   },
   "include": [
