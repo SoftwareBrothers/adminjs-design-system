@@ -10,8 +10,8 @@
       "require": "./build/index.js"
     },
     "./styled-components": {
-      "import": "./build/utils/styled-components.js",
-      "types": "./types/utils/styled-components.d.ts"
+      "import": "./build/utils/styled.js",
+      "types": "./types/utils/styled.d.ts"
     }
   },
   "repository": "git@github.com:SoftwareBrothers/adminjs-design-system.git",
