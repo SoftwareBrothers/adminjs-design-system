@@ -1,36 +1,45 @@
-import React from 'react'
-import { ThemeProps, DefaultTheme, withTheme } from 'styled-components'
-import * as Illustrations from '../illustrations/index'
+import React, { PropsWithChildren } from 'react'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/index.js'
+import * as Illustrations from '../illustrations/index.js'
+
+export type IllustrationVariant = keyof typeof Illustrations
 
 /**
  * @memberof Illustration
  * @alias IllustrationProps
  */
 export type IllustrationProps = {
-  /**
-   * Available illustration variant
-   */
-  variant: 'Moon' | 'Rocket' | 'Astronaut'
-    | 'DocumentCheck' | 'DocumentSearch' | 'FileSearch'
-    | 'FlagInCog' | 'Folders' | 'Launch' | 'Planet'
-    | 'AdminJSLogo' | 'GithubLogo'
-    | 'SlackLogo' | string;
+  /** Available illustration variant */
+  variant: IllustrationVariant
   /** Optional max width restrictions */
-  width?: number;
+  width?: number
   /** Optional max height restrictions */
-  height?: number;
+  height?: number
 }
 
-type RawIllustrationType = IllustrationProps & ThemeProps<DefaultTheme> & {
-  // this fixes unknown error with some TSC version (monkey patch)
-  children?: React.ReactNode
-}
+const Wrapper = styled.div.attrs((props) => ({
+  className: cssClass('Illustration', props.className),
+}))`
+  [fill='#3040D6'] {
+    fill: ${({ theme }) => theme.colors.primary100};
+  }
+
+  [stroke='#3B3552'] {
+    stroke: ${({ theme }) => theme.colors.accent};
+  }
+`
+
+type RawIllustrationType = IllustrationProps & PropsWithChildren
 
 const RawIllustration: React.FC<RawIllustrationType> = (props) => {
   const { variant, ...other } = props
   const IllustrationComponent = Illustrations[variant]
   return (
-    <IllustrationComponent {...other} />
+    <Wrapper>
+      <IllustrationComponent {...other} />
+    </Wrapper>
   )
 }
 
@@ -41,7 +50,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  *
  * Awesome database with all the illustrations provided with AdminJS.
  *
- * The best thing about them is that they follow your {@link Theme} color palette.
  *
  * ### Usage
  *
@@ -69,7 +77,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  * )
  * @section design-system
  */
-const Illustration = withTheme(RawIllustration)
+export const Illustration = RawIllustration
 
-export { Illustration }
 export default Illustration

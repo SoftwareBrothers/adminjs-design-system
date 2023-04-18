@@ -1,2 +1,2 @@
-export * from './drop-zone'
-export * from './drop-zone-item'
+export * from './drop-zone.js'
+export * from './drop-zone-item.js'

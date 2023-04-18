@@ -1,18 +1,26 @@
-import React, { useState, useCallback, useEffect } from 'react'
-import styled from 'styled-components'
+import React, { useCallback, useEffect, useState } from 'react'
+import template from 'lodash/template.js'
+import { rgba } from 'polished'
+import { styled, css } from '@styled-components'
 
-import { Label } from '../../atoms/label'
-import { Box } from '../../atoms/box'
-import { Text } from '../../atoms/text'
-import { MessageBox } from '../message-box'
-import { DropZoneItem } from './drop-zone-item'
-import { humanFileSize, DisplaySizeUnit } from '../../utils/human-file-size'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Label } from '../../atoms/label/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { DisplaySizeUnit, humanFileSize } from '../../utils/human-file-size.js'
+import { MessageBox } from '../message-box/index.js'
+import { DropZoneItem } from './drop-zone-item.js'
+import Image from './drop-zone-image.js'
 
-const validateContentType = (
-  mimeTypes: undefined | Array<string>,
-  mimeType: string,
-): boolean => {
-  if (!mimeTypes || !mimeTypes.length) { return true }
+/**
+ * @memberof DropZone
+ * @alias FileSizeUnit
+ */
+type FileSizeUnit = DisplaySizeUnit
+
+const validateContentType = (mimeTypes: undefined | Array<string>, mimeType: string): boolean => {
+  if (!mimeTypes || !mimeTypes.length) {
+    return true
+  }
   return mimeTypes.includes(mimeType)
 }
 
@@ -20,22 +28,38 @@ const validateSize = (
   maxSize: string | number | undefined,
   size: string | number | null,
 ): boolean => {
-  if (!maxSize) { return true }
-  if (!size) { return true }
+  if (!maxSize) {
+    return true
+  }
+  if (!size) {
+    return true
+  }
   return +maxSize >= +size
 }
 
 const inUnit = (size: string | number, unit?: FileSizeUnit): string => {
-  if (!size) { return '' }
+  if (!size) {
+    return ''
+  }
 
   return humanFileSize(size, unit)
 }
 
-/**
- * @memberof DropZone
- * @alias FileSizeUnit
- */
-type FileSizeUnit = DisplaySizeUnit
+export const DROPZONE_DEFAULT_TRANSLATIONS = {
+  placeholder: 'Drop your file here, or click to browse',
+  acceptedSize: 'Max size: {{maxSize}}',
+  acceptedType: 'Supports: {{mimeTypes}}',
+  unsupportedSize: 'File {{fileName}} is too big',
+  unsupportedType: 'File {{fileName}} has unsupported type: {{fileType}}',
+}
+
+const translate = (str: string, params?: Record<string, string | number>) => {
+  try {
+    return template(str, { interpolate: /\{\{(\w+)\}\}/g })(params)
+  } catch (e) {
+    return str
+  }
+}
 
 /**
  * @returns {void}
@@ -52,15 +76,15 @@ export type DropZoneProps = {
   /**
    * if drop zone should handle multiple uploads
    */
-  multiple?: boolean;
+  multiple?: boolean
   /**
    * Initial files collection (in case you want to hold files state)
    */
-  files?: Array<File>;
+  files?: Array<File>
   /**
    * Callback performed when the file is dropped/selected
    */
-  onChange?: OnDropZoneChange;
+  onChange?: OnDropZoneChange
   /**
    * Validate options
    */
@@ -68,16 +92,28 @@ export type DropZoneProps = {
     /**
      * Maximum size of the uploaded file in bytes. If not defined - all files are allowed.
      */
-    maxSize?: number;
+    maxSize?: number
     /**
      * Available mime types. When not defined - all mime types are allowed.
      */
-    mimeTypes?: Array<string>;
-  };
+    mimeTypes?: Array<string>
+  }
   /**
    * Upload limit display e.g.: 'KB' (upper case)
    */
-  uploadLimitIn?: FileSizeUnit;
+  uploadLimitIn?: FileSizeUnit
+  /**
+   * Custom drop zone translations
+   * @default
+   * {
+   *   placeholder: 'Drop your image here, or click to browse',
+   *   acceptedSize: 'Max size: {{maxSize}}',
+   *   acceptedType: 'Supports: {{mimeTypes}}',
+   *   unsupportedSize: 'File {{fileName}} is too big',
+   *   unsupportedType: 'File {{fileName}} has unsupported type: {{fileType}}',
+   * }
+   */
+  translations?: Partial<typeof DROPZONE_DEFAULT_TRANSLATIONS>
 }
 
 const UploadInput = styled.input`
@@ -91,23 +127,28 @@ const UploadInput = styled.input`
   width: 100%;
 `
 
-const StyledDropZone = styled(Box)`
-  border: 1px dashed ${({ theme }): string => theme.colors.grey80};
+const StyledDropZone: any = styled(Box)<{ isDragging: boolean } & BoxProps>`
+  border: 1px dashed ${({ theme }) => theme.colors.inputBorder};
+  border-radius: ${({ theme }) => theme.space.sm};
   position: relative;
   text-align: center;
 
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.primary100};
+  }
+
+  ${({ isDragging }) => isDragging
+    && css`
+      background-color: ${({ theme }) => rgba(theme.colors.primary100, 0.05)};
+    `}
+
   & ${Label} {
-    color: ${({ theme }): string => theme.colors.grey60};
-    font-size: ${({ theme }): string => theme.fontSizes.xs};
+    color: ${({ theme }) => theme.colors.grey60};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     padding-right: 4px;
     letter-spacing: 1px;
   }
 `
-
-type ErrorMessage = {
-  message: string;
-  title: string;
-}
 
 /**
  * @classdesc
@@ -188,11 +229,19 @@ type ErrorMessage = {
  * @section design-system
  */
 const DropZone: React.FC<DropZoneProps> = (props) => {
-  const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props
-
-  const [, setIsDragging] = useState(false)
-  const [error, setError] = useState<ErrorMessage | null>(null)
+  const {
+    validate,
+    onChange,
+    multiple,
+    files: filesFromProps,
+    uploadLimitIn,
+    translations,
+    ...other
+  } = props
+  const [isDragging, setIsDragging] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [filesToUpload, setFilesToUpload] = useState<Array<File>>(filesFromProps ?? [])
+  const t = { ...DROPZONE_DEFAULT_TRANSLATIONS, ...translations }
 
   useEffect(() => {
     if (filesFromProps) {
@@ -204,50 +253,60 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
   const onDragLeave = (): void => setIsDragging(false)
   const onDragOver = (): void => setIsDragging(true)
 
-  const removeItem = useCallback((index: number): void => {
-    const newItems = [...filesToUpload]
-    newItems.splice(index, 1)
-    if (onChange) {
-      onChange(newItems)
-    }
-    setFilesToUpload(newItems)
-  }, [filesToUpload, setFilesToUpload, onChange])
-
-  const onDrop = useCallback((event: React.DragEvent | React.SyntheticEvent): void => {
-    event.preventDefault()
-    setIsDragging(false)
-
-    const { files } = ((event as React.DragEvent).dataTransfer || event.target)
-    const validatedFiles: Array<File> = []
-
-    for (let i = 0; i < files.length; i += 1) {
-      const file = files.item(i) as File
-      if (!file) { return }
-      if (validate && !validateSize(validate.maxSize, file && file.size)) {
-        setError({ message: `File: ${file.name} size is too big`, title: 'Wrong Size' })
-        return
+  const removeItem = useCallback(
+    (index: number): void => {
+      const newItems = [...filesToUpload]
+      newItems.splice(index, 1)
+      if (onChange) {
+        onChange(newItems)
       }
-      if (validate && !validateContentType(validate.mimeTypes, file.type)) {
-        setError({ message: `File: ${file.name} has unsupported type: ${file.type}`, title: 'Wrong Type' })
-        return
+      setFilesToUpload(newItems)
+    },
+    [filesToUpload, setFilesToUpload, onChange],
+  )
+
+  const onDrop = useCallback(
+    (event: React.DragEvent | React.SyntheticEvent): void => {
+      event.preventDefault()
+      setIsDragging(false)
+
+      const { files } = (event as React.DragEvent).dataTransfer || event.target
+      const validatedFiles: Array<File> = []
+
+      for (let i = 0; i < files.length; i += 1) {
+        const file = files.item(i) as File
+        if (!file) {
+          return
+        }
+        if (validate && !validateContentType(validate.mimeTypes, file.type)) {
+          setError(
+            translate(t.unsupportedType, {
+              fileName: file.name,
+              fileType: file.type,
+            }),
+          )
+          return
+        }
+        if (validate && !validateSize(validate.maxSize, file && file.size)) {
+          setError(translate(t.unsupportedSize, { fileName: file.name }))
+          return
+        }
+        validatedFiles.push(file)
+        setError(null)
       }
-      validatedFiles.push(file)
-      setError(null)
-    }
-    let newFiles
-    if (!multiple && validatedFiles.length) {
-      newFiles = [validatedFiles[0]]
-    } else {
-      newFiles = [
-        ...filesToUpload,
-        ...validatedFiles,
-      ]
-    }
-    if (onChange) {
-      onChange(newFiles)
-    }
-    setFilesToUpload(newFiles)
-  }, [onChange, setFilesToUpload, setIsDragging])
+      let newFiles
+      if (!multiple && validatedFiles.length) {
+        newFiles = [validatedFiles[0]]
+      } else {
+        newFiles = [...filesToUpload, ...validatedFiles]
+      }
+      if (onChange) {
+        onChange(newFiles)
+      }
+      setFilesToUpload(newFiles)
+    },
+    [onChange, setFilesToUpload, setIsDragging],
+  )
 
   const displayUploadLimit = useCallback(() => {
     if (validate && validate.maxSize) {
@@ -263,41 +322,44 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
         onDrop={onDrop}
+        isDragging={isDragging}
         {...other}
         p="xl"
       >
         <UploadInput type="file" onChange={(event): void => onDrop(event)} multiple={multiple} />
         <Box>
-          <Text fontSize="sm">
-            Pick or Drop File here to upload it.
-          </Text>
+          <Box color="primary100">
+            <Image />
+          </Box>
+          <Text fontSize="sm">{t.placeholder}</Text>
           <Box>
             {validate && validate.maxSize ? (
               <Text variant="xs" color="grey60" lineHeight="default" mt="sm">
-                <Label inline uppercase>Max size:</Label>
-                {displayUploadLimit()}
+                {translate(t.acceptedSize, { maxSize: displayUploadLimit() })}
               </Text>
-            ) : ''}
+            ) : (
+              ''
+            )}
             {validate && validate.mimeTypes && validate.mimeTypes.length ? (
               <Text variant="xs" color="grey60" lineHeight="default" mt="sm">
-                {validate.mimeTypes.join(', ')}
+                {translate(t.acceptedType, { mimeTypes: validate.mimeTypes.join(', ') })}
               </Text>
-            ) : ''}
+            ) : (
+              ''
+            )}
           </Box>
         </Box>
       </StyledDropZone>
-      {error ? (
+      {error && (
         <MessageBox
           mt="default"
           variant="danger"
           size="sm"
-          icon="Warning"
-          message={error.title}
+          icon="AlertCircle"
+          message={error}
           onCloseClick={(): void => setError(null)}
-        >
-          {error.message}
-        </MessageBox>
-      ) : ''}
+        />
+      )}
       {filesToUpload.map((file, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <DropZoneItem file={file} key={index} onRemove={(): void => removeItem(index)} />

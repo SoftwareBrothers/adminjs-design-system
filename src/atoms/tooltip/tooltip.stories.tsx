@@ -1,6 +1,9 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Tooltip, TooltipContent, Button, H4, Text, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Button, H4, Text } from '../index.js'
+import { Tooltip, TooltipContent } from './index.js'
 
 const Direction = {
   right: 'right',
@@ -11,41 +14,38 @@ const Direction = {
 
 const Size = ['default', 'lg'] as const
 
-export const Default: React.FC = (props) => (
-  <Box width={1 / 3}>
-    <StoryWrapper label="Regular example">
-      <Tooltip {...props as any}>
-        <Button>Standard text</Button>
-      </Tooltip>
-    </StoryWrapper>
-    <StoryWrapper label="Custom component as tooltip">
-      <Tooltip {...props as any}>
-        <TooltipContent>
-          <H4>Header</H4>
-          <Text>Some text inside the tooltip?</Text>
-        </TooltipContent>
-        <Button>Header with sth</Button>
-      </Tooltip>
-    </StoryWrapper>
-  </Box>
-)
+export const Default: StoryObj = {
+  render: (args) => (
+    <Box>
+      <StoryWrapper label="Regular example">
+        <Tooltip {...(args as any)}>
+          <Button>Standard text</Button>
+        </Tooltip>
+      </StoryWrapper>
+      <StoryWrapper label="Custom component as tooltip">
+        <Tooltip {...(args as any)}>
+          <TooltipContent>
+            <H4>Header</H4>
+            <Text>Some text inside the tooltip?</Text>
+          </TooltipContent>
+          <Button>Header with sth</Button>
+        </Tooltip>
+      </StoryWrapper>
+    </Box>
+  ),
+}
 
 export default {
   title: 'DesignSystem/Atoms/Tooltip',
-  argTypes: {
-    direction: {
-      defaultValue: Direction.top,
-      options: Object.values(Direction),
-      control: { type: 'select' },
-    },
-    size: {
-      defaultValue: Size[0],
-      options: Size,
-      control: { type: 'select' },
-    },
-    title: {
-      defaultValue: 'Example info',
-      control: { type: 'text' },
-    },
+  component: Tooltip,
+  args: {
+    direction: Direction.top,
+    size: Size[0],
+    title: 'Example info',
   },
-}
+  argTypes: {
+    direction: { options: Object.values(Direction), control: { type: 'select' } },
+    size: { options: Size, control: { type: 'select' } },
+    title: { control: { type: 'text' } },
+  },
+} as Meta<typeof Tooltip>

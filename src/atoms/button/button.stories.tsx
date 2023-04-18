@@ -1,120 +1,88 @@
+import { StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Button, Box, Icon as IconComponent, Label, Icon } from '../../../src'
-import StoryWrapper from '../../utils/story-wrapper'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Icon, Label } from '../index.js'
+import { Button, ButtonProps } from './index.js'
 
-const variants = ['primary', 'light', 'danger', 'success', 'info', 'secondary', 'text'] as const
-const ButtonVariant = ['primary', 'danger', 'text', 'success', 'info', 'secondary'] as const
-const ButtonSize = ['sm', 'lg', 'icon', 'default'] as const
+const ButtonVariant: ButtonProps['variant'][] = ['text', 'outlined', 'contained', 'light']
+const ButtonSize: ButtonProps['size'][] = ['default', 'sm', 'lg', 'icon']
+const ButtonColor: ButtonProps['color'][] = ['primary', 'secondary', 'danger', 'success', 'info']
 
-export const Default: React.FC = (props) => (
+export const Default: StoryObj = {
+  render: (args) => <Button {...args}>Example button</Button>,
+}
+
+export const Examples: StoryFn = () => (
   <Box width={1}>
-    <StoryWrapper label="Knobs example">
-      <Button {...props}>
-        Example buttton
-      </Button>
-    </StoryWrapper>
-  </Box>
-)
-
-export const Examples: React.FC = () => (
-  <Box width={1}>
-    <StoryWrapper label="Different versions">
-      <Box mb="xl">
-        <Label>Small</Label>
-        <Button size="sm">Small [sm]</Button>
-        <Button size="sm" ml="md">
-          <Icon icon="Add" />
-          Add brand
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Default</Label>
-        <Button size="md">Default</Button>
-        <Button size="md" ml="md">
-          <Icon icon="Add" />
-          Add brand
-        </Button>
-        <Button size="md" ml="md" variant="primary">
-          <Icon icon="Car" />
-          is driving
-        </Button>
-        <Button size="md" ml="md" variant="danger">
-          is driving crazy
-          <Icon icon="ArrowRight" />
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button size="lg">Large [lg]</Button>
-        <Button size="lg" ml="md">
-          <Icon icon="Add" />
-          Add brand
-        </Button>
-        <Button size="lg" ml="md" variant="primary">
-          <Icon icon="Car" />
-          is driving
-        </Button>
-        <Button size="lg" ml="md" variant="danger">
-          is driving crazy
-          <Icon icon="ArrowRight" />
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Icon</Label>
-        <Button size="icon"><IconComponent icon="Add" /></Button>
-        <Button ml="md">Regular inside</Button>
-        <Button size="icon" ml="md" rounded><IconComponent icon="Add" /></Button>
-        <Button size="icon" ml="md" variant="text"><IconComponent icon="Add" /></Button>
-      </Box>
-    </StoryWrapper>
-
-    <StoryWrapper label="Variants">
-      {variants.map((variant) => (
-        <Box mb="xl" key={variant}>
+    <StoryWrapper label="Variants" flex>
+      {ButtonVariant.map((variant) => (
+        <Box key={variant}>
           <Label>{variant}</Label>
           <Button variant={variant}>{variant}</Button>
         </Box>
       ))}
     </StoryWrapper>
 
+    <StoryWrapper label="Sizes">
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant}>
+                {variant} {size}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
+    <StoryWrapper label="Colors">
+      {ButtonColor.map((color) => (
+        <>
+          <Label>{color}</Label>
+          <Box key={color} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} color={color} variant={variant}>
+                {variant} {color}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
+    <StoryWrapper label="Rounded">
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant} rounded>
+                {variant} rounded
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
+    </StoryWrapper>
+
     <StoryWrapper label="With icons">
-      <Box mb="xl">
-        <Label>Small with icon</Label>
-        <Button size="sm">
-          <Icon icon="Add" />
-          Small [sm]
-        </Button>
-        <Button size="sm" variant="primary" ml="default">
-          <Icon icon="Car" />
-          With other icon
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Default</Label>
-        <Button size="default">
-          <Icon icon="Add" />
-          Default
-        </Button>
-        <Button size="default" ml="md" variant="light">
-          <Icon icon="Add" />
-          Light
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button size="lg">
-          <Icon icon="Add" />
-          Large [lg]
-        </Button>
-      </Box>
-      <Box mb="xl">
-        <Label>Large</Label>
-        <Button variant="text">
-          <Icon icon="Add" />
-          Text with icon
-        </Button>
-      </Box>
+      {ButtonSize.map((size) => (
+        <>
+          <Label>{size}</Label>
+          <Box key={size} flex style={{ gap: 16 }}>
+            {ButtonVariant.map((variant) => (
+              <Button key={variant} size={size} variant={variant}>
+                <Icon icon="Plus" />
+                {size !== 'icon' && [variant, size].join(' ')}
+              </Button>
+            ))}
+          </Box>
+        </>
+      ))}
     </StoryWrapper>
   </Box>
 )
@@ -122,20 +90,22 @@ export const Examples: React.FC = () => (
 export default {
   title: 'DesignSystem/Atoms/Button',
   component: Button,
+  args: {
+    variant: ButtonVariant[0],
+    size: ButtonSize[0],
+    color: ButtonColor[0],
+    disabled: false,
+    rounded: false,
+  },
+  parameters: {
+    controls: {
+      include: ['variant', 'disabled', 'rounded', 'size', 'color'],
+    },
+  },
   argTypes: {
-    variant: {
-      options: ButtonVariant,
-      control: { type: 'select' },
-    },
-    size: {
-      options: ButtonSize,
-      control: { type: 'select' },
-    },
-    rounded: {
-      control: { type: 'boolean' },
-    },
-    disabled: {
-      control: { type: 'boolean' },
-    },
+    onClick: { action: 'clicked' },
+    variant: { options: ButtonVariant, control: { type: 'select' } },
+    size: { options: ButtonSize, control: { type: 'select' } },
+    color: { options: ButtonColor, control: { type: 'select' } },
   },
 }

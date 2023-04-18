@@ -1,16 +1,13 @@
-import styled from 'styled-components'
 import { TypographyProps, SpaceProps } from 'styled-system'
+import { styled } from '@styled-components'
 
-import themeGet from '../../utils/theme-get'
-import CaptionShared from './caption-shared'
+import themeGet from '../../utils/theme-get.js'
+import CaptionShared from './caption-shared.js'
 
-const SmallText = styled('div')<TypographyProps & SpaceProps>`
+export const SmallText = styled('div')<TypographyProps & SpaceProps>`
   ${CaptionShared};
   font-size: ${themeGet('fontSizes', 'xs')};
   line-height: ${themeGet('lineHeights', 'sm')};
 `
 
-export {
-  SmallText as default,
-  SmallText,
-}
+export default SmallText

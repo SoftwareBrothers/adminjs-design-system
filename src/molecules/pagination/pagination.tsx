@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
 import JWPaginate from 'jw-paginate'
+import React from 'react'
+import { styled } from '@styled-components'
 
-import { Box } from '../../atoms/box'
-import { Button, ButtonProps } from '../../atoms/button'
-import { Icon } from '../../atoms/icon'
-import { cssClass } from '../../utils/css-class'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Button, ButtonProps } from '../../atoms/button/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 const MIN_PAGES_FOR_FIRST_PAGE_BUTTON = 3
 const FIRST_PAGE = 1
@@ -39,10 +39,10 @@ export type PaginationProps = {
   onChange: (pageNumber: number) => void;
 }
 
-const PaginationLink = styled(Button).attrs((props: ButtonProps) => ({
-  size: 'icon',
-  variant: props.variant ? props.variant : 'text',
-}))`
+const PaginationButton = (props: ButtonProps) => ({ size: 'icon' as const, variant: props.variant || 'text' as const })
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const PaginationLink: any = styled(Button).attrs(PaginationButton)<ButtonProps>`
   min-width: 28px;
   height: 28px;
   line-height: 12px;
@@ -54,17 +54,19 @@ PaginationLink.defaultProps = {
   className: cssClass('PaginationLink'),
 }
 
-const PaginationWrapper = styled(Box)`
+const PaginationWrapper = styled(Box)<BoxProps>`
   display: inline-block;
   padding: 2px;
-  border: 1px solid ${({ theme }): string => theme.colors.grey20};
+ 
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  & > :hover {
+    text-decoration: none;
+  }
   & > :first-child {
-    width: 56px;
-    border-right: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-right: 1px solid ${({ theme }) => theme.colors.border};
   }
   & > :last-child {
-    width: 56px;
-    border-left: 1px solid ${({ theme }): string => theme.colors.grey20};
+    border-left: 1px solid ${({ theme }) => theme.colors.border};
   }
 `
 
@@ -123,17 +125,17 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="first"
-              disabled={isFirstPage}
+              variant="text"
               onClick={() => (!isFirstPage ? onChange(FIRST_PAGE) : undefined)}
             >
-              <Icon icon="PageFirst" />
+              <Icon icon="SkipBack" />
             </PaginationLink>
           )
           : null
       }
       <PaginationLink
         data-testid="previous"
-        disabled={isFirstPage}
+        variant="text"
         onClick={() => (!isFirstPage ? onChange(prevPage) : undefined)}
       >
         <Icon icon="ChevronLeft" />
@@ -142,7 +144,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         <PaginationLink
           key={p}
           onClick={(): void => onChange(p)}
-          variant={p === currentPage ? 'primary' : 'text'}
+          variant={p === currentPage ? 'contained' : 'text'}
           className={cssClass('PaginationLink', p === currentPage ? 'current' : '')}
           data-testid={`page-${p}`}
         >
@@ -151,8 +153,8 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       ))}
       <PaginationLink
         data-testid="next"
+        variant="text"
         onClick={() => (!isLastPage ? onChange(nextPage) : undefined)}
-        disabled={isLastPage}
       >
         <Icon icon="ChevronRight" />
       </PaginationLink>
@@ -161,10 +163,10 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           ? (
             <PaginationLink
               data-testid="last"
+              variant="text"
               onClick={() => (!isLastPage ? onChange(paginate.totalPages) : undefined)}
-              disabled={isLastPage}
             >
-              <Icon icon="PageLast" />
+              <Icon icon="SkipForward" />
             </PaginationLink>
           )
           : null

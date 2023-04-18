@@ -1,12 +1,13 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
-import Box from '../../atoms/box'
-import Icon from '../../atoms/icon'
-import Link from '../../atoms/link'
-import Text from '../../atoms/text'
-import { themeGet } from '../../utils'
+import { styled } from '@styled-components'
 
-const StyledWrapper = styled(Box)`
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { Link, LinkProps } from '../../atoms/link/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { themeGet } from '../../utils/index.js'
+
+const StyledWrapper = styled(Box)<BoxProps>`
   user-select: none;
   & > * {
     padding: 0 ${themeGet('space', 'xs')};
@@ -20,7 +21,7 @@ StyledWrapper.defaultProps = {
   alignItems: 'center',
 }
 
-const StyledLink = styled(Link)`
+const StyledLink: any = styled(Link)<LinkProps>`
   font-size: ${themeGet('fontSizes', 'sm')};
   font-weight: 300;
   &:hover {
@@ -29,12 +30,12 @@ const StyledLink = styled(Link)`
   }
 `
 
-const MadeWithLove: FC = () => (
+export const MadeWithLove: FC = () => (
   <StyledWrapper>
     <Text as="span" variant="sm">
       Made with
     </Text>
-    <Icon icon="FavoriteFilled" color="love" />
+    <Icon icon="Heart" color="love" />
     <Text as="span" variant="sm">
       by
     </Text>

@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import { styled } from '@styled-components'
+import { PropsWithChildren } from 'react'
 
-import Box, { BoxProps } from '../../atoms/box'
-import { DEFAULT_STICK, DropDownStickProp } from './drop-down'
-import { cssClass } from '../../utils'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { DEFAULT_STICK, DropDownStickProp } from './drop-down.js'
+import { cssClass } from '../../utils/index.js'
 
 /**
  * Props passed to DropDownMenu element.
@@ -10,26 +11,25 @@ import { cssClass } from '../../utils'
  *
  * @memberof DropDown
  */
-export type DropDownMenuProps = BoxProps & {
+export type DropDownMenuProps = PropsWithChildren<BoxProps & {
   isVisible?: boolean;
   stick?: DropDownStickProp;
-}
+}>
 
 /**
  * @component
  * @private
  */
 export const DropDownMenu = styled(Box).attrs<DropDownMenuProps>((props) => ({
-  className: cssClass(
-    [`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className,
-  ),
+  className: cssClass([`DropDown-Stick-${props.stick || DEFAULT_STICK}`, 'DropDownMenu'], props.className),
 }))<DropDownMenuProps>`
-  background: ${({ theme }): string => theme.colors.white};
+  background: ${({ theme }) => theme.colors.container};
   display: inline-block;
   position: absolute;
   z-index: 40;
   flex-direction: column;
-  box-shadow: ${({ theme }): string => theme.shadows.card};
+  box-shadow: ${({ theme }) => theme.shadows.card};
+  border-radius: ${({ theme }) => theme.space.sm};
   ${({ isVisible }): string => (isVisible !== false ? '' : 'display: none;')};
 
   &.${cssClass('DropDown-Stick-left')} .${cssClass('DropDownMenu')} {

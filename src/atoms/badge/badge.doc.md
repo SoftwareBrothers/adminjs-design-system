@@ -33,7 +33,7 @@ Check out the following examples.
 return (
   <Box py="lg">
     <Badge variant="primary" size="lg">My badge</Badge>
-    <Badge variant="danger" size="sm" outline ml="xl">Danger Danger</Badge>
+    <Badge color="danger" size="sm" outline ml="xl">Danger Danger</Badge>
     <Badge variant="success" ml="xl">Success</Badge>
   </Box>
 )

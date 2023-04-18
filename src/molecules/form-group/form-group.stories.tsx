@@ -1,60 +1,60 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React from 'react'
+
 import {
   Box,
-  FormGroup,
-  Label,
-  InputGroup,
   Button,
-  Icon,
-  Input,
-  FormMessage,
   DropDown,
   DropDownMenu,
   DropDownTrigger,
-} from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+  Icon,
+  Input,
+  Label,
+} from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { FormGroup, FormMessage, InputGroup } from './index.js'
 
-export default {
-  title: 'DesignSystem/Molecules/FormGroup',
-  component: FormGroup,
-}
-
-export const FullFeaturedFormGroup: React.FC = () => (
+export const FullFeaturedFormGroup: StoryFn = () => (
   <FormGroup>
     <Label required>Name</Label>
     <InputGroup>
       <DropDown>
         <DropDownTrigger>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             ==
           </Button>
         </DropDownTrigger>
         <DropDownMenu top="xxl">
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'>='}
           </Button>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'<='}
           </Button>
-          <Button variant="primary" size="icon">
+          <Button variant="text" size="icon">
             {'><'}
           </Button>
         </DropDownMenu>
       </DropDown>
       <Input />
       <Label>100 KM</Label>
-      <Button size="icon"><Icon icon="ArrowRight" /></Button>
+      <Button size="icon">
+        <Icon icon="ArrowRight" />
+      </Button>
     </InputGroup>
-    <FormMessage>
-      With an message below
-    </FormMessage>
+    <FormMessage>With an message below</FormMessage>
   </FormGroup>
 )
 
-export const Full: React.FC = () => (
+export const Full: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Full featured FormGroup">
       <FullFeaturedFormGroup />
     </StoryWrapper>
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Molecules/FormGroup',
+  component: FormGroup,
+} as Meta<typeof FormGroup>

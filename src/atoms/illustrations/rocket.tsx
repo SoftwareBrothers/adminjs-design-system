@@ -1,8 +1,9 @@
 import React from 'react'
-import { Props } from './props.type'
 
-export const Rocket: React.FC<Props> = () => (
-  <svg width="249px" height="179px" viewBox="0 0 249 179" version="1.1" xmlns="http://www.w3.org/2000/svg">
+import { Props } from './props.type.js'
+
+export const Rocket: React.FC<Props> = ({ width = 249, height = 179 }) => (
+  <svg width={width} height={height} viewBox="0 0 249 179" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
         <stop stopColor="#FFAB86" offset="0%" />

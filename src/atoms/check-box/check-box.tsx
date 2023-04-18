@@ -1,8 +1,8 @@
-import React, { useState, ChangeEvent, useEffect } from 'react'
-import styled from 'styled-components'
+import React, { ChangeEvent, useEffect, useState } from 'react'
+import { styled, css } from '@styled-components'
 
-import { Label } from '../label'
-import focusShadowStyle from '../../utils/focus-shadow.style'
+import focusShadowStyle from '../../utils/focus-shadow.style.js'
+import { Label } from '../label/index.js'
 
 const Icon = styled.svg`
   fill: none;
@@ -15,9 +15,9 @@ export const CheckboxRadioContainer = styled.span`
   display: inline-block;
   vertical-align: middle;
   & + ${Label} {
-    margin-left: ${({ theme }): string => theme.space.default};
+    margin-left: ${({ theme }) => theme.space.default};
     vertical-align: middle;
-    margin-bottom: ${({ theme }): string => theme.space.sm};
+    margin-bottom: ${({ theme }) => theme.space.sm};
   }
 `
 
@@ -44,7 +44,7 @@ const checkboxBackground = (theme, checked, disabled): string => {
   if (checked) {
     return disabled ? theme.colors.grey40 : theme.colors.primary100
   }
-  return theme.colors.white
+  return 'transparent'
 }
 
 const StyledCheckbox = styled.a<StyledProps>`
@@ -52,22 +52,26 @@ const StyledCheckbox = styled.a<StyledProps>`
   width: 16px;
   /* when it is placed within a container setting different font size */
   font-size: 12px;
-  cursor: pointer;
-  border: 1px solid ${({ theme }): string => theme.colors.grey40};
+  border: 1px solid ${({ theme, checked, disabled }): string => (checked && !disabled ? theme.colors.primary100 : theme.colors.inputBorder)};
   height: 16px;
   background: ${({ checked, theme, disabled }): string => checkboxBackground(theme, checked, disabled)};
   transition: all 150ms;
   position: relative;
+  border-radius: 2px;
 
   ${HiddenCheckbox}:focus + & {
-    ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)};`};
+    ${({ theme }) => `box-shadow: ${focusShadowStyle(theme)};`};
   }
   ${HiddenCheckbox}:hover + & {
-    border-color: ${({ theme }): string => theme.colors.grey60};
+    border-color: ${({ theme }) => theme.colors.grey60};
   }
   ${Icon} {
     visibility: ${(props): string => (props.checked ? 'visible' : 'hidden')};
   }
+
+  ${({ disabled }) => (!disabled && css`
+    cursor: pointer;
+  `)}
 
   &:after {
     content: '';
@@ -77,7 +81,7 @@ const StyledCheckbox = styled.a<StyledProps>`
     width: 24px;
     height: 24px;
     opacity: 0;
-    background: ${({ theme }): string => theme.colors.primary100};
+    background: ${({ theme }) => theme.colors.primary100};
   }
   &:after:before {
     opacity: 0.1;
@@ -125,6 +129,7 @@ const CheckBox: React.FC<CheckBoxProps> = (props) => {
 
   const [isChecked, setChecked] = useState(checked ?? false)
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    if (disabled) return
     if (onChange) {
       onChange(event)
     } else {

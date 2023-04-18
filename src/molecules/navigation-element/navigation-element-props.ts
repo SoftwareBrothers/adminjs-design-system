@@ -1,17 +1,7 @@
+/* eslint-disable no-use-before-define */
 import React from 'react'
 
-/**
- * Handler function for a NavigationElementProps['onClick']
- *
- * @memberof NavigationElement
- * @alias NavigationElementOnClickHandler
- */
-export type NavigationElementOnClickHandler = (
-  /** React.MouseEvent */
-  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  /** All props (along with the `id`) are also passed to the handler */
-  props: NavigationElementProps
-) => void
+import type { IconProps } from '../../atoms/icon/index.js'
 
 /**
  * Prop Types of a NavigationElement component.
@@ -23,7 +13,7 @@ export type NavigationElementProps = {
   /** Link href property */
   href?: string;
   /** Icon name */
-  icon?: string;
+  icon?: IconProps['icon'];
   /**
    * Indicates if navigation element should be open(able). If set to undefined: element wont be
    * "openable". Tf set to either false or true - element will be open or close.
@@ -38,3 +28,16 @@ export type NavigationElementProps = {
   /** On Click handler */
   onClick?: NavigationElementOnClickHandler;
 }
+
+/**
+ * Handler function for a NavigationElementProps['onClick']
+ *
+ * @memberof NavigationElement
+ * @alias NavigationElementOnClickHandler
+ */
+export type NavigationElementOnClickHandler = (
+  /** React.MouseEvent */
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  /** All props (along with the `id`) are also passed to the handler */
+  props: NavigationElementProps
+) => void

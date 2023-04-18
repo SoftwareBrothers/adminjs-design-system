@@ -1,79 +1,13 @@
 /* eslint-disable max-len */
+import { DefaultTheme, styled } from '@styled-components'
 import React from 'react'
-import styled, { DefaultTheme } from 'styled-components'
-import { variant as styledVariant, SpaceProps } from 'styled-system'
+import { SpaceProps, variant as styledVariant } from 'styled-system'
 
-import { Box } from '../../atoms/box'
-import { Icon } from '../../atoms/icon'
-import { Button } from '../../atoms/button'
-import { cssClass } from '../../utils/css-class'
-
-const sizeVariants = styledVariant({
-  prop: 'size',
-  variants: {
-    sm: {
-      boxShadow: 'none',
-      '& > section, & + section': {
-        px: 'lg',
-        py: 'default',
-      },
-      [`& > ${Button}`]: {
-        margin: '0px',
-      },
-    },
-  },
-})
-
-const variants = (theme: DefaultTheme): Record<string, any> => styledVariant({
-  variants: {
-    success: {},
-    danger: {
-      bg: 'errorLight',
-      'box-shadow': `0 2px 0 0 ${theme.colors.error};`,
-      '& + section': {
-        borderColor: 'errorLight',
-      },
-    },
-    info: {
-      bg: 'primary20',
-      'box-shadow': `0 2px 0 0 ${theme.colors.primary100};`,
-      '& + section': {
-        borderColor: 'primary20',
-      },
-    },
-  },
-})
-
-const StyledMessageBox = styled.div<MessageBoxProps>`
-  line-height: ${({ theme }): string => theme.lineHeights.default};
-  box-shadow: 0 2px 0 0 ${({ theme }): string => theme.colors.success};
-  background: ${({ theme }): string => theme.colors.successLight};
-  color: ${({ theme }): string => theme.colors.grey80};
-  & > ${Button} {
-    float: right;
-    margin: 8px;
-    & svg {
-      fill: ${({ theme }): string => theme.colors.grey80};
-    }
-  }
-  ${({ theme }): any => variants(theme)};
-  ${sizeVariants};
-`
-
-const StyledCaption = styled(Box)``
-
-StyledCaption.defaultProps = {
-  px: 'xl',
-  py: 'lg',
-}
-
-const StyledChildren = styled(Box)`
-  padding: ${({ theme }): string => theme.space.lg} ${({ theme }): string => theme.space.xl};
-  background: ${({ theme }): string => theme.colors.white};
-  border-style: solid;
-  border-width: 0 1px 1px 1px;
-  border-color: ${({ theme }): string => theme.colors.successLight};
-`
+import { Box } from '../../atoms/box/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Icon, IconProps } from '../../atoms/icon/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * Prop Types of a MessageBox component.
@@ -84,23 +18,52 @@ const StyledChildren = styled(Box)`
  */
 type MessageBoxProps = {
   /** Triggered when user clicks close button. If not given close button won't be seen */
-  onCloseClick?: () => void;
+  onCloseClick?: () => void
   /** Title content of a message */
-  message?: string;
-  /** Variant */
-  variant?: 'danger' | 'info' | 'success';
+  message?: string
+  /**
+   * Variant
+   * @default 'info'
+   */
+  variant?: 'danger' | 'warning' | 'success' | 'info'
   /** Icon which will be seen in the title */
-  icon?: string;
+  icon?: IconProps['icon']
   /** Size variant */
-  size?: 'sm';
+  size?: 'sm'
   /** Optional html style property */
-  style?: Record<string, string>;
+  style?: Record<string, string>
   /** Optional children, when given component will be expanded */
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 type Props = SpaceProps & MessageBoxProps
 export { Props as MessageBoxProps }
+
+const sizeVariants = styledVariant({
+  prop: 'size',
+  variants: {
+    sm: {
+      boxShadow: 'none',
+      [`& > ${cssClass('Button')}`]: {
+        margin: '0px',
+      },
+    },
+  },
+})
+
+const StyledMessageBox: any = styled(Box)<MessageBoxProps>`
+  line-height: ${({ theme }) => theme.lineHeights.default};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.text};
+  padding: 12px 22px;
+  white-space: pre-wrap;
+
+  & .${cssClass('Icon')} {
+    display: flex;
+  }
+
+  ${sizeVariants};
+`
 
 /**
  * @classdesc
@@ -154,7 +117,7 @@ export { Props as MessageBoxProps }
  *     message="Info message"
  *     mt="default"
  *     variant="info"
- *     icon="AddComment"
+ *     icon="MessageCircle"
  *     onCloseClick={() => alert('close clicked')}
  *   >
  *     With inside text
@@ -163,32 +126,58 @@ export { Props as MessageBoxProps }
  * )
  * @section design-system
  */
-const MessageBox: React.FC<Props> = (props) => {
-  const { onCloseClick, message, icon, children, variant, size, ...other } = props
+export const MessageBox: React.FC<Props> = (props) => {
+  const { onCloseClick, message, icon, children, variant = 'info', size, ...other } = props
+
+  const variantIcon: Record<typeof variant, IconProps['icon']> = {
+    success: 'Check',
+    danger: 'XCircle',
+    info: 'Info',
+    warning: 'AlertCircle',
+  }
+  const variantBg: Record<typeof variant, keyof DefaultTheme['colors']> = {
+    success: 'successLight',
+    danger: 'errorLight',
+    info: 'infoLight',
+    warning: 'warningLight',
+  }
+  const variantIconBg: Record<typeof variant, keyof DefaultTheme['colors']> = {
+    success: 'success',
+    danger: 'error',
+    info: 'info',
+    warning: 'warning',
+  }
 
   return (
     <Box className={cssClass('MessageBox')} {...other}>
-      <StyledMessageBox variant={variant} size={size}>
-        {onCloseClick ? (
-          <Button variant="text" size="icon" onClick={onCloseClick}>
-            <Icon icon="Close" />
-          </Button>
-        ) : ''}
-        <StyledCaption>
-          {icon ? (
-            <Icon icon={icon} mr="default" />
-          ) : ''}
-          {message}
-        </StyledCaption>
+      <StyledMessageBox as="div" bg={variantBg[variant]} size={size}>
+        <Box flex alignItems="center">
+          {variantIcon && (
+            <Icon
+              icon={icon || variantIcon[variant]}
+              bg={variantIconBg[variant]}
+              color="white"
+              p="sm"
+              marginRight="xl"
+              borderRadius="50%"
+            />
+          )}
+          <Box as="div" flexGrow={1}>
+            <Text fontWeight={children ? 500 : 400}>{message}</Text>
+          </Box>
+
+          {onCloseClick && (
+            <Button variant="text" size="icon" onClick={onCloseClick} rounded color={variant} ml="xl">
+              <Icon icon="X" />
+            </Button>
+          )}
+        </Box>
+        <Box marginLeft="x3">
+          <Text>{children}</Text>
+        </Box>
       </StyledMessageBox>
-      {children ? (
-        <StyledChildren>
-          {children}
-        </StyledChildren>
-      ) : ''}
     </Box>
   )
 }
 
-export { MessageBox }
 export default MessageBox

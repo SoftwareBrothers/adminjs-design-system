@@ -1,5 +1,5 @@
 /* cSpell:disable */
-import { css, createGlobalStyle } from 'styled-components'
+import { css, createGlobalStyle } from '@styled-components'
 
 /**
  * Resets css styles which can be applied to element created by styled-component
@@ -16,7 +16,7 @@ import { css, createGlobalStyle } from 'styled-components'
  * @new in version 3.3
  * @memberof module:@adminjs/design-system
  */
-const reset = css`
+const reset: ReturnType<typeof css> = css`
 /* http://meyerweb.com/eric/tools/css/reset/
    v4.0 | 20180602
    License: none (public domain)

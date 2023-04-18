@@ -1,2 +1,1 @@
-export * from './overlay'
-export { default } from './overlay'
+export * from './overlay.js'

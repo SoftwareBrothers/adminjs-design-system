@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import parseISO from 'date-fns/parseISO'
-import { formatDateProperty, PropertyType } from '../../utils'
+
+import { formatDateProperty, PropertyType } from '../../utils/index.js'
 
 const useDatePicker = ({ value, propertyType, disabled, onChange }:
 {

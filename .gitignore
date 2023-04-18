@@ -175,9 +175,15 @@ build
 types
 
 # storybook
-out
+storybook-static
+
+# firebaase
+.firebase
 
 # rollup bundle
 /bundle.development.js
 /bundle.production.js
 .vscode
+
+.nova
+storybook/out

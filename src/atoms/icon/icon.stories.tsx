@@ -1,37 +1,44 @@
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
-import Icon from './icon'
+import * as FeatherIcons from 'react-feather'
 
-export const Default: React.FC = (props) => (
-  <Icon {...props} />
+import { Box, Label } from '../index.js'
+import { Icon } from './icon.js'
+
+const icons = Object.keys(FeatherIcons).filter((name) => name !== 'default')
+
+export const Default: StoryObj = {}
+
+export const Icons: StoryFn = () => (
+  <Box display="grid" style={{ gridTemplateColumns: 'repeat(10, 1fr)', gap: 16 }}>
+    {icons.map((key) => (
+      <Box key={key} flex alignItems="center" flexDirection="column">
+        <Label>{key}</Label>
+        <Icon icon={key} size={24} />
+      </Box>
+    ))}
+  </Box>
 )
 
 export default {
   title: 'DesignSystem/Atoms/Icon',
+  component: Icon,
+  args: {
+    icon: icons[0],
+    size: 48,
+    rounded: false,
+    spin: false,
+  },
   argTypes: {
     icon: {
-      defaultValue: 'Settings',
-      description: 'CamelCased name of an icon from https://www.carbondesignsystem.com/guidelines/icons/library/',
-      control: { type: 'text' },
+      description: 'CamelCased name of an icon from https://www.npmjs.com/package/react-feather',
+      control: { type: 'select' },
+      options: icons,
     },
-    size: {
-      defaultValue: 20,
-      control: { type: 'number', min: 16, max: 32, step: 4 },
-    },
-    color: {
-      defaultValue: 'white',
-      control: { type: 'color' },
-    },
-    bg: {
-      defaultValue: 'black',
-      control: { type: 'color' },
-    },
-    rounded: {
-      defaultValue: true,
-      control: { type: 'boolean' },
-    },
-    spin: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
+    size: { control: { type: 'number', min: 16, max: 48, step: 4 } },
+    color: { control: { type: 'color' } },
+    bg: { control: { type: 'color' } },
+    rounded: { control: { type: 'boolean' } },
+    spin: { control: { type: 'boolean' } },
   },
-}
+} as Meta<typeof Icon>

@@ -1,10 +1,7 @@
-import styled from 'styled-components'
-import { Button } from '../button'
-import { Text } from '../text'
-import { cssClass } from '../../utils/css-class'
-import { themeGet } from '../../utils'
+import { styled } from '@styled-components'
 
-const CAPTION_HEIGHT = '42px'
+import { Button } from '../button/index.js'
+import { themeGet, cssClass } from '../../utils/index.js'
 
 /**
  * @component
@@ -18,29 +15,22 @@ const TableCaption = styled.caption`
   font-size: ${themeGet('fontSizes', 'default')};
   line-height: ${themeGet('lineHeights', 'default')};
   position: absolute;
-  height: ${CAPTION_HEIGHT};
   left: 0;
   right: 0;
-  top: -${CAPTION_HEIGHT};
+  top: -4px;
+  transform: translateY(-100%);
   background: ${themeGet('colors', 'primary100')};
+  border-radius: 4px;
   box-sizing: border-box;
   vertical-align: middle;
 
-  & ${Button} {
-    color: ${themeGet('colors', 'white')};
-    & > span svg {
-      fill: ${themeGet('colors', 'white')};
-    }
-    &:hover {
-      color: ${themeGet('colors', 'white')};
-      .${cssClass('Icon')} svg {
-        fill: ${themeGet('colors', 'white')};
-      }
-    }
+  &:first-child {
+    flex-grow: 1;
   }
 
-  & ${Text} {
+  & ${Button} {
     color: ${themeGet('colors', 'white')};
+    border-color: ${themeGet('colors', 'white')};
   }
 `
 

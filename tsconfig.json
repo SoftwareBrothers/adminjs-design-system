@@ -1,26 +1,34 @@
 {
   "compilerOptions": {
-      "outDir": "./build",
-      "target": "es2017",
-      "esModuleInterop": true,
-      "jsx": "react",
-      "declaration": true,
-      "declarationDir": "./types",
-      "strictNullChecks": true,
-      "strictPropertyInitialization": true,
-      "strictFunctionTypes": true,
-      "strictBindCallApply": true,
-      "noImplicitThis": true,
-      "skipLibCheck": true,
-      "moduleResolution": "node",
-      "module": "commonjs",
-      "typeRoots": ["./vendor-types"],
+    "outDir": "./build",
+    "target": "esnext",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "./types",
+    "emitDeclarationOnly": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "skipLibCheck": true,
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "typeRoots": ["./vendor-types"],
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@styled-components": ["src/utils/styled.js"]
+    }
   },
   "include": [
     "./src/**/*",
     "./spec/**/*"
   ],
   "exclude": [
-    "./src/**/*.stories.*"
+    "./src/**/*.stories.*",
+    "./src/**/*.spec.*"
   ]
 }

@@ -1,8 +1,9 @@
-import styled from 'styled-components'
 import { color, space, typography, SpaceProps, TypographyProps, variant } from 'styled-system'
-import { VariantType } from '../../theme'
-import { ColorProps } from '../../utils/color-props'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { VariantType } from '../../theme.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @load ./badge-props.doc.md
@@ -69,10 +70,10 @@ const sizeVariants = variant({
  */
 const Badge = styled.span<BadgeProps>`
   border-radius: 20px;
-  border: 1px solid ${({ theme }): string => theme.colors.grey40};
+  border: 1px solid ${({ theme }) => theme.colors.grey40};
   color: ${({ outline, theme }): string => (outline ? theme.colors.grey60 : theme.colors.white)};
   vertical-align: middle;
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${({ theme }) => theme.font};
   display: inline;
   white-space: nowrap;
 

@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import Box from '../../atoms/box'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @classdesc
@@ -101,7 +102,7 @@ import { cssClass } from '../../utils/css-class'
  *
  * @section design-system
  */
-const Stepper = styled(Box)`
+const Stepper = styled(Box)<BoxProps>`
 `
 
 Stepper.defaultProps = {

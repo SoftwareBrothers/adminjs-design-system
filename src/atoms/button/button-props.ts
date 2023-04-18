@@ -1,7 +1,8 @@
+import { MouseEventHandler } from 'react'
 import { FlexboxProps, SpaceProps, TypographyProps } from 'styled-system'
-import { VariantType } from '../../theme'
 
-import { ColorProps } from '../../utils/color-props'
+import { ColorVariant, VariantType } from '../../theme.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 
 /**
  * @load ./button-props.doc.md
@@ -10,22 +11,33 @@ import { ColorProps } from '../../utils/color-props'
  * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
  *                          and {@link TypographyProps}
  */
-export type ButtonProps = ColorProps & SpaceProps & TypographyProps & FlexboxProps & {
-  /**
-   * Button color variant
-   */
-  variant?: VariantType | 'text';
-  /**
-   * Button size variant
-   */
-  size?: 'sm' | 'lg' | 'icon' | 'default' | 'md';
-  /**
-   * If button should be rounded
-   */
-  rounded?: boolean;
-
-  /**
-   * You can either pass an label prop - or use react Children.
-   */
-  label?: string
-}
+export type ButtonProps = ColorProps &
+  SpaceProps &
+  TypographyProps &
+  FlexboxProps & {
+    /**
+     * Button variant
+     * @default 'contained'
+     */
+    variant?: 'contained' | 'outlined' | 'text' | VariantType
+    /**
+     * Button color variant
+     * @default 'primary'
+     */
+    color?: ColorVariant
+    /**
+     * Button size variant
+     */
+    size?: 'sm' | 'lg' | 'icon' | 'default' | 'md'
+    /**
+     * If button should be rounded
+     * @default false
+     */
+    rounded?: boolean
+    /**
+     * You can either pass an label prop - or use react Children.
+     */
+    label?: string
+  } & {
+    onClick?: MouseEventHandler<HTMLButtonElement>
+  }

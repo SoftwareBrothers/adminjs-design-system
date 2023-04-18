@@ -1,31 +1,31 @@
-import styled, { css } from 'styled-components'
 import { SpaceProps, space } from 'styled-system'
+import { styled, css } from '@styled-components'
 
-import { Label } from '../../atoms/label'
-import { Button } from '../../atoms/button'
-import { Input } from '../../atoms/input'
-import { CurrencyInput } from '../../atoms/currency-input'
-import { Link } from '../../atoms/link'
-import InputGroup from './input-group'
+import { Label } from '../../atoms/label/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Input } from '../../atoms/input/index.js'
+import { CurrencyInput } from '../../atoms/currency-input/index.js'
+import { Link } from '../../atoms/link/index.js'
+import InputGroup from './input-group.js'
 
 const formGroupDisabledCSS = css`
-  color: ${({ theme }): string => theme.colors.grey40};
+  color: ${({ theme }) => theme.colors.grey40};
 `
 
 const formGroupWithErrorCSS = css`
-  color: ${({ theme }): string => theme.colors.error};
+  color: ${({ theme }) => theme.colors.error};
   ${Input}, ${CurrencyInput} {
-    color: ${({ theme }): string => theme.colors.error};
-    border-color: ${({ theme }): string => theme.colors.error};
+    color: ${({ theme }) => theme.colors.error};
+    border-color: ${({ theme }) => theme.colors.error};
   }
   &&& ${Label} {
-    color: ${({ theme }): string => theme.colors.error};
+    color: ${({ theme }) => theme.colors.error};
     &:before {
-      color: ${({ theme }): string => theme.colors.error};
+      color: ${({ theme }) => theme.colors.error};
     }
   }
   &&& ${Label}, &&& ${Button}, &&& ${Link} {
-    border-color: ${({ theme }): string => theme.colors.error};
+    border-color: ${({ theme }) => theme.colors.error};
   }
 `
 
@@ -74,12 +74,12 @@ export type FormGroupProps = SpaceProps & {
  *   <FormGroup>
  *     <Label required>Name</Label>
  *     <InputGroup>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *       <Input />
  *       <Label>100 KM</Label>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *     </InputGroup>
@@ -93,12 +93,12 @@ export type FormGroupProps = SpaceProps & {
  *   <FormGroup error>
  *     <Label required>Name</Label>
  *     <InputGroup>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *       <Input />
  *       <Label>100 KM</Label>
- *       <Button variant="primary" size="icon">
+ *       <Button variant="contained" size="icon">
  *         <Icon icon="ChevronRight" />
  *       </Button>
  *     </InputGroup>
@@ -133,7 +133,7 @@ export type FormGroupProps = SpaceProps & {
  * )
  * @section design-system
  */
-const FormGroup = styled.div<FormGroupProps>`
+export const FormGroup = styled.div<FormGroupProps>`
   width: 100%;
   ${({ error }): any => (error ? formGroupWithErrorCSS : '')};
   ${({ disabled }): any => (disabled ? formGroupDisabledCSS : '')};
@@ -144,21 +144,21 @@ const FormGroup = styled.div<FormGroupProps>`
   }
 
   & ${Input}, & ${CurrencyInput} {
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
-    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.white}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};
   }
 
   & ${InputGroup} {
     ${Label}, ${Button}:last-child, ${Link}:last-child {
-      ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+      ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
     }
   }
 
   & [class*="DatePicker"] > .react-datepicker-wrapper {
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.inputBorder}` : '')};
   }
   & [class*="DatePicker"] > .react-datepicker-wrapper input {
-    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.white}` : '')};
+    ${({ variant, theme }): string => (variant === 'filter' ? `color: ${theme.colors.text}` : '')};
   }
 `
 
@@ -166,5 +166,4 @@ FormGroup.defaultProps = {
   mb: 'lg',
 }
 
-export { FormGroup }
 export default FormGroup

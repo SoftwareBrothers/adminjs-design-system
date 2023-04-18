@@ -1,8 +1,10 @@
-import React from 'react'
-import { Loader } from '../..'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default { title: 'DesignSystem/Atoms/Loader' }
+import { Loader } from './index.js'
 
-export const Default: React.FC = () => (
-  <Loader />
-)
+export const Default: StoryObj = {}
+
+export default {
+  title: 'DesignSystem/Atoms/Loader',
+  component: Loader,
+} as Meta<typeof Loader>

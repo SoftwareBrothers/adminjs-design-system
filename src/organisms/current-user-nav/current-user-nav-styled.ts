@@ -1,17 +1,17 @@
-import styled from 'styled-components'
+import { styled } from '@styled-components'
 
-import { cssClass, themeGet } from '../../utils'
-import { Box } from '../../atoms/box'
+import { cssClass, themeGet } from '../../utils/index.js'
+import { Box, BoxProps } from '../../atoms/box/index.js'
 
-const StyledCurrentUserNav = styled(Box)`
+export const StyledCurrentUserNav = styled(Box)<BoxProps>`
   text-align: right;
 
   & .line-action {
     .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'grey80')};
+      stroke: ${themeGet('colors', 'grey80')};
     }
     &:hover .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'primary100')};
+      stroke: ${themeGet('colors', 'primary100')};
     }
   }
 
@@ -28,7 +28,4 @@ StyledCurrentUserNav.defaultProps = {
   flexDirection: 'row',
 }
 
-export {
-  StyledCurrentUserNav as default,
-  StyledCurrentUserNav,
-}
+export default StyledCurrentUserNav

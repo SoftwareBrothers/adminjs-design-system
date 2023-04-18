@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @component

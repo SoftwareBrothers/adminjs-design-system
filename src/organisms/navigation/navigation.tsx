@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { NavigationProps } from './navigation-props'
-import { StyledNavigation } from './navigation-styled'
-import { NavigationElementWrapper } from './navigation-element-wrapper'
-
-import { Label } from '../../atoms/label'
+import { NavigationProps } from './navigation-props.js'
+import { StyledNavigation } from './navigation-styled.js'
+import { NavigationElementWrapper } from './navigation-element-wrapper.js'
+import { Label } from '../../atoms/label/index.js'
 
 /**
  * @load ./navigation.doc.md
@@ -16,11 +15,11 @@ import { Label } from '../../atoms/label'
  * @new In version 3.3
  * @section design-system
  */
-const Navigation: React.FC<NavigationProps> = (props) => {
+export const Navigation: React.FC<NavigationProps> = (props) => {
   const { label, elements } = props
   return (
     <StyledNavigation px="xl" py="lg">
-      <Label pl="lg" mb="md" uppercase>{label}</Label>
+      {!!label?.length && <Label pl="lg" mb="md" uppercase>{label}</Label>}
       <ul>
         {elements.map((element, id) => (
           <NavigationElementWrapper key={[id, element.href].join('-')} {...element} />
@@ -30,7 +29,4 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   )
 }
 
-export {
-  Navigation,
-  Navigation as default,
-}
+export default Navigation

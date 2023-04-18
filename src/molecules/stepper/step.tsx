@@ -1,10 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import { SpaceProps, space } from 'styled-system'
-import Icon from '../../atoms/icon'
-import Text from '../../atoms/text'
-import Box from '../../atoms/box'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { Icon } from '../../atoms/icon/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * Handler which is invoked when user clicks given step
@@ -39,7 +40,7 @@ export type StepProps = {
   children?: React.ReactNode;
 }
 
-const Circle = styled(Box)`
+const Circle = styled(Box)<BoxProps>`
   border-width: 1px;
   border-style: solid;
   border-radius: 9999px;
@@ -144,7 +145,7 @@ const Step: React.FC<StepProps> = (props) => {
           color={active ? 'primary100' : 'grey40'}
         >
           {completed ? (
-            <Icon icon="Checkmark" color="white" />
+            <Icon icon="Check" color="white" />
           ) : number}
         </Circle>
         <Text my="sm" pl="default" py="sm" color={active || completed ? 'grey100' : 'grey40'}>

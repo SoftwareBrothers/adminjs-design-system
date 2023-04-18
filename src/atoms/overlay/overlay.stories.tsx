@@ -1,8 +1,10 @@
-import React from 'react'
-import { Overlay } from '../..'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default { title: 'DesignSystem/Atoms/Overlay' }
+import { Overlay } from './index.js'
 
-export const Default: React.FC = () => (
-  <Overlay />
-)
+export const Default: StoryObj = {}
+
+export default {
+  title: 'DesignSystem/Atoms/Overlay',
+  component: Overlay,
+} as Meta<typeof Overlay>

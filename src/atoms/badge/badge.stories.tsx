@@ -1,14 +1,17 @@
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
-import StoryWrapper from '../../utils/story-wrapper'
-import { Badge, Box, Label, Header, Text as TextComponent } from '../..'
+
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Header, Text as TextComponent } from '../index.js'
+import { Badge } from './index.js'
 
 enum BadgeVariant {
+  Default = 'default',
   Primary = 'primary',
   Danger = 'danger',
-  Text = 'text',
   Success = 'success',
   Info = 'info',
-  Secondary = 'secondary'
+  Secondary = 'secondary',
 }
 
 enum BadgeSize {
@@ -17,36 +20,34 @@ enum BadgeSize {
   Large = 'lg',
 }
 
-export const Default: React.FC = (props) => (
-  <StoryWrapper label="Badge props">
-    <Badge {...props}>
-      Badge example
-    </Badge>
-  </StoryWrapper>
-)
+const variants = Object.values(BadgeVariant)
+const sizes = Object.values(BadgeSize)
 
-export const Examples: React.FC = () => (
+export const Default: StoryObj<typeof Badge> = {
+  render: (args) => <Badge {...args}>Badge example</Badge>,
+}
+
+export const Examples: StoryFn = () => (
   <Box width={1}>
-    <StoryWrapper label="Badge Variants">
-      <Box><Label>Regular: </Label></Box>
-      <Box>
-        {Object.values(BadgeVariant).map((variant) => (
-          <Badge variant={variant} key={variant} mr="default">
-            {variant}
-          </Badge>
-        ))}
-      </Box>
-      <Box><Label>Outlined: </Label></Box>
-      <Box>
-        {Object.values(BadgeVariant).map((variant) => (
-          <Badge variant={variant} key={variant} mr="default" outline>
-            {variant}
-          </Badge>
-        ))}
-      </Box>
+    <StoryWrapper label="Badge regular">
+      <Badge variant="primary" mr="default">
+        primary
+      </Badge>
+      {variants.map((variant) => (
+        <Badge variant={variant} key={variant} mr="default">
+          {variant}
+        </Badge>
+      ))}
+    </StoryWrapper>
+    <StoryWrapper label="Badge outlined">
+      {variants.map((variant) => (
+        <Badge variant={variant} key={variant} mr="default" outline>
+          {variant}
+        </Badge>
+      ))}
     </StoryWrapper>
     <StoryWrapper label="Badge sizes">
-      {Object.values(BadgeSize).map((size) => (
+      {sizes.map((size) => (
         <Badge variant="primary" size={size} key={size} mr="default">
           {size}
         </Badge>
@@ -59,11 +60,13 @@ export const Examples: React.FC = () => (
       </Header.H1>
       <Header.H2>
         H1. Header
-        <Badge ml="default" size="sm" variant="primary">Small badge</Badge>
+        <Badge ml="default" size="sm" variant="primary">
+          Small badge
+        </Badge>
       </Header.H2>
       <TextComponent mt="xxl">
         Inside text
-        <Badge mx="defaultt">Is something</Badge>
+        <Badge mx="default">Is something</Badge>
       </TextComponent>
     </StoryWrapper>
   </Box>
@@ -71,20 +74,15 @@ export const Examples: React.FC = () => (
 
 export default {
   title: 'DesignSystem/Atoms/Badge',
-  argTypes: {
-    variant: {
-      defaultValue: BadgeVariant.Primary,
-      options: Object.values(BadgeVariant),
-      control: { type: 'select' },
-    },
-    size: {
-      defaultValue: BadgeSize.Default,
-      options: Object.values(BadgeSize),
-      control: { type: 'select' },
-    },
-    outline: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
+  component: Badge,
+  args: {
+    variant: BadgeVariant.Primary,
+    size: BadgeSize.Default,
+    outline: false,
   },
-}
+  argTypes: {
+    variant: { options: variants, control: { type: 'select' } },
+    size: { options: sizes, control: { type: 'select' } },
+    outline: { control: { type: 'boolean' } },
+  },
+} as Meta<typeof Badge>

@@ -1,2 +1,1 @@
-export * from './check-box'
-export { default } from './check-box'
+export * from './check-box.js'

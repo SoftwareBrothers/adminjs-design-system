@@ -27,7 +27,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Reset />
       <Box variant="grey">
-        <Button><Icon icon="Add" />Click Me</Button>
+        <Button><Icon icon="Plus" />Click Me</Button>
         <Button variant='primary' ml="xl">I am important</Button>
       </Box>
     </ThemeProvider>

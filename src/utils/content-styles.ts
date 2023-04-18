@@ -1,5 +1,6 @@
-import { css } from 'styled-components'
-import themeGet from './theme-get'
+import { css } from '@styled-components'
+
+import themeGet from './theme-get.js'
 
 /**
  *
@@ -9,7 +10,7 @@ import themeGet from './theme-get'
  * ### Example
  *
  * ```typescript
- * import styled from 'styled-components'
+ * import { styled } from '@styled-components'
  * import { contentCSS } from '@adminjs/design-system'
  *
  * const myComponent = styled`
@@ -19,8 +20,8 @@ import themeGet from './theme-get'
  *
  * @memberof module:@adminjs/design-system
  */
-const contentCSS = css`
-  font-family: ${({ theme }): string => theme.font};
+const contentCSS: ReturnType<typeof css> = css`
+  font-family: ${({ theme }) => theme.font};
   font-size: ${themeGet('fontSizes', 'md')};
   line-height: ${themeGet('lineHeights', 'lg')};
   font-weight: ${themeGet('fontWeights', 'light')};

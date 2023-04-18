@@ -1,108 +1,90 @@
-import {
-  color as styledColor,
-  space,
-  typography,
-  variant,
-} from 'styled-system'
-import { css } from 'styled-components'
+import { space, color as styledColor, typography, variant as styledVariant } from 'styled-system'
+import { darken, rgba } from 'polished'
+import { css, DefaultTheme } from '@styled-components'
 
-import { cssClass, focusShadowStyle, themeGet } from '../../utils'
-import { ButtonProps } from './button-props'
+import { ColorVariants, VariantType } from '../../theme.js'
+import { cssClass, themeGet } from '../../utils/index.js'
+import { ButtonProps } from './button-props.js'
 
-const variantShared = {
-  color: 'white',
-  'border-color': 'transparent',
-  [`& .${cssClass('Icon')} svg`]: {
-    fill: 'white',
+const getColor = (theme: DefaultTheme) => (color: string): string => theme.colors[ColorVariants[color] || 'primary100']
+
+const legacyButtonVariants = (
+  ['danger', 'default', 'info', 'primary', 'secondary', 'success'] as VariantType[]
+).reduce((acc, color) => ({
+  ...acc,
+  [color]: {
+    className: cssClass(['Button', 'Button_Legacy']),
+    borderColor: 'currentColor',
+    color: (theme) => getColor(theme)(color),
+    '&:hover': {
+      bg: (theme) => rgba(getColor(theme)(color), 0.05),
+    },
+    '&:focus, &:active': {
+      bg: (theme) => rgba(getColor(theme)(color), 0.1),
+    },
   },
-  '&:disabled': {
-    bg: 'grey40',
-  },
-}
+}), {})
 
-const buttonVariants = variant({
+const buttonVariants = ({ color = 'primary' }: ButtonProps) => styledVariant({
   variants: {
-    primary: {
-      bg: 'primary100',
+    ...legacyButtonVariants,
+    contained: {
+      className: cssClass(['Button', 'Button_Contained']),
+      color: (theme) => theme.colors.white,
+      bg: (theme) => getColor(theme)(color),
+      borderColor: (theme) => getColor(theme)(color),
       '&:hover': {
-        bg: 'hoverBg',
+        bg: (theme) => darken(0.15, getColor(theme)(color)),
+        borderColor: (theme) => darken(0.15, getColor(theme)(color)),
       },
-      className: cssClass(['Button', 'Button_Primary']),
-      ...variantShared,
+      '&:focus, &:active': {
+        bg: (theme) => darken(0.2, getColor(theme)(color)),
+        borderColor: (theme) => darken(0.2, getColor(theme)(color)),
+      },
     },
-    danger: {
-      bg: 'error',
+    outlined: {
+      className: cssClass(['Button', 'Button_Outlined']),
+      borderColor: 'currentColor',
+      color: (theme) => getColor(theme)(color),
       '&:hover': {
-        bg: 'errorDark',
-        borderColor: 'transparent',
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
       },
-      className: cssClass(['Button', 'Button_Danger']),
-      ...variantShared,
-    },
-    success: {
-      bg: 'success',
-      '&:hover': {
-        bg: 'successDark',
-        borderColor: 'transparent',
+      '&:focus, &:active': {
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
-      className: cssClass(['Button', 'Button_Success']),
-      ...variantShared,
-    },
-    info: {
-      bg: 'info',
-      '&:hover': {
-        bg: 'infoDark',
-        borderColor: 'transparent',
-      },
-      className: cssClass(['Button', 'Button_Info']),
-      ...variantShared,
-    },
-    secondary: {
-      bg: 'accent',
-      className: cssClass(['Button', 'Button_Secondary']),
-      ...variantShared,
     },
     light: {
-      bg: 'white',
-      className: cssClass(['Button', 'Button_Grey']),
-      color: 'grey80',
+      className: cssClass(['Button', 'Button_Light']),
+      color: (theme) => color && getColor(theme)(color),
       borderColor: 'grey40',
       [`& .${cssClass('Icon')} svg`]: {
-        fill: 'grey80',
+        stroke: 'grey80',
       },
       '&:hover': {
-        borderColor: 'grey60',
-        bg: 'grey60',
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
+      },
+      '&:focus, &:active': {
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
     },
     text: {
-      bg: 'transparent',
+      className: cssClass(['Button', 'Button_Text']),
+      color: (theme) => color && getColor(theme)(color),
       borderColor: 'transparent',
       '&:disabled': {
         'border-color': 'transparent',
       },
       '&:hover': {
-        background: 'transparent',
-        color: 'hoverBg',
-        borderColor: 'transparent',
-        textDecoration: 'underline',
+        bg: (theme) => rgba(getColor(theme)(color), 0.05),
       },
-      '&:focus': {
-        background: 'transparent',
-        borderColor: 'transparent',
+      '&:focus, &:active': {
+        bg: (theme) => rgba(getColor(theme)(color), 0.1),
       },
-      '& svg': {
-        fill: 'primary100',
-      },
-      [`&:hover .${cssClass('Icon')} svg`]: {
-        fill: 'hoverBg',
-      },
-      className: cssClass(['Button', 'Button_Text']),
     },
   },
 })
 
-const sizeVariants = variant({
+const sizeVariants = styledVariant({
   prop: 'size',
   variants: {
     sm: {
@@ -115,9 +97,16 @@ const sizeVariants = variant({
         marginBottom: '-1px',
       },
     },
-    // md alias default
-    md: {},
-    default: {},
+    default: {
+      py: 'sm',
+      px: 'xxl',
+      lineHeight: 'lg',
+    },
+    md: {
+      py: 'sm',
+      px: 'xxl',
+      lineHeight: 'lg',
+    },
     lg: {
       py: 'default',
       px: 'x3',
@@ -129,24 +118,13 @@ const sizeVariants = variant({
       lineHeight: 'sm',
       minWidth: '34px',
       height: '34px',
-      [`& .${cssClass('Icon')} svg`]: {
+      [`& .${cssClass('Icon')}`]: {
         padding: 0,
         margin: 0,
       },
     },
   },
 })
-
-const setPointer = (props: React.HTMLProps<HTMLButtonElement>): string => {
-  if (props.href || props.onClick) {
-    return 'cursor: pointer'
-  }
-
-  if (props.as === 'a' && !props.href && !props.onClick) {
-    return 'cursor: auto'
-  }
-  return ''
-}
 
 /**
  * Button CSS Styles which can be reused in another button-like component with styled-components
@@ -163,62 +141,54 @@ const setPointer = (props: React.HTMLProps<HTMLButtonElement>): string => {
  * @memberof Button
  * @alias ButtonCSS
  */
-export const ButtonCSS = css<ButtonProps>`
+export const ButtonCSS: ReturnType<typeof css> = css<ButtonProps>`
   -webkit-appearance: none;
   -moz-appearance: none;
-  outline: 0;
   display: inline-block;
-  font-family: ${({ theme }): string => theme.font};
-  line-height: ${themeGet('lineHeights', 'lg')};
+  background-color: transparent;
+  outline: 0;
+  font-family: ${({ theme }) => theme.font};
+  font-size: ${themeGet('fontSizes', 'default')};
   vertical-align: middle;
+  border-radius: ${themeGet('space', 'sm')};
+  user-select: none;
+  text-align: center;
 
   border: 1px solid ${themeGet('colors', 'primary100')};
   color: ${themeGet('colors', 'primary100')};
-  
-  ${(props) => setPointer(props as React.HTMLProps<HTMLButtonElement>)};
+
+  cursor: pointer;
   text-decoration: none;
-  padding: ${themeGet('space', 'sm')} ${themeGet('space', 'xxl')};
   box-sizing: border-box;
 
-  & > .${cssClass('Icon')} {
+  & .${cssClass('Icon')} {
     vertical-align: middle;
-  }
-
-  & > .${cssClass('Icon')} svg {
     margin: 0 ${themeGet('space', 'md')} 0 0;
+    color: inherit;
   }
 
-  & .${cssClass('Icon')} svg {
-    fill: ${themeGet('colors', 'primary100')};
-  }
-  &:hover {
-    color: ${themeGet('colors', 'white')};
-    background: ${themeGet('colors', 'hoverBg')};
-    border-color: ${themeGet('colors', 'hoverBg')};
-    & .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'white')};
-    }
-  }
-  &:focus {
-    border-color: ${themeGet('colors', 'accent')};
-    ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
-  }
-
-  &:disabled {
-    color: ${themeGet('colors', 'grey60')};
-    border-color: ${themeGet('colors', 'grey80')};
-    background: ${themeGet('colors', 'white')};
-    cursor: default;
-    & .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'grey60')};
-    }
-  }
+  transition: all 0.1s ease-in;
 
   ${({ rounded }): string => (rounded ? 'border-radius: 9999px' : '')};
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: auto;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: transparent;
+    }
+  }
 
   ${styledColor};
   ${space};
   ${typography};
+
   ${buttonVariants};
   ${sizeVariants};
 `

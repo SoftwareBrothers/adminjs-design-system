@@ -1,12 +1,13 @@
 import React from 'react'
+
 import {
   DropDown,
   DropDownMenu,
   DropDownTrigger,
-} from '../../molecules/drop-down'
-import { SingleButtonInGroup } from './single-button-in-group'
-import { DropDownItemWithButtons } from './drop-down-item-with-buttons'
-import { ButtonInGroupProps } from './button-group.types'
+} from '../../molecules/drop-down/index.js'
+import { SingleButtonInGroup } from './single-button-in-group.js'
+import { DropDownItemWithButtons } from './drop-down-item-with-buttons.js'
+import { ButtonInGroupProps } from './button-group.types.js'
 
 export const ButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
   const { buttons, className, ...buttonProps } = props
@@ -32,6 +33,4 @@ export const ButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
   return <SingleButtonInGroup {...buttonProps} className={className} />
 }
 
-export {
-  ButtonInGroup as default,
-}
+export default ButtonInGroup

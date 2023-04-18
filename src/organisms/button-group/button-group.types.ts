@@ -1,14 +1,15 @@
-import { ButtonProps } from '../../atoms/button'
-import { VariantType } from '../../theme'
+import { ButtonProps } from '../../atoms/button/index.js'
+import type { IconProps } from '../../atoms/icon/index.js'
+import { VariantType } from '../../theme.js'
 
 /**
  * Props of buttons in {@link ButtonGroup}
  *
  * @memberof ButtonGroup
  */
-export type ButtonInGroupProps = ButtonProps & {
+export type ButtonInGroupProps = Omit<ButtonProps, 'onClick'> & {
   /** Icon of a button */
-  icon?: string;
+  icon?: IconProps['icon'];
   /** Label, when set to null, with icon given, button will adjust it's margin */
   label?: string | null;
   /** Variant compatible with Button variant */

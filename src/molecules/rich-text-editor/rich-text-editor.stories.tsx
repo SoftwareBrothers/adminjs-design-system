@@ -1,8 +1,9 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { RichTextEditor } from './rich-text-editor'
-import StoryWrapper from '../../utils/story-wrapper'
-import { Text, Box } from '../..'
+import { Box, Text } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { RichTextEditor } from './rich-text-editor.js'
 
 const html = `
 <h1>Hello World</h1>
@@ -57,7 +58,7 @@ const c = sum(a, b);</pre>
 <p>text goes on...</p>
 `
 
-export const Default: React.FC = () => {
+export const Default: StoryFn = () => {
   const [value, setValue] = useState(html)
   const contentRef = useRef<any>()
 
@@ -68,7 +69,7 @@ export const Default: React.FC = () => {
   }, [value])
 
   return (
-    <Box flex>
+    <Box flex style={{ gap: 48 }}>
       <StoryWrapper label="Rich text editor">
         <RichTextEditor onChange={(content) => setValue(content)} value={value} />
       </StoryWrapper>
@@ -81,4 +82,5 @@ export const Default: React.FC = () => {
 
 export default {
   title: 'DesignSystem/Molecules/RichTextEditor',
-}
+  component: RichTextEditor,
+} as Meta<typeof RichTextEditor>

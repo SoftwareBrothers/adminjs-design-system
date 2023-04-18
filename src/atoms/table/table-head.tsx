@@ -1,22 +1,23 @@
-import styled from 'styled-components'
-import { themeGet } from '../../utils'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @component
  * @private
  */
 const TableHead = styled.thead`
-  background: ${themeGet('colors', 'grey20')};
-
-  & a {
-    color: ${themeGet('colors', 'grey60')};
+  background: rgba(0, 0, 0, 0.01);
+  
+  & td, & a {
+    color: ${({ theme }) => theme.colors.text};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
     text-decoration: none;
-    font-size: ${themeGet('fontSizes', 'sm')};
     white-space: nowrap;
     
-    .${cssClass('Icon')} svg {
-      fill: ${themeGet('colors', 'primary100')};
+    &:hover {
+      text-decoration: none;
     }
   }
 `

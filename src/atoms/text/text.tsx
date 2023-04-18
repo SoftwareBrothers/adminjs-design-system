@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 import {
   typography,
   TypographyProps,
@@ -10,9 +8,11 @@ import {
   layout,
   LayoutProps,
 } from 'styled-system'
-import contentCSS from '../../utils/content-styles'
-import { cssClass } from '../../utils/css-class'
-import { ColorProps } from '../../utils/color-props'
+import { styled } from '@styled-components'
+
+import contentCSS from '../../utils/content-styles.js'
+import { cssClass } from '../../utils/css-class.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 
 const variants = variant({
   variants: {

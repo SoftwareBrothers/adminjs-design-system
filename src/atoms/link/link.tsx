@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import { PropsWithChildren } from 'react'
 import { color, space, variant, SpaceProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
-import { ColorProps } from '../../utils/color-props'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
 
 const sizeVariants = variant({
   prop: 'size',
@@ -20,51 +22,18 @@ const variants = variant({
   variants: {
     primary: {
       color: 'primary100',
-      '&:hover': {
-        color: 'hoverBg',
-        '& svg': {
-          fill: 'hoverBg',
-        },
-      },
-      '& svg': {
-        fill: 'primary100',
-      },
     },
     danger: {
       color: 'error',
-      '&:hover': {
-        color: 'error',
-      },
-      '& svg': {
-        fill: 'error',
-      },
     },
     success: {
       color: 'success',
-      '&:hover': {
-        color: 'success',
-      },
-      '& svg': {
-        fill: 'success',
-      },
     },
     info: {
       color: 'primary60',
-      '&:hover': {
-        color: 'hoverBg',
-      },
-      '& svg': {
-        fill: 'primary60',
-      },
     },
     secondary: {
       color: 'accent',
-      '&:hover': {
-        color: 'hoverBg',
-      },
-      '& svg': {
-        fill: 'accent',
-      },
     },
   },
 })
@@ -87,7 +56,7 @@ export type LinkProps = ColorProps & SpaceProps & {
   variant?: 'primary' | 'danger' | 'success' | 'info' | 'secondary';
   /** Size variant */
   size?: 'sm' | 'lg';
-}
+} & PropsWithChildren
 
 /**
  * @classdesc
@@ -120,7 +89,7 @@ export type LinkProps = ColorProps & SpaceProps & {
  * return (
  * <Box py="xl">
  *   <Link href="#" mr="xl">
- *     <Icon icon="Add" />
+ *     <Icon icon="Plus" />
  *     With an icon
  *   </Link>
  * </Box>
@@ -128,15 +97,16 @@ export type LinkProps = ColorProps & SpaceProps & {
  * @section design-system
  */
 const Link = styled.a<LinkProps>`
-  font-family: ${({ theme }): string => theme.font};
+  font-family: ${({ theme }) => theme.font};
   vertical-align: middle;
   cursor: pointer;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
   & svg {
-    padding-right: ${({ theme }): string => theme.space.default};
+    padding-right: ${({ theme }) => theme.space.default};
     vertical-align: text-top;
   }
   ${({ uppercase }): string => (uppercase ? 'text-transform: uppercase;' : '')}
@@ -147,6 +117,7 @@ const Link = styled.a<LinkProps>`
 `
 
 Link.defaultProps = {
+  variant: 'primary',
   color: 'grey60',
   className: cssClass('Link'),
 }

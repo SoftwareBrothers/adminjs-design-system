@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components'
-import themeGet from '../../utils/theme-get'
-import Box from '../box/box'
-import { StyledTooltipProps } from './tooltip-props'
+import { styled, css } from '@styled-components'
+
+import themeGet from '../../utils/theme-get.js'
+import { Box } from '../box/index.js'
+import { StyledTooltipProps } from './tooltip-props.js'
 
 const ARROW_WIDTH = 7
 
@@ -15,7 +16,7 @@ const topCSS = css<StyledTooltipProps>`
 
   &::after {
     margin-left: -${ARROW_WIDTH}px;
-    border-color: ${themeGet('colors', 'primary100')} transparent transparent transparent;
+    border-color: ${themeGet('colors', 'grey20')} transparent transparent transparent;
   }
 
   &::before {
@@ -34,7 +35,7 @@ const bottomCSS = css<StyledTooltipProps>`
 
   &::after {
     margin-left: -${ARROW_WIDTH}px;
-    border-color: transparent transparent ${themeGet('colors', 'primary100')} transparent;
+    border-color: transparent transparent ${themeGet('colors', 'grey20')} transparent;
   }
 
   &::before {
@@ -54,7 +55,7 @@ const leftCSS = css<StyledTooltipProps>`
   &::after {
     margin-right: -${ARROW_WIDTH}px;
     margin-top: -${ARROW_WIDTH}px;
-    border-color: transparent transparent transparent ${themeGet('colors', 'primary100')};
+    border-color: transparent transparent transparent ${themeGet('colors', 'grey20')};
   }
 
   &::before {
@@ -75,7 +76,7 @@ const rightCSS = css<StyledTooltipProps>`
   &::after {
     margin-left: -${ARROW_WIDTH}px;
     margin-top: -${ARROW_WIDTH}px;
-    border-color: transparent ${themeGet('colors', 'primary100')} transparent transparent;
+    border-color: transparent ${themeGet('colors', 'grey20')} transparent transparent;
   }
 
   &::before {
@@ -91,7 +92,7 @@ const getPadding = (props: StyledTooltipProps): string => {
   return `${themeGet('space', py)(props)} ${themeGet('space', px)(props)}`
 }
 
-const StyledTooltip = styled(Box)<StyledTooltipProps>`
+const StyledTooltip: any = styled(Box)<StyledTooltipProps>`
   transition: opacity 0.2s, margin 0.2s;
 
   position: absolute;
@@ -126,7 +127,7 @@ const StyledTooltip = styled(Box)<StyledTooltipProps>`
 `
 
 StyledTooltip.defaultProps = {
-  borderColor: 'primary100',
+  borderColor: 'grey20',
   borderStyle: 'solid',
   borderWidth: '1px',
   bg: 'highlight',

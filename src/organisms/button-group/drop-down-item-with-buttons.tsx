@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react'
 
-import Icon from '../../atoms/icon'
+import { Icon } from '../../atoms/icon/index.js'
 import {
   DropDownMenu,
   DropDownItem,
-} from '../../molecules/drop-down'
-import { StyledDropDownItemAction } from './button-group.styled'
-import { ButtonInGroupProps } from './button-group.types'
+} from '../../molecules/drop-down/index.js'
+import { StyledDropDownItemAction } from './button-group.styled.js'
+import { ButtonInGroupProps } from './button-group.types.js'
 
 export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => {
   const { variant, onClick, href, icon, label, buttons, source, ...rest } = props
@@ -20,11 +20,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
     }
     : undefined
 
-  const iconName = useMemo(() => {
-    if (loading) return 'Fade'
-
-    return icon ?? ''
-  }, [loading])
+  const iconName = useMemo(() => (loading ? 'Loader' : icon), [loading])
 
   return (
     <DropDownItem
@@ -39,9 +35,9 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
         {...rest}
       >
         {buttons && buttons.length ? (
-          <Icon icon="CaretLeft" ml="-24px" mr="0" />
+          <Icon icon="ChevronLeft" ml="-24px" mr="0" />
         ) : ''}
-        {!loading && !icon ? '' : <Icon key={iconName.toString()} icon={iconName} spin={loading} />}
+        {!loading && !icon ? '' : <Icon key={iconName?.toString()} icon={iconName} spin={loading} />}
         {label}
       </StyledDropDownItemAction>
       {buttons && buttons.length ? (
@@ -55,6 +51,4 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
   )
 }
 
-export {
-  DropDownItemWithButtons as default,
-}
+export default DropDownItemWithButtons

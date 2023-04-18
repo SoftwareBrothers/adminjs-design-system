@@ -1,9 +1,10 @@
-import React from 'react'
-import Box from '../../atoms/box'
-import Icon from '../../atoms/icon'
-import { Title } from '../../atoms/typography'
-import { NavigationElementProps } from './navigation-element-props'
-import { StyledNavigationElement } from './navigation-element-styled'
+import React, { MouseEvent as ReactMouseEvent } from 'react'
+
+import { Box } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { Title } from '../../atoms/typography/index.js'
+import { NavigationElementProps } from './navigation-element-props.js'
+import { StyledNavigationElement } from './navigation-element-styled.js'
 
 // The longest part of the label which makes it no-wrap: ellipsis
 // example: `MongooseWithLongNameAnd with space` should be truncated because 15 lines doesn't fit
@@ -21,7 +22,7 @@ const PART_LENGTH_TO_ELLIPSIS = 15
  * @section design-system
  * @new In version 3.3
  */
-const NavigationElement: React.FC<NavigationElementProps> = (props) => {
+export const NavigationElement: React.FC<NavigationElementProps> = (props) => {
   const { isOpen, icon, onClick, label, isSelected, href } = props
 
   const expandable = typeof isOpen !== 'undefined'
@@ -29,6 +30,10 @@ const NavigationElement: React.FC<NavigationElementProps> = (props) => {
 
   const hasLongName = label.split(' ').reduce((memo, part) => (memo.length > part.length ? memo : part), '').length
     > PART_LENGTH_TO_ELLIPSIS
+
+  const handleNavigationClick = (
+    event: ReactMouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => (onClick ? onClick(event, props) : undefined)
 
   return (
     <StyledNavigationElement
@@ -38,7 +43,7 @@ const NavigationElement: React.FC<NavigationElementProps> = (props) => {
       isSelected={isSelected}
       isOpen={isOpen}
       href={href}
-      onClick={(event) => (onClick ? onClick(event, props) : undefined)}
+      onClick={handleNavigationClick}
     >
       {icon && (
         <Box className="icon-box" as="span">
@@ -55,4 +60,4 @@ const NavigationElement: React.FC<NavigationElementProps> = (props) => {
   )
 }
 
-export { NavigationElement, NavigationElement as default }
+export default NavigationElement

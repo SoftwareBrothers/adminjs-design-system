@@ -1,3 +1,3 @@
-export * from './navigation-element'
-export * from './navigation-element-styled'
-export * from './navigation-element-props'
+export * from './navigation-element.js'
+export * from './navigation-element-styled.js'
+export * from './navigation-element-props.js'

@@ -1,5 +1,6 @@
-import { ButtonProps } from '../../atoms/button'
-import { VariantType } from '../../theme'
+import type { ButtonProps } from '../../atoms/button/index.js'
+import type { IconProps } from '../../atoms/icon/index.js'
+import { VariantType } from '../../theme.js'
 
 /**
  * Props passed to Modal Component
@@ -28,7 +29,7 @@ export type ModalProps = {
   label?: string
 
   /** Icon near the label */
-  icon?: string
+  icon?: IconProps['icon']
 
   /** Handler function triggered when overlay is clicked */
   onOverlayClick?: () => any

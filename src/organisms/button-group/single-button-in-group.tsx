@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react'
-import Box from '../../atoms/box/box'
-import Icon from '../../atoms/icon'
-import { StyledSingleButton } from './button-group.styled'
-import { ButtonInGroupProps } from './button-group.types'
+
+import { Box } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { StyledSingleButton } from './button-group.styled.js'
+import { ButtonInGroupProps } from './button-group.types.js'
 
 export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
   const { icon, label, buttons, source, onClick, ...buttonProps } = props
@@ -16,11 +17,7 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
     }
     : undefined
 
-  const iconName = useMemo(() => {
-    if (loading) return 'Fade'
-
-    return icon ?? ''
-  }, [loading])
+  const iconName = useMemo(() => (loading ? 'Loader' : icon), [loading])
 
   return (
     <StyledSingleButton
@@ -29,17 +26,15 @@ export const SingleButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
       onClick={onClickHandler}
       {...buttonProps}
     >
-      {!loading && !icon ? '' : <Icon key={iconName.toString()} icon={iconName} spin={loading} />}
+      {!loading && !icon ? '' : <Icon key={iconName?.toString()} icon={iconName} spin={loading} />}
       {label}
       {buttons && buttons.length && label ? (
         <Box as="span" mr="-8px" ml="md">
-          <Icon icon="CaretDown" />
+          <Icon icon="ChevronDown" />
         </Box>
       ) : ''}
     </StyledSingleButton>
   )
 }
 
-export {
-  SingleButtonInGroup as default,
-}
+export default SingleButtonInGroup

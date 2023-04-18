@@ -1,19 +1,25 @@
-import React, { FC } from 'react'
-import { Box, Button, CurrencyInput, FormGroup } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
+import React from 'react'
 
-export const Default: FC = (props) => (
-  <Box width={1}>
-    <StoryWrapper label="Currency input example">
-      <FormGroup>
-        <CurrencyInput {...props} />
-        <Button type="submit">Submit</Button>
-      </FormGroup>
-    </StoryWrapper>
-  </Box>
-)
+import { FormGroup } from '../../index.js'
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box, Button } from '../index.js'
+import { CurrencyInput } from './index.js'
 
-export const Examples: React.FC = () => (
+export const Default: StoryObj = {
+  render: (props) => (
+    <Box width={1}>
+      <StoryWrapper label="Currency input example">
+        <FormGroup>
+          <CurrencyInput {...props} />
+          <Button type="submit" mt="lg">Submit</Button>
+        </FormGroup>
+      </StoryWrapper>
+    </Box>
+  ),
+}
+
+export const Examples: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Euro input">
       <CurrencyInput
@@ -27,22 +33,24 @@ export const Examples: React.FC = () => (
 
 export default {
   title: 'DesignSystem/Atoms/CurrencyInput',
+  component: CurrencyInput,
+  args: {
+    variant: 'default',
+    borderless: false,
+    disabled: false,
+    prefix: '$',
+    suffix: '',
+    decimalSeparator: '.',
+    groupSeparator: ' ',
+    allowDecimals: true,
+    width: 1 / 2,
+    decimalsLimit: 2,
+  },
   argTypes: {
-    variant: {
-      defaultValue: 'default',
-      options: ['sm', 'lg', 'xl', 'default'],
-      control: { type: 'select' },
-    },
-    borderless: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
-    disabled: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
+    variant: { options: ['sm', 'lg', 'xl', 'default'], control: { type: 'select' } },
+    borderless: { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
     width: {
-      defaultValue: 1 / 2,
       control: {
         type: 'number',
         min: 0,
@@ -50,28 +58,12 @@ export default {
         step: 0.1,
       },
     },
-    prefix: {
-      defaultValue: '$',
-      control: { type: 'text' },
-    },
-    suffix: {
-      defaultValue: '',
-      control: { type: 'text' },
-    },
-    decimalSeparator: {
-      defaultValue: '.',
-      control: { type: 'text' },
-    },
-    groupSeparator: {
-      defaultValue: ' ',
-      control: { type: 'text' },
-    },
-    allowDecimals: {
-      defaultValue: true,
-      control: { type: 'boolean' },
-    },
+    prefix: { control: { type: 'text' } },
+    suffix: { control: { type: 'text' } },
+    decimalSeparator: { control: { type: 'text' } },
+    groupSeparator: { control: { type: 'text' } },
+    allowDecimals: { control: { type: 'boolean' } },
     decimalsLimit: {
-      defaultValue: 2,
       control: {
         type: 'number',
         min: 0,
@@ -80,4 +72,4 @@ export default {
       },
     },
   },
-}
+} as Meta<typeof CurrencyInput>

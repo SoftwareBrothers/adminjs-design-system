@@ -66,7 +66,7 @@ const buttons = [{
 }, {
   label: null,
   variant: 'light',
-  icon: 'OverflowMenuHorizontal',
+  icon: 'MenuHorizontal',
   buttons: [{
     label: 'Edit',
     onClick: handleClick,

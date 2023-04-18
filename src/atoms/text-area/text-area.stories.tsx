@@ -1,10 +1,11 @@
+import { Meta, StoryFn } from '@storybook/react'
 import React from 'react'
-import { TextArea, Box } from '../..'
-import StoryWrapper from '../../utils/story-wrapper'
 
-export default { title: 'DesignSystem/Atoms/TextArea' }
+import StoryWrapper from '../../utils/story-wrapper.js'
+import { Box } from '../index.js'
+import { TextArea } from './index.js'
 
-export const Default: React.FC = () => (
+export const Default: StoryFn = () => (
   <Box width={1}>
     <StoryWrapper label="Regular example">
       <TextArea id="input1" placeholder="Simple textarea field..." width={1} />
@@ -13,5 +14,9 @@ export const Default: React.FC = () => (
       <TextArea id="input2" placeholder="Huge borderless" width={1} borderless variant="xl" />
     </StoryWrapper>
   </Box>
-
 )
+
+export default {
+  title: 'DesignSystem/Atoms/TextArea',
+  component: TextArea,
+} as Meta<typeof TextArea>

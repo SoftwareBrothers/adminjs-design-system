@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import React, { PropsWithChildren, useState, useRef, forwardRef, ReactElement, ReactNode } from 'react'
-import PortalUtils from '../../utils/portal-utils'
-import { TooltipControl } from './tooltip-control'
-import Props from './tooltip-props'
+
+import PortalUtils from '../../utils/portal-utils.js'
+import { TooltipControl } from './tooltip-control.js'
+import Props from './tooltip-props.js'
 
 const TooltipPortal = PortalUtils.createPortalForKey('TOOLTIP', TooltipControl)
 
@@ -14,7 +15,7 @@ const TooltipPortal = PortalUtils.createPortalForKey('TOOLTIP', TooltipControl)
  * @new In version 3.3
  * @section design-system
  */
-const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
+export const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
   const { direction, title, children, size } = props
   const childRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -44,6 +45,7 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     setIsVisible(false)
   }
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const ChildWithRef = forwardRef((triggerProps, ref) => React.cloneElement(TriggerElement, {
     ...triggerProps,
     displayName: 'TooltipTrigger',
@@ -70,7 +72,4 @@ const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
   )
 }
 
-export {
-  Tooltip,
-  Tooltip as default,
-}
+export default Tooltip

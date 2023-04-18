@@ -1,15 +1,23 @@
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Placeholder, Box, Label } from '../..'
 
-export default { title: 'DesignSystem/Atoms/Placeholder' }
+import { Box, Label } from '../index.js'
+import { Placeholder } from './index.js'
 
-export const imagePlaceholder: React.FC = () => (
-  <Placeholder width={200} height={200} />
-)
+export const Default: StoryObj = {}
 
-export const textPlaceholder: React.FC = () => (
+export const textPlaceholder: StoryFn = () => (
   <Box>
     <Label>Some name</Label>
     <Placeholder width={400} height={14} />
   </Box>
 )
+
+export default {
+  title: 'DesignSystem/Atoms/Placeholder',
+  component: Placeholder,
+  args: {
+    width: 200,
+    height: 200,
+  },
+} as Meta<typeof Placeholder>

@@ -1,17 +1,17 @@
-import styled, { css } from 'styled-components'
-import { rgba } from 'polished'
+import { darken, rgba } from 'polished'
 import { space, SpaceProps, layout, LayoutProps, variant } from 'styled-system'
-import focusShadowStyle from '../../utils/focus-shadow.style'
-import { cssClass } from '../../utils/css-class'
+import { styled, css } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 const borderlessCSS = css`
   padding: 0;
   border-color: transparent;
   border-width: 0 0 1px 0;
-  color: ${({ theme }) => theme.colors.grey100};
+  color: ${({ theme }) => theme.colors.text};
   &:focus {
     box-shadow: none;
-    border-bottom: 1px solid ${({ theme }): string => theme.colors.inputBorder};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.inputBorder};
   }
 
   &:hover {
@@ -47,6 +47,19 @@ const sizeVariants = variant({
 })
 
 /**
+ * Prop Types of an Input component.
+ * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
+ *
+ * @memberof Input
+ * @alias InputProps
+ * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
+ */
+export type InputProps = SpaceProps & LayoutProps & {
+  borderless?: boolean;
+  variant?: 'sm' | 'lg' | 'xl' | 'default' | 'xxl';
+}
+
+/**
  * Input CSS Styles which can be reused in another input component with styled-components
  *
  * ### Usage:
@@ -61,43 +74,32 @@ const sizeVariants = variant({
  * @memberof Input
  * @alias InputCSS
  */
-export const InputCSS = css<InputProps>`
+export const InputCSS: ReturnType<typeof css> = css<InputProps>`
   box-sizing: border-box;
-  color: ${({ theme }): string => theme.colors.grey80};
+  color: ${({ theme }) => theme.colors.grey100};
   background: transparent;
-  border: 1px solid ${({ theme }): string => theme.colors.inputBorder};
-  font-size: ${({ theme }): string => theme.fontSizes.default};
-  line-height: ${({ theme }): string => theme.lineHeights.lg};
-  font-family: ${({ theme }): string => theme.font};
+  border: 1px solid ${({ theme }) => theme.colors.inputBorder};
+  border-radius: ${({ theme }) => theme.space.xs};
+  font-size: ${({ theme }) => theme.fontSizes.default};
+  line-height: ${({ theme }) => theme.lineHeights.lg};
+  font-family: ${({ theme }) => theme.font};
   outline: none;
+
   &:hover {
-    border-color: ${({ theme }): string => theme.colors.grey60};
+    border-color: ${({ theme }) => darken(0.1, theme.colors.inputBorder)};
   }
   &:focus {
-    border-color: ${({ theme }): string => theme.colors.primary100};
-    ${({ theme }): string => `box-shadow: ${focusShadowStyle(theme)}`};
+    border-color: ${({ theme }) => theme.colors.primary100};
   }
   &:disabled {
-    color: ${({ theme }): string => rgba(theme.colors.grey80, 0.5)};
-    border-color: ${({ theme }): string => rgba(theme.colors.inputBorder, 0.5)};
+    color: ${({ theme }) => rgba(theme.colors.grey80, 0.5)};
+    border-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
+    background-color: ${({ theme }) => rgba(theme.colors.inputBorder, 0.5)};
   }
 
-  ${({ borderless }): any => (borderless ? borderlessCSS : '')};
+  ${({ borderless }) => (borderless && borderlessCSS)};
   ${sizeVariants};
 `
-
-/**
- * Prop Types of an Input component.
- * Apart from variant it extends all {@link LayoutProps} and {@link SpaceProps}
- *
- * @memberof Input
- * @alias InputProps
- * @property {string} [...] Other props from {@link LayoutProps}, {@link SpaceProps}
- */
-export type InputProps = SpaceProps & LayoutProps & {
-  borderless?: boolean;
-  variant?: 'sm' | 'lg' | 'xl' | 'default' | 'xxl';
-}
 
 /**
  * @classdesc

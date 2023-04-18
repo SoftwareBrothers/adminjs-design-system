@@ -1,11 +1,12 @@
-import { css } from 'styled-components'
+import { css } from '@styled-components'
 
-export default css`
+const phoneInputStyles: ReturnType<typeof css> = css`
 {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   position: relative;
-  width: 100%
+  width: 100%;
+  border-radius: 2px;
 }
 
 :disabled {
@@ -973,7 +974,7 @@ export default css`
   margin-left: 0;
   background: #FFFFFF;
   border: 1px solid #CACACA;
-  border-radius: 5px;
+  border-radius: 2px;
   line-height: 25px;
   height: 35px;
   width: 300px;
@@ -1165,3 +1166,5 @@ input[disabled]+.flag-dropdown:hover .selected-flag {
   padding: 0 2px;
   white-space: nowrap
 }`
+
+export default phoneInputStyles

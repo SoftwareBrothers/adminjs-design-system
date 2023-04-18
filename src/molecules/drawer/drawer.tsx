@@ -1,9 +1,9 @@
 /* eslint-disable no-shadow */
-import styled from 'styled-components'
 import { space, SpaceProps, LayoutProps, variant, layout, color, ColorProps } from 'styled-system'
-import DrawerFooter from './drawer-footer'
-import { cssClass } from '../../utils/css-class'
-import { DEFAULT_DRAWER_WIDTH } from '../../constants'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
+import { DEFAULT_DRAWER_WIDTH } from '../../constants.js'
 
 /**
  * Props for Drawer component. Apart from those described below it also extends all
@@ -29,7 +29,6 @@ const variants = variant({
     filter: {
       bg: 'filterBg',
       width: '400px',
-      color: 'white',
       className: cssClass(['Drawer', 'Drawer_Filter']),
     },
   },
@@ -73,18 +72,18 @@ const variants = variant({
  *       </Header.H3>
  *       <Box my="x3" p={0}>
  *         <Button size="sm">
- *           <Icon icon="Information" />
+ *           <Icon icon="Info" />
  *           Info
  *         </Button>
  *         <Button size="sm" ml="lg">
- *           <Icon icon="Delete" />
+ *           <Icon icon="Trash" />
  *           Delete
  *         </Button>
  *       </Box>
  *
  *     </DrawerContent>
  *     <DrawerFooter>
- *       <Button variant="primary">
+ *       <Button variant="contained">
  *         Save
  *       </Button>
  *     </DrawerFooter>
@@ -95,27 +94,22 @@ const variants = variant({
  * @section design-system
  */
 const Drawer = styled.section<DrawerProps>`
-  z-index: 100;
   position: fixed;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  top: 0;
-  right: ${({ isHidden, width }): string => (isHidden ? `-${width?.toString()}` : '0px;')};
-  &.hidden {
-    right: ${({ width }): string => (`-${width?.toString()}`)};
-  }
-  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.grey40};
   height: 100%;
+  max-width: 100%;
+  z-index: 100;
+
+  transform: translateX(${({ isHidden }) => (isHidden ? '100%' : '0%')});
+  transition: transform 0.25s ease-in-out;
+
+  box-shadow: -1px 0px 0px #EEEEEF, -4px 0px 16px rgba(107, 119, 129, 0.1);
+  background-color: ${({ theme }) => theme.colors.container};
   overflow-y: auto;
   overflow-x: hidden;
-  transition: all 500ms;
-  background: ${({ theme }): string => theme.colors.white};
-  box-sizing: border-box;
-  & > ${DrawerFooter} {
-    border-top: 1px solid ${({ theme }): string => theme.colors.primary20};
-    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};    
-  }
-  max-width: 100%;
   
   ${space};
   ${color};

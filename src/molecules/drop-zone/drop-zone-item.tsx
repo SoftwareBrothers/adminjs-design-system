@@ -1,18 +1,32 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from '../../atoms/box'
-import { Icon } from '../../atoms/icon'
-import { Button } from '../../atoms/button'
+import { styled } from '@styled-components'
 
-const DropZoneImg = styled.div<{src: string}>`
-  width: 80px;
-  height: 80px;
-  margin-right: ${({ theme }): string => theme.space.lg};
-  background-image: url('${({ src }): string => src}');
+import { Box } from '../../atoms/box/index.js'
+import { Icon } from '../../atoms/icon/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { Text } from '../../atoms/text/index.js'
+import { humanFileSize } from '../../utils/index.js'
+
+const DropZoneImg = styled.div<{ src: string }>`
+  width: 100%;
+  height: 100%;
+  background-image: url('${({ src }) => src}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  display: inline-block;
+  border-radius: ${({ theme }) => theme.space.sm};
+`
+
+const Wrapper = styled.div`
+  padding: ${({ theme }) => theme.space.md};
+  display: flex;
+  align-items: center;
+  margin-top: ${({ theme }) => theme.space.lg};
+  gap: ${({ theme }) => theme.space.lg};
+
+  border: ${({ theme }) => theme.borders.default};
+  border-color: ${({ theme }) => theme.colors.grey40};
+  border-radius: ${({ theme }) => theme.space.sm};
 `
 
 /**
@@ -23,20 +37,20 @@ export type DropZoneItemProps = {
   /**
    * Actual file buffer
    */
-  file?: File;
+  file?: File
   /**
    * Handler function triggered after clicking remove
    */
-  onRemove?: () => void;
+  onRemove?: () => void
   /**
    * Preview image. If `file` is given and it is a image then `src` will be
    * overridden by this image.
    */
-  src?: string;
+  src?: string
   /**
    * filename. If 'file' is given it overrides what was given as a `filename`
    */
-  filename?: string;
+  filename?: string
 }
 
 /**
@@ -75,22 +89,34 @@ const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
   }
 
   return (
-    <Box bg="grey20" px="lg" py="default" mt="default" flex alignItems="center">
-      <Icon icon="Attachment" mr="default" />
-      {src ? (<DropZoneImg src={src} />) : ''}
-      <Box flexGrow={1}>{file?.name || filename}</Box>
+    <Wrapper>
+      <Box flex alignItems="center" justifyContent="center" width={40} height={40}>
+        {src ? <DropZoneImg src={src} /> : <Icon icon="Paperclip" />}
+      </Box>
+      <Box flex flexDirection="column" style={{ gap: 4 }}>
+        <Text variant="sm" fontWeight={500} lineHeight="default">
+          {file?.name || filename}
+        </Text>
+        {file && (
+          <Text variant="sm" color="grey80" lineHeight="default">
+            {new Date(file.lastModified).toLocaleString()} {humanFileSize(file.size, 'MB')}
+          </Text>
+        )}
+      </Box>
       {onRemove && (
         <Button
-          variant="text"
-          m="-8px"
+          ml="auto"
+          mr="md"
+          variant="light"
           size="icon"
           type="button"
-          onClick={(): void => onRemove && onRemove()}
+          rounded
+          onClick={onRemove}
         >
-          <Icon icon="Close" />
+          <Icon icon="X" />
         </Button>
       )}
-    </Box>
+    </Wrapper>
   )
 }
 

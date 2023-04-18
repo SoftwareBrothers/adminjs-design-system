@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import { styled } from '@styled-components'
 
-import Text from '../../atoms/text'
+import { Text } from '../../atoms/text/index.js'
 
 /**
  * @component
@@ -9,10 +9,10 @@ import Text from '../../atoms/text'
 const FormMessage = styled(Text)`
   box-sizing: border-box;
   vertical-align: middle;
-  height: ${({ theme }): string => theme.space.xl};
-  margin: ${({ theme }): string => theme.space.sm} 0 0;
+  height: ${({ theme }) => theme.space.xl};
+  margin: ${({ theme }) => theme.space.sm} 0 0;
   font-weight: normal;
-  font-size: ${({ theme }): string => theme.fontSizes.sm};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
 `
 
 export default FormMessage

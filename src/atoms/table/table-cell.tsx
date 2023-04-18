@@ -1,33 +1,32 @@
-import styled from 'styled-components'
-import { color, space, layout, SpaceProps, LayoutProps } from 'styled-system'
-import { ColorProps } from '../../utils/color-props'
+import { LayoutProps, SpaceProps, color, layout, space } from 'styled-system'
+import { styled } from '@styled-components'
 
-import TableHead from './table-head'
-import { cssClass } from '../../utils/css-class'
+import { NewColorProps as ColorProps } from '../../utils/color-props.js'
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @component
  * @private
  */
 const TableCell = styled.td<SpaceProps | ColorProps | LayoutProps>`
-  border-bottom: 1px solid ${({ theme }): string => theme.colors.grey20};
-  font-size: ${({ theme }): string => theme.fontSizes.default};
-  line-height: ${({ theme }): string => theme.lineHeights.default};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  font-size: ${({ theme }) => theme.fontSizes.default};
+  line-height: ${({ theme }) => theme.lineHeights.default};
   word-break: break-word;
   vertical-align: middle;
   ${color}; 
   ${space};
   ${layout};
 
-  ${TableHead} & {
-    color: ${({ theme }): string => theme.colors.grey60};
-    border: none;
+  &.options {
+    text-align: right;
   }
 `
 
 TableCell.defaultProps = {
   p: 'lg',
-  color: 'grey100',
+  color: 'text',
   className: cssClass('TableCell'),
 }
 

@@ -1,8 +1,13 @@
-import noop from 'lodash/noop'
-import React, { FC } from 'react'
-import ReactSelect, { Props } from 'react-select'
-import * as theme from '../../theme'
-import { cssClass, filterStyles, selectStyles } from '../../utils'
+import noop from 'lodash/noop.js'
+import React, { FC, lazy } from 'react'
+import { Props } from 'react-select'
+
+import { cssClass, filterStyles, selectStyles } from '../../utils/index.js'
+import useSelectTheme from './select-theme.js'
+
+const ReactSelect = lazy(() => import('react-select') as any) as any
+
+const SelectComponent = ReactSelect.default || ReactSelect
 
 interface SelectProps extends Props {
   value: any
@@ -12,6 +17,7 @@ interface SelectProps extends Props {
 
 export const Select: FC<SelectProps> = (props) => {
   const { value, onChange, variant, ...selectProps } = props
+  const { theme, selectTheme } = useSelectTheme()
   const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
   const handleChange: Props['onChange'] = (selected) => {
@@ -19,9 +25,10 @@ export const Select: FC<SelectProps> = (props) => {
   }
 
   return (
-    <ReactSelect
+    <SelectComponent
       className={cssClass('Select')}
       value={value}
+      theme={selectTheme}
       styles={styles}
       onChange={handleChange}
       isClearable

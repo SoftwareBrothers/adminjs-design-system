@@ -1,6 +1,7 @@
-import styled from 'styled-components'
 import { layout, LayoutProps } from 'styled-system'
-import { cssClass } from '../../utils/css-class'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @classdesc
@@ -42,7 +43,7 @@ import { cssClass } from '../../utils/css-class'
  *   <TableCaption>
  *     <Text as="span">Monthly savings</Text>
  *     <Button variant="text" size="sm">
- *       <Icon icon="Delete" />
+ *       <Icon icon="Trash" />
  *       Remove
  *     </Button>
  *   </TableCaption>
@@ -52,13 +53,13 @@ import { cssClass } from '../../utils/css-class'
  *       <TableCell>
  *         <Link href="#">
  *           Name
- *           <Icon icon="CaretUp" />
+ *           <Icon icon="ChevronUp" />
  *         </Link>
  *       </TableCell>
  *       <TableCell>
  *         <Link href="#">
  *           Last
- *           <Icon icon="CaretDown" />
+ *           <Icon icon="ChevronDown" />
  *         </Link>
  *       </TableCell>
  *       <TableCell>Surname</TableCell>
@@ -91,11 +92,12 @@ import { cssClass } from '../../utils/css-class'
  */
 const Table = styled.table<LayoutProps>`
   position: relative;
-  font-family: ${({ theme }): string => theme.font};
-  color: ${({ theme }): string => theme.colors.grey100};
+  font-family: ${({ theme }) => theme.font};
+  color: ${({ theme }) => theme.colors.text};
+  border-left: 1px solid ${({ theme }) => theme.colors.border};
+  border-right: 1px solid ${({ theme }) => theme.colors.border};
 
   ${layout};
-  border-collapse: collapse;
 `
 
 Table.defaultProps = {

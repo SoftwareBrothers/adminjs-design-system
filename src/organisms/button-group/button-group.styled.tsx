@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import styled, { css } from 'styled-components'
-import Box from '../../atoms/box'
-import { Button } from '../../atoms/button'
-import { cssClass, themeGet } from '../../utils'
-import { DropDownItemAction } from '../../molecules/drop-down'
-import { ButtonGroupProps } from './button-group.types'
+import { styled, css } from '@styled-components'
+
+import { Box } from '../../atoms/box/index.js'
+import { Button } from '../../atoms/button/index.js'
+import { cssClass, themeGet } from '../../utils/index.js'
+import { DropDownItemAction } from '../../molecules/drop-down/index.js'
+import { ButtonGroupProps } from './button-group.types.js'
 
 export const BUTTON_IN_GROUP_CLASS_NAME = cssClass('ButtonGroupItem')
 
@@ -35,9 +36,10 @@ export const hasHandler = (props: any): ReturnType<typeof css> | string => {
 export const hasLabel = (props: any): ReturnType<typeof css> | string => {
   if (!props.hasLabel) {
     return css`
+      border: none;
       padding-left: ${themeGet('space', 'md')};
       padding-right: ${themeGet('space', 'md')};
-      & > .${cssClass('Icon')} svg {
+      & > .${cssClass('Icon')} {
         margin-right: 0;
       }
     `
@@ -55,5 +57,5 @@ export const StyledDropDownItemAction = styled<any>(DropDownItemAction)`
 `
 
 export const StyledButtonGroup = styled(Box)`
-  ${buttonMargin};
+  ${buttonMargin as any};
 `

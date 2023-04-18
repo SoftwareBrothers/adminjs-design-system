@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "adminjs-docs"
+  },
+  "targets": {
+    "adminjs-docs": {
+      "hosting": {
+        "adminjs-storybook": [
+          "adminjs-storybook"
+        ],
+        "adminjs-storybook-beta": [
+          "adminjs-storybook-beta"
+        ]
+      }
+    }
+  }
+}

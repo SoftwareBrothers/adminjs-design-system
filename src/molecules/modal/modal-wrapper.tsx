@@ -1,13 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '@styled-components'
 
-import { ModalInline } from './modal-inline'
-import { ModalProps } from './modal-props'
-import { ModalStyled } from './modal-styled'
-import Box from '../../atoms/box'
-import Overlay from '../../atoms/overlay'
+import { ModalInline } from './modal-inline.js'
+import { ModalProps } from './modal-props.js'
+import { ModalStyled } from './modal-styled.js'
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { Overlay } from '../../atoms/overlay/index.js'
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(Box)<BoxProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@ const Wrapper = styled(Box)`
   }
 `
 
-const ModalWrapper: React.FC<ModalProps> = (props) => {
+export const ModalWrapper: React.FC<ModalProps> = (props) => {
   const { onOverlayClick, ...otherProps } = props
 
   const handleOverlayClick = onOverlayClick || (() => true)
@@ -32,7 +32,4 @@ const ModalWrapper: React.FC<ModalProps> = (props) => {
   )
 }
 
-export {
-  ModalWrapper,
-  ModalWrapper as default,
-}
+export default ModalWrapper

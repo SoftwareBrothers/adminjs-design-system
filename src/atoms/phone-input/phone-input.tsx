@@ -1,11 +1,14 @@
 import React from 'react'
-import ReactPhoneInput, { PhoneInputProps as ReactPhoneInputProps } from 'react-phone-input-2'
-import styled from 'styled-components'
+import ReactPhoneInputLib, { PhoneInputProps as ReactPhoneInputProps } from 'react-phone-input-2'
 import { space, typography, layout, TypographyProps } from 'styled-system'
+import { styled } from '@styled-components'
 
-import { InputCSS, InputProps } from '../input'
-import PhoneInputStyles from '../../utils/phone-input.styles'
-import { cssClass } from '../../utils/css-class'
+import { InputCSS, InputProps } from '../input/index.js'
+import PhoneInputStyles from '../../utils/phone-input.styles.js'
+import { cssClass } from '../../utils/css-class.js'
+
+const ReactPhoneInput = (ReactPhoneInputLib as any).default ?? ReactPhoneInputLib
+const ReactPhoneInputComponent = ReactPhoneInput.default ?? ReactPhoneInput
 
 /**
  * Prop Types of a PhoneInput component.
@@ -48,11 +51,10 @@ export type PhoneInputProps = ReactPhoneInputProps &
  * )
  * @section design-system
  */
-const PhoneInput = styled(ReactPhoneInput)<PhoneInputProps>`
+const PhoneInput = styled(ReactPhoneInputComponent)<PhoneInputProps>`
   ${PhoneInputStyles}
   width: 100%;
   position: relative;
-
   & > input {
     ${InputCSS}
     ${space}
@@ -61,7 +63,7 @@ const PhoneInput = styled(ReactPhoneInput)<PhoneInputProps>`
   }
 
   .form-control, .flag-dropdown {
-    border-radius: 0;
+    border-radius: 2px;
   }
 `
 

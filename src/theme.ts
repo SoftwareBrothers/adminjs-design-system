@@ -42,54 +42,74 @@
  * @property {string} filterDisabled=rgba(83,91,142,0.05)      <div style="background: rgba(83,91,142,0.05); height: 20px;" />
  * @property {string} bg=#F6F7FB      <div style="background: #F6F7FB; height: 20px;" />
  */
-const colors = {
-  // Primary
-  primary100: '#4268F6',
+export const colors = {
+  // global
+  border: '#EEEEEF',
+  text: '#0C1E29',
+
+  // primary
+  primary100: '#3040D6',
   primary80: '#6483F8',
-  primary60: '#879FFA',
-  primary40: '#A9BAFA',
-  primary20: '#CBD5FD',
+  primary60: '#99A9EE',
+  primary40: '#BBC5F4',
+  primary20: '#DDE2F9',
 
   // accent
-  accent: '#38CAF1',
-  love: '#4D70EB', // Main AdminJS logo color
+  accent: '#3B3552',
 
   // grey
-  grey100: '#1C1C38',
+  grey100: '#0C1E29',
   grey80: '#454655',
   grey60: '#898A9A',
-  grey40: '#C0C0CA',
-  grey20: '#F6F7FB',
+  grey40: '#BBC3CB',
+  grey20: '#F2F2F2',
+
+  // common
   white: '#fff',
+  black: '#000',
 
-  // Alerts
-  errorDark: '#DE405D',
-  error: '#FF4567',
-  errorLight: '#FFA5B5',
+  // alerts
+  errorDark: '#9d0616',
+  error: '#C20012',
+  errorLight: '#F9E5E7',
 
-  successDark: '#32A887',
-  success: '#70C9B0',
-  successLight: '#DBF0F1',
+  successDark: '#007D7F',
+  success: '#007D7F',
+  successLight: '#E5F2F2',
+
+  warningDark: '#A14F17',
+  warning: '#A14F17',
+  warningLight: '#F6EDE8',
 
   infoDark: '#4268F6',
-  info: '#879FFA',
+  info: '#3040D6',
   infoLight: '#CBD5FD',
 
-  // Backgrounds
-  filterBg: '#343F87',
-  hoverBg: '#535B8E',
+  // backgrounds
+  bg: '#F8F9F9',
+  filterBg: '#FBFBFB',
+  container: '#FFFFFF',
+  sidebar: '#FFFFFF',
 
-  // global
-  border: '#DDE1E5',
-
-  // Elements
-  inputBorder: '#C0C0CA',
-  separator: '#C0C0CA',
-  highlight: '#F6F7FB',
-  filterInputBorder: 'rgba(255,255,255,0.15)',
-  filterDisabled: 'rgba(83,91,142,0.05)',
-  bg: '#F6F7FB',
+  // elements
+  inputBorder: '#BBC3CB',
+  separator: '#BBC3CB',
+  highlight: '#F2F2F2',
+  // AdminJS logo color
+  love: '#4D70EB',
 }
+
+export const ColorVariants = {
+  primary: 'primary100',
+  secondary: 'accent',
+  danger: 'error',
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  text: 'text',
+}
+
+export type ColorVariant = keyof typeof ColorVariants
 
 /**
  * Sizes can be used with paddings, margins etc.
@@ -117,7 +137,7 @@ const colors = {
  * @property {string} x5=80px       80px - <span class="space-box" style="width: 80px;" />
  * @property {string} x6=128px      128px - <span class="space-box" style="width: 128px;" />
  */
-const space = {
+export const space = {
   xs: '2px',
   sm: '4px',
   default: '8px',
@@ -138,7 +158,7 @@ const space = {
  * @property {string} sidebarWidth=300px
  * @property {string} maxFormWidth=740px
  */
-const sizes = {
+export const sizes = {
   navbarHeight: '64px',
   sidebarWidth: '300px',
   maxFormWidth: '740px',
@@ -157,7 +177,7 @@ const sizes = {
  * @property {string} h2=32px      <div style="font-size: 32px;">'h2' font size</div>
  * @property {string} h1=40px      <div style="font-size: 40px;">'h1' font size</div>
  */
-const fontSizes = {
+export const fontSizes = {
   xs: '10px',
   sm: '12px',
   default: '14px',
@@ -179,11 +199,11 @@ const fontSizes = {
  * @property {string} normal=500
  * @property {string} bolder=900
  */
-const fontWeights = {
+export const fontWeights = {
   lighter: 200,
   light: 300,
   normal: 400,
-  bold: 500,
+  bold: 700,
   bolder: 900,
 }
 
@@ -197,7 +217,7 @@ const fontWeights = {
  * @property {string} xl=32px
  * @property {string} xxl=40px
  */
-const lineHeights = {
+export const lineHeights = {
   xs: '10px',
   sm: '12px',
   default: '16px',
@@ -224,11 +244,11 @@ const lineHeights = {
  * @property {string} inputFocus         <div class="shadow-div" style="box-shadow: 0 2px 4px 0 rgba(135,159,250,0.4);"/>
  * @property {string} buttonFocus        <div class="shadow-div" style="box-shadow: 0 4px 6px 0 rgba(56,202,241,0.3);"/>
  */
-const shadows = {
+export const shadows = {
   login: '0 15px 24px 0 rgba(137,138,154,0.15)',
   cardHover: '0 4px 12px 0 rgba(137,138,154,0.4)',
   drawer: '-2px 0 8px 0 rgba(137,138,154,0.2)',
-  card: '0 1px 6px 0 rgba(137,138,154,0.4)',
+  card: '0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1)',
   inputFocus: '0 2px 4px 0 rgba(135,159,250,0.4)',
   buttonFocus: '0 4px 6px 0 rgba(56,202,241,0.3)',
 }
@@ -253,14 +273,14 @@ const shadows = {
  * @property {string} 2=1024px
  * @property {string} 3=1324px
  */
-const breakpoints = [
+export const breakpoints = [
   '577px',
   '769px',
   '1024px',
   '1324px', // 1024 + sidebarWidth
 ]
 
-const font = '\'Roboto\', sans-serif' as string
+export const font = '\'Roboto\', sans-serif' as string
 
 /**
  * Border styles
@@ -272,11 +292,11 @@ const font = '\'Roboto\', sans-serif' as string
  * @property {string} bg
  * @property {string} default
  */
-const borders = {
-  input: '1px solid #C0C0CA',
-  filterInput: ' 1px rgba(255,255,255,0. solid15)',
-  bg: '1px solid #F6F7FB',
-  default: '1px solid #DDE1E5',
+export const borders = {
+  input: `1px solid ${colors.border}`,
+  filterInput: ' 1px rgba(255,255,255, 0.15)',
+  bg: `1px solid ${colors.bg}`,
+  default: `1px solid ${colors.border}`,
 }
 
 /**
@@ -287,37 +307,15 @@ const borders = {
  * @alias borderWidths
  * @property {string} default - default border with
  */
-const borderWidths = {
+export const borderWidths = {
   default: '0px',
 }
 
-export type VariantType = 'primary'
-  | 'danger'
-  | 'success'
-  | 'info'
-  | 'secondary'
-  | 'default'
-  | 'light'
-
-export const VariantValues: Array<VariantType> = [
-  'primary', 'danger', 'success', 'info', 'secondary', 'default', 'light',
-]
+export type VariantType = 'success' | 'info' | 'primary' | 'secondary' | 'danger' | 'light' | 'default';
 
 // TODO: add transitions
 
-export {
-  colors,
-  lineHeights,
-  fontWeights,
-  fontSizes,
-  sizes,
-  space,
-  font,
-  shadows,
-  borders,
-  breakpoints,
-  borderWidths,
-}
+export const defaultProps = {}
 
 /**
  * The color utility parses a component's color and bg props and converts them into CSS

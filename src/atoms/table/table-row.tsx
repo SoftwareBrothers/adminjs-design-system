@@ -1,13 +1,19 @@
-import styled from 'styled-components'
-import { cssClass } from '../../utils/css-class'
+import { rgba } from 'polished'
+import { styled } from '@styled-components'
+
+import { cssClass } from '../../utils/css-class.js'
 
 /**
  * @component
  * @private
  */
 const TableRow = styled.tr`
-  &:hover {
-    background: ${({ theme }): string => theme.colors.grey20};
+  &.selected {
+    background: ${({ theme }) => rgba(theme.colors.primary100, 0.03)};
+  }
+
+  &:not(.selected):hover {
+    background: rgba(0, 0, 0, 0.01);
   }
 `
 

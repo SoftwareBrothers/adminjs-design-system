@@ -1,14 +1,17 @@
-import styled from 'styled-components'
-import Box from '../../atoms/box'
-import { themeGet } from '../../utils'
+import { styled } from '@styled-components'
 
-const StyledNavigation = styled(Box)`
+import { Box, BoxProps } from '../../atoms/box/index.js'
+import { themeGet } from '../../utils/index.js'
+
+export const StyledNavigation = styled(Box)<BoxProps>`
   ul ul > li {
-    padding-left: ${themeGet('space', 'xxl')};
+    a {
+      padding-left: ${themeGet('space', 'x3')};
+    }
     &:last-child {
       margin-bottom: ${themeGet('space', 'lg')};
     }
   }
 `
 
-export { StyledNavigation, StyledNavigation as default }
+export default StyledNavigation

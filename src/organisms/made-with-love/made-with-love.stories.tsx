@@ -1,13 +1,10 @@
-import React from 'react'
-import MadeWithLove from './made-with-love'
-import StoryWrapper from '../../utils/story-wrapper'
+import { Meta, StoryObj } from '@storybook/react'
+
+import MadeWithLove from './made-with-love.js'
+
+export const Default: StoryObj = {}
 
 export default {
   title: 'DesignSystem/Organisms/MadeWithLove',
-}
-
-export const Default: React.FC = () => (
-  <StoryWrapper label="MadeWithLove footer info">
-    <MadeWithLove />
-  </StoryWrapper>
-)
+  component: MadeWithLove,
+} as Meta<typeof MadeWithLove>
