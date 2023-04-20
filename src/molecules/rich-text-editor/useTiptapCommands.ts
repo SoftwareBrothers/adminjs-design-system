@@ -66,7 +66,7 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
       },
       'Link',
     ),
-    command('youtube', () => editor.commands.setYoutubeVideo({ src: prompt('Link to video') || '' }).run(), 'LogoYoutube'),
+    command('youtube', () => editor.commands.setYoutubeVideo({ src: prompt('Link to video') || '' }), 'LogoYoutube'),
 
     command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),
