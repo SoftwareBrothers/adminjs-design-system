@@ -8,6 +8,7 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import TextAlign from '@tiptap/extension-text-align'
 import Typography from '@tiptap/extension-typography'
+import Youtube from '@tiptap/extension-youtube'
 import { EditorContent, EditorEvents, EditorOptions, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
@@ -63,6 +64,7 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
       TableRow,
       TextAlign.configure({ types: ['heading', 'paragraph', 'image'] }),
       Typography,
+      Youtube,
       ...extensions,
     ],
     content: value,

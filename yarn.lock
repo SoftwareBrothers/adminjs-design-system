@@ -2133,6 +2133,11 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-typography/-/extension-typography-2.0.0-beta.217.tgz#beb96783a815a62624fbeb8723840b8bda135d25"
   integrity sha512-xr/KBgdcI3qbTshbY0FCN8BiSRW++MH7yQwvAKlhk47Qt0UcVsRIGc/FfXFD2MhfoZ4vaVrIn5daU4P4p3d+wA==
 
+"@tiptap/extension-youtube@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-youtube/-/extension-youtube-2.0.3.tgz#caeab5473eb6a69314ef6733772c3c2c6de5c2ad"
+  integrity sha512-iZsMr+88I3hvfbJNLmiPsz2/8ZGpMucyCxRbrZGg1D6wBw4oiUhRPHzGJ3APlECzpanCjyQNMHIk/gvSDDX3ig==
+
 "@tiptap/pm@2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-2.0.0-beta.217.tgz#d944519aa40c74e683402c0d4d39e460d905414e"
