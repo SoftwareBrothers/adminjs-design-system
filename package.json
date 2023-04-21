@@ -6,12 +6,12 @@
   "exports": {
     ".": {
       "import": "./build/index.js",
-      "types": "./types/index.d.ts",
+      "types": "./types/src/index.d.ts",
       "require": "./build/index.js"
     },
     "./styled-components": {
       "import": "./build/utils/styled.js",
-      "types": "./types/utils/styled.d.ts"
+      "types": "./types/src/utils/styled.d.ts"
     }
   },
   "repository": "git@github.com:SoftwareBrothers/adminjs-design-system.git",
