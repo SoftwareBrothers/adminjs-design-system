@@ -29,7 +29,7 @@ export default {
           cwd: './build/',
           root: ['./src/'],
           alias: {
-            '@styled-components': './utils/styled-components.js',
+            '@styled-components': './utils/styled.js',
           },
         },
       ],
