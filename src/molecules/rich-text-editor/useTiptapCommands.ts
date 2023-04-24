@@ -66,7 +66,13 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
       },
       'Link',
     ),
-    command('youtube', () => editor.commands.setYoutubeVideo({ src: prompt('Link to video') || '' }), 'LogoYoutube'),
+    command('youtube', () => {
+      const link = prompt('Link to video') || ''
+      const url = new URL(link)
+      const t = parseInt((url.searchParams.get('t') || '').replace('s', ''), 10) || 0
+
+      return editor.commands.setYoutubeVideo({ src: link, start: t })
+    }, 'LogoYoutube'),
 
     command('hard break', () => editor.chain().focus().setHardBreak().run(), 'TextNewLine'),
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),
