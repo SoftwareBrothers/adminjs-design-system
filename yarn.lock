@@ -1999,6 +1999,13 @@
     lodash "^4.17.21"
     tippy.js "^6.3.7"
 
+"@tiptap/extension-bubble-menu@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-bubble-menu/-/extension-bubble-menu-2.0.3.tgz#44b3c4e35fd478c42467d8fb7dbc9532614e5b18"
+  integrity sha512-lPt1ELrYCuoQrQEUukqjp9xt38EwgPUwaKHI3wwt2Rbv+C6q1gmRsK1yeO/KqCNmFxNqF2p9ZF9srOnug/RZDQ==
+  dependencies:
+    tippy.js "^6.3.7"
+
 "@tiptap/extension-bullet-list@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-bullet-list/-/extension-bullet-list-2.0.0-beta.217.tgz#bedcf2c45412b613987804ef96a977bcd50ba78b"

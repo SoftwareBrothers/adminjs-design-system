@@ -70,7 +70,7 @@
     "@carbon/icons-react": "^11.8.0",
     "@hypnosphi/create-react-context": "^0.3.1",
     "@tiptap/core": "2.0.0-beta.217",
-    "@tiptap/extension-bubble-menu": "2.0.0-beta.217",
+    "@tiptap/extension-bubble-menu": "^2.0.3",
     "@tiptap/extension-character-count": "2.0.0-beta.217",
     "@tiptap/extension-code": "2.0.0-beta.217",
     "@tiptap/extension-document": "2.0.0-beta.217",
