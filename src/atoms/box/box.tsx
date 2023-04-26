@@ -81,6 +81,13 @@ const Box = styled.section<BoxProps>`
   ${shadow};
   ${position};
   ${variants};
+
+  & > .adminjs_Text table,
+  & > .adminjs_Text table tr,
+  & > .adminjs_Text table td,
+  & > .adminjs_Text table th {
+    border: 2px solid black !important;
+  }
 `
 
 Box.defaultProps = {

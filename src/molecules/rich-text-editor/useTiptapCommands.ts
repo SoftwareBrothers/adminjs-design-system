@@ -78,6 +78,23 @@ const useTiptapCommands = (props: useTiptapCommandsProps): TiptapCommand[] => {
     command('undo', () => editor.chain().focus().undo().run(), 'Undo'),
     command('redo', () => editor.chain().focus().redo().run(), 'Redo'),
     command('clear marks', () => editor.chain().focus().unsetAllMarks().run(), 'TextClearFormat'),
+
+    command('insert table', () => {
+      const sizeString = prompt('Table size. Format: columns,rows. Example: 5,3. For table with 5 columns and 3 rows')
+
+      const regex = /^\d,\d$/
+
+      if(!sizeString || !regex.test(sizeString)) {
+        return alert('Invalid format. Use format "columns,rows"!')
+      }
+
+      const splittedSize = sizeString.split(',')
+
+      const cols = parseInt(splittedSize[0], 10)
+      const rows = parseInt(splittedSize[1], 10)
+
+      return editor.commands.insertTable({ rows, cols })
+    }, 'Table'),
   ]
 }
 
