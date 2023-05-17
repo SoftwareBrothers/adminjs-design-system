@@ -12,14 +12,20 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
-export const Default: StoryFn = () => {
+export const Default: StoryFn<SelectProps> = (props) => {
+  const { isMulti } = props
   const [value, setValue] = useState()
 
   return (
     <Box width={1}>
       <StoryWrapper label="Select example">
         <FormGroup>
-          <Select value={value} onChange={(selected) => setValue(selected)} options={options} />
+          <Select
+            value={value}
+            onChange={(selected) => setValue(selected)}
+            options={options}
+            isMulti={isMulti}
+          />
         </FormGroup>
       </StoryWrapper>
     </Box>
@@ -56,11 +62,13 @@ export const Async: StoryFn = () => {
 export default {
   title: 'DesignSystem/Molecules/Select',
   component: Select,
-  parameters: { controls: { include: ['variant'] } },
+  parameters: { controls: { include: ['variant', 'isMulti'] } },
   args: {
     variant: 'default',
+    isMulti: false,
   },
   argTypes: {
     variant: { options: ['default', 'filter'], control: { type: 'select' } },
+    isMulti: { control: { type: 'boolean' } },
   },
 } as Meta<typeof Select>
