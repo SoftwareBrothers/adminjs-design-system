@@ -16,7 +16,7 @@ interface SelectProps extends Props {
 }
 
 export const Select: FC<SelectProps> = (props) => {
-  const { value, onChange, variant, ...selectProps } = props
+  const { value, onChange, variant, isMulti, ...selectProps } = props
   const { theme, selectTheme } = useSelectTheme()
   const styles = variant === 'filter' ? filterStyles(theme) : selectStyles(theme)
 
@@ -32,6 +32,7 @@ export const Select: FC<SelectProps> = (props) => {
       styles={styles}
       onChange={handleChange}
       isClearable
+      isMulti={isMulti}
       {...selectProps}
     />
   )
