@@ -52,7 +52,8 @@ ModalStyled.defaultProps = {
   pr: 'xl',
   pt: 'x3',
   pb: 'xxl',
-  bg: 'white',
+  bg: 'filterBg',
+  color: 'text',
   width: [1, DEFAULT_WIDTH],
 }
 
