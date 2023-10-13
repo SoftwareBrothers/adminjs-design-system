@@ -9,7 +9,7 @@ const ReactAsyncSelect = lazy(() => import('react-select/async') as any) as any
 
 const SelectAsyncComponent = ReactAsyncSelect.default || ReactAsyncSelect
 
-interface SelectProps<Option = unknown, IsMulti extends boolean = false>
+interface SelectProps<Option = unknown, IsMulti extends boolean>
   extends AsyncProps<Option, IsMulti, any> {
   value: Option
   onChange?: (selected) => void
