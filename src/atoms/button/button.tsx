@@ -1,7 +1,7 @@
 import { styled, css } from '@styled-components'
 
 import { cssClass } from '../../utils/index.js'
-import ButtonCSS from './button-css.js'
+import ButtonCSS from './button-css.jsx'
 import type { ButtonProps } from './button-props.js'
 
 const addContent = css<ButtonProps>`
@@ -32,6 +32,8 @@ Button.defaultProps = {
   color: 'primary',
   size: 'md',
 }
+
+Button.displayName = 'Button'
 
 export { Button }
 export default Button

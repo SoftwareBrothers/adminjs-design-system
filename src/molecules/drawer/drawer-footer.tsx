@@ -14,4 +14,6 @@ export const DrawerFooter = styled.section<SpaceProps>`
   ${space};
 `
 
+DrawerFooter.displayName = 'DrawerFooter'
+
 export default DrawerFooter

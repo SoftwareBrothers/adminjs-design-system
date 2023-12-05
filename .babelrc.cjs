@@ -6,7 +6,8 @@ module.exports = {
       "alias": {
         "@styled-components": "./utils/styled.js"
       }
-    }]
+    }],
+    ["replace-import-extension", { "extMapping": { ".jsx": ".js" }}],
   ],
   "presets": [
     "@babel/preset-react",

@@ -10,4 +10,6 @@ export const SmallText = styled('div')<TypographyProps & SpaceProps>`
   line-height: ${themeGet('lineHeights', 'sm')};
 `
 
+SmallText.displayName = 'SmallText'
+
 export default SmallText

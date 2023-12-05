@@ -39,4 +39,6 @@ export const Avatar = styled.div<AvatarProps>`
   ${space}
 `
 
+Avatar.displayName = 'Avatar'
+
 export default Avatar

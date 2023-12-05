@@ -68,5 +68,7 @@ CurrencyInput.defaultProps = {
   className: cssClass('CurrencyInput'),
 }
 
+CurrencyInput.displayName = 'CurrencyInput'
+
 export { CurrencyInput, formatCurrencyProperty }
 export default CurrencyInput

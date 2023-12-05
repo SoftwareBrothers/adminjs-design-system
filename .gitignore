@@ -172,6 +172,7 @@ sketch
 
 # tsc build output
 build
+build-sb
 types
 
 # storybook

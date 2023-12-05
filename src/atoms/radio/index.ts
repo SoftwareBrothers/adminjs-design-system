@@ -1,1 +1,1 @@
-export * from './radio.js'
+export * from './radio.jsx'

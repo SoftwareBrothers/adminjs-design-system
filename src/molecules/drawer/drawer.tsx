@@ -121,6 +121,7 @@ Drawer.defaultProps = {
   width: DEFAULT_DRAWER_WIDTH,
   className: cssClass('Drawer'),
 }
+Drawer.displayName = 'Drawer'
 
 export { Drawer }
 export default Drawer

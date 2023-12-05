@@ -19,4 +19,6 @@ Overlay.defaultProps = {
   className: cssClass('Overlay'),
 }
 
+Overlay.displayName = 'Overlay'
+
 export default Overlay

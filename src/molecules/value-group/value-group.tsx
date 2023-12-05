@@ -27,4 +27,6 @@ export const ValueGroup: React.FC<ValueGroupProps> = (props) => {
   )
 }
 
+ValueGroup.displayName = 'ValueGroup'
+
 export default ValueGroup

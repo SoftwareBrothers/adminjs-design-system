@@ -79,4 +79,6 @@ const RawIllustration: React.FC<RawIllustrationType> = (props) => {
  */
 export const Illustration = RawIllustration
 
+Illustration.displayName = 'Illustration'
+
 export default Illustration

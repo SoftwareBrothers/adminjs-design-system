@@ -42,5 +42,6 @@ SelectAsync.defaultProps = {
   variant: 'default',
   onChange: noop,
 }
+SelectAsync.displayName = 'SelectAsync'
 
 export default SelectAsync

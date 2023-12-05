@@ -22,7 +22,9 @@ export const Default: StoryFn = () => {
   )
 }
 
-export default {
+const meta: Meta<typeof Tabs> = {
   title: 'DesignSystem/Atoms/Tabs',
   component: Tabs,
-} as Meta<typeof Tabs>
+}
+
+export default meta

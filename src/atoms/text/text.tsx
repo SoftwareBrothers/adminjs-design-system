@@ -92,5 +92,7 @@ Text.defaultProps = {
   className: cssClass('Text'),
 }
 
+Text.displayName = 'Text'
+
 export { Text }
 export default Text

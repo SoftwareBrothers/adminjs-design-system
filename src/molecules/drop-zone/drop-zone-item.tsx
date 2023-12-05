@@ -120,5 +120,7 @@ const DropZoneItem: React.FC<DropZoneItemProps> = (props) => {
   )
 }
 
+DropZoneItem.displayName = 'DropZoneItem'
+
 export { DropZoneItem }
 export default DropZoneItem

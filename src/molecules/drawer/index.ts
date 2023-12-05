@@ -1,3 +1,3 @@
-export * from './drawer.js'
-export * from './drawer-content.js'
-export * from './drawer-footer.js'
+export * from './drawer.jsx'
+export * from './drawer-content.jsx'
+export * from './drawer-footer.jsx'

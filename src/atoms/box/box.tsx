@@ -125,5 +125,7 @@ Box.defaultProps = {
   className: cssClass('Box'),
 }
 
+Box.displayName = 'Box'
+
 export { Box }
 export default Box

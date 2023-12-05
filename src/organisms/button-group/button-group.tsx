@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 
-import { BUTTON_IN_GROUP_CLASS_NAME, StyledButtonGroup } from './button-group.styled.js'
+import { BUTTON_IN_GROUP_CLASS_NAME, StyledButtonGroup } from './button-group.styled.jsx'
 import { ButtonGroupProps } from './button-group.types.js'
-import { ButtonInGroup } from './button-in-group.js'
+import { ButtonInGroup } from './button-in-group.jsx'
 
 /**
  * @load ./button-group.doc.md
@@ -35,5 +35,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
     </StyledButtonGroup>
   )
 }
+
+ButtonGroup.displayName = 'ButtonGroup'
 
 export default ButtonGroup

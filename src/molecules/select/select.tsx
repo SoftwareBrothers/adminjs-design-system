@@ -42,5 +42,6 @@ Select.defaultProps = {
   variant: 'default',
   onChange: noop,
 }
+Select.displayName = 'Select'
 
 export default Select

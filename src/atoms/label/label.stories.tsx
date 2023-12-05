@@ -2,7 +2,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box } from '../index.js'
 import { Label } from './index.js'
 
@@ -18,7 +18,7 @@ export const Default: StoryObj = {
   ),
 }
 
-export default {
+const meta: Meta<typeof Label> = {
   title: 'DesignSystem/Atoms/Label',
   component: Label,
   args: {
@@ -37,4 +37,6 @@ export default {
     variant: { options: variants, control: { type: 'select' } },
     size: { options: ['default', 'lg'], control: { type: 'select' } },
   },
-} as Meta<typeof Label>
+}
+
+export default meta

@@ -38,4 +38,6 @@ TableCaption.defaultProps = {
   className: cssClass('TableCaption'),
 }
 
+TableCaption.displayName = 'TableCaption'
+
 export default TableCaption

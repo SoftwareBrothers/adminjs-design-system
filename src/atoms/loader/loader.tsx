@@ -85,5 +85,7 @@ const Loader: React.FC = () => (
   </Box>
 )
 
+Loader.displayName = 'Loader'
+
 export { Loader }
 export default Loader

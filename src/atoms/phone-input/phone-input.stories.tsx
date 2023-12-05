@@ -2,7 +2,7 @@ import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { FormGroup } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Button } from '../index.js'
 import { PhoneInput } from './index.js'
 
@@ -27,7 +27,7 @@ export const Examples: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof PhoneInput> = {
   title: 'DesignSystem/Atoms/PhoneInput',
   component: PhoneInput,
   args: {
@@ -42,4 +42,6 @@ export default {
     variant: { options: ['sm', 'lg', 'xl', 'default'], control: { type: 'select' } },
     width: { control: { type: 'number', min: 0, max: 1, step: 0.1 } },
   },
-} as Meta<typeof PhoneInput>
+}
+
+export default meta

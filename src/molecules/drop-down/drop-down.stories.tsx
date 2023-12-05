@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Badge, Box, Button, Icon, Text } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { DropDown, DropDownItem, DropDownMenu, DropDownProps, DropDownTrigger } from './index.js'
 
 export const Default: StoryObj<DropDownProps & { onClick: (e) => void }> = {
@@ -69,13 +69,14 @@ export const Custom: StoryObj<{ onClick: (e) => void }> = {
   },
 }
 
-export default {
+const meta: Meta<typeof DropDown> = {
   title: 'DesignSystem/Molecules/DropDown',
   args: {
     stick: 'left',
   },
   argTypes: {
-    onClick: { action: 'clicked' },
     stick: { options: ['left', 'right'], control: { type: 'select' } },
   },
-} as Meta<typeof DropDown>
+}
+
+export default meta

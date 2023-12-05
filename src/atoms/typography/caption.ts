@@ -10,4 +10,6 @@ export const Caption = styled('div')<TypographyProps & SpaceProps>`
   line-height: ${themeGet('lineHeights', 'md')};
 `
 
+Caption.displayName = 'Caption'
+
 export default Caption

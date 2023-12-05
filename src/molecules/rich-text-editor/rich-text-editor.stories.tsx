@@ -2,8 +2,8 @@ import { Meta, StoryFn } from '@storybook/react'
 import React, { useEffect, useRef, useState } from 'react'
 
 import { Box, Text } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
-import { RichTextEditor } from './rich-text-editor.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
+import { RichTextEditor } from './rich-text-editor.jsx'
 
 const html = `
 <h1>Hello World</h1>
@@ -80,7 +80,9 @@ export const Default: StoryFn = () => {
   )
 }
 
-export default {
+const meta: Meta<typeof RichTextEditor> = {
   title: 'DesignSystem/Molecules/RichTextEditor',
   component: RichTextEditor,
-} as Meta<typeof RichTextEditor>
+}
+
+export default meta

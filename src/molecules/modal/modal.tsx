@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react'
 
-import PortalUtils from '../../utils/portal-utils.js'
-import ModalWrapper from './modal-wrapper.js'
+import PortalUtils from '../../utils/portal-utils.jsx'
+import ModalWrapper from './modal-wrapper.jsx'
 import { ModalProps } from './modal-props.js'
 
 const ModalPortal = PortalUtils.createPortalForKey('MODAL', ModalWrapper)
@@ -18,5 +18,7 @@ const ModalPortal = PortalUtils.createPortalForKey('MODAL', ModalWrapper)
 export const Modal: React.FC<ModalProps> = (props) => (
   <ModalPortal {...props} />
 )
+
+Modal.displayName = 'Modal'
 
 export default Modal

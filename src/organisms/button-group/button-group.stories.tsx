@@ -96,7 +96,7 @@ export const Default: StoryObj<ButtonGroupProps & { onClick: (e, s) => void }> =
   },
 }
 
-export default {
+const meta: Meta<typeof ButtonGroup> = {
   title: 'DesignSystem/Organisms/ButtonGroup',
   component: ButtonGroup,
   args: {
@@ -104,8 +104,9 @@ export default {
     rounded: false,
   },
   argTypes: {
-    onClick: { action: 'clicked' },
     size: { options: ['sm', 'default', 'lg'], control: { type: 'select' } },
     rounded: { control: { type: 'boolean' } },
   },
-} as Meta<typeof ButtonGroup>
+}
+
+export default meta

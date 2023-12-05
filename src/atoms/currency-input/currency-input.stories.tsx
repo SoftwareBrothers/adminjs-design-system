@@ -2,7 +2,7 @@ import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { FormGroup } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Button } from '../index.js'
 import { CurrencyInput } from './index.js'
 
@@ -31,7 +31,7 @@ export const Examples: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof CurrencyInput> = {
   title: 'DesignSystem/Atoms/CurrencyInput',
   component: CurrencyInput,
   args: {
@@ -72,4 +72,6 @@ export default {
       },
     },
   },
-} as Meta<typeof CurrencyInput>
+}
+
+export default meta

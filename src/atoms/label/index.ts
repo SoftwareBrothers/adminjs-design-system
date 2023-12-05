@@ -1,1 +1,1 @@
-export * from './label.js'
+export * from './label.jsx'

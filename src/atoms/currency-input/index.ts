@@ -1,1 +1,1 @@
-export * from './currency-input.js'
+export * from './currency-input.jsx'

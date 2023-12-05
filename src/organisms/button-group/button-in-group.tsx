@@ -5,8 +5,8 @@ import {
   DropDownMenu,
   DropDownTrigger,
 } from '../../molecules/drop-down/index.js'
-import { SingleButtonInGroup } from './single-button-in-group.js'
-import { DropDownItemWithButtons } from './drop-down-item-with-buttons.js'
+import { SingleButtonInGroup } from './single-button-in-group.jsx'
+import { DropDownItemWithButtons } from './drop-down-item-with-buttons.jsx'
 import { ButtonInGroupProps } from './button-group.types.js'
 
 export const ButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
@@ -32,5 +32,7 @@ export const ButtonInGroup: React.FC<ButtonInGroupProps> = (props) => {
 
   return <SingleButtonInGroup {...buttonProps} className={className} />
 }
+
+ButtonInGroup.displayName = 'ButtonInGroup'
 
 export default ButtonInGroup

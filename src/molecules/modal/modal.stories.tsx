@@ -45,7 +45,7 @@ export const Default: StoryObj<ModalProps> = {
   },
 }
 
-export default {
+const meta: Meta<typeof Modal> = {
   title: 'DesignSystem/Molecules/Modal',
   component: Modal,
   args: {
@@ -62,4 +62,6 @@ export default {
     icon: { control: { type: 'text' } },
     label: { control: { type: 'text' } },
   },
-} as Meta<typeof Modal>
+}
+
+export default meta

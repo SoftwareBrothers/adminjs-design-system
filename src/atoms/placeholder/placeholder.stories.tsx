@@ -13,11 +13,13 @@ export const textPlaceholder: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Placeholder> = {
   title: 'DesignSystem/Atoms/Placeholder',
   component: Placeholder,
   args: {
     width: 200,
     height: 200,
   },
-} as Meta<typeof Placeholder>
+}
+
+export default meta

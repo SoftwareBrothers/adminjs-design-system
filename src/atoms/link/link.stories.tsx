@@ -27,7 +27,7 @@ export const Default: StoryObj = {
   ),
 }
 
-export default {
+const meta: Meta<typeof Link> = {
   title: 'DesignSystem/Atoms/Link',
   component: Link,
   args: {
@@ -40,4 +40,6 @@ export default {
     variant: { options: variants, control: { type: 'select' } },
     size: { options: sizes, control: { type: 'select' } },
   },
-} as Meta<typeof Link>
+}
+
+export default meta

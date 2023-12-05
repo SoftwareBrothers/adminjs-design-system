@@ -26,4 +26,6 @@ TableHead.defaultProps = {
   className: cssClass('TableHead'),
 }
 
+TableHead.displayName = 'TableHead'
+
 export default TableHead

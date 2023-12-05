@@ -1,1 +1,1 @@
-export * from './badge.js'
+export * from './badge.jsx'

@@ -7,7 +7,7 @@ import { Label } from '../../atoms/label/index.js'
 import { Text } from '../../atoms/text/index.js'
 import { H5 } from '../../atoms/typography/index.js'
 import { ModalProps } from './modal-props.js'
-import { ModalStyled } from './modal-styled.js'
+import { ModalStyled } from './modal-styled.jsx'
 
 /**
  * Modal which can be rendered inline instead of a "modal"
@@ -47,5 +47,7 @@ export const ModalInline: React.FC<ModalProps & Omit<BoxProps, 'variant'>> = (pr
     </ModalStyled>
   )
 }
+
+ModalInline.displayName = 'ModalInline'
 
 export default ModalInline

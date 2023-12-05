@@ -11,7 +11,7 @@ import {
   Input,
   Label,
 } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { FormGroup, FormMessage, InputGroup } from './index.js'
 
 export const FullFeaturedFormGroup: StoryFn = () => (
@@ -54,7 +54,9 @@ export const Full: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof FormGroup> = {
   title: 'DesignSystem/Molecules/FormGroup',
   component: FormGroup,
-} as Meta<typeof FormGroup>
+}
+
+export default meta

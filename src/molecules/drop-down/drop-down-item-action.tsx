@@ -15,5 +15,6 @@ DropDownItemAction.defaultProps = {
   px: 'xxl',
   py: 'lg',
 }
+DropDownItemAction.displayName = 'DropDownItemAction'
 
 export default DropDownItemAction

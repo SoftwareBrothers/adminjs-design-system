@@ -180,4 +180,6 @@ export const MessageBox: React.FC<Props> = (props) => {
   )
 }
 
+MessageBox.displayName = 'MessageBox'
+
 export default MessageBox

@@ -1,6 +1,11 @@
+import path from 'path'
+
+import ResolveTypeScriptPlugin from 'resolve-typescript-plugin'
+import TypeScriptConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
-export default {
-  stories: ['../build/**/*.stories.js'],
+const config = {
+  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -11,18 +16,46 @@ export default {
     options: {},
   },
   webpackFinal: (config) => {
+    if (!config.module) config.module = { rules: [] }
+    if (!config.module.rules) config.module.rules = []
+    if (!config.resolve) config.resolve = {}
+
     config.module.rules.push({
-      test: /\.(js|mjs|jsx)$/,
-      enforce: 'pre',
-      loader: require.resolve('source-map-loader'),
-      resolve: {
-        fullySpecified: false,
-      },
+      test: /\.tsx?$/,
+      use: 'ts-loader',
     })
+
+    config.resolve.alias = {
+      atoms: path.resolve(__dirname, '../src/atoms/'),
+      hooks: path.resolve(__dirname, '../src/hooks/'),
+      molecules: path.resolve(__dirname, '../src/molecules/'),
+      organisms: path.resolve(__dirname, '../src/organisms/'),
+      templates: path.resolve(__dirname, '../src/templates/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+    }
+
+    config.resolve.extensions = ['.js', '.jsx', '.json']
+
+    config.resolve.plugins = [
+      ...(config.resolve.plugins || []),
+      /**
+       * See https://github.com/storybookjs/storybook/issues/15962
+       * and https://github.com/softwareventures/resolve-typescript-plugin
+       */
+      new ResolveTypeScriptPlugin(),
+      new TypeScriptConfigPathsPlugin({
+        extensions: config.resolve.extensions,
+      }),
+    ]
+
     return config
   },
   babel: () => ({
     plugins: [
+      [
+        'styled-components',
+        { displayName: true },
+      ],
       [
         'module-resolver',
         {
@@ -40,7 +73,7 @@ export default {
         '@babel/preset-env',
         {
           targets: {
-            node: '18',
+            node: '20',
           },
           loose: true,
           modules: false,
@@ -58,6 +91,7 @@ export default {
       compilerOptions: {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
+        jsx: 'preserve',
       },
     },
   },
@@ -65,3 +99,5 @@ export default {
     autodocs: true,
   },
 }
+
+export default config

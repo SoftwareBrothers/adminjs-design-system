@@ -67,4 +67,6 @@ export const CurrentUserNav: React.FC<CurrentUserNavProps> = (props) => {
   )
 }
 
+CurrentUserNav.displayName = 'CurrentUserNav'
+
 export default CurrentUserNav

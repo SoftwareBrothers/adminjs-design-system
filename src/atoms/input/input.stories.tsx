@@ -1,7 +1,7 @@
 import React from 'react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 
-import { StoryFn, StoryObj } from '@storybook/react'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Label, Text } from '../index.js'
 import { Input } from './index.js'
 
@@ -56,7 +56,7 @@ export const Examples: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'DesignSystem/Atoms/Input',
   component: Input,
   args: {
@@ -73,3 +73,5 @@ export default {
     type: { options: inputTypes, control: { type: 'select' } },
   },
 }
+
+export default meta

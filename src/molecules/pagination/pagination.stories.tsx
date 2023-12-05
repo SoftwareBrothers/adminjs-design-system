@@ -12,7 +12,7 @@ export const Default: StoryObj<PaginationProps> = {
   ),
 }
 
-export default {
+const meta: Meta<typeof Pagination> = {
   title: 'DesignSystem/Molecules/Pagination',
   component: Pagination,
   args: {
@@ -20,4 +20,6 @@ export default {
     page: 5,
     perPage: 1,
   },
-} as Meta<typeof Pagination>
+}
+
+export default meta

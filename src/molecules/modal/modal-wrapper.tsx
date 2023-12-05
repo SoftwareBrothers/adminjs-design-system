@@ -1,9 +1,9 @@
 import React from 'react'
 import { styled } from '@styled-components'
 
-import { ModalInline } from './modal-inline.js'
+import { ModalInline } from './modal-inline.jsx'
 import { ModalProps } from './modal-props.js'
-import { ModalStyled } from './modal-styled.js'
+import { ModalStyled } from './modal-styled.jsx'
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import { Overlay } from '../../atoms/overlay/index.js'
 
@@ -31,5 +31,7 @@ export const ModalWrapper: React.FC<ModalProps> = (props) => {
     </Wrapper>
   )
 }
+
+ModalWrapper.displayName = 'ModalWrapper'
 
 export default ModalWrapper

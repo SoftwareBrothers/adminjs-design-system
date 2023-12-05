@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import useWindowSize from '../../hooks/use-window-size.js'
 import { PortalProps } from './tooltip-props.js'
-import { StyledTooltip } from './tooltip-styled.js'
+import { StyledTooltip } from './tooltip-styled.jsx'
 
 type PositionProps = {
   top: number;
@@ -112,5 +112,7 @@ export const TooltipControl: React.FC<PortalProps> = (props) => {
     </StyledTooltip>
   )
 }
+
+TooltipControl.displayName = 'TooltipControl'
 
 export default TooltipControl

@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Button, CardTitle, Icon, Text } from '../index.js'
 import { Section } from './index.js'
 
@@ -24,10 +24,12 @@ export const Default: StoryFn = () => (
   </StoryWrapper>
 )
 
-export default {
+const meta: Meta<typeof Section> = {
   title: 'DesignSystem/Atoms/Section',
   component: Section,
   argTypes: {
     onClick: { action: 'clicked' },
   },
-} as Meta<typeof Section>
+}
+
+export default meta

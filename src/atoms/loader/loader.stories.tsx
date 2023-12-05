@@ -4,7 +4,9 @@ import { Loader } from './index.js'
 
 export const Default: StoryObj = {}
 
-export default {
+const meta: Meta<typeof Loader> = {
   title: 'DesignSystem/Atoms/Loader',
   component: Loader,
-} as Meta<typeof Loader>
+}
+
+export default meta

@@ -3,7 +3,7 @@ import parseISO from 'date-fns/parseISO'
 
 import { formatDateProperty, PropertyType } from '../../utils/index.js'
 
-const useDatePicker = ({ value, propertyType, disabled, onChange }:
+export const useDatePicker = ({ value, propertyType, disabled, onChange }:
 {
   onChange: (date: Date) => void,
   value?: string|Date,

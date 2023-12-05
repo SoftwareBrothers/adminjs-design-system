@@ -45,4 +45,6 @@ export const MadeWithLove: FC = () => (
   </StyledWrapper>
 )
 
+MadeWithLove.displayName = 'MadeWithLove'
+
 export default MadeWithLove

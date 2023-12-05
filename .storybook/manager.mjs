@@ -1,7 +1,7 @@
-import { addons } from '@storybook/addons';
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming'
+import { addons } from '@storybook/manager-api'
 
-const theme = create({
+export const theme = create({
   base: 'light',
 
   colorPrimary: '#3040D6',
@@ -27,12 +27,15 @@ const theme = create({
   inputTextColor: '#0B1C34',
   inputBorderRadius: 0,
 
-  brandTitle: 'Admin Design System',
+  brandTitle: 'AdminJS Design System',
   brandUrl: 'https://adminjs.co/',
-  brandImage: 'https://demo.adminjs.co/admin/frontend/assets/logo.svg',
+  brandImage: 'https://demo.adminjs.co/app/frontend/assets/logo.svg',
   brandTarget: '_blank',
-});
+})
 
+addons.setConfig({
+  theme,
+})
 
 addons.setConfig({
   isFullscreen: false,
@@ -43,4 +46,4 @@ addons.setConfig({
   isToolshown: true,
   theme,
   initialActive: 'sidebar',
-});
+})

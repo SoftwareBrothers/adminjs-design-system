@@ -72,5 +72,7 @@ const InfoBox: React.FC<InfoBoxProps> = ({ children, title, illustration, varian
   </StyledInfoBox>
 )
 
+InfoBox.displayName = 'InfoBox'
+
 export { InfoBox }
 export default InfoBox

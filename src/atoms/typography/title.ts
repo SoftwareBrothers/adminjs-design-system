@@ -10,4 +10,6 @@ export const Title = styled('div')<TypographyProps & SpaceProps>`
   line-height: ${themeGet('lineHeights', 'lg')};
 `
 
+Title.displayName = 'Title'
+
 export default Title

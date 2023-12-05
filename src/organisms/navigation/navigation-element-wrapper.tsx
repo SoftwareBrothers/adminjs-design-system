@@ -22,4 +22,6 @@ export const NavigationElementWrapper: React.FC<NavigationElementWithChildrenPro
   )
 }
 
+NavigationElementWrapper.displayName = 'NavigationElementWrapper'
+
 export default NavigationElementWrapper

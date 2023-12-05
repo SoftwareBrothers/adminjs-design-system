@@ -1,1 +1,1 @@
-export * from './link.js'
+export * from './link.jsx'

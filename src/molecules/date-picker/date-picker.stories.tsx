@@ -32,7 +32,7 @@ export const Default: StoryObj<DatePickerProps> = {
   },
 }
 
-export default {
+const meta: Meta<typeof DatePicker> = {
   title: 'DesignSystem/Molecules/DatePicker',
   component: DatePicker,
   args: {
@@ -43,4 +43,6 @@ export default {
     disabled: { control: { type: 'boolean' } },
     propertyType: { options: propertyTypes, control: { type: 'select' } },
   },
-} as Meta<typeof DatePicker>
+}
+
+export default meta

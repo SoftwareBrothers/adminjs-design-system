@@ -100,6 +100,8 @@ const Table = styled.table<LayoutProps>`
   ${layout};
 `
 
+Table.displayName = 'Table'
+
 Table.defaultProps = {
   width: 1,
   className: cssClass('Table'),

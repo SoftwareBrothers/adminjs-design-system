@@ -160,4 +160,6 @@ export const useTabs = (): TabContextType => {
   return ctx
 }
 
+Tabs.displayName = 'Tabs'
+
 export default Tabs

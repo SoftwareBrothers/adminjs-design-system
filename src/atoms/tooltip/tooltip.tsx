@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React, { PropsWithChildren, useState, useRef, forwardRef, ReactElement, ReactNode } from 'react'
 
-import PortalUtils from '../../utils/portal-utils.js'
-import { TooltipControl } from './tooltip-control.js'
+import PortalUtils from '../../utils/portal-utils.jsx'
+import { TooltipControl } from './tooltip-control.jsx'
 import Props from './tooltip-props.js'
 
 const TooltipPortal = PortalUtils.createPortalForKey('TOOLTIP', TooltipControl)
@@ -71,5 +71,7 @@ export const Tooltip: React.FC<PropsWithChildren<Props>> = (props) => {
     </>
   )
 }
+
+Tooltip.displayName = 'Tooltip'
 
 export default Tooltip

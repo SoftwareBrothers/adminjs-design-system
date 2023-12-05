@@ -140,5 +140,7 @@ Input.defaultProps = {
   className: cssClass('Input'),
 }
 
+Input.displayName = 'Input'
+
 export { Input }
 export default Input

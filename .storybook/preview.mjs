@@ -1,11 +1,18 @@
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-import ThemeDecorator from './theme-decorator.jsx'
+import ThemeDecorator from './theme-decorator.js'
+import { theme } from './manager.mjs'
 
-/** @type { import('@storybook/react').Preview } */
+/** @type { import('@storybook/react').Preview['parameters'] } */
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  docs: { source: { code: null } },
+  docs: {
+    source: {
+      language: 'tsx',
+      type: 'auto',
+    },
+    theme,
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -28,8 +35,10 @@ export const parameters = {
   viewport: { viewports: MINIMAL_VIEWPORTS },
 }
 
+/** @type { import('@storybook/react').Preview['decorators'] } */
 export const decorators = [ThemeDecorator]
 
+/** @type { import('@storybook/react').Preview['globalTypes'] } */
 export const globalTypes = {
   theme: {
     title: 'Theme',

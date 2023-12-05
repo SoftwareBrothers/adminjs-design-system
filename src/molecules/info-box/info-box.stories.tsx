@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react'
 import React from 'react'
 
 import { Button, Icon, Text } from '../../index.js'
-import { InfoBox } from './info-box.js'
+import { InfoBox } from './info-box.jsx'
 
 export const Default: StoryFn = () => (
   <InfoBox title="There are no cars in the system" illustration="Accept">
@@ -15,7 +15,9 @@ export const Default: StoryFn = () => (
   </InfoBox>
 )
 
-export default {
+const meta: Meta<typeof InfoBox> = {
   title: 'DesignSystem/Molecules/InfoBox',
   component: InfoBox,
-} as Meta<typeof InfoBox>
+}
+
+export default meta

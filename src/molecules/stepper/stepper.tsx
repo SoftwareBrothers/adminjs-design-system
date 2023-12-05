@@ -112,6 +112,7 @@ Stepper.defaultProps = {
   borderBottomColor: 'separator',
   className: cssClass('Stepper'),
 }
+Stepper.displayName = 'Stepper'
 
 export { Stepper }
 export default Stepper

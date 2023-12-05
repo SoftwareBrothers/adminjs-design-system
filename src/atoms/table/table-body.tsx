@@ -14,4 +14,6 @@ TableBody.defaultProps = {
   className: cssClass('TableBody'),
 }
 
+TableBody.displayName = 'TableBody'
+
 export default TableBody

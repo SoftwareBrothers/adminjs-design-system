@@ -26,31 +26,35 @@ export const Default: StoryObj<
   ),
 }
 
-export default {
+const meta: Meta<typeof DropZone> = {
   title: 'DesignSystem/Molecules/DropZone',
   component: DropZone,
   args: {
     multiple: false,
-    maxSize: 10240000,
-    mimeTypes: ['application/pdf', 'image/png'],
+    validate: {
+      maxSize: 10240000,
+      mimeTypes: ['application/pdf', 'image/png'],
+    },
     uploadLimitIn: 'MB',
     placeholder: DROPZONE_DEFAULT_TRANSLATIONS.placeholder,
     acceptedSize: DROPZONE_DEFAULT_TRANSLATIONS.acceptedSize,
     acceptedType: DROPZONE_DEFAULT_TRANSLATIONS.acceptedType,
     unsupportedSize: DROPZONE_DEFAULT_TRANSLATIONS.unsupportedSize,
     unsupportedType: DROPZONE_DEFAULT_TRANSLATIONS.unsupportedType,
-  },
+  } as any,
   argTypes: {
     multiple: {
       description: 'If drop zone should handle multiple uploads',
       control: { type: 'boolean' },
     },
     maxSize: {
+      name: 'validate.maxSize',
       description:
         'Maximum size of the uploaded file in bytes. If not defined - all files are allowed',
       control: { type: 'number' },
     },
     mimeTypes: {
+      name: 'validate.mimeTypes',
       description: 'Allowed file types',
       control: { type: 'object' },
     },
@@ -84,5 +88,7 @@ export default {
       description: 'Translated validation error for unsupported type',
       control: { type: 'text' },
     },
-  },
-} as Meta<typeof DropZone>
+  } as any,
+}
+
+export default meta

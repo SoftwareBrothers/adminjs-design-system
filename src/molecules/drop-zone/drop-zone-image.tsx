@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DropzoneImage = (): React.ReactElement => (
+const DropZoneImage = (): React.ReactElement => (
   <svg width="80" height="72" viewBox="0 0 80 72" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="5.85" y="9.35" width="68.3" height="55.3" rx="1.65" fill="white" stroke="#3B3552" strokeWidth="0.7" />
     <rect x="8.5" y="12" width="63" height="38" rx="1" fill="currentColor" fillOpacity="0.05" />
@@ -12,4 +12,4 @@ const DropzoneImage = (): React.ReactElement => (
 
 )
 
-export default DropzoneImage
+export default DropZoneImage

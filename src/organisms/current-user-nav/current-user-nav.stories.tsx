@@ -1,8 +1,8 @@
 import React from 'react'
-
 import { Meta, StoryObj } from '@storybook/react'
+
 import { Box } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { CurrentUserNav, CurrentUserNavAction, CurrentUserNavProps } from './index.js'
 
 export const Default: StoryObj<CurrentUserNavProps & { onClick: (e) => void }> = {
@@ -34,7 +34,7 @@ export const Default: StoryObj<CurrentUserNavProps & { onClick: (e) => void }> =
   },
 }
 
-export default {
+const meta: Meta<typeof CurrentUserNav> = {
   title: 'DesignSystem/Organisms/CurrentUserNav',
   component: CurrentUserNav,
   args: {
@@ -44,9 +44,10 @@ export default {
       'https://images.unsplash.com/photo-1612144431180-2d672779556c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
   },
   argTypes: {
-    onClick: { action: 'clicked' },
     name: { control: { type: 'text' } },
     title: { control: { type: 'text' } },
     avatarUrl: { control: { type: 'text' } },
   },
-} as Meta<typeof CurrentUserNav>
+}
+
+export default meta

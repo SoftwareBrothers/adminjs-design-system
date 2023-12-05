@@ -136,5 +136,7 @@ const Radio: React.FC<RadioProps> = (props) => {
   )
 }
 
+Radio.displayName = 'Radio'
+
 export { Radio }
 export default Radio
