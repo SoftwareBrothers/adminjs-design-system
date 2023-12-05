@@ -73,5 +73,7 @@ PhoneInput.defaultProps = {
   className: cssClass('PhoneInput'),
 }
 
+PhoneInput.displayName = 'PhoneInput'
+
 export { PhoneInput }
 export default PhoneInput

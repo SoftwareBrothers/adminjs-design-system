@@ -1,2 +1,2 @@
-export * from './step.js'
-export * from './stepper.js'
+export * from './step.jsx'
+export * from './stepper.jsx'

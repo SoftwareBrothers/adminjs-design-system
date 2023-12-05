@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Meta, StoryFn } from '@storybook/react'
+
 import { Box, Label } from '../index.js'
 import { Radio } from './index.js'
 
@@ -27,7 +27,9 @@ export const Default: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Radio> = {
   title: 'DesignSystem/Atoms/Radio',
   component: Radio,
-} as Meta<typeof Radio>
+}
+
+export default meta

@@ -122,5 +122,7 @@ Link.defaultProps = {
   className: cssClass('Link'),
 }
 
+Link.displayName = 'Link'
+
 export { Link }
 export default Link

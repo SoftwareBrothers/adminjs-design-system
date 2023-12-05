@@ -16,8 +16,8 @@ import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React, { FC, useCallback } from 'react'
 
-import MenuBar from './components/menu-bar.js'
-import { EditorWrapper } from './rich-text-editor.styled.js'
+import MenuBar from './components/menu-bar.jsx'
+import { EditorWrapper } from './rich-text-editor.styled.jsx'
 
 interface EditorOptions {
   [key: string]: any;
@@ -74,6 +74,8 @@ const RichTextEditor: FC<RichTextEditorProps> = (props) => {
     </>
   )
 }
+
+RichTextEditor.displayName = 'RichTextEditor'
 
 export { RichTextEditor }
 export default RichTextEditor

@@ -41,6 +41,7 @@ Section.defaultProps = {
   className: cssClass('Section'),
 }
 
-export { Section }
+Section.displayName = 'Section'
 
+export { Section }
 export default Section

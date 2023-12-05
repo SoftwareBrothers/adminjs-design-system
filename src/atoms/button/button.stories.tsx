@@ -1,7 +1,7 @@
-import { StoryFn, StoryObj } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Icon, Label } from '../index.js'
 import { Button, ButtonProps } from './index.js'
 
@@ -87,7 +87,7 @@ export const Examples: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'DesignSystem/Atoms/Button',
   component: Button,
   args: {
@@ -109,3 +109,5 @@ export default {
     color: { options: ButtonColor, control: { type: 'select' } },
   },
 }
+
+export default meta

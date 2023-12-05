@@ -110,14 +110,15 @@ export const Default: StoryObj<NavigationProps & { onClick: (e) => void }> = {
   },
 }
 
-export default {
+const meta: Meta<typeof Navigation> = {
   title: 'DesignSystem/Organisms/Navigation',
   component: Navigation,
   args: {
     label: 'Navigation',
   },
   argTypes: {
-    onClick: { action: 'clicked' },
     label: { control: { type: 'text' } },
   },
-} as Meta<typeof Navigation>
+}
+
+export default meta

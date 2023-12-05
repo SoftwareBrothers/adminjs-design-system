@@ -93,5 +93,7 @@ const DropDown: React.FC<DropDownProps> = (props) => {
   )
 }
 
+DropDown.displayName = 'DropDown'
+
 export { DropDown }
 export default DropDown

@@ -1,9 +1,10 @@
 import type { Meta, StoryFn } from '@storybook/react'
 import filter from 'lodash/filter.js'
 import React, { useState } from 'react'
+import { PublicBaseSelectProps } from 'react-select/base'
 
 import { Box, FormGroup } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Select, SelectAsync } from './index.js'
 
 const options = [
@@ -12,7 +13,7 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
-export const Default: StoryFn<SelectProps> = (props) => {
+export const Default: StoryFn<PublicBaseSelectProps<any, boolean, any>> = (props) => {
   const { isMulti } = props
   const [value, setValue] = useState()
 
@@ -59,7 +60,7 @@ export const Async: StoryFn = () => {
   )
 }
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'DesignSystem/Molecules/Select',
   component: Select,
   parameters: { controls: { include: ['variant', 'isMulti'] } },
@@ -71,4 +72,6 @@ export default {
     variant: { options: ['default', 'filter'], control: { type: 'select' } },
     isMulti: { control: { type: 'boolean' } },
   },
-} as Meta<typeof Select>
+}
+
+export default meta

@@ -2,7 +2,7 @@ import { styled } from '@styled-components'
 import { PropsWithChildren } from 'react'
 
 import { Box, BoxProps } from '../../atoms/box/index.js'
-import { DEFAULT_STICK, DropDownStickProp } from './drop-down.js'
+import { DEFAULT_STICK, DropDownStickProp } from './drop-down.jsx'
 import { cssClass } from '../../utils/index.js'
 
 /**

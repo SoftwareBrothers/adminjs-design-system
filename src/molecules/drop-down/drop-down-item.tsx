@@ -6,7 +6,7 @@ import { space, variant } from 'styled-system'
 import { Box, BoxProps } from '../../atoms/box/index.js'
 import type { VariantType } from '../../theme.js'
 import { cssClass } from '../../utils/index.js'
-import DropDownMenu from './drop-down-menu.js'
+import DropDownMenu from './drop-down-menu.jsx'
 
 const variantsShared = (theme, color) => ({
   color,
@@ -89,5 +89,7 @@ export const DropDownItem = styled(Box)<DropDownItemProps>`
   ${space};
   ${colorVariants};
 `
+
+DropDownItem.displayName = 'DropDownItem'
 
 export default DropDownItem

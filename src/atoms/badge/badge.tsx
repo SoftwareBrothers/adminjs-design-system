@@ -93,5 +93,7 @@ Badge.defaultProps = {
   className: cssClass('Badge'),
 }
 
+Badge.displayName = 'Badge'
+
 export { Badge }
 export default Badge

@@ -1,1 +1,1 @@
-export * from './message-box.js'
+export * from './message-box.jsx'

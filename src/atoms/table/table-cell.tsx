@@ -30,4 +30,6 @@ TableCell.defaultProps = {
   className: cssClass('TableCell'),
 }
 
+TableCell.displayName = 'TableCell'
+
 export default TableCell

@@ -38,7 +38,9 @@ export const AllStates: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof CheckBox> = {
   title: 'DesignSystem/Atoms/CheckBox',
   component: CheckBox,
-} as Meta<typeof CheckBox>
+}
+
+export default meta

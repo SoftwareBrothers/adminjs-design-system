@@ -1,1 +1,1 @@
-export * from './box.js'
+export * from './box.jsx'

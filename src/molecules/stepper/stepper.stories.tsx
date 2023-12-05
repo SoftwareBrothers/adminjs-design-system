@@ -68,6 +68,9 @@ export const stepsWithBottomNavigation: StoryFn = () => {
   )
 }
 
-export default {
+const meta: Meta<typeof Stepper> = {
   title: 'DesignSystem/Molecules/Stepper',
-} as Meta<typeof Stepper>
+  component: Stepper,
+}
+
+export default meta

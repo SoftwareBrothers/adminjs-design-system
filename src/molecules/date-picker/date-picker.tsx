@@ -323,5 +323,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
   )
 }
 
+DatePicker.displayName = 'DatePicker'
+
 export { DatePicker }
 export default DatePicker

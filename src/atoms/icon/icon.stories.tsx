@@ -20,7 +20,7 @@ export const Icons: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Icon> = {
   title: 'DesignSystem/Atoms/Icon',
   component: Icon,
   args: {
@@ -41,4 +41,6 @@ export default {
     rounded: { control: { type: 'boolean' } },
     spin: { control: { type: 'boolean' } },
   },
-} as Meta<typeof Icon>
+}
+
+export default meta

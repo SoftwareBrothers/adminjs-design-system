@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box } from '../index.js'
 import { TextArea } from './index.js'
 
@@ -16,7 +16,9 @@ export const Default: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof TextArea> = {
   title: 'DesignSystem/Atoms/TextArea',
   component: TextArea,
-} as Meta<typeof TextArea>
+}
+
+export default meta

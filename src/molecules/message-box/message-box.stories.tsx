@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Box } from '../../index.js'
-import { MessageBox, MessageBoxProps } from './message-box.js'
+import { MessageBox, MessageBoxProps } from './message-box.jsx'
 
 export const Default: StoryObj<MessageBoxProps & { withInsideText: boolean }> = {
   render: ({ withInsideText, ...props }) => (
@@ -17,19 +17,19 @@ export const Default: StoryObj<MessageBoxProps & { withInsideText: boolean }> = 
   ),
 }
 
-export default {
+const meta: Meta<typeof MessageBox> = {
   title: 'DesignSystem/Molecules/MessageBox',
   component: MessageBox,
   args: {
-    withInsideText: false,
-    color: 'info',
+    variant: 'info',
     size: 'sm',
     message: 'Some message',
   },
   argTypes: {
-    withInsideText: { control: { type: 'boolean' } },
-    color: { options: ['danger', 'info', 'success', 'warning'], control: { type: 'select' } },
+    variant: { options: ['danger', 'info', 'success', 'warning'], control: { type: 'select' } },
     size: { options: ['sm', 'md', 'lg'], control: { type: 'select' } },
     message: { control: { type: 'text' } },
   },
-} as Meta<typeof MessageBox>
+}
+
+export default meta

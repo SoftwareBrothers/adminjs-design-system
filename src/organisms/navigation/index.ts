@@ -1,4 +1,4 @@
-export * from './navigation.js'
-export * from './navigation-element-wrapper.js'
-export * from './navigation-styled.js'
+export * from './navigation.jsx'
+export * from './navigation-element-wrapper.jsx'
+export * from './navigation-styled.jsx'
 export * from './navigation-props.js'

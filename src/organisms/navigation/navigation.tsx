@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { NavigationProps } from './navigation-props.js'
-import { StyledNavigation } from './navigation-styled.js'
-import { NavigationElementWrapper } from './navigation-element-wrapper.js'
+import { StyledNavigation } from './navigation-styled.jsx'
+import { NavigationElementWrapper } from './navigation-element-wrapper.jsx'
 import { Label } from '../../atoms/label/index.js'
 
 /**
@@ -28,5 +28,7 @@ export const Navigation: React.FC<NavigationProps> = (props) => {
     </StyledNavigation>
   )
 }
+
+Navigation.displayName = 'Navigation'
 
 export default Navigation

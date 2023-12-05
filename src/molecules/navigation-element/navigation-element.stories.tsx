@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { Box } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { NavigationElement, NavigationElementProps } from './index.js'
 
 export const Default: StoryObj<NavigationElementProps> = {
@@ -25,7 +25,7 @@ export const Default: StoryObj<NavigationElementProps> = {
   },
 }
 
-export default {
+const meta: Meta<typeof NavigationElement> = {
   title: 'DesignSystem/Molecules/NavigationElement',
   args: {
     label: 'Dashboard',
@@ -37,4 +37,6 @@ export default {
     icon: { control: { type: 'text' } },
     label: { control: { type: 'text' } },
   },
-} as Meta<typeof NavigationElement>
+}
+
+export default meta

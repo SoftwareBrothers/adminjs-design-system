@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Button, H4, Text } from '../index.js'
 import { Tooltip, TooltipContent } from './index.js'
 
@@ -10,7 +10,7 @@ const Direction = {
   left: 'left',
   top: 'top',
   bottom: 'bottom',
-}
+} as const
 
 const Size = ['default', 'lg'] as const
 
@@ -35,7 +35,7 @@ export const Default: StoryObj = {
   ),
 }
 
-export default {
+const meta: Meta<typeof Tooltip> = {
   title: 'DesignSystem/Atoms/Tooltip',
   component: Tooltip,
   args: {
@@ -48,4 +48,6 @@ export default {
     size: { options: Size, control: { type: 'select' } },
     title: { control: { type: 'text' } },
   },
-} as Meta<typeof Tooltip>
+}
+
+export default meta

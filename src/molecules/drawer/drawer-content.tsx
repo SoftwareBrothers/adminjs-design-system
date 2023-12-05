@@ -13,4 +13,6 @@ export const DrawerContent = styled.section<SpaceProps>`
   ${space};
 `
 
+DrawerContent.displayName = 'DrawerContent'
+
 export default DrawerContent

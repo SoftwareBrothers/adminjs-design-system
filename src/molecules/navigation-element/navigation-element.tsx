@@ -60,4 +60,6 @@ export const NavigationElement: React.FC<NavigationElementProps> = (props) => {
   )
 }
 
+NavigationElement.displayName = 'NavigationElement'
+
 export default NavigationElement

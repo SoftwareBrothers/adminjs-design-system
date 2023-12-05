@@ -21,4 +21,6 @@ TableRow.defaultProps = {
   className: cssClass('TableRow'),
 }
 
+TableRow.displayName = 'TableRow'
+
 export default TableRow

@@ -6,7 +6,7 @@ import { Button } from '../../atoms/button/index.js'
 import { Input } from '../../atoms/input/index.js'
 import { CurrencyInput } from '../../atoms/currency-input/index.js'
 import { Link } from '../../atoms/link/index.js'
-import InputGroup from './input-group.js'
+import InputGroup from './input-group.jsx'
 
 const formGroupDisabledCSS = css`
   color: ${({ theme }) => theme.colors.grey40};
@@ -165,5 +165,6 @@ export const FormGroup = styled.div<FormGroupProps>`
 FormGroup.defaultProps = {
   mb: 'lg',
 }
+FormGroup.displayName = 'FormGroup'
 
 export default FormGroup

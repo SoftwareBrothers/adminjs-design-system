@@ -56,13 +56,13 @@ H1.defaultProps = {
   marginTop: 'x4',
   marginBottom: 'x3',
 }
+H1.displayName = 'H1'
 
 export const H2 = styled((props) => <Base as="h2" {...props} />)`
   & ${Button}, a {
     margin-bottom: 4px;
   }
 `
-
 H2.defaultProps = {
   fontSize: 'h2',
   lineHeight: 'xxl',
@@ -70,8 +70,10 @@ H2.defaultProps = {
   marginTop: 'x3',
   marginBottom: 'xxl',
 }
+H2.displayName = 'H2'
 
 export const H3 = Base
+H3.displayName = 'H3'
 
 export const H4 = styled((props) => <Base as="h4" {...props} />)``
 H4.defaultProps = {
@@ -81,6 +83,7 @@ H4.defaultProps = {
   marginTop: 'xxl',
   marginBottom: 'xl',
 }
+H4.displayName = 'H4'
 
 export const H5 = styled((props) => <Base as="h5" {...props} />)``
 H5.defaultProps = {
@@ -91,6 +94,7 @@ H5.defaultProps = {
   marginBottom: 'default',
   fontWeight: 'normal',
 }
+H5.displayName = 'H5'
 
 export const H6 = styled((props) => <Base as="h6" {...props} />)``
 H6.defaultProps = {
@@ -101,6 +105,7 @@ H6.defaultProps = {
   marginBottom: 'default',
   fontWeight: 'normal',
 }
+H6.displayName = 'H6'
 
 /**
  * @load ./header.doc.md

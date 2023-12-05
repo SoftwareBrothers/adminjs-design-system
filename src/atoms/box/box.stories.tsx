@@ -31,7 +31,7 @@ export const positioningButtons: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Box> = {
   title: 'DesignSystem/Atoms/Box',
   component: Box,
   parameters: {
@@ -42,4 +42,6 @@ export default {
   argTypes: {
     variant: { options: variants, control: { type: 'select' } },
   },
-} as Meta<typeof Box>
+}
+
+export default meta

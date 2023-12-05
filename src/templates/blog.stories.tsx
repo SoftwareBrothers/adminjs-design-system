@@ -62,6 +62,8 @@ export const Default: StoryFn = () => {
   )
 }
 
-export default {
+const meta: Meta = {
   title: 'DesignSystem/Templates/Blog',
-} as Meta
+}
+
+export default meta

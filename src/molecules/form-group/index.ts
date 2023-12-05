@@ -1,3 +1,3 @@
-export * from './form-group.js'
-export { default as InputGroup } from './input-group.js'
-export { default as FormMessage } from './form-message.js'
+export * from './form-group.jsx'
+export { default as InputGroup } from './input-group.jsx'
+export { default as FormMessage } from './form-message.jsx'

@@ -5,7 +5,7 @@ import {
   DropDownMenu,
   DropDownItem,
 } from '../../molecules/drop-down/index.js'
-import { StyledDropDownItemAction } from './button-group.styled.js'
+import { StyledDropDownItemAction } from './button-group.styled.jsx'
 import { ButtonInGroupProps } from './button-group.types.js'
 
 export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => {
@@ -50,5 +50,7 @@ export const DropDownItemWithButtons: React.FC<ButtonInGroupProps> = (props) => 
     </DropDownItem>
   )
 }
+
+DropDownItemWithButtons.displayName = 'DropDownItemWithButtons'
 
 export default DropDownItemWithButtons

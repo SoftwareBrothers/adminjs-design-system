@@ -57,5 +57,7 @@ TextArea.defaultProps = {
   className: cssClass('TextArea'),
 }
 
+TextArea.displayName = 'TextArea'
+
 export { TextArea }
 export default TextArea

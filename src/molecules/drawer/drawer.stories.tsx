@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Box, Button, Header, Icon, Text } from '../../index.js'
-import { FullFeaturedFormGroup } from '../form-group/form-group.stories.js'
+import { FullFeaturedFormGroup } from '../form-group/form-group.stories.jsx'
 import { Drawer, DrawerContent, DrawerFooter } from './index.js'
 
 export const Default: StoryObj = {
@@ -41,7 +41,7 @@ export const Default: StoryObj = {
   ),
 }
 
-export default {
+const meta: Meta<typeof Drawer> = {
   title: 'DesignSystem/Molecules/Drawer',
   component: Drawer,
   args: {
@@ -50,4 +50,6 @@ export default {
   argTypes: {
     isHidden: { control: { type: 'boolean' } },
   },
-} as Meta<typeof Drawer>
+}
+
+export default meta

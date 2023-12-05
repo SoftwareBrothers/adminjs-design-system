@@ -1,4 +1,4 @@
-import { StoryFn, StoryObj } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import * as illustrations from '../illustrations/index.js'
@@ -22,7 +22,7 @@ export const Illustrations: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Illustration> = {
   title: 'DesignSystem/Atoms/Illustration',
   args: {
     variant: illustrationVariants[0],
@@ -35,3 +35,5 @@ export default {
     height: { control: { type: 'number' } },
   },
 }
+
+export default meta

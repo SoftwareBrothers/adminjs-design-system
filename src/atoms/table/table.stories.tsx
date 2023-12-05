@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Button, CheckBox, Icon, Link, Text } from '../index.js'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableRow } from './index.js'
 
@@ -65,10 +65,12 @@ export const Default: StoryObj<{ onClick: (e) => void }> = {
   },
 }
 
-export default {
+const meta: Meta<typeof Table> = {
   title: 'DesignSystem/Atoms/Table',
   component: Table,
   argTypes: {
     onClick: { action: 'clicked' },
   },
-} as Meta<typeof Table>
+}
+
+export default meta

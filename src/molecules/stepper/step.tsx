@@ -156,5 +156,7 @@ const Step: React.FC<StepProps> = (props) => {
   )
 }
 
+Step.displayName = 'Step'
+
 export { Step }
 export default Step

@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "./build-sb",
     "target": "esnext",
     "esModuleInterop": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "declaration": true,
     "declarationDir": "./types",
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "strictFunctionTypes": true,
@@ -28,7 +28,6 @@
     "./spec/**/*"
   ],
   "exclude": [
-    "./src/**/*.stories.*",
     "./src/**/*.spec.*"
   ]
 }

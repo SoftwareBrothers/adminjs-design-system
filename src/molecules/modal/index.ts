@@ -1,4 +1,4 @@
-export * from './modal-inline.js'
+export * from './modal-inline.jsx'
 export * from './modal-props.js'
-export * from './modal-styled.js'
-export * from './modal.js'
+export * from './modal-styled.jsx'
+export * from './modal.jsx'

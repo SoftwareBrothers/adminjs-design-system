@@ -1,7 +1,7 @@
 import { StoryObj, Meta, StoryFn } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Button } from '../button/index.js'
 import { Box, Text } from '../index.js'
 import { Caption, CardTitle, H1, H2, H3, H4, H5, Header, SmallText } from './index.js'
@@ -245,7 +245,7 @@ export const CaptionExample: StoryFn = () => (
   </StoryWrapper>
 )
 
-export default {
+const meta: Meta<typeof Text> = {
   title: 'DesignSystem/Atoms/Typography',
   component: Text,
   args: {
@@ -254,4 +254,6 @@ export default {
   argTypes: {
     variant: { options: ['xs', 'sm', 'lg'], control: { type: 'select' } },
   },
-} as Meta<typeof Text>
+}
+
+export default meta

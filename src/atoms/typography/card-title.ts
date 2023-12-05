@@ -14,4 +14,6 @@ export const CardTitle = styled('div')<TypographyProps & SpaceProps>`
   }
 `
 
+CardTitle.displayName = 'CardTitle'
+
 export default CardTitle

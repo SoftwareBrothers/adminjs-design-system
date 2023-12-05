@@ -8,8 +8,8 @@ import { Label } from '../../atoms/label/index.js'
 import { Text } from '../../atoms/text/index.js'
 import { DisplaySizeUnit, humanFileSize } from '../../utils/human-file-size.js'
 import { MessageBox } from '../message-box/index.js'
-import { DropZoneItem } from './drop-zone-item.js'
-import Image from './drop-zone-image.js'
+import { DropZoneItem } from './drop-zone-item.jsx'
+import Image from './drop-zone-image.jsx'
 
 /**
  * @memberof DropZone
@@ -367,6 +367,8 @@ const DropZone: React.FC<DropZoneProps> = (props) => {
     </Box>
   )
 }
+
+DropZone.displayName = 'DropZone'
 
 export { DropZone }
 export default DropZone

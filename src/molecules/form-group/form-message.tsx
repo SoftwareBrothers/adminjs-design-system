@@ -15,4 +15,6 @@ const FormMessage = styled(Text)`
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `
 
+FormMessage.displayName = 'FormMessage'
+
 export default FormMessage

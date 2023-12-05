@@ -1,2 +1,2 @@
-export * from './select.js'
-export * from './select-async.js'
+export * from './select.jsx'
+export * from './select-async.jsx'

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Box, CardTitle, Text } from '../../index.js'
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { ValueGroup } from './index.js'
 
 export const Default: StoryObj<{ onClick: (e) => void }> = {
@@ -40,10 +40,9 @@ export const Default: StoryObj<{ onClick: (e) => void }> = {
   },
 }
 
-export default {
+const meta: Meta<typeof ValueGroup> = {
   title: 'DesignSystem/Molecules/ValueGroup',
   component: ValueGroup,
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
-} as Meta<typeof ValueGroup>
+}
+
+export default meta

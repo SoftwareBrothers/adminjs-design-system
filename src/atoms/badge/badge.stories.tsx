@@ -1,7 +1,7 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import StoryWrapper from '../../utils/story-wrapper.js'
+import StoryWrapper from '../../utils/story-wrapper.jsx'
 import { Box, Header, Text as TextComponent } from '../index.js'
 import { Badge } from './index.js'
 
@@ -72,7 +72,7 @@ export const Examples: StoryFn = () => (
   </Box>
 )
 
-export default {
+const meta: Meta<typeof Badge> = {
   title: 'DesignSystem/Atoms/Badge',
   component: Badge,
   args: {
@@ -85,4 +85,6 @@ export default {
     size: { options: sizes, control: { type: 'select' } },
     outline: { control: { type: 'boolean' } },
   },
-} as Meta<typeof Badge>
+}
+
+export default meta

@@ -99,5 +99,7 @@ const Placeholder: React.FC<PlaceholderProps> = ({ as: htmlAs, ref, ...other }) 
   <StyledPlaceholder as={htmlAs} {...other} className={cssClass('Placeholder')} />
 )
 
+Placeholder.displayName = 'Placeholder'
+
 export { Placeholder }
 export default Placeholder

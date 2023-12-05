@@ -157,5 +157,7 @@ Label.defaultProps = {
   className: cssClass('Label'),
 }
 
+Label.displayName = 'Label'
+
 export { Label }
 export default Label

@@ -4,7 +4,9 @@ import { Overlay } from './index.js'
 
 export const Default: StoryObj = {}
 
-export default {
+const meta: Meta<typeof Overlay> = {
   title: 'DesignSystem/Atoms/Overlay',
   component: Overlay,
-} as Meta<typeof Overlay>
+}
+
+export default meta

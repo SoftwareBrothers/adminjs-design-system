@@ -1,1 +1,1 @@
-export * from './phone-input.js'
+export * from './phone-input.jsx'
