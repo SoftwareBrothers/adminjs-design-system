@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import parseISO from 'date-fns/parseISO'
+
+import parseISO from 'date-fns/parseISO/index.js'
 
 import { formatDateProperty, PropertyType } from '../../utils/index.js'
 
