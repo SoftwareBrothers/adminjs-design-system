@@ -2,13 +2,12 @@
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
-import terser from '@rollup/plugin-terser'
+import { minify } from 'rollup-plugin-esbuild-minify'
 import replace from '@rollup/plugin-replace'
 import presetEnv from '@babel/preset-env'
 import presetReact from '@babel/preset-react'
 import presetTs from '@babel/preset-typescript'
 
-const minify = process.env.NODE_ENV === 'production'
 const extensions = ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx']
 
 const plugins = [
@@ -35,7 +34,7 @@ const plugins = [
       presetTs,
     ],
   }),
-  ...(minify ? [terser()] : []),
+  ...(process.env.NODE_ENV === 'production' ? [minify()] : []),
 ]
 
 export default {
@@ -50,8 +49,8 @@ export default {
     'react-feather',
   ],
   output: {
-    file: minify ? 'bundle.production.js' : 'bundle.development.js',
-    sourcemap: minify ? false : 'inline',
+    file: process.env.NODE_ENV === 'production' ? 'bundle.production.js' : 'bundle.development.js',
+    sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
     name: 'AdminJSDesignSystem',
     format: 'iife',
     interop: 'auto',
