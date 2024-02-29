@@ -57,6 +57,8 @@ jobs:
         run: yarn build
       - name: Build storybook
         run: yarn storybook:build
+      - name: Install Firebase
+        run: yarn global add firebase-tools
       - name: Deploy storybook
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
