@@ -21,6 +21,7 @@ const selectStyles = (theme: DefaultTheme): Props['styles'] => ({
     boxShadow: 'none',
     background: theme.colors.container,
     border: theme.borders.input,
+    zIndex: 100,
   }),
 })
 
