@@ -62,4 +62,4 @@ jobs:
       - name: Deploy storybook
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn storybook:deploy --only adminjs-storybook --token "$FIREBASE_TOKEN"
+        run: yarn storybook:deploy --token "$FIREBASE_TOKEN"

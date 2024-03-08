@@ -29,7 +29,7 @@
     "storybook:build": "storybook build",
     "storybook:deploy": "firebase deploy --only hosting",
     "dev": "yarn build && yarn types && yarn bundle",
-    "prepare": "husky install"
+    "prepare": "husky install && ts-patch install -s"
   },
   "husky": {
     "hooks": {
@@ -97,8 +97,10 @@
     "source-map-loader": "^4.0.1",
     "storybook": "^7.6.3",
     "ts-loader": "^9.5.1",
+    "ts-patch": "^3.1.2",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "typescript-transform-paths": "^3.4.7"
   },
   "dependencies": {
     "@hypnosphi/create-react-context": "^0.3.1",
