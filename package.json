@@ -11,7 +11,8 @@
     },
     "./styled-components": {
       "import": "./build/utils/styled.js",
-      "types": "./types/src/utils/styled.d.ts"
+      "types": "./types/src/utils/styled.d.ts",
+      "require": "./build/utils/styled.js"
     }
   },
   "repository": "git@github.com:SoftwareBrothers/adminjs-design-system.git",
