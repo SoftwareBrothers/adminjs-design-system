@@ -41,7 +41,7 @@ const meta: Meta<typeof DatePicker> = {
   },
   argTypes: {
     disabled: { control: { type: 'boolean' } },
-    propertyType: { options: propertyTypes, control: { type: 'select' } },
+    propertyType: { options: [propertyTypes], control: { type: 'select' } },
   },
 }
 

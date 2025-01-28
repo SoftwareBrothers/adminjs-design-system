@@ -4,6 +4,7 @@ import ResolveTypeScriptPlugin from 'resolve-typescript-plugin'
 import TypeScriptConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const __dirname = path.resolve()
 const config = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -52,10 +53,7 @@ const config = {
   },
   babel: () => ({
     plugins: [
-      [
-        'styled-components',
-        { displayName: true },
-      ],
+      ['styled-components', { displayName: true }],
       [
         'module-resolver',
         {

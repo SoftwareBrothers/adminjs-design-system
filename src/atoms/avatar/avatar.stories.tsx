@@ -8,7 +8,7 @@ export const Default: StoryObj<typeof Avatar> = {}
 export const WithLetter: StoryObj<typeof Avatar> = {
   render: ({ alt }) => (
     <Avatar alt={alt}>
-      {alt
+      {alt!
         .split(' ')
         .map((w) => w.charAt(0))
         .join('')}
